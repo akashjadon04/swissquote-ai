@@ -100,9 +100,8 @@ async function extractWithOpenRouterKey(
   apiKey: string,
   keyIndex: number
 ): Promise<AIExtractionResult> {
-  // openrouter/free: official OpenRouter router → auto-selects best available FREE model
-  // This is NOT openrouter/auto (which is paid)
-  const model = process.env.OPENROUTER_MODEL || 'openrouter/free';
+  // Use the ultra-fast free Gemini 2.0 Flash Lite model instead of the slow generic router
+  const model = process.env.OPENROUTER_MODEL || 'google/gemini-2.0-flash-lite-preview-02-05:free';
 
   const response = await fetch('https://openrouter.ai/api/v1/chat/completions', {
     method: 'POST',
