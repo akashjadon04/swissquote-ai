@@ -244,6 +244,9 @@ export const useQuoteStore = create<QuoteState>()(
           quote: { ...state.quote, ...partial },
           isDirty: true,
         });
+        if (partial.sections) {
+          get().recalculateFinancials();
+        }
       },
       resetQuote: () => set({
         quote: { ...DEFAULT_QUOTE },
