@@ -76,7 +76,6 @@ export default function RootLayout({
         <ThemeProvider
           attribute="data-theme"
           defaultTheme="light"
-          disableTransitionOnChange
         >
           {children}
           {/* Global overlays — available everywhere */}
