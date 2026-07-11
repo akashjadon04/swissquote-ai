@@ -68,7 +68,7 @@ async function extractWithGemini(description: string): Promise<AIExtractionResul
     generationConfig: {
       temperature: 0.1,       // Low temp -> deterministic, factual
       topP: 0.95,
-      maxOutputTokens: 2048,
+      maxOutputTokens: 8192,
       responseMimeType: 'application/json',
     },
   });
@@ -122,7 +122,7 @@ async function extractWithOpenRouterKey(
         { role: 'user', content: description },
       ],
       temperature: 0.1,
-      max_tokens: 2048,
+      max_tokens: 8192,
       response_format: { type: 'json_object' },
     }),
   });
