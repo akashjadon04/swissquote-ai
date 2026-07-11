@@ -38,7 +38,7 @@ FORMAT DE SORTIE — JSON strict :
         {
           "label": "string — description sémantique de l'article",
           "material_type": "string — ex: tuyau_inox, coude_sertir, manchon, collier, isolation, transition, reducteur, robinet, raccord, bouchon, mamelon",
-          "dimension": "string ou null — ex: Ø 54 mm, DN 40, 1½\\"",
+          "dimension": "string ou null — ex: Ø 54 mm, DN 40, 1½\"",
           "quantity": "number ou null — null si non précisé",
           "unit": "string ou null — ex: m, p, Fr, u",
           "confidence": "number — 0.0 à 1.0 par article"
@@ -116,13 +116,29 @@ async function extractWithGemini(description: string): Promise<AIExtractionResul
 }
 
 // ─────────────────────────────────────────
-// OpenRouter Fallback Client
+// OpenRouter Multi-Key Cascade
+// Each key is tried in sequence until one succeeds.
+// Keys come from comma-separated OPENROUTER_API_KEYS env var,
+// or fall back to single OPENROUTER_API_KEY.
 // ─────────────────────────────────────────
 
-async function extractWithOpenRouter(description: string): Promise<AIExtractionResult> {
-  const apiKey = process.env.OPENROUTER_API_KEY;
-  if (!apiKey) throw new Error('OPENROUTER_API_KEY not configured');
+function getOpenRouterKeys(): string[] {
+  // Support multiple keys: OPENROUTER_API_KEYS="key1,key2,key3"
+  const multi = process.env.OPENROUTER_API_KEYS;
+  if (multi) {
+    const keys = multi.split(',').map(k => k.trim()).filter(Boolean);
+    if (keys.length > 0) return keys;
+  }
+  // Fallback to single key
+  const single = process.env.OPENROUTER_API_KEY;
+  if (single) return [single];
+  return [];
+}
 
+async function extractWithOpenRouterKey(
+  description: string,
+  apiKey: string
+): Promise<AIExtractionResult> {
   const response = await fetch('https://openrouter.ai/api/v1/chat/completions', {
     method: 'POST',
     headers: {
@@ -132,7 +148,15 @@ async function extractWithOpenRouter(description: string): Promise<AIExtractionR
       'X-Title': 'SwissQuote AI',
     },
     body: JSON.stringify({
+      // "openrouter/free" routes to the best available free model
       model: process.env.OPENROUTER_MODEL || 'openrouter/auto',
+      models: [
+        'google/gemini-2.5-flash',
+        'google/gemini-flash-1.5',
+        'meta-llama/llama-3.3-70b-instruct:free',
+        'mistralai/mistral-7b-instruct:free',
+      ],
+      route: 'fallback',
       messages: [
         { role: 'system', content: SYSTEM_PROMPT },
         { role: 'user', content: description },
@@ -153,6 +177,26 @@ async function extractWithOpenRouter(description: string): Promise<AIExtractionR
 
   if (!text) throw new Error('OpenRouter returned empty response');
   return parseAIResponse(text);
+}
+
+async function extractWithOpenRouter(description: string): Promise<AIExtractionResult> {
+  const keys = getOpenRouterKeys();
+  if (keys.length === 0) throw new Error('No OpenRouter API keys configured');
+
+  const errors: string[] = [];
+
+  for (let i = 0; i < keys.length; i++) {
+    try {
+      console.log(`[SwissQuote AI] Trying OpenRouter key ${i + 1}/${keys.length}...`);
+      return await extractWithOpenRouterKey(description, keys[i]);
+    } catch (err) {
+      const msg = err instanceof Error ? err.message : String(err);
+      errors.push(`Key ${i + 1}: ${msg}`);
+      console.warn(`[SwissQuote AI] OpenRouter key ${i + 1} failed: ${msg}`);
+    }
+  }
+
+  throw new Error(`All OpenRouter keys failed: ${errors.join(' | ')}`);
 }
 
 // ─────────────────────────────────────────
@@ -203,6 +247,7 @@ function parseAIResponse(text: string): AIExtractionResult {
 
 // ─────────────────────────────────────────
 // Main Export: Extract with Cascade
+// Order: Gemini → OpenRouter (key 1 → key 2 → key 3)
 // ─────────────────────────────────────────
 
 export interface ExtractionResponse {
@@ -217,6 +262,7 @@ export async function extractFromDescription(description: string): Promise<Extra
   // Try Gemini first
   try {
     const extraction = await extractWithGemini(description);
+    console.log(`[SwissQuote AI] ✓ Gemini succeeded in ${Date.now() - startTime}ms`);
     return {
       extraction,
       provider: 'gemini',
@@ -224,11 +270,12 @@ export async function extractFromDescription(description: string): Promise<Extra
     };
   } catch (error) {
     const errorMessage = error instanceof Error ? error.message : String(error);
-    console.warn(`[SwissQuote AI] Gemini failed: ${errorMessage}. Falling back to OpenRouter.`);
+    console.warn(`[SwissQuote AI] Gemini failed: ${errorMessage}. Cascading to OpenRouter...`);
 
-    // Fall back to OpenRouter
+    // Cascade to OpenRouter (tries all 3 keys)
     try {
       const extraction = await extractWithOpenRouter(description);
+      console.log(`[SwissQuote AI] ✓ OpenRouter succeeded in ${Date.now() - startTime}ms`);
       return {
         extraction,
         provider: 'openrouter',
@@ -236,7 +283,7 @@ export async function extractFromDescription(description: string): Promise<Extra
       };
     } catch (fallbackError) {
       const fbMessage = fallbackError instanceof Error ? fallbackError.message : String(fallbackError);
-      throw new Error(`Both AI providers failed. Gemini: ${errorMessage}. OpenRouter: ${fbMessage}`);
+      throw new Error(`All AI providers failed. Gemini: ${errorMessage}. OpenRouter: ${fbMessage}`);
     }
   }
 }
