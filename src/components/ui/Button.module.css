@@ -1,0 +1,31 @@
+.button {
+  position: relative;
+  overflow: hidden;
+}
+
+.fullWidth {
+  width: 100%;
+}
+
+.loading {
+  cursor: wait;
+}
+
+.icon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  width: 18px;
+  height: 18px;
+}
+
+.icon > svg {
+  width: 100%;
+  height: 100%;
+}
+
+.label {
+  display: inline-flex;
+  align-items: center;
+}

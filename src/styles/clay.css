@@ -1,0 +1,405 @@
+/* ═══════════════════════════════════════════════════════════════
+   SwissQuote AI — Claymorphism Utilities
+   Soft, tactile surfaces with multi-layer shadows
+   ═══════════════════════════════════════════════════════════════ */
+
+/* ─── Clay Card ─────────────────────────────────────────────── */
+
+.clay-card {
+  background: var(--color-surface);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-xl);
+  box-shadow: var(--clay-shadow);
+  transition: box-shadow var(--duration-normal) var(--ease-out),
+              transform var(--duration-normal) var(--ease-out),
+              border-color var(--duration-normal) var(--ease-out);
+}
+
+.clay-card--interactive {
+  cursor: pointer;
+}
+
+.clay-card--interactive:hover {
+  box-shadow: var(--clay-shadow-hover);
+  transform: translateY(-2px);
+  border-color: var(--color-border-2);
+}
+
+.clay-card--interactive:active {
+  box-shadow: var(--clay-shadow-pressed);
+  transform: translateY(0);
+}
+
+/* ─── Clay Card Elevated ────────────────────────────────────── */
+
+.clay-card--elevated {
+  box-shadow: var(--clay-shadow-elevated);
+}
+
+.clay-card--elevated:hover {
+  box-shadow:
+    10px 10px 28px rgba(26, 25, 22, 0.12),
+    -5px -5px 14px rgba(255, 255, 255, 0.95),
+    inset 0 1px 0 rgba(255, 255, 255, 0.8);
+}
+
+[data-theme='dark'] .clay-card--elevated:hover {
+  box-shadow:
+    10px 10px 28px rgba(0, 0, 0, 0.4),
+    -5px -5px 14px rgba(255, 255, 255, 0.05),
+    inset 0 1px 0 rgba(255, 255, 255, 0.07);
+}
+
+/* ─── Clay Button ───────────────────────────────────────────── */
+
+.clay-button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--space-2);
+  border-radius: var(--radius-md);
+  font-weight: var(--weight-medium);
+  font-size: var(--text-base);
+  line-height: 1;
+  white-space: nowrap;
+  user-select: none;
+  border: 1px solid var(--color-border);
+  background: var(--color-surface);
+  color: var(--color-text);
+  box-shadow: var(--clay-shadow);
+  transition: all var(--duration-fast) var(--ease-out);
+  -webkit-tap-highlight-color: transparent;
+  touch-action: manipulation;
+}
+
+.clay-button:hover {
+  box-shadow: var(--clay-shadow-hover);
+  border-color: var(--color-border-2);
+}
+
+.clay-button:active {
+  transform: scale(0.97);
+  box-shadow: var(--clay-shadow-pressed);
+}
+
+.clay-button:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+  pointer-events: none;
+}
+
+/* Button — Primary */
+.clay-button--primary {
+  background: var(--color-accent);
+  color: #FFFFFF;
+  border-color: var(--color-accent);
+  box-shadow:
+    4px 4px 12px rgba(37, 99, 235, 0.2),
+    -2px -2px 8px rgba(255, 255, 255, 0.08),
+    inset 0 1px 0 rgba(255, 255, 255, 0.15);
+}
+
+.clay-button--primary:hover {
+  background: var(--color-accent-hover);
+  border-color: var(--color-accent-hover);
+  box-shadow:
+    6px 6px 16px rgba(37, 99, 235, 0.25),
+    -3px -3px 10px rgba(255, 255, 255, 0.1),
+    inset 0 1px 0 rgba(255, 255, 255, 0.2);
+}
+
+.clay-button--primary:active {
+  box-shadow:
+    2px 2px 6px rgba(37, 99, 235, 0.2),
+    inset 0 2px 6px rgba(0, 0, 0, 0.15);
+}
+
+[data-theme='dark'] .clay-button--primary {
+  box-shadow:
+    4px 4px 12px rgba(59, 130, 246, 0.15),
+    -2px -2px 8px rgba(255, 255, 255, 0.02),
+    inset 0 1px 0 rgba(255, 255, 255, 0.1);
+}
+
+/* Button — Ghost */
+.clay-button--ghost {
+  background: transparent;
+  border-color: transparent;
+  box-shadow: none;
+  color: var(--color-muted);
+}
+
+.clay-button--ghost:hover {
+  background: var(--color-surface-2);
+  color: var(--color-text);
+  box-shadow: none;
+  border-color: transparent;
+}
+
+.clay-button--ghost:active {
+  background: var(--color-surface-3);
+  box-shadow: var(--shadow-inner);
+}
+
+/* Button — Danger */
+.clay-button--danger {
+  background: var(--color-danger);
+  color: #FFFFFF;
+  border-color: var(--color-danger);
+  box-shadow:
+    4px 4px 12px rgba(220, 38, 38, 0.15),
+    -2px -2px 8px rgba(255, 255, 255, 0.08),
+    inset 0 1px 0 rgba(255, 255, 255, 0.15);
+}
+
+.clay-button--danger:hover {
+  background: #B91C1C;
+  border-color: #B91C1C;
+  box-shadow:
+    6px 6px 16px rgba(220, 38, 38, 0.2),
+    -3px -3px 10px rgba(255, 255, 255, 0.1),
+    inset 0 1px 0 rgba(255, 255, 255, 0.2);
+}
+
+/* Button Sizes */
+.clay-button--sm {
+  height: 32px;
+  padding: 0 var(--space-3);
+  font-size: var(--text-sm);
+  border-radius: var(--radius-sm);
+}
+
+.clay-button--md {
+  height: 40px;
+  padding: 0 var(--space-4);
+  font-size: var(--text-base);
+}
+
+.clay-button--lg {
+  height: 48px;
+  padding: 0 var(--space-6);
+  font-size: var(--text-md);
+  border-radius: var(--radius-lg);
+}
+
+/* Mobile touch target enforcement */
+@media (pointer: coarse) {
+  .clay-button--sm,
+  .clay-button--md {
+    min-height: 44px;
+  }
+}
+
+/* ─── Clay Input ────────────────────────────────────────────── */
+
+.clay-input {
+  display: block;
+  width: 100%;
+  height: 40px;
+  padding: 0 var(--space-3);
+  font-family: var(--font-sans);
+  font-size: var(--text-base);
+  color: var(--color-text);
+  background: var(--color-surface);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-md);
+  box-shadow: var(--shadow-inner),
+              0 1px 2px rgba(26, 25, 22, 0.04);
+  transition: border-color var(--duration-normal) var(--ease-out),
+              box-shadow var(--duration-normal) var(--ease-out);
+  -webkit-appearance: none;
+  appearance: none;
+}
+
+.clay-input::placeholder {
+  color: var(--color-muted-2);
+}
+
+.clay-input:hover {
+  border-color: var(--color-border-2);
+}
+
+.clay-input:focus {
+  outline: none;
+  border-color: var(--color-accent);
+  box-shadow: var(--shadow-glow),
+              var(--shadow-inner);
+}
+
+.clay-input--error {
+  border-color: var(--color-danger);
+}
+
+.clay-input--error:focus {
+  border-color: var(--color-danger);
+  box-shadow: 0 0 0 3px rgba(220, 38, 38, 0.12),
+              var(--shadow-inner);
+}
+
+[data-theme='dark'] .clay-input--error:focus {
+  box-shadow: 0 0 0 3px rgba(239, 68, 68, 0.15),
+              var(--shadow-inner);
+}
+
+.clay-input:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+  background: var(--color-surface-2);
+}
+
+/* Textarea variant */
+.clay-input--textarea {
+  height: auto;
+  min-height: 100px;
+  padding: var(--space-3);
+  resize: vertical;
+  line-height: var(--leading-normal);
+}
+
+/* Input with prefix/suffix */
+.clay-input-wrapper {
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+
+.clay-input-wrapper .clay-input {
+  width: 100%;
+}
+
+.clay-input-wrapper--prefix .clay-input {
+  padding-left: calc(var(--space-3) + 20px + var(--space-2));
+}
+
+.clay-input-wrapper--suffix .clay-input {
+  padding-right: calc(var(--space-3) + 20px + var(--space-2));
+}
+
+.clay-input__prefix,
+.clay-input__suffix {
+  position: absolute;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 20px;
+  height: 20px;
+  color: var(--color-muted);
+  pointer-events: none;
+}
+
+.clay-input__prefix {
+  left: var(--space-3);
+}
+
+.clay-input__suffix {
+  right: var(--space-3);
+}
+
+@media (pointer: coarse) {
+  .clay-input {
+    min-height: 44px;
+  }
+}
+
+/* ─── Clay Sidebar ──────────────────────────────────────────── */
+
+.clay-sidebar {
+  background: var(--color-surface);
+  border-right: 1px solid var(--color-border);
+  border-radius: 0 var(--radius-xl) var(--radius-xl) 0;
+  box-shadow:
+    4px 0 12px rgba(26, 25, 22, 0.04),
+    inset -1px 0 0 rgba(255, 255, 255, 0.5);
+  transition: width var(--duration-slow) var(--ease-out),
+              box-shadow var(--duration-normal) var(--ease-out);
+}
+
+[data-theme='dark'] .clay-sidebar {
+  box-shadow:
+    4px 0 12px rgba(0, 0, 0, 0.2),
+    inset -1px 0 0 rgba(255, 255, 255, 0.03);
+}
+
+/* ─── Clay Elevated ─────────────────────────────────────────── */
+
+.clay-elevated {
+  box-shadow: var(--clay-shadow-elevated) !important;
+}
+
+/* ─── Clay Pressed ──────────────────────────────────────────── */
+
+.clay-pressed {
+  box-shadow: var(--clay-shadow-pressed) !important;
+}
+
+/* ─── Clay Modal ────────────────────────────────────────────── */
+
+.clay-modal {
+  background: var(--color-surface);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-xl);
+  box-shadow: var(--shadow-2xl),
+              inset 0 1px 0 rgba(255, 255, 255, 0.6);
+}
+
+[data-theme='dark'] .clay-modal {
+  box-shadow: var(--shadow-2xl),
+              inset 0 1px 0 rgba(255, 255, 255, 0.05);
+}
+
+/* ─── Clay Bottom Sheet (Mobile) ────────────────────────────── */
+
+.clay-bottom-sheet {
+  background: var(--color-surface);
+  border-top: 1px solid var(--color-border);
+  border-radius: var(--radius-2xl) var(--radius-2xl) 0 0;
+  box-shadow:
+    0 -8px 30px rgba(26, 25, 22, 0.1),
+    inset 0 1px 0 rgba(255, 255, 255, 0.6);
+}
+
+[data-theme='dark'] .clay-bottom-sheet {
+  box-shadow:
+    0 -8px 30px rgba(0, 0, 0, 0.35),
+    inset 0 1px 0 rgba(255, 255, 255, 0.05);
+}
+
+.clay-bottom-sheet__handle {
+  width: 36px;
+  height: 4px;
+  border-radius: var(--radius-full);
+  background: var(--color-border-2);
+  margin: var(--space-3) auto var(--space-2);
+}
+
+/* ─── Clay Badge ────────────────────────────────────────────── */
+
+.clay-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-1);
+  font-weight: var(--weight-medium);
+  border-radius: var(--radius-full);
+  white-space: nowrap;
+  border: 1px solid transparent;
+  box-shadow: 0 1px 2px rgba(26, 25, 22, 0.04),
+              inset 0 1px 0 rgba(255, 255, 255, 0.3);
+}
+
+[data-theme='dark'] .clay-badge {
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.15),
+              inset 0 1px 0 rgba(255, 255, 255, 0.03);
+}
+
+/* ─── Clay Toast ────────────────────────────────────────────── */
+
+.clay-toast {
+  background: var(--color-surface);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-lg);
+  box-shadow: var(--clay-shadow-elevated);
+}
+
+[data-theme='dark'] .clay-toast {
+  background: var(--color-surface-2);
+}

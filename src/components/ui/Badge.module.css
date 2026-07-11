@@ -1,0 +1,78 @@
+.badge {
+  font-size: var(--text-xs);
+  line-height: 1;
+  letter-spacing: 0.01em;
+}
+
+/* ─── Sizes ─────────────────────────────────────────────────── */
+
+.badgeSm {
+  padding: 2px var(--space-2);
+  font-size: 11px;
+}
+
+.badgeMd {
+  padding: var(--space-1) var(--space-2-5);
+}
+
+/* ─── Dot Indicator ─────────────────────────────────────────── */
+
+.dot {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: currentColor;
+  flex-shrink: 0;
+}
+
+/* ─── Variants ──────────────────────────────────────────────── */
+
+.variant_default {
+  background: var(--color-surface-2);
+  color: var(--color-text-2);
+  border-color: var(--color-border);
+}
+
+.variant_success {
+  background: var(--color-success-light);
+  color: var(--color-success);
+  border-color: var(--color-success-border);
+}
+
+.variant_warning {
+  background: var(--color-warning-light);
+  color: var(--color-warning);
+  border-color: var(--color-warning-border);
+}
+
+.variant_danger {
+  background: var(--color-danger-light);
+  color: var(--color-danger);
+  border-color: var(--color-danger-border);
+}
+
+.variant_info {
+  background: var(--color-info-light);
+  color: var(--color-info);
+  border-color: var(--color-info-border);
+}
+
+/* ─── Supplier Badges ───────────────────────────────────────── */
+
+.supplierNsb {
+  background: var(--color-accent-light);
+  color: var(--color-accent);
+  border-color: rgba(37, 99, 235, 0.2);
+}
+
+.supplierSt {
+  background: var(--color-success-light);
+  color: var(--color-success);
+  border-color: var(--color-success-border);
+}
+
+.supplierGm {
+  background: var(--color-warning-light);
+  color: var(--color-warning);
+  border-color: var(--color-warning-border);
+}

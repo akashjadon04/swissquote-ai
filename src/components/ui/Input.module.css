@@ -1,0 +1,45 @@
+.field {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-1-5);
+  width: 100%;
+}
+
+.label {
+  font-size: var(--text-sm);
+  font-weight: var(--weight-medium);
+  color: var(--color-text-2);
+  cursor: pointer;
+  user-select: none;
+}
+
+.error {
+  font-size: var(--text-xs);
+  color: var(--color-danger);
+  font-weight: var(--weight-medium);
+}
+
+.helper {
+  font-size: var(--text-xs);
+  color: var(--color-muted);
+}
+
+.bottomRow {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  min-height: 18px;
+}
+
+.charCount {
+  font-size: var(--text-xs);
+  color: var(--color-muted);
+  font-variant-numeric: tabular-nums;
+  font-family: var(--font-mono);
+  margin-left: auto;
+}
+
+.charCountMax {
+  color: var(--color-danger);
+  font-weight: var(--weight-medium);
+}
