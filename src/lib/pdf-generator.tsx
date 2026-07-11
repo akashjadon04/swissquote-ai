@@ -232,7 +232,6 @@ const styles = StyleSheet.create({
   // Column widths
   colRef:   { width: 80 },
   colDesc:  { flex: 1 },
-  colSpec:  { width: 60 },
   colQty:   { width: 35, textAlign: 'right' },
   colUnit:  { width: 30, textAlign: 'center' },
   colPrice: { width: 55, textAlign: 'right' },
@@ -450,7 +449,6 @@ interface PDFQuote {
       id: string;
       reference: string | null;
       description: string;
-      specification: string | null;
       quantity: number;
       unit: string;
       unit_price: number | null;
@@ -541,7 +539,6 @@ function QuoteDocument({ quote }: { quote: PDFQuote }) {
               <View style={styles.tableHeader}>
                 <Text style={[styles.tableHeaderCell, styles.colRef]}>Référence</Text>
                 <Text style={[styles.tableHeaderCell, styles.colDesc]}>Désignation</Text>
-                <Text style={[styles.tableHeaderCell, styles.colSpec]}>Spéc.</Text>
                 <Text style={[styles.tableHeaderCell, styles.colQty]}>Qté</Text>
                 <Text style={[styles.tableHeaderCell, styles.colUnit]}>Unité</Text>
                 <Text style={[styles.tableHeaderCell, styles.colPrice]}>P.U. HT</Text>
@@ -566,9 +563,6 @@ function QuoteDocument({ quote }: { quote: PDFQuote }) {
                   </View>
                   <View style={styles.colDesc}>
                     <Text style={styles.cell}>{item.description}</Text>
-                  </View>
-                  <View style={styles.colSpec}>
-                    <Text style={styles.cellMuted}>{item.specification || ''}</Text>
                   </View>
                   <View style={styles.colQty}>
                     <Text style={[styles.cellMono, { textAlign: 'right' }]}>{item.quantity}</Text>

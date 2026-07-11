@@ -139,9 +139,23 @@ export default function QuoteDetailPage() {
     setStatusChanging(false);
   };
 
-  const downloadPDF = () => {
-    window.open(`/quotes/${id}/print`, '_blank');
-    toast.success('Ouverture de l\'aperçu PDF…');
+  const downloadPDF = async () => {
+    toast.success('Génération du PDF en cours...');
+    try {
+      const response = await fetch(`/api/quotes/${id}/pdf`);
+      if (!response.ok) throw new Error('Erreur réseau');
+      const blob = await response.blob();
+      const url = window.URL.createObjectURL(blob);
+      const a = document.createElement('a');
+      a.href = url;
+      a.download = `Devis_${quote?.quote_number.replace(/\//g, '-')}.pdf`;
+      document.body.appendChild(a);
+      a.click();
+      window.URL.revokeObjectURL(url);
+      document.body.removeChild(a);
+    } catch (err) {
+      toast.error('Erreur lors du téléchargement du PDF');
+    }
   };
 
   const duplicate = async () => {
@@ -419,7 +433,6 @@ function ItemsTab({ quote, onRefresh }: { quote: FullQuote; onRefresh: () => voi
                 <tr>
                   <th className="col-ref p-4 font-semibold text-text-muted">Référence</th>
                   <th className="col-desc p-4 font-semibold text-text-muted">Désignation</th>
-                  <th className="col-sup p-4 font-semibold text-text-muted">Fournisseur</th>
                   <th className="col-qty p-4 font-semibold text-text-muted">Qté</th>
                   <th className="col-unit p-4 font-semibold text-text-muted">U.</th>
                   <th className="col-price p-4 font-semibold text-text-muted">P.U. HT</th>
@@ -440,12 +453,6 @@ function ItemsTab({ quote, onRefresh }: { quote: FullQuote; onRefresh: () => voi
                     <td className="item-desc md:p-4 border-b border-border/30 md:border-0 flex flex-col md:table-cell gap-1">
                       <span className="md:hidden text-[10px] font-bold text-text-muted uppercase tracking-wider">Désignation</span>
                       <span className="font-medium text-text-primary text-sm md:text-base leading-tight">{item.description}</span>
-                    </td>
-                    <td className="item-sup md:p-4 border-b border-border/30 md:border-0 flex items-center justify-between md:table-cell text-text-muted font-medium text-sm">
-                      <span className="md:hidden text-[10px] font-bold text-text-muted uppercase tracking-wider">Fournisseur</span>
-                      <span className="text-sm md:text-base">
-                        {item.reference?.startsWith('NSB') ? 'Nussbaum' : item.reference?.startsWith('SAN') ? 'Sanitas Troesch' : item.reference?.startsWith('GM') ? 'Getaz Miauton' : '—'}
-                      </span>
                     </td>
                     <td className="item-num md:p-4 border-b border-border/30 md:border-0 flex items-center justify-between md:table-cell">
                       <span className="md:hidden text-[10px] font-bold text-text-muted uppercase tracking-wider">Qté</span>

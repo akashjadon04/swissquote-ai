@@ -456,7 +456,6 @@ export default function NewQuotePage() {
                           <tr>
                             <th className="col-ref p-4 font-semibold text-text-muted">{t('catalogue', 'columns.reference')}</th>
                             <th className="col-desc p-4 font-semibold text-text-muted">{t('catalogue', 'columns.description')}</th>
-                            <th className="col-sup p-4 font-semibold text-text-muted">Fournisseur</th>
                             <th className="col-qty p-4 font-semibold text-text-muted">{t('catalogue', 'columns.quantity')}</th>
                             <th className="col-unit p-4 font-semibold text-text-muted">{t('catalogue', 'columns.unit')}</th>
                             <th className="col-price p-4 font-semibold text-text-muted">{t('catalogue', 'columns.unitPrice')}</th>
@@ -479,9 +478,6 @@ export default function NewQuotePage() {
                                     </button>
                                   </div>
                                 )}
-                              </td>
-                              <td className="col-sup p-4 text-sm font-medium text-text-muted">
-                                {item.reference?.startsWith('NSB') ? 'Nussbaum' : item.reference?.startsWith('SAN') ? 'Sanitas Troesch' : item.reference?.startsWith('GM') ? 'Getaz Miauton' : '—'}
                               </td>
                               <td className="col-qty p-4">
                                 <input type="number" className={`neo-input w-20 ${item.quantity === 0 || !item.quantity ? 'border-danger border-2 bg-danger/5 text-danger font-bold' : ''}`} value={item.quantity || ''} placeholder="0" min={0} step={0.1}
@@ -523,13 +519,6 @@ export default function NewQuotePage() {
                                 </button>
                               </div>
                             )}
-                          </div>
-                          {/* Row: Fournisseur */}
-                          <div className="flex items-center justify-between gap-3">
-                            <span className="text-[11px] font-bold text-text-muted uppercase tracking-wider w-24 shrink-0">Fournisseur</span>
-                            <span className="flex-1 text-sm text-text-muted font-medium">
-                              {item.reference?.startsWith('NSB') ? 'Nussbaum' : item.reference?.startsWith('SAN') ? 'Sanitas Troesch' : item.reference?.startsWith('GM') ? 'Getaz Miauton' : '—'}
-                            </span>
                           </div>
                           {/* Row: Qté + Unité */}
                           <div className="flex items-center gap-4">
@@ -573,8 +562,8 @@ export default function NewQuotePage() {
                   </Button>
                   <div className="flex flex-col items-end gap-2">
                     {hasUnresolvedItems && (
-                      <span className="text-danger text-sm font-semibold animate-pulse bg-danger/10 px-3 py-1 rounded-full border border-danger/20">
-                        {locale === 'en' ? '⚠️ Please fill in all missing quantities to continue' : '⚠️ Veuillez renseigner toutes les quantités pour continuer'}
+                      <span className="text-warning text-sm font-semibold bg-warning/10 px-3 py-1 rounded-full border border-warning/20">
+                        {locale === 'en' ? '⚠️ Missing items will have 0 price' : '⚠️ Les articles sans prix apparaîtront vides'}
                       </span>
                     )}
                     <Button
