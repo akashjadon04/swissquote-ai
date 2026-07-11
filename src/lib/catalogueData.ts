@@ -11,10 +11,13 @@ export const MOCK_CATALOGUE = [
       "code": "NSB",
       "name": "Nussbaum"
     },
-    "reference": "NSB-8007-12",
+    "reference": "NSB-5291-12",
     "name": "Tuyau acier inox 1:4521 Optipress Ø 12 mm",
+    "category": "tuyau_inox",
+    "specification": "Ø 12 mm",
+    "active": true,
     "unit": "m",
-    "base_price": 23.23
+    "base_price": 31.39
   },
   {
     "id": "st-1",
@@ -22,10 +25,13 @@ export const MOCK_CATALOGUE = [
       "code": "ST",
       "name": "Sanitas Troesch"
     },
-    "reference": "SAN.493635",
+    "reference": "SAN.832075",
     "name": "Tuyau acier inox 1:4521 Optipress Ø 12 mm",
+    "category": "tuyau_inox",
+    "specification": "Ø 12 mm",
+    "active": true,
     "unit": "m",
-    "base_price": 41.11
+    "base_price": 42.64
   },
   {
     "id": "gm-1",
@@ -33,10 +39,13 @@ export const MOCK_CATALOGUE = [
       "code": "GM",
       "name": "Getaz Miauton"
     },
-    "reference": "GM/85/3569",
+    "reference": "GM/24/4654",
     "name": "Tuyau acier inox 1:4521 Optipress Ø 12 mm",
+    "category": "tuyau_inox",
+    "specification": "Ø 12 mm",
+    "active": true,
     "unit": "m",
-    "base_price": 16.82
+    "base_price": 32.05
   },
   {
     "id": "nsb-2",
@@ -44,10 +53,13 @@ export const MOCK_CATALOGUE = [
       "code": "NSB",
       "name": "Nussbaum"
     },
-    "reference": "NSB-8127-15",
+    "reference": "NSB-4006-15",
     "name": "Tuyau acier inox 1:4521 Optipress Ø 15 mm",
+    "category": "tuyau_inox",
+    "specification": "Ø 15 mm",
+    "active": true,
     "unit": "m",
-    "base_price": 7.3
+    "base_price": 23.04
   },
   {
     "id": "st-2",
@@ -55,10 +67,13 @@ export const MOCK_CATALOGUE = [
       "code": "ST",
       "name": "Sanitas Troesch"
     },
-    "reference": "SAN.352739",
+    "reference": "SAN.525933",
     "name": "Tuyau acier inox 1:4521 Optipress Ø 15 mm",
+    "category": "tuyau_inox",
+    "specification": "Ø 15 mm",
+    "active": true,
     "unit": "m",
-    "base_price": 11.2
+    "base_price": 19.6
   },
   {
     "id": "gm-2",
@@ -66,10 +81,13 @@ export const MOCK_CATALOGUE = [
       "code": "GM",
       "name": "Getaz Miauton"
     },
-    "reference": "GM/63/4898",
+    "reference": "GM/78/5745",
     "name": "Tuyau acier inox 1:4521 Optipress Ø 15 mm",
+    "category": "tuyau_inox",
+    "specification": "Ø 15 mm",
+    "active": true,
     "unit": "m",
-    "base_price": 52.22
+    "base_price": 27.24
   },
   {
     "id": "nsb-3",
@@ -77,10 +95,13 @@ export const MOCK_CATALOGUE = [
       "code": "NSB",
       "name": "Nussbaum"
     },
-    "reference": "NSB-6602-18",
+    "reference": "NSB-4213-18",
     "name": "Tuyau acier inox 1:4521 Optipress Ø 18 mm",
+    "category": "tuyau_inox",
+    "specification": "Ø 18 mm",
+    "active": true,
     "unit": "m",
-    "base_price": 46.66
+    "base_price": 46.05
   },
   {
     "id": "st-3",
@@ -88,10 +109,13 @@ export const MOCK_CATALOGUE = [
       "code": "ST",
       "name": "Sanitas Troesch"
     },
-    "reference": "SAN.725366",
+    "reference": "SAN.311968",
     "name": "Tuyau acier inox 1:4521 Optipress Ø 18 mm",
+    "category": "tuyau_inox",
+    "specification": "Ø 18 mm",
+    "active": true,
     "unit": "m",
-    "base_price": 25.17
+    "base_price": 9.61
   },
   {
     "id": "gm-3",
@@ -99,10 +123,13 @@ export const MOCK_CATALOGUE = [
       "code": "GM",
       "name": "Getaz Miauton"
     },
-    "reference": "GM/11/7339",
+    "reference": "GM/62/6487",
     "name": "Tuyau acier inox 1:4521 Optipress Ø 18 mm",
+    "category": "tuyau_inox",
+    "specification": "Ø 18 mm",
+    "active": true,
     "unit": "m",
-    "base_price": 40.07
+    "base_price": 46.52
   },
   {
     "id": "nsb-4",
@@ -110,10 +137,13 @@ export const MOCK_CATALOGUE = [
       "code": "NSB",
       "name": "Nussbaum"
     },
-    "reference": "NSB-2671-22",
+    "reference": "NSB-9268-22",
     "name": "Tuyau acier inox 1:4521 Optipress Ø 22 mm",
+    "category": "tuyau_inox",
+    "specification": "Ø 22 mm",
+    "active": true,
     "unit": "m",
-    "base_price": 25.15
+    "base_price": 18.63
   },
   {
     "id": "st-4",
@@ -121,10 +151,13 @@ export const MOCK_CATALOGUE = [
       "code": "ST",
       "name": "Sanitas Troesch"
     },
-    "reference": "SAN.452270",
+    "reference": "SAN.220479",
     "name": "Tuyau acier inox 1:4521 Optipress Ø 22 mm",
+    "category": "tuyau_inox",
+    "specification": "Ø 22 mm",
+    "active": true,
     "unit": "m",
-    "base_price": 46.71
+    "base_price": 10.12
   },
   {
     "id": "gm-4",
@@ -132,10 +165,13 @@ export const MOCK_CATALOGUE = [
       "code": "GM",
       "name": "Getaz Miauton"
     },
-    "reference": "GM/88/1085",
+    "reference": "GM/76/2666",
     "name": "Tuyau acier inox 1:4521 Optipress Ø 22 mm",
+    "category": "tuyau_inox",
+    "specification": "Ø 22 mm",
+    "active": true,
     "unit": "m",
-    "base_price": 38.35
+    "base_price": 45.9
   },
   {
     "id": "nsb-5",
@@ -143,10 +179,13 @@ export const MOCK_CATALOGUE = [
       "code": "NSB",
       "name": "Nussbaum"
     },
-    "reference": "NSB-4684-28",
+    "reference": "NSB-2793-28",
     "name": "Tuyau acier inox 1:4521 Optipress Ø 28 mm",
+    "category": "tuyau_inox",
+    "specification": "Ø 28 mm",
+    "active": true,
     "unit": "m",
-    "base_price": 33.34
+    "base_price": 31.9
   },
   {
     "id": "st-5",
@@ -154,10 +193,13 @@ export const MOCK_CATALOGUE = [
       "code": "ST",
       "name": "Sanitas Troesch"
     },
-    "reference": "SAN.830918",
+    "reference": "SAN.259861",
     "name": "Tuyau acier inox 1:4521 Optipress Ø 28 mm",
+    "category": "tuyau_inox",
+    "specification": "Ø 28 mm",
+    "active": true,
     "unit": "m",
-    "base_price": 30.32
+    "base_price": 36.77
   },
   {
     "id": "gm-5",
@@ -165,10 +207,13 @@ export const MOCK_CATALOGUE = [
       "code": "GM",
       "name": "Getaz Miauton"
     },
-    "reference": "GM/51/1419",
+    "reference": "GM/76/1430",
     "name": "Tuyau acier inox 1:4521 Optipress Ø 28 mm",
+    "category": "tuyau_inox",
+    "specification": "Ø 28 mm",
+    "active": true,
     "unit": "m",
-    "base_price": 35.32
+    "base_price": 43.42
   },
   {
     "id": "nsb-6",
@@ -176,10 +221,13 @@ export const MOCK_CATALOGUE = [
       "code": "NSB",
       "name": "Nussbaum"
     },
-    "reference": "NSB-3701-35",
+    "reference": "NSB-8273-35",
     "name": "Tuyau acier inox 1:4521 Optipress Ø 35 mm",
+    "category": "tuyau_inox",
+    "specification": "Ø 35 mm",
+    "active": true,
     "unit": "m",
-    "base_price": 48.73
+    "base_price": 33.43
   },
   {
     "id": "st-6",
@@ -187,10 +235,13 @@ export const MOCK_CATALOGUE = [
       "code": "ST",
       "name": "Sanitas Troesch"
     },
-    "reference": "SAN.868228",
+    "reference": "SAN.557433",
     "name": "Tuyau acier inox 1:4521 Optipress Ø 35 mm",
+    "category": "tuyau_inox",
+    "specification": "Ø 35 mm",
+    "active": true,
     "unit": "m",
-    "base_price": 31.05
+    "base_price": 15.87
   },
   {
     "id": "gm-6",
@@ -198,10 +249,13 @@ export const MOCK_CATALOGUE = [
       "code": "GM",
       "name": "Getaz Miauton"
     },
-    "reference": "GM/10/7807",
+    "reference": "GM/78/8183",
     "name": "Tuyau acier inox 1:4521 Optipress Ø 35 mm",
+    "category": "tuyau_inox",
+    "specification": "Ø 35 mm",
+    "active": true,
     "unit": "m",
-    "base_price": 41.38
+    "base_price": 26.66
   },
   {
     "id": "nsb-7",
@@ -209,10 +263,13 @@ export const MOCK_CATALOGUE = [
       "code": "NSB",
       "name": "Nussbaum"
     },
-    "reference": "NSB-4683-42",
+    "reference": "NSB-3668-42",
     "name": "Tuyau acier inox 1:4521 Optipress Ø 42 mm",
+    "category": "tuyau_inox",
+    "specification": "Ø 42 mm",
+    "active": true,
     "unit": "m",
-    "base_price": 51.78
+    "base_price": 45.21
   },
   {
     "id": "st-7",
@@ -220,10 +277,13 @@ export const MOCK_CATALOGUE = [
       "code": "ST",
       "name": "Sanitas Troesch"
     },
-    "reference": "SAN.977718",
+    "reference": "SAN.479075",
     "name": "Tuyau acier inox 1:4521 Optipress Ø 42 mm",
+    "category": "tuyau_inox",
+    "specification": "Ø 42 mm",
+    "active": true,
     "unit": "m",
-    "base_price": 32.96
+    "base_price": 50.5
   },
   {
     "id": "gm-7",
@@ -231,10 +291,13 @@ export const MOCK_CATALOGUE = [
       "code": "GM",
       "name": "Getaz Miauton"
     },
-    "reference": "GM/86/8474",
+    "reference": "GM/74/2271",
     "name": "Tuyau acier inox 1:4521 Optipress Ø 42 mm",
+    "category": "tuyau_inox",
+    "specification": "Ø 42 mm",
+    "active": true,
     "unit": "m",
-    "base_price": 43.98
+    "base_price": 16.61
   },
   {
     "id": "nsb-8",
@@ -242,10 +305,13 @@ export const MOCK_CATALOGUE = [
       "code": "NSB",
       "name": "Nussbaum"
     },
-    "reference": "NSB-9887-54",
+    "reference": "NSB-7738-54",
     "name": "Tuyau acier inox 1:4521 Optipress Ø 54 mm",
+    "category": "tuyau_inox",
+    "specification": "Ø 54 mm",
+    "active": true,
     "unit": "m",
-    "base_price": 33.11
+    "base_price": 47.73
   },
   {
     "id": "st-8",
@@ -253,10 +319,13 @@ export const MOCK_CATALOGUE = [
       "code": "ST",
       "name": "Sanitas Troesch"
     },
-    "reference": "SAN.541044",
+    "reference": "SAN.275513",
     "name": "Tuyau acier inox 1:4521 Optipress Ø 54 mm",
+    "category": "tuyau_inox",
+    "specification": "Ø 54 mm",
+    "active": true,
     "unit": "m",
-    "base_price": 46.64
+    "base_price": 36.79
   },
   {
     "id": "gm-8",
@@ -264,10 +333,13 @@ export const MOCK_CATALOGUE = [
       "code": "GM",
       "name": "Getaz Miauton"
     },
-    "reference": "GM/31/2796",
+    "reference": "GM/19/2960",
     "name": "Tuyau acier inox 1:4521 Optipress Ø 54 mm",
+    "category": "tuyau_inox",
+    "specification": "Ø 54 mm",
+    "active": true,
     "unit": "m",
-    "base_price": 6.74
+    "base_price": 8.07
   },
   {
     "id": "nsb-9",
@@ -275,10 +347,13 @@ export const MOCK_CATALOGUE = [
       "code": "NSB",
       "name": "Nussbaum"
     },
-    "reference": "NSB-8580-76.1",
+    "reference": "NSB-3958-76.1",
     "name": "Tuyau acier inox 1:4521 Optipress Ø 76.1 mm",
+    "category": "tuyau_inox",
+    "specification": "Ø 76.1 mm",
+    "active": true,
     "unit": "m",
-    "base_price": 41.08
+    "base_price": 45.71
   },
   {
     "id": "st-9",
@@ -286,10 +361,13 @@ export const MOCK_CATALOGUE = [
       "code": "ST",
       "name": "Sanitas Troesch"
     },
-    "reference": "SAN.798318",
+    "reference": "SAN.255943",
     "name": "Tuyau acier inox 1:4521 Optipress Ø 76.1 mm",
+    "category": "tuyau_inox",
+    "specification": "Ø 76.1 mm",
+    "active": true,
     "unit": "m",
-    "base_price": 30.54
+    "base_price": 36.92
   },
   {
     "id": "gm-9",
@@ -297,10 +375,13 @@ export const MOCK_CATALOGUE = [
       "code": "GM",
       "name": "Getaz Miauton"
     },
-    "reference": "GM/31/5611",
+    "reference": "GM/46/2051",
     "name": "Tuyau acier inox 1:4521 Optipress Ø 76.1 mm",
+    "category": "tuyau_inox",
+    "specification": "Ø 76.1 mm",
+    "active": true,
     "unit": "m",
-    "base_price": 9.8
+    "base_price": 21.76
   },
   {
     "id": "nsb-10",
@@ -308,10 +389,13 @@ export const MOCK_CATALOGUE = [
       "code": "NSB",
       "name": "Nussbaum"
     },
-    "reference": "NSB-4471-88.9",
+    "reference": "NSB-2061-88.9",
     "name": "Tuyau acier inox 1:4521 Optipress Ø 88.9 mm",
+    "category": "tuyau_inox",
+    "specification": "Ø 88.9 mm",
+    "active": true,
     "unit": "m",
-    "base_price": 10.13
+    "base_price": 44.54
   },
   {
     "id": "st-10",
@@ -319,10 +403,13 @@ export const MOCK_CATALOGUE = [
       "code": "ST",
       "name": "Sanitas Troesch"
     },
-    "reference": "SAN.531959",
+    "reference": "SAN.828270",
     "name": "Tuyau acier inox 1:4521 Optipress Ø 88.9 mm",
+    "category": "tuyau_inox",
+    "specification": "Ø 88.9 mm",
+    "active": true,
     "unit": "m",
-    "base_price": 17.1
+    "base_price": 32.55
   },
   {
     "id": "gm-10",
@@ -330,10 +417,13 @@ export const MOCK_CATALOGUE = [
       "code": "GM",
       "name": "Getaz Miauton"
     },
-    "reference": "GM/25/2797",
+    "reference": "GM/28/4748",
     "name": "Tuyau acier inox 1:4521 Optipress Ø 88.9 mm",
+    "category": "tuyau_inox",
+    "specification": "Ø 88.9 mm",
+    "active": true,
     "unit": "m",
-    "base_price": 25.74
+    "base_price": 5.38
   },
   {
     "id": "nsb-11",
@@ -341,10 +431,13 @@ export const MOCK_CATALOGUE = [
       "code": "NSB",
       "name": "Nussbaum"
     },
-    "reference": "NSB-4797-108",
+    "reference": "NSB-9653-108",
     "name": "Tuyau acier inox 1:4521 Optipress Ø 108 mm",
+    "category": "tuyau_inox",
+    "specification": "Ø 108 mm",
+    "active": true,
     "unit": "m",
-    "base_price": 46.9
+    "base_price": 22.39
   },
   {
     "id": "st-11",
@@ -352,10 +445,13 @@ export const MOCK_CATALOGUE = [
       "code": "ST",
       "name": "Sanitas Troesch"
     },
-    "reference": "SAN.780060",
+    "reference": "SAN.598504",
     "name": "Tuyau acier inox 1:4521 Optipress Ø 108 mm",
+    "category": "tuyau_inox",
+    "specification": "Ø 108 mm",
+    "active": true,
     "unit": "m",
-    "base_price": 44.79
+    "base_price": 50.21
   },
   {
     "id": "gm-11",
@@ -363,10 +459,13 @@ export const MOCK_CATALOGUE = [
       "code": "GM",
       "name": "Getaz Miauton"
     },
-    "reference": "GM/45/2365",
+    "reference": "GM/12/3760",
     "name": "Tuyau acier inox 1:4521 Optipress Ø 108 mm",
+    "category": "tuyau_inox",
+    "specification": "Ø 108 mm",
+    "active": true,
     "unit": "m",
-    "base_price": 43.88
+    "base_price": 15.21
   },
   {
     "id": "nsb-12",
@@ -374,10 +473,13 @@ export const MOCK_CATALOGUE = [
       "code": "NSB",
       "name": "Nussbaum"
     },
-    "reference": "NSB-1693-12",
+    "reference": "NSB-2376-12",
     "name": "Tuyau de distribution Ø 12 mm",
+    "category": "tuyau_inox",
+    "specification": "Ø 12 mm",
+    "active": true,
     "unit": "m",
-    "base_price": 50.73
+    "base_price": 46.96
   },
   {
     "id": "st-12",
@@ -385,10 +487,13 @@ export const MOCK_CATALOGUE = [
       "code": "ST",
       "name": "Sanitas Troesch"
     },
-    "reference": "SAN.984585",
+    "reference": "SAN.900043",
     "name": "Tuyau de distribution Ø 12 mm",
+    "category": "tuyau_inox",
+    "specification": "Ø 12 mm",
+    "active": true,
     "unit": "m",
-    "base_price": 19.56
+    "base_price": 52.18
   },
   {
     "id": "gm-12",
@@ -396,10 +501,13 @@ export const MOCK_CATALOGUE = [
       "code": "GM",
       "name": "Getaz Miauton"
     },
-    "reference": "GM/45/4132",
+    "reference": "GM/87/2010",
     "name": "Tuyau de distribution Ø 12 mm",
+    "category": "tuyau_inox",
+    "specification": "Ø 12 mm",
+    "active": true,
     "unit": "m",
-    "base_price": 22.28
+    "base_price": 13.05
   },
   {
     "id": "nsb-13",
@@ -407,10 +515,13 @@ export const MOCK_CATALOGUE = [
       "code": "NSB",
       "name": "Nussbaum"
     },
-    "reference": "NSB-4654-15",
+    "reference": "NSB-1407-15",
     "name": "Tuyau de distribution Ø 15 mm",
+    "category": "tuyau_inox",
+    "specification": "Ø 15 mm",
+    "active": true,
     "unit": "m",
-    "base_price": 25.12
+    "base_price": 27.7
   },
   {
     "id": "st-13",
@@ -418,10 +529,13 @@ export const MOCK_CATALOGUE = [
       "code": "ST",
       "name": "Sanitas Troesch"
     },
-    "reference": "SAN.308159",
+    "reference": "SAN.111340",
     "name": "Tuyau de distribution Ø 15 mm",
+    "category": "tuyau_inox",
+    "specification": "Ø 15 mm",
+    "active": true,
     "unit": "m",
-    "base_price": 38.54
+    "base_price": 31.64
   },
   {
     "id": "gm-13",
@@ -429,10 +543,13 @@ export const MOCK_CATALOGUE = [
       "code": "GM",
       "name": "Getaz Miauton"
     },
-    "reference": "GM/45/3797",
+    "reference": "GM/27/7714",
     "name": "Tuyau de distribution Ø 15 mm",
+    "category": "tuyau_inox",
+    "specification": "Ø 15 mm",
+    "active": true,
     "unit": "m",
-    "base_price": 42.62
+    "base_price": 10.4
   },
   {
     "id": "nsb-14",
@@ -440,10 +557,13 @@ export const MOCK_CATALOGUE = [
       "code": "NSB",
       "name": "Nussbaum"
     },
-    "reference": "NSB-8953-18",
+    "reference": "NSB-3138-18",
     "name": "Tuyau de distribution Ø 18 mm",
+    "category": "tuyau_inox",
+    "specification": "Ø 18 mm",
+    "active": true,
     "unit": "m",
-    "base_price": 25
+    "base_price": 29.61
   },
   {
     "id": "st-14",
@@ -451,10 +571,13 @@ export const MOCK_CATALOGUE = [
       "code": "ST",
       "name": "Sanitas Troesch"
     },
-    "reference": "SAN.811068",
+    "reference": "SAN.649222",
     "name": "Tuyau de distribution Ø 18 mm",
+    "category": "tuyau_inox",
+    "specification": "Ø 18 mm",
+    "active": true,
     "unit": "m",
-    "base_price": 51.36
+    "base_price": 10.98
   },
   {
     "id": "gm-14",
@@ -462,10 +585,13 @@ export const MOCK_CATALOGUE = [
       "code": "GM",
       "name": "Getaz Miauton"
     },
-    "reference": "GM/67/1692",
+    "reference": "GM/46/4777",
     "name": "Tuyau de distribution Ø 18 mm",
+    "category": "tuyau_inox",
+    "specification": "Ø 18 mm",
+    "active": true,
     "unit": "m",
-    "base_price": 45.2
+    "base_price": 10.8
   },
   {
     "id": "nsb-15",
@@ -473,10 +599,13 @@ export const MOCK_CATALOGUE = [
       "code": "NSB",
       "name": "Nussbaum"
     },
-    "reference": "NSB-3603-22",
+    "reference": "NSB-4499-22",
     "name": "Tuyau de distribution Ø 22 mm",
+    "category": "tuyau_inox",
+    "specification": "Ø 22 mm",
+    "active": true,
     "unit": "m",
-    "base_price": 38.07
+    "base_price": 7.86
   },
   {
     "id": "st-15",
@@ -484,10 +613,13 @@ export const MOCK_CATALOGUE = [
       "code": "ST",
       "name": "Sanitas Troesch"
     },
-    "reference": "SAN.878057",
+    "reference": "SAN.131758",
     "name": "Tuyau de distribution Ø 22 mm",
+    "category": "tuyau_inox",
+    "specification": "Ø 22 mm",
+    "active": true,
     "unit": "m",
-    "base_price": 52.84
+    "base_price": 29.97
   },
   {
     "id": "gm-15",
@@ -495,10 +627,13 @@ export const MOCK_CATALOGUE = [
       "code": "GM",
       "name": "Getaz Miauton"
     },
-    "reference": "GM/36/1717",
+    "reference": "GM/38/1924",
     "name": "Tuyau de distribution Ø 22 mm",
+    "category": "tuyau_inox",
+    "specification": "Ø 22 mm",
+    "active": true,
     "unit": "m",
-    "base_price": 7.82
+    "base_price": 25.67
   },
   {
     "id": "nsb-16",
@@ -506,10 +641,13 @@ export const MOCK_CATALOGUE = [
       "code": "NSB",
       "name": "Nussbaum"
     },
-    "reference": "NSB-5015-28",
+    "reference": "NSB-2492-28",
     "name": "Tuyau de distribution Ø 28 mm",
+    "category": "tuyau_inox",
+    "specification": "Ø 28 mm",
+    "active": true,
     "unit": "m",
-    "base_price": 38.83
+    "base_price": 36.49
   },
   {
     "id": "st-16",
@@ -517,10 +655,13 @@ export const MOCK_CATALOGUE = [
       "code": "ST",
       "name": "Sanitas Troesch"
     },
-    "reference": "SAN.895368",
+    "reference": "SAN.771030",
     "name": "Tuyau de distribution Ø 28 mm",
+    "category": "tuyau_inox",
+    "specification": "Ø 28 mm",
+    "active": true,
     "unit": "m",
-    "base_price": 8.51
+    "base_price": 27.84
   },
   {
     "id": "gm-16",
@@ -528,10 +669,13 @@ export const MOCK_CATALOGUE = [
       "code": "GM",
       "name": "Getaz Miauton"
     },
-    "reference": "GM/84/8549",
+    "reference": "GM/90/5198",
     "name": "Tuyau de distribution Ø 28 mm",
+    "category": "tuyau_inox",
+    "specification": "Ø 28 mm",
+    "active": true,
     "unit": "m",
-    "base_price": 11.71
+    "base_price": 16.1
   },
   {
     "id": "nsb-17",
@@ -539,10 +683,13 @@ export const MOCK_CATALOGUE = [
       "code": "NSB",
       "name": "Nussbaum"
     },
-    "reference": "NSB-8709-35",
+    "reference": "NSB-4402-35",
     "name": "Tuyau de distribution Ø 35 mm",
+    "category": "tuyau_inox",
+    "specification": "Ø 35 mm",
+    "active": true,
     "unit": "m",
-    "base_price": 28.46
+    "base_price": 35.58
   },
   {
     "id": "st-17",
@@ -550,10 +697,13 @@ export const MOCK_CATALOGUE = [
       "code": "ST",
       "name": "Sanitas Troesch"
     },
-    "reference": "SAN.280826",
+    "reference": "SAN.966148",
     "name": "Tuyau de distribution Ø 35 mm",
+    "category": "tuyau_inox",
+    "specification": "Ø 35 mm",
+    "active": true,
     "unit": "m",
-    "base_price": 21.3
+    "base_price": 21.1
   },
   {
     "id": "gm-17",
@@ -561,10 +711,13 @@ export const MOCK_CATALOGUE = [
       "code": "GM",
       "name": "Getaz Miauton"
     },
-    "reference": "GM/89/3599",
+    "reference": "GM/28/3928",
     "name": "Tuyau de distribution Ø 35 mm",
+    "category": "tuyau_inox",
+    "specification": "Ø 35 mm",
+    "active": true,
     "unit": "m",
-    "base_price": 8.65
+    "base_price": 48.47
   },
   {
     "id": "nsb-18",
@@ -572,10 +725,13 @@ export const MOCK_CATALOGUE = [
       "code": "NSB",
       "name": "Nussbaum"
     },
-    "reference": "NSB-1110-42",
+    "reference": "NSB-1335-42",
     "name": "Tuyau de distribution Ø 42 mm",
+    "category": "tuyau_inox",
+    "specification": "Ø 42 mm",
+    "active": true,
     "unit": "m",
-    "base_price": 30.66
+    "base_price": 11.76
   },
   {
     "id": "st-18",
@@ -583,10 +739,13 @@ export const MOCK_CATALOGUE = [
       "code": "ST",
       "name": "Sanitas Troesch"
     },
-    "reference": "SAN.649584",
+    "reference": "SAN.184029",
     "name": "Tuyau de distribution Ø 42 mm",
+    "category": "tuyau_inox",
+    "specification": "Ø 42 mm",
+    "active": true,
     "unit": "m",
-    "base_price": 25.9
+    "base_price": 37.06
   },
   {
     "id": "gm-18",
@@ -594,10 +753,13 @@ export const MOCK_CATALOGUE = [
       "code": "GM",
       "name": "Getaz Miauton"
     },
-    "reference": "GM/40/7700",
+    "reference": "GM/22/9901",
     "name": "Tuyau de distribution Ø 42 mm",
+    "category": "tuyau_inox",
+    "specification": "Ø 42 mm",
+    "active": true,
     "unit": "m",
-    "base_price": 51.38
+    "base_price": 8.66
   },
   {
     "id": "nsb-19",
@@ -605,10 +767,13 @@ export const MOCK_CATALOGUE = [
       "code": "NSB",
       "name": "Nussbaum"
     },
-    "reference": "NSB-5761-54",
+    "reference": "NSB-7714-54",
     "name": "Tuyau de distribution Ø 54 mm",
+    "category": "tuyau_inox",
+    "specification": "Ø 54 mm",
+    "active": true,
     "unit": "m",
-    "base_price": 33.3
+    "base_price": 45.02
   },
   {
     "id": "st-19",
@@ -616,10 +781,13 @@ export const MOCK_CATALOGUE = [
       "code": "ST",
       "name": "Sanitas Troesch"
     },
-    "reference": "SAN.111560",
+    "reference": "SAN.614233",
     "name": "Tuyau de distribution Ø 54 mm",
+    "category": "tuyau_inox",
+    "specification": "Ø 54 mm",
+    "active": true,
     "unit": "m",
-    "base_price": 17.51
+    "base_price": 38.76
   },
   {
     "id": "gm-19",
@@ -627,10 +795,13 @@ export const MOCK_CATALOGUE = [
       "code": "GM",
       "name": "Getaz Miauton"
     },
-    "reference": "GM/68/8409",
+    "reference": "GM/34/4742",
     "name": "Tuyau de distribution Ø 54 mm",
+    "category": "tuyau_inox",
+    "specification": "Ø 54 mm",
+    "active": true,
     "unit": "m",
-    "base_price": 6.35
+    "base_price": 31.41
   },
   {
     "id": "nsb-20",
@@ -638,10 +809,13 @@ export const MOCK_CATALOGUE = [
       "code": "NSB",
       "name": "Nussbaum"
     },
-    "reference": "NSB-9311-76.1",
+    "reference": "NSB-1114-76.1",
     "name": "Tuyau de distribution Ø 76.1 mm",
+    "category": "tuyau_inox",
+    "specification": "Ø 76.1 mm",
+    "active": true,
     "unit": "m",
-    "base_price": 7.38
+    "base_price": 18.64
   },
   {
     "id": "st-20",
@@ -649,10 +823,13 @@ export const MOCK_CATALOGUE = [
       "code": "ST",
       "name": "Sanitas Troesch"
     },
-    "reference": "SAN.623663",
+    "reference": "SAN.891156",
     "name": "Tuyau de distribution Ø 76.1 mm",
+    "category": "tuyau_inox",
+    "specification": "Ø 76.1 mm",
+    "active": true,
     "unit": "m",
-    "base_price": 9.3
+    "base_price": 13.95
   },
   {
     "id": "gm-20",
@@ -660,10 +837,13 @@ export const MOCK_CATALOGUE = [
       "code": "GM",
       "name": "Getaz Miauton"
     },
-    "reference": "GM/64/1464",
+    "reference": "GM/83/2489",
     "name": "Tuyau de distribution Ø 76.1 mm",
+    "category": "tuyau_inox",
+    "specification": "Ø 76.1 mm",
+    "active": true,
     "unit": "m",
-    "base_price": 8.88
+    "base_price": 42.79
   },
   {
     "id": "nsb-21",
@@ -671,10 +851,13 @@ export const MOCK_CATALOGUE = [
       "code": "NSB",
       "name": "Nussbaum"
     },
-    "reference": "NSB-3007-88.9",
+    "reference": "NSB-5462-88.9",
     "name": "Tuyau de distribution Ø 88.9 mm",
+    "category": "tuyau_inox",
+    "specification": "Ø 88.9 mm",
+    "active": true,
     "unit": "m",
-    "base_price": 26.92
+    "base_price": 8.53
   },
   {
     "id": "st-21",
@@ -682,10 +865,13 @@ export const MOCK_CATALOGUE = [
       "code": "ST",
       "name": "Sanitas Troesch"
     },
-    "reference": "SAN.425527",
+    "reference": "SAN.403269",
     "name": "Tuyau de distribution Ø 88.9 mm",
+    "category": "tuyau_inox",
+    "specification": "Ø 88.9 mm",
+    "active": true,
     "unit": "m",
-    "base_price": 20.83
+    "base_price": 10.78
   },
   {
     "id": "gm-21",
@@ -693,10 +879,13 @@ export const MOCK_CATALOGUE = [
       "code": "GM",
       "name": "Getaz Miauton"
     },
-    "reference": "GM/95/5700",
+    "reference": "GM/76/2380",
     "name": "Tuyau de distribution Ø 88.9 mm",
+    "category": "tuyau_inox",
+    "specification": "Ø 88.9 mm",
+    "active": true,
     "unit": "m",
-    "base_price": 11.4
+    "base_price": 49.38
   },
   {
     "id": "nsb-22",
@@ -704,10 +893,13 @@ export const MOCK_CATALOGUE = [
       "code": "NSB",
       "name": "Nussbaum"
     },
-    "reference": "NSB-3101-108",
+    "reference": "NSB-6124-108",
     "name": "Tuyau de distribution Ø 108 mm",
+    "category": "tuyau_inox",
+    "specification": "Ø 108 mm",
+    "active": true,
     "unit": "m",
-    "base_price": 49.99
+    "base_price": 49.65
   },
   {
     "id": "st-22",
@@ -715,10 +907,13 @@ export const MOCK_CATALOGUE = [
       "code": "ST",
       "name": "Sanitas Troesch"
     },
-    "reference": "SAN.551580",
+    "reference": "SAN.229796",
     "name": "Tuyau de distribution Ø 108 mm",
+    "category": "tuyau_inox",
+    "specification": "Ø 108 mm",
+    "active": true,
     "unit": "m",
-    "base_price": 36.88
+    "base_price": 7.26
   },
   {
     "id": "gm-22",
@@ -726,10 +921,13 @@ export const MOCK_CATALOGUE = [
       "code": "GM",
       "name": "Getaz Miauton"
     },
-    "reference": "GM/49/6833",
+    "reference": "GM/41/8909",
     "name": "Tuyau de distribution Ø 108 mm",
+    "category": "tuyau_inox",
+    "specification": "Ø 108 mm",
+    "active": true,
     "unit": "m",
-    "base_price": 29.32
+    "base_price": 25.18
   },
   {
     "id": "nsb-23",
@@ -737,10 +935,13 @@ export const MOCK_CATALOGUE = [
       "code": "NSB",
       "name": "Nussbaum"
     },
-    "reference": "NSB-3149-12",
+    "reference": "NSB-4503-12",
     "name": "Coude à sertir 90° inox Ø 12 mm",
+    "category": "coude_sertir",
+    "specification": "Ø 12 mm",
+    "active": true,
     "unit": "p",
-    "base_price": 11.65
+    "base_price": 10.94
   },
   {
     "id": "st-23",
@@ -748,10 +949,13 @@ export const MOCK_CATALOGUE = [
       "code": "ST",
       "name": "Sanitas Troesch"
     },
-    "reference": "SAN.749105",
+    "reference": "SAN.297434",
     "name": "Coude à sertir 90° inox Ø 12 mm",
+    "category": "coude_sertir",
+    "specification": "Ø 12 mm",
+    "active": true,
     "unit": "p",
-    "base_price": 11.49
+    "base_price": 49.79
   },
   {
     "id": "gm-23",
@@ -759,10 +963,13 @@ export const MOCK_CATALOGUE = [
       "code": "GM",
       "name": "Getaz Miauton"
     },
-    "reference": "GM/20/7839",
+    "reference": "GM/33/4298",
     "name": "Coude à sertir 90° inox Ø 12 mm",
+    "category": "coude_sertir",
+    "specification": "Ø 12 mm",
+    "active": true,
     "unit": "p",
-    "base_price": 20.68
+    "base_price": 7.78
   },
   {
     "id": "nsb-24",
@@ -770,10 +977,13 @@ export const MOCK_CATALOGUE = [
       "code": "NSB",
       "name": "Nussbaum"
     },
-    "reference": "NSB-6734-15",
+    "reference": "NSB-7140-15",
     "name": "Coude à sertir 90° inox Ø 15 mm",
+    "category": "coude_sertir",
+    "specification": "Ø 15 mm",
+    "active": true,
     "unit": "p",
-    "base_price": 28.9
+    "base_price": 6.78
   },
   {
     "id": "st-24",
@@ -781,10 +991,13 @@ export const MOCK_CATALOGUE = [
       "code": "ST",
       "name": "Sanitas Troesch"
     },
-    "reference": "SAN.975071",
+    "reference": "SAN.814556",
     "name": "Coude à sertir 90° inox Ø 15 mm",
+    "category": "coude_sertir",
+    "specification": "Ø 15 mm",
+    "active": true,
     "unit": "p",
-    "base_price": 41.07
+    "base_price": 49.47
   },
   {
     "id": "gm-24",
@@ -792,10 +1005,13 @@ export const MOCK_CATALOGUE = [
       "code": "GM",
       "name": "Getaz Miauton"
     },
-    "reference": "GM/95/2927",
+    "reference": "GM/57/8924",
     "name": "Coude à sertir 90° inox Ø 15 mm",
+    "category": "coude_sertir",
+    "specification": "Ø 15 mm",
+    "active": true,
     "unit": "p",
-    "base_price": 40.72
+    "base_price": 19.66
   },
   {
     "id": "nsb-25",
@@ -803,10 +1019,13 @@ export const MOCK_CATALOGUE = [
       "code": "NSB",
       "name": "Nussbaum"
     },
-    "reference": "NSB-8841-18",
+    "reference": "NSB-4400-18",
     "name": "Coude à sertir 90° inox Ø 18 mm",
+    "category": "coude_sertir",
+    "specification": "Ø 18 mm",
+    "active": true,
     "unit": "p",
-    "base_price": 22.3
+    "base_price": 49.25
   },
   {
     "id": "st-25",
@@ -814,10 +1033,13 @@ export const MOCK_CATALOGUE = [
       "code": "ST",
       "name": "Sanitas Troesch"
     },
-    "reference": "SAN.725572",
+    "reference": "SAN.855348",
     "name": "Coude à sertir 90° inox Ø 18 mm",
+    "category": "coude_sertir",
+    "specification": "Ø 18 mm",
+    "active": true,
     "unit": "p",
-    "base_price": 46.16
+    "base_price": 26.13
   },
   {
     "id": "gm-25",
@@ -825,10 +1047,13 @@ export const MOCK_CATALOGUE = [
       "code": "GM",
       "name": "Getaz Miauton"
     },
-    "reference": "GM/78/7831",
+    "reference": "GM/90/1025",
     "name": "Coude à sertir 90° inox Ø 18 mm",
+    "category": "coude_sertir",
+    "specification": "Ø 18 mm",
+    "active": true,
     "unit": "p",
-    "base_price": 12.47
+    "base_price": 18.84
   },
   {
     "id": "nsb-26",
@@ -836,10 +1061,13 @@ export const MOCK_CATALOGUE = [
       "code": "NSB",
       "name": "Nussbaum"
     },
-    "reference": "NSB-3529-22",
+    "reference": "NSB-6254-22",
     "name": "Coude à sertir 90° inox Ø 22 mm",
+    "category": "coude_sertir",
+    "specification": "Ø 22 mm",
+    "active": true,
     "unit": "p",
-    "base_price": 29.37
+    "base_price": 38.86
   },
   {
     "id": "st-26",
@@ -847,10 +1075,13 @@ export const MOCK_CATALOGUE = [
       "code": "ST",
       "name": "Sanitas Troesch"
     },
-    "reference": "SAN.625799",
+    "reference": "SAN.946585",
     "name": "Coude à sertir 90° inox Ø 22 mm",
+    "category": "coude_sertir",
+    "specification": "Ø 22 mm",
+    "active": true,
     "unit": "p",
-    "base_price": 49.84
+    "base_price": 14.68
   },
   {
     "id": "gm-26",
@@ -858,10 +1089,13 @@ export const MOCK_CATALOGUE = [
       "code": "GM",
       "name": "Getaz Miauton"
     },
-    "reference": "GM/20/8486",
+    "reference": "GM/47/5269",
     "name": "Coude à sertir 90° inox Ø 22 mm",
+    "category": "coude_sertir",
+    "specification": "Ø 22 mm",
+    "active": true,
     "unit": "p",
-    "base_price": 24.95
+    "base_price": 54.37
   },
   {
     "id": "nsb-27",
@@ -869,10 +1103,13 @@ export const MOCK_CATALOGUE = [
       "code": "NSB",
       "name": "Nussbaum"
     },
-    "reference": "NSB-6199-28",
+    "reference": "NSB-9218-28",
     "name": "Coude à sertir 90° inox Ø 28 mm",
+    "category": "coude_sertir",
+    "specification": "Ø 28 mm",
+    "active": true,
     "unit": "p",
-    "base_price": 51.98
+    "base_price": 36.03
   },
   {
     "id": "st-27",
@@ -880,10 +1117,13 @@ export const MOCK_CATALOGUE = [
       "code": "ST",
       "name": "Sanitas Troesch"
     },
-    "reference": "SAN.957118",
+    "reference": "SAN.339702",
     "name": "Coude à sertir 90° inox Ø 28 mm",
+    "category": "coude_sertir",
+    "specification": "Ø 28 mm",
+    "active": true,
     "unit": "p",
-    "base_price": 5.08
+    "base_price": 37.57
   },
   {
     "id": "gm-27",
@@ -891,10 +1131,13 @@ export const MOCK_CATALOGUE = [
       "code": "GM",
       "name": "Getaz Miauton"
     },
-    "reference": "GM/76/9658",
+    "reference": "GM/26/3293",
     "name": "Coude à sertir 90° inox Ø 28 mm",
+    "category": "coude_sertir",
+    "specification": "Ø 28 mm",
+    "active": true,
     "unit": "p",
-    "base_price": 17.33
+    "base_price": 38.47
   },
   {
     "id": "nsb-28",
@@ -902,10 +1145,13 @@ export const MOCK_CATALOGUE = [
       "code": "NSB",
       "name": "Nussbaum"
     },
-    "reference": "NSB-3043-35",
+    "reference": "NSB-6995-35",
     "name": "Coude à sertir 90° inox Ø 35 mm",
+    "category": "coude_sertir",
+    "specification": "Ø 35 mm",
+    "active": true,
     "unit": "p",
-    "base_price": 50.52
+    "base_price": 32.82
   },
   {
     "id": "st-28",
@@ -913,10 +1159,13 @@ export const MOCK_CATALOGUE = [
       "code": "ST",
       "name": "Sanitas Troesch"
     },
-    "reference": "SAN.930109",
+    "reference": "SAN.341720",
     "name": "Coude à sertir 90° inox Ø 35 mm",
+    "category": "coude_sertir",
+    "specification": "Ø 35 mm",
+    "active": true,
     "unit": "p",
-    "base_price": 36.23
+    "base_price": 11.57
   },
   {
     "id": "gm-28",
@@ -924,10 +1173,13 @@ export const MOCK_CATALOGUE = [
       "code": "GM",
       "name": "Getaz Miauton"
     },
-    "reference": "GM/59/7762",
+    "reference": "GM/36/4828",
     "name": "Coude à sertir 90° inox Ø 35 mm",
+    "category": "coude_sertir",
+    "specification": "Ø 35 mm",
+    "active": true,
     "unit": "p",
-    "base_price": 52.44
+    "base_price": 6.86
   },
   {
     "id": "nsb-29",
@@ -935,10 +1187,13 @@ export const MOCK_CATALOGUE = [
       "code": "NSB",
       "name": "Nussbaum"
     },
-    "reference": "NSB-4540-42",
+    "reference": "NSB-8476-42",
     "name": "Coude à sertir 90° inox Ø 42 mm",
+    "category": "coude_sertir",
+    "specification": "Ø 42 mm",
+    "active": true,
     "unit": "p",
-    "base_price": 11.65
+    "base_price": 34.73
   },
   {
     "id": "st-29",
@@ -946,10 +1201,13 @@ export const MOCK_CATALOGUE = [
       "code": "ST",
       "name": "Sanitas Troesch"
     },
-    "reference": "SAN.106724",
+    "reference": "SAN.779062",
     "name": "Coude à sertir 90° inox Ø 42 mm",
+    "category": "coude_sertir",
+    "specification": "Ø 42 mm",
+    "active": true,
     "unit": "p",
-    "base_price": 31.21
+    "base_price": 48.36
   },
   {
     "id": "gm-29",
@@ -957,10 +1215,13 @@ export const MOCK_CATALOGUE = [
       "code": "GM",
       "name": "Getaz Miauton"
     },
-    "reference": "GM/82/1577",
+    "reference": "GM/39/8150",
     "name": "Coude à sertir 90° inox Ø 42 mm",
+    "category": "coude_sertir",
+    "specification": "Ø 42 mm",
+    "active": true,
     "unit": "p",
-    "base_price": 26.6
+    "base_price": 5.04
   },
   {
     "id": "nsb-30",
@@ -968,10 +1229,13 @@ export const MOCK_CATALOGUE = [
       "code": "NSB",
       "name": "Nussbaum"
     },
-    "reference": "NSB-1522-54",
+    "reference": "NSB-8477-54",
     "name": "Coude à sertir 90° inox Ø 54 mm",
+    "category": "coude_sertir",
+    "specification": "Ø 54 mm",
+    "active": true,
     "unit": "p",
-    "base_price": 30.03
+    "base_price": 25.08
   },
   {
     "id": "st-30",
@@ -979,10 +1243,13 @@ export const MOCK_CATALOGUE = [
       "code": "ST",
       "name": "Sanitas Troesch"
     },
-    "reference": "SAN.234392",
+    "reference": "SAN.664491",
     "name": "Coude à sertir 90° inox Ø 54 mm",
+    "category": "coude_sertir",
+    "specification": "Ø 54 mm",
+    "active": true,
     "unit": "p",
-    "base_price": 11.47
+    "base_price": 34.36
   },
   {
     "id": "gm-30",
@@ -990,10 +1257,13 @@ export const MOCK_CATALOGUE = [
       "code": "GM",
       "name": "Getaz Miauton"
     },
-    "reference": "GM/89/9972",
+    "reference": "GM/43/1749",
     "name": "Coude à sertir 90° inox Ø 54 mm",
+    "category": "coude_sertir",
+    "specification": "Ø 54 mm",
+    "active": true,
     "unit": "p",
-    "base_price": 37.6
+    "base_price": 14.89
   },
   {
     "id": "nsb-31",
@@ -1001,10 +1271,13 @@ export const MOCK_CATALOGUE = [
       "code": "NSB",
       "name": "Nussbaum"
     },
-    "reference": "NSB-8875-76.1",
+    "reference": "NSB-8151-76.1",
     "name": "Coude à sertir 90° inox Ø 76.1 mm",
+    "category": "coude_sertir",
+    "specification": "Ø 76.1 mm",
+    "active": true,
     "unit": "p",
-    "base_price": 51.52
+    "base_price": 14.1
   },
   {
     "id": "st-31",
@@ -1012,10 +1285,13 @@ export const MOCK_CATALOGUE = [
       "code": "ST",
       "name": "Sanitas Troesch"
     },
-    "reference": "SAN.367042",
+    "reference": "SAN.179084",
     "name": "Coude à sertir 90° inox Ø 76.1 mm",
+    "category": "coude_sertir",
+    "specification": "Ø 76.1 mm",
+    "active": true,
     "unit": "p",
-    "base_price": 31.5
+    "base_price": 40.83
   },
   {
     "id": "gm-31",
@@ -1023,10 +1299,13 @@ export const MOCK_CATALOGUE = [
       "code": "GM",
       "name": "Getaz Miauton"
     },
-    "reference": "GM/29/9294",
+    "reference": "GM/95/4088",
     "name": "Coude à sertir 90° inox Ø 76.1 mm",
+    "category": "coude_sertir",
+    "specification": "Ø 76.1 mm",
+    "active": true,
     "unit": "p",
-    "base_price": 19.96
+    "base_price": 19.55
   },
   {
     "id": "nsb-32",
@@ -1034,10 +1313,13 @@ export const MOCK_CATALOGUE = [
       "code": "NSB",
       "name": "Nussbaum"
     },
-    "reference": "NSB-8510-88.9",
+    "reference": "NSB-9953-88.9",
     "name": "Coude à sertir 90° inox Ø 88.9 mm",
+    "category": "coude_sertir",
+    "specification": "Ø 88.9 mm",
+    "active": true,
     "unit": "p",
-    "base_price": 34.6
+    "base_price": 47.32
   },
   {
     "id": "st-32",
@@ -1045,10 +1327,13 @@ export const MOCK_CATALOGUE = [
       "code": "ST",
       "name": "Sanitas Troesch"
     },
-    "reference": "SAN.404156",
+    "reference": "SAN.367096",
     "name": "Coude à sertir 90° inox Ø 88.9 mm",
+    "category": "coude_sertir",
+    "specification": "Ø 88.9 mm",
+    "active": true,
     "unit": "p",
-    "base_price": 16.78
+    "base_price": 51.51
   },
   {
     "id": "gm-32",
@@ -1056,10 +1341,13 @@ export const MOCK_CATALOGUE = [
       "code": "GM",
       "name": "Getaz Miauton"
     },
-    "reference": "GM/35/1612",
+    "reference": "GM/68/2940",
     "name": "Coude à sertir 90° inox Ø 88.9 mm",
+    "category": "coude_sertir",
+    "specification": "Ø 88.9 mm",
+    "active": true,
     "unit": "p",
-    "base_price": 11.64
+    "base_price": 35.22
   },
   {
     "id": "nsb-33",
@@ -1067,10 +1355,13 @@ export const MOCK_CATALOGUE = [
       "code": "NSB",
       "name": "Nussbaum"
     },
-    "reference": "NSB-8449-108",
+    "reference": "NSB-8788-108",
     "name": "Coude à sertir 90° inox Ø 108 mm",
+    "category": "coude_sertir",
+    "specification": "Ø 108 mm",
+    "active": true,
     "unit": "p",
-    "base_price": 30.28
+    "base_price": 45.51
   },
   {
     "id": "st-33",
@@ -1078,10 +1369,13 @@ export const MOCK_CATALOGUE = [
       "code": "ST",
       "name": "Sanitas Troesch"
     },
-    "reference": "SAN.221576",
+    "reference": "SAN.315763",
     "name": "Coude à sertir 90° inox Ø 108 mm",
+    "category": "coude_sertir",
+    "specification": "Ø 108 mm",
+    "active": true,
     "unit": "p",
-    "base_price": 42.7
+    "base_price": 41.55
   },
   {
     "id": "gm-33",
@@ -1089,10 +1383,13 @@ export const MOCK_CATALOGUE = [
       "code": "GM",
       "name": "Getaz Miauton"
     },
-    "reference": "GM/17/9969",
+    "reference": "GM/74/6246",
     "name": "Coude à sertir 90° inox Ø 108 mm",
+    "category": "coude_sertir",
+    "specification": "Ø 108 mm",
+    "active": true,
     "unit": "p",
-    "base_price": 22.43
+    "base_price": 52.47
   },
   {
     "id": "nsb-34",
@@ -1100,10 +1397,13 @@ export const MOCK_CATALOGUE = [
       "code": "NSB",
       "name": "Nussbaum"
     },
-    "reference": "NSB-6212-12",
+    "reference": "NSB-9573-12",
     "name": "Coude à sertir 45° inox Ø 12 mm",
+    "category": "coude_sertir",
+    "specification": "Ø 12 mm",
+    "active": true,
     "unit": "p",
-    "base_price": 41.44
+    "base_price": 42.52
   },
   {
     "id": "st-34",
@@ -1111,10 +1411,13 @@ export const MOCK_CATALOGUE = [
       "code": "ST",
       "name": "Sanitas Troesch"
     },
-    "reference": "SAN.305983",
+    "reference": "SAN.188291",
     "name": "Coude à sertir 45° inox Ø 12 mm",
+    "category": "coude_sertir",
+    "specification": "Ø 12 mm",
+    "active": true,
     "unit": "p",
-    "base_price": 25.41
+    "base_price": 11.91
   },
   {
     "id": "gm-34",
@@ -1122,10 +1425,13 @@ export const MOCK_CATALOGUE = [
       "code": "GM",
       "name": "Getaz Miauton"
     },
-    "reference": "GM/42/1589",
+    "reference": "GM/29/1570",
     "name": "Coude à sertir 45° inox Ø 12 mm",
+    "category": "coude_sertir",
+    "specification": "Ø 12 mm",
+    "active": true,
     "unit": "p",
-    "base_price": 17.34
+    "base_price": 27.75
   },
   {
     "id": "nsb-35",
@@ -1133,10 +1439,13 @@ export const MOCK_CATALOGUE = [
       "code": "NSB",
       "name": "Nussbaum"
     },
-    "reference": "NSB-4442-15",
+    "reference": "NSB-9707-15",
     "name": "Coude à sertir 45° inox Ø 15 mm",
+    "category": "coude_sertir",
+    "specification": "Ø 15 mm",
+    "active": true,
     "unit": "p",
-    "base_price": 48.07
+    "base_price": 7.93
   },
   {
     "id": "st-35",
@@ -1144,10 +1453,13 @@ export const MOCK_CATALOGUE = [
       "code": "ST",
       "name": "Sanitas Troesch"
     },
-    "reference": "SAN.194062",
+    "reference": "SAN.187206",
     "name": "Coude à sertir 45° inox Ø 15 mm",
+    "category": "coude_sertir",
+    "specification": "Ø 15 mm",
+    "active": true,
     "unit": "p",
-    "base_price": 42.18
+    "base_price": 32.86
   },
   {
     "id": "gm-35",
@@ -1155,10 +1467,13 @@ export const MOCK_CATALOGUE = [
       "code": "GM",
       "name": "Getaz Miauton"
     },
-    "reference": "GM/91/2719",
+    "reference": "GM/44/2793",
     "name": "Coude à sertir 45° inox Ø 15 mm",
+    "category": "coude_sertir",
+    "specification": "Ø 15 mm",
+    "active": true,
     "unit": "p",
-    "base_price": 40.1
+    "base_price": 49.25
   },
   {
     "id": "nsb-36",
@@ -1166,10 +1481,13 @@ export const MOCK_CATALOGUE = [
       "code": "NSB",
       "name": "Nussbaum"
     },
-    "reference": "NSB-3835-18",
+    "reference": "NSB-5917-18",
     "name": "Coude à sertir 45° inox Ø 18 mm",
+    "category": "coude_sertir",
+    "specification": "Ø 18 mm",
+    "active": true,
     "unit": "p",
-    "base_price": 28.03
+    "base_price": 33.37
   },
   {
     "id": "st-36",
@@ -1177,10 +1495,13 @@ export const MOCK_CATALOGUE = [
       "code": "ST",
       "name": "Sanitas Troesch"
     },
-    "reference": "SAN.354004",
+    "reference": "SAN.239574",
     "name": "Coude à sertir 45° inox Ø 18 mm",
+    "category": "coude_sertir",
+    "specification": "Ø 18 mm",
+    "active": true,
     "unit": "p",
-    "base_price": 13.45
+    "base_price": 28.29
   },
   {
     "id": "gm-36",
@@ -1188,10 +1509,13 @@ export const MOCK_CATALOGUE = [
       "code": "GM",
       "name": "Getaz Miauton"
     },
-    "reference": "GM/95/8724",
+    "reference": "GM/34/7074",
     "name": "Coude à sertir 45° inox Ø 18 mm",
+    "category": "coude_sertir",
+    "specification": "Ø 18 mm",
+    "active": true,
     "unit": "p",
-    "base_price": 49.22
+    "base_price": 32.36
   },
   {
     "id": "nsb-37",
@@ -1199,10 +1523,13 @@ export const MOCK_CATALOGUE = [
       "code": "NSB",
       "name": "Nussbaum"
     },
-    "reference": "NSB-3377-22",
+    "reference": "NSB-5233-22",
     "name": "Coude à sertir 45° inox Ø 22 mm",
+    "category": "coude_sertir",
+    "specification": "Ø 22 mm",
+    "active": true,
     "unit": "p",
-    "base_price": 33.46
+    "base_price": 17.61
   },
   {
     "id": "st-37",
@@ -1210,10 +1537,13 @@ export const MOCK_CATALOGUE = [
       "code": "ST",
       "name": "Sanitas Troesch"
     },
-    "reference": "SAN.688928",
+    "reference": "SAN.793957",
     "name": "Coude à sertir 45° inox Ø 22 mm",
+    "category": "coude_sertir",
+    "specification": "Ø 22 mm",
+    "active": true,
     "unit": "p",
-    "base_price": 21.24
+    "base_price": 19.56
   },
   {
     "id": "gm-37",
@@ -1221,10 +1551,13 @@ export const MOCK_CATALOGUE = [
       "code": "GM",
       "name": "Getaz Miauton"
     },
-    "reference": "GM/85/9001",
+    "reference": "GM/81/4502",
     "name": "Coude à sertir 45° inox Ø 22 mm",
+    "category": "coude_sertir",
+    "specification": "Ø 22 mm",
+    "active": true,
     "unit": "p",
-    "base_price": 44.03
+    "base_price": 45.67
   },
   {
     "id": "nsb-38",
@@ -1232,10 +1565,13 @@ export const MOCK_CATALOGUE = [
       "code": "NSB",
       "name": "Nussbaum"
     },
-    "reference": "NSB-7584-28",
+    "reference": "NSB-1982-28",
     "name": "Coude à sertir 45° inox Ø 28 mm",
+    "category": "coude_sertir",
+    "specification": "Ø 28 mm",
+    "active": true,
     "unit": "p",
-    "base_price": 29.43
+    "base_price": 40.16
   },
   {
     "id": "st-38",
@@ -1243,10 +1579,13 @@ export const MOCK_CATALOGUE = [
       "code": "ST",
       "name": "Sanitas Troesch"
     },
-    "reference": "SAN.546381",
+    "reference": "SAN.770268",
     "name": "Coude à sertir 45° inox Ø 28 mm",
+    "category": "coude_sertir",
+    "specification": "Ø 28 mm",
+    "active": true,
     "unit": "p",
-    "base_price": 53.25
+    "base_price": 34.15
   },
   {
     "id": "gm-38",
@@ -1254,10 +1593,13 @@ export const MOCK_CATALOGUE = [
       "code": "GM",
       "name": "Getaz Miauton"
     },
-    "reference": "GM/51/6906",
+    "reference": "GM/58/4309",
     "name": "Coude à sertir 45° inox Ø 28 mm",
+    "category": "coude_sertir",
+    "specification": "Ø 28 mm",
+    "active": true,
     "unit": "p",
-    "base_price": 16.06
+    "base_price": 45.32
   },
   {
     "id": "nsb-39",
@@ -1265,10 +1607,13 @@ export const MOCK_CATALOGUE = [
       "code": "NSB",
       "name": "Nussbaum"
     },
-    "reference": "NSB-4389-35",
+    "reference": "NSB-7338-35",
     "name": "Coude à sertir 45° inox Ø 35 mm",
+    "category": "coude_sertir",
+    "specification": "Ø 35 mm",
+    "active": true,
     "unit": "p",
-    "base_price": 5.1
+    "base_price": 43.58
   },
   {
     "id": "st-39",
@@ -1276,10 +1621,13 @@ export const MOCK_CATALOGUE = [
       "code": "ST",
       "name": "Sanitas Troesch"
     },
-    "reference": "SAN.485901",
+    "reference": "SAN.216747",
     "name": "Coude à sertir 45° inox Ø 35 mm",
+    "category": "coude_sertir",
+    "specification": "Ø 35 mm",
+    "active": true,
     "unit": "p",
-    "base_price": 32.78
+    "base_price": 41.04
   },
   {
     "id": "gm-39",
@@ -1287,10 +1635,13 @@ export const MOCK_CATALOGUE = [
       "code": "GM",
       "name": "Getaz Miauton"
     },
-    "reference": "GM/31/4783",
+    "reference": "GM/47/4833",
     "name": "Coude à sertir 45° inox Ø 35 mm",
+    "category": "coude_sertir",
+    "specification": "Ø 35 mm",
+    "active": true,
     "unit": "p",
-    "base_price": 26.41
+    "base_price": 26.34
   },
   {
     "id": "nsb-40",
@@ -1298,10 +1649,13 @@ export const MOCK_CATALOGUE = [
       "code": "NSB",
       "name": "Nussbaum"
     },
-    "reference": "NSB-2218-42",
+    "reference": "NSB-9615-42",
     "name": "Coude à sertir 45° inox Ø 42 mm",
+    "category": "coude_sertir",
+    "specification": "Ø 42 mm",
+    "active": true,
     "unit": "p",
-    "base_price": 19.28
+    "base_price": 16.46
   },
   {
     "id": "st-40",
@@ -1309,10 +1663,13 @@ export const MOCK_CATALOGUE = [
       "code": "ST",
       "name": "Sanitas Troesch"
     },
-    "reference": "SAN.677951",
+    "reference": "SAN.604373",
     "name": "Coude à sertir 45° inox Ø 42 mm",
+    "category": "coude_sertir",
+    "specification": "Ø 42 mm",
+    "active": true,
     "unit": "p",
-    "base_price": 29.27
+    "base_price": 42.04
   },
   {
     "id": "gm-40",
@@ -1320,10 +1677,13 @@ export const MOCK_CATALOGUE = [
       "code": "GM",
       "name": "Getaz Miauton"
     },
-    "reference": "GM/27/2102",
+    "reference": "GM/27/6259",
     "name": "Coude à sertir 45° inox Ø 42 mm",
+    "category": "coude_sertir",
+    "specification": "Ø 42 mm",
+    "active": true,
     "unit": "p",
-    "base_price": 51.79
+    "base_price": 21.38
   },
   {
     "id": "nsb-41",
@@ -1331,10 +1691,13 @@ export const MOCK_CATALOGUE = [
       "code": "NSB",
       "name": "Nussbaum"
     },
-    "reference": "NSB-3216-54",
+    "reference": "NSB-4748-54",
     "name": "Coude à sertir 45° inox Ø 54 mm",
+    "category": "coude_sertir",
+    "specification": "Ø 54 mm",
+    "active": true,
     "unit": "p",
-    "base_price": 49.96
+    "base_price": 32.08
   },
   {
     "id": "st-41",
@@ -1342,10 +1705,13 @@ export const MOCK_CATALOGUE = [
       "code": "ST",
       "name": "Sanitas Troesch"
     },
-    "reference": "SAN.223727",
+    "reference": "SAN.517352",
     "name": "Coude à sertir 45° inox Ø 54 mm",
+    "category": "coude_sertir",
+    "specification": "Ø 54 mm",
+    "active": true,
     "unit": "p",
-    "base_price": 20.77
+    "base_price": 7.37
   },
   {
     "id": "gm-41",
@@ -1353,10 +1719,13 @@ export const MOCK_CATALOGUE = [
       "code": "GM",
       "name": "Getaz Miauton"
     },
-    "reference": "GM/30/8618",
+    "reference": "GM/43/2157",
     "name": "Coude à sertir 45° inox Ø 54 mm",
+    "category": "coude_sertir",
+    "specification": "Ø 54 mm",
+    "active": true,
     "unit": "p",
-    "base_price": 53.08
+    "base_price": 8.25
   },
   {
     "id": "nsb-42",
@@ -1364,10 +1733,13 @@ export const MOCK_CATALOGUE = [
       "code": "NSB",
       "name": "Nussbaum"
     },
-    "reference": "NSB-7974-76.1",
+    "reference": "NSB-2701-76.1",
     "name": "Coude à sertir 45° inox Ø 76.1 mm",
+    "category": "coude_sertir",
+    "specification": "Ø 76.1 mm",
+    "active": true,
     "unit": "p",
-    "base_price": 51
+    "base_price": 17.72
   },
   {
     "id": "st-42",
@@ -1375,10 +1747,13 @@ export const MOCK_CATALOGUE = [
       "code": "ST",
       "name": "Sanitas Troesch"
     },
-    "reference": "SAN.388796",
+    "reference": "SAN.570985",
     "name": "Coude à sertir 45° inox Ø 76.1 mm",
+    "category": "coude_sertir",
+    "specification": "Ø 76.1 mm",
+    "active": true,
     "unit": "p",
-    "base_price": 32.99
+    "base_price": 45.19
   },
   {
     "id": "gm-42",
@@ -1386,10 +1761,13 @@ export const MOCK_CATALOGUE = [
       "code": "GM",
       "name": "Getaz Miauton"
     },
-    "reference": "GM/36/2009",
+    "reference": "GM/82/2547",
     "name": "Coude à sertir 45° inox Ø 76.1 mm",
+    "category": "coude_sertir",
+    "specification": "Ø 76.1 mm",
+    "active": true,
     "unit": "p",
-    "base_price": 25.51
+    "base_price": 35.47
   },
   {
     "id": "nsb-43",
@@ -1397,10 +1775,13 @@ export const MOCK_CATALOGUE = [
       "code": "NSB",
       "name": "Nussbaum"
     },
-    "reference": "NSB-4606-88.9",
+    "reference": "NSB-9339-88.9",
     "name": "Coude à sertir 45° inox Ø 88.9 mm",
+    "category": "coude_sertir",
+    "specification": "Ø 88.9 mm",
+    "active": true,
     "unit": "p",
-    "base_price": 37.15
+    "base_price": 32.14
   },
   {
     "id": "st-43",
@@ -1408,10 +1789,13 @@ export const MOCK_CATALOGUE = [
       "code": "ST",
       "name": "Sanitas Troesch"
     },
-    "reference": "SAN.171167",
+    "reference": "SAN.955099",
     "name": "Coude à sertir 45° inox Ø 88.9 mm",
+    "category": "coude_sertir",
+    "specification": "Ø 88.9 mm",
+    "active": true,
     "unit": "p",
-    "base_price": 19.64
+    "base_price": 11.36
   },
   {
     "id": "gm-43",
@@ -1419,10 +1803,13 @@ export const MOCK_CATALOGUE = [
       "code": "GM",
       "name": "Getaz Miauton"
     },
-    "reference": "GM/89/2293",
+    "reference": "GM/79/1541",
     "name": "Coude à sertir 45° inox Ø 88.9 mm",
+    "category": "coude_sertir",
+    "specification": "Ø 88.9 mm",
+    "active": true,
     "unit": "p",
-    "base_price": 32.41
+    "base_price": 19.57
   },
   {
     "id": "nsb-44",
@@ -1430,10 +1817,13 @@ export const MOCK_CATALOGUE = [
       "code": "NSB",
       "name": "Nussbaum"
     },
-    "reference": "NSB-7851-108",
+    "reference": "NSB-9965-108",
     "name": "Coude à sertir 45° inox Ø 108 mm",
+    "category": "coude_sertir",
+    "specification": "Ø 108 mm",
+    "active": true,
     "unit": "p",
-    "base_price": 45.11
+    "base_price": 50.53
   },
   {
     "id": "st-44",
@@ -1441,10 +1831,13 @@ export const MOCK_CATALOGUE = [
       "code": "ST",
       "name": "Sanitas Troesch"
     },
-    "reference": "SAN.566084",
+    "reference": "SAN.426801",
     "name": "Coude à sertir 45° inox Ø 108 mm",
+    "category": "coude_sertir",
+    "specification": "Ø 108 mm",
+    "active": true,
     "unit": "p",
-    "base_price": 48.99
+    "base_price": 8.85
   },
   {
     "id": "gm-44",
@@ -1452,10 +1845,13 @@ export const MOCK_CATALOGUE = [
       "code": "GM",
       "name": "Getaz Miauton"
     },
-    "reference": "GM/75/5028",
+    "reference": "GM/21/8785",
     "name": "Coude à sertir 45° inox Ø 108 mm",
+    "category": "coude_sertir",
+    "specification": "Ø 108 mm",
+    "active": true,
     "unit": "p",
-    "base_price": 34.22
+    "base_price": 10.47
   },
   {
     "id": "nsb-45",
@@ -1463,10 +1859,13 @@ export const MOCK_CATALOGUE = [
       "code": "NSB",
       "name": "Nussbaum"
     },
-    "reference": "NSB-6566-12",
+    "reference": "NSB-9472-12",
     "name": "Manchon coulissant à sertir inox Ø 12 mm",
+    "category": "manchon",
+    "specification": "Ø 12 mm",
+    "active": true,
     "unit": "p",
-    "base_price": 22.92
+    "base_price": 51.94
   },
   {
     "id": "st-45",
@@ -1474,10 +1873,13 @@ export const MOCK_CATALOGUE = [
       "code": "ST",
       "name": "Sanitas Troesch"
     },
-    "reference": "SAN.311941",
+    "reference": "SAN.421961",
     "name": "Manchon coulissant à sertir inox Ø 12 mm",
+    "category": "manchon",
+    "specification": "Ø 12 mm",
+    "active": true,
     "unit": "p",
-    "base_price": 29.17
+    "base_price": 6.57
   },
   {
     "id": "gm-45",
@@ -1485,10 +1887,13 @@ export const MOCK_CATALOGUE = [
       "code": "GM",
       "name": "Getaz Miauton"
     },
-    "reference": "GM/38/9874",
+    "reference": "GM/53/6346",
     "name": "Manchon coulissant à sertir inox Ø 12 mm",
+    "category": "manchon",
+    "specification": "Ø 12 mm",
+    "active": true,
     "unit": "p",
-    "base_price": 10.35
+    "base_price": 9.68
   },
   {
     "id": "nsb-46",
@@ -1496,10 +1901,13 @@ export const MOCK_CATALOGUE = [
       "code": "NSB",
       "name": "Nussbaum"
     },
-    "reference": "NSB-9179-15",
+    "reference": "NSB-3429-15",
     "name": "Manchon coulissant à sertir inox Ø 15 mm",
+    "category": "manchon",
+    "specification": "Ø 15 mm",
+    "active": true,
     "unit": "p",
-    "base_price": 46.48
+    "base_price": 23.35
   },
   {
     "id": "st-46",
@@ -1507,10 +1915,13 @@ export const MOCK_CATALOGUE = [
       "code": "ST",
       "name": "Sanitas Troesch"
     },
-    "reference": "SAN.591937",
+    "reference": "SAN.347195",
     "name": "Manchon coulissant à sertir inox Ø 15 mm",
+    "category": "manchon",
+    "specification": "Ø 15 mm",
+    "active": true,
     "unit": "p",
-    "base_price": 5.73
+    "base_price": 54.79
   },
   {
     "id": "gm-46",
@@ -1518,10 +1929,13 @@ export const MOCK_CATALOGUE = [
       "code": "GM",
       "name": "Getaz Miauton"
     },
-    "reference": "GM/62/4509",
+    "reference": "GM/69/2580",
     "name": "Manchon coulissant à sertir inox Ø 15 mm",
+    "category": "manchon",
+    "specification": "Ø 15 mm",
+    "active": true,
     "unit": "p",
-    "base_price": 12.68
+    "base_price": 5.03
   },
   {
     "id": "nsb-47",
@@ -1529,10 +1943,13 @@ export const MOCK_CATALOGUE = [
       "code": "NSB",
       "name": "Nussbaum"
     },
-    "reference": "NSB-3952-18",
+    "reference": "NSB-7724-18",
     "name": "Manchon coulissant à sertir inox Ø 18 mm",
+    "category": "manchon",
+    "specification": "Ø 18 mm",
+    "active": true,
     "unit": "p",
-    "base_price": 51.12
+    "base_price": 24.55
   },
   {
     "id": "st-47",
@@ -1540,10 +1957,13 @@ export const MOCK_CATALOGUE = [
       "code": "ST",
       "name": "Sanitas Troesch"
     },
-    "reference": "SAN.343853",
+    "reference": "SAN.406347",
     "name": "Manchon coulissant à sertir inox Ø 18 mm",
+    "category": "manchon",
+    "specification": "Ø 18 mm",
+    "active": true,
     "unit": "p",
-    "base_price": 21.31
+    "base_price": 53.24
   },
   {
     "id": "gm-47",
@@ -1551,10 +1971,13 @@ export const MOCK_CATALOGUE = [
       "code": "GM",
       "name": "Getaz Miauton"
     },
-    "reference": "GM/37/6771",
+    "reference": "GM/35/6321",
     "name": "Manchon coulissant à sertir inox Ø 18 mm",
+    "category": "manchon",
+    "specification": "Ø 18 mm",
+    "active": true,
     "unit": "p",
-    "base_price": 51.77
+    "base_price": 34.97
   },
   {
     "id": "nsb-48",
@@ -1562,10 +1985,13 @@ export const MOCK_CATALOGUE = [
       "code": "NSB",
       "name": "Nussbaum"
     },
-    "reference": "NSB-9050-22",
+    "reference": "NSB-9036-22",
     "name": "Manchon coulissant à sertir inox Ø 22 mm",
+    "category": "manchon",
+    "specification": "Ø 22 mm",
+    "active": true,
     "unit": "p",
-    "base_price": 46.75
+    "base_price": 42.87
   },
   {
     "id": "st-48",
@@ -1573,10 +1999,13 @@ export const MOCK_CATALOGUE = [
       "code": "ST",
       "name": "Sanitas Troesch"
     },
-    "reference": "SAN.173329",
+    "reference": "SAN.918672",
     "name": "Manchon coulissant à sertir inox Ø 22 mm",
+    "category": "manchon",
+    "specification": "Ø 22 mm",
+    "active": true,
     "unit": "p",
-    "base_price": 42.74
+    "base_price": 8.96
   },
   {
     "id": "gm-48",
@@ -1584,10 +2013,13 @@ export const MOCK_CATALOGUE = [
       "code": "GM",
       "name": "Getaz Miauton"
     },
-    "reference": "GM/26/8767",
+    "reference": "GM/88/7004",
     "name": "Manchon coulissant à sertir inox Ø 22 mm",
+    "category": "manchon",
+    "specification": "Ø 22 mm",
+    "active": true,
     "unit": "p",
-    "base_price": 40.31
+    "base_price": 42.23
   },
   {
     "id": "nsb-49",
@@ -1595,10 +2027,13 @@ export const MOCK_CATALOGUE = [
       "code": "NSB",
       "name": "Nussbaum"
     },
-    "reference": "NSB-3397-28",
+    "reference": "NSB-8227-28",
     "name": "Manchon coulissant à sertir inox Ø 28 mm",
+    "category": "manchon",
+    "specification": "Ø 28 mm",
+    "active": true,
     "unit": "p",
-    "base_price": 9.64
+    "base_price": 48.72
   },
   {
     "id": "st-49",
@@ -1606,10 +2041,13 @@ export const MOCK_CATALOGUE = [
       "code": "ST",
       "name": "Sanitas Troesch"
     },
-    "reference": "SAN.893796",
+    "reference": "SAN.501076",
     "name": "Manchon coulissant à sertir inox Ø 28 mm",
+    "category": "manchon",
+    "specification": "Ø 28 mm",
+    "active": true,
     "unit": "p",
-    "base_price": 25.74
+    "base_price": 7.98
   },
   {
     "id": "gm-49",
@@ -1617,10 +2055,13 @@ export const MOCK_CATALOGUE = [
       "code": "GM",
       "name": "Getaz Miauton"
     },
-    "reference": "GM/64/8649",
+    "reference": "GM/71/2122",
     "name": "Manchon coulissant à sertir inox Ø 28 mm",
+    "category": "manchon",
+    "specification": "Ø 28 mm",
+    "active": true,
     "unit": "p",
-    "base_price": 26.02
+    "base_price": 33.76
   },
   {
     "id": "nsb-50",
@@ -1628,10 +2069,13 @@ export const MOCK_CATALOGUE = [
       "code": "NSB",
       "name": "Nussbaum"
     },
-    "reference": "NSB-7924-35",
+    "reference": "NSB-8017-35",
     "name": "Manchon coulissant à sertir inox Ø 35 mm",
+    "category": "manchon",
+    "specification": "Ø 35 mm",
+    "active": true,
     "unit": "p",
-    "base_price": 30.53
+    "base_price": 44.61
   },
   {
     "id": "st-50",
@@ -1639,10 +2083,13 @@ export const MOCK_CATALOGUE = [
       "code": "ST",
       "name": "Sanitas Troesch"
     },
-    "reference": "SAN.205150",
+    "reference": "SAN.933004",
     "name": "Manchon coulissant à sertir inox Ø 35 mm",
+    "category": "manchon",
+    "specification": "Ø 35 mm",
+    "active": true,
     "unit": "p",
-    "base_price": 10.1
+    "base_price": 53.44
   },
   {
     "id": "gm-50",
@@ -1650,10 +2097,13 @@ export const MOCK_CATALOGUE = [
       "code": "GM",
       "name": "Getaz Miauton"
     },
-    "reference": "GM/54/1177",
+    "reference": "GM/99/2870",
     "name": "Manchon coulissant à sertir inox Ø 35 mm",
+    "category": "manchon",
+    "specification": "Ø 35 mm",
+    "active": true,
     "unit": "p",
-    "base_price": 33.05
+    "base_price": 38.32
   },
   {
     "id": "nsb-51",
@@ -1661,10 +2111,13 @@ export const MOCK_CATALOGUE = [
       "code": "NSB",
       "name": "Nussbaum"
     },
-    "reference": "NSB-5578-42",
+    "reference": "NSB-6110-42",
     "name": "Manchon coulissant à sertir inox Ø 42 mm",
+    "category": "manchon",
+    "specification": "Ø 42 mm",
+    "active": true,
     "unit": "p",
-    "base_price": 26.93
+    "base_price": 27.58
   },
   {
     "id": "st-51",
@@ -1672,10 +2125,13 @@ export const MOCK_CATALOGUE = [
       "code": "ST",
       "name": "Sanitas Troesch"
     },
-    "reference": "SAN.343223",
+    "reference": "SAN.351115",
     "name": "Manchon coulissant à sertir inox Ø 42 mm",
+    "category": "manchon",
+    "specification": "Ø 42 mm",
+    "active": true,
     "unit": "p",
-    "base_price": 48.7
+    "base_price": 52.97
   },
   {
     "id": "gm-51",
@@ -1683,10 +2139,13 @@ export const MOCK_CATALOGUE = [
       "code": "GM",
       "name": "Getaz Miauton"
     },
-    "reference": "GM/31/2495",
+    "reference": "GM/40/6949",
     "name": "Manchon coulissant à sertir inox Ø 42 mm",
+    "category": "manchon",
+    "specification": "Ø 42 mm",
+    "active": true,
     "unit": "p",
-    "base_price": 41.28
+    "base_price": 34.11
   },
   {
     "id": "nsb-52",
@@ -1694,10 +2153,13 @@ export const MOCK_CATALOGUE = [
       "code": "NSB",
       "name": "Nussbaum"
     },
-    "reference": "NSB-3767-54",
+    "reference": "NSB-5491-54",
     "name": "Manchon coulissant à sertir inox Ø 54 mm",
+    "category": "manchon",
+    "specification": "Ø 54 mm",
+    "active": true,
     "unit": "p",
-    "base_price": 31.04
+    "base_price": 35.21
   },
   {
     "id": "st-52",
@@ -1705,10 +2167,13 @@ export const MOCK_CATALOGUE = [
       "code": "ST",
       "name": "Sanitas Troesch"
     },
-    "reference": "SAN.735062",
+    "reference": "SAN.821554",
     "name": "Manchon coulissant à sertir inox Ø 54 mm",
+    "category": "manchon",
+    "specification": "Ø 54 mm",
+    "active": true,
     "unit": "p",
-    "base_price": 49.42
+    "base_price": 28.96
   },
   {
     "id": "gm-52",
@@ -1716,10 +2181,13 @@ export const MOCK_CATALOGUE = [
       "code": "GM",
       "name": "Getaz Miauton"
     },
-    "reference": "GM/27/7603",
+    "reference": "GM/21/9353",
     "name": "Manchon coulissant à sertir inox Ø 54 mm",
+    "category": "manchon",
+    "specification": "Ø 54 mm",
+    "active": true,
     "unit": "p",
-    "base_price": 9.39
+    "base_price": 34.25
   },
   {
     "id": "nsb-53",
@@ -1727,10 +2195,13 @@ export const MOCK_CATALOGUE = [
       "code": "NSB",
       "name": "Nussbaum"
     },
-    "reference": "NSB-2388-76.1",
+    "reference": "NSB-3297-76.1",
     "name": "Manchon coulissant à sertir inox Ø 76.1 mm",
+    "category": "manchon",
+    "specification": "Ø 76.1 mm",
+    "active": true,
     "unit": "p",
-    "base_price": 25.03
+    "base_price": 22.43
   },
   {
     "id": "st-53",
@@ -1738,10 +2209,13 @@ export const MOCK_CATALOGUE = [
       "code": "ST",
       "name": "Sanitas Troesch"
     },
-    "reference": "SAN.400033",
+    "reference": "SAN.251785",
     "name": "Manchon coulissant à sertir inox Ø 76.1 mm",
+    "category": "manchon",
+    "specification": "Ø 76.1 mm",
+    "active": true,
     "unit": "p",
-    "base_price": 17.2
+    "base_price": 7.63
   },
   {
     "id": "gm-53",
@@ -1749,10 +2223,13 @@ export const MOCK_CATALOGUE = [
       "code": "GM",
       "name": "Getaz Miauton"
     },
-    "reference": "GM/73/3846",
+    "reference": "GM/63/5735",
     "name": "Manchon coulissant à sertir inox Ø 76.1 mm",
+    "category": "manchon",
+    "specification": "Ø 76.1 mm",
+    "active": true,
     "unit": "p",
-    "base_price": 20.86
+    "base_price": 31.43
   },
   {
     "id": "nsb-54",
@@ -1760,10 +2237,13 @@ export const MOCK_CATALOGUE = [
       "code": "NSB",
       "name": "Nussbaum"
     },
-    "reference": "NSB-7231-88.9",
+    "reference": "NSB-2722-88.9",
     "name": "Manchon coulissant à sertir inox Ø 88.9 mm",
+    "category": "manchon",
+    "specification": "Ø 88.9 mm",
+    "active": true,
     "unit": "p",
-    "base_price": 34.55
+    "base_price": 31.59
   },
   {
     "id": "st-54",
@@ -1771,10 +2251,13 @@ export const MOCK_CATALOGUE = [
       "code": "ST",
       "name": "Sanitas Troesch"
     },
-    "reference": "SAN.640594",
+    "reference": "SAN.423122",
     "name": "Manchon coulissant à sertir inox Ø 88.9 mm",
+    "category": "manchon",
+    "specification": "Ø 88.9 mm",
+    "active": true,
     "unit": "p",
-    "base_price": 27.4
+    "base_price": 10.5
   },
   {
     "id": "gm-54",
@@ -1782,10 +2265,13 @@ export const MOCK_CATALOGUE = [
       "code": "GM",
       "name": "Getaz Miauton"
     },
-    "reference": "GM/44/7201",
+    "reference": "GM/28/1582",
     "name": "Manchon coulissant à sertir inox Ø 88.9 mm",
+    "category": "manchon",
+    "specification": "Ø 88.9 mm",
+    "active": true,
     "unit": "p",
-    "base_price": 6.18
+    "base_price": 37.29
   },
   {
     "id": "nsb-55",
@@ -1793,10 +2279,13 @@ export const MOCK_CATALOGUE = [
       "code": "NSB",
       "name": "Nussbaum"
     },
-    "reference": "NSB-6643-108",
+    "reference": "NSB-5516-108",
     "name": "Manchon coulissant à sertir inox Ø 108 mm",
+    "category": "manchon",
+    "specification": "Ø 108 mm",
+    "active": true,
     "unit": "p",
-    "base_price": 43.1
+    "base_price": 36.44
   },
   {
     "id": "st-55",
@@ -1804,10 +2293,13 @@ export const MOCK_CATALOGUE = [
       "code": "ST",
       "name": "Sanitas Troesch"
     },
-    "reference": "SAN.146418",
+    "reference": "SAN.629266",
     "name": "Manchon coulissant à sertir inox Ø 108 mm",
+    "category": "manchon",
+    "specification": "Ø 108 mm",
+    "active": true,
     "unit": "p",
-    "base_price": 19.83
+    "base_price": 7.84
   },
   {
     "id": "gm-55",
@@ -1815,10 +2307,13 @@ export const MOCK_CATALOGUE = [
       "code": "GM",
       "name": "Getaz Miauton"
     },
-    "reference": "GM/44/5143",
+    "reference": "GM/87/6526",
     "name": "Manchon coulissant à sertir inox Ø 108 mm",
+    "category": "manchon",
+    "specification": "Ø 108 mm",
+    "active": true,
     "unit": "p",
-    "base_price": 40.17
+    "base_price": 22.08
   },
   {
     "id": "nsb-56",
@@ -1826,10 +2321,13 @@ export const MOCK_CATALOGUE = [
       "code": "NSB",
       "name": "Nussbaum"
     },
-    "reference": "NSB-2295-12",
+    "reference": "NSB-4779-12",
     "name": "Té à sertir inox Ø 12 mm",
+    "category": "autre",
+    "specification": "Ø 12 mm",
+    "active": true,
     "unit": "p",
-    "base_price": 25.07
+    "base_price": 32.31
   },
   {
     "id": "st-56",
@@ -1837,10 +2335,13 @@ export const MOCK_CATALOGUE = [
       "code": "ST",
       "name": "Sanitas Troesch"
     },
-    "reference": "SAN.346501",
+    "reference": "SAN.237939",
     "name": "Té à sertir inox Ø 12 mm",
+    "category": "autre",
+    "specification": "Ø 12 mm",
+    "active": true,
     "unit": "p",
-    "base_price": 52.08
+    "base_price": 25.52
   },
   {
     "id": "gm-56",
@@ -1848,10 +2349,13 @@ export const MOCK_CATALOGUE = [
       "code": "GM",
       "name": "Getaz Miauton"
     },
-    "reference": "GM/78/5235",
+    "reference": "GM/42/8897",
     "name": "Té à sertir inox Ø 12 mm",
+    "category": "autre",
+    "specification": "Ø 12 mm",
+    "active": true,
     "unit": "p",
-    "base_price": 45.03
+    "base_price": 20.45
   },
   {
     "id": "nsb-57",
@@ -1859,10 +2363,13 @@ export const MOCK_CATALOGUE = [
       "code": "NSB",
       "name": "Nussbaum"
     },
-    "reference": "NSB-5233-15",
+    "reference": "NSB-1200-15",
     "name": "Té à sertir inox Ø 15 mm",
+    "category": "autre",
+    "specification": "Ø 15 mm",
+    "active": true,
     "unit": "p",
-    "base_price": 46.43
+    "base_price": 8.09
   },
   {
     "id": "st-57",
@@ -1870,10 +2377,13 @@ export const MOCK_CATALOGUE = [
       "code": "ST",
       "name": "Sanitas Troesch"
     },
-    "reference": "SAN.338462",
+    "reference": "SAN.526393",
     "name": "Té à sertir inox Ø 15 mm",
+    "category": "autre",
+    "specification": "Ø 15 mm",
+    "active": true,
     "unit": "p",
-    "base_price": 9.58
+    "base_price": 11.13
   },
   {
     "id": "gm-57",
@@ -1881,10 +2391,13 @@ export const MOCK_CATALOGUE = [
       "code": "GM",
       "name": "Getaz Miauton"
     },
-    "reference": "GM/38/9275",
+    "reference": "GM/68/6628",
     "name": "Té à sertir inox Ø 15 mm",
+    "category": "autre",
+    "specification": "Ø 15 mm",
+    "active": true,
     "unit": "p",
-    "base_price": 35.41
+    "base_price": 33.73
   },
   {
     "id": "nsb-58",
@@ -1892,10 +2405,13 @@ export const MOCK_CATALOGUE = [
       "code": "NSB",
       "name": "Nussbaum"
     },
-    "reference": "NSB-9311-18",
+    "reference": "NSB-8363-18",
     "name": "Té à sertir inox Ø 18 mm",
+    "category": "autre",
+    "specification": "Ø 18 mm",
+    "active": true,
     "unit": "p",
-    "base_price": 53.28
+    "base_price": 41.37
   },
   {
     "id": "st-58",
@@ -1903,10 +2419,13 @@ export const MOCK_CATALOGUE = [
       "code": "ST",
       "name": "Sanitas Troesch"
     },
-    "reference": "SAN.573926",
+    "reference": "SAN.450465",
     "name": "Té à sertir inox Ø 18 mm",
+    "category": "autre",
+    "specification": "Ø 18 mm",
+    "active": true,
     "unit": "p",
-    "base_price": 10.89
+    "base_price": 31.61
   },
   {
     "id": "gm-58",
@@ -1914,10 +2433,13 @@ export const MOCK_CATALOGUE = [
       "code": "GM",
       "name": "Getaz Miauton"
     },
-    "reference": "GM/79/5220",
+    "reference": "GM/97/7711",
     "name": "Té à sertir inox Ø 18 mm",
+    "category": "autre",
+    "specification": "Ø 18 mm",
+    "active": true,
     "unit": "p",
-    "base_price": 34.92
+    "base_price": 6.55
   },
   {
     "id": "nsb-59",
@@ -1925,10 +2447,13 @@ export const MOCK_CATALOGUE = [
       "code": "NSB",
       "name": "Nussbaum"
     },
-    "reference": "NSB-7670-22",
+    "reference": "NSB-5352-22",
     "name": "Té à sertir inox Ø 22 mm",
+    "category": "autre",
+    "specification": "Ø 22 mm",
+    "active": true,
     "unit": "p",
-    "base_price": 16.78
+    "base_price": 15.5
   },
   {
     "id": "st-59",
@@ -1936,10 +2461,13 @@ export const MOCK_CATALOGUE = [
       "code": "ST",
       "name": "Sanitas Troesch"
     },
-    "reference": "SAN.371033",
+    "reference": "SAN.410127",
     "name": "Té à sertir inox Ø 22 mm",
+    "category": "autre",
+    "specification": "Ø 22 mm",
+    "active": true,
     "unit": "p",
-    "base_price": 25.28
+    "base_price": 38.77
   },
   {
     "id": "gm-59",
@@ -1947,10 +2475,13 @@ export const MOCK_CATALOGUE = [
       "code": "GM",
       "name": "Getaz Miauton"
     },
-    "reference": "GM/71/6743",
+    "reference": "GM/21/1593",
     "name": "Té à sertir inox Ø 22 mm",
+    "category": "autre",
+    "specification": "Ø 22 mm",
+    "active": true,
     "unit": "p",
-    "base_price": 43.25
+    "base_price": 36.38
   },
   {
     "id": "nsb-60",
@@ -1958,10 +2489,13 @@ export const MOCK_CATALOGUE = [
       "code": "NSB",
       "name": "Nussbaum"
     },
-    "reference": "NSB-3027-28",
+    "reference": "NSB-8852-28",
     "name": "Té à sertir inox Ø 28 mm",
+    "category": "autre",
+    "specification": "Ø 28 mm",
+    "active": true,
     "unit": "p",
-    "base_price": 10.42
+    "base_price": 39.14
   },
   {
     "id": "st-60",
@@ -1969,10 +2503,13 @@ export const MOCK_CATALOGUE = [
       "code": "ST",
       "name": "Sanitas Troesch"
     },
-    "reference": "SAN.464079",
+    "reference": "SAN.111242",
     "name": "Té à sertir inox Ø 28 mm",
+    "category": "autre",
+    "specification": "Ø 28 mm",
+    "active": true,
     "unit": "p",
-    "base_price": 11.61
+    "base_price": 11.18
   },
   {
     "id": "gm-60",
@@ -1980,10 +2517,13 @@ export const MOCK_CATALOGUE = [
       "code": "GM",
       "name": "Getaz Miauton"
     },
-    "reference": "GM/51/9841",
+    "reference": "GM/42/1486",
     "name": "Té à sertir inox Ø 28 mm",
+    "category": "autre",
+    "specification": "Ø 28 mm",
+    "active": true,
     "unit": "p",
-    "base_price": 42.4
+    "base_price": 49.94
   },
   {
     "id": "nsb-61",
@@ -1991,10 +2531,13 @@ export const MOCK_CATALOGUE = [
       "code": "NSB",
       "name": "Nussbaum"
     },
-    "reference": "NSB-4131-35",
+    "reference": "NSB-9555-35",
     "name": "Té à sertir inox Ø 35 mm",
+    "category": "autre",
+    "specification": "Ø 35 mm",
+    "active": true,
     "unit": "p",
-    "base_price": 38.7
+    "base_price": 47.65
   },
   {
     "id": "st-61",
@@ -2002,10 +2545,13 @@ export const MOCK_CATALOGUE = [
       "code": "ST",
       "name": "Sanitas Troesch"
     },
-    "reference": "SAN.319680",
+    "reference": "SAN.498363",
     "name": "Té à sertir inox Ø 35 mm",
+    "category": "autre",
+    "specification": "Ø 35 mm",
+    "active": true,
     "unit": "p",
-    "base_price": 19.62
+    "base_price": 24.63
   },
   {
     "id": "gm-61",
@@ -2013,10 +2559,13 @@ export const MOCK_CATALOGUE = [
       "code": "GM",
       "name": "Getaz Miauton"
     },
-    "reference": "GM/95/7687",
+    "reference": "GM/24/9660",
     "name": "Té à sertir inox Ø 35 mm",
+    "category": "autre",
+    "specification": "Ø 35 mm",
+    "active": true,
     "unit": "p",
-    "base_price": 51.08
+    "base_price": 49.72
   },
   {
     "id": "nsb-62",
@@ -2024,10 +2573,13 @@ export const MOCK_CATALOGUE = [
       "code": "NSB",
       "name": "Nussbaum"
     },
-    "reference": "NSB-6998-42",
+    "reference": "NSB-3450-42",
     "name": "Té à sertir inox Ø 42 mm",
+    "category": "autre",
+    "specification": "Ø 42 mm",
+    "active": true,
     "unit": "p",
-    "base_price": 26.43
+    "base_price": 39.34
   },
   {
     "id": "st-62",
@@ -2035,10 +2587,13 @@ export const MOCK_CATALOGUE = [
       "code": "ST",
       "name": "Sanitas Troesch"
     },
-    "reference": "SAN.678194",
+    "reference": "SAN.874970",
     "name": "Té à sertir inox Ø 42 mm",
+    "category": "autre",
+    "specification": "Ø 42 mm",
+    "active": true,
     "unit": "p",
-    "base_price": 5.44
+    "base_price": 5.43
   },
   {
     "id": "gm-62",
@@ -2046,10 +2601,13 @@ export const MOCK_CATALOGUE = [
       "code": "GM",
       "name": "Getaz Miauton"
     },
-    "reference": "GM/68/7382",
+    "reference": "GM/26/1861",
     "name": "Té à sertir inox Ø 42 mm",
+    "category": "autre",
+    "specification": "Ø 42 mm",
+    "active": true,
     "unit": "p",
-    "base_price": 31.6
+    "base_price": 17.53
   },
   {
     "id": "nsb-63",
@@ -2057,10 +2615,13 @@ export const MOCK_CATALOGUE = [
       "code": "NSB",
       "name": "Nussbaum"
     },
-    "reference": "NSB-5923-54",
+    "reference": "NSB-1792-54",
     "name": "Té à sertir inox Ø 54 mm",
+    "category": "autre",
+    "specification": "Ø 54 mm",
+    "active": true,
     "unit": "p",
-    "base_price": 9.17
+    "base_price": 30.33
   },
   {
     "id": "st-63",
@@ -2068,10 +2629,13 @@ export const MOCK_CATALOGUE = [
       "code": "ST",
       "name": "Sanitas Troesch"
     },
-    "reference": "SAN.337623",
+    "reference": "SAN.258700",
     "name": "Té à sertir inox Ø 54 mm",
+    "category": "autre",
+    "specification": "Ø 54 mm",
+    "active": true,
     "unit": "p",
-    "base_price": 38.53
+    "base_price": 34.79
   },
   {
     "id": "gm-63",
@@ -2079,10 +2643,13 @@ export const MOCK_CATALOGUE = [
       "code": "GM",
       "name": "Getaz Miauton"
     },
-    "reference": "GM/15/7566",
+    "reference": "GM/43/4928",
     "name": "Té à sertir inox Ø 54 mm",
+    "category": "autre",
+    "specification": "Ø 54 mm",
+    "active": true,
     "unit": "p",
-    "base_price": 54.91
+    "base_price": 30.12
   },
   {
     "id": "nsb-64",
@@ -2090,10 +2657,13 @@ export const MOCK_CATALOGUE = [
       "code": "NSB",
       "name": "Nussbaum"
     },
-    "reference": "NSB-1682-76.1",
+    "reference": "NSB-1085-76.1",
     "name": "Té à sertir inox Ø 76.1 mm",
+    "category": "autre",
+    "specification": "Ø 76.1 mm",
+    "active": true,
     "unit": "p",
-    "base_price": 26.45
+    "base_price": 13.35
   },
   {
     "id": "st-64",
@@ -2101,10 +2671,13 @@ export const MOCK_CATALOGUE = [
       "code": "ST",
       "name": "Sanitas Troesch"
     },
-    "reference": "SAN.219438",
+    "reference": "SAN.557324",
     "name": "Té à sertir inox Ø 76.1 mm",
+    "category": "autre",
+    "specification": "Ø 76.1 mm",
+    "active": true,
     "unit": "p",
-    "base_price": 45.85
+    "base_price": 5.46
   },
   {
     "id": "gm-64",
@@ -2112,10 +2685,13 @@ export const MOCK_CATALOGUE = [
       "code": "GM",
       "name": "Getaz Miauton"
     },
-    "reference": "GM/23/5187",
+    "reference": "GM/29/5122",
     "name": "Té à sertir inox Ø 76.1 mm",
+    "category": "autre",
+    "specification": "Ø 76.1 mm",
+    "active": true,
     "unit": "p",
-    "base_price": 48.71
+    "base_price": 24.61
   },
   {
     "id": "nsb-65",
@@ -2123,10 +2699,13 @@ export const MOCK_CATALOGUE = [
       "code": "NSB",
       "name": "Nussbaum"
     },
-    "reference": "NSB-7173-88.9",
+    "reference": "NSB-4285-88.9",
     "name": "Té à sertir inox Ø 88.9 mm",
+    "category": "autre",
+    "specification": "Ø 88.9 mm",
+    "active": true,
     "unit": "p",
-    "base_price": 14.88
+    "base_price": 48.02
   },
   {
     "id": "st-65",
@@ -2134,10 +2713,13 @@ export const MOCK_CATALOGUE = [
       "code": "ST",
       "name": "Sanitas Troesch"
     },
-    "reference": "SAN.362336",
+    "reference": "SAN.484748",
     "name": "Té à sertir inox Ø 88.9 mm",
+    "category": "autre",
+    "specification": "Ø 88.9 mm",
+    "active": true,
     "unit": "p",
-    "base_price": 25.92
+    "base_price": 26.25
   },
   {
     "id": "gm-65",
@@ -2145,10 +2727,13 @@ export const MOCK_CATALOGUE = [
       "code": "GM",
       "name": "Getaz Miauton"
     },
-    "reference": "GM/64/1361",
+    "reference": "GM/89/4523",
     "name": "Té à sertir inox Ø 88.9 mm",
+    "category": "autre",
+    "specification": "Ø 88.9 mm",
+    "active": true,
     "unit": "p",
-    "base_price": 23.51
+    "base_price": 10.82
   },
   {
     "id": "nsb-66",
@@ -2156,10 +2741,13 @@ export const MOCK_CATALOGUE = [
       "code": "NSB",
       "name": "Nussbaum"
     },
-    "reference": "NSB-4012-108",
+    "reference": "NSB-6363-108",
     "name": "Té à sertir inox Ø 108 mm",
+    "category": "autre",
+    "specification": "Ø 108 mm",
+    "active": true,
     "unit": "p",
-    "base_price": 37.87
+    "base_price": 27.39
   },
   {
     "id": "st-66",
@@ -2167,10 +2755,13 @@ export const MOCK_CATALOGUE = [
       "code": "ST",
       "name": "Sanitas Troesch"
     },
-    "reference": "SAN.140263",
+    "reference": "SAN.146529",
     "name": "Té à sertir inox Ø 108 mm",
+    "category": "autre",
+    "specification": "Ø 108 mm",
+    "active": true,
     "unit": "p",
-    "base_price": 45.68
+    "base_price": 32.08
   },
   {
     "id": "gm-66",
@@ -2178,10 +2769,13 @@ export const MOCK_CATALOGUE = [
       "code": "GM",
       "name": "Getaz Miauton"
     },
-    "reference": "GM/62/9159",
+    "reference": "GM/70/9874",
     "name": "Té à sertir inox Ø 108 mm",
+    "category": "autre",
+    "specification": "Ø 108 mm",
+    "active": true,
     "unit": "p",
-    "base_price": 45.24
+    "base_price": 14.85
   },
   {
     "id": "nsb-67",
@@ -2189,10 +2783,13 @@ export const MOCK_CATALOGUE = [
       "code": "NSB",
       "name": "Nussbaum"
     },
-    "reference": "NSB-1711-12",
+    "reference": "NSB-5800-12",
     "name": "Pièce de transition à sertir inox fileté Ø 12 mm",
+    "category": "transition",
+    "specification": "Ø 12 mm",
+    "active": true,
     "unit": "p",
-    "base_price": 19.39
+    "base_price": 54.63
   },
   {
     "id": "st-67",
@@ -2200,10 +2797,13 @@ export const MOCK_CATALOGUE = [
       "code": "ST",
       "name": "Sanitas Troesch"
     },
-    "reference": "SAN.882584",
+    "reference": "SAN.531988",
     "name": "Pièce de transition à sertir inox fileté Ø 12 mm",
+    "category": "transition",
+    "specification": "Ø 12 mm",
+    "active": true,
     "unit": "p",
-    "base_price": 10.33
+    "base_price": 45.28
   },
   {
     "id": "gm-67",
@@ -2211,10 +2811,13 @@ export const MOCK_CATALOGUE = [
       "code": "GM",
       "name": "Getaz Miauton"
     },
-    "reference": "GM/11/8831",
+    "reference": "GM/62/1541",
     "name": "Pièce de transition à sertir inox fileté Ø 12 mm",
+    "category": "transition",
+    "specification": "Ø 12 mm",
+    "active": true,
     "unit": "p",
-    "base_price": 9.86
+    "base_price": 41.52
   },
   {
     "id": "nsb-68",
@@ -2222,10 +2825,13 @@ export const MOCK_CATALOGUE = [
       "code": "NSB",
       "name": "Nussbaum"
     },
-    "reference": "NSB-6010-15",
+    "reference": "NSB-9996-15",
     "name": "Pièce de transition à sertir inox fileté Ø 15 mm",
+    "category": "transition",
+    "specification": "Ø 15 mm",
+    "active": true,
     "unit": "p",
-    "base_price": 23.18
+    "base_price": 54.43
   },
   {
     "id": "st-68",
@@ -2233,10 +2839,13 @@ export const MOCK_CATALOGUE = [
       "code": "ST",
       "name": "Sanitas Troesch"
     },
-    "reference": "SAN.883254",
+    "reference": "SAN.255278",
     "name": "Pièce de transition à sertir inox fileté Ø 15 mm",
+    "category": "transition",
+    "specification": "Ø 15 mm",
+    "active": true,
     "unit": "p",
-    "base_price": 31.25
+    "base_price": 38.11
   },
   {
     "id": "gm-68",
@@ -2244,10 +2853,13 @@ export const MOCK_CATALOGUE = [
       "code": "GM",
       "name": "Getaz Miauton"
     },
-    "reference": "GM/63/4158",
+    "reference": "GM/35/6700",
     "name": "Pièce de transition à sertir inox fileté Ø 15 mm",
+    "category": "transition",
+    "specification": "Ø 15 mm",
+    "active": true,
     "unit": "p",
-    "base_price": 25.41
+    "base_price": 16.87
   },
   {
     "id": "nsb-69",
@@ -2255,10 +2867,13 @@ export const MOCK_CATALOGUE = [
       "code": "NSB",
       "name": "Nussbaum"
     },
-    "reference": "NSB-6966-18",
+    "reference": "NSB-1591-18",
     "name": "Pièce de transition à sertir inox fileté Ø 18 mm",
+    "category": "transition",
+    "specification": "Ø 18 mm",
+    "active": true,
     "unit": "p",
-    "base_price": 25.8
+    "base_price": 53.52
   },
   {
     "id": "st-69",
@@ -2266,10 +2881,13 @@ export const MOCK_CATALOGUE = [
       "code": "ST",
       "name": "Sanitas Troesch"
     },
-    "reference": "SAN.614948",
+    "reference": "SAN.220753",
     "name": "Pièce de transition à sertir inox fileté Ø 18 mm",
+    "category": "transition",
+    "specification": "Ø 18 mm",
+    "active": true,
     "unit": "p",
-    "base_price": 37.36
+    "base_price": 25.17
   },
   {
     "id": "gm-69",
@@ -2277,10 +2895,13 @@ export const MOCK_CATALOGUE = [
       "code": "GM",
       "name": "Getaz Miauton"
     },
-    "reference": "GM/85/3842",
+    "reference": "GM/75/1081",
     "name": "Pièce de transition à sertir inox fileté Ø 18 mm",
+    "category": "transition",
+    "specification": "Ø 18 mm",
+    "active": true,
     "unit": "p",
-    "base_price": 49.25
+    "base_price": 24.79
   },
   {
     "id": "nsb-70",
@@ -2288,10 +2909,13 @@ export const MOCK_CATALOGUE = [
       "code": "NSB",
       "name": "Nussbaum"
     },
-    "reference": "NSB-2377-22",
+    "reference": "NSB-3559-22",
     "name": "Pièce de transition à sertir inox fileté Ø 22 mm",
+    "category": "transition",
+    "specification": "Ø 22 mm",
+    "active": true,
     "unit": "p",
-    "base_price": 49.04
+    "base_price": 11.13
   },
   {
     "id": "st-70",
@@ -2299,10 +2923,13 @@ export const MOCK_CATALOGUE = [
       "code": "ST",
       "name": "Sanitas Troesch"
     },
-    "reference": "SAN.784979",
+    "reference": "SAN.831683",
     "name": "Pièce de transition à sertir inox fileté Ø 22 mm",
+    "category": "transition",
+    "specification": "Ø 22 mm",
+    "active": true,
     "unit": "p",
-    "base_price": 38.14
+    "base_price": 37.96
   },
   {
     "id": "gm-70",
@@ -2310,10 +2937,13 @@ export const MOCK_CATALOGUE = [
       "code": "GM",
       "name": "Getaz Miauton"
     },
-    "reference": "GM/16/5466",
+    "reference": "GM/75/7829",
     "name": "Pièce de transition à sertir inox fileté Ø 22 mm",
+    "category": "transition",
+    "specification": "Ø 22 mm",
+    "active": true,
     "unit": "p",
-    "base_price": 14.11
+    "base_price": 43.3
   },
   {
     "id": "nsb-71",
@@ -2321,10 +2951,13 @@ export const MOCK_CATALOGUE = [
       "code": "NSB",
       "name": "Nussbaum"
     },
-    "reference": "NSB-5281-28",
+    "reference": "NSB-5784-28",
     "name": "Pièce de transition à sertir inox fileté Ø 28 mm",
+    "category": "transition",
+    "specification": "Ø 28 mm",
+    "active": true,
     "unit": "p",
-    "base_price": 39.72
+    "base_price": 44.35
   },
   {
     "id": "st-71",
@@ -2332,10 +2965,13 @@ export const MOCK_CATALOGUE = [
       "code": "ST",
       "name": "Sanitas Troesch"
     },
-    "reference": "SAN.445714",
+    "reference": "SAN.988892",
     "name": "Pièce de transition à sertir inox fileté Ø 28 mm",
+    "category": "transition",
+    "specification": "Ø 28 mm",
+    "active": true,
     "unit": "p",
-    "base_price": 19.01
+    "base_price": 54.48
   },
   {
     "id": "gm-71",
@@ -2343,10 +2979,13 @@ export const MOCK_CATALOGUE = [
       "code": "GM",
       "name": "Getaz Miauton"
     },
-    "reference": "GM/73/4669",
+    "reference": "GM/74/8573",
     "name": "Pièce de transition à sertir inox fileté Ø 28 mm",
+    "category": "transition",
+    "specification": "Ø 28 mm",
+    "active": true,
     "unit": "p",
-    "base_price": 25.79
+    "base_price": 48.39
   },
   {
     "id": "nsb-72",
@@ -2354,10 +2993,13 @@ export const MOCK_CATALOGUE = [
       "code": "NSB",
       "name": "Nussbaum"
     },
-    "reference": "NSB-9926-35",
+    "reference": "NSB-4049-35",
     "name": "Pièce de transition à sertir inox fileté Ø 35 mm",
+    "category": "transition",
+    "specification": "Ø 35 mm",
+    "active": true,
     "unit": "p",
-    "base_price": 40.16
+    "base_price": 32.28
   },
   {
     "id": "st-72",
@@ -2365,10 +3007,13 @@ export const MOCK_CATALOGUE = [
       "code": "ST",
       "name": "Sanitas Troesch"
     },
-    "reference": "SAN.203688",
+    "reference": "SAN.482579",
     "name": "Pièce de transition à sertir inox fileté Ø 35 mm",
+    "category": "transition",
+    "specification": "Ø 35 mm",
+    "active": true,
     "unit": "p",
-    "base_price": 11.88
+    "base_price": 45.67
   },
   {
     "id": "gm-72",
@@ -2376,10 +3021,13 @@ export const MOCK_CATALOGUE = [
       "code": "GM",
       "name": "Getaz Miauton"
     },
-    "reference": "GM/92/1854",
+    "reference": "GM/65/3794",
     "name": "Pièce de transition à sertir inox fileté Ø 35 mm",
+    "category": "transition",
+    "specification": "Ø 35 mm",
+    "active": true,
     "unit": "p",
-    "base_price": 47.05
+    "base_price": 8.78
   },
   {
     "id": "nsb-73",
@@ -2387,10 +3035,13 @@ export const MOCK_CATALOGUE = [
       "code": "NSB",
       "name": "Nussbaum"
     },
-    "reference": "NSB-9930-42",
+    "reference": "NSB-1766-42",
     "name": "Pièce de transition à sertir inox fileté Ø 42 mm",
+    "category": "transition",
+    "specification": "Ø 42 mm",
+    "active": true,
     "unit": "p",
-    "base_price": 27.96
+    "base_price": 44.87
   },
   {
     "id": "st-73",
@@ -2398,10 +3049,13 @@ export const MOCK_CATALOGUE = [
       "code": "ST",
       "name": "Sanitas Troesch"
     },
-    "reference": "SAN.110279",
+    "reference": "SAN.806491",
     "name": "Pièce de transition à sertir inox fileté Ø 42 mm",
+    "category": "transition",
+    "specification": "Ø 42 mm",
+    "active": true,
     "unit": "p",
-    "base_price": 23.39
+    "base_price": 19.56
   },
   {
     "id": "gm-73",
@@ -2409,10 +3063,13 @@ export const MOCK_CATALOGUE = [
       "code": "GM",
       "name": "Getaz Miauton"
     },
-    "reference": "GM/44/7090",
+    "reference": "GM/75/4035",
     "name": "Pièce de transition à sertir inox fileté Ø 42 mm",
+    "category": "transition",
+    "specification": "Ø 42 mm",
+    "active": true,
     "unit": "p",
-    "base_price": 12.01
+    "base_price": 15.84
   },
   {
     "id": "nsb-74",
@@ -2420,10 +3077,13 @@ export const MOCK_CATALOGUE = [
       "code": "NSB",
       "name": "Nussbaum"
     },
-    "reference": "NSB-3247-54",
+    "reference": "NSB-4240-54",
     "name": "Pièce de transition à sertir inox fileté Ø 54 mm",
+    "category": "transition",
+    "specification": "Ø 54 mm",
+    "active": true,
     "unit": "p",
-    "base_price": 45.5
+    "base_price": 38.35
   },
   {
     "id": "st-74",
@@ -2431,10 +3091,13 @@ export const MOCK_CATALOGUE = [
       "code": "ST",
       "name": "Sanitas Troesch"
     },
-    "reference": "SAN.307388",
+    "reference": "SAN.807144",
     "name": "Pièce de transition à sertir inox fileté Ø 54 mm",
+    "category": "transition",
+    "specification": "Ø 54 mm",
+    "active": true,
     "unit": "p",
-    "base_price": 8.83
+    "base_price": 52.97
   },
   {
     "id": "gm-74",
@@ -2442,10 +3105,13 @@ export const MOCK_CATALOGUE = [
       "code": "GM",
       "name": "Getaz Miauton"
     },
-    "reference": "GM/50/5389",
+    "reference": "GM/28/6622",
     "name": "Pièce de transition à sertir inox fileté Ø 54 mm",
+    "category": "transition",
+    "specification": "Ø 54 mm",
+    "active": true,
     "unit": "p",
-    "base_price": 20.9
+    "base_price": 8.52
   },
   {
     "id": "nsb-75",
@@ -2453,10 +3119,13 @@ export const MOCK_CATALOGUE = [
       "code": "NSB",
       "name": "Nussbaum"
     },
-    "reference": "NSB-9103-76.1",
+    "reference": "NSB-1427-76.1",
     "name": "Pièce de transition à sertir inox fileté Ø 76.1 mm",
+    "category": "transition",
+    "specification": "Ø 76.1 mm",
+    "active": true,
     "unit": "p",
-    "base_price": 44.21
+    "base_price": 14.33
   },
   {
     "id": "st-75",
@@ -2464,10 +3133,13 @@ export const MOCK_CATALOGUE = [
       "code": "ST",
       "name": "Sanitas Troesch"
     },
-    "reference": "SAN.363280",
+    "reference": "SAN.204517",
     "name": "Pièce de transition à sertir inox fileté Ø 76.1 mm",
+    "category": "transition",
+    "specification": "Ø 76.1 mm",
+    "active": true,
     "unit": "p",
-    "base_price": 31.84
+    "base_price": 43.41
   },
   {
     "id": "gm-75",
@@ -2475,10 +3147,13 @@ export const MOCK_CATALOGUE = [
       "code": "GM",
       "name": "Getaz Miauton"
     },
-    "reference": "GM/93/8781",
+    "reference": "GM/84/4527",
     "name": "Pièce de transition à sertir inox fileté Ø 76.1 mm",
+    "category": "transition",
+    "specification": "Ø 76.1 mm",
+    "active": true,
     "unit": "p",
-    "base_price": 45.27
+    "base_price": 44.06
   },
   {
     "id": "nsb-76",
@@ -2486,10 +3161,13 @@ export const MOCK_CATALOGUE = [
       "code": "NSB",
       "name": "Nussbaum"
     },
-    "reference": "NSB-5495-88.9",
+    "reference": "NSB-9622-88.9",
     "name": "Pièce de transition à sertir inox fileté Ø 88.9 mm",
+    "category": "transition",
+    "specification": "Ø 88.9 mm",
+    "active": true,
     "unit": "p",
-    "base_price": 28.14
+    "base_price": 29.36
   },
   {
     "id": "st-76",
@@ -2497,10 +3175,13 @@ export const MOCK_CATALOGUE = [
       "code": "ST",
       "name": "Sanitas Troesch"
     },
-    "reference": "SAN.537062",
+    "reference": "SAN.415868",
     "name": "Pièce de transition à sertir inox fileté Ø 88.9 mm",
+    "category": "transition",
+    "specification": "Ø 88.9 mm",
+    "active": true,
     "unit": "p",
-    "base_price": 46.78
+    "base_price": 42.02
   },
   {
     "id": "gm-76",
@@ -2508,10 +3189,13 @@ export const MOCK_CATALOGUE = [
       "code": "GM",
       "name": "Getaz Miauton"
     },
-    "reference": "GM/90/1582",
+    "reference": "GM/84/4805",
     "name": "Pièce de transition à sertir inox fileté Ø 88.9 mm",
+    "category": "transition",
+    "specification": "Ø 88.9 mm",
+    "active": true,
     "unit": "p",
-    "base_price": 54.77
+    "base_price": 38.31
   },
   {
     "id": "nsb-77",
@@ -2519,10 +3203,13 @@ export const MOCK_CATALOGUE = [
       "code": "NSB",
       "name": "Nussbaum"
     },
-    "reference": "NSB-5817-108",
+    "reference": "NSB-8582-108",
     "name": "Pièce de transition à sertir inox fileté Ø 108 mm",
+    "category": "transition",
+    "specification": "Ø 108 mm",
+    "active": true,
     "unit": "p",
-    "base_price": 41.52
+    "base_price": 51.88
   },
   {
     "id": "st-77",
@@ -2530,10 +3217,13 @@ export const MOCK_CATALOGUE = [
       "code": "ST",
       "name": "Sanitas Troesch"
     },
-    "reference": "SAN.582642",
+    "reference": "SAN.746606",
     "name": "Pièce de transition à sertir inox fileté Ø 108 mm",
+    "category": "transition",
+    "specification": "Ø 108 mm",
+    "active": true,
     "unit": "p",
-    "base_price": 40.88
+    "base_price": 35.6
   },
   {
     "id": "gm-77",
@@ -2541,10 +3231,13 @@ export const MOCK_CATALOGUE = [
       "code": "GM",
       "name": "Getaz Miauton"
     },
-    "reference": "GM/92/8039",
+    "reference": "GM/50/1810",
     "name": "Pièce de transition à sertir inox fileté Ø 108 mm",
+    "category": "transition",
+    "specification": "Ø 108 mm",
+    "active": true,
     "unit": "p",
-    "base_price": 34.2
+    "base_price": 27.35
   },
   {
     "id": "nsb-78",
@@ -2552,10 +3245,13 @@ export const MOCK_CATALOGUE = [
       "code": "NSB",
       "name": "Nussbaum"
     },
-    "reference": "NSB-2763-12",
+    "reference": "NSB-8307-12",
     "name": "Collier de fixation isophonique pour tube Ø 12 mm",
+    "category": "collier",
+    "specification": "Ø 12 mm",
+    "active": true,
     "unit": "p",
-    "base_price": 30.51
+    "base_price": 39.1
   },
   {
     "id": "st-78",
@@ -2563,10 +3259,13 @@ export const MOCK_CATALOGUE = [
       "code": "ST",
       "name": "Sanitas Troesch"
     },
-    "reference": "SAN.966742",
+    "reference": "SAN.332731",
     "name": "Collier de fixation isophonique pour tube Ø 12 mm",
+    "category": "collier",
+    "specification": "Ø 12 mm",
+    "active": true,
     "unit": "p",
-    "base_price": 12.54
+    "base_price": 19.86
   },
   {
     "id": "gm-78",
@@ -2574,10 +3273,13 @@ export const MOCK_CATALOGUE = [
       "code": "GM",
       "name": "Getaz Miauton"
     },
-    "reference": "GM/16/1686",
+    "reference": "GM/99/5422",
     "name": "Collier de fixation isophonique pour tube Ø 12 mm",
+    "category": "collier",
+    "specification": "Ø 12 mm",
+    "active": true,
     "unit": "p",
-    "base_price": 16.39
+    "base_price": 47.75
   },
   {
     "id": "nsb-79",
@@ -2585,10 +3287,13 @@ export const MOCK_CATALOGUE = [
       "code": "NSB",
       "name": "Nussbaum"
     },
-    "reference": "NSB-9867-15",
+    "reference": "NSB-7419-15",
     "name": "Collier de fixation isophonique pour tube Ø 15 mm",
+    "category": "collier",
+    "specification": "Ø 15 mm",
+    "active": true,
     "unit": "p",
-    "base_price": 45.69
+    "base_price": 12.74
   },
   {
     "id": "st-79",
@@ -2596,10 +3301,13 @@ export const MOCK_CATALOGUE = [
       "code": "ST",
       "name": "Sanitas Troesch"
     },
-    "reference": "SAN.368726",
+    "reference": "SAN.297821",
     "name": "Collier de fixation isophonique pour tube Ø 15 mm",
+    "category": "collier",
+    "specification": "Ø 15 mm",
+    "active": true,
     "unit": "p",
-    "base_price": 30.59
+    "base_price": 15.71
   },
   {
     "id": "gm-79",
@@ -2607,10 +3315,13 @@ export const MOCK_CATALOGUE = [
       "code": "GM",
       "name": "Getaz Miauton"
     },
-    "reference": "GM/42/3498",
+    "reference": "GM/14/2453",
     "name": "Collier de fixation isophonique pour tube Ø 15 mm",
+    "category": "collier",
+    "specification": "Ø 15 mm",
+    "active": true,
     "unit": "p",
-    "base_price": 23.53
+    "base_price": 43.69
   },
   {
     "id": "nsb-80",
@@ -2618,10 +3329,13 @@ export const MOCK_CATALOGUE = [
       "code": "NSB",
       "name": "Nussbaum"
     },
-    "reference": "NSB-6392-18",
+    "reference": "NSB-4767-18",
     "name": "Collier de fixation isophonique pour tube Ø 18 mm",
+    "category": "collier",
+    "specification": "Ø 18 mm",
+    "active": true,
     "unit": "p",
-    "base_price": 34.87
+    "base_price": 9.41
   },
   {
     "id": "st-80",
@@ -2629,10 +3343,13 @@ export const MOCK_CATALOGUE = [
       "code": "ST",
       "name": "Sanitas Troesch"
     },
-    "reference": "SAN.193844",
+    "reference": "SAN.101658",
     "name": "Collier de fixation isophonique pour tube Ø 18 mm",
+    "category": "collier",
+    "specification": "Ø 18 mm",
+    "active": true,
     "unit": "p",
-    "base_price": 18.91
+    "base_price": 36.79
   },
   {
     "id": "gm-80",
@@ -2640,10 +3357,13 @@ export const MOCK_CATALOGUE = [
       "code": "GM",
       "name": "Getaz Miauton"
     },
-    "reference": "GM/78/3688",
+    "reference": "GM/79/8915",
     "name": "Collier de fixation isophonique pour tube Ø 18 mm",
+    "category": "collier",
+    "specification": "Ø 18 mm",
+    "active": true,
     "unit": "p",
-    "base_price": 48.87
+    "base_price": 41.88
   },
   {
     "id": "nsb-81",
@@ -2651,10 +3371,13 @@ export const MOCK_CATALOGUE = [
       "code": "NSB",
       "name": "Nussbaum"
     },
-    "reference": "NSB-5020-22",
+    "reference": "NSB-6352-22",
     "name": "Collier de fixation isophonique pour tube Ø 22 mm",
+    "category": "collier",
+    "specification": "Ø 22 mm",
+    "active": true,
     "unit": "p",
-    "base_price": 38.25
+    "base_price": 34.1
   },
   {
     "id": "st-81",
@@ -2662,10 +3385,13 @@ export const MOCK_CATALOGUE = [
       "code": "ST",
       "name": "Sanitas Troesch"
     },
-    "reference": "SAN.350459",
+    "reference": "SAN.789486",
     "name": "Collier de fixation isophonique pour tube Ø 22 mm",
+    "category": "collier",
+    "specification": "Ø 22 mm",
+    "active": true,
     "unit": "p",
-    "base_price": 19.07
+    "base_price": 54.89
   },
   {
     "id": "gm-81",
@@ -2673,10 +3399,13 @@ export const MOCK_CATALOGUE = [
       "code": "GM",
       "name": "Getaz Miauton"
     },
-    "reference": "GM/97/3800",
+    "reference": "GM/43/1705",
     "name": "Collier de fixation isophonique pour tube Ø 22 mm",
+    "category": "collier",
+    "specification": "Ø 22 mm",
+    "active": true,
     "unit": "p",
-    "base_price": 10.75
+    "base_price": 20.98
   },
   {
     "id": "nsb-82",
@@ -2684,10 +3413,13 @@ export const MOCK_CATALOGUE = [
       "code": "NSB",
       "name": "Nussbaum"
     },
-    "reference": "NSB-3144-28",
+    "reference": "NSB-9839-28",
     "name": "Collier de fixation isophonique pour tube Ø 28 mm",
+    "category": "collier",
+    "specification": "Ø 28 mm",
+    "active": true,
     "unit": "p",
-    "base_price": 39.36
+    "base_price": 38.66
   },
   {
     "id": "st-82",
@@ -2695,10 +3427,13 @@ export const MOCK_CATALOGUE = [
       "code": "ST",
       "name": "Sanitas Troesch"
     },
-    "reference": "SAN.443287",
+    "reference": "SAN.510262",
     "name": "Collier de fixation isophonique pour tube Ø 28 mm",
+    "category": "collier",
+    "specification": "Ø 28 mm",
+    "active": true,
     "unit": "p",
-    "base_price": 39.39
+    "base_price": 11.2
   },
   {
     "id": "gm-82",
@@ -2706,10 +3441,13 @@ export const MOCK_CATALOGUE = [
       "code": "GM",
       "name": "Getaz Miauton"
     },
-    "reference": "GM/67/9568",
+    "reference": "GM/71/1415",
     "name": "Collier de fixation isophonique pour tube Ø 28 mm",
+    "category": "collier",
+    "specification": "Ø 28 mm",
+    "active": true,
     "unit": "p",
-    "base_price": 30.83
+    "base_price": 12.03
   },
   {
     "id": "nsb-83",
@@ -2717,10 +3455,13 @@ export const MOCK_CATALOGUE = [
       "code": "NSB",
       "name": "Nussbaum"
     },
-    "reference": "NSB-2545-35",
+    "reference": "NSB-3812-35",
     "name": "Collier de fixation isophonique pour tube Ø 35 mm",
+    "category": "collier",
+    "specification": "Ø 35 mm",
+    "active": true,
     "unit": "p",
-    "base_price": 12.04
+    "base_price": 7.25
   },
   {
     "id": "st-83",
@@ -2728,10 +3469,13 @@ export const MOCK_CATALOGUE = [
       "code": "ST",
       "name": "Sanitas Troesch"
     },
-    "reference": "SAN.523696",
+    "reference": "SAN.174114",
     "name": "Collier de fixation isophonique pour tube Ø 35 mm",
+    "category": "collier",
+    "specification": "Ø 35 mm",
+    "active": true,
     "unit": "p",
-    "base_price": 5.28
+    "base_price": 14.99
   },
   {
     "id": "gm-83",
@@ -2739,10 +3483,13 @@ export const MOCK_CATALOGUE = [
       "code": "GM",
       "name": "Getaz Miauton"
     },
-    "reference": "GM/88/4697",
+    "reference": "GM/31/9931",
     "name": "Collier de fixation isophonique pour tube Ø 35 mm",
+    "category": "collier",
+    "specification": "Ø 35 mm",
+    "active": true,
     "unit": "p",
-    "base_price": 44.36
+    "base_price": 38.9
   },
   {
     "id": "nsb-84",
@@ -2750,10 +3497,13 @@ export const MOCK_CATALOGUE = [
       "code": "NSB",
       "name": "Nussbaum"
     },
-    "reference": "NSB-9382-42",
+    "reference": "NSB-8684-42",
     "name": "Collier de fixation isophonique pour tube Ø 42 mm",
+    "category": "collier",
+    "specification": "Ø 42 mm",
+    "active": true,
     "unit": "p",
-    "base_price": 29.29
+    "base_price": 24.89
   },
   {
     "id": "st-84",
@@ -2761,10 +3511,13 @@ export const MOCK_CATALOGUE = [
       "code": "ST",
       "name": "Sanitas Troesch"
     },
-    "reference": "SAN.421035",
+    "reference": "SAN.482051",
     "name": "Collier de fixation isophonique pour tube Ø 42 mm",
+    "category": "collier",
+    "specification": "Ø 42 mm",
+    "active": true,
     "unit": "p",
-    "base_price": 12.94
+    "base_price": 40.02
   },
   {
     "id": "gm-84",
@@ -2772,10 +3525,13 @@ export const MOCK_CATALOGUE = [
       "code": "GM",
       "name": "Getaz Miauton"
     },
-    "reference": "GM/59/3976",
+    "reference": "GM/52/8986",
     "name": "Collier de fixation isophonique pour tube Ø 42 mm",
+    "category": "collier",
+    "specification": "Ø 42 mm",
+    "active": true,
     "unit": "p",
-    "base_price": 15.69
+    "base_price": 37.51
   },
   {
     "id": "nsb-85",
@@ -2783,10 +3539,13 @@ export const MOCK_CATALOGUE = [
       "code": "NSB",
       "name": "Nussbaum"
     },
-    "reference": "NSB-2205-54",
+    "reference": "NSB-9132-54",
     "name": "Collier de fixation isophonique pour tube Ø 54 mm",
+    "category": "collier",
+    "specification": "Ø 54 mm",
+    "active": true,
     "unit": "p",
-    "base_price": 49.31
+    "base_price": 25.2
   },
   {
     "id": "st-85",
@@ -2794,10 +3553,13 @@ export const MOCK_CATALOGUE = [
       "code": "ST",
       "name": "Sanitas Troesch"
     },
-    "reference": "SAN.510001",
+    "reference": "SAN.368812",
     "name": "Collier de fixation isophonique pour tube Ø 54 mm",
+    "category": "collier",
+    "specification": "Ø 54 mm",
+    "active": true,
     "unit": "p",
-    "base_price": 50.08
+    "base_price": 44.41
   },
   {
     "id": "gm-85",
@@ -2805,10 +3567,13 @@ export const MOCK_CATALOGUE = [
       "code": "GM",
       "name": "Getaz Miauton"
     },
-    "reference": "GM/20/4631",
+    "reference": "GM/78/8993",
     "name": "Collier de fixation isophonique pour tube Ø 54 mm",
+    "category": "collier",
+    "specification": "Ø 54 mm",
+    "active": true,
     "unit": "p",
-    "base_price": 24.15
+    "base_price": 54.3
   },
   {
     "id": "nsb-86",
@@ -2816,10 +3581,13 @@ export const MOCK_CATALOGUE = [
       "code": "NSB",
       "name": "Nussbaum"
     },
-    "reference": "NSB-2994-76.1",
+    "reference": "NSB-7901-76.1",
     "name": "Collier de fixation isophonique pour tube Ø 76.1 mm",
+    "category": "collier",
+    "specification": "Ø 76.1 mm",
+    "active": true,
     "unit": "p",
-    "base_price": 8.41
+    "base_price": 25.68
   },
   {
     "id": "st-86",
@@ -2827,10 +3595,13 @@ export const MOCK_CATALOGUE = [
       "code": "ST",
       "name": "Sanitas Troesch"
     },
-    "reference": "SAN.929558",
+    "reference": "SAN.680869",
     "name": "Collier de fixation isophonique pour tube Ø 76.1 mm",
+    "category": "collier",
+    "specification": "Ø 76.1 mm",
+    "active": true,
     "unit": "p",
-    "base_price": 28.13
+    "base_price": 15.35
   },
   {
     "id": "gm-86",
@@ -2838,10 +3609,13 @@ export const MOCK_CATALOGUE = [
       "code": "GM",
       "name": "Getaz Miauton"
     },
-    "reference": "GM/54/6330",
+    "reference": "GM/64/6809",
     "name": "Collier de fixation isophonique pour tube Ø 76.1 mm",
+    "category": "collier",
+    "specification": "Ø 76.1 mm",
+    "active": true,
     "unit": "p",
-    "base_price": 45.79
+    "base_price": 24.36
   },
   {
     "id": "nsb-87",
@@ -2849,10 +3623,13 @@ export const MOCK_CATALOGUE = [
       "code": "NSB",
       "name": "Nussbaum"
     },
-    "reference": "NSB-1082-88.9",
+    "reference": "NSB-3781-88.9",
     "name": "Collier de fixation isophonique pour tube Ø 88.9 mm",
+    "category": "collier",
+    "specification": "Ø 88.9 mm",
+    "active": true,
     "unit": "p",
-    "base_price": 27
+    "base_price": 22.74
   },
   {
     "id": "st-87",
@@ -2860,10 +3637,13 @@ export const MOCK_CATALOGUE = [
       "code": "ST",
       "name": "Sanitas Troesch"
     },
-    "reference": "SAN.635624",
+    "reference": "SAN.155426",
     "name": "Collier de fixation isophonique pour tube Ø 88.9 mm",
+    "category": "collier",
+    "specification": "Ø 88.9 mm",
+    "active": true,
     "unit": "p",
-    "base_price": 53.41
+    "base_price": 33.3
   },
   {
     "id": "gm-87",
@@ -2871,10 +3651,13 @@ export const MOCK_CATALOGUE = [
       "code": "GM",
       "name": "Getaz Miauton"
     },
-    "reference": "GM/90/2665",
+    "reference": "GM/53/7993",
     "name": "Collier de fixation isophonique pour tube Ø 88.9 mm",
+    "category": "collier",
+    "specification": "Ø 88.9 mm",
+    "active": true,
     "unit": "p",
-    "base_price": 7.97
+    "base_price": 41.95
   },
   {
     "id": "nsb-88",
@@ -2882,10 +3665,13 @@ export const MOCK_CATALOGUE = [
       "code": "NSB",
       "name": "Nussbaum"
     },
-    "reference": "NSB-1911-108",
+    "reference": "NSB-2351-108",
     "name": "Collier de fixation isophonique pour tube Ø 108 mm",
+    "category": "collier",
+    "specification": "Ø 108 mm",
+    "active": true,
     "unit": "p",
-    "base_price": 23.47
+    "base_price": 35.79
   },
   {
     "id": "st-88",
@@ -2893,10 +3679,13 @@ export const MOCK_CATALOGUE = [
       "code": "ST",
       "name": "Sanitas Troesch"
     },
-    "reference": "SAN.393458",
+    "reference": "SAN.296450",
     "name": "Collier de fixation isophonique pour tube Ø 108 mm",
+    "category": "collier",
+    "specification": "Ø 108 mm",
+    "active": true,
     "unit": "p",
-    "base_price": 11.28
+    "base_price": 13.86
   },
   {
     "id": "gm-88",
@@ -2904,10 +3693,13 @@ export const MOCK_CATALOGUE = [
       "code": "GM",
       "name": "Getaz Miauton"
     },
-    "reference": "GM/81/8379",
+    "reference": "GM/95/5219",
     "name": "Collier de fixation isophonique pour tube Ø 108 mm",
+    "category": "collier",
+    "specification": "Ø 108 mm",
+    "active": true,
     "unit": "p",
-    "base_price": 17.69
+    "base_price": 30.27
   },
   {
     "id": "nsb-89",
@@ -2915,10 +3707,13 @@ export const MOCK_CATALOGUE = [
       "code": "NSB",
       "name": "Nussbaum"
     },
-    "reference": "NSB-4474-12",
+    "reference": "NSB-6114-12",
     "name": "Isolation PIR + finition PVC Ø 12 mm",
+    "category": "isolation",
+    "specification": "Ø 12 mm",
+    "active": true,
     "unit": "m",
-    "base_price": 17.28
+    "base_price": 46.95
   },
   {
     "id": "st-89",
@@ -2926,10 +3721,13 @@ export const MOCK_CATALOGUE = [
       "code": "ST",
       "name": "Sanitas Troesch"
     },
-    "reference": "SAN.836982",
+    "reference": "SAN.628812",
     "name": "Isolation PIR + finition PVC Ø 12 mm",
+    "category": "isolation",
+    "specification": "Ø 12 mm",
+    "active": true,
     "unit": "m",
-    "base_price": 21.66
+    "base_price": 7.29
   },
   {
     "id": "gm-89",
@@ -2937,10 +3735,13 @@ export const MOCK_CATALOGUE = [
       "code": "GM",
       "name": "Getaz Miauton"
     },
-    "reference": "GM/98/3240",
+    "reference": "GM/67/3774",
     "name": "Isolation PIR + finition PVC Ø 12 mm",
+    "category": "isolation",
+    "specification": "Ø 12 mm",
+    "active": true,
     "unit": "m",
-    "base_price": 12.46
+    "base_price": 30.79
   },
   {
     "id": "nsb-90",
@@ -2948,10 +3749,13 @@ export const MOCK_CATALOGUE = [
       "code": "NSB",
       "name": "Nussbaum"
     },
-    "reference": "NSB-4811-15",
+    "reference": "NSB-7743-15",
     "name": "Isolation PIR + finition PVC Ø 15 mm",
+    "category": "isolation",
+    "specification": "Ø 15 mm",
+    "active": true,
     "unit": "m",
-    "base_price": 20.23
+    "base_price": 54.6
   },
   {
     "id": "st-90",
@@ -2959,10 +3763,13 @@ export const MOCK_CATALOGUE = [
       "code": "ST",
       "name": "Sanitas Troesch"
     },
-    "reference": "SAN.469612",
+    "reference": "SAN.807950",
     "name": "Isolation PIR + finition PVC Ø 15 mm",
+    "category": "isolation",
+    "specification": "Ø 15 mm",
+    "active": true,
     "unit": "m",
-    "base_price": 43
+    "base_price": 22.33
   },
   {
     "id": "gm-90",
@@ -2970,10 +3777,13 @@ export const MOCK_CATALOGUE = [
       "code": "GM",
       "name": "Getaz Miauton"
     },
-    "reference": "GM/38/9853",
+    "reference": "GM/72/2519",
     "name": "Isolation PIR + finition PVC Ø 15 mm",
+    "category": "isolation",
+    "specification": "Ø 15 mm",
+    "active": true,
     "unit": "m",
-    "base_price": 42.98
+    "base_price": 49.34
   },
   {
     "id": "nsb-91",
@@ -2981,10 +3791,13 @@ export const MOCK_CATALOGUE = [
       "code": "NSB",
       "name": "Nussbaum"
     },
-    "reference": "NSB-1001-18",
+    "reference": "NSB-7147-18",
     "name": "Isolation PIR + finition PVC Ø 18 mm",
+    "category": "isolation",
+    "specification": "Ø 18 mm",
+    "active": true,
     "unit": "m",
-    "base_price": 42.29
+    "base_price": 27.14
   },
   {
     "id": "st-91",
@@ -2992,10 +3805,13 @@ export const MOCK_CATALOGUE = [
       "code": "ST",
       "name": "Sanitas Troesch"
     },
-    "reference": "SAN.797861",
+    "reference": "SAN.181645",
     "name": "Isolation PIR + finition PVC Ø 18 mm",
+    "category": "isolation",
+    "specification": "Ø 18 mm",
+    "active": true,
     "unit": "m",
-    "base_price": 20.68
+    "base_price": 9.09
   },
   {
     "id": "gm-91",
@@ -3003,10 +3819,13 @@ export const MOCK_CATALOGUE = [
       "code": "GM",
       "name": "Getaz Miauton"
     },
-    "reference": "GM/88/2646",
+    "reference": "GM/29/8047",
     "name": "Isolation PIR + finition PVC Ø 18 mm",
+    "category": "isolation",
+    "specification": "Ø 18 mm",
+    "active": true,
     "unit": "m",
-    "base_price": 9.62
+    "base_price": 46.83
   },
   {
     "id": "nsb-92",
@@ -3014,10 +3833,13 @@ export const MOCK_CATALOGUE = [
       "code": "NSB",
       "name": "Nussbaum"
     },
-    "reference": "NSB-3146-22",
+    "reference": "NSB-5252-22",
     "name": "Isolation PIR + finition PVC Ø 22 mm",
+    "category": "isolation",
+    "specification": "Ø 22 mm",
+    "active": true,
     "unit": "m",
-    "base_price": 23.41
+    "base_price": 5.7
   },
   {
     "id": "st-92",
@@ -3025,10 +3847,13 @@ export const MOCK_CATALOGUE = [
       "code": "ST",
       "name": "Sanitas Troesch"
     },
-    "reference": "SAN.651758",
+    "reference": "SAN.422839",
     "name": "Isolation PIR + finition PVC Ø 22 mm",
+    "category": "isolation",
+    "specification": "Ø 22 mm",
+    "active": true,
     "unit": "m",
-    "base_price": 39.92
+    "base_price": 15.55
   },
   {
     "id": "gm-92",
@@ -3036,10 +3861,13 @@ export const MOCK_CATALOGUE = [
       "code": "GM",
       "name": "Getaz Miauton"
     },
-    "reference": "GM/41/1404",
+    "reference": "GM/22/1271",
     "name": "Isolation PIR + finition PVC Ø 22 mm",
+    "category": "isolation",
+    "specification": "Ø 22 mm",
+    "active": true,
     "unit": "m",
-    "base_price": 53.92
+    "base_price": 15.89
   },
   {
     "id": "nsb-93",
@@ -3047,10 +3875,13 @@ export const MOCK_CATALOGUE = [
       "code": "NSB",
       "name": "Nussbaum"
     },
-    "reference": "NSB-5832-28",
+    "reference": "NSB-7280-28",
     "name": "Isolation PIR + finition PVC Ø 28 mm",
+    "category": "isolation",
+    "specification": "Ø 28 mm",
+    "active": true,
     "unit": "m",
-    "base_price": 18.38
+    "base_price": 20.38
   },
   {
     "id": "st-93",
@@ -3058,10 +3889,13 @@ export const MOCK_CATALOGUE = [
       "code": "ST",
       "name": "Sanitas Troesch"
     },
-    "reference": "SAN.650211",
+    "reference": "SAN.839001",
     "name": "Isolation PIR + finition PVC Ø 28 mm",
+    "category": "isolation",
+    "specification": "Ø 28 mm",
+    "active": true,
     "unit": "m",
-    "base_price": 49.29
+    "base_price": 43.76
   },
   {
     "id": "gm-93",
@@ -3069,10 +3903,13 @@ export const MOCK_CATALOGUE = [
       "code": "GM",
       "name": "Getaz Miauton"
     },
-    "reference": "GM/30/1809",
+    "reference": "GM/79/6201",
     "name": "Isolation PIR + finition PVC Ø 28 mm",
+    "category": "isolation",
+    "specification": "Ø 28 mm",
+    "active": true,
     "unit": "m",
-    "base_price": 10.3
+    "base_price": 53.71
   },
   {
     "id": "nsb-94",
@@ -3080,10 +3917,13 @@ export const MOCK_CATALOGUE = [
       "code": "NSB",
       "name": "Nussbaum"
     },
-    "reference": "NSB-6841-35",
+    "reference": "NSB-5556-35",
     "name": "Isolation PIR + finition PVC Ø 35 mm",
+    "category": "isolation",
+    "specification": "Ø 35 mm",
+    "active": true,
     "unit": "m",
-    "base_price": 13.47
+    "base_price": 20.52
   },
   {
     "id": "st-94",
@@ -3091,10 +3931,13 @@ export const MOCK_CATALOGUE = [
       "code": "ST",
       "name": "Sanitas Troesch"
     },
-    "reference": "SAN.158988",
+    "reference": "SAN.727265",
     "name": "Isolation PIR + finition PVC Ø 35 mm",
+    "category": "isolation",
+    "specification": "Ø 35 mm",
+    "active": true,
     "unit": "m",
-    "base_price": 54.72
+    "base_price": 53.07
   },
   {
     "id": "gm-94",
@@ -3102,10 +3945,13 @@ export const MOCK_CATALOGUE = [
       "code": "GM",
       "name": "Getaz Miauton"
     },
-    "reference": "GM/77/3012",
+    "reference": "GM/17/1166",
     "name": "Isolation PIR + finition PVC Ø 35 mm",
+    "category": "isolation",
+    "specification": "Ø 35 mm",
+    "active": true,
     "unit": "m",
-    "base_price": 24.65
+    "base_price": 22.76
   },
   {
     "id": "nsb-95",
@@ -3113,10 +3959,13 @@ export const MOCK_CATALOGUE = [
       "code": "NSB",
       "name": "Nussbaum"
     },
-    "reference": "NSB-4109-42",
+    "reference": "NSB-5536-42",
     "name": "Isolation PIR + finition PVC Ø 42 mm",
+    "category": "isolation",
+    "specification": "Ø 42 mm",
+    "active": true,
     "unit": "m",
-    "base_price": 27.27
+    "base_price": 19.07
   },
   {
     "id": "st-95",
@@ -3124,10 +3973,13 @@ export const MOCK_CATALOGUE = [
       "code": "ST",
       "name": "Sanitas Troesch"
     },
-    "reference": "SAN.348534",
+    "reference": "SAN.915631",
     "name": "Isolation PIR + finition PVC Ø 42 mm",
+    "category": "isolation",
+    "specification": "Ø 42 mm",
+    "active": true,
     "unit": "m",
-    "base_price": 42.87
+    "base_price": 49.93
   },
   {
     "id": "gm-95",
@@ -3135,10 +3987,13 @@ export const MOCK_CATALOGUE = [
       "code": "GM",
       "name": "Getaz Miauton"
     },
-    "reference": "GM/25/3791",
+    "reference": "GM/96/5353",
     "name": "Isolation PIR + finition PVC Ø 42 mm",
+    "category": "isolation",
+    "specification": "Ø 42 mm",
+    "active": true,
     "unit": "m",
-    "base_price": 39.43
+    "base_price": 24.15
   },
   {
     "id": "nsb-96",
@@ -3146,10 +4001,13 @@ export const MOCK_CATALOGUE = [
       "code": "NSB",
       "name": "Nussbaum"
     },
-    "reference": "NSB-6187-54",
+    "reference": "NSB-2609-54",
     "name": "Isolation PIR + finition PVC Ø 54 mm",
+    "category": "isolation",
+    "specification": "Ø 54 mm",
+    "active": true,
     "unit": "m",
-    "base_price": 35.64
+    "base_price": 44.85
   },
   {
     "id": "st-96",
@@ -3157,10 +4015,13 @@ export const MOCK_CATALOGUE = [
       "code": "ST",
       "name": "Sanitas Troesch"
     },
-    "reference": "SAN.852653",
+    "reference": "SAN.804101",
     "name": "Isolation PIR + finition PVC Ø 54 mm",
+    "category": "isolation",
+    "specification": "Ø 54 mm",
+    "active": true,
     "unit": "m",
-    "base_price": 52.39
+    "base_price": 27.3
   },
   {
     "id": "gm-96",
@@ -3168,10 +4029,13 @@ export const MOCK_CATALOGUE = [
       "code": "GM",
       "name": "Getaz Miauton"
     },
-    "reference": "GM/66/4518",
+    "reference": "GM/35/2758",
     "name": "Isolation PIR + finition PVC Ø 54 mm",
+    "category": "isolation",
+    "specification": "Ø 54 mm",
+    "active": true,
     "unit": "m",
-    "base_price": 14.87
+    "base_price": 47.88
   },
   {
     "id": "nsb-97",
@@ -3179,10 +4043,13 @@ export const MOCK_CATALOGUE = [
       "code": "NSB",
       "name": "Nussbaum"
     },
-    "reference": "NSB-8597-76.1",
+    "reference": "NSB-1573-76.1",
     "name": "Isolation PIR + finition PVC Ø 76.1 mm",
+    "category": "isolation",
+    "specification": "Ø 76.1 mm",
+    "active": true,
     "unit": "m",
-    "base_price": 11.63
+    "base_price": 25.27
   },
   {
     "id": "st-97",
@@ -3190,10 +4057,13 @@ export const MOCK_CATALOGUE = [
       "code": "ST",
       "name": "Sanitas Troesch"
     },
-    "reference": "SAN.197859",
+    "reference": "SAN.622679",
     "name": "Isolation PIR + finition PVC Ø 76.1 mm",
+    "category": "isolation",
+    "specification": "Ø 76.1 mm",
+    "active": true,
     "unit": "m",
-    "base_price": 32.16
+    "base_price": 35.85
   },
   {
     "id": "gm-97",
@@ -3201,10 +4071,13 @@ export const MOCK_CATALOGUE = [
       "code": "GM",
       "name": "Getaz Miauton"
     },
-    "reference": "GM/86/7761",
+    "reference": "GM/12/9497",
     "name": "Isolation PIR + finition PVC Ø 76.1 mm",
+    "category": "isolation",
+    "specification": "Ø 76.1 mm",
+    "active": true,
     "unit": "m",
-    "base_price": 12.71
+    "base_price": 13.5
   },
   {
     "id": "nsb-98",
@@ -3212,10 +4085,13 @@ export const MOCK_CATALOGUE = [
       "code": "NSB",
       "name": "Nussbaum"
     },
-    "reference": "NSB-5111-88.9",
+    "reference": "NSB-2198-88.9",
     "name": "Isolation PIR + finition PVC Ø 88.9 mm",
+    "category": "isolation",
+    "specification": "Ø 88.9 mm",
+    "active": true,
     "unit": "m",
-    "base_price": 25.15
+    "base_price": 15.72
   },
   {
     "id": "st-98",
@@ -3223,10 +4099,13 @@ export const MOCK_CATALOGUE = [
       "code": "ST",
       "name": "Sanitas Troesch"
     },
-    "reference": "SAN.458541",
+    "reference": "SAN.382674",
     "name": "Isolation PIR + finition PVC Ø 88.9 mm",
+    "category": "isolation",
+    "specification": "Ø 88.9 mm",
+    "active": true,
     "unit": "m",
-    "base_price": 9.54
+    "base_price": 52.81
   },
   {
     "id": "gm-98",
@@ -3234,10 +4113,13 @@ export const MOCK_CATALOGUE = [
       "code": "GM",
       "name": "Getaz Miauton"
     },
-    "reference": "GM/48/8357",
+    "reference": "GM/46/5220",
     "name": "Isolation PIR + finition PVC Ø 88.9 mm",
+    "category": "isolation",
+    "specification": "Ø 88.9 mm",
+    "active": true,
     "unit": "m",
-    "base_price": 41.21
+    "base_price": 41.77
   },
   {
     "id": "nsb-99",
@@ -3245,10 +4127,13 @@ export const MOCK_CATALOGUE = [
       "code": "NSB",
       "name": "Nussbaum"
     },
-    "reference": "NSB-4006-108",
+    "reference": "NSB-1820-108",
     "name": "Isolation PIR + finition PVC Ø 108 mm",
+    "category": "isolation",
+    "specification": "Ø 108 mm",
+    "active": true,
     "unit": "m",
-    "base_price": 24.16
+    "base_price": 42.39
   },
   {
     "id": "st-99",
@@ -3256,10 +4141,13 @@ export const MOCK_CATALOGUE = [
       "code": "ST",
       "name": "Sanitas Troesch"
     },
-    "reference": "SAN.422088",
+    "reference": "SAN.539443",
     "name": "Isolation PIR + finition PVC Ø 108 mm",
+    "category": "isolation",
+    "specification": "Ø 108 mm",
+    "active": true,
     "unit": "m",
-    "base_price": 30.25
+    "base_price": 26.55
   },
   {
     "id": "gm-99",
@@ -3267,10 +4155,13 @@ export const MOCK_CATALOGUE = [
       "code": "GM",
       "name": "Getaz Miauton"
     },
-    "reference": "GM/86/6385",
+    "reference": "GM/36/7549",
     "name": "Isolation PIR + finition PVC Ø 108 mm",
+    "category": "isolation",
+    "specification": "Ø 108 mm",
+    "active": true,
     "unit": "m",
-    "base_price": 24.04
+    "base_price": 15.87
   },
   {
     "id": "nsb-100",
@@ -3278,10 +4169,13 @@ export const MOCK_CATALOGUE = [
       "code": "NSB",
       "name": "Nussbaum"
     },
-    "reference": "NSB-3528-12",
+    "reference": "NSB-3313-12",
     "name": "Vanne à bille Ø 12 mm",
+    "category": "robinet",
+    "specification": "Ø 12 mm",
+    "active": true,
     "unit": "p",
-    "base_price": 29.45
+    "base_price": 36.23
   },
   {
     "id": "st-100",
@@ -3289,10 +4183,13 @@ export const MOCK_CATALOGUE = [
       "code": "ST",
       "name": "Sanitas Troesch"
     },
-    "reference": "SAN.233474",
+    "reference": "SAN.173537",
     "name": "Vanne à bille Ø 12 mm",
+    "category": "robinet",
+    "specification": "Ø 12 mm",
+    "active": true,
     "unit": "p",
-    "base_price": 35.91
+    "base_price": 7.8
   },
   {
     "id": "gm-100",
@@ -3300,10 +4197,13 @@ export const MOCK_CATALOGUE = [
       "code": "GM",
       "name": "Getaz Miauton"
     },
-    "reference": "GM/72/4533",
+    "reference": "GM/44/4387",
     "name": "Vanne à bille Ø 12 mm",
+    "category": "robinet",
+    "specification": "Ø 12 mm",
+    "active": true,
     "unit": "p",
-    "base_price": 26.5
+    "base_price": 17.85
   },
   {
     "id": "nsb-101",
@@ -3311,10 +4211,13 @@ export const MOCK_CATALOGUE = [
       "code": "NSB",
       "name": "Nussbaum"
     },
-    "reference": "NSB-2425-15",
+    "reference": "NSB-1572-15",
     "name": "Vanne à bille Ø 15 mm",
+    "category": "robinet",
+    "specification": "Ø 15 mm",
+    "active": true,
     "unit": "p",
-    "base_price": 41.09
+    "base_price": 34.05
   },
   {
     "id": "st-101",
@@ -3322,10 +4225,13 @@ export const MOCK_CATALOGUE = [
       "code": "ST",
       "name": "Sanitas Troesch"
     },
-    "reference": "SAN.861386",
+    "reference": "SAN.227382",
     "name": "Vanne à bille Ø 15 mm",
+    "category": "robinet",
+    "specification": "Ø 15 mm",
+    "active": true,
     "unit": "p",
-    "base_price": 31.77
+    "base_price": 17.12
   },
   {
     "id": "gm-101",
@@ -3333,10 +4239,13 @@ export const MOCK_CATALOGUE = [
       "code": "GM",
       "name": "Getaz Miauton"
     },
-    "reference": "GM/22/6037",
+    "reference": "GM/82/2084",
     "name": "Vanne à bille Ø 15 mm",
+    "category": "robinet",
+    "specification": "Ø 15 mm",
+    "active": true,
     "unit": "p",
-    "base_price": 23.58
+    "base_price": 38.15
   },
   {
     "id": "nsb-102",
@@ -3344,10 +4253,13 @@ export const MOCK_CATALOGUE = [
       "code": "NSB",
       "name": "Nussbaum"
     },
-    "reference": "NSB-8669-18",
+    "reference": "NSB-9401-18",
     "name": "Vanne à bille Ø 18 mm",
+    "category": "robinet",
+    "specification": "Ø 18 mm",
+    "active": true,
     "unit": "p",
-    "base_price": 24.05
+    "base_price": 13.67
   },
   {
     "id": "st-102",
@@ -3355,10 +4267,13 @@ export const MOCK_CATALOGUE = [
       "code": "ST",
       "name": "Sanitas Troesch"
     },
-    "reference": "SAN.333281",
+    "reference": "SAN.812734",
     "name": "Vanne à bille Ø 18 mm",
+    "category": "robinet",
+    "specification": "Ø 18 mm",
+    "active": true,
     "unit": "p",
-    "base_price": 18.97
+    "base_price": 14.12
   },
   {
     "id": "gm-102",
@@ -3366,10 +4281,13 @@ export const MOCK_CATALOGUE = [
       "code": "GM",
       "name": "Getaz Miauton"
     },
-    "reference": "GM/12/9980",
+    "reference": "GM/64/6109",
     "name": "Vanne à bille Ø 18 mm",
+    "category": "robinet",
+    "specification": "Ø 18 mm",
+    "active": true,
     "unit": "p",
-    "base_price": 45.24
+    "base_price": 43.67
   },
   {
     "id": "nsb-103",
@@ -3377,10 +4295,13 @@ export const MOCK_CATALOGUE = [
       "code": "NSB",
       "name": "Nussbaum"
     },
-    "reference": "NSB-6945-22",
+    "reference": "NSB-4213-22",
     "name": "Vanne à bille Ø 22 mm",
+    "category": "robinet",
+    "specification": "Ø 22 mm",
+    "active": true,
     "unit": "p",
-    "base_price": 11.43
+    "base_price": 54.67
   },
   {
     "id": "st-103",
@@ -3388,10 +4309,13 @@ export const MOCK_CATALOGUE = [
       "code": "ST",
       "name": "Sanitas Troesch"
     },
-    "reference": "SAN.644904",
+    "reference": "SAN.658316",
     "name": "Vanne à bille Ø 22 mm",
+    "category": "robinet",
+    "specification": "Ø 22 mm",
+    "active": true,
     "unit": "p",
-    "base_price": 52.1
+    "base_price": 22.89
   },
   {
     "id": "gm-103",
@@ -3399,10 +4323,13 @@ export const MOCK_CATALOGUE = [
       "code": "GM",
       "name": "Getaz Miauton"
     },
-    "reference": "GM/89/3928",
+    "reference": "GM/59/3689",
     "name": "Vanne à bille Ø 22 mm",
+    "category": "robinet",
+    "specification": "Ø 22 mm",
+    "active": true,
     "unit": "p",
-    "base_price": 22.91
+    "base_price": 49.85
   },
   {
     "id": "nsb-104",
@@ -3410,10 +4337,13 @@ export const MOCK_CATALOGUE = [
       "code": "NSB",
       "name": "Nussbaum"
     },
-    "reference": "NSB-4766-28",
+    "reference": "NSB-5520-28",
     "name": "Vanne à bille Ø 28 mm",
+    "category": "robinet",
+    "specification": "Ø 28 mm",
+    "active": true,
     "unit": "p",
-    "base_price": 39.17
+    "base_price": 38.14
   },
   {
     "id": "st-104",
@@ -3421,10 +4351,13 @@ export const MOCK_CATALOGUE = [
       "code": "ST",
       "name": "Sanitas Troesch"
     },
-    "reference": "SAN.294986",
+    "reference": "SAN.272090",
     "name": "Vanne à bille Ø 28 mm",
+    "category": "robinet",
+    "specification": "Ø 28 mm",
+    "active": true,
     "unit": "p",
-    "base_price": 36.36
+    "base_price": 25.31
   },
   {
     "id": "gm-104",
@@ -3432,10 +4365,13 @@ export const MOCK_CATALOGUE = [
       "code": "GM",
       "name": "Getaz Miauton"
     },
-    "reference": "GM/23/3709",
+    "reference": "GM/71/7905",
     "name": "Vanne à bille Ø 28 mm",
+    "category": "robinet",
+    "specification": "Ø 28 mm",
+    "active": true,
     "unit": "p",
-    "base_price": 28.24
+    "base_price": 19.9
   },
   {
     "id": "nsb-105",
@@ -3443,10 +4379,13 @@ export const MOCK_CATALOGUE = [
       "code": "NSB",
       "name": "Nussbaum"
     },
-    "reference": "NSB-1143-35",
+    "reference": "NSB-8101-35",
     "name": "Vanne à bille Ø 35 mm",
+    "category": "robinet",
+    "specification": "Ø 35 mm",
+    "active": true,
     "unit": "p",
-    "base_price": 11.08
+    "base_price": 15
   },
   {
     "id": "st-105",
@@ -3454,10 +4393,13 @@ export const MOCK_CATALOGUE = [
       "code": "ST",
       "name": "Sanitas Troesch"
     },
-    "reference": "SAN.225943",
+    "reference": "SAN.575795",
     "name": "Vanne à bille Ø 35 mm",
+    "category": "robinet",
+    "specification": "Ø 35 mm",
+    "active": true,
     "unit": "p",
-    "base_price": 30.47
+    "base_price": 41.07
   },
   {
     "id": "gm-105",
@@ -3465,10 +4407,13 @@ export const MOCK_CATALOGUE = [
       "code": "GM",
       "name": "Getaz Miauton"
     },
-    "reference": "GM/69/7294",
+    "reference": "GM/69/2233",
     "name": "Vanne à bille Ø 35 mm",
+    "category": "robinet",
+    "specification": "Ø 35 mm",
+    "active": true,
     "unit": "p",
-    "base_price": 34.33
+    "base_price": 54.27
   },
   {
     "id": "nsb-106",
@@ -3476,10 +4421,13 @@ export const MOCK_CATALOGUE = [
       "code": "NSB",
       "name": "Nussbaum"
     },
-    "reference": "NSB-8930-42",
+    "reference": "NSB-4174-42",
     "name": "Vanne à bille Ø 42 mm",
+    "category": "robinet",
+    "specification": "Ø 42 mm",
+    "active": true,
     "unit": "p",
-    "base_price": 47.53
+    "base_price": 36.68
   },
   {
     "id": "st-106",
@@ -3487,10 +4435,13 @@ export const MOCK_CATALOGUE = [
       "code": "ST",
       "name": "Sanitas Troesch"
     },
-    "reference": "SAN.895954",
+    "reference": "SAN.465466",
     "name": "Vanne à bille Ø 42 mm",
+    "category": "robinet",
+    "specification": "Ø 42 mm",
+    "active": true,
     "unit": "p",
-    "base_price": 5.76
+    "base_price": 31.73
   },
   {
     "id": "gm-106",
@@ -3498,10 +4449,13 @@ export const MOCK_CATALOGUE = [
       "code": "GM",
       "name": "Getaz Miauton"
     },
-    "reference": "GM/34/4307",
+    "reference": "GM/95/4281",
     "name": "Vanne à bille Ø 42 mm",
+    "category": "robinet",
+    "specification": "Ø 42 mm",
+    "active": true,
     "unit": "p",
-    "base_price": 31.64
+    "base_price": 17.6
   },
   {
     "id": "nsb-107",
@@ -3509,10 +4463,13 @@ export const MOCK_CATALOGUE = [
       "code": "NSB",
       "name": "Nussbaum"
     },
-    "reference": "NSB-8262-54",
+    "reference": "NSB-3058-54",
     "name": "Vanne à bille Ø 54 mm",
+    "category": "robinet",
+    "specification": "Ø 54 mm",
+    "active": true,
     "unit": "p",
-    "base_price": 43.53
+    "base_price": 10.96
   },
   {
     "id": "st-107",
@@ -3520,10 +4477,13 @@ export const MOCK_CATALOGUE = [
       "code": "ST",
       "name": "Sanitas Troesch"
     },
-    "reference": "SAN.731959",
+    "reference": "SAN.904319",
     "name": "Vanne à bille Ø 54 mm",
+    "category": "robinet",
+    "specification": "Ø 54 mm",
+    "active": true,
     "unit": "p",
-    "base_price": 6.68
+    "base_price": 47.49
   },
   {
     "id": "gm-107",
@@ -3531,10 +4491,13 @@ export const MOCK_CATALOGUE = [
       "code": "GM",
       "name": "Getaz Miauton"
     },
-    "reference": "GM/33/9200",
+    "reference": "GM/91/8970",
     "name": "Vanne à bille Ø 54 mm",
+    "category": "robinet",
+    "specification": "Ø 54 mm",
+    "active": true,
     "unit": "p",
-    "base_price": 11.7
+    "base_price": 36.69
   },
   {
     "id": "nsb-108",
@@ -3542,10 +4505,13 @@ export const MOCK_CATALOGUE = [
       "code": "NSB",
       "name": "Nussbaum"
     },
-    "reference": "NSB-8187-76.1",
+    "reference": "NSB-3981-76.1",
     "name": "Vanne à bille Ø 76.1 mm",
+    "category": "robinet",
+    "specification": "Ø 76.1 mm",
+    "active": true,
     "unit": "p",
-    "base_price": 48.03
+    "base_price": 37.89
   },
   {
     "id": "st-108",
@@ -3553,10 +4519,13 @@ export const MOCK_CATALOGUE = [
       "code": "ST",
       "name": "Sanitas Troesch"
     },
-    "reference": "SAN.127863",
+    "reference": "SAN.367100",
     "name": "Vanne à bille Ø 76.1 mm",
+    "category": "robinet",
+    "specification": "Ø 76.1 mm",
+    "active": true,
     "unit": "p",
-    "base_price": 29.59
+    "base_price": 31.28
   },
   {
     "id": "gm-108",
@@ -3564,10 +4533,13 @@ export const MOCK_CATALOGUE = [
       "code": "GM",
       "name": "Getaz Miauton"
     },
-    "reference": "GM/92/9279",
+    "reference": "GM/24/7774",
     "name": "Vanne à bille Ø 76.1 mm",
+    "category": "robinet",
+    "specification": "Ø 76.1 mm",
+    "active": true,
     "unit": "p",
-    "base_price": 25.69
+    "base_price": 27.48
   },
   {
     "id": "nsb-109",
@@ -3575,10 +4547,13 @@ export const MOCK_CATALOGUE = [
       "code": "NSB",
       "name": "Nussbaum"
     },
-    "reference": "NSB-1460-88.9",
+    "reference": "NSB-7862-88.9",
     "name": "Vanne à bille Ø 88.9 mm",
+    "category": "robinet",
+    "specification": "Ø 88.9 mm",
+    "active": true,
     "unit": "p",
-    "base_price": 11.53
+    "base_price": 30.25
   },
   {
     "id": "st-109",
@@ -3586,10 +4561,13 @@ export const MOCK_CATALOGUE = [
       "code": "ST",
       "name": "Sanitas Troesch"
     },
-    "reference": "SAN.957637",
+    "reference": "SAN.279655",
     "name": "Vanne à bille Ø 88.9 mm",
+    "category": "robinet",
+    "specification": "Ø 88.9 mm",
+    "active": true,
     "unit": "p",
-    "base_price": 53.21
+    "base_price": 46.24
   },
   {
     "id": "gm-109",
@@ -3597,10 +4575,13 @@ export const MOCK_CATALOGUE = [
       "code": "GM",
       "name": "Getaz Miauton"
     },
-    "reference": "GM/73/6329",
+    "reference": "GM/24/3417",
     "name": "Vanne à bille Ø 88.9 mm",
+    "category": "robinet",
+    "specification": "Ø 88.9 mm",
+    "active": true,
     "unit": "p",
-    "base_price": 51.21
+    "base_price": 52.66
   },
   {
     "id": "nsb-110",
@@ -3608,10 +4589,13 @@ export const MOCK_CATALOGUE = [
       "code": "NSB",
       "name": "Nussbaum"
     },
-    "reference": "NSB-8731-108",
+    "reference": "NSB-7240-108",
     "name": "Vanne à bille Ø 108 mm",
+    "category": "robinet",
+    "specification": "Ø 108 mm",
+    "active": true,
     "unit": "p",
-    "base_price": 42.33
+    "base_price": 13.84
   },
   {
     "id": "st-110",
@@ -3619,10 +4603,13 @@ export const MOCK_CATALOGUE = [
       "code": "ST",
       "name": "Sanitas Troesch"
     },
-    "reference": "SAN.310786",
+    "reference": "SAN.363607",
     "name": "Vanne à bille Ø 108 mm",
+    "category": "robinet",
+    "specification": "Ø 108 mm",
+    "active": true,
     "unit": "p",
-    "base_price": 52.18
+    "base_price": 37.07
   },
   {
     "id": "gm-110",
@@ -3630,10 +4617,13 @@ export const MOCK_CATALOGUE = [
       "code": "GM",
       "name": "Getaz Miauton"
     },
-    "reference": "GM/36/6855",
+    "reference": "GM/64/2059",
     "name": "Vanne à bille Ø 108 mm",
+    "category": "robinet",
+    "specification": "Ø 108 mm",
+    "active": true,
     "unit": "p",
-    "base_price": 11.05
+    "base_price": 49.23
   },
   {
     "id": "nsb-111",
@@ -3641,10 +4631,13 @@ export const MOCK_CATALOGUE = [
       "code": "NSB",
       "name": "Nussbaum"
     },
-    "reference": "NSB-6601-12",
+    "reference": "NSB-8366-12",
     "name": "Clapet anti-retour Ø 12 mm",
+    "category": "robinet",
+    "specification": "Ø 12 mm",
+    "active": true,
     "unit": "p",
-    "base_price": 41.21
+    "base_price": 29.13
   },
   {
     "id": "st-111",
@@ -3652,10 +4645,13 @@ export const MOCK_CATALOGUE = [
       "code": "ST",
       "name": "Sanitas Troesch"
     },
-    "reference": "SAN.872109",
+    "reference": "SAN.671596",
     "name": "Clapet anti-retour Ø 12 mm",
+    "category": "robinet",
+    "specification": "Ø 12 mm",
+    "active": true,
     "unit": "p",
-    "base_price": 19.81
+    "base_price": 38.36
   },
   {
     "id": "gm-111",
@@ -3663,10 +4659,13 @@ export const MOCK_CATALOGUE = [
       "code": "GM",
       "name": "Getaz Miauton"
     },
-    "reference": "GM/17/9935",
+    "reference": "GM/53/2181",
     "name": "Clapet anti-retour Ø 12 mm",
+    "category": "robinet",
+    "specification": "Ø 12 mm",
+    "active": true,
     "unit": "p",
-    "base_price": 45.36
+    "base_price": 34.04
   },
   {
     "id": "nsb-112",
@@ -3674,10 +4673,13 @@ export const MOCK_CATALOGUE = [
       "code": "NSB",
       "name": "Nussbaum"
     },
-    "reference": "NSB-3179-15",
+    "reference": "NSB-9027-15",
     "name": "Clapet anti-retour Ø 15 mm",
+    "category": "robinet",
+    "specification": "Ø 15 mm",
+    "active": true,
     "unit": "p",
-    "base_price": 39.88
+    "base_price": 43.02
   },
   {
     "id": "st-112",
@@ -3685,10 +4687,13 @@ export const MOCK_CATALOGUE = [
       "code": "ST",
       "name": "Sanitas Troesch"
     },
-    "reference": "SAN.622872",
+    "reference": "SAN.770720",
     "name": "Clapet anti-retour Ø 15 mm",
+    "category": "robinet",
+    "specification": "Ø 15 mm",
+    "active": true,
     "unit": "p",
-    "base_price": 7.84
+    "base_price": 44.38
   },
   {
     "id": "gm-112",
@@ -3696,10 +4701,13 @@ export const MOCK_CATALOGUE = [
       "code": "GM",
       "name": "Getaz Miauton"
     },
-    "reference": "GM/67/2209",
+    "reference": "GM/98/5355",
     "name": "Clapet anti-retour Ø 15 mm",
+    "category": "robinet",
+    "specification": "Ø 15 mm",
+    "active": true,
     "unit": "p",
-    "base_price": 20.78
+    "base_price": 42.68
   },
   {
     "id": "nsb-113",
@@ -3707,10 +4715,13 @@ export const MOCK_CATALOGUE = [
       "code": "NSB",
       "name": "Nussbaum"
     },
-    "reference": "NSB-7065-18",
+    "reference": "NSB-7162-18",
     "name": "Clapet anti-retour Ø 18 mm",
+    "category": "robinet",
+    "specification": "Ø 18 mm",
+    "active": true,
     "unit": "p",
-    "base_price": 32.93
+    "base_price": 46.2
   },
   {
     "id": "st-113",
@@ -3718,10 +4729,13 @@ export const MOCK_CATALOGUE = [
       "code": "ST",
       "name": "Sanitas Troesch"
     },
-    "reference": "SAN.765838",
+    "reference": "SAN.184075",
     "name": "Clapet anti-retour Ø 18 mm",
+    "category": "robinet",
+    "specification": "Ø 18 mm",
+    "active": true,
     "unit": "p",
-    "base_price": 54.2
+    "base_price": 36.38
   },
   {
     "id": "gm-113",
@@ -3729,10 +4743,13 @@ export const MOCK_CATALOGUE = [
       "code": "GM",
       "name": "Getaz Miauton"
     },
-    "reference": "GM/70/3894",
+    "reference": "GM/76/7932",
     "name": "Clapet anti-retour Ø 18 mm",
+    "category": "robinet",
+    "specification": "Ø 18 mm",
+    "active": true,
     "unit": "p",
-    "base_price": 22.49
+    "base_price": 19.82
   },
   {
     "id": "nsb-114",
@@ -3740,10 +4757,13 @@ export const MOCK_CATALOGUE = [
       "code": "NSB",
       "name": "Nussbaum"
     },
-    "reference": "NSB-3453-22",
+    "reference": "NSB-7834-22",
     "name": "Clapet anti-retour Ø 22 mm",
+    "category": "robinet",
+    "specification": "Ø 22 mm",
+    "active": true,
     "unit": "p",
-    "base_price": 17.4
+    "base_price": 42.93
   },
   {
     "id": "st-114",
@@ -3751,10 +4771,13 @@ export const MOCK_CATALOGUE = [
       "code": "ST",
       "name": "Sanitas Troesch"
     },
-    "reference": "SAN.780427",
+    "reference": "SAN.917653",
     "name": "Clapet anti-retour Ø 22 mm",
+    "category": "robinet",
+    "specification": "Ø 22 mm",
+    "active": true,
     "unit": "p",
-    "base_price": 15.38
+    "base_price": 25.64
   },
   {
     "id": "gm-114",
@@ -3762,10 +4785,13 @@ export const MOCK_CATALOGUE = [
       "code": "GM",
       "name": "Getaz Miauton"
     },
-    "reference": "GM/92/3174",
+    "reference": "GM/75/7680",
     "name": "Clapet anti-retour Ø 22 mm",
+    "category": "robinet",
+    "specification": "Ø 22 mm",
+    "active": true,
     "unit": "p",
-    "base_price": 17.11
+    "base_price": 35.58
   },
   {
     "id": "nsb-115",
@@ -3773,10 +4799,13 @@ export const MOCK_CATALOGUE = [
       "code": "NSB",
       "name": "Nussbaum"
     },
-    "reference": "NSB-2992-28",
+    "reference": "NSB-6289-28",
     "name": "Clapet anti-retour Ø 28 mm",
+    "category": "robinet",
+    "specification": "Ø 28 mm",
+    "active": true,
     "unit": "p",
-    "base_price": 11.53
+    "base_price": 53.71
   },
   {
     "id": "st-115",
@@ -3784,10 +4813,13 @@ export const MOCK_CATALOGUE = [
       "code": "ST",
       "name": "Sanitas Troesch"
     },
-    "reference": "SAN.294211",
+    "reference": "SAN.718046",
     "name": "Clapet anti-retour Ø 28 mm",
+    "category": "robinet",
+    "specification": "Ø 28 mm",
+    "active": true,
     "unit": "p",
-    "base_price": 22.63
+    "base_price": 30
   },
   {
     "id": "gm-115",
@@ -3795,10 +4827,13 @@ export const MOCK_CATALOGUE = [
       "code": "GM",
       "name": "Getaz Miauton"
     },
-    "reference": "GM/99/5951",
+    "reference": "GM/47/8903",
     "name": "Clapet anti-retour Ø 28 mm",
+    "category": "robinet",
+    "specification": "Ø 28 mm",
+    "active": true,
     "unit": "p",
-    "base_price": 26.41
+    "base_price": 12.21
   },
   {
     "id": "nsb-116",
@@ -3806,10 +4841,13 @@ export const MOCK_CATALOGUE = [
       "code": "NSB",
       "name": "Nussbaum"
     },
-    "reference": "NSB-4187-35",
+    "reference": "NSB-8879-35",
     "name": "Clapet anti-retour Ø 35 mm",
+    "category": "robinet",
+    "specification": "Ø 35 mm",
+    "active": true,
     "unit": "p",
-    "base_price": 33.24
+    "base_price": 21.11
   },
   {
     "id": "st-116",
@@ -3817,10 +4855,13 @@ export const MOCK_CATALOGUE = [
       "code": "ST",
       "name": "Sanitas Troesch"
     },
-    "reference": "SAN.353246",
+    "reference": "SAN.228024",
     "name": "Clapet anti-retour Ø 35 mm",
+    "category": "robinet",
+    "specification": "Ø 35 mm",
+    "active": true,
     "unit": "p",
-    "base_price": 41.53
+    "base_price": 54.88
   },
   {
     "id": "gm-116",
@@ -3828,10 +4869,13 @@ export const MOCK_CATALOGUE = [
       "code": "GM",
       "name": "Getaz Miauton"
     },
-    "reference": "GM/97/6046",
+    "reference": "GM/17/4957",
     "name": "Clapet anti-retour Ø 35 mm",
+    "category": "robinet",
+    "specification": "Ø 35 mm",
+    "active": true,
     "unit": "p",
-    "base_price": 34.82
+    "base_price": 14.02
   },
   {
     "id": "nsb-117",
@@ -3839,10 +4883,13 @@ export const MOCK_CATALOGUE = [
       "code": "NSB",
       "name": "Nussbaum"
     },
-    "reference": "NSB-5769-42",
+    "reference": "NSB-4906-42",
     "name": "Clapet anti-retour Ø 42 mm",
+    "category": "robinet",
+    "specification": "Ø 42 mm",
+    "active": true,
     "unit": "p",
-    "base_price": 53.88
+    "base_price": 14.88
   },
   {
     "id": "st-117",
@@ -3850,10 +4897,13 @@ export const MOCK_CATALOGUE = [
       "code": "ST",
       "name": "Sanitas Troesch"
     },
-    "reference": "SAN.662207",
+    "reference": "SAN.862352",
     "name": "Clapet anti-retour Ø 42 mm",
+    "category": "robinet",
+    "specification": "Ø 42 mm",
+    "active": true,
     "unit": "p",
-    "base_price": 14.34
+    "base_price": 41.48
   },
   {
     "id": "gm-117",
@@ -3861,10 +4911,13 @@ export const MOCK_CATALOGUE = [
       "code": "GM",
       "name": "Getaz Miauton"
     },
-    "reference": "GM/34/7222",
+    "reference": "GM/59/5250",
     "name": "Clapet anti-retour Ø 42 mm",
+    "category": "robinet",
+    "specification": "Ø 42 mm",
+    "active": true,
     "unit": "p",
-    "base_price": 29.89
+    "base_price": 53.92
   },
   {
     "id": "nsb-118",
@@ -3872,10 +4925,13 @@ export const MOCK_CATALOGUE = [
       "code": "NSB",
       "name": "Nussbaum"
     },
-    "reference": "NSB-9251-54",
+    "reference": "NSB-2643-54",
     "name": "Clapet anti-retour Ø 54 mm",
+    "category": "robinet",
+    "specification": "Ø 54 mm",
+    "active": true,
     "unit": "p",
-    "base_price": 34.84
+    "base_price": 42.4
   },
   {
     "id": "st-118",
@@ -3883,10 +4939,13 @@ export const MOCK_CATALOGUE = [
       "code": "ST",
       "name": "Sanitas Troesch"
     },
-    "reference": "SAN.104635",
+    "reference": "SAN.335278",
     "name": "Clapet anti-retour Ø 54 mm",
+    "category": "robinet",
+    "specification": "Ø 54 mm",
+    "active": true,
     "unit": "p",
-    "base_price": 21.65
+    "base_price": 46.57
   },
   {
     "id": "gm-118",
@@ -3894,10 +4953,13 @@ export const MOCK_CATALOGUE = [
       "code": "GM",
       "name": "Getaz Miauton"
     },
-    "reference": "GM/25/7595",
+    "reference": "GM/58/3948",
     "name": "Clapet anti-retour Ø 54 mm",
+    "category": "robinet",
+    "specification": "Ø 54 mm",
+    "active": true,
     "unit": "p",
-    "base_price": 15.47
+    "base_price": 26.39
   },
   {
     "id": "nsb-119",
@@ -3905,10 +4967,13 @@ export const MOCK_CATALOGUE = [
       "code": "NSB",
       "name": "Nussbaum"
     },
-    "reference": "NSB-5515-76.1",
+    "reference": "NSB-1353-76.1",
     "name": "Clapet anti-retour Ø 76.1 mm",
+    "category": "robinet",
+    "specification": "Ø 76.1 mm",
+    "active": true,
     "unit": "p",
-    "base_price": 46.88
+    "base_price": 54.53
   },
   {
     "id": "st-119",
@@ -3916,10 +4981,13 @@ export const MOCK_CATALOGUE = [
       "code": "ST",
       "name": "Sanitas Troesch"
     },
-    "reference": "SAN.786052",
+    "reference": "SAN.360216",
     "name": "Clapet anti-retour Ø 76.1 mm",
+    "category": "robinet",
+    "specification": "Ø 76.1 mm",
+    "active": true,
     "unit": "p",
-    "base_price": 45.33
+    "base_price": 40.52
   },
   {
     "id": "gm-119",
@@ -3927,10 +4995,13 @@ export const MOCK_CATALOGUE = [
       "code": "GM",
       "name": "Getaz Miauton"
     },
-    "reference": "GM/91/7880",
+    "reference": "GM/57/3428",
     "name": "Clapet anti-retour Ø 76.1 mm",
+    "category": "robinet",
+    "specification": "Ø 76.1 mm",
+    "active": true,
     "unit": "p",
-    "base_price": 18.79
+    "base_price": 35.55
   },
   {
     "id": "nsb-120",
@@ -3938,10 +5009,13 @@ export const MOCK_CATALOGUE = [
       "code": "NSB",
       "name": "Nussbaum"
     },
-    "reference": "NSB-7215-88.9",
+    "reference": "NSB-2606-88.9",
     "name": "Clapet anti-retour Ø 88.9 mm",
+    "category": "robinet",
+    "specification": "Ø 88.9 mm",
+    "active": true,
     "unit": "p",
-    "base_price": 30.4
+    "base_price": 11.19
   },
   {
     "id": "st-120",
@@ -3949,10 +5023,13 @@ export const MOCK_CATALOGUE = [
       "code": "ST",
       "name": "Sanitas Troesch"
     },
-    "reference": "SAN.297669",
+    "reference": "SAN.742877",
     "name": "Clapet anti-retour Ø 88.9 mm",
+    "category": "robinet",
+    "specification": "Ø 88.9 mm",
+    "active": true,
     "unit": "p",
-    "base_price": 5.96
+    "base_price": 29.17
   },
   {
     "id": "gm-120",
@@ -3960,10 +5037,13 @@ export const MOCK_CATALOGUE = [
       "code": "GM",
       "name": "Getaz Miauton"
     },
-    "reference": "GM/11/5290",
+    "reference": "GM/28/9238",
     "name": "Clapet anti-retour Ø 88.9 mm",
+    "category": "robinet",
+    "specification": "Ø 88.9 mm",
+    "active": true,
     "unit": "p",
-    "base_price": 52.66
+    "base_price": 5.12
   },
   {
     "id": "nsb-121",
@@ -3971,10 +5051,13 @@ export const MOCK_CATALOGUE = [
       "code": "NSB",
       "name": "Nussbaum"
     },
-    "reference": "NSB-1240-108",
+    "reference": "NSB-6364-108",
     "name": "Clapet anti-retour Ø 108 mm",
+    "category": "robinet",
+    "specification": "Ø 108 mm",
+    "active": true,
     "unit": "p",
-    "base_price": 35.53
+    "base_price": 41.73
   },
   {
     "id": "st-121",
@@ -3982,10 +5065,13 @@ export const MOCK_CATALOGUE = [
       "code": "ST",
       "name": "Sanitas Troesch"
     },
-    "reference": "SAN.633694",
+    "reference": "SAN.704575",
     "name": "Clapet anti-retour Ø 108 mm",
+    "category": "robinet",
+    "specification": "Ø 108 mm",
+    "active": true,
     "unit": "p",
-    "base_price": 38.83
+    "base_price": 48.81
   },
   {
     "id": "gm-121",
@@ -3993,10 +5079,13 @@ export const MOCK_CATALOGUE = [
       "code": "GM",
       "name": "Getaz Miauton"
     },
-    "reference": "GM/31/3926",
+    "reference": "GM/85/7584",
     "name": "Clapet anti-retour Ø 108 mm",
+    "category": "robinet",
+    "specification": "Ø 108 mm",
+    "active": true,
     "unit": "p",
-    "base_price": 5.94
+    "base_price": 53.23
   },
   {
     "id": "nsb-122",
@@ -4004,10 +5093,13 @@ export const MOCK_CATALOGUE = [
       "code": "NSB",
       "name": "Nussbaum"
     },
-    "reference": "NSB-2301-12",
+    "reference": "NSB-7689-12",
     "name": "Raccords de raccordement Ø 12 mm",
+    "category": "raccord",
+    "specification": "Ø 12 mm",
+    "active": true,
     "unit": "p",
-    "base_price": 28.26
+    "base_price": 20.66
   },
   {
     "id": "st-122",
@@ -4015,10 +5107,13 @@ export const MOCK_CATALOGUE = [
       "code": "ST",
       "name": "Sanitas Troesch"
     },
-    "reference": "SAN.788211",
+    "reference": "SAN.593632",
     "name": "Raccords de raccordement Ø 12 mm",
+    "category": "raccord",
+    "specification": "Ø 12 mm",
+    "active": true,
     "unit": "p",
-    "base_price": 19.42
+    "base_price": 17.1
   },
   {
     "id": "gm-122",
@@ -4026,10 +5121,13 @@ export const MOCK_CATALOGUE = [
       "code": "GM",
       "name": "Getaz Miauton"
     },
-    "reference": "GM/45/7805",
+    "reference": "GM/79/9060",
     "name": "Raccords de raccordement Ø 12 mm",
+    "category": "raccord",
+    "specification": "Ø 12 mm",
+    "active": true,
     "unit": "p",
-    "base_price": 41.47
+    "base_price": 28.14
   },
   {
     "id": "nsb-123",
@@ -4037,10 +5135,13 @@ export const MOCK_CATALOGUE = [
       "code": "NSB",
       "name": "Nussbaum"
     },
-    "reference": "NSB-9248-15",
+    "reference": "NSB-1461-15",
     "name": "Raccords de raccordement Ø 15 mm",
+    "category": "raccord",
+    "specification": "Ø 15 mm",
+    "active": true,
     "unit": "p",
-    "base_price": 54.96
+    "base_price": 26.28
   },
   {
     "id": "st-123",
@@ -4048,10 +5149,13 @@ export const MOCK_CATALOGUE = [
       "code": "ST",
       "name": "Sanitas Troesch"
     },
-    "reference": "SAN.384685",
+    "reference": "SAN.986202",
     "name": "Raccords de raccordement Ø 15 mm",
+    "category": "raccord",
+    "specification": "Ø 15 mm",
+    "active": true,
     "unit": "p",
-    "base_price": 50.74
+    "base_price": 12.51
   },
   {
     "id": "gm-123",
@@ -4059,10 +5163,13 @@ export const MOCK_CATALOGUE = [
       "code": "GM",
       "name": "Getaz Miauton"
     },
-    "reference": "GM/50/4117",
+    "reference": "GM/46/8099",
     "name": "Raccords de raccordement Ø 15 mm",
+    "category": "raccord",
+    "specification": "Ø 15 mm",
+    "active": true,
     "unit": "p",
-    "base_price": 54.07
+    "base_price": 32.7
   },
   {
     "id": "nsb-124",
@@ -4070,10 +5177,13 @@ export const MOCK_CATALOGUE = [
       "code": "NSB",
       "name": "Nussbaum"
     },
-    "reference": "NSB-8993-18",
+    "reference": "NSB-4363-18",
     "name": "Raccords de raccordement Ø 18 mm",
+    "category": "raccord",
+    "specification": "Ø 18 mm",
+    "active": true,
     "unit": "p",
-    "base_price": 26.33
+    "base_price": 16.75
   },
   {
     "id": "st-124",
@@ -4081,10 +5191,13 @@ export const MOCK_CATALOGUE = [
       "code": "ST",
       "name": "Sanitas Troesch"
     },
-    "reference": "SAN.175256",
+    "reference": "SAN.816749",
     "name": "Raccords de raccordement Ø 18 mm",
+    "category": "raccord",
+    "specification": "Ø 18 mm",
+    "active": true,
     "unit": "p",
-    "base_price": 19.7
+    "base_price": 40.94
   },
   {
     "id": "gm-124",
@@ -4092,10 +5205,13 @@ export const MOCK_CATALOGUE = [
       "code": "GM",
       "name": "Getaz Miauton"
     },
-    "reference": "GM/25/4504",
+    "reference": "GM/24/9866",
     "name": "Raccords de raccordement Ø 18 mm",
+    "category": "raccord",
+    "specification": "Ø 18 mm",
+    "active": true,
     "unit": "p",
-    "base_price": 7.99
+    "base_price": 16.3
   },
   {
     "id": "nsb-125",
@@ -4103,10 +5219,13 @@ export const MOCK_CATALOGUE = [
       "code": "NSB",
       "name": "Nussbaum"
     },
-    "reference": "NSB-9229-22",
+    "reference": "NSB-3499-22",
     "name": "Raccords de raccordement Ø 22 mm",
+    "category": "raccord",
+    "specification": "Ø 22 mm",
+    "active": true,
     "unit": "p",
-    "base_price": 7.97
+    "base_price": 21.92
   },
   {
     "id": "st-125",
@@ -4114,10 +5233,13 @@ export const MOCK_CATALOGUE = [
       "code": "ST",
       "name": "Sanitas Troesch"
     },
-    "reference": "SAN.125976",
+    "reference": "SAN.148324",
     "name": "Raccords de raccordement Ø 22 mm",
+    "category": "raccord",
+    "specification": "Ø 22 mm",
+    "active": true,
     "unit": "p",
-    "base_price": 45.9
+    "base_price": 50.91
   },
   {
     "id": "gm-125",
@@ -4125,10 +5247,13 @@ export const MOCK_CATALOGUE = [
       "code": "GM",
       "name": "Getaz Miauton"
     },
-    "reference": "GM/10/9054",
+    "reference": "GM/40/5472",
     "name": "Raccords de raccordement Ø 22 mm",
+    "category": "raccord",
+    "specification": "Ø 22 mm",
+    "active": true,
     "unit": "p",
-    "base_price": 45.39
+    "base_price": 38.35
   },
   {
     "id": "nsb-126",
@@ -4136,10 +5261,13 @@ export const MOCK_CATALOGUE = [
       "code": "NSB",
       "name": "Nussbaum"
     },
-    "reference": "NSB-4163-28",
+    "reference": "NSB-4061-28",
     "name": "Raccords de raccordement Ø 28 mm",
+    "category": "raccord",
+    "specification": "Ø 28 mm",
+    "active": true,
     "unit": "p",
-    "base_price": 26.39
+    "base_price": 5.06
   },
   {
     "id": "st-126",
@@ -4147,10 +5275,13 @@ export const MOCK_CATALOGUE = [
       "code": "ST",
       "name": "Sanitas Troesch"
     },
-    "reference": "SAN.513758",
+    "reference": "SAN.130018",
     "name": "Raccords de raccordement Ø 28 mm",
+    "category": "raccord",
+    "specification": "Ø 28 mm",
+    "active": true,
     "unit": "p",
-    "base_price": 6.07
+    "base_price": 38.43
   },
   {
     "id": "gm-126",
@@ -4158,10 +5289,13 @@ export const MOCK_CATALOGUE = [
       "code": "GM",
       "name": "Getaz Miauton"
     },
-    "reference": "GM/68/4287",
+    "reference": "GM/72/7662",
     "name": "Raccords de raccordement Ø 28 mm",
+    "category": "raccord",
+    "specification": "Ø 28 mm",
+    "active": true,
     "unit": "p",
-    "base_price": 34.65
+    "base_price": 29.72
   },
   {
     "id": "nsb-127",
@@ -4169,10 +5303,13 @@ export const MOCK_CATALOGUE = [
       "code": "NSB",
       "name": "Nussbaum"
     },
-    "reference": "NSB-9787-35",
+    "reference": "NSB-6233-35",
     "name": "Raccords de raccordement Ø 35 mm",
+    "category": "raccord",
+    "specification": "Ø 35 mm",
+    "active": true,
     "unit": "p",
-    "base_price": 11.07
+    "base_price": 23.84
   },
   {
     "id": "st-127",
@@ -4180,10 +5317,13 @@ export const MOCK_CATALOGUE = [
       "code": "ST",
       "name": "Sanitas Troesch"
     },
-    "reference": "SAN.802663",
+    "reference": "SAN.828865",
     "name": "Raccords de raccordement Ø 35 mm",
+    "category": "raccord",
+    "specification": "Ø 35 mm",
+    "active": true,
     "unit": "p",
-    "base_price": 43.78
+    "base_price": 35.38
   },
   {
     "id": "gm-127",
@@ -4191,10 +5331,13 @@ export const MOCK_CATALOGUE = [
       "code": "GM",
       "name": "Getaz Miauton"
     },
-    "reference": "GM/45/8336",
+    "reference": "GM/34/1465",
     "name": "Raccords de raccordement Ø 35 mm",
+    "category": "raccord",
+    "specification": "Ø 35 mm",
+    "active": true,
     "unit": "p",
-    "base_price": 33.29
+    "base_price": 40.63
   },
   {
     "id": "nsb-128",
@@ -4202,10 +5345,13 @@ export const MOCK_CATALOGUE = [
       "code": "NSB",
       "name": "Nussbaum"
     },
-    "reference": "NSB-2937-42",
+    "reference": "NSB-4534-42",
     "name": "Raccords de raccordement Ø 42 mm",
+    "category": "raccord",
+    "specification": "Ø 42 mm",
+    "active": true,
     "unit": "p",
-    "base_price": 7.79
+    "base_price": 5.08
   },
   {
     "id": "st-128",
@@ -4213,10 +5359,13 @@ export const MOCK_CATALOGUE = [
       "code": "ST",
       "name": "Sanitas Troesch"
     },
-    "reference": "SAN.428258",
+    "reference": "SAN.560347",
     "name": "Raccords de raccordement Ø 42 mm",
+    "category": "raccord",
+    "specification": "Ø 42 mm",
+    "active": true,
     "unit": "p",
-    "base_price": 35.39
+    "base_price": 49.64
   },
   {
     "id": "gm-128",
@@ -4224,10 +5373,13 @@ export const MOCK_CATALOGUE = [
       "code": "GM",
       "name": "Getaz Miauton"
     },
-    "reference": "GM/35/3849",
+    "reference": "GM/25/9570",
     "name": "Raccords de raccordement Ø 42 mm",
+    "category": "raccord",
+    "specification": "Ø 42 mm",
+    "active": true,
     "unit": "p",
-    "base_price": 33.38
+    "base_price": 26.75
   },
   {
     "id": "nsb-129",
@@ -4235,10 +5387,13 @@ export const MOCK_CATALOGUE = [
       "code": "NSB",
       "name": "Nussbaum"
     },
-    "reference": "NSB-7620-54",
+    "reference": "NSB-4186-54",
     "name": "Raccords de raccordement Ø 54 mm",
+    "category": "raccord",
+    "specification": "Ø 54 mm",
+    "active": true,
     "unit": "p",
-    "base_price": 19.34
+    "base_price": 8.5
   },
   {
     "id": "st-129",
@@ -4246,10 +5401,13 @@ export const MOCK_CATALOGUE = [
       "code": "ST",
       "name": "Sanitas Troesch"
     },
-    "reference": "SAN.683994",
+    "reference": "SAN.573035",
     "name": "Raccords de raccordement Ø 54 mm",
+    "category": "raccord",
+    "specification": "Ø 54 mm",
+    "active": true,
     "unit": "p",
-    "base_price": 29.9
+    "base_price": 28
   },
   {
     "id": "gm-129",
@@ -4257,10 +5415,13 @@ export const MOCK_CATALOGUE = [
       "code": "GM",
       "name": "Getaz Miauton"
     },
-    "reference": "GM/90/4866",
+    "reference": "GM/39/2137",
     "name": "Raccords de raccordement Ø 54 mm",
+    "category": "raccord",
+    "specification": "Ø 54 mm",
+    "active": true,
     "unit": "p",
-    "base_price": 44.73
+    "base_price": 49.8
   },
   {
     "id": "nsb-130",
@@ -4268,10 +5429,13 @@ export const MOCK_CATALOGUE = [
       "code": "NSB",
       "name": "Nussbaum"
     },
-    "reference": "NSB-5201-76.1",
+    "reference": "NSB-6787-76.1",
     "name": "Raccords de raccordement Ø 76.1 mm",
+    "category": "raccord",
+    "specification": "Ø 76.1 mm",
+    "active": true,
     "unit": "p",
-    "base_price": 35.12
+    "base_price": 25.7
   },
   {
     "id": "st-130",
@@ -4279,10 +5443,13 @@ export const MOCK_CATALOGUE = [
       "code": "ST",
       "name": "Sanitas Troesch"
     },
-    "reference": "SAN.119191",
+    "reference": "SAN.194809",
     "name": "Raccords de raccordement Ø 76.1 mm",
+    "category": "raccord",
+    "specification": "Ø 76.1 mm",
+    "active": true,
     "unit": "p",
-    "base_price": 9.79
+    "base_price": 7.85
   },
   {
     "id": "gm-130",
@@ -4290,10 +5457,13 @@ export const MOCK_CATALOGUE = [
       "code": "GM",
       "name": "Getaz Miauton"
     },
-    "reference": "GM/98/8372",
+    "reference": "GM/10/1026",
     "name": "Raccords de raccordement Ø 76.1 mm",
+    "category": "raccord",
+    "specification": "Ø 76.1 mm",
+    "active": true,
     "unit": "p",
-    "base_price": 18.27
+    "base_price": 11.19
   },
   {
     "id": "nsb-131",
@@ -4301,10 +5471,13 @@ export const MOCK_CATALOGUE = [
       "code": "NSB",
       "name": "Nussbaum"
     },
-    "reference": "NSB-7123-88.9",
+    "reference": "NSB-7540-88.9",
     "name": "Raccords de raccordement Ø 88.9 mm",
+    "category": "raccord",
+    "specification": "Ø 88.9 mm",
+    "active": true,
     "unit": "p",
-    "base_price": 24.2
+    "base_price": 36.45
   },
   {
     "id": "st-131",
@@ -4312,10 +5485,13 @@ export const MOCK_CATALOGUE = [
       "code": "ST",
       "name": "Sanitas Troesch"
     },
-    "reference": "SAN.514333",
+    "reference": "SAN.879700",
     "name": "Raccords de raccordement Ø 88.9 mm",
+    "category": "raccord",
+    "specification": "Ø 88.9 mm",
+    "active": true,
     "unit": "p",
-    "base_price": 5.57
+    "base_price": 35.82
   },
   {
     "id": "gm-131",
@@ -4323,10 +5499,13 @@ export const MOCK_CATALOGUE = [
       "code": "GM",
       "name": "Getaz Miauton"
     },
-    "reference": "GM/23/3297",
+    "reference": "GM/35/8664",
     "name": "Raccords de raccordement Ø 88.9 mm",
+    "category": "raccord",
+    "specification": "Ø 88.9 mm",
+    "active": true,
     "unit": "p",
-    "base_price": 19.01
+    "base_price": 52.67
   },
   {
     "id": "nsb-132",
@@ -4334,10 +5513,13 @@ export const MOCK_CATALOGUE = [
       "code": "NSB",
       "name": "Nussbaum"
     },
-    "reference": "NSB-9943-108",
+    "reference": "NSB-7272-108",
     "name": "Raccords de raccordement Ø 108 mm",
+    "category": "raccord",
+    "specification": "Ø 108 mm",
+    "active": true,
     "unit": "p",
-    "base_price": 31.56
+    "base_price": 34.95
   },
   {
     "id": "st-132",
@@ -4345,10 +5527,13 @@ export const MOCK_CATALOGUE = [
       "code": "ST",
       "name": "Sanitas Troesch"
     },
-    "reference": "SAN.889486",
+    "reference": "SAN.148647",
     "name": "Raccords de raccordement Ø 108 mm",
+    "category": "raccord",
+    "specification": "Ø 108 mm",
+    "active": true,
     "unit": "p",
-    "base_price": 8.7
+    "base_price": 42.17
   },
   {
     "id": "gm-132",
@@ -4356,10 +5541,13 @@ export const MOCK_CATALOGUE = [
       "code": "GM",
       "name": "Getaz Miauton"
     },
-    "reference": "GM/64/9211",
+    "reference": "GM/37/1918",
     "name": "Raccords de raccordement Ø 108 mm",
+    "category": "raccord",
+    "specification": "Ø 108 mm",
+    "active": true,
     "unit": "p",
-    "base_price": 34.86
+    "base_price": 11.21
   },
   {
     "id": "nsb-133",
@@ -4367,10 +5555,13 @@ export const MOCK_CATALOGUE = [
       "code": "NSB",
       "name": "Nussbaum"
     },
-    "reference": "NSB-GEN-9023",
+    "reference": "NSB-GEN-9390",
     "name": "Pompe de circulation 1/2\" type 0",
+    "category": "accessoire",
+    "specification": "1/2\"",
+    "active": true,
     "unit": "p",
-    "base_price": 208.41
+    "base_price": 205.5
   },
   {
     "id": "st-133",
@@ -4378,10 +5569,13 @@ export const MOCK_CATALOGUE = [
       "code": "ST",
       "name": "Sanitas Troesch"
     },
-    "reference": "SAN.GEN.315613",
+    "reference": "SAN.GEN.492092",
     "name": "Pompe de circulation 1/2\" modèle 0",
+    "category": "accessoire",
+    "specification": "1/2\"",
+    "active": true,
     "unit": "p",
-    "base_price": 215.86
+    "base_price": 97.14
   },
   {
     "id": "gm-133",
@@ -4389,10 +5583,13 @@ export const MOCK_CATALOGUE = [
       "code": "GM",
       "name": "Getaz Miauton"
     },
-    "reference": "GM/GN/8529",
+    "reference": "GM/GN/9010",
     "name": "Pompe de circulation 1/2\" variante 0",
+    "category": "accessoire",
+    "specification": "1/2\"",
+    "active": true,
     "unit": "p",
-    "base_price": 88.97
+    "base_price": 102.3
   },
   {
     "id": "nsb-134",
@@ -4400,10 +5597,13 @@ export const MOCK_CATALOGUE = [
       "code": "NSB",
       "name": "Nussbaum"
     },
-    "reference": "NSB-GEN-8651",
+    "reference": "NSB-GEN-1285",
     "name": "Pompe de circulation 1/2\" type 1",
+    "category": "accessoire",
+    "specification": "1/2\"",
+    "active": true,
     "unit": "p",
-    "base_price": 193.78
+    "base_price": 195.9
   },
   {
     "id": "st-134",
@@ -4411,10 +5611,13 @@ export const MOCK_CATALOGUE = [
       "code": "ST",
       "name": "Sanitas Troesch"
     },
-    "reference": "SAN.GEN.775888",
+    "reference": "SAN.GEN.196319",
     "name": "Pompe de circulation 1/2\" modèle 1",
+    "category": "accessoire",
+    "specification": "1/2\"",
+    "active": true,
     "unit": "p",
-    "base_price": 91.07
+    "base_price": 20.24
   },
   {
     "id": "gm-134",
@@ -4422,10 +5625,13 @@ export const MOCK_CATALOGUE = [
       "code": "GM",
       "name": "Getaz Miauton"
     },
-    "reference": "GM/GN/1345",
+    "reference": "GM/GN/7197",
     "name": "Pompe de circulation 1/2\" variante 1",
+    "category": "accessoire",
+    "specification": "1/2\"",
+    "active": true,
     "unit": "p",
-    "base_price": 128
+    "base_price": 76.94
   },
   {
     "id": "nsb-135",
@@ -4433,10 +5639,13 @@ export const MOCK_CATALOGUE = [
       "code": "NSB",
       "name": "Nussbaum"
     },
-    "reference": "NSB-GEN-9379",
+    "reference": "NSB-GEN-1930",
     "name": "Pompe de circulation 1/2\" type 2",
+    "category": "accessoire",
+    "specification": "1/2\"",
+    "active": true,
     "unit": "p",
-    "base_price": 204.37
+    "base_price": 217.08
   },
   {
     "id": "st-135",
@@ -4444,10 +5653,13 @@ export const MOCK_CATALOGUE = [
       "code": "ST",
       "name": "Sanitas Troesch"
     },
-    "reference": "SAN.GEN.350154",
+    "reference": "SAN.GEN.926318",
     "name": "Pompe de circulation 1/2\" modèle 2",
+    "category": "accessoire",
+    "specification": "1/2\"",
+    "active": true,
     "unit": "p",
-    "base_price": 198.13
+    "base_price": 135.84
   },
   {
     "id": "gm-135",
@@ -4455,10 +5667,13 @@ export const MOCK_CATALOGUE = [
       "code": "GM",
       "name": "Getaz Miauton"
     },
-    "reference": "GM/GN/4099",
+    "reference": "GM/GN/3838",
     "name": "Pompe de circulation 1/2\" variante 2",
+    "category": "accessoire",
+    "specification": "1/2\"",
+    "active": true,
     "unit": "p",
-    "base_price": 100.47
+    "base_price": 203.15
   },
   {
     "id": "nsb-136",
@@ -4466,10 +5681,13 @@ export const MOCK_CATALOGUE = [
       "code": "NSB",
       "name": "Nussbaum"
     },
-    "reference": "NSB-GEN-3544",
+    "reference": "NSB-GEN-2031",
     "name": "Pompe de circulation 1/2\" type 3",
+    "category": "accessoire",
+    "specification": "1/2\"",
+    "active": true,
     "unit": "p",
-    "base_price": 77.17
+    "base_price": 67.24
   },
   {
     "id": "st-136",
@@ -4477,10 +5695,13 @@ export const MOCK_CATALOGUE = [
       "code": "ST",
       "name": "Sanitas Troesch"
     },
-    "reference": "SAN.GEN.621194",
+    "reference": "SAN.GEN.957770",
     "name": "Pompe de circulation 1/2\" modèle 3",
+    "category": "accessoire",
+    "specification": "1/2\"",
+    "active": true,
     "unit": "p",
-    "base_price": 173.4
+    "base_price": 188.41
   },
   {
     "id": "gm-136",
@@ -4488,10 +5709,13 @@ export const MOCK_CATALOGUE = [
       "code": "GM",
       "name": "Getaz Miauton"
     },
-    "reference": "GM/GN/2471",
+    "reference": "GM/GN/6134",
     "name": "Pompe de circulation 1/2\" variante 3",
+    "category": "accessoire",
+    "specification": "1/2\"",
+    "active": true,
     "unit": "p",
-    "base_price": 126.39
+    "base_price": 178.76
   },
   {
     "id": "nsb-137",
@@ -4499,10 +5723,13 @@ export const MOCK_CATALOGUE = [
       "code": "NSB",
       "name": "Nussbaum"
     },
-    "reference": "NSB-GEN-4063",
+    "reference": "NSB-GEN-3751",
     "name": "Pompe de circulation 1/2\" type 4",
+    "category": "accessoire",
+    "specification": "1/2\"",
+    "active": true,
     "unit": "p",
-    "base_price": 213.79
+    "base_price": 62.3
   },
   {
     "id": "st-137",
@@ -4510,10 +5737,13 @@ export const MOCK_CATALOGUE = [
       "code": "ST",
       "name": "Sanitas Troesch"
     },
-    "reference": "SAN.GEN.469867",
+    "reference": "SAN.GEN.366585",
     "name": "Pompe de circulation 1/2\" modèle 4",
+    "category": "accessoire",
+    "specification": "1/2\"",
+    "active": true,
     "unit": "p",
-    "base_price": 105.01
+    "base_price": 66.38
   },
   {
     "id": "gm-137",
@@ -4521,10 +5751,13 @@ export const MOCK_CATALOGUE = [
       "code": "GM",
       "name": "Getaz Miauton"
     },
-    "reference": "GM/GN/5888",
+    "reference": "GM/GN/4736",
     "name": "Pompe de circulation 1/2\" variante 4",
+    "category": "accessoire",
+    "specification": "1/2\"",
+    "active": true,
     "unit": "p",
-    "base_price": 153.55
+    "base_price": 141.72
   },
   {
     "id": "nsb-138",
@@ -4532,10 +5765,13 @@ export const MOCK_CATALOGUE = [
       "code": "NSB",
       "name": "Nussbaum"
     },
-    "reference": "NSB-GEN-9390",
+    "reference": "NSB-GEN-7916",
     "name": "Pompe de circulation 3/4\" type 0",
+    "category": "accessoire",
+    "specification": "3/4\"",
+    "active": true,
     "unit": "p",
-    "base_price": 144.49
+    "base_price": 98.89
   },
   {
     "id": "st-138",
@@ -4543,10 +5779,13 @@ export const MOCK_CATALOGUE = [
       "code": "ST",
       "name": "Sanitas Troesch"
     },
-    "reference": "SAN.GEN.353657",
+    "reference": "SAN.GEN.311373",
     "name": "Pompe de circulation 3/4\" modèle 0",
+    "category": "accessoire",
+    "specification": "3/4\"",
+    "active": true,
     "unit": "p",
-    "base_price": 115.3
+    "base_price": 88.84
   },
   {
     "id": "gm-138",
@@ -4554,10 +5793,13 @@ export const MOCK_CATALOGUE = [
       "code": "GM",
       "name": "Getaz Miauton"
     },
-    "reference": "GM/GN/5051",
+    "reference": "GM/GN/9895",
     "name": "Pompe de circulation 3/4\" variante 0",
+    "category": "accessoire",
+    "specification": "3/4\"",
+    "active": true,
     "unit": "p",
-    "base_price": 131.93
+    "base_price": 122.96
   },
   {
     "id": "nsb-139",
@@ -4565,10 +5807,13 @@ export const MOCK_CATALOGUE = [
       "code": "NSB",
       "name": "Nussbaum"
     },
-    "reference": "NSB-GEN-6958",
+    "reference": "NSB-GEN-3371",
     "name": "Pompe de circulation 3/4\" type 1",
+    "category": "accessoire",
+    "specification": "3/4\"",
+    "active": true,
     "unit": "p",
-    "base_price": 188.33
+    "base_price": 138.67
   },
   {
     "id": "st-139",
@@ -4576,10 +5821,13 @@ export const MOCK_CATALOGUE = [
       "code": "ST",
       "name": "Sanitas Troesch"
     },
-    "reference": "SAN.GEN.139954",
+    "reference": "SAN.GEN.830980",
     "name": "Pompe de circulation 3/4\" modèle 1",
+    "category": "accessoire",
+    "specification": "3/4\"",
+    "active": true,
     "unit": "p",
-    "base_price": 180.08
+    "base_price": 188.61
   },
   {
     "id": "gm-139",
@@ -4587,10 +5835,13 @@ export const MOCK_CATALOGUE = [
       "code": "GM",
       "name": "Getaz Miauton"
     },
-    "reference": "GM/GN/8415",
+    "reference": "GM/GN/7661",
     "name": "Pompe de circulation 3/4\" variante 1",
+    "category": "accessoire",
+    "specification": "3/4\"",
+    "active": true,
     "unit": "p",
-    "base_price": 155.05
+    "base_price": 152.98
   },
   {
     "id": "nsb-140",
@@ -4598,10 +5849,13 @@ export const MOCK_CATALOGUE = [
       "code": "NSB",
       "name": "Nussbaum"
     },
-    "reference": "NSB-GEN-5234",
+    "reference": "NSB-GEN-8197",
     "name": "Pompe de circulation 3/4\" type 2",
+    "category": "accessoire",
+    "specification": "3/4\"",
+    "active": true,
     "unit": "p",
-    "base_price": 138.59
+    "base_price": 89.63
   },
   {
     "id": "st-140",
@@ -4609,10 +5863,13 @@ export const MOCK_CATALOGUE = [
       "code": "ST",
       "name": "Sanitas Troesch"
     },
-    "reference": "SAN.GEN.954750",
+    "reference": "SAN.GEN.425290",
     "name": "Pompe de circulation 3/4\" modèle 2",
+    "category": "accessoire",
+    "specification": "3/4\"",
+    "active": true,
     "unit": "p",
-    "base_price": 117.58
+    "base_price": 153.45
   },
   {
     "id": "gm-140",
@@ -4620,10 +5877,13 @@ export const MOCK_CATALOGUE = [
       "code": "GM",
       "name": "Getaz Miauton"
     },
-    "reference": "GM/GN/2661",
+    "reference": "GM/GN/2606",
     "name": "Pompe de circulation 3/4\" variante 2",
+    "category": "accessoire",
+    "specification": "3/4\"",
+    "active": true,
     "unit": "p",
-    "base_price": 34.35
+    "base_price": 198.51
   },
   {
     "id": "nsb-141",
@@ -4631,10 +5891,13 @@ export const MOCK_CATALOGUE = [
       "code": "NSB",
       "name": "Nussbaum"
     },
-    "reference": "NSB-GEN-2869",
+    "reference": "NSB-GEN-3006",
     "name": "Pompe de circulation 3/4\" type 3",
+    "category": "accessoire",
+    "specification": "3/4\"",
+    "active": true,
     "unit": "p",
-    "base_price": 94.03
+    "base_price": 32.51
   },
   {
     "id": "st-141",
@@ -4642,10 +5905,13 @@ export const MOCK_CATALOGUE = [
       "code": "ST",
       "name": "Sanitas Troesch"
     },
-    "reference": "SAN.GEN.893253",
+    "reference": "SAN.GEN.538561",
     "name": "Pompe de circulation 3/4\" modèle 3",
+    "category": "accessoire",
+    "specification": "3/4\"",
+    "active": true,
     "unit": "p",
-    "base_price": 84.27
+    "base_price": 106.16
   },
   {
     "id": "gm-141",
@@ -4653,10 +5919,13 @@ export const MOCK_CATALOGUE = [
       "code": "GM",
       "name": "Getaz Miauton"
     },
-    "reference": "GM/GN/6650",
+    "reference": "GM/GN/2106",
     "name": "Pompe de circulation 3/4\" variante 3",
+    "category": "accessoire",
+    "specification": "3/4\"",
+    "active": true,
     "unit": "p",
-    "base_price": 39.49
+    "base_price": 51.49
   },
   {
     "id": "nsb-142",
@@ -4664,10 +5933,13 @@ export const MOCK_CATALOGUE = [
       "code": "NSB",
       "name": "Nussbaum"
     },
-    "reference": "NSB-GEN-7168",
+    "reference": "NSB-GEN-9968",
     "name": "Pompe de circulation 3/4\" type 4",
+    "category": "accessoire",
+    "specification": "3/4\"",
+    "active": true,
     "unit": "p",
-    "base_price": 138.62
+    "base_price": 73.42
   },
   {
     "id": "st-142",
@@ -4675,10 +5947,13 @@ export const MOCK_CATALOGUE = [
       "code": "ST",
       "name": "Sanitas Troesch"
     },
-    "reference": "SAN.GEN.526396",
+    "reference": "SAN.GEN.363577",
     "name": "Pompe de circulation 3/4\" modèle 4",
+    "category": "accessoire",
+    "specification": "3/4\"",
+    "active": true,
     "unit": "p",
-    "base_price": 195.79
+    "base_price": 83.88
   },
   {
     "id": "gm-142",
@@ -4686,10 +5961,13 @@ export const MOCK_CATALOGUE = [
       "code": "GM",
       "name": "Getaz Miauton"
     },
-    "reference": "GM/GN/5826",
+    "reference": "GM/GN/8421",
     "name": "Pompe de circulation 3/4\" variante 4",
+    "category": "accessoire",
+    "specification": "3/4\"",
+    "active": true,
     "unit": "p",
-    "base_price": 181.89
+    "base_price": 197.12
   },
   {
     "id": "nsb-143",
@@ -4697,10 +5975,13 @@ export const MOCK_CATALOGUE = [
       "code": "NSB",
       "name": "Nussbaum"
     },
-    "reference": "NSB-GEN-5669",
+    "reference": "NSB-GEN-5397",
     "name": "Pompe de circulation 1\" type 0",
+    "category": "accessoire",
+    "specification": "1\"",
+    "active": true,
     "unit": "p",
-    "base_price": 207.11
+    "base_price": 185.72
   },
   {
     "id": "st-143",
@@ -4708,10 +5989,13 @@ export const MOCK_CATALOGUE = [
       "code": "ST",
       "name": "Sanitas Troesch"
     },
-    "reference": "SAN.GEN.772932",
+    "reference": "SAN.GEN.444029",
     "name": "Pompe de circulation 1\" modèle 0",
+    "category": "accessoire",
+    "specification": "1\"",
+    "active": true,
     "unit": "p",
-    "base_price": 143.32
+    "base_price": 55.87
   },
   {
     "id": "gm-143",
@@ -4719,10 +6003,13 @@ export const MOCK_CATALOGUE = [
       "code": "GM",
       "name": "Getaz Miauton"
     },
-    "reference": "GM/GN/9131",
+    "reference": "GM/GN/6331",
     "name": "Pompe de circulation 1\" variante 0",
+    "category": "accessoire",
+    "specification": "1\"",
+    "active": true,
     "unit": "p",
-    "base_price": 209.74
+    "base_price": 133.05
   },
   {
     "id": "nsb-144",
@@ -4730,10 +6017,13 @@ export const MOCK_CATALOGUE = [
       "code": "NSB",
       "name": "Nussbaum"
     },
-    "reference": "NSB-GEN-3434",
+    "reference": "NSB-GEN-1234",
     "name": "Pompe de circulation 1\" type 1",
+    "category": "accessoire",
+    "specification": "1\"",
+    "active": true,
     "unit": "p",
-    "base_price": 106.72
+    "base_price": 76.49
   },
   {
     "id": "st-144",
@@ -4741,10 +6031,13 @@ export const MOCK_CATALOGUE = [
       "code": "ST",
       "name": "Sanitas Troesch"
     },
-    "reference": "SAN.GEN.384935",
+    "reference": "SAN.GEN.790439",
     "name": "Pompe de circulation 1\" modèle 1",
+    "category": "accessoire",
+    "specification": "1\"",
+    "active": true,
     "unit": "p",
-    "base_price": 206.78
+    "base_price": 148.7
   },
   {
     "id": "gm-144",
@@ -4752,10 +6045,13 @@ export const MOCK_CATALOGUE = [
       "code": "GM",
       "name": "Getaz Miauton"
     },
-    "reference": "GM/GN/5743",
+    "reference": "GM/GN/7208",
     "name": "Pompe de circulation 1\" variante 1",
+    "category": "accessoire",
+    "specification": "1\"",
+    "active": true,
     "unit": "p",
-    "base_price": 89.63
+    "base_price": 47.28
   },
   {
     "id": "nsb-145",
@@ -4763,10 +6059,13 @@ export const MOCK_CATALOGUE = [
       "code": "NSB",
       "name": "Nussbaum"
     },
-    "reference": "NSB-GEN-9807",
+    "reference": "NSB-GEN-8278",
     "name": "Pompe de circulation 1\" type 2",
+    "category": "accessoire",
+    "specification": "1\"",
+    "active": true,
     "unit": "p",
-    "base_price": 218.73
+    "base_price": 158.48
   },
   {
     "id": "st-145",
@@ -4774,10 +6073,13 @@ export const MOCK_CATALOGUE = [
       "code": "ST",
       "name": "Sanitas Troesch"
     },
-    "reference": "SAN.GEN.667681",
+    "reference": "SAN.GEN.279810",
     "name": "Pompe de circulation 1\" modèle 2",
+    "category": "accessoire",
+    "specification": "1\"",
+    "active": true,
     "unit": "p",
-    "base_price": 49.24
+    "base_price": 69.16
   },
   {
     "id": "gm-145",
@@ -4785,10 +6087,13 @@ export const MOCK_CATALOGUE = [
       "code": "GM",
       "name": "Getaz Miauton"
     },
-    "reference": "GM/GN/4021",
+    "reference": "GM/GN/2775",
     "name": "Pompe de circulation 1\" variante 2",
+    "category": "accessoire",
+    "specification": "1\"",
+    "active": true,
     "unit": "p",
-    "base_price": 217.54
+    "base_price": 162.54
   },
   {
     "id": "nsb-146",
@@ -4796,10 +6101,13 @@ export const MOCK_CATALOGUE = [
       "code": "NSB",
       "name": "Nussbaum"
     },
-    "reference": "NSB-GEN-4515",
+    "reference": "NSB-GEN-1492",
     "name": "Pompe de circulation 1\" type 3",
+    "category": "accessoire",
+    "specification": "1\"",
+    "active": true,
     "unit": "p",
-    "base_price": 38.7
+    "base_price": 25.33
   },
   {
     "id": "st-146",
@@ -4807,10 +6115,13 @@ export const MOCK_CATALOGUE = [
       "code": "ST",
       "name": "Sanitas Troesch"
     },
-    "reference": "SAN.GEN.396880",
+    "reference": "SAN.GEN.537964",
     "name": "Pompe de circulation 1\" modèle 3",
+    "category": "accessoire",
+    "specification": "1\"",
+    "active": true,
     "unit": "p",
-    "base_price": 87.48
+    "base_price": 61.8
   },
   {
     "id": "gm-146",
@@ -4818,10 +6129,13 @@ export const MOCK_CATALOGUE = [
       "code": "GM",
       "name": "Getaz Miauton"
     },
-    "reference": "GM/GN/8613",
+    "reference": "GM/GN/2176",
     "name": "Pompe de circulation 1\" variante 3",
+    "category": "accessoire",
+    "specification": "1\"",
+    "active": true,
     "unit": "p",
-    "base_price": 199.48
+    "base_price": 165.79
   },
   {
     "id": "nsb-147",
@@ -4829,10 +6143,13 @@ export const MOCK_CATALOGUE = [
       "code": "NSB",
       "name": "Nussbaum"
     },
-    "reference": "NSB-GEN-9443",
+    "reference": "NSB-GEN-5259",
     "name": "Pompe de circulation 1\" type 4",
+    "category": "accessoire",
+    "specification": "1\"",
+    "active": true,
     "unit": "p",
-    "base_price": 136.02
+    "base_price": 121.93
   },
   {
     "id": "st-147",
@@ -4840,10 +6157,13 @@ export const MOCK_CATALOGUE = [
       "code": "ST",
       "name": "Sanitas Troesch"
     },
-    "reference": "SAN.GEN.178550",
+    "reference": "SAN.GEN.221167",
     "name": "Pompe de circulation 1\" modèle 4",
+    "category": "accessoire",
+    "specification": "1\"",
+    "active": true,
     "unit": "p",
-    "base_price": 182.84
+    "base_price": 166.56
   },
   {
     "id": "gm-147",
@@ -4851,10 +6171,13 @@ export const MOCK_CATALOGUE = [
       "code": "GM",
       "name": "Getaz Miauton"
     },
-    "reference": "GM/GN/7905",
+    "reference": "GM/GN/1468",
     "name": "Pompe de circulation 1\" variante 4",
+    "category": "accessoire",
+    "specification": "1\"",
+    "active": true,
     "unit": "p",
-    "base_price": 109.39
+    "base_price": 123.12
   },
   {
     "id": "nsb-148",
@@ -4862,10 +6185,13 @@ export const MOCK_CATALOGUE = [
       "code": "NSB",
       "name": "Nussbaum"
     },
-    "reference": "NSB-GEN-5523",
+    "reference": "NSB-GEN-8977",
     "name": "Pompe de circulation 1 1/4\" type 0",
+    "category": "accessoire",
+    "specification": "1 1/4\"",
+    "active": true,
     "unit": "p",
-    "base_price": 193.61
+    "base_price": 109.14
   },
   {
     "id": "st-148",
@@ -4873,10 +6199,13 @@ export const MOCK_CATALOGUE = [
       "code": "ST",
       "name": "Sanitas Troesch"
     },
-    "reference": "SAN.GEN.506104",
+    "reference": "SAN.GEN.731052",
     "name": "Pompe de circulation 1 1/4\" modèle 0",
+    "category": "accessoire",
+    "specification": "1 1/4\"",
+    "active": true,
     "unit": "p",
-    "base_price": 38.13
+    "base_price": 118.11
   },
   {
     "id": "gm-148",
@@ -4884,10 +6213,13 @@ export const MOCK_CATALOGUE = [
       "code": "GM",
       "name": "Getaz Miauton"
     },
-    "reference": "GM/GN/7623",
+    "reference": "GM/GN/6963",
     "name": "Pompe de circulation 1 1/4\" variante 0",
+    "category": "accessoire",
+    "specification": "1 1/4\"",
+    "active": true,
     "unit": "p",
-    "base_price": 74.37
+    "base_price": 99.1
   },
   {
     "id": "nsb-149",
@@ -4895,10 +6227,13 @@ export const MOCK_CATALOGUE = [
       "code": "NSB",
       "name": "Nussbaum"
     },
-    "reference": "NSB-GEN-7772",
+    "reference": "NSB-GEN-7092",
     "name": "Pompe de circulation 1 1/4\" type 1",
+    "category": "accessoire",
+    "specification": "1 1/4\"",
+    "active": true,
     "unit": "p",
-    "base_price": 175.17
+    "base_price": 141.25
   },
   {
     "id": "st-149",
@@ -4906,10 +6241,13 @@ export const MOCK_CATALOGUE = [
       "code": "ST",
       "name": "Sanitas Troesch"
     },
-    "reference": "SAN.GEN.180344",
+    "reference": "SAN.GEN.842941",
     "name": "Pompe de circulation 1 1/4\" modèle 1",
+    "category": "accessoire",
+    "specification": "1 1/4\"",
+    "active": true,
     "unit": "p",
-    "base_price": 57.43
+    "base_price": 56.17
   },
   {
     "id": "gm-149",
@@ -4917,10 +6255,13 @@ export const MOCK_CATALOGUE = [
       "code": "GM",
       "name": "Getaz Miauton"
     },
-    "reference": "GM/GN/3598",
+    "reference": "GM/GN/6567",
     "name": "Pompe de circulation 1 1/4\" variante 1",
+    "category": "accessoire",
+    "specification": "1 1/4\"",
+    "active": true,
     "unit": "p",
-    "base_price": 68.19
+    "base_price": 113.4
   },
   {
     "id": "nsb-150",
@@ -4928,10 +6269,13 @@ export const MOCK_CATALOGUE = [
       "code": "NSB",
       "name": "Nussbaum"
     },
-    "reference": "NSB-GEN-4004",
+    "reference": "NSB-GEN-2925",
     "name": "Pompe de circulation 1 1/4\" type 2",
+    "category": "accessoire",
+    "specification": "1 1/4\"",
+    "active": true,
     "unit": "p",
-    "base_price": 85.67
+    "base_price": 117.09
   },
   {
     "id": "st-150",
@@ -4939,10 +6283,13 @@ export const MOCK_CATALOGUE = [
       "code": "ST",
       "name": "Sanitas Troesch"
     },
-    "reference": "SAN.GEN.798532",
+    "reference": "SAN.GEN.501269",
     "name": "Pompe de circulation 1 1/4\" modèle 2",
+    "category": "accessoire",
+    "specification": "1 1/4\"",
+    "active": true,
     "unit": "p",
-    "base_price": 51.77
+    "base_price": 72.92
   },
   {
     "id": "gm-150",
@@ -4950,10 +6297,13 @@ export const MOCK_CATALOGUE = [
       "code": "GM",
       "name": "Getaz Miauton"
     },
-    "reference": "GM/GN/9020",
+    "reference": "GM/GN/5527",
     "name": "Pompe de circulation 1 1/4\" variante 2",
+    "category": "accessoire",
+    "specification": "1 1/4\"",
+    "active": true,
     "unit": "p",
-    "base_price": 154.52
+    "base_price": 163.55
   },
   {
     "id": "nsb-151",
@@ -4961,10 +6311,13 @@ export const MOCK_CATALOGUE = [
       "code": "NSB",
       "name": "Nussbaum"
     },
-    "reference": "NSB-GEN-4086",
+    "reference": "NSB-GEN-5686",
     "name": "Pompe de circulation 1 1/4\" type 3",
+    "category": "accessoire",
+    "specification": "1 1/4\"",
+    "active": true,
     "unit": "p",
-    "base_price": 104.64
+    "base_price": 147.22
   },
   {
     "id": "st-151",
@@ -4972,10 +6325,13 @@ export const MOCK_CATALOGUE = [
       "code": "ST",
       "name": "Sanitas Troesch"
     },
-    "reference": "SAN.GEN.336519",
+    "reference": "SAN.GEN.568994",
     "name": "Pompe de circulation 1 1/4\" modèle 3",
+    "category": "accessoire",
+    "specification": "1 1/4\"",
+    "active": true,
     "unit": "p",
-    "base_price": 135.59
+    "base_price": 119.76
   },
   {
     "id": "gm-151",
@@ -4983,10 +6339,13 @@ export const MOCK_CATALOGUE = [
       "code": "GM",
       "name": "Getaz Miauton"
     },
-    "reference": "GM/GN/1524",
+    "reference": "GM/GN/3496",
     "name": "Pompe de circulation 1 1/4\" variante 3",
+    "category": "accessoire",
+    "specification": "1 1/4\"",
+    "active": true,
     "unit": "p",
-    "base_price": 159.31
+    "base_price": 108.79
   },
   {
     "id": "nsb-152",
@@ -4994,10 +6353,13 @@ export const MOCK_CATALOGUE = [
       "code": "NSB",
       "name": "Nussbaum"
     },
-    "reference": "NSB-GEN-6142",
+    "reference": "NSB-GEN-5913",
     "name": "Pompe de circulation 1 1/4\" type 4",
+    "category": "accessoire",
+    "specification": "1 1/4\"",
+    "active": true,
     "unit": "p",
-    "base_price": 175.89
+    "base_price": 36.66
   },
   {
     "id": "st-152",
@@ -5005,10 +6367,13 @@ export const MOCK_CATALOGUE = [
       "code": "ST",
       "name": "Sanitas Troesch"
     },
-    "reference": "SAN.GEN.147239",
+    "reference": "SAN.GEN.958971",
     "name": "Pompe de circulation 1 1/4\" modèle 4",
+    "category": "accessoire",
+    "specification": "1 1/4\"",
+    "active": true,
     "unit": "p",
-    "base_price": 200.14
+    "base_price": 135.84
   },
   {
     "id": "gm-152",
@@ -5016,10 +6381,13 @@ export const MOCK_CATALOGUE = [
       "code": "GM",
       "name": "Getaz Miauton"
     },
-    "reference": "GM/GN/9303",
+    "reference": "GM/GN/9905",
     "name": "Pompe de circulation 1 1/4\" variante 4",
+    "category": "accessoire",
+    "specification": "1 1/4\"",
+    "active": true,
     "unit": "p",
-    "base_price": 54.78
+    "base_price": 92.13
   },
   {
     "id": "nsb-153",
@@ -5027,10 +6395,13 @@ export const MOCK_CATALOGUE = [
       "code": "NSB",
       "name": "Nussbaum"
     },
-    "reference": "NSB-GEN-9660",
+    "reference": "NSB-GEN-9590",
     "name": "Pompe de circulation 1 1/2\" type 0",
+    "category": "accessoire",
+    "specification": "1 1/2\"",
+    "active": true,
     "unit": "p",
-    "base_price": 192.28
+    "base_price": 166.45
   },
   {
     "id": "st-153",
@@ -5038,10 +6409,13 @@ export const MOCK_CATALOGUE = [
       "code": "ST",
       "name": "Sanitas Troesch"
     },
-    "reference": "SAN.GEN.551618",
+    "reference": "SAN.GEN.410707",
     "name": "Pompe de circulation 1 1/2\" modèle 0",
+    "category": "accessoire",
+    "specification": "1 1/2\"",
+    "active": true,
     "unit": "p",
-    "base_price": 68.61
+    "base_price": 130.25
   },
   {
     "id": "gm-153",
@@ -5049,10 +6423,13 @@ export const MOCK_CATALOGUE = [
       "code": "GM",
       "name": "Getaz Miauton"
     },
-    "reference": "GM/GN/1530",
+    "reference": "GM/GN/1701",
     "name": "Pompe de circulation 1 1/2\" variante 0",
+    "category": "accessoire",
+    "specification": "1 1/2\"",
+    "active": true,
     "unit": "p",
-    "base_price": 218.06
+    "base_price": 111.67
   },
   {
     "id": "nsb-154",
@@ -5060,10 +6437,13 @@ export const MOCK_CATALOGUE = [
       "code": "NSB",
       "name": "Nussbaum"
     },
-    "reference": "NSB-GEN-3035",
+    "reference": "NSB-GEN-9884",
     "name": "Pompe de circulation 1 1/2\" type 1",
+    "category": "accessoire",
+    "specification": "1 1/2\"",
+    "active": true,
     "unit": "p",
-    "base_price": 145.81
+    "base_price": 70.49
   },
   {
     "id": "st-154",
@@ -5071,10 +6451,13 @@ export const MOCK_CATALOGUE = [
       "code": "ST",
       "name": "Sanitas Troesch"
     },
-    "reference": "SAN.GEN.343042",
+    "reference": "SAN.GEN.798157",
     "name": "Pompe de circulation 1 1/2\" modèle 1",
+    "category": "accessoire",
+    "specification": "1 1/2\"",
+    "active": true,
     "unit": "p",
-    "base_price": 88.9
+    "base_price": 156.75
   },
   {
     "id": "gm-154",
@@ -5082,10 +6465,13 @@ export const MOCK_CATALOGUE = [
       "code": "GM",
       "name": "Getaz Miauton"
     },
-    "reference": "GM/GN/8186",
+    "reference": "GM/GN/4125",
     "name": "Pompe de circulation 1 1/2\" variante 1",
+    "category": "accessoire",
+    "specification": "1 1/2\"",
+    "active": true,
     "unit": "p",
-    "base_price": 127.51
+    "base_price": 181.87
   },
   {
     "id": "nsb-155",
@@ -5093,10 +6479,13 @@ export const MOCK_CATALOGUE = [
       "code": "NSB",
       "name": "Nussbaum"
     },
-    "reference": "NSB-GEN-8339",
+    "reference": "NSB-GEN-9149",
     "name": "Pompe de circulation 1 1/2\" type 2",
+    "category": "accessoire",
+    "specification": "1 1/2\"",
+    "active": true,
     "unit": "p",
-    "base_price": 86.51
+    "base_price": 202.69
   },
   {
     "id": "st-155",
@@ -5104,10 +6493,13 @@ export const MOCK_CATALOGUE = [
       "code": "ST",
       "name": "Sanitas Troesch"
     },
-    "reference": "SAN.GEN.584007",
+    "reference": "SAN.GEN.192035",
     "name": "Pompe de circulation 1 1/2\" modèle 2",
+    "category": "accessoire",
+    "specification": "1 1/2\"",
+    "active": true,
     "unit": "p",
-    "base_price": 146.44
+    "base_price": 174.03
   },
   {
     "id": "gm-155",
@@ -5115,10 +6507,13 @@ export const MOCK_CATALOGUE = [
       "code": "GM",
       "name": "Getaz Miauton"
     },
-    "reference": "GM/GN/3617",
+    "reference": "GM/GN/1345",
     "name": "Pompe de circulation 1 1/2\" variante 2",
+    "category": "accessoire",
+    "specification": "1 1/2\"",
+    "active": true,
     "unit": "p",
-    "base_price": 209.91
+    "base_price": 94.69
   },
   {
     "id": "nsb-156",
@@ -5126,10 +6521,13 @@ export const MOCK_CATALOGUE = [
       "code": "NSB",
       "name": "Nussbaum"
     },
-    "reference": "NSB-GEN-1530",
+    "reference": "NSB-GEN-1937",
     "name": "Pompe de circulation 1 1/2\" type 3",
+    "category": "accessoire",
+    "specification": "1 1/2\"",
+    "active": true,
     "unit": "p",
-    "base_price": 108.37
+    "base_price": 114.84
   },
   {
     "id": "st-156",
@@ -5137,10 +6535,13 @@ export const MOCK_CATALOGUE = [
       "code": "ST",
       "name": "Sanitas Troesch"
     },
-    "reference": "SAN.GEN.200105",
+    "reference": "SAN.GEN.661599",
     "name": "Pompe de circulation 1 1/2\" modèle 3",
+    "category": "accessoire",
+    "specification": "1 1/2\"",
+    "active": true,
     "unit": "p",
-    "base_price": 155.43
+    "base_price": 202.46
   },
   {
     "id": "gm-156",
@@ -5148,10 +6549,13 @@ export const MOCK_CATALOGUE = [
       "code": "GM",
       "name": "Getaz Miauton"
     },
-    "reference": "GM/GN/7124",
+    "reference": "GM/GN/5737",
     "name": "Pompe de circulation 1 1/2\" variante 3",
+    "category": "accessoire",
+    "specification": "1 1/2\"",
+    "active": true,
     "unit": "p",
-    "base_price": 109.03
+    "base_price": 199.12
   },
   {
     "id": "nsb-157",
@@ -5159,10 +6563,13 @@ export const MOCK_CATALOGUE = [
       "code": "NSB",
       "name": "Nussbaum"
     },
-    "reference": "NSB-GEN-6059",
+    "reference": "NSB-GEN-6796",
     "name": "Pompe de circulation 1 1/2\" type 4",
+    "category": "accessoire",
+    "specification": "1 1/2\"",
+    "active": true,
     "unit": "p",
-    "base_price": 149.91
+    "base_price": 135.11
   },
   {
     "id": "st-157",
@@ -5170,10 +6577,13 @@ export const MOCK_CATALOGUE = [
       "code": "ST",
       "name": "Sanitas Troesch"
     },
-    "reference": "SAN.GEN.538682",
+    "reference": "SAN.GEN.635697",
     "name": "Pompe de circulation 1 1/2\" modèle 4",
+    "category": "accessoire",
+    "specification": "1 1/2\"",
+    "active": true,
     "unit": "p",
-    "base_price": 106.71
+    "base_price": 22.94
   },
   {
     "id": "gm-157",
@@ -5181,10 +6591,13 @@ export const MOCK_CATALOGUE = [
       "code": "GM",
       "name": "Getaz Miauton"
     },
-    "reference": "GM/GN/5363",
+    "reference": "GM/GN/9131",
     "name": "Pompe de circulation 1 1/2\" variante 4",
+    "category": "accessoire",
+    "specification": "1 1/2\"",
+    "active": true,
     "unit": "p",
-    "base_price": 82.57
+    "base_price": 204.11
   },
   {
     "id": "nsb-158",
@@ -5192,10 +6605,13 @@ export const MOCK_CATALOGUE = [
       "code": "NSB",
       "name": "Nussbaum"
     },
-    "reference": "NSB-GEN-4364",
+    "reference": "NSB-GEN-2019",
     "name": "Pompe de circulation 2\" type 0",
+    "category": "accessoire",
+    "specification": "2\"",
+    "active": true,
     "unit": "p",
-    "base_price": 55.15
+    "base_price": 205.03
   },
   {
     "id": "st-158",
@@ -5203,10 +6619,13 @@ export const MOCK_CATALOGUE = [
       "code": "ST",
       "name": "Sanitas Troesch"
     },
-    "reference": "SAN.GEN.851747",
+    "reference": "SAN.GEN.961719",
     "name": "Pompe de circulation 2\" modèle 0",
+    "category": "accessoire",
+    "specification": "2\"",
+    "active": true,
     "unit": "p",
-    "base_price": 52.15
+    "base_price": 202.91
   },
   {
     "id": "gm-158",
@@ -5214,10 +6633,13 @@ export const MOCK_CATALOGUE = [
       "code": "GM",
       "name": "Getaz Miauton"
     },
-    "reference": "GM/GN/6290",
+    "reference": "GM/GN/9841",
     "name": "Pompe de circulation 2\" variante 0",
+    "category": "accessoire",
+    "specification": "2\"",
+    "active": true,
     "unit": "p",
-    "base_price": 25.97
+    "base_price": 42.55
   },
   {
     "id": "nsb-159",
@@ -5225,10 +6647,13 @@ export const MOCK_CATALOGUE = [
       "code": "NSB",
       "name": "Nussbaum"
     },
-    "reference": "NSB-GEN-5996",
+    "reference": "NSB-GEN-4669",
     "name": "Pompe de circulation 2\" type 1",
+    "category": "accessoire",
+    "specification": "2\"",
+    "active": true,
     "unit": "p",
-    "base_price": 170.29
+    "base_price": 166.47
   },
   {
     "id": "st-159",
@@ -5236,10 +6661,13 @@ export const MOCK_CATALOGUE = [
       "code": "ST",
       "name": "Sanitas Troesch"
     },
-    "reference": "SAN.GEN.403512",
+    "reference": "SAN.GEN.572731",
     "name": "Pompe de circulation 2\" modèle 1",
+    "category": "accessoire",
+    "specification": "2\"",
+    "active": true,
     "unit": "p",
-    "base_price": 38.02
+    "base_price": 42.99
   },
   {
     "id": "gm-159",
@@ -5247,10 +6675,13 @@ export const MOCK_CATALOGUE = [
       "code": "GM",
       "name": "Getaz Miauton"
     },
-    "reference": "GM/GN/5897",
+    "reference": "GM/GN/6518",
     "name": "Pompe de circulation 2\" variante 1",
+    "category": "accessoire",
+    "specification": "2\"",
+    "active": true,
     "unit": "p",
-    "base_price": 161.65
+    "base_price": 46.61
   },
   {
     "id": "nsb-160",
@@ -5258,10 +6689,13 @@ export const MOCK_CATALOGUE = [
       "code": "NSB",
       "name": "Nussbaum"
     },
-    "reference": "NSB-GEN-7905",
+    "reference": "NSB-GEN-6205",
     "name": "Pompe de circulation 2\" type 2",
+    "category": "accessoire",
+    "specification": "2\"",
+    "active": true,
     "unit": "p",
-    "base_price": 164.19
+    "base_price": 192.63
   },
   {
     "id": "st-160",
@@ -5269,10 +6703,13 @@ export const MOCK_CATALOGUE = [
       "code": "ST",
       "name": "Sanitas Troesch"
     },
-    "reference": "SAN.GEN.196555",
+    "reference": "SAN.GEN.977761",
     "name": "Pompe de circulation 2\" modèle 2",
+    "category": "accessoire",
+    "specification": "2\"",
+    "active": true,
     "unit": "p",
-    "base_price": 96.61
+    "base_price": 89.56
   },
   {
     "id": "gm-160",
@@ -5280,10 +6717,13 @@ export const MOCK_CATALOGUE = [
       "code": "GM",
       "name": "Getaz Miauton"
     },
-    "reference": "GM/GN/2152",
+    "reference": "GM/GN/2382",
     "name": "Pompe de circulation 2\" variante 2",
+    "category": "accessoire",
+    "specification": "2\"",
+    "active": true,
     "unit": "p",
-    "base_price": 105.1
+    "base_price": 142.58
   },
   {
     "id": "nsb-161",
@@ -5291,10 +6731,13 @@ export const MOCK_CATALOGUE = [
       "code": "NSB",
       "name": "Nussbaum"
     },
-    "reference": "NSB-GEN-7234",
+    "reference": "NSB-GEN-2424",
     "name": "Pompe de circulation 2\" type 3",
+    "category": "accessoire",
+    "specification": "2\"",
+    "active": true,
     "unit": "p",
-    "base_price": 127.13
+    "base_price": 92.59
   },
   {
     "id": "st-161",
@@ -5302,10 +6745,13 @@ export const MOCK_CATALOGUE = [
       "code": "ST",
       "name": "Sanitas Troesch"
     },
-    "reference": "SAN.GEN.118488",
+    "reference": "SAN.GEN.132359",
     "name": "Pompe de circulation 2\" modèle 3",
+    "category": "accessoire",
+    "specification": "2\"",
+    "active": true,
     "unit": "p",
-    "base_price": 29.43
+    "base_price": 106.81
   },
   {
     "id": "gm-161",
@@ -5313,10 +6759,13 @@ export const MOCK_CATALOGUE = [
       "code": "GM",
       "name": "Getaz Miauton"
     },
-    "reference": "GM/GN/5632",
+    "reference": "GM/GN/5118",
     "name": "Pompe de circulation 2\" variante 3",
+    "category": "accessoire",
+    "specification": "2\"",
+    "active": true,
     "unit": "p",
-    "base_price": 89.83
+    "base_price": 20.31
   },
   {
     "id": "nsb-162",
@@ -5324,10 +6773,13 @@ export const MOCK_CATALOGUE = [
       "code": "NSB",
       "name": "Nussbaum"
     },
-    "reference": "NSB-GEN-8618",
+    "reference": "NSB-GEN-1012",
     "name": "Pompe de circulation 2\" type 4",
+    "category": "accessoire",
+    "specification": "2\"",
+    "active": true,
     "unit": "p",
-    "base_price": 144.4
+    "base_price": 93.17
   },
   {
     "id": "st-162",
@@ -5335,10 +6787,13 @@ export const MOCK_CATALOGUE = [
       "code": "ST",
       "name": "Sanitas Troesch"
     },
-    "reference": "SAN.GEN.388179",
+    "reference": "SAN.GEN.184847",
     "name": "Pompe de circulation 2\" modèle 4",
+    "category": "accessoire",
+    "specification": "2\"",
+    "active": true,
     "unit": "p",
-    "base_price": 175.44
+    "base_price": 155.31
   },
   {
     "id": "gm-162",
@@ -5346,10 +6801,13 @@ export const MOCK_CATALOGUE = [
       "code": "GM",
       "name": "Getaz Miauton"
     },
-    "reference": "GM/GN/4460",
+    "reference": "GM/GN/5621",
     "name": "Pompe de circulation 2\" variante 4",
+    "category": "accessoire",
+    "specification": "2\"",
+    "active": true,
     "unit": "p",
-    "base_price": 39.67
+    "base_price": 175.34
   },
   {
     "id": "nsb-163",
@@ -5357,10 +6815,13 @@ export const MOCK_CATALOGUE = [
       "code": "NSB",
       "name": "Nussbaum"
     },
-    "reference": "NSB-GEN-4163",
+    "reference": "NSB-GEN-6698",
     "name": "Pompe de circulation DN 15 type 0",
+    "category": "accessoire",
+    "specification": "DN 15",
+    "active": true,
     "unit": "p",
-    "base_price": 34.74
+    "base_price": 166.67
   },
   {
     "id": "st-163",
@@ -5368,10 +6829,13 @@ export const MOCK_CATALOGUE = [
       "code": "ST",
       "name": "Sanitas Troesch"
     },
-    "reference": "SAN.GEN.238491",
+    "reference": "SAN.GEN.382825",
     "name": "Pompe de circulation DN 15 modèle 0",
+    "category": "accessoire",
+    "specification": "DN 15",
+    "active": true,
     "unit": "p",
-    "base_price": 21.31
+    "base_price": 58.51
   },
   {
     "id": "gm-163",
@@ -5379,10 +6843,13 @@ export const MOCK_CATALOGUE = [
       "code": "GM",
       "name": "Getaz Miauton"
     },
-    "reference": "GM/GN/6958",
+    "reference": "GM/GN/9674",
     "name": "Pompe de circulation DN 15 variante 0",
+    "category": "accessoire",
+    "specification": "DN 15",
+    "active": true,
     "unit": "p",
-    "base_price": 145.29
+    "base_price": 169.43
   },
   {
     "id": "nsb-164",
@@ -5390,10 +6857,13 @@ export const MOCK_CATALOGUE = [
       "code": "NSB",
       "name": "Nussbaum"
     },
-    "reference": "NSB-GEN-5036",
+    "reference": "NSB-GEN-4052",
     "name": "Pompe de circulation DN 15 type 1",
+    "category": "accessoire",
+    "specification": "DN 15",
+    "active": true,
     "unit": "p",
-    "base_price": 219.65
+    "base_price": 68.48
   },
   {
     "id": "st-164",
@@ -5401,10 +6871,13 @@ export const MOCK_CATALOGUE = [
       "code": "ST",
       "name": "Sanitas Troesch"
     },
-    "reference": "SAN.GEN.202297",
+    "reference": "SAN.GEN.375213",
     "name": "Pompe de circulation DN 15 modèle 1",
+    "category": "accessoire",
+    "specification": "DN 15",
+    "active": true,
     "unit": "p",
-    "base_price": 65.24
+    "base_price": 142.83
   },
   {
     "id": "gm-164",
@@ -5412,10 +6885,13 @@ export const MOCK_CATALOGUE = [
       "code": "GM",
       "name": "Getaz Miauton"
     },
-    "reference": "GM/GN/5596",
+    "reference": "GM/GN/3345",
     "name": "Pompe de circulation DN 15 variante 1",
+    "category": "accessoire",
+    "specification": "DN 15",
+    "active": true,
     "unit": "p",
-    "base_price": 119.02
+    "base_price": 191.64
   },
   {
     "id": "nsb-165",
@@ -5423,10 +6899,13 @@ export const MOCK_CATALOGUE = [
       "code": "NSB",
       "name": "Nussbaum"
     },
-    "reference": "NSB-GEN-5532",
+    "reference": "NSB-GEN-7808",
     "name": "Pompe de circulation DN 15 type 2",
+    "category": "accessoire",
+    "specification": "DN 15",
+    "active": true,
     "unit": "p",
-    "base_price": 195.36
+    "base_price": 144.96
   },
   {
     "id": "st-165",
@@ -5434,10 +6913,13 @@ export const MOCK_CATALOGUE = [
       "code": "ST",
       "name": "Sanitas Troesch"
     },
-    "reference": "SAN.GEN.694808",
+    "reference": "SAN.GEN.654698",
     "name": "Pompe de circulation DN 15 modèle 2",
+    "category": "accessoire",
+    "specification": "DN 15",
+    "active": true,
     "unit": "p",
-    "base_price": 178.42
+    "base_price": 119.35
   },
   {
     "id": "gm-165",
@@ -5445,10 +6927,13 @@ export const MOCK_CATALOGUE = [
       "code": "GM",
       "name": "Getaz Miauton"
     },
-    "reference": "GM/GN/5969",
+    "reference": "GM/GN/7194",
     "name": "Pompe de circulation DN 15 variante 2",
+    "category": "accessoire",
+    "specification": "DN 15",
+    "active": true,
     "unit": "p",
-    "base_price": 80.69
+    "base_price": 160.75
   },
   {
     "id": "nsb-166",
@@ -5456,10 +6941,13 @@ export const MOCK_CATALOGUE = [
       "code": "NSB",
       "name": "Nussbaum"
     },
-    "reference": "NSB-GEN-1088",
+    "reference": "NSB-GEN-4507",
     "name": "Pompe de circulation DN 15 type 3",
+    "category": "accessoire",
+    "specification": "DN 15",
+    "active": true,
     "unit": "p",
-    "base_price": 182.17
+    "base_price": 219.57
   },
   {
     "id": "st-166",
@@ -5467,10 +6955,13 @@ export const MOCK_CATALOGUE = [
       "code": "ST",
       "name": "Sanitas Troesch"
     },
-    "reference": "SAN.GEN.999535",
+    "reference": "SAN.GEN.968618",
     "name": "Pompe de circulation DN 15 modèle 3",
+    "category": "accessoire",
+    "specification": "DN 15",
+    "active": true,
     "unit": "p",
-    "base_price": 127.56
+    "base_price": 72.4
   },
   {
     "id": "gm-166",
@@ -5478,10 +6969,13 @@ export const MOCK_CATALOGUE = [
       "code": "GM",
       "name": "Getaz Miauton"
     },
-    "reference": "GM/GN/2757",
+    "reference": "GM/GN/8687",
     "name": "Pompe de circulation DN 15 variante 3",
+    "category": "accessoire",
+    "specification": "DN 15",
+    "active": true,
     "unit": "p",
-    "base_price": 188.33
+    "base_price": 90.57
   },
   {
     "id": "nsb-167",
@@ -5489,10 +6983,13 @@ export const MOCK_CATALOGUE = [
       "code": "NSB",
       "name": "Nussbaum"
     },
-    "reference": "NSB-GEN-3292",
+    "reference": "NSB-GEN-5666",
     "name": "Pompe de circulation DN 15 type 4",
+    "category": "accessoire",
+    "specification": "DN 15",
+    "active": true,
     "unit": "p",
-    "base_price": 33.59
+    "base_price": 157.53
   },
   {
     "id": "st-167",
@@ -5500,10 +6997,13 @@ export const MOCK_CATALOGUE = [
       "code": "ST",
       "name": "Sanitas Troesch"
     },
-    "reference": "SAN.GEN.510972",
+    "reference": "SAN.GEN.620275",
     "name": "Pompe de circulation DN 15 modèle 4",
+    "category": "accessoire",
+    "specification": "DN 15",
+    "active": true,
     "unit": "p",
-    "base_price": 58.1
+    "base_price": 165.27
   },
   {
     "id": "gm-167",
@@ -5511,10 +7011,13 @@ export const MOCK_CATALOGUE = [
       "code": "GM",
       "name": "Getaz Miauton"
     },
-    "reference": "GM/GN/9455",
+    "reference": "GM/GN/3671",
     "name": "Pompe de circulation DN 15 variante 4",
+    "category": "accessoire",
+    "specification": "DN 15",
+    "active": true,
     "unit": "p",
-    "base_price": 145.74
+    "base_price": 207.81
   },
   {
     "id": "nsb-168",
@@ -5522,10 +7025,13 @@ export const MOCK_CATALOGUE = [
       "code": "NSB",
       "name": "Nussbaum"
     },
-    "reference": "NSB-GEN-2898",
+    "reference": "NSB-GEN-4324",
     "name": "Pompe de circulation DN 20 type 0",
+    "category": "accessoire",
+    "specification": "DN 20",
+    "active": true,
     "unit": "p",
-    "base_price": 138.82
+    "base_price": 32.16
   },
   {
     "id": "st-168",
@@ -5533,10 +7039,13 @@ export const MOCK_CATALOGUE = [
       "code": "ST",
       "name": "Sanitas Troesch"
     },
-    "reference": "SAN.GEN.332902",
+    "reference": "SAN.GEN.204887",
     "name": "Pompe de circulation DN 20 modèle 0",
+    "category": "accessoire",
+    "specification": "DN 20",
+    "active": true,
     "unit": "p",
-    "base_price": 55.78
+    "base_price": 176.89
   },
   {
     "id": "gm-168",
@@ -5544,10 +7053,13 @@ export const MOCK_CATALOGUE = [
       "code": "GM",
       "name": "Getaz Miauton"
     },
-    "reference": "GM/GN/7250",
+    "reference": "GM/GN/6899",
     "name": "Pompe de circulation DN 20 variante 0",
+    "category": "accessoire",
+    "specification": "DN 20",
+    "active": true,
     "unit": "p",
-    "base_price": 156.31
+    "base_price": 141.42
   },
   {
     "id": "nsb-169",
@@ -5555,10 +7067,13 @@ export const MOCK_CATALOGUE = [
       "code": "NSB",
       "name": "Nussbaum"
     },
-    "reference": "NSB-GEN-5227",
+    "reference": "NSB-GEN-8843",
     "name": "Pompe de circulation DN 20 type 1",
+    "category": "accessoire",
+    "specification": "DN 20",
+    "active": true,
     "unit": "p",
-    "base_price": 38.84
+    "base_price": 47.25
   },
   {
     "id": "st-169",
@@ -5566,10 +7081,13 @@ export const MOCK_CATALOGUE = [
       "code": "ST",
       "name": "Sanitas Troesch"
     },
-    "reference": "SAN.GEN.243312",
+    "reference": "SAN.GEN.234226",
     "name": "Pompe de circulation DN 20 modèle 1",
+    "category": "accessoire",
+    "specification": "DN 20",
+    "active": true,
     "unit": "p",
-    "base_price": 25.62
+    "base_price": 66.53
   },
   {
     "id": "gm-169",
@@ -5577,10 +7095,13 @@ export const MOCK_CATALOGUE = [
       "code": "GM",
       "name": "Getaz Miauton"
     },
-    "reference": "GM/GN/9432",
+    "reference": "GM/GN/1003",
     "name": "Pompe de circulation DN 20 variante 1",
+    "category": "accessoire",
+    "specification": "DN 20",
+    "active": true,
     "unit": "p",
-    "base_price": 48.66
+    "base_price": 36.2
   },
   {
     "id": "nsb-170",
@@ -5588,10 +7109,13 @@ export const MOCK_CATALOGUE = [
       "code": "NSB",
       "name": "Nussbaum"
     },
-    "reference": "NSB-GEN-6723",
+    "reference": "NSB-GEN-1273",
     "name": "Pompe de circulation DN 20 type 2",
+    "category": "accessoire",
+    "specification": "DN 20",
+    "active": true,
     "unit": "p",
-    "base_price": 41.98
+    "base_price": 65.76
   },
   {
     "id": "st-170",
@@ -5599,10 +7123,13 @@ export const MOCK_CATALOGUE = [
       "code": "ST",
       "name": "Sanitas Troesch"
     },
-    "reference": "SAN.GEN.475173",
+    "reference": "SAN.GEN.158299",
     "name": "Pompe de circulation DN 20 modèle 2",
+    "category": "accessoire",
+    "specification": "DN 20",
+    "active": true,
     "unit": "p",
-    "base_price": 29.36
+    "base_price": 159.91
   },
   {
     "id": "gm-170",
@@ -5610,10 +7137,13 @@ export const MOCK_CATALOGUE = [
       "code": "GM",
       "name": "Getaz Miauton"
     },
-    "reference": "GM/GN/3957",
+    "reference": "GM/GN/6325",
     "name": "Pompe de circulation DN 20 variante 2",
+    "category": "accessoire",
+    "specification": "DN 20",
+    "active": true,
     "unit": "p",
-    "base_price": 205.44
+    "base_price": 103.14
   },
   {
     "id": "nsb-171",
@@ -5621,10 +7151,13 @@ export const MOCK_CATALOGUE = [
       "code": "NSB",
       "name": "Nussbaum"
     },
-    "reference": "NSB-GEN-1926",
+    "reference": "NSB-GEN-5721",
     "name": "Pompe de circulation DN 20 type 3",
+    "category": "accessoire",
+    "specification": "DN 20",
+    "active": true,
     "unit": "p",
-    "base_price": 147.91
+    "base_price": 137.07
   },
   {
     "id": "st-171",
@@ -5632,10 +7165,13 @@ export const MOCK_CATALOGUE = [
       "code": "ST",
       "name": "Sanitas Troesch"
     },
-    "reference": "SAN.GEN.581865",
+    "reference": "SAN.GEN.559451",
     "name": "Pompe de circulation DN 20 modèle 3",
+    "category": "accessoire",
+    "specification": "DN 20",
+    "active": true,
     "unit": "p",
-    "base_price": 169.43
+    "base_price": 166.21
   },
   {
     "id": "gm-171",
@@ -5643,10 +7179,13 @@ export const MOCK_CATALOGUE = [
       "code": "GM",
       "name": "Getaz Miauton"
     },
-    "reference": "GM/GN/8452",
+    "reference": "GM/GN/3322",
     "name": "Pompe de circulation DN 20 variante 3",
+    "category": "accessoire",
+    "specification": "DN 20",
+    "active": true,
     "unit": "p",
-    "base_price": 24.33
+    "base_price": 60.97
   },
   {
     "id": "nsb-172",
@@ -5654,10 +7193,13 @@ export const MOCK_CATALOGUE = [
       "code": "NSB",
       "name": "Nussbaum"
     },
-    "reference": "NSB-GEN-8869",
+    "reference": "NSB-GEN-3914",
     "name": "Pompe de circulation DN 20 type 4",
+    "category": "accessoire",
+    "specification": "DN 20",
+    "active": true,
     "unit": "p",
-    "base_price": 106.42
+    "base_price": 154.68
   },
   {
     "id": "st-172",
@@ -5665,10 +7207,13 @@ export const MOCK_CATALOGUE = [
       "code": "ST",
       "name": "Sanitas Troesch"
     },
-    "reference": "SAN.GEN.986009",
+    "reference": "SAN.GEN.797492",
     "name": "Pompe de circulation DN 20 modèle 4",
+    "category": "accessoire",
+    "specification": "DN 20",
+    "active": true,
     "unit": "p",
-    "base_price": 122.21
+    "base_price": 101.95
   },
   {
     "id": "gm-172",
@@ -5676,10 +7221,13 @@ export const MOCK_CATALOGUE = [
       "code": "GM",
       "name": "Getaz Miauton"
     },
-    "reference": "GM/GN/7303",
+    "reference": "GM/GN/3334",
     "name": "Pompe de circulation DN 20 variante 4",
+    "category": "accessoire",
+    "specification": "DN 20",
+    "active": true,
     "unit": "p",
-    "base_price": 58
+    "base_price": 140.03
   },
   {
     "id": "nsb-173",
@@ -5687,10 +7235,13 @@ export const MOCK_CATALOGUE = [
       "code": "NSB",
       "name": "Nussbaum"
     },
-    "reference": "NSB-GEN-8572",
+    "reference": "NSB-GEN-3704",
     "name": "Pompe de circulation DN 25 type 0",
+    "category": "accessoire",
+    "specification": "DN 25",
+    "active": true,
     "unit": "p",
-    "base_price": 38.08
+    "base_price": 137.22
   },
   {
     "id": "st-173",
@@ -5698,10 +7249,13 @@ export const MOCK_CATALOGUE = [
       "code": "ST",
       "name": "Sanitas Troesch"
     },
-    "reference": "SAN.GEN.902269",
+    "reference": "SAN.GEN.993188",
     "name": "Pompe de circulation DN 25 modèle 0",
+    "category": "accessoire",
+    "specification": "DN 25",
+    "active": true,
     "unit": "p",
-    "base_price": 101.67
+    "base_price": 169.57
   },
   {
     "id": "gm-173",
@@ -5709,10 +7263,13 @@ export const MOCK_CATALOGUE = [
       "code": "GM",
       "name": "Getaz Miauton"
     },
-    "reference": "GM/GN/8753",
+    "reference": "GM/GN/2872",
     "name": "Pompe de circulation DN 25 variante 0",
+    "category": "accessoire",
+    "specification": "DN 25",
+    "active": true,
     "unit": "p",
-    "base_price": 176.79
+    "base_price": 25.17
   },
   {
     "id": "nsb-174",
@@ -5720,10 +7277,13 @@ export const MOCK_CATALOGUE = [
       "code": "NSB",
       "name": "Nussbaum"
     },
-    "reference": "NSB-GEN-9331",
+    "reference": "NSB-GEN-1184",
     "name": "Pompe de circulation DN 25 type 1",
+    "category": "accessoire",
+    "specification": "DN 25",
+    "active": true,
     "unit": "p",
-    "base_price": 56.34
+    "base_price": 199.45
   },
   {
     "id": "st-174",
@@ -5731,10 +7291,13 @@ export const MOCK_CATALOGUE = [
       "code": "ST",
       "name": "Sanitas Troesch"
     },
-    "reference": "SAN.GEN.270050",
+    "reference": "SAN.GEN.491708",
     "name": "Pompe de circulation DN 25 modèle 1",
+    "category": "accessoire",
+    "specification": "DN 25",
+    "active": true,
     "unit": "p",
-    "base_price": 102.91
+    "base_price": 170.04
   },
   {
     "id": "gm-174",
@@ -5742,10 +7305,13 @@ export const MOCK_CATALOGUE = [
       "code": "GM",
       "name": "Getaz Miauton"
     },
-    "reference": "GM/GN/2357",
+    "reference": "GM/GN/3139",
     "name": "Pompe de circulation DN 25 variante 1",
+    "category": "accessoire",
+    "specification": "DN 25",
+    "active": true,
     "unit": "p",
-    "base_price": 115.64
+    "base_price": 76.24
   },
   {
     "id": "nsb-175",
@@ -5753,10 +7319,13 @@ export const MOCK_CATALOGUE = [
       "code": "NSB",
       "name": "Nussbaum"
     },
-    "reference": "NSB-GEN-9200",
+    "reference": "NSB-GEN-9805",
     "name": "Pompe de circulation DN 25 type 2",
+    "category": "accessoire",
+    "specification": "DN 25",
+    "active": true,
     "unit": "p",
-    "base_price": 176.73
+    "base_price": 148.14
   },
   {
     "id": "st-175",
@@ -5764,10 +7333,13 @@ export const MOCK_CATALOGUE = [
       "code": "ST",
       "name": "Sanitas Troesch"
     },
-    "reference": "SAN.GEN.614723",
+    "reference": "SAN.GEN.305760",
     "name": "Pompe de circulation DN 25 modèle 2",
+    "category": "accessoire",
+    "specification": "DN 25",
+    "active": true,
     "unit": "p",
-    "base_price": 49.12
+    "base_price": 24.3
   },
   {
     "id": "gm-175",
@@ -5775,10 +7347,13 @@ export const MOCK_CATALOGUE = [
       "code": "GM",
       "name": "Getaz Miauton"
     },
-    "reference": "GM/GN/2866",
+    "reference": "GM/GN/3443",
     "name": "Pompe de circulation DN 25 variante 2",
+    "category": "accessoire",
+    "specification": "DN 25",
+    "active": true,
     "unit": "p",
-    "base_price": 209.33
+    "base_price": 200.73
   },
   {
     "id": "nsb-176",
@@ -5786,10 +7361,13 @@ export const MOCK_CATALOGUE = [
       "code": "NSB",
       "name": "Nussbaum"
     },
-    "reference": "NSB-GEN-6272",
+    "reference": "NSB-GEN-1624",
     "name": "Pompe de circulation DN 25 type 3",
+    "category": "accessoire",
+    "specification": "DN 25",
+    "active": true,
     "unit": "p",
-    "base_price": 213.56
+    "base_price": 41.56
   },
   {
     "id": "st-176",
@@ -5797,10 +7375,13 @@ export const MOCK_CATALOGUE = [
       "code": "ST",
       "name": "Sanitas Troesch"
     },
-    "reference": "SAN.GEN.431193",
+    "reference": "SAN.GEN.969616",
     "name": "Pompe de circulation DN 25 modèle 3",
+    "category": "accessoire",
+    "specification": "DN 25",
+    "active": true,
     "unit": "p",
-    "base_price": 83.65
+    "base_price": 182.79
   },
   {
     "id": "gm-176",
@@ -5808,10 +7389,13 @@ export const MOCK_CATALOGUE = [
       "code": "GM",
       "name": "Getaz Miauton"
     },
-    "reference": "GM/GN/7911",
+    "reference": "GM/GN/4129",
     "name": "Pompe de circulation DN 25 variante 3",
+    "category": "accessoire",
+    "specification": "DN 25",
+    "active": true,
     "unit": "p",
-    "base_price": 206.38
+    "base_price": 74.94
   },
   {
     "id": "nsb-177",
@@ -5819,10 +7403,13 @@ export const MOCK_CATALOGUE = [
       "code": "NSB",
       "name": "Nussbaum"
     },
-    "reference": "NSB-GEN-1003",
+    "reference": "NSB-GEN-7714",
     "name": "Pompe de circulation DN 25 type 4",
+    "category": "accessoire",
+    "specification": "DN 25",
+    "active": true,
     "unit": "p",
-    "base_price": 133.92
+    "base_price": 66.89
   },
   {
     "id": "st-177",
@@ -5830,10 +7417,13 @@ export const MOCK_CATALOGUE = [
       "code": "ST",
       "name": "Sanitas Troesch"
     },
-    "reference": "SAN.GEN.390507",
+    "reference": "SAN.GEN.439179",
     "name": "Pompe de circulation DN 25 modèle 4",
+    "category": "accessoire",
+    "specification": "DN 25",
+    "active": true,
     "unit": "p",
-    "base_price": 219.78
+    "base_price": 48.2
   },
   {
     "id": "gm-177",
@@ -5841,10 +7431,13 @@ export const MOCK_CATALOGUE = [
       "code": "GM",
       "name": "Getaz Miauton"
     },
-    "reference": "GM/GN/1715",
+    "reference": "GM/GN/1539",
     "name": "Pompe de circulation DN 25 variante 4",
+    "category": "accessoire",
+    "specification": "DN 25",
+    "active": true,
     "unit": "p",
-    "base_price": 157.75
+    "base_price": 214.16
   },
   {
     "id": "nsb-178",
@@ -5852,10 +7445,13 @@ export const MOCK_CATALOGUE = [
       "code": "NSB",
       "name": "Nussbaum"
     },
-    "reference": "NSB-GEN-9263",
+    "reference": "NSB-GEN-5321",
     "name": "Pompe de circulation DN 32 type 0",
+    "category": "accessoire",
+    "specification": "DN 32",
+    "active": true,
     "unit": "p",
-    "base_price": 212.18
+    "base_price": 127.61
   },
   {
     "id": "st-178",
@@ -5863,10 +7459,13 @@ export const MOCK_CATALOGUE = [
       "code": "ST",
       "name": "Sanitas Troesch"
     },
-    "reference": "SAN.GEN.638661",
+    "reference": "SAN.GEN.969656",
     "name": "Pompe de circulation DN 32 modèle 0",
+    "category": "accessoire",
+    "specification": "DN 32",
+    "active": true,
     "unit": "p",
-    "base_price": 139.7
+    "base_price": 219.68
   },
   {
     "id": "gm-178",
@@ -5874,10 +7473,13 @@ export const MOCK_CATALOGUE = [
       "code": "GM",
       "name": "Getaz Miauton"
     },
-    "reference": "GM/GN/8181",
+    "reference": "GM/GN/5271",
     "name": "Pompe de circulation DN 32 variante 0",
+    "category": "accessoire",
+    "specification": "DN 32",
+    "active": true,
     "unit": "p",
-    "base_price": 88.55
+    "base_price": 85.8
   },
   {
     "id": "nsb-179",
@@ -5885,10 +7487,13 @@ export const MOCK_CATALOGUE = [
       "code": "NSB",
       "name": "Nussbaum"
     },
-    "reference": "NSB-GEN-3357",
+    "reference": "NSB-GEN-6708",
     "name": "Pompe de circulation DN 32 type 1",
+    "category": "accessoire",
+    "specification": "DN 32",
+    "active": true,
     "unit": "p",
-    "base_price": 183.12
+    "base_price": 206.44
   },
   {
     "id": "st-179",
@@ -5896,10 +7501,13 @@ export const MOCK_CATALOGUE = [
       "code": "ST",
       "name": "Sanitas Troesch"
     },
-    "reference": "SAN.GEN.709137",
+    "reference": "SAN.GEN.347256",
     "name": "Pompe de circulation DN 32 modèle 1",
+    "category": "accessoire",
+    "specification": "DN 32",
+    "active": true,
     "unit": "p",
-    "base_price": 56.75
+    "base_price": 204.69
   },
   {
     "id": "gm-179",
@@ -5907,10 +7515,13 @@ export const MOCK_CATALOGUE = [
       "code": "GM",
       "name": "Getaz Miauton"
     },
-    "reference": "GM/GN/2037",
+    "reference": "GM/GN/8984",
     "name": "Pompe de circulation DN 32 variante 1",
+    "category": "accessoire",
+    "specification": "DN 32",
+    "active": true,
     "unit": "p",
-    "base_price": 154.41
+    "base_price": 101.71
   },
   {
     "id": "nsb-180",
@@ -5918,10 +7529,13 @@ export const MOCK_CATALOGUE = [
       "code": "NSB",
       "name": "Nussbaum"
     },
-    "reference": "NSB-GEN-5816",
+    "reference": "NSB-GEN-2816",
     "name": "Pompe de circulation DN 32 type 2",
+    "category": "accessoire",
+    "specification": "DN 32",
+    "active": true,
     "unit": "p",
-    "base_price": 30.28
+    "base_price": 96.89
   },
   {
     "id": "st-180",
@@ -5929,10 +7543,13 @@ export const MOCK_CATALOGUE = [
       "code": "ST",
       "name": "Sanitas Troesch"
     },
-    "reference": "SAN.GEN.730949",
+    "reference": "SAN.GEN.849392",
     "name": "Pompe de circulation DN 32 modèle 2",
+    "category": "accessoire",
+    "specification": "DN 32",
+    "active": true,
     "unit": "p",
-    "base_price": 119.56
+    "base_price": 107
   },
   {
     "id": "gm-180",
@@ -5940,10 +7557,13 @@ export const MOCK_CATALOGUE = [
       "code": "GM",
       "name": "Getaz Miauton"
     },
-    "reference": "GM/GN/3749",
+    "reference": "GM/GN/5015",
     "name": "Pompe de circulation DN 32 variante 2",
+    "category": "accessoire",
+    "specification": "DN 32",
+    "active": true,
     "unit": "p",
-    "base_price": 37.8
+    "base_price": 105.28
   },
   {
     "id": "nsb-181",
@@ -5951,10 +7571,13 @@ export const MOCK_CATALOGUE = [
       "code": "NSB",
       "name": "Nussbaum"
     },
-    "reference": "NSB-GEN-5114",
+    "reference": "NSB-GEN-4086",
     "name": "Pompe de circulation DN 32 type 3",
+    "category": "accessoire",
+    "specification": "DN 32",
+    "active": true,
     "unit": "p",
-    "base_price": 185.62
+    "base_price": 178.07
   },
   {
     "id": "st-181",
@@ -5962,10 +7585,13 @@ export const MOCK_CATALOGUE = [
       "code": "ST",
       "name": "Sanitas Troesch"
     },
-    "reference": "SAN.GEN.684844",
+    "reference": "SAN.GEN.783131",
     "name": "Pompe de circulation DN 32 modèle 3",
+    "category": "accessoire",
+    "specification": "DN 32",
+    "active": true,
     "unit": "p",
-    "base_price": 154.44
+    "base_price": 171.77
   },
   {
     "id": "gm-181",
@@ -5973,10 +7599,13 @@ export const MOCK_CATALOGUE = [
       "code": "GM",
       "name": "Getaz Miauton"
     },
-    "reference": "GM/GN/7413",
+    "reference": "GM/GN/2759",
     "name": "Pompe de circulation DN 32 variante 3",
+    "category": "accessoire",
+    "specification": "DN 32",
+    "active": true,
     "unit": "p",
-    "base_price": 32.86
+    "base_price": 27.93
   },
   {
     "id": "nsb-182",
@@ -5984,10 +7613,13 @@ export const MOCK_CATALOGUE = [
       "code": "NSB",
       "name": "Nussbaum"
     },
-    "reference": "NSB-GEN-1629",
+    "reference": "NSB-GEN-7770",
     "name": "Pompe de circulation DN 32 type 4",
+    "category": "accessoire",
+    "specification": "DN 32",
+    "active": true,
     "unit": "p",
-    "base_price": 84.06
+    "base_price": 74.42
   },
   {
     "id": "st-182",
@@ -5995,10 +7627,13 @@ export const MOCK_CATALOGUE = [
       "code": "ST",
       "name": "Sanitas Troesch"
     },
-    "reference": "SAN.GEN.564289",
+    "reference": "SAN.GEN.559552",
     "name": "Pompe de circulation DN 32 modèle 4",
+    "category": "accessoire",
+    "specification": "DN 32",
+    "active": true,
     "unit": "p",
-    "base_price": 39.85
+    "base_price": 55.33
   },
   {
     "id": "gm-182",
@@ -6006,10 +7641,13 @@ export const MOCK_CATALOGUE = [
       "code": "GM",
       "name": "Getaz Miauton"
     },
-    "reference": "GM/GN/3775",
+    "reference": "GM/GN/8721",
     "name": "Pompe de circulation DN 32 variante 4",
+    "category": "accessoire",
+    "specification": "DN 32",
+    "active": true,
     "unit": "p",
-    "base_price": 114.33
+    "base_price": 72.13
   },
   {
     "id": "nsb-183",
@@ -6017,10 +7655,13 @@ export const MOCK_CATALOGUE = [
       "code": "NSB",
       "name": "Nussbaum"
     },
-    "reference": "NSB-GEN-8981",
+    "reference": "NSB-GEN-2604",
     "name": "Pompe de circulation DN 40 type 0",
+    "category": "accessoire",
+    "specification": "DN 40",
+    "active": true,
     "unit": "p",
-    "base_price": 52.93
+    "base_price": 96.1
   },
   {
     "id": "st-183",
@@ -6028,10 +7669,13 @@ export const MOCK_CATALOGUE = [
       "code": "ST",
       "name": "Sanitas Troesch"
     },
-    "reference": "SAN.GEN.688740",
+    "reference": "SAN.GEN.716126",
     "name": "Pompe de circulation DN 40 modèle 0",
+    "category": "accessoire",
+    "specification": "DN 40",
+    "active": true,
     "unit": "p",
-    "base_price": 137.44
+    "base_price": 209.73
   },
   {
     "id": "gm-183",
@@ -6039,10 +7683,13 @@ export const MOCK_CATALOGUE = [
       "code": "GM",
       "name": "Getaz Miauton"
     },
-    "reference": "GM/GN/8570",
+    "reference": "GM/GN/2435",
     "name": "Pompe de circulation DN 40 variante 0",
+    "category": "accessoire",
+    "specification": "DN 40",
+    "active": true,
     "unit": "p",
-    "base_price": 131.36
+    "base_price": 108.91
   },
   {
     "id": "nsb-184",
@@ -6050,10 +7697,13 @@ export const MOCK_CATALOGUE = [
       "code": "NSB",
       "name": "Nussbaum"
     },
-    "reference": "NSB-GEN-7379",
+    "reference": "NSB-GEN-4233",
     "name": "Pompe de circulation DN 40 type 1",
+    "category": "accessoire",
+    "specification": "DN 40",
+    "active": true,
     "unit": "p",
-    "base_price": 142.69
+    "base_price": 52.22
   },
   {
     "id": "st-184",
@@ -6061,10 +7711,13 @@ export const MOCK_CATALOGUE = [
       "code": "ST",
       "name": "Sanitas Troesch"
     },
-    "reference": "SAN.GEN.102020",
+    "reference": "SAN.GEN.827004",
     "name": "Pompe de circulation DN 40 modèle 1",
+    "category": "accessoire",
+    "specification": "DN 40",
+    "active": true,
     "unit": "p",
-    "base_price": 191.18
+    "base_price": 120.39
   },
   {
     "id": "gm-184",
@@ -6072,10 +7725,13 @@ export const MOCK_CATALOGUE = [
       "code": "GM",
       "name": "Getaz Miauton"
     },
-    "reference": "GM/GN/1365",
+    "reference": "GM/GN/3734",
     "name": "Pompe de circulation DN 40 variante 1",
+    "category": "accessoire",
+    "specification": "DN 40",
+    "active": true,
     "unit": "p",
-    "base_price": 150.13
+    "base_price": 111.17
   },
   {
     "id": "nsb-185",
@@ -6083,10 +7739,13 @@ export const MOCK_CATALOGUE = [
       "code": "NSB",
       "name": "Nussbaum"
     },
-    "reference": "NSB-GEN-6546",
+    "reference": "NSB-GEN-9856",
     "name": "Pompe de circulation DN 40 type 2",
+    "category": "accessoire",
+    "specification": "DN 40",
+    "active": true,
     "unit": "p",
-    "base_price": 117.48
+    "base_price": 138.53
   },
   {
     "id": "st-185",
@@ -6094,10 +7753,13 @@ export const MOCK_CATALOGUE = [
       "code": "ST",
       "name": "Sanitas Troesch"
     },
-    "reference": "SAN.GEN.124353",
+    "reference": "SAN.GEN.500026",
     "name": "Pompe de circulation DN 40 modèle 2",
+    "category": "accessoire",
+    "specification": "DN 40",
+    "active": true,
     "unit": "p",
-    "base_price": 136.77
+    "base_price": 117.25
   },
   {
     "id": "gm-185",
@@ -6105,10 +7767,13 @@ export const MOCK_CATALOGUE = [
       "code": "GM",
       "name": "Getaz Miauton"
     },
-    "reference": "GM/GN/7714",
+    "reference": "GM/GN/2286",
     "name": "Pompe de circulation DN 40 variante 2",
+    "category": "accessoire",
+    "specification": "DN 40",
+    "active": true,
     "unit": "p",
-    "base_price": 199.78
+    "base_price": 69.1
   },
   {
     "id": "nsb-186",
@@ -6116,10 +7781,13 @@ export const MOCK_CATALOGUE = [
       "code": "NSB",
       "name": "Nussbaum"
     },
-    "reference": "NSB-GEN-3412",
+    "reference": "NSB-GEN-2317",
     "name": "Pompe de circulation DN 40 type 3",
+    "category": "accessoire",
+    "specification": "DN 40",
+    "active": true,
     "unit": "p",
-    "base_price": 177.82
+    "base_price": 190.33
   },
   {
     "id": "st-186",
@@ -6127,10 +7795,13 @@ export const MOCK_CATALOGUE = [
       "code": "ST",
       "name": "Sanitas Troesch"
     },
-    "reference": "SAN.GEN.531892",
+    "reference": "SAN.GEN.394582",
     "name": "Pompe de circulation DN 40 modèle 3",
+    "category": "accessoire",
+    "specification": "DN 40",
+    "active": true,
     "unit": "p",
-    "base_price": 193.22
+    "base_price": 64.39
   },
   {
     "id": "gm-186",
@@ -6138,10 +7809,13 @@ export const MOCK_CATALOGUE = [
       "code": "GM",
       "name": "Getaz Miauton"
     },
-    "reference": "GM/GN/9623",
+    "reference": "GM/GN/2323",
     "name": "Pompe de circulation DN 40 variante 3",
+    "category": "accessoire",
+    "specification": "DN 40",
+    "active": true,
     "unit": "p",
-    "base_price": 187.76
+    "base_price": 89.5
   },
   {
     "id": "nsb-187",
@@ -6149,10 +7823,13 @@ export const MOCK_CATALOGUE = [
       "code": "NSB",
       "name": "Nussbaum"
     },
-    "reference": "NSB-GEN-9140",
+    "reference": "NSB-GEN-4141",
     "name": "Pompe de circulation DN 40 type 4",
+    "category": "accessoire",
+    "specification": "DN 40",
+    "active": true,
     "unit": "p",
-    "base_price": 129.97
+    "base_price": 154.25
   },
   {
     "id": "st-187",
@@ -6160,10 +7837,13 @@ export const MOCK_CATALOGUE = [
       "code": "ST",
       "name": "Sanitas Troesch"
     },
-    "reference": "SAN.GEN.941998",
+    "reference": "SAN.GEN.425816",
     "name": "Pompe de circulation DN 40 modèle 4",
+    "category": "accessoire",
+    "specification": "DN 40",
+    "active": true,
     "unit": "p",
-    "base_price": 43.75
+    "base_price": 132.23
   },
   {
     "id": "gm-187",
@@ -6171,10 +7851,13 @@ export const MOCK_CATALOGUE = [
       "code": "GM",
       "name": "Getaz Miauton"
     },
-    "reference": "GM/GN/4959",
+    "reference": "GM/GN/5107",
     "name": "Pompe de circulation DN 40 variante 4",
+    "category": "accessoire",
+    "specification": "DN 40",
+    "active": true,
     "unit": "p",
-    "base_price": 76.37
+    "base_price": 132.32
   },
   {
     "id": "nsb-188",
@@ -6182,10 +7865,13 @@ export const MOCK_CATALOGUE = [
       "code": "NSB",
       "name": "Nussbaum"
     },
-    "reference": "NSB-GEN-8348",
+    "reference": "NSB-GEN-2693",
     "name": "Pompe de circulation DN 50 type 0",
+    "category": "accessoire",
+    "specification": "DN 50",
+    "active": true,
     "unit": "p",
-    "base_price": 75.54
+    "base_price": 119
   },
   {
     "id": "st-188",
@@ -6193,10 +7879,13 @@ export const MOCK_CATALOGUE = [
       "code": "ST",
       "name": "Sanitas Troesch"
     },
-    "reference": "SAN.GEN.823506",
+    "reference": "SAN.GEN.637702",
     "name": "Pompe de circulation DN 50 modèle 0",
+    "category": "accessoire",
+    "specification": "DN 50",
+    "active": true,
     "unit": "p",
-    "base_price": 47.84
+    "base_price": 128.36
   },
   {
     "id": "gm-188",
@@ -6204,10 +7893,13 @@ export const MOCK_CATALOGUE = [
       "code": "GM",
       "name": "Getaz Miauton"
     },
-    "reference": "GM/GN/8025",
+    "reference": "GM/GN/2621",
     "name": "Pompe de circulation DN 50 variante 0",
+    "category": "accessoire",
+    "specification": "DN 50",
+    "active": true,
     "unit": "p",
-    "base_price": 71.56
+    "base_price": 132.17
   },
   {
     "id": "nsb-189",
@@ -6215,10 +7907,13 @@ export const MOCK_CATALOGUE = [
       "code": "NSB",
       "name": "Nussbaum"
     },
-    "reference": "NSB-GEN-6226",
+    "reference": "NSB-GEN-5647",
     "name": "Pompe de circulation DN 50 type 1",
+    "category": "accessoire",
+    "specification": "DN 50",
+    "active": true,
     "unit": "p",
-    "base_price": 194.65
+    "base_price": 25.01
   },
   {
     "id": "st-189",
@@ -6226,10 +7921,13 @@ export const MOCK_CATALOGUE = [
       "code": "ST",
       "name": "Sanitas Troesch"
     },
-    "reference": "SAN.GEN.233780",
+    "reference": "SAN.GEN.548650",
     "name": "Pompe de circulation DN 50 modèle 1",
+    "category": "accessoire",
+    "specification": "DN 50",
+    "active": true,
     "unit": "p",
-    "base_price": 187.32
+    "base_price": 182.95
   },
   {
     "id": "gm-189",
@@ -6237,10 +7935,13 @@ export const MOCK_CATALOGUE = [
       "code": "GM",
       "name": "Getaz Miauton"
     },
-    "reference": "GM/GN/6941",
+    "reference": "GM/GN/4760",
     "name": "Pompe de circulation DN 50 variante 1",
+    "category": "accessoire",
+    "specification": "DN 50",
+    "active": true,
     "unit": "p",
-    "base_price": 115.7
+    "base_price": 186.88
   },
   {
     "id": "nsb-190",
@@ -6248,10 +7949,13 @@ export const MOCK_CATALOGUE = [
       "code": "NSB",
       "name": "Nussbaum"
     },
-    "reference": "NSB-GEN-6146",
+    "reference": "NSB-GEN-3953",
     "name": "Pompe de circulation DN 50 type 2",
+    "category": "accessoire",
+    "specification": "DN 50",
+    "active": true,
     "unit": "p",
-    "base_price": 216.65
+    "base_price": 97.36
   },
   {
     "id": "st-190",
@@ -6259,10 +7963,13 @@ export const MOCK_CATALOGUE = [
       "code": "ST",
       "name": "Sanitas Troesch"
     },
-    "reference": "SAN.GEN.955426",
+    "reference": "SAN.GEN.224138",
     "name": "Pompe de circulation DN 50 modèle 2",
+    "category": "accessoire",
+    "specification": "DN 50",
+    "active": true,
     "unit": "p",
-    "base_price": 85.23
+    "base_price": 80.38
   },
   {
     "id": "gm-190",
@@ -6270,10 +7977,13 @@ export const MOCK_CATALOGUE = [
       "code": "GM",
       "name": "Getaz Miauton"
     },
-    "reference": "GM/GN/9540",
+    "reference": "GM/GN/3283",
     "name": "Pompe de circulation DN 50 variante 2",
+    "category": "accessoire",
+    "specification": "DN 50",
+    "active": true,
     "unit": "p",
-    "base_price": 181.2
+    "base_price": 96.6
   },
   {
     "id": "nsb-191",
@@ -6281,10 +7991,13 @@ export const MOCK_CATALOGUE = [
       "code": "NSB",
       "name": "Nussbaum"
     },
-    "reference": "NSB-GEN-1041",
+    "reference": "NSB-GEN-6524",
     "name": "Pompe de circulation DN 50 type 3",
+    "category": "accessoire",
+    "specification": "DN 50",
+    "active": true,
     "unit": "p",
-    "base_price": 79.73
+    "base_price": 26.65
   },
   {
     "id": "st-191",
@@ -6292,10 +8005,13 @@ export const MOCK_CATALOGUE = [
       "code": "ST",
       "name": "Sanitas Troesch"
     },
-    "reference": "SAN.GEN.361295",
+    "reference": "SAN.GEN.510778",
     "name": "Pompe de circulation DN 50 modèle 3",
+    "category": "accessoire",
+    "specification": "DN 50",
+    "active": true,
     "unit": "p",
-    "base_price": 20.38
+    "base_price": 150.27
   },
   {
     "id": "gm-191",
@@ -6303,10 +8019,13 @@ export const MOCK_CATALOGUE = [
       "code": "GM",
       "name": "Getaz Miauton"
     },
-    "reference": "GM/GN/7042",
+    "reference": "GM/GN/1285",
     "name": "Pompe de circulation DN 50 variante 3",
+    "category": "accessoire",
+    "specification": "DN 50",
+    "active": true,
     "unit": "p",
-    "base_price": 201.08
+    "base_price": 173.43
   },
   {
     "id": "nsb-192",
@@ -6314,10 +8033,13 @@ export const MOCK_CATALOGUE = [
       "code": "NSB",
       "name": "Nussbaum"
     },
-    "reference": "NSB-GEN-5644",
+    "reference": "NSB-GEN-3535",
     "name": "Pompe de circulation DN 50 type 4",
+    "category": "accessoire",
+    "specification": "DN 50",
+    "active": true,
     "unit": "p",
-    "base_price": 185.77
+    "base_price": 110.1
   },
   {
     "id": "st-192",
@@ -6325,10 +8047,13 @@ export const MOCK_CATALOGUE = [
       "code": "ST",
       "name": "Sanitas Troesch"
     },
-    "reference": "SAN.GEN.458033",
+    "reference": "SAN.GEN.330801",
     "name": "Pompe de circulation DN 50 modèle 4",
+    "category": "accessoire",
+    "specification": "DN 50",
+    "active": true,
     "unit": "p",
-    "base_price": 46.64
+    "base_price": 164
   },
   {
     "id": "gm-192",
@@ -6336,10 +8061,13 @@ export const MOCK_CATALOGUE = [
       "code": "GM",
       "name": "Getaz Miauton"
     },
-    "reference": "GM/GN/9384",
+    "reference": "GM/GN/5933",
     "name": "Pompe de circulation DN 50 variante 4",
+    "category": "accessoire",
+    "specification": "DN 50",
+    "active": true,
     "unit": "p",
-    "base_price": 143.11
+    "base_price": 103.18
   },
   {
     "id": "nsb-193",
@@ -6347,10 +8075,13 @@ export const MOCK_CATALOGUE = [
       "code": "NSB",
       "name": "Nussbaum"
     },
-    "reference": "NSB-GEN-6881",
+    "reference": "NSB-GEN-2794",
     "name": "Vase d'expansion 1/2\" type 0",
+    "category": "vase_expansion",
+    "specification": "1/2\"",
+    "active": true,
     "unit": "p",
-    "base_price": 162.78
+    "base_price": 46.27
   },
   {
     "id": "st-193",
@@ -6358,10 +8089,13 @@ export const MOCK_CATALOGUE = [
       "code": "ST",
       "name": "Sanitas Troesch"
     },
-    "reference": "SAN.GEN.274692",
+    "reference": "SAN.GEN.111937",
     "name": "Vase d'expansion 1/2\" modèle 0",
+    "category": "vase_expansion",
+    "specification": "1/2\"",
+    "active": true,
     "unit": "p",
-    "base_price": 31.54
+    "base_price": 214.43
   },
   {
     "id": "gm-193",
@@ -6369,10 +8103,13 @@ export const MOCK_CATALOGUE = [
       "code": "GM",
       "name": "Getaz Miauton"
     },
-    "reference": "GM/GN/9820",
+    "reference": "GM/GN/3017",
     "name": "Vase d'expansion 1/2\" variante 0",
+    "category": "vase_expansion",
+    "specification": "1/2\"",
+    "active": true,
     "unit": "p",
-    "base_price": 77.16
+    "base_price": 57.03
   },
   {
     "id": "nsb-194",
@@ -6380,10 +8117,13 @@ export const MOCK_CATALOGUE = [
       "code": "NSB",
       "name": "Nussbaum"
     },
-    "reference": "NSB-GEN-7068",
+    "reference": "NSB-GEN-4250",
     "name": "Vase d'expansion 1/2\" type 1",
+    "category": "vase_expansion",
+    "specification": "1/2\"",
+    "active": true,
     "unit": "p",
-    "base_price": 153.24
+    "base_price": 188.24
   },
   {
     "id": "st-194",
@@ -6391,10 +8131,13 @@ export const MOCK_CATALOGUE = [
       "code": "ST",
       "name": "Sanitas Troesch"
     },
-    "reference": "SAN.GEN.168150",
+    "reference": "SAN.GEN.650676",
     "name": "Vase d'expansion 1/2\" modèle 1",
+    "category": "vase_expansion",
+    "specification": "1/2\"",
+    "active": true,
     "unit": "p",
-    "base_price": 180.55
+    "base_price": 163.23
   },
   {
     "id": "gm-194",
@@ -6402,10 +8145,13 @@ export const MOCK_CATALOGUE = [
       "code": "GM",
       "name": "Getaz Miauton"
     },
-    "reference": "GM/GN/1443",
+    "reference": "GM/GN/7934",
     "name": "Vase d'expansion 1/2\" variante 1",
+    "category": "vase_expansion",
+    "specification": "1/2\"",
+    "active": true,
     "unit": "p",
-    "base_price": 161.3
+    "base_price": 210.32
   },
   {
     "id": "nsb-195",
@@ -6413,10 +8159,13 @@ export const MOCK_CATALOGUE = [
       "code": "NSB",
       "name": "Nussbaum"
     },
-    "reference": "NSB-GEN-4797",
+    "reference": "NSB-GEN-5995",
     "name": "Vase d'expansion 1/2\" type 2",
+    "category": "vase_expansion",
+    "specification": "1/2\"",
+    "active": true,
     "unit": "p",
-    "base_price": 38.51
+    "base_price": 104.61
   },
   {
     "id": "st-195",
@@ -6424,10 +8173,13 @@ export const MOCK_CATALOGUE = [
       "code": "ST",
       "name": "Sanitas Troesch"
     },
-    "reference": "SAN.GEN.137387",
+    "reference": "SAN.GEN.973591",
     "name": "Vase d'expansion 1/2\" modèle 2",
+    "category": "vase_expansion",
+    "specification": "1/2\"",
+    "active": true,
     "unit": "p",
-    "base_price": 61.07
+    "base_price": 80.97
   },
   {
     "id": "gm-195",
@@ -6435,10 +8187,13 @@ export const MOCK_CATALOGUE = [
       "code": "GM",
       "name": "Getaz Miauton"
     },
-    "reference": "GM/GN/4749",
+    "reference": "GM/GN/8630",
     "name": "Vase d'expansion 1/2\" variante 2",
+    "category": "vase_expansion",
+    "specification": "1/2\"",
+    "active": true,
     "unit": "p",
-    "base_price": 215.07
+    "base_price": 136.84
   },
   {
     "id": "nsb-196",
@@ -6446,10 +8201,13 @@ export const MOCK_CATALOGUE = [
       "code": "NSB",
       "name": "Nussbaum"
     },
-    "reference": "NSB-GEN-8597",
+    "reference": "NSB-GEN-4526",
     "name": "Vase d'expansion 1/2\" type 3",
+    "category": "vase_expansion",
+    "specification": "1/2\"",
+    "active": true,
     "unit": "p",
-    "base_price": 208.2
+    "base_price": 89.67
   },
   {
     "id": "st-196",
@@ -6457,10 +8215,13 @@ export const MOCK_CATALOGUE = [
       "code": "ST",
       "name": "Sanitas Troesch"
     },
-    "reference": "SAN.GEN.917489",
+    "reference": "SAN.GEN.794247",
     "name": "Vase d'expansion 1/2\" modèle 3",
+    "category": "vase_expansion",
+    "specification": "1/2\"",
+    "active": true,
     "unit": "p",
-    "base_price": 210.49
+    "base_price": 146.97
   },
   {
     "id": "gm-196",
@@ -6468,10 +8229,13 @@ export const MOCK_CATALOGUE = [
       "code": "GM",
       "name": "Getaz Miauton"
     },
-    "reference": "GM/GN/9800",
+    "reference": "GM/GN/6098",
     "name": "Vase d'expansion 1/2\" variante 3",
+    "category": "vase_expansion",
+    "specification": "1/2\"",
+    "active": true,
     "unit": "p",
-    "base_price": 212.35
+    "base_price": 200.66
   },
   {
     "id": "nsb-197",
@@ -6479,10 +8243,13 @@ export const MOCK_CATALOGUE = [
       "code": "NSB",
       "name": "Nussbaum"
     },
-    "reference": "NSB-GEN-3185",
+    "reference": "NSB-GEN-5823",
     "name": "Vase d'expansion 1/2\" type 4",
+    "category": "vase_expansion",
+    "specification": "1/2\"",
+    "active": true,
     "unit": "p",
-    "base_price": 168.87
+    "base_price": 185.98
   },
   {
     "id": "st-197",
@@ -6490,10 +8257,13 @@ export const MOCK_CATALOGUE = [
       "code": "ST",
       "name": "Sanitas Troesch"
     },
-    "reference": "SAN.GEN.703831",
+    "reference": "SAN.GEN.635076",
     "name": "Vase d'expansion 1/2\" modèle 4",
+    "category": "vase_expansion",
+    "specification": "1/2\"",
+    "active": true,
     "unit": "p",
-    "base_price": 138.86
+    "base_price": 107.48
   },
   {
     "id": "gm-197",
@@ -6501,10 +8271,13 @@ export const MOCK_CATALOGUE = [
       "code": "GM",
       "name": "Getaz Miauton"
     },
-    "reference": "GM/GN/5230",
+    "reference": "GM/GN/1287",
     "name": "Vase d'expansion 1/2\" variante 4",
+    "category": "vase_expansion",
+    "specification": "1/2\"",
+    "active": true,
     "unit": "p",
-    "base_price": 71.86
+    "base_price": 214.02
   },
   {
     "id": "nsb-198",
@@ -6512,10 +8285,13 @@ export const MOCK_CATALOGUE = [
       "code": "NSB",
       "name": "Nussbaum"
     },
-    "reference": "NSB-GEN-9231",
+    "reference": "NSB-GEN-7305",
     "name": "Vase d'expansion 3/4\" type 0",
+    "category": "vase_expansion",
+    "specification": "3/4\"",
+    "active": true,
     "unit": "p",
-    "base_price": 30.21
+    "base_price": 48.97
   },
   {
     "id": "st-198",
@@ -6523,10 +8299,13 @@ export const MOCK_CATALOGUE = [
       "code": "ST",
       "name": "Sanitas Troesch"
     },
-    "reference": "SAN.GEN.510184",
+    "reference": "SAN.GEN.523243",
     "name": "Vase d'expansion 3/4\" modèle 0",
+    "category": "vase_expansion",
+    "specification": "3/4\"",
+    "active": true,
     "unit": "p",
-    "base_price": 217.45
+    "base_price": 187.49
   },
   {
     "id": "gm-198",
@@ -6534,10 +8313,13 @@ export const MOCK_CATALOGUE = [
       "code": "GM",
       "name": "Getaz Miauton"
     },
-    "reference": "GM/GN/6564",
+    "reference": "GM/GN/2344",
     "name": "Vase d'expansion 3/4\" variante 0",
+    "category": "vase_expansion",
+    "specification": "3/4\"",
+    "active": true,
     "unit": "p",
-    "base_price": 101.56
+    "base_price": 162.81
   },
   {
     "id": "nsb-199",
@@ -6545,10 +8327,13 @@ export const MOCK_CATALOGUE = [
       "code": "NSB",
       "name": "Nussbaum"
     },
-    "reference": "NSB-GEN-5441",
+    "reference": "NSB-GEN-5052",
     "name": "Vase d'expansion 3/4\" type 1",
+    "category": "vase_expansion",
+    "specification": "3/4\"",
+    "active": true,
     "unit": "p",
-    "base_price": 70.63
+    "base_price": 87.01
   },
   {
     "id": "st-199",
@@ -6556,10 +8341,13 @@ export const MOCK_CATALOGUE = [
       "code": "ST",
       "name": "Sanitas Troesch"
     },
-    "reference": "SAN.GEN.195536",
+    "reference": "SAN.GEN.592272",
     "name": "Vase d'expansion 3/4\" modèle 1",
+    "category": "vase_expansion",
+    "specification": "3/4\"",
+    "active": true,
     "unit": "p",
-    "base_price": 128.1
+    "base_price": 81.18
   },
   {
     "id": "gm-199",
@@ -6567,10 +8355,13 @@ export const MOCK_CATALOGUE = [
       "code": "GM",
       "name": "Getaz Miauton"
     },
-    "reference": "GM/GN/3939",
+    "reference": "GM/GN/4095",
     "name": "Vase d'expansion 3/4\" variante 1",
+    "category": "vase_expansion",
+    "specification": "3/4\"",
+    "active": true,
     "unit": "p",
-    "base_price": 81.84
+    "base_price": 120.35
   },
   {
     "id": "nsb-200",
@@ -6578,10 +8369,13 @@ export const MOCK_CATALOGUE = [
       "code": "NSB",
       "name": "Nussbaum"
     },
-    "reference": "NSB-GEN-8585",
+    "reference": "NSB-GEN-4875",
     "name": "Vase d'expansion 3/4\" type 2",
+    "category": "vase_expansion",
+    "specification": "3/4\"",
+    "active": true,
     "unit": "p",
-    "base_price": 27
+    "base_price": 63.07
   },
   {
     "id": "st-200",
@@ -6589,10 +8383,13 @@ export const MOCK_CATALOGUE = [
       "code": "ST",
       "name": "Sanitas Troesch"
     },
-    "reference": "SAN.GEN.446903",
+    "reference": "SAN.GEN.211372",
     "name": "Vase d'expansion 3/4\" modèle 2",
+    "category": "vase_expansion",
+    "specification": "3/4\"",
+    "active": true,
     "unit": "p",
-    "base_price": 174.27
+    "base_price": 204.74
   },
   {
     "id": "gm-200",
@@ -6600,10 +8397,13 @@ export const MOCK_CATALOGUE = [
       "code": "GM",
       "name": "Getaz Miauton"
     },
-    "reference": "GM/GN/8108",
+    "reference": "GM/GN/2697",
     "name": "Vase d'expansion 3/4\" variante 2",
+    "category": "vase_expansion",
+    "specification": "3/4\"",
+    "active": true,
     "unit": "p",
-    "base_price": 194.08
+    "base_price": 61.01
   },
   {
     "id": "nsb-201",
@@ -6611,10 +8411,13 @@ export const MOCK_CATALOGUE = [
       "code": "NSB",
       "name": "Nussbaum"
     },
-    "reference": "NSB-GEN-8054",
+    "reference": "NSB-GEN-9501",
     "name": "Vase d'expansion 3/4\" type 3",
+    "category": "vase_expansion",
+    "specification": "3/4\"",
+    "active": true,
     "unit": "p",
-    "base_price": 208.73
+    "base_price": 202.05
   },
   {
     "id": "st-201",
@@ -6622,10 +8425,13 @@ export const MOCK_CATALOGUE = [
       "code": "ST",
       "name": "Sanitas Troesch"
     },
-    "reference": "SAN.GEN.792138",
+    "reference": "SAN.GEN.806540",
     "name": "Vase d'expansion 3/4\" modèle 3",
+    "category": "vase_expansion",
+    "specification": "3/4\"",
+    "active": true,
     "unit": "p",
-    "base_price": 23.71
+    "base_price": 23.91
   },
   {
     "id": "gm-201",
@@ -6633,10 +8439,13 @@ export const MOCK_CATALOGUE = [
       "code": "GM",
       "name": "Getaz Miauton"
     },
-    "reference": "GM/GN/4729",
+    "reference": "GM/GN/3015",
     "name": "Vase d'expansion 3/4\" variante 3",
+    "category": "vase_expansion",
+    "specification": "3/4\"",
+    "active": true,
     "unit": "p",
-    "base_price": 196.24
+    "base_price": 177.85
   },
   {
     "id": "nsb-202",
@@ -6644,10 +8453,13 @@ export const MOCK_CATALOGUE = [
       "code": "NSB",
       "name": "Nussbaum"
     },
-    "reference": "NSB-GEN-9817",
+    "reference": "NSB-GEN-1574",
     "name": "Vase d'expansion 3/4\" type 4",
+    "category": "vase_expansion",
+    "specification": "3/4\"",
+    "active": true,
     "unit": "p",
-    "base_price": 101.05
+    "base_price": 73.06
   },
   {
     "id": "st-202",
@@ -6655,10 +8467,13 @@ export const MOCK_CATALOGUE = [
       "code": "ST",
       "name": "Sanitas Troesch"
     },
-    "reference": "SAN.GEN.275690",
+    "reference": "SAN.GEN.653844",
     "name": "Vase d'expansion 3/4\" modèle 4",
+    "category": "vase_expansion",
+    "specification": "3/4\"",
+    "active": true,
     "unit": "p",
-    "base_price": 103.66
+    "base_price": 40.33
   },
   {
     "id": "gm-202",
@@ -6666,10 +8481,13 @@ export const MOCK_CATALOGUE = [
       "code": "GM",
       "name": "Getaz Miauton"
     },
-    "reference": "GM/GN/9986",
+    "reference": "GM/GN/5846",
     "name": "Vase d'expansion 3/4\" variante 4",
+    "category": "vase_expansion",
+    "specification": "3/4\"",
+    "active": true,
     "unit": "p",
-    "base_price": 204.37
+    "base_price": 163.43
   },
   {
     "id": "nsb-203",
@@ -6677,10 +8495,13 @@ export const MOCK_CATALOGUE = [
       "code": "NSB",
       "name": "Nussbaum"
     },
-    "reference": "NSB-GEN-5638",
+    "reference": "NSB-GEN-1613",
     "name": "Vase d'expansion 1\" type 0",
+    "category": "vase_expansion",
+    "specification": "1\"",
+    "active": true,
     "unit": "p",
-    "base_price": 140.38
+    "base_price": 186.26
   },
   {
     "id": "st-203",
@@ -6688,10 +8509,13 @@ export const MOCK_CATALOGUE = [
       "code": "ST",
       "name": "Sanitas Troesch"
     },
-    "reference": "SAN.GEN.127342",
+    "reference": "SAN.GEN.346931",
     "name": "Vase d'expansion 1\" modèle 0",
+    "category": "vase_expansion",
+    "specification": "1\"",
+    "active": true,
     "unit": "p",
-    "base_price": 202.4
+    "base_price": 30.32
   },
   {
     "id": "gm-203",
@@ -6699,10 +8523,13 @@ export const MOCK_CATALOGUE = [
       "code": "GM",
       "name": "Getaz Miauton"
     },
-    "reference": "GM/GN/6434",
+    "reference": "GM/GN/7284",
     "name": "Vase d'expansion 1\" variante 0",
+    "category": "vase_expansion",
+    "specification": "1\"",
+    "active": true,
     "unit": "p",
-    "base_price": 130.42
+    "base_price": 90.7
   },
   {
     "id": "nsb-204",
@@ -6710,10 +8537,13 @@ export const MOCK_CATALOGUE = [
       "code": "NSB",
       "name": "Nussbaum"
     },
-    "reference": "NSB-GEN-7528",
+    "reference": "NSB-GEN-6554",
     "name": "Vase d'expansion 1\" type 1",
+    "category": "vase_expansion",
+    "specification": "1\"",
+    "active": true,
     "unit": "p",
-    "base_price": 137.76
+    "base_price": 177.84
   },
   {
     "id": "st-204",
@@ -6721,10 +8551,13 @@ export const MOCK_CATALOGUE = [
       "code": "ST",
       "name": "Sanitas Troesch"
     },
-    "reference": "SAN.GEN.568640",
+    "reference": "SAN.GEN.670627",
     "name": "Vase d'expansion 1\" modèle 1",
+    "category": "vase_expansion",
+    "specification": "1\"",
+    "active": true,
     "unit": "p",
-    "base_price": 44.62
+    "base_price": 67.43
   },
   {
     "id": "gm-204",
@@ -6732,10 +8565,13 @@ export const MOCK_CATALOGUE = [
       "code": "GM",
       "name": "Getaz Miauton"
     },
-    "reference": "GM/GN/7415",
+    "reference": "GM/GN/4019",
     "name": "Vase d'expansion 1\" variante 1",
+    "category": "vase_expansion",
+    "specification": "1\"",
+    "active": true,
     "unit": "p",
-    "base_price": 175.98
+    "base_price": 178.74
   },
   {
     "id": "nsb-205",
@@ -6743,10 +8579,13 @@ export const MOCK_CATALOGUE = [
       "code": "NSB",
       "name": "Nussbaum"
     },
-    "reference": "NSB-GEN-2173",
+    "reference": "NSB-GEN-7793",
     "name": "Vase d'expansion 1\" type 2",
+    "category": "vase_expansion",
+    "specification": "1\"",
+    "active": true,
     "unit": "p",
-    "base_price": 154.88
+    "base_price": 219.94
   },
   {
     "id": "st-205",
@@ -6754,10 +8593,13 @@ export const MOCK_CATALOGUE = [
       "code": "ST",
       "name": "Sanitas Troesch"
     },
-    "reference": "SAN.GEN.135395",
+    "reference": "SAN.GEN.628512",
     "name": "Vase d'expansion 1\" modèle 2",
+    "category": "vase_expansion",
+    "specification": "1\"",
+    "active": true,
     "unit": "p",
-    "base_price": 49.32
+    "base_price": 179.17
   },
   {
     "id": "gm-205",
@@ -6765,10 +8607,13 @@ export const MOCK_CATALOGUE = [
       "code": "GM",
       "name": "Getaz Miauton"
     },
-    "reference": "GM/GN/2251",
+    "reference": "GM/GN/6962",
     "name": "Vase d'expansion 1\" variante 2",
+    "category": "vase_expansion",
+    "specification": "1\"",
+    "active": true,
     "unit": "p",
-    "base_price": 201.59
+    "base_price": 35.57
   },
   {
     "id": "nsb-206",
@@ -6776,10 +8621,13 @@ export const MOCK_CATALOGUE = [
       "code": "NSB",
       "name": "Nussbaum"
     },
-    "reference": "NSB-GEN-6522",
+    "reference": "NSB-GEN-1703",
     "name": "Vase d'expansion 1\" type 3",
+    "category": "vase_expansion",
+    "specification": "1\"",
+    "active": true,
     "unit": "p",
-    "base_price": 80.97
+    "base_price": 117.41
   },
   {
     "id": "st-206",
@@ -6787,10 +8635,13 @@ export const MOCK_CATALOGUE = [
       "code": "ST",
       "name": "Sanitas Troesch"
     },
-    "reference": "SAN.GEN.813983",
+    "reference": "SAN.GEN.277180",
     "name": "Vase d'expansion 1\" modèle 3",
+    "category": "vase_expansion",
+    "specification": "1\"",
+    "active": true,
     "unit": "p",
-    "base_price": 29.85
+    "base_price": 103.16
   },
   {
     "id": "gm-206",
@@ -6798,10 +8649,13 @@ export const MOCK_CATALOGUE = [
       "code": "GM",
       "name": "Getaz Miauton"
     },
-    "reference": "GM/GN/6060",
+    "reference": "GM/GN/2288",
     "name": "Vase d'expansion 1\" variante 3",
+    "category": "vase_expansion",
+    "specification": "1\"",
+    "active": true,
     "unit": "p",
-    "base_price": 71.92
+    "base_price": 122.55
   },
   {
     "id": "nsb-207",
@@ -6809,10 +8663,13 @@ export const MOCK_CATALOGUE = [
       "code": "NSB",
       "name": "Nussbaum"
     },
-    "reference": "NSB-GEN-5227",
+    "reference": "NSB-GEN-1370",
     "name": "Vase d'expansion 1\" type 4",
+    "category": "vase_expansion",
+    "specification": "1\"",
+    "active": true,
     "unit": "p",
-    "base_price": 146.36
+    "base_price": 25.34
   },
   {
     "id": "st-207",
@@ -6820,10 +8677,13 @@ export const MOCK_CATALOGUE = [
       "code": "ST",
       "name": "Sanitas Troesch"
     },
-    "reference": "SAN.GEN.222217",
+    "reference": "SAN.GEN.916473",
     "name": "Vase d'expansion 1\" modèle 4",
+    "category": "vase_expansion",
+    "specification": "1\"",
+    "active": true,
     "unit": "p",
-    "base_price": 215.63
+    "base_price": 200.12
   },
   {
     "id": "gm-207",
@@ -6831,10 +8691,13 @@ export const MOCK_CATALOGUE = [
       "code": "GM",
       "name": "Getaz Miauton"
     },
-    "reference": "GM/GN/9481",
+    "reference": "GM/GN/6237",
     "name": "Vase d'expansion 1\" variante 4",
+    "category": "vase_expansion",
+    "specification": "1\"",
+    "active": true,
     "unit": "p",
-    "base_price": 141.58
+    "base_price": 153.9
   },
   {
     "id": "nsb-208",
@@ -6842,10 +8705,13 @@ export const MOCK_CATALOGUE = [
       "code": "NSB",
       "name": "Nussbaum"
     },
-    "reference": "NSB-GEN-1424",
+    "reference": "NSB-GEN-8942",
     "name": "Vase d'expansion 1 1/4\" type 0",
+    "category": "vase_expansion",
+    "specification": "1 1/4\"",
+    "active": true,
     "unit": "p",
-    "base_price": 87.81
+    "base_price": 201.35
   },
   {
     "id": "st-208",
@@ -6853,10 +8719,13 @@ export const MOCK_CATALOGUE = [
       "code": "ST",
       "name": "Sanitas Troesch"
     },
-    "reference": "SAN.GEN.645648",
+    "reference": "SAN.GEN.482409",
     "name": "Vase d'expansion 1 1/4\" modèle 0",
+    "category": "vase_expansion",
+    "specification": "1 1/4\"",
+    "active": true,
     "unit": "p",
-    "base_price": 170.8
+    "base_price": 91.1
   },
   {
     "id": "gm-208",
@@ -6864,10 +8733,13 @@ export const MOCK_CATALOGUE = [
       "code": "GM",
       "name": "Getaz Miauton"
     },
-    "reference": "GM/GN/5531",
+    "reference": "GM/GN/4302",
     "name": "Vase d'expansion 1 1/4\" variante 0",
+    "category": "vase_expansion",
+    "specification": "1 1/4\"",
+    "active": true,
     "unit": "p",
-    "base_price": 178.18
+    "base_price": 44.99
   },
   {
     "id": "nsb-209",
@@ -6875,10 +8747,13 @@ export const MOCK_CATALOGUE = [
       "code": "NSB",
       "name": "Nussbaum"
     },
-    "reference": "NSB-GEN-1237",
+    "reference": "NSB-GEN-1263",
     "name": "Vase d'expansion 1 1/4\" type 1",
+    "category": "vase_expansion",
+    "specification": "1 1/4\"",
+    "active": true,
     "unit": "p",
-    "base_price": 69.98
+    "base_price": 113.48
   },
   {
     "id": "st-209",
@@ -6886,10 +8761,13 @@ export const MOCK_CATALOGUE = [
       "code": "ST",
       "name": "Sanitas Troesch"
     },
-    "reference": "SAN.GEN.370201",
+    "reference": "SAN.GEN.567678",
     "name": "Vase d'expansion 1 1/4\" modèle 1",
+    "category": "vase_expansion",
+    "specification": "1 1/4\"",
+    "active": true,
     "unit": "p",
-    "base_price": 118.91
+    "base_price": 68.77
   },
   {
     "id": "gm-209",
@@ -6897,10 +8775,13 @@ export const MOCK_CATALOGUE = [
       "code": "GM",
       "name": "Getaz Miauton"
     },
-    "reference": "GM/GN/7327",
+    "reference": "GM/GN/7198",
     "name": "Vase d'expansion 1 1/4\" variante 1",
+    "category": "vase_expansion",
+    "specification": "1 1/4\"",
+    "active": true,
     "unit": "p",
-    "base_price": 34.47
+    "base_price": 152.84
   },
   {
     "id": "nsb-210",
@@ -6908,10 +8789,13 @@ export const MOCK_CATALOGUE = [
       "code": "NSB",
       "name": "Nussbaum"
     },
-    "reference": "NSB-GEN-3171",
+    "reference": "NSB-GEN-4075",
     "name": "Vase d'expansion 1 1/4\" type 2",
+    "category": "vase_expansion",
+    "specification": "1 1/4\"",
+    "active": true,
     "unit": "p",
-    "base_price": 105.44
+    "base_price": 74.19
   },
   {
     "id": "st-210",
@@ -6919,10 +8803,13 @@ export const MOCK_CATALOGUE = [
       "code": "ST",
       "name": "Sanitas Troesch"
     },
-    "reference": "SAN.GEN.686181",
+    "reference": "SAN.GEN.153760",
     "name": "Vase d'expansion 1 1/4\" modèle 2",
+    "category": "vase_expansion",
+    "specification": "1 1/4\"",
+    "active": true,
     "unit": "p",
-    "base_price": 99.53
+    "base_price": 172.7
   },
   {
     "id": "gm-210",
@@ -6930,10 +8817,13 @@ export const MOCK_CATALOGUE = [
       "code": "GM",
       "name": "Getaz Miauton"
     },
-    "reference": "GM/GN/4419",
+    "reference": "GM/GN/9793",
     "name": "Vase d'expansion 1 1/4\" variante 2",
+    "category": "vase_expansion",
+    "specification": "1 1/4\"",
+    "active": true,
     "unit": "p",
-    "base_price": 60.68
+    "base_price": 122.59
   },
   {
     "id": "nsb-211",
@@ -6941,10 +8831,13 @@ export const MOCK_CATALOGUE = [
       "code": "NSB",
       "name": "Nussbaum"
     },
-    "reference": "NSB-GEN-3031",
+    "reference": "NSB-GEN-2977",
     "name": "Vase d'expansion 1 1/4\" type 3",
+    "category": "vase_expansion",
+    "specification": "1 1/4\"",
+    "active": true,
     "unit": "p",
-    "base_price": 153.81
+    "base_price": 77.35
   },
   {
     "id": "st-211",
@@ -6952,10 +8845,13 @@ export const MOCK_CATALOGUE = [
       "code": "ST",
       "name": "Sanitas Troesch"
     },
-    "reference": "SAN.GEN.997683",
+    "reference": "SAN.GEN.389456",
     "name": "Vase d'expansion 1 1/4\" modèle 3",
+    "category": "vase_expansion",
+    "specification": "1 1/4\"",
+    "active": true,
     "unit": "p",
-    "base_price": 156.97
+    "base_price": 215.15
   },
   {
     "id": "gm-211",
@@ -6963,10 +8859,13 @@ export const MOCK_CATALOGUE = [
       "code": "GM",
       "name": "Getaz Miauton"
     },
-    "reference": "GM/GN/9071",
+    "reference": "GM/GN/4198",
     "name": "Vase d'expansion 1 1/4\" variante 3",
+    "category": "vase_expansion",
+    "specification": "1 1/4\"",
+    "active": true,
     "unit": "p",
-    "base_price": 181.94
+    "base_price": 212.36
   },
   {
     "id": "nsb-212",
@@ -6974,10 +8873,13 @@ export const MOCK_CATALOGUE = [
       "code": "NSB",
       "name": "Nussbaum"
     },
-    "reference": "NSB-GEN-6904",
+    "reference": "NSB-GEN-3455",
     "name": "Vase d'expansion 1 1/4\" type 4",
+    "category": "vase_expansion",
+    "specification": "1 1/4\"",
+    "active": true,
     "unit": "p",
-    "base_price": 180.15
+    "base_price": 90.39
   },
   {
     "id": "st-212",
@@ -6985,10 +8887,13 @@ export const MOCK_CATALOGUE = [
       "code": "ST",
       "name": "Sanitas Troesch"
     },
-    "reference": "SAN.GEN.331482",
+    "reference": "SAN.GEN.593079",
     "name": "Vase d'expansion 1 1/4\" modèle 4",
+    "category": "vase_expansion",
+    "specification": "1 1/4\"",
+    "active": true,
     "unit": "p",
-    "base_price": 38
+    "base_price": 38.08
   },
   {
     "id": "gm-212",
@@ -6996,10 +8901,13 @@ export const MOCK_CATALOGUE = [
       "code": "GM",
       "name": "Getaz Miauton"
     },
-    "reference": "GM/GN/8787",
+    "reference": "GM/GN/3550",
     "name": "Vase d'expansion 1 1/4\" variante 4",
+    "category": "vase_expansion",
+    "specification": "1 1/4\"",
+    "active": true,
     "unit": "p",
-    "base_price": 61.33
+    "base_price": 187.15
   },
   {
     "id": "nsb-213",
@@ -7007,10 +8915,13 @@ export const MOCK_CATALOGUE = [
       "code": "NSB",
       "name": "Nussbaum"
     },
-    "reference": "NSB-GEN-7089",
+    "reference": "NSB-GEN-6919",
     "name": "Vase d'expansion 1 1/2\" type 0",
+    "category": "vase_expansion",
+    "specification": "1 1/2\"",
+    "active": true,
     "unit": "p",
-    "base_price": 88.96
+    "base_price": 117.01
   },
   {
     "id": "st-213",
@@ -7018,10 +8929,13 @@ export const MOCK_CATALOGUE = [
       "code": "ST",
       "name": "Sanitas Troesch"
     },
-    "reference": "SAN.GEN.314403",
+    "reference": "SAN.GEN.195819",
     "name": "Vase d'expansion 1 1/2\" modèle 0",
+    "category": "vase_expansion",
+    "specification": "1 1/2\"",
+    "active": true,
     "unit": "p",
-    "base_price": 176.68
+    "base_price": 98.86
   },
   {
     "id": "gm-213",
@@ -7029,10 +8943,13 @@ export const MOCK_CATALOGUE = [
       "code": "GM",
       "name": "Getaz Miauton"
     },
-    "reference": "GM/GN/1589",
+    "reference": "GM/GN/7227",
     "name": "Vase d'expansion 1 1/2\" variante 0",
+    "category": "vase_expansion",
+    "specification": "1 1/2\"",
+    "active": true,
     "unit": "p",
-    "base_price": 157.96
+    "base_price": 92.19
   },
   {
     "id": "nsb-214",
@@ -7040,10 +8957,13 @@ export const MOCK_CATALOGUE = [
       "code": "NSB",
       "name": "Nussbaum"
     },
-    "reference": "NSB-GEN-7508",
+    "reference": "NSB-GEN-2759",
     "name": "Vase d'expansion 1 1/2\" type 1",
+    "category": "vase_expansion",
+    "specification": "1 1/2\"",
+    "active": true,
     "unit": "p",
-    "base_price": 97.49
+    "base_price": 205.98
   },
   {
     "id": "st-214",
@@ -7051,10 +8971,13 @@ export const MOCK_CATALOGUE = [
       "code": "ST",
       "name": "Sanitas Troesch"
     },
-    "reference": "SAN.GEN.448593",
+    "reference": "SAN.GEN.613615",
     "name": "Vase d'expansion 1 1/2\" modèle 1",
+    "category": "vase_expansion",
+    "specification": "1 1/2\"",
+    "active": true,
     "unit": "p",
-    "base_price": 28.4
+    "base_price": 21.7
   },
   {
     "id": "gm-214",
@@ -7062,10 +8985,13 @@ export const MOCK_CATALOGUE = [
       "code": "GM",
       "name": "Getaz Miauton"
     },
-    "reference": "GM/GN/6538",
+    "reference": "GM/GN/1833",
     "name": "Vase d'expansion 1 1/2\" variante 1",
+    "category": "vase_expansion",
+    "specification": "1 1/2\"",
+    "active": true,
     "unit": "p",
-    "base_price": 41.26
+    "base_price": 25.5
   },
   {
     "id": "nsb-215",
@@ -7073,10 +8999,13 @@ export const MOCK_CATALOGUE = [
       "code": "NSB",
       "name": "Nussbaum"
     },
-    "reference": "NSB-GEN-8043",
+    "reference": "NSB-GEN-4525",
     "name": "Vase d'expansion 1 1/2\" type 2",
+    "category": "vase_expansion",
+    "specification": "1 1/2\"",
+    "active": true,
     "unit": "p",
-    "base_price": 21.83
+    "base_price": 211.66
   },
   {
     "id": "st-215",
@@ -7084,10 +9013,13 @@ export const MOCK_CATALOGUE = [
       "code": "ST",
       "name": "Sanitas Troesch"
     },
-    "reference": "SAN.GEN.275092",
+    "reference": "SAN.GEN.951040",
     "name": "Vase d'expansion 1 1/2\" modèle 2",
+    "category": "vase_expansion",
+    "specification": "1 1/2\"",
+    "active": true,
     "unit": "p",
-    "base_price": 119.18
+    "base_price": 103.27
   },
   {
     "id": "gm-215",
@@ -7095,10 +9027,13 @@ export const MOCK_CATALOGUE = [
       "code": "GM",
       "name": "Getaz Miauton"
     },
-    "reference": "GM/GN/2297",
+    "reference": "GM/GN/6037",
     "name": "Vase d'expansion 1 1/2\" variante 2",
+    "category": "vase_expansion",
+    "specification": "1 1/2\"",
+    "active": true,
     "unit": "p",
-    "base_price": 166.69
+    "base_price": 110.71
   },
   {
     "id": "nsb-216",
@@ -7106,10 +9041,13 @@ export const MOCK_CATALOGUE = [
       "code": "NSB",
       "name": "Nussbaum"
     },
-    "reference": "NSB-GEN-2915",
+    "reference": "NSB-GEN-2341",
     "name": "Vase d'expansion 1 1/2\" type 3",
+    "category": "vase_expansion",
+    "specification": "1 1/2\"",
+    "active": true,
     "unit": "p",
-    "base_price": 57.3
+    "base_price": 106.99
   },
   {
     "id": "st-216",
@@ -7117,10 +9055,13 @@ export const MOCK_CATALOGUE = [
       "code": "ST",
       "name": "Sanitas Troesch"
     },
-    "reference": "SAN.GEN.804009",
+    "reference": "SAN.GEN.484297",
     "name": "Vase d'expansion 1 1/2\" modèle 3",
+    "category": "vase_expansion",
+    "specification": "1 1/2\"",
+    "active": true,
     "unit": "p",
-    "base_price": 92.69
+    "base_price": 67.73
   },
   {
     "id": "gm-216",
@@ -7128,10 +9069,13 @@ export const MOCK_CATALOGUE = [
       "code": "GM",
       "name": "Getaz Miauton"
     },
-    "reference": "GM/GN/5355",
+    "reference": "GM/GN/1783",
     "name": "Vase d'expansion 1 1/2\" variante 3",
+    "category": "vase_expansion",
+    "specification": "1 1/2\"",
+    "active": true,
     "unit": "p",
-    "base_price": 110.3
+    "base_price": 216.37
   },
   {
     "id": "nsb-217",
@@ -7139,10 +9083,13 @@ export const MOCK_CATALOGUE = [
       "code": "NSB",
       "name": "Nussbaum"
     },
-    "reference": "NSB-GEN-4448",
+    "reference": "NSB-GEN-5637",
     "name": "Vase d'expansion 1 1/2\" type 4",
+    "category": "vase_expansion",
+    "specification": "1 1/2\"",
+    "active": true,
     "unit": "p",
-    "base_price": 80.77
+    "base_price": 127.64
   },
   {
     "id": "st-217",
@@ -7150,10 +9097,13 @@ export const MOCK_CATALOGUE = [
       "code": "ST",
       "name": "Sanitas Troesch"
     },
-    "reference": "SAN.GEN.298721",
+    "reference": "SAN.GEN.802676",
     "name": "Vase d'expansion 1 1/2\" modèle 4",
+    "category": "vase_expansion",
+    "specification": "1 1/2\"",
+    "active": true,
     "unit": "p",
-    "base_price": 148.85
+    "base_price": 82.64
   },
   {
     "id": "gm-217",
@@ -7161,10 +9111,13 @@ export const MOCK_CATALOGUE = [
       "code": "GM",
       "name": "Getaz Miauton"
     },
-    "reference": "GM/GN/1752",
+    "reference": "GM/GN/4212",
     "name": "Vase d'expansion 1 1/2\" variante 4",
+    "category": "vase_expansion",
+    "specification": "1 1/2\"",
+    "active": true,
     "unit": "p",
-    "base_price": 175.08
+    "base_price": 45.39
   },
   {
     "id": "nsb-218",
@@ -7172,10 +9125,13 @@ export const MOCK_CATALOGUE = [
       "code": "NSB",
       "name": "Nussbaum"
     },
-    "reference": "NSB-GEN-7987",
+    "reference": "NSB-GEN-9224",
     "name": "Vase d'expansion 2\" type 0",
+    "category": "vase_expansion",
+    "specification": "2\"",
+    "active": true,
     "unit": "p",
-    "base_price": 171.14
+    "base_price": 148.05
   },
   {
     "id": "st-218",
@@ -7183,10 +9139,13 @@ export const MOCK_CATALOGUE = [
       "code": "ST",
       "name": "Sanitas Troesch"
     },
-    "reference": "SAN.GEN.496631",
+    "reference": "SAN.GEN.521698",
     "name": "Vase d'expansion 2\" modèle 0",
+    "category": "vase_expansion",
+    "specification": "2\"",
+    "active": true,
     "unit": "p",
-    "base_price": 110.41
+    "base_price": 74.48
   },
   {
     "id": "gm-218",
@@ -7194,10 +9153,13 @@ export const MOCK_CATALOGUE = [
       "code": "GM",
       "name": "Getaz Miauton"
     },
-    "reference": "GM/GN/4820",
+    "reference": "GM/GN/5836",
     "name": "Vase d'expansion 2\" variante 0",
+    "category": "vase_expansion",
+    "specification": "2\"",
+    "active": true,
     "unit": "p",
-    "base_price": 23.44
+    "base_price": 52.15
   },
   {
     "id": "nsb-219",
@@ -7205,10 +9167,13 @@ export const MOCK_CATALOGUE = [
       "code": "NSB",
       "name": "Nussbaum"
     },
-    "reference": "NSB-GEN-2682",
+    "reference": "NSB-GEN-1223",
     "name": "Vase d'expansion 2\" type 1",
+    "category": "vase_expansion",
+    "specification": "2\"",
+    "active": true,
     "unit": "p",
-    "base_price": 147.7
+    "base_price": 199.59
   },
   {
     "id": "st-219",
@@ -7216,10 +9181,13 @@ export const MOCK_CATALOGUE = [
       "code": "ST",
       "name": "Sanitas Troesch"
     },
-    "reference": "SAN.GEN.718470",
+    "reference": "SAN.GEN.764961",
     "name": "Vase d'expansion 2\" modèle 1",
+    "category": "vase_expansion",
+    "specification": "2\"",
+    "active": true,
     "unit": "p",
-    "base_price": 181.85
+    "base_price": 89.66
   },
   {
     "id": "gm-219",
@@ -7227,10 +9195,13 @@ export const MOCK_CATALOGUE = [
       "code": "GM",
       "name": "Getaz Miauton"
     },
-    "reference": "GM/GN/8766",
+    "reference": "GM/GN/9673",
     "name": "Vase d'expansion 2\" variante 1",
+    "category": "vase_expansion",
+    "specification": "2\"",
+    "active": true,
     "unit": "p",
-    "base_price": 150.42
+    "base_price": 202.43
   },
   {
     "id": "nsb-220",
@@ -7238,10 +9209,13 @@ export const MOCK_CATALOGUE = [
       "code": "NSB",
       "name": "Nussbaum"
     },
-    "reference": "NSB-GEN-7843",
+    "reference": "NSB-GEN-4413",
     "name": "Vase d'expansion 2\" type 2",
+    "category": "vase_expansion",
+    "specification": "2\"",
+    "active": true,
     "unit": "p",
-    "base_price": 35.25
+    "base_price": 108.32
   },
   {
     "id": "st-220",
@@ -7249,10 +9223,13 @@ export const MOCK_CATALOGUE = [
       "code": "ST",
       "name": "Sanitas Troesch"
     },
-    "reference": "SAN.GEN.691540",
+    "reference": "SAN.GEN.239071",
     "name": "Vase d'expansion 2\" modèle 2",
+    "category": "vase_expansion",
+    "specification": "2\"",
+    "active": true,
     "unit": "p",
-    "base_price": 37.74
+    "base_price": 32.28
   },
   {
     "id": "gm-220",
@@ -7260,10 +9237,13 @@ export const MOCK_CATALOGUE = [
       "code": "GM",
       "name": "Getaz Miauton"
     },
-    "reference": "GM/GN/5754",
+    "reference": "GM/GN/4728",
     "name": "Vase d'expansion 2\" variante 2",
+    "category": "vase_expansion",
+    "specification": "2\"",
+    "active": true,
     "unit": "p",
-    "base_price": 94.13
+    "base_price": 22.84
   },
   {
     "id": "nsb-221",
@@ -7271,10 +9251,13 @@ export const MOCK_CATALOGUE = [
       "code": "NSB",
       "name": "Nussbaum"
     },
-    "reference": "NSB-GEN-4824",
+    "reference": "NSB-GEN-5888",
     "name": "Vase d'expansion 2\" type 3",
+    "category": "vase_expansion",
+    "specification": "2\"",
+    "active": true,
     "unit": "p",
-    "base_price": 150.94
+    "base_price": 106.93
   },
   {
     "id": "st-221",
@@ -7282,10 +9265,13 @@ export const MOCK_CATALOGUE = [
       "code": "ST",
       "name": "Sanitas Troesch"
     },
-    "reference": "SAN.GEN.721874",
+    "reference": "SAN.GEN.570563",
     "name": "Vase d'expansion 2\" modèle 3",
+    "category": "vase_expansion",
+    "specification": "2\"",
+    "active": true,
     "unit": "p",
-    "base_price": 95.95
+    "base_price": 177.32
   },
   {
     "id": "gm-221",
@@ -7293,10 +9279,13 @@ export const MOCK_CATALOGUE = [
       "code": "GM",
       "name": "Getaz Miauton"
     },
-    "reference": "GM/GN/8908",
+    "reference": "GM/GN/7410",
     "name": "Vase d'expansion 2\" variante 3",
+    "category": "vase_expansion",
+    "specification": "2\"",
+    "active": true,
     "unit": "p",
-    "base_price": 67.74
+    "base_price": 207.45
   },
   {
     "id": "nsb-222",
@@ -7304,10 +9293,13 @@ export const MOCK_CATALOGUE = [
       "code": "NSB",
       "name": "Nussbaum"
     },
-    "reference": "NSB-GEN-5609",
+    "reference": "NSB-GEN-8658",
     "name": "Vase d'expansion 2\" type 4",
+    "category": "vase_expansion",
+    "specification": "2\"",
+    "active": true,
     "unit": "p",
-    "base_price": 195.06
+    "base_price": 158.87
   },
   {
     "id": "st-222",
@@ -7315,10 +9307,13 @@ export const MOCK_CATALOGUE = [
       "code": "ST",
       "name": "Sanitas Troesch"
     },
-    "reference": "SAN.GEN.801752",
+    "reference": "SAN.GEN.255569",
     "name": "Vase d'expansion 2\" modèle 4",
+    "category": "vase_expansion",
+    "specification": "2\"",
+    "active": true,
     "unit": "p",
-    "base_price": 113.16
+    "base_price": 173.49
   },
   {
     "id": "gm-222",
@@ -7326,10 +9321,13 @@ export const MOCK_CATALOGUE = [
       "code": "GM",
       "name": "Getaz Miauton"
     },
-    "reference": "GM/GN/5803",
+    "reference": "GM/GN/2233",
     "name": "Vase d'expansion 2\" variante 4",
+    "category": "vase_expansion",
+    "specification": "2\"",
+    "active": true,
     "unit": "p",
-    "base_price": 164.64
+    "base_price": 60.36
   },
   {
     "id": "nsb-223",
@@ -7337,10 +9335,13 @@ export const MOCK_CATALOGUE = [
       "code": "NSB",
       "name": "Nussbaum"
     },
-    "reference": "NSB-GEN-8893",
+    "reference": "NSB-GEN-8833",
     "name": "Vase d'expansion DN 15 type 0",
+    "category": "vase_expansion",
+    "specification": "DN 15",
+    "active": true,
     "unit": "p",
-    "base_price": 29.82
+    "base_price": 160.82
   },
   {
     "id": "st-223",
@@ -7348,10 +9349,13 @@ export const MOCK_CATALOGUE = [
       "code": "ST",
       "name": "Sanitas Troesch"
     },
-    "reference": "SAN.GEN.905976",
+    "reference": "SAN.GEN.246664",
     "name": "Vase d'expansion DN 15 modèle 0",
+    "category": "vase_expansion",
+    "specification": "DN 15",
+    "active": true,
     "unit": "p",
-    "base_price": 188.59
+    "base_price": 172.11
   },
   {
     "id": "gm-223",
@@ -7359,10 +9363,13 @@ export const MOCK_CATALOGUE = [
       "code": "GM",
       "name": "Getaz Miauton"
     },
-    "reference": "GM/GN/4407",
+    "reference": "GM/GN/2325",
     "name": "Vase d'expansion DN 15 variante 0",
+    "category": "vase_expansion",
+    "specification": "DN 15",
+    "active": true,
     "unit": "p",
-    "base_price": 82.31
+    "base_price": 172.06
   },
   {
     "id": "nsb-224",
@@ -7370,10 +9377,13 @@ export const MOCK_CATALOGUE = [
       "code": "NSB",
       "name": "Nussbaum"
     },
-    "reference": "NSB-GEN-8339",
+    "reference": "NSB-GEN-1026",
     "name": "Vase d'expansion DN 15 type 1",
+    "category": "vase_expansion",
+    "specification": "DN 15",
+    "active": true,
     "unit": "p",
-    "base_price": 114.98
+    "base_price": 208.74
   },
   {
     "id": "st-224",
@@ -7381,10 +9391,13 @@ export const MOCK_CATALOGUE = [
       "code": "ST",
       "name": "Sanitas Troesch"
     },
-    "reference": "SAN.GEN.825613",
+    "reference": "SAN.GEN.789888",
     "name": "Vase d'expansion DN 15 modèle 1",
+    "category": "vase_expansion",
+    "specification": "DN 15",
+    "active": true,
     "unit": "p",
-    "base_price": 147.36
+    "base_price": 112.36
   },
   {
     "id": "gm-224",
@@ -7392,10 +9405,13 @@ export const MOCK_CATALOGUE = [
       "code": "GM",
       "name": "Getaz Miauton"
     },
-    "reference": "GM/GN/7759",
+    "reference": "GM/GN/2114",
     "name": "Vase d'expansion DN 15 variante 1",
+    "category": "vase_expansion",
+    "specification": "DN 15",
+    "active": true,
     "unit": "p",
-    "base_price": 202.79
+    "base_price": 217.8
   },
   {
     "id": "nsb-225",
@@ -7403,10 +9419,13 @@ export const MOCK_CATALOGUE = [
       "code": "NSB",
       "name": "Nussbaum"
     },
-    "reference": "NSB-GEN-6827",
+    "reference": "NSB-GEN-5055",
     "name": "Vase d'expansion DN 15 type 2",
+    "category": "vase_expansion",
+    "specification": "DN 15",
+    "active": true,
     "unit": "p",
-    "base_price": 132.52
+    "base_price": 147.92
   },
   {
     "id": "st-225",
@@ -7414,10 +9433,13 @@ export const MOCK_CATALOGUE = [
       "code": "ST",
       "name": "Sanitas Troesch"
     },
-    "reference": "SAN.GEN.190768",
+    "reference": "SAN.GEN.292122",
     "name": "Vase d'expansion DN 15 modèle 2",
+    "category": "vase_expansion",
+    "specification": "DN 15",
+    "active": true,
     "unit": "p",
-    "base_price": 31.91
+    "base_price": 41.38
   },
   {
     "id": "gm-225",
@@ -7425,10 +9447,13 @@ export const MOCK_CATALOGUE = [
       "code": "GM",
       "name": "Getaz Miauton"
     },
-    "reference": "GM/GN/5526",
+    "reference": "GM/GN/2812",
     "name": "Vase d'expansion DN 15 variante 2",
+    "category": "vase_expansion",
+    "specification": "DN 15",
+    "active": true,
     "unit": "p",
-    "base_price": 49.61
+    "base_price": 169.89
   },
   {
     "id": "nsb-226",
@@ -7436,10 +9461,13 @@ export const MOCK_CATALOGUE = [
       "code": "NSB",
       "name": "Nussbaum"
     },
-    "reference": "NSB-GEN-2488",
+    "reference": "NSB-GEN-3623",
     "name": "Vase d'expansion DN 15 type 3",
+    "category": "vase_expansion",
+    "specification": "DN 15",
+    "active": true,
     "unit": "p",
-    "base_price": 213.29
+    "base_price": 157.97
   },
   {
     "id": "st-226",
@@ -7447,10 +9475,13 @@ export const MOCK_CATALOGUE = [
       "code": "ST",
       "name": "Sanitas Troesch"
     },
-    "reference": "SAN.GEN.678274",
+    "reference": "SAN.GEN.637822",
     "name": "Vase d'expansion DN 15 modèle 3",
+    "category": "vase_expansion",
+    "specification": "DN 15",
+    "active": true,
     "unit": "p",
-    "base_price": 103.26
+    "base_price": 116.05
   },
   {
     "id": "gm-226",
@@ -7458,10 +9489,13 @@ export const MOCK_CATALOGUE = [
       "code": "GM",
       "name": "Getaz Miauton"
     },
-    "reference": "GM/GN/3162",
+    "reference": "GM/GN/3249",
     "name": "Vase d'expansion DN 15 variante 3",
+    "category": "vase_expansion",
+    "specification": "DN 15",
+    "active": true,
     "unit": "p",
-    "base_price": 162.03
+    "base_price": 156.21
   },
   {
     "id": "nsb-227",
@@ -7469,10 +9503,13 @@ export const MOCK_CATALOGUE = [
       "code": "NSB",
       "name": "Nussbaum"
     },
-    "reference": "NSB-GEN-9591",
+    "reference": "NSB-GEN-4193",
     "name": "Vase d'expansion DN 15 type 4",
+    "category": "vase_expansion",
+    "specification": "DN 15",
+    "active": true,
     "unit": "p",
-    "base_price": 127.4
+    "base_price": 118.99
   },
   {
     "id": "st-227",
@@ -7480,10 +9517,13 @@ export const MOCK_CATALOGUE = [
       "code": "ST",
       "name": "Sanitas Troesch"
     },
-    "reference": "SAN.GEN.367329",
+    "reference": "SAN.GEN.801950",
     "name": "Vase d'expansion DN 15 modèle 4",
+    "category": "vase_expansion",
+    "specification": "DN 15",
+    "active": true,
     "unit": "p",
-    "base_price": 149.1
+    "base_price": 118.73
   },
   {
     "id": "gm-227",
@@ -7491,10 +9531,13 @@ export const MOCK_CATALOGUE = [
       "code": "GM",
       "name": "Getaz Miauton"
     },
-    "reference": "GM/GN/7989",
+    "reference": "GM/GN/5228",
     "name": "Vase d'expansion DN 15 variante 4",
+    "category": "vase_expansion",
+    "specification": "DN 15",
+    "active": true,
     "unit": "p",
-    "base_price": 96.36
+    "base_price": 126.1
   },
   {
     "id": "nsb-228",
@@ -7502,10 +9545,13 @@ export const MOCK_CATALOGUE = [
       "code": "NSB",
       "name": "Nussbaum"
     },
-    "reference": "NSB-GEN-3487",
+    "reference": "NSB-GEN-2603",
     "name": "Vase d'expansion DN 20 type 0",
+    "category": "vase_expansion",
+    "specification": "DN 20",
+    "active": true,
     "unit": "p",
-    "base_price": 205.64
+    "base_price": 63.41
   },
   {
     "id": "st-228",
@@ -7513,10 +9559,13 @@ export const MOCK_CATALOGUE = [
       "code": "ST",
       "name": "Sanitas Troesch"
     },
-    "reference": "SAN.GEN.774863",
+    "reference": "SAN.GEN.703215",
     "name": "Vase d'expansion DN 20 modèle 0",
+    "category": "vase_expansion",
+    "specification": "DN 20",
+    "active": true,
     "unit": "p",
-    "base_price": 53.27
+    "base_price": 25.67
   },
   {
     "id": "gm-228",
@@ -7524,10 +9573,13 @@ export const MOCK_CATALOGUE = [
       "code": "GM",
       "name": "Getaz Miauton"
     },
-    "reference": "GM/GN/1832",
+    "reference": "GM/GN/9864",
     "name": "Vase d'expansion DN 20 variante 0",
+    "category": "vase_expansion",
+    "specification": "DN 20",
+    "active": true,
     "unit": "p",
-    "base_price": 192.35
+    "base_price": 106.28
   },
   {
     "id": "nsb-229",
@@ -7535,10 +9587,13 @@ export const MOCK_CATALOGUE = [
       "code": "NSB",
       "name": "Nussbaum"
     },
-    "reference": "NSB-GEN-4024",
+    "reference": "NSB-GEN-9564",
     "name": "Vase d'expansion DN 20 type 1",
+    "category": "vase_expansion",
+    "specification": "DN 20",
+    "active": true,
     "unit": "p",
-    "base_price": 23.5
+    "base_price": 37.03
   },
   {
     "id": "st-229",
@@ -7546,10 +9601,13 @@ export const MOCK_CATALOGUE = [
       "code": "ST",
       "name": "Sanitas Troesch"
     },
-    "reference": "SAN.GEN.357246",
+    "reference": "SAN.GEN.232644",
     "name": "Vase d'expansion DN 20 modèle 1",
+    "category": "vase_expansion",
+    "specification": "DN 20",
+    "active": true,
     "unit": "p",
-    "base_price": 79.87
+    "base_price": 178.58
   },
   {
     "id": "gm-229",
@@ -7557,10 +9615,13 @@ export const MOCK_CATALOGUE = [
       "code": "GM",
       "name": "Getaz Miauton"
     },
-    "reference": "GM/GN/7330",
+    "reference": "GM/GN/6518",
     "name": "Vase d'expansion DN 20 variante 1",
+    "category": "vase_expansion",
+    "specification": "DN 20",
+    "active": true,
     "unit": "p",
-    "base_price": 61.84
+    "base_price": 156.41
   },
   {
     "id": "nsb-230",
@@ -7568,10 +9629,13 @@ export const MOCK_CATALOGUE = [
       "code": "NSB",
       "name": "Nussbaum"
     },
-    "reference": "NSB-GEN-5571",
+    "reference": "NSB-GEN-2230",
     "name": "Vase d'expansion DN 20 type 2",
+    "category": "vase_expansion",
+    "specification": "DN 20",
+    "active": true,
     "unit": "p",
-    "base_price": 176.57
+    "base_price": 88.31
   },
   {
     "id": "st-230",
@@ -7579,10 +9643,13 @@ export const MOCK_CATALOGUE = [
       "code": "ST",
       "name": "Sanitas Troesch"
     },
-    "reference": "SAN.GEN.827682",
+    "reference": "SAN.GEN.518792",
     "name": "Vase d'expansion DN 20 modèle 2",
+    "category": "vase_expansion",
+    "specification": "DN 20",
+    "active": true,
     "unit": "p",
-    "base_price": 174.45
+    "base_price": 100.51
   },
   {
     "id": "gm-230",
@@ -7590,10 +9657,13 @@ export const MOCK_CATALOGUE = [
       "code": "GM",
       "name": "Getaz Miauton"
     },
-    "reference": "GM/GN/5996",
+    "reference": "GM/GN/5439",
     "name": "Vase d'expansion DN 20 variante 2",
+    "category": "vase_expansion",
+    "specification": "DN 20",
+    "active": true,
     "unit": "p",
-    "base_price": 57.05
+    "base_price": 142.24
   },
   {
     "id": "nsb-231",
@@ -7601,10 +9671,13 @@ export const MOCK_CATALOGUE = [
       "code": "NSB",
       "name": "Nussbaum"
     },
-    "reference": "NSB-GEN-2200",
+    "reference": "NSB-GEN-3119",
     "name": "Vase d'expansion DN 20 type 3",
+    "category": "vase_expansion",
+    "specification": "DN 20",
+    "active": true,
     "unit": "p",
-    "base_price": 171.5
+    "base_price": 172.48
   },
   {
     "id": "st-231",
@@ -7612,10 +9685,13 @@ export const MOCK_CATALOGUE = [
       "code": "ST",
       "name": "Sanitas Troesch"
     },
-    "reference": "SAN.GEN.950673",
+    "reference": "SAN.GEN.462349",
     "name": "Vase d'expansion DN 20 modèle 3",
+    "category": "vase_expansion",
+    "specification": "DN 20",
+    "active": true,
     "unit": "p",
-    "base_price": 51.97
+    "base_price": 137.95
   },
   {
     "id": "gm-231",
@@ -7623,10 +9699,13 @@ export const MOCK_CATALOGUE = [
       "code": "GM",
       "name": "Getaz Miauton"
     },
-    "reference": "GM/GN/7509",
+    "reference": "GM/GN/4949",
     "name": "Vase d'expansion DN 20 variante 3",
+    "category": "vase_expansion",
+    "specification": "DN 20",
+    "active": true,
     "unit": "p",
-    "base_price": 67.12
+    "base_price": 51.55
   },
   {
     "id": "nsb-232",
@@ -7634,10 +9713,13 @@ export const MOCK_CATALOGUE = [
       "code": "NSB",
       "name": "Nussbaum"
     },
-    "reference": "NSB-GEN-6838",
+    "reference": "NSB-GEN-6209",
     "name": "Vase d'expansion DN 20 type 4",
+    "category": "vase_expansion",
+    "specification": "DN 20",
+    "active": true,
     "unit": "p",
-    "base_price": 134.6
+    "base_price": 79.79
   },
   {
     "id": "st-232",
@@ -7645,10 +9727,13 @@ export const MOCK_CATALOGUE = [
       "code": "ST",
       "name": "Sanitas Troesch"
     },
-    "reference": "SAN.GEN.633611",
+    "reference": "SAN.GEN.413692",
     "name": "Vase d'expansion DN 20 modèle 4",
+    "category": "vase_expansion",
+    "specification": "DN 20",
+    "active": true,
     "unit": "p",
-    "base_price": 36.23
+    "base_price": 95.51
   },
   {
     "id": "gm-232",
@@ -7656,10 +9741,13 @@ export const MOCK_CATALOGUE = [
       "code": "GM",
       "name": "Getaz Miauton"
     },
-    "reference": "GM/GN/2017",
+    "reference": "GM/GN/9162",
     "name": "Vase d'expansion DN 20 variante 4",
+    "category": "vase_expansion",
+    "specification": "DN 20",
+    "active": true,
     "unit": "p",
-    "base_price": 112.33
+    "base_price": 214.72
   },
   {
     "id": "nsb-233",
@@ -7667,10 +9755,13 @@ export const MOCK_CATALOGUE = [
       "code": "NSB",
       "name": "Nussbaum"
     },
-    "reference": "NSB-GEN-4507",
+    "reference": "NSB-GEN-4469",
     "name": "Vase d'expansion DN 25 type 0",
+    "category": "vase_expansion",
+    "specification": "DN 25",
+    "active": true,
     "unit": "p",
-    "base_price": 179.15
+    "base_price": 191.27
   },
   {
     "id": "st-233",
@@ -7678,10 +9769,13 @@ export const MOCK_CATALOGUE = [
       "code": "ST",
       "name": "Sanitas Troesch"
     },
-    "reference": "SAN.GEN.576410",
+    "reference": "SAN.GEN.981355",
     "name": "Vase d'expansion DN 25 modèle 0",
+    "category": "vase_expansion",
+    "specification": "DN 25",
+    "active": true,
     "unit": "p",
-    "base_price": 59.35
+    "base_price": 206.77
   },
   {
     "id": "gm-233",
@@ -7689,10 +9783,13 @@ export const MOCK_CATALOGUE = [
       "code": "GM",
       "name": "Getaz Miauton"
     },
-    "reference": "GM/GN/7852",
+    "reference": "GM/GN/3797",
     "name": "Vase d'expansion DN 25 variante 0",
+    "category": "vase_expansion",
+    "specification": "DN 25",
+    "active": true,
     "unit": "p",
-    "base_price": 217.63
+    "base_price": 188.39
   },
   {
     "id": "nsb-234",
@@ -7700,10 +9797,13 @@ export const MOCK_CATALOGUE = [
       "code": "NSB",
       "name": "Nussbaum"
     },
-    "reference": "NSB-GEN-6841",
+    "reference": "NSB-GEN-3421",
     "name": "Vase d'expansion DN 25 type 1",
+    "category": "vase_expansion",
+    "specification": "DN 25",
+    "active": true,
     "unit": "p",
-    "base_price": 21.64
+    "base_price": 179.56
   },
   {
     "id": "st-234",
@@ -7711,10 +9811,13 @@ export const MOCK_CATALOGUE = [
       "code": "ST",
       "name": "Sanitas Troesch"
     },
-    "reference": "SAN.GEN.170350",
+    "reference": "SAN.GEN.981514",
     "name": "Vase d'expansion DN 25 modèle 1",
+    "category": "vase_expansion",
+    "specification": "DN 25",
+    "active": true,
     "unit": "p",
-    "base_price": 185.54
+    "base_price": 78.08
   },
   {
     "id": "gm-234",
@@ -7722,10 +9825,13 @@ export const MOCK_CATALOGUE = [
       "code": "GM",
       "name": "Getaz Miauton"
     },
-    "reference": "GM/GN/1310",
+    "reference": "GM/GN/5283",
     "name": "Vase d'expansion DN 25 variante 1",
+    "category": "vase_expansion",
+    "specification": "DN 25",
+    "active": true,
     "unit": "p",
-    "base_price": 56.03
+    "base_price": 136.25
   },
   {
     "id": "nsb-235",
@@ -7733,10 +9839,13 @@ export const MOCK_CATALOGUE = [
       "code": "NSB",
       "name": "Nussbaum"
     },
-    "reference": "NSB-GEN-7961",
+    "reference": "NSB-GEN-4211",
     "name": "Vase d'expansion DN 25 type 2",
+    "category": "vase_expansion",
+    "specification": "DN 25",
+    "active": true,
     "unit": "p",
-    "base_price": 217.38
+    "base_price": 139.54
   },
   {
     "id": "st-235",
@@ -7744,10 +9853,13 @@ export const MOCK_CATALOGUE = [
       "code": "ST",
       "name": "Sanitas Troesch"
     },
-    "reference": "SAN.GEN.921394",
+    "reference": "SAN.GEN.291897",
     "name": "Vase d'expansion DN 25 modèle 2",
+    "category": "vase_expansion",
+    "specification": "DN 25",
+    "active": true,
     "unit": "p",
-    "base_price": 66.2
+    "base_price": 153.95
   },
   {
     "id": "gm-235",
@@ -7755,10 +9867,13 @@ export const MOCK_CATALOGUE = [
       "code": "GM",
       "name": "Getaz Miauton"
     },
-    "reference": "GM/GN/1966",
+    "reference": "GM/GN/9577",
     "name": "Vase d'expansion DN 25 variante 2",
+    "category": "vase_expansion",
+    "specification": "DN 25",
+    "active": true,
     "unit": "p",
-    "base_price": 21.87
+    "base_price": 187.96
   },
   {
     "id": "nsb-236",
@@ -7766,10 +9881,13 @@ export const MOCK_CATALOGUE = [
       "code": "NSB",
       "name": "Nussbaum"
     },
-    "reference": "NSB-GEN-7124",
+    "reference": "NSB-GEN-8270",
     "name": "Vase d'expansion DN 25 type 3",
+    "category": "vase_expansion",
+    "specification": "DN 25",
+    "active": true,
     "unit": "p",
-    "base_price": 108.61
+    "base_price": 157.36
   },
   {
     "id": "st-236",
@@ -7777,10 +9895,13 @@ export const MOCK_CATALOGUE = [
       "code": "ST",
       "name": "Sanitas Troesch"
     },
-    "reference": "SAN.GEN.302134",
+    "reference": "SAN.GEN.833135",
     "name": "Vase d'expansion DN 25 modèle 3",
+    "category": "vase_expansion",
+    "specification": "DN 25",
+    "active": true,
     "unit": "p",
-    "base_price": 71.69
+    "base_price": 150.83
   },
   {
     "id": "gm-236",
@@ -7788,10 +9909,13 @@ export const MOCK_CATALOGUE = [
       "code": "GM",
       "name": "Getaz Miauton"
     },
-    "reference": "GM/GN/1245",
+    "reference": "GM/GN/2951",
     "name": "Vase d'expansion DN 25 variante 3",
+    "category": "vase_expansion",
+    "specification": "DN 25",
+    "active": true,
     "unit": "p",
-    "base_price": 209.31
+    "base_price": 81.83
   },
   {
     "id": "nsb-237",
@@ -7799,10 +9923,13 @@ export const MOCK_CATALOGUE = [
       "code": "NSB",
       "name": "Nussbaum"
     },
-    "reference": "NSB-GEN-6084",
+    "reference": "NSB-GEN-7744",
     "name": "Vase d'expansion DN 25 type 4",
+    "category": "vase_expansion",
+    "specification": "DN 25",
+    "active": true,
     "unit": "p",
-    "base_price": 112.03
+    "base_price": 55.6
   },
   {
     "id": "st-237",
@@ -7810,10 +9937,13 @@ export const MOCK_CATALOGUE = [
       "code": "ST",
       "name": "Sanitas Troesch"
     },
-    "reference": "SAN.GEN.213598",
+    "reference": "SAN.GEN.364458",
     "name": "Vase d'expansion DN 25 modèle 4",
+    "category": "vase_expansion",
+    "specification": "DN 25",
+    "active": true,
     "unit": "p",
-    "base_price": 192.15
+    "base_price": 103.22
   },
   {
     "id": "gm-237",
@@ -7821,10 +9951,13 @@ export const MOCK_CATALOGUE = [
       "code": "GM",
       "name": "Getaz Miauton"
     },
-    "reference": "GM/GN/5069",
+    "reference": "GM/GN/4925",
     "name": "Vase d'expansion DN 25 variante 4",
+    "category": "vase_expansion",
+    "specification": "DN 25",
+    "active": true,
     "unit": "p",
-    "base_price": 27.51
+    "base_price": 166.91
   },
   {
     "id": "nsb-238",
@@ -7832,10 +9965,13 @@ export const MOCK_CATALOGUE = [
       "code": "NSB",
       "name": "Nussbaum"
     },
-    "reference": "NSB-GEN-5024",
+    "reference": "NSB-GEN-9261",
     "name": "Vase d'expansion DN 32 type 0",
+    "category": "vase_expansion",
+    "specification": "DN 32",
+    "active": true,
     "unit": "p",
-    "base_price": 39.75
+    "base_price": 41.15
   },
   {
     "id": "st-238",
@@ -7843,10 +9979,13 @@ export const MOCK_CATALOGUE = [
       "code": "ST",
       "name": "Sanitas Troesch"
     },
-    "reference": "SAN.GEN.238323",
+    "reference": "SAN.GEN.743496",
     "name": "Vase d'expansion DN 32 modèle 0",
+    "category": "vase_expansion",
+    "specification": "DN 32",
+    "active": true,
     "unit": "p",
-    "base_price": 122.28
+    "base_price": 209.26
   },
   {
     "id": "gm-238",
@@ -7854,10 +9993,13 @@ export const MOCK_CATALOGUE = [
       "code": "GM",
       "name": "Getaz Miauton"
     },
-    "reference": "GM/GN/8976",
+    "reference": "GM/GN/3710",
     "name": "Vase d'expansion DN 32 variante 0",
+    "category": "vase_expansion",
+    "specification": "DN 32",
+    "active": true,
     "unit": "p",
-    "base_price": 205.57
+    "base_price": 46.4
   },
   {
     "id": "nsb-239",
@@ -7865,10 +10007,13 @@ export const MOCK_CATALOGUE = [
       "code": "NSB",
       "name": "Nussbaum"
     },
-    "reference": "NSB-GEN-9861",
+    "reference": "NSB-GEN-6156",
     "name": "Vase d'expansion DN 32 type 1",
+    "category": "vase_expansion",
+    "specification": "DN 32",
+    "active": true,
     "unit": "p",
-    "base_price": 111.38
+    "base_price": 76.42
   },
   {
     "id": "st-239",
@@ -7876,10 +10021,13 @@ export const MOCK_CATALOGUE = [
       "code": "ST",
       "name": "Sanitas Troesch"
     },
-    "reference": "SAN.GEN.131940",
+    "reference": "SAN.GEN.462840",
     "name": "Vase d'expansion DN 32 modèle 1",
+    "category": "vase_expansion",
+    "specification": "DN 32",
+    "active": true,
     "unit": "p",
-    "base_price": 74.49
+    "base_price": 23.02
   },
   {
     "id": "gm-239",
@@ -7887,10 +10035,13 @@ export const MOCK_CATALOGUE = [
       "code": "GM",
       "name": "Getaz Miauton"
     },
-    "reference": "GM/GN/9197",
+    "reference": "GM/GN/4611",
     "name": "Vase d'expansion DN 32 variante 1",
+    "category": "vase_expansion",
+    "specification": "DN 32",
+    "active": true,
     "unit": "p",
-    "base_price": 132.25
+    "base_price": 168.89
   },
   {
     "id": "nsb-240",
@@ -7898,10 +10049,13 @@ export const MOCK_CATALOGUE = [
       "code": "NSB",
       "name": "Nussbaum"
     },
-    "reference": "NSB-GEN-5340",
+    "reference": "NSB-GEN-6533",
     "name": "Vase d'expansion DN 32 type 2",
+    "category": "vase_expansion",
+    "specification": "DN 32",
+    "active": true,
     "unit": "p",
-    "base_price": 118.67
+    "base_price": 203.54
   },
   {
     "id": "st-240",
@@ -7909,10 +10063,13 @@ export const MOCK_CATALOGUE = [
       "code": "ST",
       "name": "Sanitas Troesch"
     },
-    "reference": "SAN.GEN.388926",
+    "reference": "SAN.GEN.809781",
     "name": "Vase d'expansion DN 32 modèle 2",
+    "category": "vase_expansion",
+    "specification": "DN 32",
+    "active": true,
     "unit": "p",
-    "base_price": 24.75
+    "base_price": 82.85
   },
   {
     "id": "gm-240",
@@ -7920,10 +10077,13 @@ export const MOCK_CATALOGUE = [
       "code": "GM",
       "name": "Getaz Miauton"
     },
-    "reference": "GM/GN/6865",
+    "reference": "GM/GN/6218",
     "name": "Vase d'expansion DN 32 variante 2",
+    "category": "vase_expansion",
+    "specification": "DN 32",
+    "active": true,
     "unit": "p",
-    "base_price": 176.62
+    "base_price": 59.9
   },
   {
     "id": "nsb-241",
@@ -7931,10 +10091,13 @@ export const MOCK_CATALOGUE = [
       "code": "NSB",
       "name": "Nussbaum"
     },
-    "reference": "NSB-GEN-8964",
+    "reference": "NSB-GEN-6613",
     "name": "Vase d'expansion DN 32 type 3",
+    "category": "vase_expansion",
+    "specification": "DN 32",
+    "active": true,
     "unit": "p",
-    "base_price": 33.18
+    "base_price": 154.26
   },
   {
     "id": "st-241",
@@ -7942,10 +10105,13 @@ export const MOCK_CATALOGUE = [
       "code": "ST",
       "name": "Sanitas Troesch"
     },
-    "reference": "SAN.GEN.600867",
+    "reference": "SAN.GEN.553726",
     "name": "Vase d'expansion DN 32 modèle 3",
+    "category": "vase_expansion",
+    "specification": "DN 32",
+    "active": true,
     "unit": "p",
-    "base_price": 167.45
+    "base_price": 25.29
   },
   {
     "id": "gm-241",
@@ -7953,10 +10119,13 @@ export const MOCK_CATALOGUE = [
       "code": "GM",
       "name": "Getaz Miauton"
     },
-    "reference": "GM/GN/3255",
+    "reference": "GM/GN/1930",
     "name": "Vase d'expansion DN 32 variante 3",
+    "category": "vase_expansion",
+    "specification": "DN 32",
+    "active": true,
     "unit": "p",
-    "base_price": 129.49
+    "base_price": 210.68
   },
   {
     "id": "nsb-242",
@@ -7964,10 +10133,13 @@ export const MOCK_CATALOGUE = [
       "code": "NSB",
       "name": "Nussbaum"
     },
-    "reference": "NSB-GEN-1311",
+    "reference": "NSB-GEN-9597",
     "name": "Vase d'expansion DN 32 type 4",
+    "category": "vase_expansion",
+    "specification": "DN 32",
+    "active": true,
     "unit": "p",
-    "base_price": 170.98
+    "base_price": 100.02
   },
   {
     "id": "st-242",
@@ -7975,10 +10147,13 @@ export const MOCK_CATALOGUE = [
       "code": "ST",
       "name": "Sanitas Troesch"
     },
-    "reference": "SAN.GEN.451434",
+    "reference": "SAN.GEN.102503",
     "name": "Vase d'expansion DN 32 modèle 4",
+    "category": "vase_expansion",
+    "specification": "DN 32",
+    "active": true,
     "unit": "p",
-    "base_price": 125.42
+    "base_price": 192.36
   },
   {
     "id": "gm-242",
@@ -7986,10 +10161,13 @@ export const MOCK_CATALOGUE = [
       "code": "GM",
       "name": "Getaz Miauton"
     },
-    "reference": "GM/GN/4443",
+    "reference": "GM/GN/8874",
     "name": "Vase d'expansion DN 32 variante 4",
+    "category": "vase_expansion",
+    "specification": "DN 32",
+    "active": true,
     "unit": "p",
-    "base_price": 192.39
+    "base_price": 70.48
   },
   {
     "id": "nsb-243",
@@ -7997,10 +10175,13 @@ export const MOCK_CATALOGUE = [
       "code": "NSB",
       "name": "Nussbaum"
     },
-    "reference": "NSB-GEN-9125",
+    "reference": "NSB-GEN-4090",
     "name": "Vase d'expansion DN 40 type 0",
+    "category": "vase_expansion",
+    "specification": "DN 40",
+    "active": true,
     "unit": "p",
-    "base_price": 44.4
+    "base_price": 198.68
   },
   {
     "id": "st-243",
@@ -8008,10 +10189,13 @@ export const MOCK_CATALOGUE = [
       "code": "ST",
       "name": "Sanitas Troesch"
     },
-    "reference": "SAN.GEN.774506",
+    "reference": "SAN.GEN.658244",
     "name": "Vase d'expansion DN 40 modèle 0",
+    "category": "vase_expansion",
+    "specification": "DN 40",
+    "active": true,
     "unit": "p",
-    "base_price": 162.39
+    "base_price": 215.97
   },
   {
     "id": "gm-243",
@@ -8019,10 +10203,13 @@ export const MOCK_CATALOGUE = [
       "code": "GM",
       "name": "Getaz Miauton"
     },
-    "reference": "GM/GN/9663",
+    "reference": "GM/GN/8520",
     "name": "Vase d'expansion DN 40 variante 0",
+    "category": "vase_expansion",
+    "specification": "DN 40",
+    "active": true,
     "unit": "p",
-    "base_price": 140.68
+    "base_price": 87.53
   },
   {
     "id": "nsb-244",
@@ -8030,10 +10217,13 @@ export const MOCK_CATALOGUE = [
       "code": "NSB",
       "name": "Nussbaum"
     },
-    "reference": "NSB-GEN-6616",
+    "reference": "NSB-GEN-9505",
     "name": "Vase d'expansion DN 40 type 1",
+    "category": "vase_expansion",
+    "specification": "DN 40",
+    "active": true,
     "unit": "p",
-    "base_price": 75.77
+    "base_price": 23.09
   },
   {
     "id": "st-244",
@@ -8041,10 +10231,13 @@ export const MOCK_CATALOGUE = [
       "code": "ST",
       "name": "Sanitas Troesch"
     },
-    "reference": "SAN.GEN.252485",
+    "reference": "SAN.GEN.127907",
     "name": "Vase d'expansion DN 40 modèle 1",
+    "category": "vase_expansion",
+    "specification": "DN 40",
+    "active": true,
     "unit": "p",
-    "base_price": 37.75
+    "base_price": 172.57
   },
   {
     "id": "gm-244",
@@ -8052,10 +10245,13 @@ export const MOCK_CATALOGUE = [
       "code": "GM",
       "name": "Getaz Miauton"
     },
-    "reference": "GM/GN/1523",
+    "reference": "GM/GN/1454",
     "name": "Vase d'expansion DN 40 variante 1",
+    "category": "vase_expansion",
+    "specification": "DN 40",
+    "active": true,
     "unit": "p",
-    "base_price": 141.11
+    "base_price": 214.09
   },
   {
     "id": "nsb-245",
@@ -8063,10 +10259,13 @@ export const MOCK_CATALOGUE = [
       "code": "NSB",
       "name": "Nussbaum"
     },
-    "reference": "NSB-GEN-5715",
+    "reference": "NSB-GEN-9166",
     "name": "Vase d'expansion DN 40 type 2",
+    "category": "vase_expansion",
+    "specification": "DN 40",
+    "active": true,
     "unit": "p",
-    "base_price": 198.43
+    "base_price": 117.21
   },
   {
     "id": "st-245",
@@ -8074,10 +10273,13 @@ export const MOCK_CATALOGUE = [
       "code": "ST",
       "name": "Sanitas Troesch"
     },
-    "reference": "SAN.GEN.528521",
+    "reference": "SAN.GEN.788774",
     "name": "Vase d'expansion DN 40 modèle 2",
+    "category": "vase_expansion",
+    "specification": "DN 40",
+    "active": true,
     "unit": "p",
-    "base_price": 63.81
+    "base_price": 111.77
   },
   {
     "id": "gm-245",
@@ -8085,10 +10287,13 @@ export const MOCK_CATALOGUE = [
       "code": "GM",
       "name": "Getaz Miauton"
     },
-    "reference": "GM/GN/4242",
+    "reference": "GM/GN/9611",
     "name": "Vase d'expansion DN 40 variante 2",
+    "category": "vase_expansion",
+    "specification": "DN 40",
+    "active": true,
     "unit": "p",
-    "base_price": 77.88
+    "base_price": 22.07
   },
   {
     "id": "nsb-246",
@@ -8096,10 +10301,13 @@ export const MOCK_CATALOGUE = [
       "code": "NSB",
       "name": "Nussbaum"
     },
-    "reference": "NSB-GEN-9652",
+    "reference": "NSB-GEN-1669",
     "name": "Vase d'expansion DN 40 type 3",
+    "category": "vase_expansion",
+    "specification": "DN 40",
+    "active": true,
     "unit": "p",
-    "base_price": 210.24
+    "base_price": 207.46
   },
   {
     "id": "st-246",
@@ -8107,10 +10315,13 @@ export const MOCK_CATALOGUE = [
       "code": "ST",
       "name": "Sanitas Troesch"
     },
-    "reference": "SAN.GEN.968256",
+    "reference": "SAN.GEN.574680",
     "name": "Vase d'expansion DN 40 modèle 3",
+    "category": "vase_expansion",
+    "specification": "DN 40",
+    "active": true,
     "unit": "p",
-    "base_price": 99.93
+    "base_price": 60.38
   },
   {
     "id": "gm-246",
@@ -8118,10 +10329,13 @@ export const MOCK_CATALOGUE = [
       "code": "GM",
       "name": "Getaz Miauton"
     },
-    "reference": "GM/GN/1776",
+    "reference": "GM/GN/2717",
     "name": "Vase d'expansion DN 40 variante 3",
+    "category": "vase_expansion",
+    "specification": "DN 40",
+    "active": true,
     "unit": "p",
-    "base_price": 191.24
+    "base_price": 52.66
   },
   {
     "id": "nsb-247",
@@ -8129,10 +10343,13 @@ export const MOCK_CATALOGUE = [
       "code": "NSB",
       "name": "Nussbaum"
     },
-    "reference": "NSB-GEN-7978",
+    "reference": "NSB-GEN-3232",
     "name": "Vase d'expansion DN 40 type 4",
+    "category": "vase_expansion",
+    "specification": "DN 40",
+    "active": true,
     "unit": "p",
-    "base_price": 26.16
+    "base_price": 189.13
   },
   {
     "id": "st-247",
@@ -8140,10 +10357,13 @@ export const MOCK_CATALOGUE = [
       "code": "ST",
       "name": "Sanitas Troesch"
     },
-    "reference": "SAN.GEN.222969",
+    "reference": "SAN.GEN.840471",
     "name": "Vase d'expansion DN 40 modèle 4",
+    "category": "vase_expansion",
+    "specification": "DN 40",
+    "active": true,
     "unit": "p",
-    "base_price": 150.62
+    "base_price": 67.84
   },
   {
     "id": "gm-247",
@@ -8151,10 +10371,13 @@ export const MOCK_CATALOGUE = [
       "code": "GM",
       "name": "Getaz Miauton"
     },
-    "reference": "GM/GN/2199",
+    "reference": "GM/GN/2717",
     "name": "Vase d'expansion DN 40 variante 4",
+    "category": "vase_expansion",
+    "specification": "DN 40",
+    "active": true,
     "unit": "p",
-    "base_price": 160.77
+    "base_price": 179.57
   },
   {
     "id": "nsb-248",
@@ -8162,10 +10385,13 @@ export const MOCK_CATALOGUE = [
       "code": "NSB",
       "name": "Nussbaum"
     },
-    "reference": "NSB-GEN-5925",
+    "reference": "NSB-GEN-8693",
     "name": "Vase d'expansion DN 50 type 0",
+    "category": "vase_expansion",
+    "specification": "DN 50",
+    "active": true,
     "unit": "p",
-    "base_price": 181.21
+    "base_price": 176.34
   },
   {
     "id": "st-248",
@@ -8173,10 +10399,13 @@ export const MOCK_CATALOGUE = [
       "code": "ST",
       "name": "Sanitas Troesch"
     },
-    "reference": "SAN.GEN.840078",
+    "reference": "SAN.GEN.578128",
     "name": "Vase d'expansion DN 50 modèle 0",
+    "category": "vase_expansion",
+    "specification": "DN 50",
+    "active": true,
     "unit": "p",
-    "base_price": 151.51
+    "base_price": 55.42
   },
   {
     "id": "gm-248",
@@ -8184,10 +10413,13 @@ export const MOCK_CATALOGUE = [
       "code": "GM",
       "name": "Getaz Miauton"
     },
-    "reference": "GM/GN/8947",
+    "reference": "GM/GN/8875",
     "name": "Vase d'expansion DN 50 variante 0",
+    "category": "vase_expansion",
+    "specification": "DN 50",
+    "active": true,
     "unit": "p",
-    "base_price": 216.75
+    "base_price": 128.59
   },
   {
     "id": "nsb-249",
@@ -8195,10 +10427,13 @@ export const MOCK_CATALOGUE = [
       "code": "NSB",
       "name": "Nussbaum"
     },
-    "reference": "NSB-GEN-9872",
+    "reference": "NSB-GEN-9947",
     "name": "Vase d'expansion DN 50 type 1",
+    "category": "vase_expansion",
+    "specification": "DN 50",
+    "active": true,
     "unit": "p",
-    "base_price": 182.01
+    "base_price": 60.47
   },
   {
     "id": "st-249",
@@ -8206,10 +10441,13 @@ export const MOCK_CATALOGUE = [
       "code": "ST",
       "name": "Sanitas Troesch"
     },
-    "reference": "SAN.GEN.398713",
+    "reference": "SAN.GEN.476747",
     "name": "Vase d'expansion DN 50 modèle 1",
+    "category": "vase_expansion",
+    "specification": "DN 50",
+    "active": true,
     "unit": "p",
-    "base_price": 190.96
+    "base_price": 182.91
   },
   {
     "id": "gm-249",
@@ -8217,10 +10455,13 @@ export const MOCK_CATALOGUE = [
       "code": "GM",
       "name": "Getaz Miauton"
     },
-    "reference": "GM/GN/4448",
+    "reference": "GM/GN/1603",
     "name": "Vase d'expansion DN 50 variante 1",
+    "category": "vase_expansion",
+    "specification": "DN 50",
+    "active": true,
     "unit": "p",
-    "base_price": 207.71
+    "base_price": 123.98
   },
   {
     "id": "nsb-250",
@@ -8228,10 +10469,13 @@ export const MOCK_CATALOGUE = [
       "code": "NSB",
       "name": "Nussbaum"
     },
-    "reference": "NSB-GEN-9350",
+    "reference": "NSB-GEN-3210",
     "name": "Vase d'expansion DN 50 type 2",
+    "category": "vase_expansion",
+    "specification": "DN 50",
+    "active": true,
     "unit": "p",
-    "base_price": 198.22
+    "base_price": 102.1
   },
   {
     "id": "st-250",
@@ -8239,10 +10483,13 @@ export const MOCK_CATALOGUE = [
       "code": "ST",
       "name": "Sanitas Troesch"
     },
-    "reference": "SAN.GEN.185606",
+    "reference": "SAN.GEN.930578",
     "name": "Vase d'expansion DN 50 modèle 2",
+    "category": "vase_expansion",
+    "specification": "DN 50",
+    "active": true,
     "unit": "p",
-    "base_price": 154.72
+    "base_price": 31.23
   },
   {
     "id": "gm-250",
@@ -8250,10 +10497,13 @@ export const MOCK_CATALOGUE = [
       "code": "GM",
       "name": "Getaz Miauton"
     },
-    "reference": "GM/GN/5918",
+    "reference": "GM/GN/8664",
     "name": "Vase d'expansion DN 50 variante 2",
+    "category": "vase_expansion",
+    "specification": "DN 50",
+    "active": true,
     "unit": "p",
-    "base_price": 24.91
+    "base_price": 127.02
   },
   {
     "id": "nsb-251",
@@ -8261,10 +10511,13 @@ export const MOCK_CATALOGUE = [
       "code": "NSB",
       "name": "Nussbaum"
     },
-    "reference": "NSB-GEN-8349",
+    "reference": "NSB-GEN-2077",
     "name": "Vase d'expansion DN 50 type 3",
+    "category": "vase_expansion",
+    "specification": "DN 50",
+    "active": true,
     "unit": "p",
-    "base_price": 203.14
+    "base_price": 186.33
   },
   {
     "id": "st-251",
@@ -8272,10 +10525,13 @@ export const MOCK_CATALOGUE = [
       "code": "ST",
       "name": "Sanitas Troesch"
     },
-    "reference": "SAN.GEN.300254",
+    "reference": "SAN.GEN.387438",
     "name": "Vase d'expansion DN 50 modèle 3",
+    "category": "vase_expansion",
+    "specification": "DN 50",
+    "active": true,
     "unit": "p",
-    "base_price": 121.05
+    "base_price": 66.34
   },
   {
     "id": "gm-251",
@@ -8283,10 +10539,13 @@ export const MOCK_CATALOGUE = [
       "code": "GM",
       "name": "Getaz Miauton"
     },
-    "reference": "GM/GN/6122",
+    "reference": "GM/GN/2814",
     "name": "Vase d'expansion DN 50 variante 3",
+    "category": "vase_expansion",
+    "specification": "DN 50",
+    "active": true,
     "unit": "p",
-    "base_price": 84.84
+    "base_price": 188.39
   },
   {
     "id": "nsb-252",
@@ -8294,10 +10553,13 @@ export const MOCK_CATALOGUE = [
       "code": "NSB",
       "name": "Nussbaum"
     },
-    "reference": "NSB-GEN-9915",
+    "reference": "NSB-GEN-5191",
     "name": "Vase d'expansion DN 50 type 4",
+    "category": "vase_expansion",
+    "specification": "DN 50",
+    "active": true,
     "unit": "p",
-    "base_price": 219.89
+    "base_price": 82.82
   },
   {
     "id": "st-252",
@@ -8305,10 +10567,13 @@ export const MOCK_CATALOGUE = [
       "code": "ST",
       "name": "Sanitas Troesch"
     },
-    "reference": "SAN.GEN.505946",
+    "reference": "SAN.GEN.279123",
     "name": "Vase d'expansion DN 50 modèle 4",
+    "category": "vase_expansion",
+    "specification": "DN 50",
+    "active": true,
     "unit": "p",
-    "base_price": 205.79
+    "base_price": 213.52
   },
   {
     "id": "gm-252",
@@ -8316,10 +10581,13 @@ export const MOCK_CATALOGUE = [
       "code": "GM",
       "name": "Getaz Miauton"
     },
-    "reference": "GM/GN/9657",
+    "reference": "GM/GN/6525",
     "name": "Vase d'expansion DN 50 variante 4",
+    "category": "vase_expansion",
+    "specification": "DN 50",
+    "active": true,
     "unit": "p",
-    "base_price": 124.05
+    "base_price": 190.23
   },
   {
     "id": "nsb-253",
@@ -8327,10 +10595,13 @@ export const MOCK_CATALOGUE = [
       "code": "NSB",
       "name": "Nussbaum"
     },
-    "reference": "NSB-GEN-1628",
+    "reference": "NSB-GEN-3274",
     "name": "Soupape de sécurité 1/2\" type 0",
+    "category": "soupape",
+    "specification": "1/2\"",
+    "active": true,
     "unit": "p",
-    "base_price": 128.58
+    "base_price": 70.42
   },
   {
     "id": "st-253",
@@ -8338,10 +10609,13 @@ export const MOCK_CATALOGUE = [
       "code": "ST",
       "name": "Sanitas Troesch"
     },
-    "reference": "SAN.GEN.859673",
+    "reference": "SAN.GEN.851854",
     "name": "Soupape de sécurité 1/2\" modèle 0",
+    "category": "soupape",
+    "specification": "1/2\"",
+    "active": true,
     "unit": "p",
-    "base_price": 191.86
+    "base_price": 101.67
   },
   {
     "id": "gm-253",
@@ -8349,10 +10623,13 @@ export const MOCK_CATALOGUE = [
       "code": "GM",
       "name": "Getaz Miauton"
     },
-    "reference": "GM/GN/4678",
+    "reference": "GM/GN/8930",
     "name": "Soupape de sécurité 1/2\" variante 0",
+    "category": "soupape",
+    "specification": "1/2\"",
+    "active": true,
     "unit": "p",
-    "base_price": 20.3
+    "base_price": 28.66
   },
   {
     "id": "nsb-254",
@@ -8360,10 +10637,13 @@ export const MOCK_CATALOGUE = [
       "code": "NSB",
       "name": "Nussbaum"
     },
-    "reference": "NSB-GEN-7842",
+    "reference": "NSB-GEN-8763",
     "name": "Soupape de sécurité 1/2\" type 1",
+    "category": "soupape",
+    "specification": "1/2\"",
+    "active": true,
     "unit": "p",
-    "base_price": 81.07
+    "base_price": 213.88
   },
   {
     "id": "st-254",
@@ -8371,10 +10651,13 @@ export const MOCK_CATALOGUE = [
       "code": "ST",
       "name": "Sanitas Troesch"
     },
-    "reference": "SAN.GEN.310809",
+    "reference": "SAN.GEN.993773",
     "name": "Soupape de sécurité 1/2\" modèle 1",
+    "category": "soupape",
+    "specification": "1/2\"",
+    "active": true,
     "unit": "p",
-    "base_price": 34.75
+    "base_price": 61.16
   },
   {
     "id": "gm-254",
@@ -8382,10 +10665,13 @@ export const MOCK_CATALOGUE = [
       "code": "GM",
       "name": "Getaz Miauton"
     },
-    "reference": "GM/GN/7085",
+    "reference": "GM/GN/1193",
     "name": "Soupape de sécurité 1/2\" variante 1",
+    "category": "soupape",
+    "specification": "1/2\"",
+    "active": true,
     "unit": "p",
-    "base_price": 79.42
+    "base_price": 78.25
   },
   {
     "id": "nsb-255",
@@ -8393,10 +10679,13 @@ export const MOCK_CATALOGUE = [
       "code": "NSB",
       "name": "Nussbaum"
     },
-    "reference": "NSB-GEN-9820",
+    "reference": "NSB-GEN-9241",
     "name": "Soupape de sécurité 1/2\" type 2",
+    "category": "soupape",
+    "specification": "1/2\"",
+    "active": true,
     "unit": "p",
-    "base_price": 183.9
+    "base_price": 146.98
   },
   {
     "id": "st-255",
@@ -8404,10 +10693,13 @@ export const MOCK_CATALOGUE = [
       "code": "ST",
       "name": "Sanitas Troesch"
     },
-    "reference": "SAN.GEN.677242",
+    "reference": "SAN.GEN.558094",
     "name": "Soupape de sécurité 1/2\" modèle 2",
+    "category": "soupape",
+    "specification": "1/2\"",
+    "active": true,
     "unit": "p",
-    "base_price": 116.34
+    "base_price": 59.55
   },
   {
     "id": "gm-255",
@@ -8415,10 +10707,13 @@ export const MOCK_CATALOGUE = [
       "code": "GM",
       "name": "Getaz Miauton"
     },
-    "reference": "GM/GN/3856",
+    "reference": "GM/GN/3861",
     "name": "Soupape de sécurité 1/2\" variante 2",
+    "category": "soupape",
+    "specification": "1/2\"",
+    "active": true,
     "unit": "p",
-    "base_price": 172.57
+    "base_price": 171.17
   },
   {
     "id": "nsb-256",
@@ -8426,10 +10721,13 @@ export const MOCK_CATALOGUE = [
       "code": "NSB",
       "name": "Nussbaum"
     },
-    "reference": "NSB-GEN-1702",
+    "reference": "NSB-GEN-2294",
     "name": "Soupape de sécurité 1/2\" type 3",
+    "category": "soupape",
+    "specification": "1/2\"",
+    "active": true,
     "unit": "p",
-    "base_price": 52.41
+    "base_price": 72.36
   },
   {
     "id": "st-256",
@@ -8437,10 +10735,13 @@ export const MOCK_CATALOGUE = [
       "code": "ST",
       "name": "Sanitas Troesch"
     },
-    "reference": "SAN.GEN.584241",
+    "reference": "SAN.GEN.388306",
     "name": "Soupape de sécurité 1/2\" modèle 3",
+    "category": "soupape",
+    "specification": "1/2\"",
+    "active": true,
     "unit": "p",
-    "base_price": 123.69
+    "base_price": 101.41
   },
   {
     "id": "gm-256",
@@ -8448,10 +10749,13 @@ export const MOCK_CATALOGUE = [
       "code": "GM",
       "name": "Getaz Miauton"
     },
-    "reference": "GM/GN/2687",
+    "reference": "GM/GN/2120",
     "name": "Soupape de sécurité 1/2\" variante 3",
+    "category": "soupape",
+    "specification": "1/2\"",
+    "active": true,
     "unit": "p",
-    "base_price": 153.85
+    "base_price": 209.69
   },
   {
     "id": "nsb-257",
@@ -8459,10 +10763,13 @@ export const MOCK_CATALOGUE = [
       "code": "NSB",
       "name": "Nussbaum"
     },
-    "reference": "NSB-GEN-3846",
+    "reference": "NSB-GEN-1945",
     "name": "Soupape de sécurité 1/2\" type 4",
+    "category": "soupape",
+    "specification": "1/2\"",
+    "active": true,
     "unit": "p",
-    "base_price": 43.33
+    "base_price": 163.86
   },
   {
     "id": "st-257",
@@ -8470,10 +10777,13 @@ export const MOCK_CATALOGUE = [
       "code": "ST",
       "name": "Sanitas Troesch"
     },
-    "reference": "SAN.GEN.288678",
+    "reference": "SAN.GEN.303326",
     "name": "Soupape de sécurité 1/2\" modèle 4",
+    "category": "soupape",
+    "specification": "1/2\"",
+    "active": true,
     "unit": "p",
-    "base_price": 51.85
+    "base_price": 193.98
   },
   {
     "id": "gm-257",
@@ -8481,10 +10791,13 @@ export const MOCK_CATALOGUE = [
       "code": "GM",
       "name": "Getaz Miauton"
     },
-    "reference": "GM/GN/6068",
+    "reference": "GM/GN/9010",
     "name": "Soupape de sécurité 1/2\" variante 4",
+    "category": "soupape",
+    "specification": "1/2\"",
+    "active": true,
     "unit": "p",
-    "base_price": 73.28
+    "base_price": 161.25
   },
   {
     "id": "nsb-258",
@@ -8492,10 +10805,13 @@ export const MOCK_CATALOGUE = [
       "code": "NSB",
       "name": "Nussbaum"
     },
-    "reference": "NSB-GEN-5943",
+    "reference": "NSB-GEN-8474",
     "name": "Soupape de sécurité 3/4\" type 0",
+    "category": "soupape",
+    "specification": "3/4\"",
+    "active": true,
     "unit": "p",
-    "base_price": 118.2
+    "base_price": 38.64
   },
   {
     "id": "st-258",
@@ -8503,10 +10819,13 @@ export const MOCK_CATALOGUE = [
       "code": "ST",
       "name": "Sanitas Troesch"
     },
-    "reference": "SAN.GEN.933200",
+    "reference": "SAN.GEN.678574",
     "name": "Soupape de sécurité 3/4\" modèle 0",
+    "category": "soupape",
+    "specification": "3/4\"",
+    "active": true,
     "unit": "p",
-    "base_price": 58.38
+    "base_price": 34.83
   },
   {
     "id": "gm-258",
@@ -8514,10 +10833,13 @@ export const MOCK_CATALOGUE = [
       "code": "GM",
       "name": "Getaz Miauton"
     },
-    "reference": "GM/GN/3242",
+    "reference": "GM/GN/4789",
     "name": "Soupape de sécurité 3/4\" variante 0",
+    "category": "soupape",
+    "specification": "3/4\"",
+    "active": true,
     "unit": "p",
-    "base_price": 20.03
+    "base_price": 70.91
   },
   {
     "id": "nsb-259",
@@ -8525,10 +10847,13 @@ export const MOCK_CATALOGUE = [
       "code": "NSB",
       "name": "Nussbaum"
     },
-    "reference": "NSB-GEN-9022",
+    "reference": "NSB-GEN-3662",
     "name": "Soupape de sécurité 3/4\" type 1",
+    "category": "soupape",
+    "specification": "3/4\"",
+    "active": true,
     "unit": "p",
-    "base_price": 68.4
+    "base_price": 146.81
   },
   {
     "id": "st-259",
@@ -8536,10 +10861,13 @@ export const MOCK_CATALOGUE = [
       "code": "ST",
       "name": "Sanitas Troesch"
     },
-    "reference": "SAN.GEN.186861",
+    "reference": "SAN.GEN.413590",
     "name": "Soupape de sécurité 3/4\" modèle 1",
+    "category": "soupape",
+    "specification": "3/4\"",
+    "active": true,
     "unit": "p",
-    "base_price": 60.3
+    "base_price": 60.36
   },
   {
     "id": "gm-259",
@@ -8547,10 +10875,13 @@ export const MOCK_CATALOGUE = [
       "code": "GM",
       "name": "Getaz Miauton"
     },
-    "reference": "GM/GN/3164",
+    "reference": "GM/GN/8204",
     "name": "Soupape de sécurité 3/4\" variante 1",
+    "category": "soupape",
+    "specification": "3/4\"",
+    "active": true,
     "unit": "p",
-    "base_price": 166.55
+    "base_price": 176.19
   },
   {
     "id": "nsb-260",
@@ -8558,10 +10889,13 @@ export const MOCK_CATALOGUE = [
       "code": "NSB",
       "name": "Nussbaum"
     },
-    "reference": "NSB-GEN-5851",
+    "reference": "NSB-GEN-1098",
     "name": "Soupape de sécurité 3/4\" type 2",
+    "category": "soupape",
+    "specification": "3/4\"",
+    "active": true,
     "unit": "p",
-    "base_price": 139.44
+    "base_price": 213.71
   },
   {
     "id": "st-260",
@@ -8569,10 +10903,13 @@ export const MOCK_CATALOGUE = [
       "code": "ST",
       "name": "Sanitas Troesch"
     },
-    "reference": "SAN.GEN.742244",
+    "reference": "SAN.GEN.725025",
     "name": "Soupape de sécurité 3/4\" modèle 2",
+    "category": "soupape",
+    "specification": "3/4\"",
+    "active": true,
     "unit": "p",
-    "base_price": 171.04
+    "base_price": 157.75
   },
   {
     "id": "gm-260",
@@ -8580,10 +10917,13 @@ export const MOCK_CATALOGUE = [
       "code": "GM",
       "name": "Getaz Miauton"
     },
-    "reference": "GM/GN/1893",
+    "reference": "GM/GN/8497",
     "name": "Soupape de sécurité 3/4\" variante 2",
+    "category": "soupape",
+    "specification": "3/4\"",
+    "active": true,
     "unit": "p",
-    "base_price": 161.72
+    "base_price": 34.26
   },
   {
     "id": "nsb-261",
@@ -8591,10 +10931,13 @@ export const MOCK_CATALOGUE = [
       "code": "NSB",
       "name": "Nussbaum"
     },
-    "reference": "NSB-GEN-4309",
+    "reference": "NSB-GEN-3065",
     "name": "Soupape de sécurité 3/4\" type 3",
+    "category": "soupape",
+    "specification": "3/4\"",
+    "active": true,
     "unit": "p",
-    "base_price": 154.73
+    "base_price": 176.96
   },
   {
     "id": "st-261",
@@ -8602,10 +10945,13 @@ export const MOCK_CATALOGUE = [
       "code": "ST",
       "name": "Sanitas Troesch"
     },
-    "reference": "SAN.GEN.959262",
+    "reference": "SAN.GEN.563452",
     "name": "Soupape de sécurité 3/4\" modèle 3",
+    "category": "soupape",
+    "specification": "3/4\"",
+    "active": true,
     "unit": "p",
-    "base_price": 186.09
+    "base_price": 96.37
   },
   {
     "id": "gm-261",
@@ -8613,10 +10959,13 @@ export const MOCK_CATALOGUE = [
       "code": "GM",
       "name": "Getaz Miauton"
     },
-    "reference": "GM/GN/3069",
+    "reference": "GM/GN/1842",
     "name": "Soupape de sécurité 3/4\" variante 3",
+    "category": "soupape",
+    "specification": "3/4\"",
+    "active": true,
     "unit": "p",
-    "base_price": 61.14
+    "base_price": 123.54
   },
   {
     "id": "nsb-262",
@@ -8624,10 +10973,13 @@ export const MOCK_CATALOGUE = [
       "code": "NSB",
       "name": "Nussbaum"
     },
-    "reference": "NSB-GEN-5214",
+    "reference": "NSB-GEN-1702",
     "name": "Soupape de sécurité 3/4\" type 4",
+    "category": "soupape",
+    "specification": "3/4\"",
+    "active": true,
     "unit": "p",
-    "base_price": 143.58
+    "base_price": 60.44
   },
   {
     "id": "st-262",
@@ -8635,10 +10987,13 @@ export const MOCK_CATALOGUE = [
       "code": "ST",
       "name": "Sanitas Troesch"
     },
-    "reference": "SAN.GEN.338886",
+    "reference": "SAN.GEN.475064",
     "name": "Soupape de sécurité 3/4\" modèle 4",
+    "category": "soupape",
+    "specification": "3/4\"",
+    "active": true,
     "unit": "p",
-    "base_price": 52.84
+    "base_price": 146.22
   },
   {
     "id": "gm-262",
@@ -8646,10 +11001,13 @@ export const MOCK_CATALOGUE = [
       "code": "GM",
       "name": "Getaz Miauton"
     },
-    "reference": "GM/GN/6612",
+    "reference": "GM/GN/2902",
     "name": "Soupape de sécurité 3/4\" variante 4",
+    "category": "soupape",
+    "specification": "3/4\"",
+    "active": true,
     "unit": "p",
-    "base_price": 103.99
+    "base_price": 100.09
   },
   {
     "id": "nsb-263",
@@ -8657,10 +11015,13 @@ export const MOCK_CATALOGUE = [
       "code": "NSB",
       "name": "Nussbaum"
     },
-    "reference": "NSB-GEN-5607",
+    "reference": "NSB-GEN-2776",
     "name": "Soupape de sécurité 1\" type 0",
+    "category": "soupape",
+    "specification": "1\"",
+    "active": true,
     "unit": "p",
-    "base_price": 218.84
+    "base_price": 195.84
   },
   {
     "id": "st-263",
@@ -8668,10 +11029,13 @@ export const MOCK_CATALOGUE = [
       "code": "ST",
       "name": "Sanitas Troesch"
     },
-    "reference": "SAN.GEN.904128",
+    "reference": "SAN.GEN.510355",
     "name": "Soupape de sécurité 1\" modèle 0",
+    "category": "soupape",
+    "specification": "1\"",
+    "active": true,
     "unit": "p",
-    "base_price": 54.72
+    "base_price": 206.4
   },
   {
     "id": "gm-263",
@@ -8679,10 +11043,13 @@ export const MOCK_CATALOGUE = [
       "code": "GM",
       "name": "Getaz Miauton"
     },
-    "reference": "GM/GN/4962",
+    "reference": "GM/GN/1598",
     "name": "Soupape de sécurité 1\" variante 0",
+    "category": "soupape",
+    "specification": "1\"",
+    "active": true,
     "unit": "p",
-    "base_price": 47.69
+    "base_price": 218.78
   },
   {
     "id": "nsb-264",
@@ -8690,10 +11057,13 @@ export const MOCK_CATALOGUE = [
       "code": "NSB",
       "name": "Nussbaum"
     },
-    "reference": "NSB-GEN-9017",
+    "reference": "NSB-GEN-6233",
     "name": "Soupape de sécurité 1\" type 1",
+    "category": "soupape",
+    "specification": "1\"",
+    "active": true,
     "unit": "p",
-    "base_price": 108.21
+    "base_price": 191.36
   },
   {
     "id": "st-264",
@@ -8701,10 +11071,13 @@ export const MOCK_CATALOGUE = [
       "code": "ST",
       "name": "Sanitas Troesch"
     },
-    "reference": "SAN.GEN.166245",
+    "reference": "SAN.GEN.409506",
     "name": "Soupape de sécurité 1\" modèle 1",
+    "category": "soupape",
+    "specification": "1\"",
+    "active": true,
     "unit": "p",
-    "base_price": 165.05
+    "base_price": 158.9
   },
   {
     "id": "gm-264",
@@ -8712,10 +11085,13 @@ export const MOCK_CATALOGUE = [
       "code": "GM",
       "name": "Getaz Miauton"
     },
-    "reference": "GM/GN/1368",
+    "reference": "GM/GN/4136",
     "name": "Soupape de sécurité 1\" variante 1",
+    "category": "soupape",
+    "specification": "1\"",
+    "active": true,
     "unit": "p",
-    "base_price": 106.48
+    "base_price": 51.21
   },
   {
     "id": "nsb-265",
@@ -8723,10 +11099,13 @@ export const MOCK_CATALOGUE = [
       "code": "NSB",
       "name": "Nussbaum"
     },
-    "reference": "NSB-GEN-9959",
+    "reference": "NSB-GEN-2868",
     "name": "Soupape de sécurité 1\" type 2",
+    "category": "soupape",
+    "specification": "1\"",
+    "active": true,
     "unit": "p",
-    "base_price": 131.54
+    "base_price": 73.79
   },
   {
     "id": "st-265",
@@ -8734,10 +11113,13 @@ export const MOCK_CATALOGUE = [
       "code": "ST",
       "name": "Sanitas Troesch"
     },
-    "reference": "SAN.GEN.456298",
+    "reference": "SAN.GEN.348991",
     "name": "Soupape de sécurité 1\" modèle 2",
+    "category": "soupape",
+    "specification": "1\"",
+    "active": true,
     "unit": "p",
-    "base_price": 184.91
+    "base_price": 212.52
   },
   {
     "id": "gm-265",
@@ -8745,10 +11127,13 @@ export const MOCK_CATALOGUE = [
       "code": "GM",
       "name": "Getaz Miauton"
     },
-    "reference": "GM/GN/2172",
+    "reference": "GM/GN/4927",
     "name": "Soupape de sécurité 1\" variante 2",
+    "category": "soupape",
+    "specification": "1\"",
+    "active": true,
     "unit": "p",
-    "base_price": 59.38
+    "base_price": 82.51
   },
   {
     "id": "nsb-266",
@@ -8756,10 +11141,13 @@ export const MOCK_CATALOGUE = [
       "code": "NSB",
       "name": "Nussbaum"
     },
-    "reference": "NSB-GEN-9644",
+    "reference": "NSB-GEN-9233",
     "name": "Soupape de sécurité 1\" type 3",
+    "category": "soupape",
+    "specification": "1\"",
+    "active": true,
     "unit": "p",
-    "base_price": 72.75
+    "base_price": 193.37
   },
   {
     "id": "st-266",
@@ -8767,10 +11155,13 @@ export const MOCK_CATALOGUE = [
       "code": "ST",
       "name": "Sanitas Troesch"
     },
-    "reference": "SAN.GEN.350650",
+    "reference": "SAN.GEN.425644",
     "name": "Soupape de sécurité 1\" modèle 3",
+    "category": "soupape",
+    "specification": "1\"",
+    "active": true,
     "unit": "p",
-    "base_price": 191.93
+    "base_price": 183.17
   },
   {
     "id": "gm-266",
@@ -8778,10 +11169,13 @@ export const MOCK_CATALOGUE = [
       "code": "GM",
       "name": "Getaz Miauton"
     },
-    "reference": "GM/GN/5471",
+    "reference": "GM/GN/5817",
     "name": "Soupape de sécurité 1\" variante 3",
+    "category": "soupape",
+    "specification": "1\"",
+    "active": true,
     "unit": "p",
-    "base_price": 199.06
+    "base_price": 63.84
   },
   {
     "id": "nsb-267",
@@ -8789,10 +11183,13 @@ export const MOCK_CATALOGUE = [
       "code": "NSB",
       "name": "Nussbaum"
     },
-    "reference": "NSB-GEN-6795",
+    "reference": "NSB-GEN-2017",
     "name": "Soupape de sécurité 1\" type 4",
+    "category": "soupape",
+    "specification": "1\"",
+    "active": true,
     "unit": "p",
-    "base_price": 184.14
+    "base_price": 46.46
   },
   {
     "id": "st-267",
@@ -8800,10 +11197,13 @@ export const MOCK_CATALOGUE = [
       "code": "ST",
       "name": "Sanitas Troesch"
     },
-    "reference": "SAN.GEN.325252",
+    "reference": "SAN.GEN.782078",
     "name": "Soupape de sécurité 1\" modèle 4",
+    "category": "soupape",
+    "specification": "1\"",
+    "active": true,
     "unit": "p",
-    "base_price": 83.92
+    "base_price": 183.61
   },
   {
     "id": "gm-267",
@@ -8811,10 +11211,13 @@ export const MOCK_CATALOGUE = [
       "code": "GM",
       "name": "Getaz Miauton"
     },
-    "reference": "GM/GN/1990",
+    "reference": "GM/GN/9019",
     "name": "Soupape de sécurité 1\" variante 4",
+    "category": "soupape",
+    "specification": "1\"",
+    "active": true,
     "unit": "p",
-    "base_price": 89.78
+    "base_price": 105.13
   },
   {
     "id": "nsb-268",
@@ -8822,10 +11225,13 @@ export const MOCK_CATALOGUE = [
       "code": "NSB",
       "name": "Nussbaum"
     },
-    "reference": "NSB-GEN-2635",
+    "reference": "NSB-GEN-6067",
     "name": "Soupape de sécurité 1 1/4\" type 0",
+    "category": "soupape",
+    "specification": "1 1/4\"",
+    "active": true,
     "unit": "p",
-    "base_price": 24.54
+    "base_price": 205.43
   },
   {
     "id": "st-268",
@@ -8833,10 +11239,13 @@ export const MOCK_CATALOGUE = [
       "code": "ST",
       "name": "Sanitas Troesch"
     },
-    "reference": "SAN.GEN.594701",
+    "reference": "SAN.GEN.156430",
     "name": "Soupape de sécurité 1 1/4\" modèle 0",
+    "category": "soupape",
+    "specification": "1 1/4\"",
+    "active": true,
     "unit": "p",
-    "base_price": 135.5
+    "base_price": 65.83
   },
   {
     "id": "gm-268",
@@ -8844,10 +11253,13 @@ export const MOCK_CATALOGUE = [
       "code": "GM",
       "name": "Getaz Miauton"
     },
-    "reference": "GM/GN/2154",
+    "reference": "GM/GN/6139",
     "name": "Soupape de sécurité 1 1/4\" variante 0",
+    "category": "soupape",
+    "specification": "1 1/4\"",
+    "active": true,
     "unit": "p",
-    "base_price": 68.44
+    "base_price": 46.75
   },
   {
     "id": "nsb-269",
@@ -8855,10 +11267,13 @@ export const MOCK_CATALOGUE = [
       "code": "NSB",
       "name": "Nussbaum"
     },
-    "reference": "NSB-GEN-4584",
+    "reference": "NSB-GEN-9392",
     "name": "Soupape de sécurité 1 1/4\" type 1",
+    "category": "soupape",
+    "specification": "1 1/4\"",
+    "active": true,
     "unit": "p",
-    "base_price": 151.23
+    "base_price": 61.33
   },
   {
     "id": "st-269",
@@ -8866,10 +11281,13 @@ export const MOCK_CATALOGUE = [
       "code": "ST",
       "name": "Sanitas Troesch"
     },
-    "reference": "SAN.GEN.985787",
+    "reference": "SAN.GEN.826711",
     "name": "Soupape de sécurité 1 1/4\" modèle 1",
+    "category": "soupape",
+    "specification": "1 1/4\"",
+    "active": true,
     "unit": "p",
-    "base_price": 204.24
+    "base_price": 154.36
   },
   {
     "id": "gm-269",
@@ -8877,10 +11295,13 @@ export const MOCK_CATALOGUE = [
       "code": "GM",
       "name": "Getaz Miauton"
     },
-    "reference": "GM/GN/9323",
+    "reference": "GM/GN/2731",
     "name": "Soupape de sécurité 1 1/4\" variante 1",
+    "category": "soupape",
+    "specification": "1 1/4\"",
+    "active": true,
     "unit": "p",
-    "base_price": 200.91
+    "base_price": 160.52
   },
   {
     "id": "nsb-270",
@@ -8888,10 +11309,13 @@ export const MOCK_CATALOGUE = [
       "code": "NSB",
       "name": "Nussbaum"
     },
-    "reference": "NSB-GEN-1069",
+    "reference": "NSB-GEN-9274",
     "name": "Soupape de sécurité 1 1/4\" type 2",
+    "category": "soupape",
+    "specification": "1 1/4\"",
+    "active": true,
     "unit": "p",
-    "base_price": 196.45
+    "base_price": 162.44
   },
   {
     "id": "st-270",
@@ -8899,10 +11323,13 @@ export const MOCK_CATALOGUE = [
       "code": "ST",
       "name": "Sanitas Troesch"
     },
-    "reference": "SAN.GEN.456690",
+    "reference": "SAN.GEN.581580",
     "name": "Soupape de sécurité 1 1/4\" modèle 2",
+    "category": "soupape",
+    "specification": "1 1/4\"",
+    "active": true,
     "unit": "p",
-    "base_price": 137.45
+    "base_price": 111.14
   },
   {
     "id": "gm-270",
@@ -8910,10 +11337,13 @@ export const MOCK_CATALOGUE = [
       "code": "GM",
       "name": "Getaz Miauton"
     },
-    "reference": "GM/GN/7842",
+    "reference": "GM/GN/2940",
     "name": "Soupape de sécurité 1 1/4\" variante 2",
+    "category": "soupape",
+    "specification": "1 1/4\"",
+    "active": true,
     "unit": "p",
-    "base_price": 194.12
+    "base_price": 28.45
   },
   {
     "id": "nsb-271",
@@ -8921,10 +11351,13 @@ export const MOCK_CATALOGUE = [
       "code": "NSB",
       "name": "Nussbaum"
     },
-    "reference": "NSB-GEN-3034",
+    "reference": "NSB-GEN-4964",
     "name": "Soupape de sécurité 1 1/4\" type 3",
+    "category": "soupape",
+    "specification": "1 1/4\"",
+    "active": true,
     "unit": "p",
-    "base_price": 145.57
+    "base_price": 83.47
   },
   {
     "id": "st-271",
@@ -8932,10 +11365,13 @@ export const MOCK_CATALOGUE = [
       "code": "ST",
       "name": "Sanitas Troesch"
     },
-    "reference": "SAN.GEN.369829",
+    "reference": "SAN.GEN.241332",
     "name": "Soupape de sécurité 1 1/4\" modèle 3",
+    "category": "soupape",
+    "specification": "1 1/4\"",
+    "active": true,
     "unit": "p",
-    "base_price": 97.62
+    "base_price": 211.86
   },
   {
     "id": "gm-271",
@@ -8943,10 +11379,13 @@ export const MOCK_CATALOGUE = [
       "code": "GM",
       "name": "Getaz Miauton"
     },
-    "reference": "GM/GN/9340",
+    "reference": "GM/GN/7070",
     "name": "Soupape de sécurité 1 1/4\" variante 3",
+    "category": "soupape",
+    "specification": "1 1/4\"",
+    "active": true,
     "unit": "p",
-    "base_price": 205.33
+    "base_price": 131.22
   },
   {
     "id": "nsb-272",
@@ -8954,10 +11393,13 @@ export const MOCK_CATALOGUE = [
       "code": "NSB",
       "name": "Nussbaum"
     },
-    "reference": "NSB-GEN-6932",
+    "reference": "NSB-GEN-5734",
     "name": "Soupape de sécurité 1 1/4\" type 4",
+    "category": "soupape",
+    "specification": "1 1/4\"",
+    "active": true,
     "unit": "p",
-    "base_price": 46.63
+    "base_price": 57.19
   },
   {
     "id": "st-272",
@@ -8965,10 +11407,13 @@ export const MOCK_CATALOGUE = [
       "code": "ST",
       "name": "Sanitas Troesch"
     },
-    "reference": "SAN.GEN.624269",
+    "reference": "SAN.GEN.677041",
     "name": "Soupape de sécurité 1 1/4\" modèle 4",
+    "category": "soupape",
+    "specification": "1 1/4\"",
+    "active": true,
     "unit": "p",
-    "base_price": 104.48
+    "base_price": 125.51
   },
   {
     "id": "gm-272",
@@ -8976,10 +11421,13 @@ export const MOCK_CATALOGUE = [
       "code": "GM",
       "name": "Getaz Miauton"
     },
-    "reference": "GM/GN/4890",
+    "reference": "GM/GN/1676",
     "name": "Soupape de sécurité 1 1/4\" variante 4",
+    "category": "soupape",
+    "specification": "1 1/4\"",
+    "active": true,
     "unit": "p",
-    "base_price": 207.34
+    "base_price": 119.92
   },
   {
     "id": "nsb-273",
@@ -8987,10 +11435,13 @@ export const MOCK_CATALOGUE = [
       "code": "NSB",
       "name": "Nussbaum"
     },
-    "reference": "NSB-GEN-2122",
+    "reference": "NSB-GEN-6534",
     "name": "Soupape de sécurité 1 1/2\" type 0",
+    "category": "soupape",
+    "specification": "1 1/2\"",
+    "active": true,
     "unit": "p",
-    "base_price": 72.83
+    "base_price": 197.02
   },
   {
     "id": "st-273",
@@ -8998,10 +11449,13 @@ export const MOCK_CATALOGUE = [
       "code": "ST",
       "name": "Sanitas Troesch"
     },
-    "reference": "SAN.GEN.213827",
+    "reference": "SAN.GEN.496938",
     "name": "Soupape de sécurité 1 1/2\" modèle 0",
+    "category": "soupape",
+    "specification": "1 1/2\"",
+    "active": true,
     "unit": "p",
-    "base_price": 155.4
+    "base_price": 202.49
   },
   {
     "id": "gm-273",
@@ -9009,10 +11463,13 @@ export const MOCK_CATALOGUE = [
       "code": "GM",
       "name": "Getaz Miauton"
     },
-    "reference": "GM/GN/4912",
+    "reference": "GM/GN/9552",
     "name": "Soupape de sécurité 1 1/2\" variante 0",
+    "category": "soupape",
+    "specification": "1 1/2\"",
+    "active": true,
     "unit": "p",
-    "base_price": 134.73
+    "base_price": 34.11
   },
   {
     "id": "nsb-274",
@@ -9020,10 +11477,13 @@ export const MOCK_CATALOGUE = [
       "code": "NSB",
       "name": "Nussbaum"
     },
-    "reference": "NSB-GEN-5911",
+    "reference": "NSB-GEN-2280",
     "name": "Soupape de sécurité 1 1/2\" type 1",
+    "category": "soupape",
+    "specification": "1 1/2\"",
+    "active": true,
     "unit": "p",
-    "base_price": 50.77
+    "base_price": 195.47
   },
   {
     "id": "st-274",
@@ -9031,10 +11491,13 @@ export const MOCK_CATALOGUE = [
       "code": "ST",
       "name": "Sanitas Troesch"
     },
-    "reference": "SAN.GEN.687847",
+    "reference": "SAN.GEN.747060",
     "name": "Soupape de sécurité 1 1/2\" modèle 1",
+    "category": "soupape",
+    "specification": "1 1/2\"",
+    "active": true,
     "unit": "p",
-    "base_price": 114.13
+    "base_price": 123.91
   },
   {
     "id": "gm-274",
@@ -9042,10 +11505,13 @@ export const MOCK_CATALOGUE = [
       "code": "GM",
       "name": "Getaz Miauton"
     },
-    "reference": "GM/GN/1698",
+    "reference": "GM/GN/2121",
     "name": "Soupape de sécurité 1 1/2\" variante 1",
+    "category": "soupape",
+    "specification": "1 1/2\"",
+    "active": true,
     "unit": "p",
-    "base_price": 23.05
+    "base_price": 192.91
   },
   {
     "id": "nsb-275",
@@ -9053,10 +11519,13 @@ export const MOCK_CATALOGUE = [
       "code": "NSB",
       "name": "Nussbaum"
     },
-    "reference": "NSB-GEN-2790",
+    "reference": "NSB-GEN-9381",
     "name": "Soupape de sécurité 1 1/2\" type 2",
+    "category": "soupape",
+    "specification": "1 1/2\"",
+    "active": true,
     "unit": "p",
-    "base_price": 81.44
+    "base_price": 78.08
   },
   {
     "id": "st-275",
@@ -9064,10 +11533,13 @@ export const MOCK_CATALOGUE = [
       "code": "ST",
       "name": "Sanitas Troesch"
     },
-    "reference": "SAN.GEN.998361",
+    "reference": "SAN.GEN.958390",
     "name": "Soupape de sécurité 1 1/2\" modèle 2",
+    "category": "soupape",
+    "specification": "1 1/2\"",
+    "active": true,
     "unit": "p",
-    "base_price": 183.77
+    "base_price": 183.45
   },
   {
     "id": "gm-275",
@@ -9075,10 +11547,13 @@ export const MOCK_CATALOGUE = [
       "code": "GM",
       "name": "Getaz Miauton"
     },
-    "reference": "GM/GN/7759",
+    "reference": "GM/GN/5359",
     "name": "Soupape de sécurité 1 1/2\" variante 2",
+    "category": "soupape",
+    "specification": "1 1/2\"",
+    "active": true,
     "unit": "p",
-    "base_price": 215.14
+    "base_price": 215.28
   },
   {
     "id": "nsb-276",
@@ -9086,10 +11561,13 @@ export const MOCK_CATALOGUE = [
       "code": "NSB",
       "name": "Nussbaum"
     },
-    "reference": "NSB-GEN-4917",
+    "reference": "NSB-GEN-3092",
     "name": "Soupape de sécurité 1 1/2\" type 3",
+    "category": "soupape",
+    "specification": "1 1/2\"",
+    "active": true,
     "unit": "p",
-    "base_price": 61.25
+    "base_price": 29.29
   },
   {
     "id": "st-276",
@@ -9097,10 +11575,13 @@ export const MOCK_CATALOGUE = [
       "code": "ST",
       "name": "Sanitas Troesch"
     },
-    "reference": "SAN.GEN.794508",
+    "reference": "SAN.GEN.715202",
     "name": "Soupape de sécurité 1 1/2\" modèle 3",
+    "category": "soupape",
+    "specification": "1 1/2\"",
+    "active": true,
     "unit": "p",
-    "base_price": 175.02
+    "base_price": 152.68
   },
   {
     "id": "gm-276",
@@ -9108,10 +11589,13 @@ export const MOCK_CATALOGUE = [
       "code": "GM",
       "name": "Getaz Miauton"
     },
-    "reference": "GM/GN/6105",
+    "reference": "GM/GN/3703",
     "name": "Soupape de sécurité 1 1/2\" variante 3",
+    "category": "soupape",
+    "specification": "1 1/2\"",
+    "active": true,
     "unit": "p",
-    "base_price": 137.63
+    "base_price": 97.96
   },
   {
     "id": "nsb-277",
@@ -9119,10 +11603,13 @@ export const MOCK_CATALOGUE = [
       "code": "NSB",
       "name": "Nussbaum"
     },
-    "reference": "NSB-GEN-2907",
+    "reference": "NSB-GEN-5191",
     "name": "Soupape de sécurité 1 1/2\" type 4",
+    "category": "soupape",
+    "specification": "1 1/2\"",
+    "active": true,
     "unit": "p",
-    "base_price": 101.83
+    "base_price": 205.24
   },
   {
     "id": "st-277",
@@ -9130,10 +11617,13 @@ export const MOCK_CATALOGUE = [
       "code": "ST",
       "name": "Sanitas Troesch"
     },
-    "reference": "SAN.GEN.358117",
+    "reference": "SAN.GEN.342290",
     "name": "Soupape de sécurité 1 1/2\" modèle 4",
+    "category": "soupape",
+    "specification": "1 1/2\"",
+    "active": true,
     "unit": "p",
-    "base_price": 62.34
+    "base_price": 95.7
   },
   {
     "id": "gm-277",
@@ -9141,10 +11631,13 @@ export const MOCK_CATALOGUE = [
       "code": "GM",
       "name": "Getaz Miauton"
     },
-    "reference": "GM/GN/9915",
+    "reference": "GM/GN/8421",
     "name": "Soupape de sécurité 1 1/2\" variante 4",
+    "category": "soupape",
+    "specification": "1 1/2\"",
+    "active": true,
     "unit": "p",
-    "base_price": 200.76
+    "base_price": 205.79
   },
   {
     "id": "nsb-278",
@@ -9152,10 +11645,13 @@ export const MOCK_CATALOGUE = [
       "code": "NSB",
       "name": "Nussbaum"
     },
-    "reference": "NSB-GEN-6781",
+    "reference": "NSB-GEN-3979",
     "name": "Soupape de sécurité 2\" type 0",
+    "category": "soupape",
+    "specification": "2\"",
+    "active": true,
     "unit": "p",
-    "base_price": 140.16
+    "base_price": 114.95
   },
   {
     "id": "st-278",
@@ -9163,10 +11659,13 @@ export const MOCK_CATALOGUE = [
       "code": "ST",
       "name": "Sanitas Troesch"
     },
-    "reference": "SAN.GEN.184909",
+    "reference": "SAN.GEN.762317",
     "name": "Soupape de sécurité 2\" modèle 0",
+    "category": "soupape",
+    "specification": "2\"",
+    "active": true,
     "unit": "p",
-    "base_price": 141.53
+    "base_price": 200.09
   },
   {
     "id": "gm-278",
@@ -9174,10 +11673,13 @@ export const MOCK_CATALOGUE = [
       "code": "GM",
       "name": "Getaz Miauton"
     },
-    "reference": "GM/GN/3004",
+    "reference": "GM/GN/8457",
     "name": "Soupape de sécurité 2\" variante 0",
+    "category": "soupape",
+    "specification": "2\"",
+    "active": true,
     "unit": "p",
-    "base_price": 218.09
+    "base_price": 215.44
   },
   {
     "id": "nsb-279",
@@ -9185,10 +11687,13 @@ export const MOCK_CATALOGUE = [
       "code": "NSB",
       "name": "Nussbaum"
     },
-    "reference": "NSB-GEN-8238",
+    "reference": "NSB-GEN-4350",
     "name": "Soupape de sécurité 2\" type 1",
+    "category": "soupape",
+    "specification": "2\"",
+    "active": true,
     "unit": "p",
-    "base_price": 41.76
+    "base_price": 156.47
   },
   {
     "id": "st-279",
@@ -9196,10 +11701,13 @@ export const MOCK_CATALOGUE = [
       "code": "ST",
       "name": "Sanitas Troesch"
     },
-    "reference": "SAN.GEN.991378",
+    "reference": "SAN.GEN.482836",
     "name": "Soupape de sécurité 2\" modèle 1",
+    "category": "soupape",
+    "specification": "2\"",
+    "active": true,
     "unit": "p",
-    "base_price": 47.38
+    "base_price": 203.79
   },
   {
     "id": "gm-279",
@@ -9207,10 +11715,13 @@ export const MOCK_CATALOGUE = [
       "code": "GM",
       "name": "Getaz Miauton"
     },
-    "reference": "GM/GN/6964",
+    "reference": "GM/GN/8249",
     "name": "Soupape de sécurité 2\" variante 1",
+    "category": "soupape",
+    "specification": "2\"",
+    "active": true,
     "unit": "p",
-    "base_price": 200.95
+    "base_price": 82.49
   },
   {
     "id": "nsb-280",
@@ -9218,10 +11729,13 @@ export const MOCK_CATALOGUE = [
       "code": "NSB",
       "name": "Nussbaum"
     },
-    "reference": "NSB-GEN-1663",
+    "reference": "NSB-GEN-7341",
     "name": "Soupape de sécurité 2\" type 2",
+    "category": "soupape",
+    "specification": "2\"",
+    "active": true,
     "unit": "p",
-    "base_price": 31.36
+    "base_price": 129.78
   },
   {
     "id": "st-280",
@@ -9229,10 +11743,13 @@ export const MOCK_CATALOGUE = [
       "code": "ST",
       "name": "Sanitas Troesch"
     },
-    "reference": "SAN.GEN.117330",
+    "reference": "SAN.GEN.992033",
     "name": "Soupape de sécurité 2\" modèle 2",
+    "category": "soupape",
+    "specification": "2\"",
+    "active": true,
     "unit": "p",
-    "base_price": 93.01
+    "base_price": 68.93
   },
   {
     "id": "gm-280",
@@ -9240,10 +11757,13 @@ export const MOCK_CATALOGUE = [
       "code": "GM",
       "name": "Getaz Miauton"
     },
-    "reference": "GM/GN/3148",
+    "reference": "GM/GN/4049",
     "name": "Soupape de sécurité 2\" variante 2",
+    "category": "soupape",
+    "specification": "2\"",
+    "active": true,
     "unit": "p",
-    "base_price": 24.6
+    "base_price": 155.86
   },
   {
     "id": "nsb-281",
@@ -9251,10 +11771,13 @@ export const MOCK_CATALOGUE = [
       "code": "NSB",
       "name": "Nussbaum"
     },
-    "reference": "NSB-GEN-8157",
+    "reference": "NSB-GEN-3628",
     "name": "Soupape de sécurité 2\" type 3",
+    "category": "soupape",
+    "specification": "2\"",
+    "active": true,
     "unit": "p",
-    "base_price": 85.03
+    "base_price": 176.86
   },
   {
     "id": "st-281",
@@ -9262,10 +11785,13 @@ export const MOCK_CATALOGUE = [
       "code": "ST",
       "name": "Sanitas Troesch"
     },
-    "reference": "SAN.GEN.975803",
+    "reference": "SAN.GEN.484764",
     "name": "Soupape de sécurité 2\" modèle 3",
+    "category": "soupape",
+    "specification": "2\"",
+    "active": true,
     "unit": "p",
-    "base_price": 61.33
+    "base_price": 80.66
   },
   {
     "id": "gm-281",
@@ -9273,10 +11799,13 @@ export const MOCK_CATALOGUE = [
       "code": "GM",
       "name": "Getaz Miauton"
     },
-    "reference": "GM/GN/8605",
+    "reference": "GM/GN/7350",
     "name": "Soupape de sécurité 2\" variante 3",
+    "category": "soupape",
+    "specification": "2\"",
+    "active": true,
     "unit": "p",
-    "base_price": 23.08
+    "base_price": 115.31
   },
   {
     "id": "nsb-282",
@@ -9284,10 +11813,13 @@ export const MOCK_CATALOGUE = [
       "code": "NSB",
       "name": "Nussbaum"
     },
-    "reference": "NSB-GEN-9891",
+    "reference": "NSB-GEN-8441",
     "name": "Soupape de sécurité 2\" type 4",
+    "category": "soupape",
+    "specification": "2\"",
+    "active": true,
     "unit": "p",
-    "base_price": 94.43
+    "base_price": 55.59
   },
   {
     "id": "st-282",
@@ -9295,10 +11827,13 @@ export const MOCK_CATALOGUE = [
       "code": "ST",
       "name": "Sanitas Troesch"
     },
-    "reference": "SAN.GEN.627173",
+    "reference": "SAN.GEN.235173",
     "name": "Soupape de sécurité 2\" modèle 4",
+    "category": "soupape",
+    "specification": "2\"",
+    "active": true,
     "unit": "p",
-    "base_price": 190.91
+    "base_price": 37.67
   },
   {
     "id": "gm-282",
@@ -9306,10 +11841,13 @@ export const MOCK_CATALOGUE = [
       "code": "GM",
       "name": "Getaz Miauton"
     },
-    "reference": "GM/GN/8729",
+    "reference": "GM/GN/2002",
     "name": "Soupape de sécurité 2\" variante 4",
+    "category": "soupape",
+    "specification": "2\"",
+    "active": true,
     "unit": "p",
-    "base_price": 36.66
+    "base_price": 73.2
   },
   {
     "id": "nsb-283",
@@ -9317,10 +11855,13 @@ export const MOCK_CATALOGUE = [
       "code": "NSB",
       "name": "Nussbaum"
     },
-    "reference": "NSB-GEN-9366",
+    "reference": "NSB-GEN-5913",
     "name": "Soupape de sécurité DN 15 type 0",
+    "category": "soupape",
+    "specification": "DN 15",
+    "active": true,
     "unit": "p",
-    "base_price": 175.31
+    "base_price": 207.15
   },
   {
     "id": "st-283",
@@ -9328,10 +11869,13 @@ export const MOCK_CATALOGUE = [
       "code": "ST",
       "name": "Sanitas Troesch"
     },
-    "reference": "SAN.GEN.500759",
+    "reference": "SAN.GEN.965078",
     "name": "Soupape de sécurité DN 15 modèle 0",
+    "category": "soupape",
+    "specification": "DN 15",
+    "active": true,
     "unit": "p",
-    "base_price": 26.18
+    "base_price": 153.57
   },
   {
     "id": "gm-283",
@@ -9339,10 +11883,13 @@ export const MOCK_CATALOGUE = [
       "code": "GM",
       "name": "Getaz Miauton"
     },
-    "reference": "GM/GN/6578",
+    "reference": "GM/GN/5276",
     "name": "Soupape de sécurité DN 15 variante 0",
+    "category": "soupape",
+    "specification": "DN 15",
+    "active": true,
     "unit": "p",
-    "base_price": 119.29
+    "base_price": 108.58
   },
   {
     "id": "nsb-284",
@@ -9350,10 +11897,13 @@ export const MOCK_CATALOGUE = [
       "code": "NSB",
       "name": "Nussbaum"
     },
-    "reference": "NSB-GEN-3492",
+    "reference": "NSB-GEN-7996",
     "name": "Soupape de sécurité DN 15 type 1",
+    "category": "soupape",
+    "specification": "DN 15",
+    "active": true,
     "unit": "p",
-    "base_price": 213.76
+    "base_price": 123.21
   },
   {
     "id": "st-284",
@@ -9361,10 +11911,13 @@ export const MOCK_CATALOGUE = [
       "code": "ST",
       "name": "Sanitas Troesch"
     },
-    "reference": "SAN.GEN.251603",
+    "reference": "SAN.GEN.619428",
     "name": "Soupape de sécurité DN 15 modèle 1",
+    "category": "soupape",
+    "specification": "DN 15",
+    "active": true,
     "unit": "p",
-    "base_price": 166.32
+    "base_price": 106.91
   },
   {
     "id": "gm-284",
@@ -9372,10 +11925,13 @@ export const MOCK_CATALOGUE = [
       "code": "GM",
       "name": "Getaz Miauton"
     },
-    "reference": "GM/GN/6638",
+    "reference": "GM/GN/5408",
     "name": "Soupape de sécurité DN 15 variante 1",
+    "category": "soupape",
+    "specification": "DN 15",
+    "active": true,
     "unit": "p",
-    "base_price": 208.35
+    "base_price": 81.5
   },
   {
     "id": "nsb-285",
@@ -9383,10 +11939,13 @@ export const MOCK_CATALOGUE = [
       "code": "NSB",
       "name": "Nussbaum"
     },
-    "reference": "NSB-GEN-9567",
+    "reference": "NSB-GEN-1313",
     "name": "Soupape de sécurité DN 15 type 2",
+    "category": "soupape",
+    "specification": "DN 15",
+    "active": true,
     "unit": "p",
-    "base_price": 60.76
+    "base_price": 57.16
   },
   {
     "id": "st-285",
@@ -9394,10 +11953,13 @@ export const MOCK_CATALOGUE = [
       "code": "ST",
       "name": "Sanitas Troesch"
     },
-    "reference": "SAN.GEN.710463",
+    "reference": "SAN.GEN.158234",
     "name": "Soupape de sécurité DN 15 modèle 2",
+    "category": "soupape",
+    "specification": "DN 15",
+    "active": true,
     "unit": "p",
-    "base_price": 161.75
+    "base_price": 199.93
   },
   {
     "id": "gm-285",
@@ -9405,10 +11967,13 @@ export const MOCK_CATALOGUE = [
       "code": "GM",
       "name": "Getaz Miauton"
     },
-    "reference": "GM/GN/4317",
+    "reference": "GM/GN/5641",
     "name": "Soupape de sécurité DN 15 variante 2",
+    "category": "soupape",
+    "specification": "DN 15",
+    "active": true,
     "unit": "p",
-    "base_price": 24.71
+    "base_price": 65.43
   },
   {
     "id": "nsb-286",
@@ -9416,10 +11981,13 @@ export const MOCK_CATALOGUE = [
       "code": "NSB",
       "name": "Nussbaum"
     },
-    "reference": "NSB-GEN-8450",
+    "reference": "NSB-GEN-1574",
     "name": "Soupape de sécurité DN 15 type 3",
+    "category": "soupape",
+    "specification": "DN 15",
+    "active": true,
     "unit": "p",
-    "base_price": 53.34
+    "base_price": 87.04
   },
   {
     "id": "st-286",
@@ -9427,10 +11995,13 @@ export const MOCK_CATALOGUE = [
       "code": "ST",
       "name": "Sanitas Troesch"
     },
-    "reference": "SAN.GEN.836109",
+    "reference": "SAN.GEN.335243",
     "name": "Soupape de sécurité DN 15 modèle 3",
+    "category": "soupape",
+    "specification": "DN 15",
+    "active": true,
     "unit": "p",
-    "base_price": 185.38
+    "base_price": 98.76
   },
   {
     "id": "gm-286",
@@ -9438,10 +12009,13 @@ export const MOCK_CATALOGUE = [
       "code": "GM",
       "name": "Getaz Miauton"
     },
-    "reference": "GM/GN/2325",
+    "reference": "GM/GN/1195",
     "name": "Soupape de sécurité DN 15 variante 3",
+    "category": "soupape",
+    "specification": "DN 15",
+    "active": true,
     "unit": "p",
-    "base_price": 204.08
+    "base_price": 144.55
   },
   {
     "id": "nsb-287",
@@ -9449,10 +12023,13 @@ export const MOCK_CATALOGUE = [
       "code": "NSB",
       "name": "Nussbaum"
     },
-    "reference": "NSB-GEN-9780",
+    "reference": "NSB-GEN-8806",
     "name": "Soupape de sécurité DN 15 type 4",
+    "category": "soupape",
+    "specification": "DN 15",
+    "active": true,
     "unit": "p",
-    "base_price": 189.08
+    "base_price": 126.97
   },
   {
     "id": "st-287",
@@ -9460,10 +12037,13 @@ export const MOCK_CATALOGUE = [
       "code": "ST",
       "name": "Sanitas Troesch"
     },
-    "reference": "SAN.GEN.831166",
+    "reference": "SAN.GEN.997608",
     "name": "Soupape de sécurité DN 15 modèle 4",
+    "category": "soupape",
+    "specification": "DN 15",
+    "active": true,
     "unit": "p",
-    "base_price": 127.3
+    "base_price": 176.87
   },
   {
     "id": "gm-287",
@@ -9471,10 +12051,13 @@ export const MOCK_CATALOGUE = [
       "code": "GM",
       "name": "Getaz Miauton"
     },
-    "reference": "GM/GN/3348",
+    "reference": "GM/GN/5692",
     "name": "Soupape de sécurité DN 15 variante 4",
+    "category": "soupape",
+    "specification": "DN 15",
+    "active": true,
     "unit": "p",
-    "base_price": 78.72
+    "base_price": 212.68
   },
   {
     "id": "nsb-288",
@@ -9482,10 +12065,13 @@ export const MOCK_CATALOGUE = [
       "code": "NSB",
       "name": "Nussbaum"
     },
-    "reference": "NSB-GEN-5405",
+    "reference": "NSB-GEN-2188",
     "name": "Soupape de sécurité DN 20 type 0",
+    "category": "soupape",
+    "specification": "DN 20",
+    "active": true,
     "unit": "p",
-    "base_price": 146.08
+    "base_price": 145.94
   },
   {
     "id": "st-288",
@@ -9493,10 +12079,13 @@ export const MOCK_CATALOGUE = [
       "code": "ST",
       "name": "Sanitas Troesch"
     },
-    "reference": "SAN.GEN.653504",
+    "reference": "SAN.GEN.206854",
     "name": "Soupape de sécurité DN 20 modèle 0",
+    "category": "soupape",
+    "specification": "DN 20",
+    "active": true,
     "unit": "p",
-    "base_price": 157.07
+    "base_price": 208.64
   },
   {
     "id": "gm-288",
@@ -9504,10 +12093,13 @@ export const MOCK_CATALOGUE = [
       "code": "GM",
       "name": "Getaz Miauton"
     },
-    "reference": "GM/GN/9297",
+    "reference": "GM/GN/6172",
     "name": "Soupape de sécurité DN 20 variante 0",
+    "category": "soupape",
+    "specification": "DN 20",
+    "active": true,
     "unit": "p",
-    "base_price": 48.81
+    "base_price": 95.89
   },
   {
     "id": "nsb-289",
@@ -9515,10 +12107,13 @@ export const MOCK_CATALOGUE = [
       "code": "NSB",
       "name": "Nussbaum"
     },
-    "reference": "NSB-GEN-5548",
+    "reference": "NSB-GEN-2807",
     "name": "Soupape de sécurité DN 20 type 1",
+    "category": "soupape",
+    "specification": "DN 20",
+    "active": true,
     "unit": "p",
-    "base_price": 101.08
+    "base_price": 100.16
   },
   {
     "id": "st-289",
@@ -9526,10 +12121,13 @@ export const MOCK_CATALOGUE = [
       "code": "ST",
       "name": "Sanitas Troesch"
     },
-    "reference": "SAN.GEN.382959",
+    "reference": "SAN.GEN.241468",
     "name": "Soupape de sécurité DN 20 modèle 1",
+    "category": "soupape",
+    "specification": "DN 20",
+    "active": true,
     "unit": "p",
-    "base_price": 28.47
+    "base_price": 116.39
   },
   {
     "id": "gm-289",
@@ -9537,10 +12135,13 @@ export const MOCK_CATALOGUE = [
       "code": "GM",
       "name": "Getaz Miauton"
     },
-    "reference": "GM/GN/1696",
+    "reference": "GM/GN/9974",
     "name": "Soupape de sécurité DN 20 variante 1",
+    "category": "soupape",
+    "specification": "DN 20",
+    "active": true,
     "unit": "p",
-    "base_price": 100.05
+    "base_price": 134.6
   },
   {
     "id": "nsb-290",
@@ -9548,10 +12149,13 @@ export const MOCK_CATALOGUE = [
       "code": "NSB",
       "name": "Nussbaum"
     },
-    "reference": "NSB-GEN-5951",
+    "reference": "NSB-GEN-5615",
     "name": "Soupape de sécurité DN 20 type 2",
+    "category": "soupape",
+    "specification": "DN 20",
+    "active": true,
     "unit": "p",
-    "base_price": 94.2
+    "base_price": 150.08
   },
   {
     "id": "st-290",
@@ -9559,10 +12163,13 @@ export const MOCK_CATALOGUE = [
       "code": "ST",
       "name": "Sanitas Troesch"
     },
-    "reference": "SAN.GEN.253291",
+    "reference": "SAN.GEN.374329",
     "name": "Soupape de sécurité DN 20 modèle 2",
+    "category": "soupape",
+    "specification": "DN 20",
+    "active": true,
     "unit": "p",
-    "base_price": 150.4
+    "base_price": 134.72
   },
   {
     "id": "gm-290",
@@ -9570,10 +12177,13 @@ export const MOCK_CATALOGUE = [
       "code": "GM",
       "name": "Getaz Miauton"
     },
-    "reference": "GM/GN/8827",
+    "reference": "GM/GN/2381",
     "name": "Soupape de sécurité DN 20 variante 2",
+    "category": "soupape",
+    "specification": "DN 20",
+    "active": true,
     "unit": "p",
-    "base_price": 202.71
+    "base_price": 79.86
   },
   {
     "id": "nsb-291",
@@ -9581,10 +12191,13 @@ export const MOCK_CATALOGUE = [
       "code": "NSB",
       "name": "Nussbaum"
     },
-    "reference": "NSB-GEN-3550",
+    "reference": "NSB-GEN-1907",
     "name": "Soupape de sécurité DN 20 type 3",
+    "category": "soupape",
+    "specification": "DN 20",
+    "active": true,
     "unit": "p",
-    "base_price": 176.5
+    "base_price": 177.64
   },
   {
     "id": "st-291",
@@ -9592,10 +12205,13 @@ export const MOCK_CATALOGUE = [
       "code": "ST",
       "name": "Sanitas Troesch"
     },
-    "reference": "SAN.GEN.216539",
+    "reference": "SAN.GEN.539904",
     "name": "Soupape de sécurité DN 20 modèle 3",
+    "category": "soupape",
+    "specification": "DN 20",
+    "active": true,
     "unit": "p",
-    "base_price": 97.92
+    "base_price": 131.66
   },
   {
     "id": "gm-291",
@@ -9603,10 +12219,13 @@ export const MOCK_CATALOGUE = [
       "code": "GM",
       "name": "Getaz Miauton"
     },
-    "reference": "GM/GN/9681",
+    "reference": "GM/GN/6023",
     "name": "Soupape de sécurité DN 20 variante 3",
+    "category": "soupape",
+    "specification": "DN 20",
+    "active": true,
     "unit": "p",
-    "base_price": 169.11
+    "base_price": 217.86
   },
   {
     "id": "nsb-292",
@@ -9614,10 +12233,13 @@ export const MOCK_CATALOGUE = [
       "code": "NSB",
       "name": "Nussbaum"
     },
-    "reference": "NSB-GEN-1550",
+    "reference": "NSB-GEN-3488",
     "name": "Soupape de sécurité DN 20 type 4",
+    "category": "soupape",
+    "specification": "DN 20",
+    "active": true,
     "unit": "p",
-    "base_price": 136.88
+    "base_price": 156
   },
   {
     "id": "st-292",
@@ -9625,10 +12247,13 @@ export const MOCK_CATALOGUE = [
       "code": "ST",
       "name": "Sanitas Troesch"
     },
-    "reference": "SAN.GEN.815348",
+    "reference": "SAN.GEN.850973",
     "name": "Soupape de sécurité DN 20 modèle 4",
+    "category": "soupape",
+    "specification": "DN 20",
+    "active": true,
     "unit": "p",
-    "base_price": 186.86
+    "base_price": 198.07
   },
   {
     "id": "gm-292",
@@ -9636,10 +12261,13 @@ export const MOCK_CATALOGUE = [
       "code": "GM",
       "name": "Getaz Miauton"
     },
-    "reference": "GM/GN/9793",
+    "reference": "GM/GN/3091",
     "name": "Soupape de sécurité DN 20 variante 4",
+    "category": "soupape",
+    "specification": "DN 20",
+    "active": true,
     "unit": "p",
-    "base_price": 110.36
+    "base_price": 67.84
   },
   {
     "id": "nsb-293",
@@ -9647,10 +12275,13 @@ export const MOCK_CATALOGUE = [
       "code": "NSB",
       "name": "Nussbaum"
     },
-    "reference": "NSB-GEN-3920",
+    "reference": "NSB-GEN-3693",
     "name": "Soupape de sécurité DN 25 type 0",
+    "category": "soupape",
+    "specification": "DN 25",
+    "active": true,
     "unit": "p",
-    "base_price": 165.51
+    "base_price": 109.02
   },
   {
     "id": "st-293",
@@ -9658,10 +12289,13 @@ export const MOCK_CATALOGUE = [
       "code": "ST",
       "name": "Sanitas Troesch"
     },
-    "reference": "SAN.GEN.968357",
+    "reference": "SAN.GEN.105768",
     "name": "Soupape de sécurité DN 25 modèle 0",
+    "category": "soupape",
+    "specification": "DN 25",
+    "active": true,
     "unit": "p",
-    "base_price": 102.35
+    "base_price": 179.95
   },
   {
     "id": "gm-293",
@@ -9669,10 +12303,13 @@ export const MOCK_CATALOGUE = [
       "code": "GM",
       "name": "Getaz Miauton"
     },
-    "reference": "GM/GN/9674",
+    "reference": "GM/GN/9671",
     "name": "Soupape de sécurité DN 25 variante 0",
+    "category": "soupape",
+    "specification": "DN 25",
+    "active": true,
     "unit": "p",
-    "base_price": 174.05
+    "base_price": 176.83
   },
   {
     "id": "nsb-294",
@@ -9680,10 +12317,13 @@ export const MOCK_CATALOGUE = [
       "code": "NSB",
       "name": "Nussbaum"
     },
-    "reference": "NSB-GEN-6656",
+    "reference": "NSB-GEN-1264",
     "name": "Soupape de sécurité DN 25 type 1",
+    "category": "soupape",
+    "specification": "DN 25",
+    "active": true,
     "unit": "p",
-    "base_price": 90
+    "base_price": 52.72
   },
   {
     "id": "st-294",
@@ -9691,10 +12331,13 @@ export const MOCK_CATALOGUE = [
       "code": "ST",
       "name": "Sanitas Troesch"
     },
-    "reference": "SAN.GEN.135829",
+    "reference": "SAN.GEN.869911",
     "name": "Soupape de sécurité DN 25 modèle 1",
+    "category": "soupape",
+    "specification": "DN 25",
+    "active": true,
     "unit": "p",
-    "base_price": 135.96
+    "base_price": 125.26
   },
   {
     "id": "gm-294",
@@ -9702,10 +12345,13 @@ export const MOCK_CATALOGUE = [
       "code": "GM",
       "name": "Getaz Miauton"
     },
-    "reference": "GM/GN/5699",
+    "reference": "GM/GN/6358",
     "name": "Soupape de sécurité DN 25 variante 1",
+    "category": "soupape",
+    "specification": "DN 25",
+    "active": true,
     "unit": "p",
-    "base_price": 37.39
+    "base_price": 39.06
   },
   {
     "id": "nsb-295",
@@ -9713,10 +12359,13 @@ export const MOCK_CATALOGUE = [
       "code": "NSB",
       "name": "Nussbaum"
     },
-    "reference": "NSB-GEN-7137",
+    "reference": "NSB-GEN-8970",
     "name": "Soupape de sécurité DN 25 type 2",
+    "category": "soupape",
+    "specification": "DN 25",
+    "active": true,
     "unit": "p",
-    "base_price": 141.07
+    "base_price": 197.96
   },
   {
     "id": "st-295",
@@ -9724,10 +12373,13 @@ export const MOCK_CATALOGUE = [
       "code": "ST",
       "name": "Sanitas Troesch"
     },
-    "reference": "SAN.GEN.575871",
+    "reference": "SAN.GEN.384127",
     "name": "Soupape de sécurité DN 25 modèle 2",
+    "category": "soupape",
+    "specification": "DN 25",
+    "active": true,
     "unit": "p",
-    "base_price": 58.89
+    "base_price": 182.48
   },
   {
     "id": "gm-295",
@@ -9735,10 +12387,13 @@ export const MOCK_CATALOGUE = [
       "code": "GM",
       "name": "Getaz Miauton"
     },
-    "reference": "GM/GN/4731",
+    "reference": "GM/GN/3223",
     "name": "Soupape de sécurité DN 25 variante 2",
+    "category": "soupape",
+    "specification": "DN 25",
+    "active": true,
     "unit": "p",
-    "base_price": 116.38
+    "base_price": 150.08
   },
   {
     "id": "nsb-296",
@@ -9746,10 +12401,13 @@ export const MOCK_CATALOGUE = [
       "code": "NSB",
       "name": "Nussbaum"
     },
-    "reference": "NSB-GEN-3079",
+    "reference": "NSB-GEN-9124",
     "name": "Soupape de sécurité DN 25 type 3",
+    "category": "soupape",
+    "specification": "DN 25",
+    "active": true,
     "unit": "p",
-    "base_price": 119.63
+    "base_price": 108.67
   },
   {
     "id": "st-296",
@@ -9757,10 +12415,13 @@ export const MOCK_CATALOGUE = [
       "code": "ST",
       "name": "Sanitas Troesch"
     },
-    "reference": "SAN.GEN.949896",
+    "reference": "SAN.GEN.266589",
     "name": "Soupape de sécurité DN 25 modèle 3",
+    "category": "soupape",
+    "specification": "DN 25",
+    "active": true,
     "unit": "p",
-    "base_price": 110.33
+    "base_price": 76.19
   },
   {
     "id": "gm-296",
@@ -9768,10 +12429,13 @@ export const MOCK_CATALOGUE = [
       "code": "GM",
       "name": "Getaz Miauton"
     },
-    "reference": "GM/GN/9968",
+    "reference": "GM/GN/5205",
     "name": "Soupape de sécurité DN 25 variante 3",
+    "category": "soupape",
+    "specification": "DN 25",
+    "active": true,
     "unit": "p",
-    "base_price": 84.69
+    "base_price": 53.25
   },
   {
     "id": "nsb-297",
@@ -9779,10 +12443,13 @@ export const MOCK_CATALOGUE = [
       "code": "NSB",
       "name": "Nussbaum"
     },
-    "reference": "NSB-GEN-7338",
+    "reference": "NSB-GEN-7847",
     "name": "Soupape de sécurité DN 25 type 4",
+    "category": "soupape",
+    "specification": "DN 25",
+    "active": true,
     "unit": "p",
-    "base_price": 168.12
+    "base_price": 118.05
   },
   {
     "id": "st-297",
@@ -9790,10 +12457,13 @@ export const MOCK_CATALOGUE = [
       "code": "ST",
       "name": "Sanitas Troesch"
     },
-    "reference": "SAN.GEN.143147",
+    "reference": "SAN.GEN.954921",
     "name": "Soupape de sécurité DN 25 modèle 4",
+    "category": "soupape",
+    "specification": "DN 25",
+    "active": true,
     "unit": "p",
-    "base_price": 117.72
+    "base_price": 175.7
   },
   {
     "id": "gm-297",
@@ -9801,10 +12471,13 @@ export const MOCK_CATALOGUE = [
       "code": "GM",
       "name": "Getaz Miauton"
     },
-    "reference": "GM/GN/6359",
+    "reference": "GM/GN/8977",
     "name": "Soupape de sécurité DN 25 variante 4",
+    "category": "soupape",
+    "specification": "DN 25",
+    "active": true,
     "unit": "p",
-    "base_price": 51.06
+    "base_price": 70.8
   },
   {
     "id": "nsb-298",
@@ -9812,10 +12485,13 @@ export const MOCK_CATALOGUE = [
       "code": "NSB",
       "name": "Nussbaum"
     },
-    "reference": "NSB-GEN-9916",
+    "reference": "NSB-GEN-5706",
     "name": "Soupape de sécurité DN 32 type 0",
+    "category": "soupape",
+    "specification": "DN 32",
+    "active": true,
     "unit": "p",
-    "base_price": 172.72
+    "base_price": 40.69
   },
   {
     "id": "st-298",
@@ -9823,10 +12499,13 @@ export const MOCK_CATALOGUE = [
       "code": "ST",
       "name": "Sanitas Troesch"
     },
-    "reference": "SAN.GEN.466929",
+    "reference": "SAN.GEN.489649",
     "name": "Soupape de sécurité DN 32 modèle 0",
+    "category": "soupape",
+    "specification": "DN 32",
+    "active": true,
     "unit": "p",
-    "base_price": 50.53
+    "base_price": 162.82
   },
   {
     "id": "gm-298",
@@ -9834,10 +12513,13 @@ export const MOCK_CATALOGUE = [
       "code": "GM",
       "name": "Getaz Miauton"
     },
-    "reference": "GM/GN/2917",
+    "reference": "GM/GN/2941",
     "name": "Soupape de sécurité DN 32 variante 0",
+    "category": "soupape",
+    "specification": "DN 32",
+    "active": true,
     "unit": "p",
-    "base_price": 44.17
+    "base_price": 152.88
   },
   {
     "id": "nsb-299",
@@ -9845,10 +12527,13 @@ export const MOCK_CATALOGUE = [
       "code": "NSB",
       "name": "Nussbaum"
     },
-    "reference": "NSB-GEN-1584",
+    "reference": "NSB-GEN-1459",
     "name": "Soupape de sécurité DN 32 type 1",
+    "category": "soupape",
+    "specification": "DN 32",
+    "active": true,
     "unit": "p",
-    "base_price": 94.46
+    "base_price": 73.28
   },
   {
     "id": "st-299",
@@ -9856,10 +12541,13 @@ export const MOCK_CATALOGUE = [
       "code": "ST",
       "name": "Sanitas Troesch"
     },
-    "reference": "SAN.GEN.523828",
+    "reference": "SAN.GEN.921171",
     "name": "Soupape de sécurité DN 32 modèle 1",
+    "category": "soupape",
+    "specification": "DN 32",
+    "active": true,
     "unit": "p",
-    "base_price": 20.5
+    "base_price": 85.89
   },
   {
     "id": "gm-299",
@@ -9867,10 +12555,13 @@ export const MOCK_CATALOGUE = [
       "code": "GM",
       "name": "Getaz Miauton"
     },
-    "reference": "GM/GN/9321",
+    "reference": "GM/GN/3629",
     "name": "Soupape de sécurité DN 32 variante 1",
+    "category": "soupape",
+    "specification": "DN 32",
+    "active": true,
     "unit": "p",
-    "base_price": 57.01
+    "base_price": 154.98
   },
   {
     "id": "nsb-300",
@@ -9878,10 +12569,13 @@ export const MOCK_CATALOGUE = [
       "code": "NSB",
       "name": "Nussbaum"
     },
-    "reference": "NSB-GEN-5998",
+    "reference": "NSB-GEN-3361",
     "name": "Soupape de sécurité DN 32 type 2",
+    "category": "soupape",
+    "specification": "DN 32",
+    "active": true,
     "unit": "p",
-    "base_price": 186.63
+    "base_price": 102.39
   },
   {
     "id": "st-300",
@@ -9889,10 +12583,13 @@ export const MOCK_CATALOGUE = [
       "code": "ST",
       "name": "Sanitas Troesch"
     },
-    "reference": "SAN.GEN.354180",
+    "reference": "SAN.GEN.431160",
     "name": "Soupape de sécurité DN 32 modèle 2",
+    "category": "soupape",
+    "specification": "DN 32",
+    "active": true,
     "unit": "p",
-    "base_price": 77.35
+    "base_price": 65.17
   },
   {
     "id": "gm-300",
@@ -9900,10 +12597,13 @@ export const MOCK_CATALOGUE = [
       "code": "GM",
       "name": "Getaz Miauton"
     },
-    "reference": "GM/GN/2409",
+    "reference": "GM/GN/7308",
     "name": "Soupape de sécurité DN 32 variante 2",
+    "category": "soupape",
+    "specification": "DN 32",
+    "active": true,
     "unit": "p",
-    "base_price": 189.02
+    "base_price": 54.41
   },
   {
     "id": "nsb-301",
@@ -9911,10 +12611,13 @@ export const MOCK_CATALOGUE = [
       "code": "NSB",
       "name": "Nussbaum"
     },
-    "reference": "NSB-GEN-2916",
+    "reference": "NSB-GEN-7464",
     "name": "Soupape de sécurité DN 32 type 3",
+    "category": "soupape",
+    "specification": "DN 32",
+    "active": true,
     "unit": "p",
-    "base_price": 146.58
+    "base_price": 45.37
   },
   {
     "id": "st-301",
@@ -9922,10 +12625,13 @@ export const MOCK_CATALOGUE = [
       "code": "ST",
       "name": "Sanitas Troesch"
     },
-    "reference": "SAN.GEN.778792",
+    "reference": "SAN.GEN.636280",
     "name": "Soupape de sécurité DN 32 modèle 3",
+    "category": "soupape",
+    "specification": "DN 32",
+    "active": true,
     "unit": "p",
-    "base_price": 132.95
+    "base_price": 171.78
   },
   {
     "id": "gm-301",
@@ -9933,10 +12639,13 @@ export const MOCK_CATALOGUE = [
       "code": "GM",
       "name": "Getaz Miauton"
     },
-    "reference": "GM/GN/7094",
+    "reference": "GM/GN/4233",
     "name": "Soupape de sécurité DN 32 variante 3",
+    "category": "soupape",
+    "specification": "DN 32",
+    "active": true,
     "unit": "p",
-    "base_price": 197.32
+    "base_price": 175.31
   },
   {
     "id": "nsb-302",
@@ -9944,10 +12653,13 @@ export const MOCK_CATALOGUE = [
       "code": "NSB",
       "name": "Nussbaum"
     },
-    "reference": "NSB-GEN-8944",
+    "reference": "NSB-GEN-9345",
     "name": "Soupape de sécurité DN 32 type 4",
+    "category": "soupape",
+    "specification": "DN 32",
+    "active": true,
     "unit": "p",
-    "base_price": 201.6
+    "base_price": 197.68
   },
   {
     "id": "st-302",
@@ -9955,10 +12667,13 @@ export const MOCK_CATALOGUE = [
       "code": "ST",
       "name": "Sanitas Troesch"
     },
-    "reference": "SAN.GEN.183289",
+    "reference": "SAN.GEN.800108",
     "name": "Soupape de sécurité DN 32 modèle 4",
+    "category": "soupape",
+    "specification": "DN 32",
+    "active": true,
     "unit": "p",
-    "base_price": 202.87
+    "base_price": 94.21
   },
   {
     "id": "gm-302",
@@ -9966,10 +12681,13 @@ export const MOCK_CATALOGUE = [
       "code": "GM",
       "name": "Getaz Miauton"
     },
-    "reference": "GM/GN/4392",
+    "reference": "GM/GN/6281",
     "name": "Soupape de sécurité DN 32 variante 4",
+    "category": "soupape",
+    "specification": "DN 32",
+    "active": true,
     "unit": "p",
-    "base_price": 69.7
+    "base_price": 39.08
   },
   {
     "id": "nsb-303",
@@ -9977,10 +12695,13 @@ export const MOCK_CATALOGUE = [
       "code": "NSB",
       "name": "Nussbaum"
     },
-    "reference": "NSB-GEN-5542",
+    "reference": "NSB-GEN-8634",
     "name": "Soupape de sécurité DN 40 type 0",
+    "category": "soupape",
+    "specification": "DN 40",
+    "active": true,
     "unit": "p",
-    "base_price": 28.52
+    "base_price": 35.13
   },
   {
     "id": "st-303",
@@ -9988,10 +12709,13 @@ export const MOCK_CATALOGUE = [
       "code": "ST",
       "name": "Sanitas Troesch"
     },
-    "reference": "SAN.GEN.969888",
+    "reference": "SAN.GEN.610744",
     "name": "Soupape de sécurité DN 40 modèle 0",
+    "category": "soupape",
+    "specification": "DN 40",
+    "active": true,
     "unit": "p",
-    "base_price": 166.5
+    "base_price": 133.81
   },
   {
     "id": "gm-303",
@@ -9999,10 +12723,13 @@ export const MOCK_CATALOGUE = [
       "code": "GM",
       "name": "Getaz Miauton"
     },
-    "reference": "GM/GN/2126",
+    "reference": "GM/GN/3102",
     "name": "Soupape de sécurité DN 40 variante 0",
+    "category": "soupape",
+    "specification": "DN 40",
+    "active": true,
     "unit": "p",
-    "base_price": 169.11
+    "base_price": 43.64
   },
   {
     "id": "nsb-304",
@@ -10010,10 +12737,13 @@ export const MOCK_CATALOGUE = [
       "code": "NSB",
       "name": "Nussbaum"
     },
-    "reference": "NSB-GEN-1303",
+    "reference": "NSB-GEN-7179",
     "name": "Soupape de sécurité DN 40 type 1",
+    "category": "soupape",
+    "specification": "DN 40",
+    "active": true,
     "unit": "p",
-    "base_price": 24.49
+    "base_price": 170.65
   },
   {
     "id": "st-304",
@@ -10021,10 +12751,13 @@ export const MOCK_CATALOGUE = [
       "code": "ST",
       "name": "Sanitas Troesch"
     },
-    "reference": "SAN.GEN.398963",
+    "reference": "SAN.GEN.275555",
     "name": "Soupape de sécurité DN 40 modèle 1",
+    "category": "soupape",
+    "specification": "DN 40",
+    "active": true,
     "unit": "p",
-    "base_price": 129.66
+    "base_price": 116.3
   },
   {
     "id": "gm-304",
@@ -10032,10 +12765,13 @@ export const MOCK_CATALOGUE = [
       "code": "GM",
       "name": "Getaz Miauton"
     },
-    "reference": "GM/GN/5751",
+    "reference": "GM/GN/8770",
     "name": "Soupape de sécurité DN 40 variante 1",
+    "category": "soupape",
+    "specification": "DN 40",
+    "active": true,
     "unit": "p",
-    "base_price": 51.37
+    "base_price": 184.6
   },
   {
     "id": "nsb-305",
@@ -10043,10 +12779,13 @@ export const MOCK_CATALOGUE = [
       "code": "NSB",
       "name": "Nussbaum"
     },
-    "reference": "NSB-GEN-9329",
+    "reference": "NSB-GEN-1106",
     "name": "Soupape de sécurité DN 40 type 2",
+    "category": "soupape",
+    "specification": "DN 40",
+    "active": true,
     "unit": "p",
-    "base_price": 116.75
+    "base_price": 205.35
   },
   {
     "id": "st-305",
@@ -10054,10 +12793,13 @@ export const MOCK_CATALOGUE = [
       "code": "ST",
       "name": "Sanitas Troesch"
     },
-    "reference": "SAN.GEN.867007",
+    "reference": "SAN.GEN.846065",
     "name": "Soupape de sécurité DN 40 modèle 2",
+    "category": "soupape",
+    "specification": "DN 40",
+    "active": true,
     "unit": "p",
-    "base_price": 172.35
+    "base_price": 118.09
   },
   {
     "id": "gm-305",
@@ -10065,10 +12807,13 @@ export const MOCK_CATALOGUE = [
       "code": "GM",
       "name": "Getaz Miauton"
     },
-    "reference": "GM/GN/4803",
+    "reference": "GM/GN/9353",
     "name": "Soupape de sécurité DN 40 variante 2",
+    "category": "soupape",
+    "specification": "DN 40",
+    "active": true,
     "unit": "p",
-    "base_price": 61.32
+    "base_price": 124.83
   },
   {
     "id": "nsb-306",
@@ -10076,10 +12821,13 @@ export const MOCK_CATALOGUE = [
       "code": "NSB",
       "name": "Nussbaum"
     },
-    "reference": "NSB-GEN-6781",
+    "reference": "NSB-GEN-9404",
     "name": "Soupape de sécurité DN 40 type 3",
+    "category": "soupape",
+    "specification": "DN 40",
+    "active": true,
     "unit": "p",
-    "base_price": 186.41
+    "base_price": 41.94
   },
   {
     "id": "st-306",
@@ -10087,10 +12835,13 @@ export const MOCK_CATALOGUE = [
       "code": "ST",
       "name": "Sanitas Troesch"
     },
-    "reference": "SAN.GEN.839970",
+    "reference": "SAN.GEN.977123",
     "name": "Soupape de sécurité DN 40 modèle 3",
+    "category": "soupape",
+    "specification": "DN 40",
+    "active": true,
     "unit": "p",
-    "base_price": 216.88
+    "base_price": 170.92
   },
   {
     "id": "gm-306",
@@ -10098,10 +12849,13 @@ export const MOCK_CATALOGUE = [
       "code": "GM",
       "name": "Getaz Miauton"
     },
-    "reference": "GM/GN/7684",
+    "reference": "GM/GN/9801",
     "name": "Soupape de sécurité DN 40 variante 3",
+    "category": "soupape",
+    "specification": "DN 40",
+    "active": true,
     "unit": "p",
-    "base_price": 58.65
+    "base_price": 83.01
   },
   {
     "id": "nsb-307",
@@ -10109,10 +12863,13 @@ export const MOCK_CATALOGUE = [
       "code": "NSB",
       "name": "Nussbaum"
     },
-    "reference": "NSB-GEN-2798",
+    "reference": "NSB-GEN-3814",
     "name": "Soupape de sécurité DN 40 type 4",
+    "category": "soupape",
+    "specification": "DN 40",
+    "active": true,
     "unit": "p",
-    "base_price": 136.59
+    "base_price": 201.71
   },
   {
     "id": "st-307",
@@ -10120,10 +12877,13 @@ export const MOCK_CATALOGUE = [
       "code": "ST",
       "name": "Sanitas Troesch"
     },
-    "reference": "SAN.GEN.528976",
+    "reference": "SAN.GEN.211666",
     "name": "Soupape de sécurité DN 40 modèle 4",
+    "category": "soupape",
+    "specification": "DN 40",
+    "active": true,
     "unit": "p",
-    "base_price": 88.19
+    "base_price": 167.21
   },
   {
     "id": "gm-307",
@@ -10131,10 +12891,13 @@ export const MOCK_CATALOGUE = [
       "code": "GM",
       "name": "Getaz Miauton"
     },
-    "reference": "GM/GN/8085",
+    "reference": "GM/GN/9476",
     "name": "Soupape de sécurité DN 40 variante 4",
+    "category": "soupape",
+    "specification": "DN 40",
+    "active": true,
     "unit": "p",
-    "base_price": 113.33
+    "base_price": 215.42
   },
   {
     "id": "nsb-308",
@@ -10142,10 +12905,13 @@ export const MOCK_CATALOGUE = [
       "code": "NSB",
       "name": "Nussbaum"
     },
-    "reference": "NSB-GEN-4287",
+    "reference": "NSB-GEN-6983",
     "name": "Soupape de sécurité DN 50 type 0",
+    "category": "soupape",
+    "specification": "DN 50",
+    "active": true,
     "unit": "p",
-    "base_price": 126.37
+    "base_price": 108.14
   },
   {
     "id": "st-308",
@@ -10153,10 +12919,13 @@ export const MOCK_CATALOGUE = [
       "code": "ST",
       "name": "Sanitas Troesch"
     },
-    "reference": "SAN.GEN.922541",
+    "reference": "SAN.GEN.543102",
     "name": "Soupape de sécurité DN 50 modèle 0",
+    "category": "soupape",
+    "specification": "DN 50",
+    "active": true,
     "unit": "p",
-    "base_price": 42.18
+    "base_price": 154.3
   },
   {
     "id": "gm-308",
@@ -10164,10 +12933,13 @@ export const MOCK_CATALOGUE = [
       "code": "GM",
       "name": "Getaz Miauton"
     },
-    "reference": "GM/GN/6813",
+    "reference": "GM/GN/6454",
     "name": "Soupape de sécurité DN 50 variante 0",
+    "category": "soupape",
+    "specification": "DN 50",
+    "active": true,
     "unit": "p",
-    "base_price": 75.73
+    "base_price": 160.72
   },
   {
     "id": "nsb-309",
@@ -10175,10 +12947,13 @@ export const MOCK_CATALOGUE = [
       "code": "NSB",
       "name": "Nussbaum"
     },
-    "reference": "NSB-GEN-8483",
+    "reference": "NSB-GEN-3026",
     "name": "Soupape de sécurité DN 50 type 1",
+    "category": "soupape",
+    "specification": "DN 50",
+    "active": true,
     "unit": "p",
-    "base_price": 132.69
+    "base_price": 121.94
   },
   {
     "id": "st-309",
@@ -10186,10 +12961,13 @@ export const MOCK_CATALOGUE = [
       "code": "ST",
       "name": "Sanitas Troesch"
     },
-    "reference": "SAN.GEN.742070",
+    "reference": "SAN.GEN.953395",
     "name": "Soupape de sécurité DN 50 modèle 1",
+    "category": "soupape",
+    "specification": "DN 50",
+    "active": true,
     "unit": "p",
-    "base_price": 98.11
+    "base_price": 123.04
   },
   {
     "id": "gm-309",
@@ -10197,10 +12975,13 @@ export const MOCK_CATALOGUE = [
       "code": "GM",
       "name": "Getaz Miauton"
     },
-    "reference": "GM/GN/1623",
+    "reference": "GM/GN/4085",
     "name": "Soupape de sécurité DN 50 variante 1",
+    "category": "soupape",
+    "specification": "DN 50",
+    "active": true,
     "unit": "p",
-    "base_price": 129.22
+    "base_price": 44.15
   },
   {
     "id": "nsb-310",
@@ -10208,10 +12989,13 @@ export const MOCK_CATALOGUE = [
       "code": "NSB",
       "name": "Nussbaum"
     },
-    "reference": "NSB-GEN-8690",
+    "reference": "NSB-GEN-1138",
     "name": "Soupape de sécurité DN 50 type 2",
+    "category": "soupape",
+    "specification": "DN 50",
+    "active": true,
     "unit": "p",
-    "base_price": 77.46
+    "base_price": 185.17
   },
   {
     "id": "st-310",
@@ -10219,10 +13003,13 @@ export const MOCK_CATALOGUE = [
       "code": "ST",
       "name": "Sanitas Troesch"
     },
-    "reference": "SAN.GEN.492250",
+    "reference": "SAN.GEN.753988",
     "name": "Soupape de sécurité DN 50 modèle 2",
+    "category": "soupape",
+    "specification": "DN 50",
+    "active": true,
     "unit": "p",
-    "base_price": 153.55
+    "base_price": 175.62
   },
   {
     "id": "gm-310",
@@ -10230,10 +13017,13 @@ export const MOCK_CATALOGUE = [
       "code": "GM",
       "name": "Getaz Miauton"
     },
-    "reference": "GM/GN/6045",
+    "reference": "GM/GN/1579",
     "name": "Soupape de sécurité DN 50 variante 2",
+    "category": "soupape",
+    "specification": "DN 50",
+    "active": true,
     "unit": "p",
-    "base_price": 169.11
+    "base_price": 127.37
   },
   {
     "id": "nsb-311",
@@ -10241,10 +13031,13 @@ export const MOCK_CATALOGUE = [
       "code": "NSB",
       "name": "Nussbaum"
     },
-    "reference": "NSB-GEN-2850",
+    "reference": "NSB-GEN-4432",
     "name": "Soupape de sécurité DN 50 type 3",
+    "category": "soupape",
+    "specification": "DN 50",
+    "active": true,
     "unit": "p",
-    "base_price": 127.55
+    "base_price": 160.16
   },
   {
     "id": "st-311",
@@ -10252,10 +13045,13 @@ export const MOCK_CATALOGUE = [
       "code": "ST",
       "name": "Sanitas Troesch"
     },
-    "reference": "SAN.GEN.990299",
+    "reference": "SAN.GEN.841139",
     "name": "Soupape de sécurité DN 50 modèle 3",
+    "category": "soupape",
+    "specification": "DN 50",
+    "active": true,
     "unit": "p",
-    "base_price": 60.05
+    "base_price": 140.85
   },
   {
     "id": "gm-311",
@@ -10263,10 +13059,13 @@ export const MOCK_CATALOGUE = [
       "code": "GM",
       "name": "Getaz Miauton"
     },
-    "reference": "GM/GN/1050",
+    "reference": "GM/GN/4828",
     "name": "Soupape de sécurité DN 50 variante 3",
+    "category": "soupape",
+    "specification": "DN 50",
+    "active": true,
     "unit": "p",
-    "base_price": 159.89
+    "base_price": 106.18
   },
   {
     "id": "nsb-312",
@@ -10274,10 +13073,13 @@ export const MOCK_CATALOGUE = [
       "code": "NSB",
       "name": "Nussbaum"
     },
-    "reference": "NSB-GEN-9471",
+    "reference": "NSB-GEN-6765",
     "name": "Soupape de sécurité DN 50 type 4",
+    "category": "soupape",
+    "specification": "DN 50",
+    "active": true,
     "unit": "p",
-    "base_price": 183
+    "base_price": 204.18
   },
   {
     "id": "st-312",
@@ -10285,10 +13087,13 @@ export const MOCK_CATALOGUE = [
       "code": "ST",
       "name": "Sanitas Troesch"
     },
-    "reference": "SAN.GEN.684844",
+    "reference": "SAN.GEN.309792",
     "name": "Soupape de sécurité DN 50 modèle 4",
+    "category": "soupape",
+    "specification": "DN 50",
+    "active": true,
     "unit": "p",
-    "base_price": 101.74
+    "base_price": 36.36
   },
   {
     "id": "gm-312",
@@ -10296,10 +13101,13 @@ export const MOCK_CATALOGUE = [
       "code": "GM",
       "name": "Getaz Miauton"
     },
-    "reference": "GM/GN/1856",
+    "reference": "GM/GN/2220",
     "name": "Soupape de sécurité DN 50 variante 4",
+    "category": "soupape",
+    "specification": "DN 50",
+    "active": true,
     "unit": "p",
-    "base_price": 156.83
+    "base_price": 113.89
   },
   {
     "id": "nsb-313",
@@ -10307,10 +13115,13 @@ export const MOCK_CATALOGUE = [
       "code": "NSB",
       "name": "Nussbaum"
     },
-    "reference": "NSB-GEN-5908",
+    "reference": "NSB-GEN-6285",
     "name": "Manomètre 1/2\" type 0",
+    "category": "mesure",
+    "specification": "1/2\"",
+    "active": true,
     "unit": "p",
-    "base_price": 197.86
+    "base_price": 219.73
   },
   {
     "id": "st-313",
@@ -10318,10 +13129,13 @@ export const MOCK_CATALOGUE = [
       "code": "ST",
       "name": "Sanitas Troesch"
     },
-    "reference": "SAN.GEN.455815",
+    "reference": "SAN.GEN.977347",
     "name": "Manomètre 1/2\" modèle 0",
+    "category": "mesure",
+    "specification": "1/2\"",
+    "active": true,
     "unit": "p",
-    "base_price": 102.34
+    "base_price": 25.26
   },
   {
     "id": "gm-313",
@@ -10329,10 +13143,13 @@ export const MOCK_CATALOGUE = [
       "code": "GM",
       "name": "Getaz Miauton"
     },
-    "reference": "GM/GN/3739",
+    "reference": "GM/GN/8651",
     "name": "Manomètre 1/2\" variante 0",
+    "category": "mesure",
+    "specification": "1/2\"",
+    "active": true,
     "unit": "p",
-    "base_price": 139.62
+    "base_price": 154.01
   },
   {
     "id": "nsb-314",
@@ -10340,10 +13157,13 @@ export const MOCK_CATALOGUE = [
       "code": "NSB",
       "name": "Nussbaum"
     },
-    "reference": "NSB-GEN-5875",
+    "reference": "NSB-GEN-4566",
     "name": "Manomètre 1/2\" type 1",
+    "category": "mesure",
+    "specification": "1/2\"",
+    "active": true,
     "unit": "p",
-    "base_price": 140.51
+    "base_price": 172.81
   },
   {
     "id": "st-314",
@@ -10351,10 +13171,13 @@ export const MOCK_CATALOGUE = [
       "code": "ST",
       "name": "Sanitas Troesch"
     },
-    "reference": "SAN.GEN.602521",
+    "reference": "SAN.GEN.477339",
     "name": "Manomètre 1/2\" modèle 1",
+    "category": "mesure",
+    "specification": "1/2\"",
+    "active": true,
     "unit": "p",
-    "base_price": 125.23
+    "base_price": 145.25
   },
   {
     "id": "gm-314",
@@ -10362,10 +13185,13 @@ export const MOCK_CATALOGUE = [
       "code": "GM",
       "name": "Getaz Miauton"
     },
-    "reference": "GM/GN/1543",
+    "reference": "GM/GN/3670",
     "name": "Manomètre 1/2\" variante 1",
+    "category": "mesure",
+    "specification": "1/2\"",
+    "active": true,
     "unit": "p",
-    "base_price": 108.89
+    "base_price": 35.7
   },
   {
     "id": "nsb-315",
@@ -10373,10 +13199,13 @@ export const MOCK_CATALOGUE = [
       "code": "NSB",
       "name": "Nussbaum"
     },
-    "reference": "NSB-GEN-3405",
+    "reference": "NSB-GEN-8534",
     "name": "Manomètre 1/2\" type 2",
+    "category": "mesure",
+    "specification": "1/2\"",
+    "active": true,
     "unit": "p",
-    "base_price": 135
+    "base_price": 27.11
   },
   {
     "id": "st-315",
@@ -10384,10 +13213,13 @@ export const MOCK_CATALOGUE = [
       "code": "ST",
       "name": "Sanitas Troesch"
     },
-    "reference": "SAN.GEN.208053",
+    "reference": "SAN.GEN.307171",
     "name": "Manomètre 1/2\" modèle 2",
+    "category": "mesure",
+    "specification": "1/2\"",
+    "active": true,
     "unit": "p",
-    "base_price": 104.96
+    "base_price": 112.15
   },
   {
     "id": "gm-315",
@@ -10395,10 +13227,13 @@ export const MOCK_CATALOGUE = [
       "code": "GM",
       "name": "Getaz Miauton"
     },
-    "reference": "GM/GN/4557",
+    "reference": "GM/GN/1121",
     "name": "Manomètre 1/2\" variante 2",
+    "category": "mesure",
+    "specification": "1/2\"",
+    "active": true,
     "unit": "p",
-    "base_price": 120.18
+    "base_price": 126.12
   },
   {
     "id": "nsb-316",
@@ -10406,10 +13241,13 @@ export const MOCK_CATALOGUE = [
       "code": "NSB",
       "name": "Nussbaum"
     },
-    "reference": "NSB-GEN-4530",
+    "reference": "NSB-GEN-5902",
     "name": "Manomètre 1/2\" type 3",
+    "category": "mesure",
+    "specification": "1/2\"",
+    "active": true,
     "unit": "p",
-    "base_price": 138.16
+    "base_price": 72.58
   },
   {
     "id": "st-316",
@@ -10417,10 +13255,13 @@ export const MOCK_CATALOGUE = [
       "code": "ST",
       "name": "Sanitas Troesch"
     },
-    "reference": "SAN.GEN.896285",
+    "reference": "SAN.GEN.981621",
     "name": "Manomètre 1/2\" modèle 3",
+    "category": "mesure",
+    "specification": "1/2\"",
+    "active": true,
     "unit": "p",
-    "base_price": 93.51
+    "base_price": 157.33
   },
   {
     "id": "gm-316",
@@ -10428,10 +13269,13 @@ export const MOCK_CATALOGUE = [
       "code": "GM",
       "name": "Getaz Miauton"
     },
-    "reference": "GM/GN/7233",
+    "reference": "GM/GN/4007",
     "name": "Manomètre 1/2\" variante 3",
+    "category": "mesure",
+    "specification": "1/2\"",
+    "active": true,
     "unit": "p",
-    "base_price": 132.26
+    "base_price": 155.54
   },
   {
     "id": "nsb-317",
@@ -10439,10 +13283,13 @@ export const MOCK_CATALOGUE = [
       "code": "NSB",
       "name": "Nussbaum"
     },
-    "reference": "NSB-GEN-9856",
+    "reference": "NSB-GEN-5931",
     "name": "Manomètre 1/2\" type 4",
+    "category": "mesure",
+    "specification": "1/2\"",
+    "active": true,
     "unit": "p",
-    "base_price": 176.73
+    "base_price": 58.86
   },
   {
     "id": "st-317",
@@ -10450,10 +13297,13 @@ export const MOCK_CATALOGUE = [
       "code": "ST",
       "name": "Sanitas Troesch"
     },
-    "reference": "SAN.GEN.364471",
+    "reference": "SAN.GEN.224968",
     "name": "Manomètre 1/2\" modèle 4",
+    "category": "mesure",
+    "specification": "1/2\"",
+    "active": true,
     "unit": "p",
-    "base_price": 67.59
+    "base_price": 85.58
   },
   {
     "id": "gm-317",
@@ -10461,10 +13311,13 @@ export const MOCK_CATALOGUE = [
       "code": "GM",
       "name": "Getaz Miauton"
     },
-    "reference": "GM/GN/9049",
+    "reference": "GM/GN/7287",
     "name": "Manomètre 1/2\" variante 4",
+    "category": "mesure",
+    "specification": "1/2\"",
+    "active": true,
     "unit": "p",
-    "base_price": 27.92
+    "base_price": 122.92
   },
   {
     "id": "nsb-318",
@@ -10472,10 +13325,13 @@ export const MOCK_CATALOGUE = [
       "code": "NSB",
       "name": "Nussbaum"
     },
-    "reference": "NSB-GEN-9333",
+    "reference": "NSB-GEN-4860",
     "name": "Manomètre 3/4\" type 0",
+    "category": "mesure",
+    "specification": "3/4\"",
+    "active": true,
     "unit": "p",
-    "base_price": 87.13
+    "base_price": 135.11
   },
   {
     "id": "st-318",
@@ -10483,10 +13339,13 @@ export const MOCK_CATALOGUE = [
       "code": "ST",
       "name": "Sanitas Troesch"
     },
-    "reference": "SAN.GEN.648415",
+    "reference": "SAN.GEN.400753",
     "name": "Manomètre 3/4\" modèle 0",
+    "category": "mesure",
+    "specification": "3/4\"",
+    "active": true,
     "unit": "p",
-    "base_price": 44.52
+    "base_price": 165.7
   },
   {
     "id": "gm-318",
@@ -10494,10 +13353,13 @@ export const MOCK_CATALOGUE = [
       "code": "GM",
       "name": "Getaz Miauton"
     },
-    "reference": "GM/GN/5245",
+    "reference": "GM/GN/3774",
     "name": "Manomètre 3/4\" variante 0",
+    "category": "mesure",
+    "specification": "3/4\"",
+    "active": true,
     "unit": "p",
-    "base_price": 66.92
+    "base_price": 138.86
   },
   {
     "id": "nsb-319",
@@ -10505,10 +13367,13 @@ export const MOCK_CATALOGUE = [
       "code": "NSB",
       "name": "Nussbaum"
     },
-    "reference": "NSB-GEN-2778",
+    "reference": "NSB-GEN-6742",
     "name": "Manomètre 3/4\" type 1",
+    "category": "mesure",
+    "specification": "3/4\"",
+    "active": true,
     "unit": "p",
-    "base_price": 43.6
+    "base_price": 162.95
   },
   {
     "id": "st-319",
@@ -10516,10 +13381,13 @@ export const MOCK_CATALOGUE = [
       "code": "ST",
       "name": "Sanitas Troesch"
     },
-    "reference": "SAN.GEN.366875",
+    "reference": "SAN.GEN.539085",
     "name": "Manomètre 3/4\" modèle 1",
+    "category": "mesure",
+    "specification": "3/4\"",
+    "active": true,
     "unit": "p",
-    "base_price": 88.12
+    "base_price": 33.59
   },
   {
     "id": "gm-319",
@@ -10527,10 +13395,13 @@ export const MOCK_CATALOGUE = [
       "code": "GM",
       "name": "Getaz Miauton"
     },
-    "reference": "GM/GN/2488",
+    "reference": "GM/GN/7168",
     "name": "Manomètre 3/4\" variante 1",
+    "category": "mesure",
+    "specification": "3/4\"",
+    "active": true,
     "unit": "p",
-    "base_price": 80.51
+    "base_price": 105.97
   },
   {
     "id": "nsb-320",
@@ -10538,10 +13409,13 @@ export const MOCK_CATALOGUE = [
       "code": "NSB",
       "name": "Nussbaum"
     },
-    "reference": "NSB-GEN-3408",
+    "reference": "NSB-GEN-6208",
     "name": "Manomètre 3/4\" type 2",
+    "category": "mesure",
+    "specification": "3/4\"",
+    "active": true,
     "unit": "p",
-    "base_price": 61.34
+    "base_price": 104.16
   },
   {
     "id": "st-320",
@@ -10549,10 +13423,13 @@ export const MOCK_CATALOGUE = [
       "code": "ST",
       "name": "Sanitas Troesch"
     },
-    "reference": "SAN.GEN.379963",
+    "reference": "SAN.GEN.268707",
     "name": "Manomètre 3/4\" modèle 2",
+    "category": "mesure",
+    "specification": "3/4\"",
+    "active": true,
     "unit": "p",
-    "base_price": 150.28
+    "base_price": 138.21
   },
   {
     "id": "gm-320",
@@ -10560,10 +13437,13 @@ export const MOCK_CATALOGUE = [
       "code": "GM",
       "name": "Getaz Miauton"
     },
-    "reference": "GM/GN/2299",
+    "reference": "GM/GN/3554",
     "name": "Manomètre 3/4\" variante 2",
+    "category": "mesure",
+    "specification": "3/4\"",
+    "active": true,
     "unit": "p",
-    "base_price": 132.5
+    "base_price": 72.22
   },
   {
     "id": "nsb-321",
@@ -10571,10 +13451,13 @@ export const MOCK_CATALOGUE = [
       "code": "NSB",
       "name": "Nussbaum"
     },
-    "reference": "NSB-GEN-6081",
+    "reference": "NSB-GEN-8537",
     "name": "Manomètre 3/4\" type 3",
+    "category": "mesure",
+    "specification": "3/4\"",
+    "active": true,
     "unit": "p",
-    "base_price": 55.59
+    "base_price": 30.99
   },
   {
     "id": "st-321",
@@ -10582,10 +13465,13 @@ export const MOCK_CATALOGUE = [
       "code": "ST",
       "name": "Sanitas Troesch"
     },
-    "reference": "SAN.GEN.154139",
+    "reference": "SAN.GEN.589719",
     "name": "Manomètre 3/4\" modèle 3",
+    "category": "mesure",
+    "specification": "3/4\"",
+    "active": true,
     "unit": "p",
-    "base_price": 187.5
+    "base_price": 26.76
   },
   {
     "id": "gm-321",
@@ -10593,10 +13479,13 @@ export const MOCK_CATALOGUE = [
       "code": "GM",
       "name": "Getaz Miauton"
     },
-    "reference": "GM/GN/6322",
+    "reference": "GM/GN/2761",
     "name": "Manomètre 3/4\" variante 3",
+    "category": "mesure",
+    "specification": "3/4\"",
+    "active": true,
     "unit": "p",
-    "base_price": 64.78
+    "base_price": 219.99
   },
   {
     "id": "nsb-322",
@@ -10604,10 +13493,13 @@ export const MOCK_CATALOGUE = [
       "code": "NSB",
       "name": "Nussbaum"
     },
-    "reference": "NSB-GEN-7854",
+    "reference": "NSB-GEN-5038",
     "name": "Manomètre 3/4\" type 4",
+    "category": "mesure",
+    "specification": "3/4\"",
+    "active": true,
     "unit": "p",
-    "base_price": 23.87
+    "base_price": 59.81
   },
   {
     "id": "st-322",
@@ -10615,10 +13507,13 @@ export const MOCK_CATALOGUE = [
       "code": "ST",
       "name": "Sanitas Troesch"
     },
-    "reference": "SAN.GEN.211911",
+    "reference": "SAN.GEN.175200",
     "name": "Manomètre 3/4\" modèle 4",
+    "category": "mesure",
+    "specification": "3/4\"",
+    "active": true,
     "unit": "p",
-    "base_price": 24.88
+    "base_price": 168.82
   },
   {
     "id": "gm-322",
@@ -10626,10 +13521,13 @@ export const MOCK_CATALOGUE = [
       "code": "GM",
       "name": "Getaz Miauton"
     },
-    "reference": "GM/GN/3772",
+    "reference": "GM/GN/4653",
     "name": "Manomètre 3/4\" variante 4",
+    "category": "mesure",
+    "specification": "3/4\"",
+    "active": true,
     "unit": "p",
-    "base_price": 134.07
+    "base_price": 120.89
   },
   {
     "id": "nsb-323",
@@ -10637,10 +13535,13 @@ export const MOCK_CATALOGUE = [
       "code": "NSB",
       "name": "Nussbaum"
     },
-    "reference": "NSB-GEN-4338",
+    "reference": "NSB-GEN-7835",
     "name": "Manomètre 1\" type 0",
+    "category": "mesure",
+    "specification": "1\"",
+    "active": true,
     "unit": "p",
-    "base_price": 83.48
+    "base_price": 202.77
   },
   {
     "id": "st-323",
@@ -10648,10 +13549,13 @@ export const MOCK_CATALOGUE = [
       "code": "ST",
       "name": "Sanitas Troesch"
     },
-    "reference": "SAN.GEN.311346",
+    "reference": "SAN.GEN.796783",
     "name": "Manomètre 1\" modèle 0",
+    "category": "mesure",
+    "specification": "1\"",
+    "active": true,
     "unit": "p",
-    "base_price": 123.97
+    "base_price": 23.69
   },
   {
     "id": "gm-323",
@@ -10659,10 +13563,13 @@ export const MOCK_CATALOGUE = [
       "code": "GM",
       "name": "Getaz Miauton"
     },
-    "reference": "GM/GN/9548",
+    "reference": "GM/GN/1761",
     "name": "Manomètre 1\" variante 0",
+    "category": "mesure",
+    "specification": "1\"",
+    "active": true,
     "unit": "p",
-    "base_price": 195.74
+    "base_price": 94.55
   },
   {
     "id": "nsb-324",
@@ -10670,10 +13577,13 @@ export const MOCK_CATALOGUE = [
       "code": "NSB",
       "name": "Nussbaum"
     },
-    "reference": "NSB-GEN-4743",
+    "reference": "NSB-GEN-5666",
     "name": "Manomètre 1\" type 1",
+    "category": "mesure",
+    "specification": "1\"",
+    "active": true,
     "unit": "p",
-    "base_price": 155.83
+    "base_price": 210.73
   },
   {
     "id": "st-324",
@@ -10681,10 +13591,13 @@ export const MOCK_CATALOGUE = [
       "code": "ST",
       "name": "Sanitas Troesch"
     },
-    "reference": "SAN.GEN.462039",
+    "reference": "SAN.GEN.904517",
     "name": "Manomètre 1\" modèle 1",
+    "category": "mesure",
+    "specification": "1\"",
+    "active": true,
     "unit": "p",
-    "base_price": 149.2
+    "base_price": 35.29
   },
   {
     "id": "gm-324",
@@ -10692,10 +13605,13 @@ export const MOCK_CATALOGUE = [
       "code": "GM",
       "name": "Getaz Miauton"
     },
-    "reference": "GM/GN/9527",
+    "reference": "GM/GN/3403",
     "name": "Manomètre 1\" variante 1",
+    "category": "mesure",
+    "specification": "1\"",
+    "active": true,
     "unit": "p",
-    "base_price": 133.83
+    "base_price": 104.19
   },
   {
     "id": "nsb-325",
@@ -10703,10 +13619,13 @@ export const MOCK_CATALOGUE = [
       "code": "NSB",
       "name": "Nussbaum"
     },
-    "reference": "NSB-GEN-2171",
+    "reference": "NSB-GEN-7661",
     "name": "Manomètre 1\" type 2",
+    "category": "mesure",
+    "specification": "1\"",
+    "active": true,
     "unit": "p",
-    "base_price": 103.44
+    "base_price": 71.1
   },
   {
     "id": "st-325",
@@ -10714,10 +13633,13 @@ export const MOCK_CATALOGUE = [
       "code": "ST",
       "name": "Sanitas Troesch"
     },
-    "reference": "SAN.GEN.865948",
+    "reference": "SAN.GEN.296047",
     "name": "Manomètre 1\" modèle 2",
+    "category": "mesure",
+    "specification": "1\"",
+    "active": true,
     "unit": "p",
-    "base_price": 101.6
+    "base_price": 73.69
   },
   {
     "id": "gm-325",
@@ -10725,10 +13647,13 @@ export const MOCK_CATALOGUE = [
       "code": "GM",
       "name": "Getaz Miauton"
     },
-    "reference": "GM/GN/5148",
+    "reference": "GM/GN/4855",
     "name": "Manomètre 1\" variante 2",
+    "category": "mesure",
+    "specification": "1\"",
+    "active": true,
     "unit": "p",
-    "base_price": 133.52
+    "base_price": 122.27
   },
   {
     "id": "nsb-326",
@@ -10736,10 +13661,13 @@ export const MOCK_CATALOGUE = [
       "code": "NSB",
       "name": "Nussbaum"
     },
-    "reference": "NSB-GEN-1109",
+    "reference": "NSB-GEN-7384",
     "name": "Manomètre 1\" type 3",
+    "category": "mesure",
+    "specification": "1\"",
+    "active": true,
     "unit": "p",
-    "base_price": 48.51
+    "base_price": 153.09
   },
   {
     "id": "st-326",
@@ -10747,10 +13675,13 @@ export const MOCK_CATALOGUE = [
       "code": "ST",
       "name": "Sanitas Troesch"
     },
-    "reference": "SAN.GEN.754440",
+    "reference": "SAN.GEN.686626",
     "name": "Manomètre 1\" modèle 3",
+    "category": "mesure",
+    "specification": "1\"",
+    "active": true,
     "unit": "p",
-    "base_price": 24.81
+    "base_price": 200.94
   },
   {
     "id": "gm-326",
@@ -10758,10 +13689,13 @@ export const MOCK_CATALOGUE = [
       "code": "GM",
       "name": "Getaz Miauton"
     },
-    "reference": "GM/GN/6254",
+    "reference": "GM/GN/3372",
     "name": "Manomètre 1\" variante 3",
+    "category": "mesure",
+    "specification": "1\"",
+    "active": true,
     "unit": "p",
-    "base_price": 137.01
+    "base_price": 216.07
   },
   {
     "id": "nsb-327",
@@ -10769,10 +13703,13 @@ export const MOCK_CATALOGUE = [
       "code": "NSB",
       "name": "Nussbaum"
     },
-    "reference": "NSB-GEN-6926",
+    "reference": "NSB-GEN-9212",
     "name": "Manomètre 1\" type 4",
+    "category": "mesure",
+    "specification": "1\"",
+    "active": true,
     "unit": "p",
-    "base_price": 201.34
+    "base_price": 106.59
   },
   {
     "id": "st-327",
@@ -10780,10 +13717,13 @@ export const MOCK_CATALOGUE = [
       "code": "ST",
       "name": "Sanitas Troesch"
     },
-    "reference": "SAN.GEN.745681",
+    "reference": "SAN.GEN.720990",
     "name": "Manomètre 1\" modèle 4",
+    "category": "mesure",
+    "specification": "1\"",
+    "active": true,
     "unit": "p",
-    "base_price": 176.01
+    "base_price": 196.58
   },
   {
     "id": "gm-327",
@@ -10791,10 +13731,13 @@ export const MOCK_CATALOGUE = [
       "code": "GM",
       "name": "Getaz Miauton"
     },
-    "reference": "GM/GN/2239",
+    "reference": "GM/GN/7774",
     "name": "Manomètre 1\" variante 4",
+    "category": "mesure",
+    "specification": "1\"",
+    "active": true,
     "unit": "p",
-    "base_price": 67.52
+    "base_price": 99.88
   },
   {
     "id": "nsb-328",
@@ -10802,10 +13745,13 @@ export const MOCK_CATALOGUE = [
       "code": "NSB",
       "name": "Nussbaum"
     },
-    "reference": "NSB-GEN-6331",
+    "reference": "NSB-GEN-6328",
     "name": "Manomètre 1 1/4\" type 0",
+    "category": "mesure",
+    "specification": "1 1/4\"",
+    "active": true,
     "unit": "p",
-    "base_price": 25.77
+    "base_price": 206.94
   },
   {
     "id": "st-328",
@@ -10813,10 +13759,13 @@ export const MOCK_CATALOGUE = [
       "code": "ST",
       "name": "Sanitas Troesch"
     },
-    "reference": "SAN.GEN.392076",
+    "reference": "SAN.GEN.522594",
     "name": "Manomètre 1 1/4\" modèle 0",
+    "category": "mesure",
+    "specification": "1 1/4\"",
+    "active": true,
     "unit": "p",
-    "base_price": 106.6
+    "base_price": 217.85
   },
   {
     "id": "gm-328",
@@ -10824,10 +13773,13 @@ export const MOCK_CATALOGUE = [
       "code": "GM",
       "name": "Getaz Miauton"
     },
-    "reference": "GM/GN/8168",
+    "reference": "GM/GN/9511",
     "name": "Manomètre 1 1/4\" variante 0",
+    "category": "mesure",
+    "specification": "1 1/4\"",
+    "active": true,
     "unit": "p",
-    "base_price": 41.48
+    "base_price": 137.35
   },
   {
     "id": "nsb-329",
@@ -10835,10 +13787,13 @@ export const MOCK_CATALOGUE = [
       "code": "NSB",
       "name": "Nussbaum"
     },
-    "reference": "NSB-GEN-6437",
+    "reference": "NSB-GEN-9576",
     "name": "Manomètre 1 1/4\" type 1",
+    "category": "mesure",
+    "specification": "1 1/4\"",
+    "active": true,
     "unit": "p",
-    "base_price": 43.06
+    "base_price": 152.82
   },
   {
     "id": "st-329",
@@ -10846,10 +13801,13 @@ export const MOCK_CATALOGUE = [
       "code": "ST",
       "name": "Sanitas Troesch"
     },
-    "reference": "SAN.GEN.691095",
+    "reference": "SAN.GEN.289135",
     "name": "Manomètre 1 1/4\" modèle 1",
+    "category": "mesure",
+    "specification": "1 1/4\"",
+    "active": true,
     "unit": "p",
-    "base_price": 40.46
+    "base_price": 214.85
   },
   {
     "id": "gm-329",
@@ -10857,10 +13815,13 @@ export const MOCK_CATALOGUE = [
       "code": "GM",
       "name": "Getaz Miauton"
     },
-    "reference": "GM/GN/3917",
+    "reference": "GM/GN/1041",
     "name": "Manomètre 1 1/4\" variante 1",
+    "category": "mesure",
+    "specification": "1 1/4\"",
+    "active": true,
     "unit": "p",
-    "base_price": 57.16
+    "base_price": 88.9
   },
   {
     "id": "nsb-330",
@@ -10868,10 +13829,13 @@ export const MOCK_CATALOGUE = [
       "code": "NSB",
       "name": "Nussbaum"
     },
-    "reference": "NSB-GEN-1773",
+    "reference": "NSB-GEN-7019",
     "name": "Manomètre 1 1/4\" type 2",
+    "category": "mesure",
+    "specification": "1 1/4\"",
+    "active": true,
     "unit": "p",
-    "base_price": 92.5
+    "base_price": 105.96
   },
   {
     "id": "st-330",
@@ -10879,10 +13843,13 @@ export const MOCK_CATALOGUE = [
       "code": "ST",
       "name": "Sanitas Troesch"
     },
-    "reference": "SAN.GEN.444154",
+    "reference": "SAN.GEN.420354",
     "name": "Manomètre 1 1/4\" modèle 2",
+    "category": "mesure",
+    "specification": "1 1/4\"",
+    "active": true,
     "unit": "p",
-    "base_price": 56.58
+    "base_price": 33.65
   },
   {
     "id": "gm-330",
@@ -10890,10 +13857,13 @@ export const MOCK_CATALOGUE = [
       "code": "GM",
       "name": "Getaz Miauton"
     },
-    "reference": "GM/GN/7922",
+    "reference": "GM/GN/6092",
     "name": "Manomètre 1 1/4\" variante 2",
+    "category": "mesure",
+    "specification": "1 1/4\"",
+    "active": true,
     "unit": "p",
-    "base_price": 32.88
+    "base_price": 90.8
   },
   {
     "id": "nsb-331",
@@ -10901,10 +13871,13 @@ export const MOCK_CATALOGUE = [
       "code": "NSB",
       "name": "Nussbaum"
     },
-    "reference": "NSB-GEN-7246",
+    "reference": "NSB-GEN-8924",
     "name": "Manomètre 1 1/4\" type 3",
+    "category": "mesure",
+    "specification": "1 1/4\"",
+    "active": true,
     "unit": "p",
-    "base_price": 135.3
+    "base_price": 42
   },
   {
     "id": "st-331",
@@ -10912,10 +13885,13 @@ export const MOCK_CATALOGUE = [
       "code": "ST",
       "name": "Sanitas Troesch"
     },
-    "reference": "SAN.GEN.701398",
+    "reference": "SAN.GEN.181925",
     "name": "Manomètre 1 1/4\" modèle 3",
+    "category": "mesure",
+    "specification": "1 1/4\"",
+    "active": true,
     "unit": "p",
-    "base_price": 35.97
+    "base_price": 63.37
   },
   {
     "id": "gm-331",
@@ -10923,10 +13899,13 @@ export const MOCK_CATALOGUE = [
       "code": "GM",
       "name": "Getaz Miauton"
     },
-    "reference": "GM/GN/2662",
+    "reference": "GM/GN/5827",
     "name": "Manomètre 1 1/4\" variante 3",
+    "category": "mesure",
+    "specification": "1 1/4\"",
+    "active": true,
     "unit": "p",
-    "base_price": 38.2
+    "base_price": 106.25
   },
   {
     "id": "nsb-332",
@@ -10934,10 +13913,13 @@ export const MOCK_CATALOGUE = [
       "code": "NSB",
       "name": "Nussbaum"
     },
-    "reference": "NSB-GEN-4256",
+    "reference": "NSB-GEN-3843",
     "name": "Manomètre 1 1/4\" type 4",
+    "category": "mesure",
+    "specification": "1 1/4\"",
+    "active": true,
     "unit": "p",
-    "base_price": 67.3
+    "base_price": 120.75
   },
   {
     "id": "st-332",
@@ -10945,10 +13927,13 @@ export const MOCK_CATALOGUE = [
       "code": "ST",
       "name": "Sanitas Troesch"
     },
-    "reference": "SAN.GEN.498839",
+    "reference": "SAN.GEN.826255",
     "name": "Manomètre 1 1/4\" modèle 4",
+    "category": "mesure",
+    "specification": "1 1/4\"",
+    "active": true,
     "unit": "p",
-    "base_price": 154.53
+    "base_price": 219.87
   },
   {
     "id": "gm-332",
@@ -10956,10 +13941,13 @@ export const MOCK_CATALOGUE = [
       "code": "GM",
       "name": "Getaz Miauton"
     },
-    "reference": "GM/GN/3914",
+    "reference": "GM/GN/8562",
     "name": "Manomètre 1 1/4\" variante 4",
+    "category": "mesure",
+    "specification": "1 1/4\"",
+    "active": true,
     "unit": "p",
-    "base_price": 86.68
+    "base_price": 194.75
   },
   {
     "id": "nsb-333",
@@ -10967,10 +13955,13 @@ export const MOCK_CATALOGUE = [
       "code": "NSB",
       "name": "Nussbaum"
     },
-    "reference": "NSB-GEN-8818",
+    "reference": "NSB-GEN-1827",
     "name": "Manomètre 1 1/2\" type 0",
+    "category": "mesure",
+    "specification": "1 1/2\"",
+    "active": true,
     "unit": "p",
-    "base_price": 154.29
+    "base_price": 29.28
   },
   {
     "id": "st-333",
@@ -10978,10 +13969,13 @@ export const MOCK_CATALOGUE = [
       "code": "ST",
       "name": "Sanitas Troesch"
     },
-    "reference": "SAN.GEN.682263",
+    "reference": "SAN.GEN.436881",
     "name": "Manomètre 1 1/2\" modèle 0",
+    "category": "mesure",
+    "specification": "1 1/2\"",
+    "active": true,
     "unit": "p",
-    "base_price": 154.13
+    "base_price": 150.36
   },
   {
     "id": "gm-333",
@@ -10989,10 +13983,13 @@ export const MOCK_CATALOGUE = [
       "code": "GM",
       "name": "Getaz Miauton"
     },
-    "reference": "GM/GN/8688",
+    "reference": "GM/GN/4557",
     "name": "Manomètre 1 1/2\" variante 0",
+    "category": "mesure",
+    "specification": "1 1/2\"",
+    "active": true,
     "unit": "p",
-    "base_price": 117.94
+    "base_price": 88.94
   },
   {
     "id": "nsb-334",
@@ -11000,10 +13997,13 @@ export const MOCK_CATALOGUE = [
       "code": "NSB",
       "name": "Nussbaum"
     },
-    "reference": "NSB-GEN-3357",
+    "reference": "NSB-GEN-2910",
     "name": "Manomètre 1 1/2\" type 1",
+    "category": "mesure",
+    "specification": "1 1/2\"",
+    "active": true,
     "unit": "p",
-    "base_price": 191.65
+    "base_price": 115.57
   },
   {
     "id": "st-334",
@@ -11011,10 +14011,13 @@ export const MOCK_CATALOGUE = [
       "code": "ST",
       "name": "Sanitas Troesch"
     },
-    "reference": "SAN.GEN.477354",
+    "reference": "SAN.GEN.275001",
     "name": "Manomètre 1 1/2\" modèle 1",
+    "category": "mesure",
+    "specification": "1 1/2\"",
+    "active": true,
     "unit": "p",
-    "base_price": 28.59
+    "base_price": 72.18
   },
   {
     "id": "gm-334",
@@ -11022,10 +14025,13 @@ export const MOCK_CATALOGUE = [
       "code": "GM",
       "name": "Getaz Miauton"
     },
-    "reference": "GM/GN/4184",
+    "reference": "GM/GN/4689",
     "name": "Manomètre 1 1/2\" variante 1",
+    "category": "mesure",
+    "specification": "1 1/2\"",
+    "active": true,
     "unit": "p",
-    "base_price": 27.17
+    "base_price": 114.94
   },
   {
     "id": "nsb-335",
@@ -11033,10 +14039,13 @@ export const MOCK_CATALOGUE = [
       "code": "NSB",
       "name": "Nussbaum"
     },
-    "reference": "NSB-GEN-9556",
+    "reference": "NSB-GEN-9381",
     "name": "Manomètre 1 1/2\" type 2",
+    "category": "mesure",
+    "specification": "1 1/2\"",
+    "active": true,
     "unit": "p",
-    "base_price": 59.4
+    "base_price": 154.38
   },
   {
     "id": "st-335",
@@ -11044,10 +14053,13 @@ export const MOCK_CATALOGUE = [
       "code": "ST",
       "name": "Sanitas Troesch"
     },
-    "reference": "SAN.GEN.568866",
+    "reference": "SAN.GEN.967721",
     "name": "Manomètre 1 1/2\" modèle 2",
+    "category": "mesure",
+    "specification": "1 1/2\"",
+    "active": true,
     "unit": "p",
-    "base_price": 170.79
+    "base_price": 205.25
   },
   {
     "id": "gm-335",
@@ -11055,10 +14067,13 @@ export const MOCK_CATALOGUE = [
       "code": "GM",
       "name": "Getaz Miauton"
     },
-    "reference": "GM/GN/3745",
+    "reference": "GM/GN/8946",
     "name": "Manomètre 1 1/2\" variante 2",
+    "category": "mesure",
+    "specification": "1 1/2\"",
+    "active": true,
     "unit": "p",
-    "base_price": 148.35
+    "base_price": 209.96
   },
   {
     "id": "nsb-336",
@@ -11066,10 +14081,13 @@ export const MOCK_CATALOGUE = [
       "code": "NSB",
       "name": "Nussbaum"
     },
-    "reference": "NSB-GEN-9904",
+    "reference": "NSB-GEN-6262",
     "name": "Manomètre 1 1/2\" type 3",
+    "category": "mesure",
+    "specification": "1 1/2\"",
+    "active": true,
     "unit": "p",
-    "base_price": 20.48
+    "base_price": 75.4
   },
   {
     "id": "st-336",
@@ -11077,10 +14095,13 @@ export const MOCK_CATALOGUE = [
       "code": "ST",
       "name": "Sanitas Troesch"
     },
-    "reference": "SAN.GEN.803371",
+    "reference": "SAN.GEN.956123",
     "name": "Manomètre 1 1/2\" modèle 3",
+    "category": "mesure",
+    "specification": "1 1/2\"",
+    "active": true,
     "unit": "p",
-    "base_price": 146.04
+    "base_price": 66.65
   },
   {
     "id": "gm-336",
@@ -11088,10 +14109,13 @@ export const MOCK_CATALOGUE = [
       "code": "GM",
       "name": "Getaz Miauton"
     },
-    "reference": "GM/GN/6907",
+    "reference": "GM/GN/1213",
     "name": "Manomètre 1 1/2\" variante 3",
+    "category": "mesure",
+    "specification": "1 1/2\"",
+    "active": true,
     "unit": "p",
-    "base_price": 203.19
+    "base_price": 42.07
   },
   {
     "id": "nsb-337",
@@ -11099,10 +14123,13 @@ export const MOCK_CATALOGUE = [
       "code": "NSB",
       "name": "Nussbaum"
     },
-    "reference": "NSB-GEN-4539",
+    "reference": "NSB-GEN-3003",
     "name": "Manomètre 1 1/2\" type 4",
+    "category": "mesure",
+    "specification": "1 1/2\"",
+    "active": true,
     "unit": "p",
-    "base_price": 108.61
+    "base_price": 24.9
   },
   {
     "id": "st-337",
@@ -11110,10 +14137,13 @@ export const MOCK_CATALOGUE = [
       "code": "ST",
       "name": "Sanitas Troesch"
     },
-    "reference": "SAN.GEN.912618",
+    "reference": "SAN.GEN.190210",
     "name": "Manomètre 1 1/2\" modèle 4",
+    "category": "mesure",
+    "specification": "1 1/2\"",
+    "active": true,
     "unit": "p",
-    "base_price": 52.06
+    "base_price": 94.27
   },
   {
     "id": "gm-337",
@@ -11121,10 +14151,13 @@ export const MOCK_CATALOGUE = [
       "code": "GM",
       "name": "Getaz Miauton"
     },
-    "reference": "GM/GN/9626",
+    "reference": "GM/GN/1127",
     "name": "Manomètre 1 1/2\" variante 4",
+    "category": "mesure",
+    "specification": "1 1/2\"",
+    "active": true,
     "unit": "p",
-    "base_price": 47.9
+    "base_price": 29.53
   },
   {
     "id": "nsb-338",
@@ -11132,10 +14165,13 @@ export const MOCK_CATALOGUE = [
       "code": "NSB",
       "name": "Nussbaum"
     },
-    "reference": "NSB-GEN-2459",
+    "reference": "NSB-GEN-8442",
     "name": "Manomètre 2\" type 0",
+    "category": "mesure",
+    "specification": "2\"",
+    "active": true,
     "unit": "p",
-    "base_price": 162.5
+    "base_price": 79.01
   },
   {
     "id": "st-338",
@@ -11143,10 +14179,13 @@ export const MOCK_CATALOGUE = [
       "code": "ST",
       "name": "Sanitas Troesch"
     },
-    "reference": "SAN.GEN.252120",
+    "reference": "SAN.GEN.168357",
     "name": "Manomètre 2\" modèle 0",
+    "category": "mesure",
+    "specification": "2\"",
+    "active": true,
     "unit": "p",
-    "base_price": 152.8
+    "base_price": 54.61
   },
   {
     "id": "gm-338",
@@ -11154,10 +14193,13 @@ export const MOCK_CATALOGUE = [
       "code": "GM",
       "name": "Getaz Miauton"
     },
-    "reference": "GM/GN/7331",
+    "reference": "GM/GN/7545",
     "name": "Manomètre 2\" variante 0",
+    "category": "mesure",
+    "specification": "2\"",
+    "active": true,
     "unit": "p",
-    "base_price": 127.2
+    "base_price": 23.88
   },
   {
     "id": "nsb-339",
@@ -11165,10 +14207,13 @@ export const MOCK_CATALOGUE = [
       "code": "NSB",
       "name": "Nussbaum"
     },
-    "reference": "NSB-GEN-9436",
+    "reference": "NSB-GEN-3361",
     "name": "Manomètre 2\" type 1",
+    "category": "mesure",
+    "specification": "2\"",
+    "active": true,
     "unit": "p",
-    "base_price": 180.53
+    "base_price": 57.47
   },
   {
     "id": "st-339",
@@ -11176,10 +14221,13 @@ export const MOCK_CATALOGUE = [
       "code": "ST",
       "name": "Sanitas Troesch"
     },
-    "reference": "SAN.GEN.898861",
+    "reference": "SAN.GEN.114802",
     "name": "Manomètre 2\" modèle 1",
+    "category": "mesure",
+    "specification": "2\"",
+    "active": true,
     "unit": "p",
-    "base_price": 26.17
+    "base_price": 101.88
   },
   {
     "id": "gm-339",
@@ -11187,10 +14235,13 @@ export const MOCK_CATALOGUE = [
       "code": "GM",
       "name": "Getaz Miauton"
     },
-    "reference": "GM/GN/6490",
+    "reference": "GM/GN/5953",
     "name": "Manomètre 2\" variante 1",
+    "category": "mesure",
+    "specification": "2\"",
+    "active": true,
     "unit": "p",
-    "base_price": 65.91
+    "base_price": 91.39
   },
   {
     "id": "nsb-340",
@@ -11198,10 +14249,13 @@ export const MOCK_CATALOGUE = [
       "code": "NSB",
       "name": "Nussbaum"
     },
-    "reference": "NSB-GEN-8815",
+    "reference": "NSB-GEN-7674",
     "name": "Manomètre 2\" type 2",
+    "category": "mesure",
+    "specification": "2\"",
+    "active": true,
     "unit": "p",
-    "base_price": 96.46
+    "base_price": 171.74
   },
   {
     "id": "st-340",
@@ -11209,10 +14263,13 @@ export const MOCK_CATALOGUE = [
       "code": "ST",
       "name": "Sanitas Troesch"
     },
-    "reference": "SAN.GEN.587476",
+    "reference": "SAN.GEN.817721",
     "name": "Manomètre 2\" modèle 2",
+    "category": "mesure",
+    "specification": "2\"",
+    "active": true,
     "unit": "p",
-    "base_price": 150.18
+    "base_price": 124.73
   },
   {
     "id": "gm-340",
@@ -11220,10 +14277,13 @@ export const MOCK_CATALOGUE = [
       "code": "GM",
       "name": "Getaz Miauton"
     },
-    "reference": "GM/GN/4764",
+    "reference": "GM/GN/6365",
     "name": "Manomètre 2\" variante 2",
+    "category": "mesure",
+    "specification": "2\"",
+    "active": true,
     "unit": "p",
-    "base_price": 61.48
+    "base_price": 65.72
   },
   {
     "id": "nsb-341",
@@ -11231,10 +14291,13 @@ export const MOCK_CATALOGUE = [
       "code": "NSB",
       "name": "Nussbaum"
     },
-    "reference": "NSB-GEN-4393",
+    "reference": "NSB-GEN-7332",
     "name": "Manomètre 2\" type 3",
+    "category": "mesure",
+    "specification": "2\"",
+    "active": true,
     "unit": "p",
-    "base_price": 54.94
+    "base_price": 67.88
   },
   {
     "id": "st-341",
@@ -11242,10 +14305,13 @@ export const MOCK_CATALOGUE = [
       "code": "ST",
       "name": "Sanitas Troesch"
     },
-    "reference": "SAN.GEN.424007",
+    "reference": "SAN.GEN.347309",
     "name": "Manomètre 2\" modèle 3",
+    "category": "mesure",
+    "specification": "2\"",
+    "active": true,
     "unit": "p",
-    "base_price": 164.92
+    "base_price": 39.95
   },
   {
     "id": "gm-341",
@@ -11253,10 +14319,13 @@ export const MOCK_CATALOGUE = [
       "code": "GM",
       "name": "Getaz Miauton"
     },
-    "reference": "GM/GN/4163",
+    "reference": "GM/GN/1232",
     "name": "Manomètre 2\" variante 3",
+    "category": "mesure",
+    "specification": "2\"",
+    "active": true,
     "unit": "p",
-    "base_price": 70.6
+    "base_price": 132.11
   },
   {
     "id": "nsb-342",
@@ -11264,10 +14333,13 @@ export const MOCK_CATALOGUE = [
       "code": "NSB",
       "name": "Nussbaum"
     },
-    "reference": "NSB-GEN-8541",
+    "reference": "NSB-GEN-2718",
     "name": "Manomètre 2\" type 4",
+    "category": "mesure",
+    "specification": "2\"",
+    "active": true,
     "unit": "p",
-    "base_price": 85.96
+    "base_price": 139.05
   },
   {
     "id": "st-342",
@@ -11275,10 +14347,13 @@ export const MOCK_CATALOGUE = [
       "code": "ST",
       "name": "Sanitas Troesch"
     },
-    "reference": "SAN.GEN.995279",
+    "reference": "SAN.GEN.194914",
     "name": "Manomètre 2\" modèle 4",
+    "category": "mesure",
+    "specification": "2\"",
+    "active": true,
     "unit": "p",
-    "base_price": 27.38
+    "base_price": 195.27
   },
   {
     "id": "gm-342",
@@ -11286,10 +14361,13 @@ export const MOCK_CATALOGUE = [
       "code": "GM",
       "name": "Getaz Miauton"
     },
-    "reference": "GM/GN/6439",
+    "reference": "GM/GN/8738",
     "name": "Manomètre 2\" variante 4",
+    "category": "mesure",
+    "specification": "2\"",
+    "active": true,
     "unit": "p",
-    "base_price": 72.69
+    "base_price": 81.82
   },
   {
     "id": "nsb-343",
@@ -11297,10 +14375,13 @@ export const MOCK_CATALOGUE = [
       "code": "NSB",
       "name": "Nussbaum"
     },
-    "reference": "NSB-GEN-7960",
+    "reference": "NSB-GEN-7879",
     "name": "Manomètre DN 15 type 0",
+    "category": "mesure",
+    "specification": "DN 15",
+    "active": true,
     "unit": "p",
-    "base_price": 28.15
+    "base_price": 187.75
   },
   {
     "id": "st-343",
@@ -11308,10 +14389,13 @@ export const MOCK_CATALOGUE = [
       "code": "ST",
       "name": "Sanitas Troesch"
     },
-    "reference": "SAN.GEN.682659",
+    "reference": "SAN.GEN.543666",
     "name": "Manomètre DN 15 modèle 0",
+    "category": "mesure",
+    "specification": "DN 15",
+    "active": true,
     "unit": "p",
-    "base_price": 170.16
+    "base_price": 59.15
   },
   {
     "id": "gm-343",
@@ -11319,10 +14403,13 @@ export const MOCK_CATALOGUE = [
       "code": "GM",
       "name": "Getaz Miauton"
     },
-    "reference": "GM/GN/9454",
+    "reference": "GM/GN/2121",
     "name": "Manomètre DN 15 variante 0",
+    "category": "mesure",
+    "specification": "DN 15",
+    "active": true,
     "unit": "p",
-    "base_price": 75.4
+    "base_price": 61.38
   },
   {
     "id": "nsb-344",
@@ -11330,10 +14417,13 @@ export const MOCK_CATALOGUE = [
       "code": "NSB",
       "name": "Nussbaum"
     },
-    "reference": "NSB-GEN-9647",
+    "reference": "NSB-GEN-8486",
     "name": "Manomètre DN 15 type 1",
+    "category": "mesure",
+    "specification": "DN 15",
+    "active": true,
     "unit": "p",
-    "base_price": 188.94
+    "base_price": 165.35
   },
   {
     "id": "st-344",
@@ -11341,10 +14431,13 @@ export const MOCK_CATALOGUE = [
       "code": "ST",
       "name": "Sanitas Troesch"
     },
-    "reference": "SAN.GEN.241843",
+    "reference": "SAN.GEN.294235",
     "name": "Manomètre DN 15 modèle 1",
+    "category": "mesure",
+    "specification": "DN 15",
+    "active": true,
     "unit": "p",
-    "base_price": 158.08
+    "base_price": 20.16
   },
   {
     "id": "gm-344",
@@ -11352,10 +14445,13 @@ export const MOCK_CATALOGUE = [
       "code": "GM",
       "name": "Getaz Miauton"
     },
-    "reference": "GM/GN/1785",
+    "reference": "GM/GN/1817",
     "name": "Manomètre DN 15 variante 1",
+    "category": "mesure",
+    "specification": "DN 15",
+    "active": true,
     "unit": "p",
-    "base_price": 184.44
+    "base_price": 73.86
   },
   {
     "id": "nsb-345",
@@ -11363,10 +14459,13 @@ export const MOCK_CATALOGUE = [
       "code": "NSB",
       "name": "Nussbaum"
     },
-    "reference": "NSB-GEN-4287",
+    "reference": "NSB-GEN-7768",
     "name": "Manomètre DN 15 type 2",
+    "category": "mesure",
+    "specification": "DN 15",
+    "active": true,
     "unit": "p",
-    "base_price": 37.81
+    "base_price": 35.06
   },
   {
     "id": "st-345",
@@ -11374,10 +14473,13 @@ export const MOCK_CATALOGUE = [
       "code": "ST",
       "name": "Sanitas Troesch"
     },
-    "reference": "SAN.GEN.176669",
+    "reference": "SAN.GEN.871965",
     "name": "Manomètre DN 15 modèle 2",
+    "category": "mesure",
+    "specification": "DN 15",
+    "active": true,
     "unit": "p",
-    "base_price": 66.85
+    "base_price": 68.76
   },
   {
     "id": "gm-345",
@@ -11385,10 +14487,13 @@ export const MOCK_CATALOGUE = [
       "code": "GM",
       "name": "Getaz Miauton"
     },
-    "reference": "GM/GN/1374",
+    "reference": "GM/GN/9202",
     "name": "Manomètre DN 15 variante 2",
+    "category": "mesure",
+    "specification": "DN 15",
+    "active": true,
     "unit": "p",
-    "base_price": 182.42
+    "base_price": 121.55
   },
   {
     "id": "nsb-346",
@@ -11396,10 +14501,13 @@ export const MOCK_CATALOGUE = [
       "code": "NSB",
       "name": "Nussbaum"
     },
-    "reference": "NSB-GEN-1894",
+    "reference": "NSB-GEN-4182",
     "name": "Manomètre DN 15 type 3",
+    "category": "mesure",
+    "specification": "DN 15",
+    "active": true,
     "unit": "p",
-    "base_price": 25.36
+    "base_price": 150.43
   },
   {
     "id": "st-346",
@@ -11407,10 +14515,13 @@ export const MOCK_CATALOGUE = [
       "code": "ST",
       "name": "Sanitas Troesch"
     },
-    "reference": "SAN.GEN.884590",
+    "reference": "SAN.GEN.416004",
     "name": "Manomètre DN 15 modèle 3",
+    "category": "mesure",
+    "specification": "DN 15",
+    "active": true,
     "unit": "p",
-    "base_price": 166.23
+    "base_price": 116.7
   },
   {
     "id": "gm-346",
@@ -11418,10 +14529,13 @@ export const MOCK_CATALOGUE = [
       "code": "GM",
       "name": "Getaz Miauton"
     },
-    "reference": "GM/GN/4583",
+    "reference": "GM/GN/9064",
     "name": "Manomètre DN 15 variante 3",
+    "category": "mesure",
+    "specification": "DN 15",
+    "active": true,
     "unit": "p",
-    "base_price": 190.96
+    "base_price": 29.06
   },
   {
     "id": "nsb-347",
@@ -11429,10 +14543,13 @@ export const MOCK_CATALOGUE = [
       "code": "NSB",
       "name": "Nussbaum"
     },
-    "reference": "NSB-GEN-5449",
+    "reference": "NSB-GEN-1102",
     "name": "Manomètre DN 15 type 4",
+    "category": "mesure",
+    "specification": "DN 15",
+    "active": true,
     "unit": "p",
-    "base_price": 209.61
+    "base_price": 52.59
   },
   {
     "id": "st-347",
@@ -11440,10 +14557,13 @@ export const MOCK_CATALOGUE = [
       "code": "ST",
       "name": "Sanitas Troesch"
     },
-    "reference": "SAN.GEN.730692",
+    "reference": "SAN.GEN.921216",
     "name": "Manomètre DN 15 modèle 4",
+    "category": "mesure",
+    "specification": "DN 15",
+    "active": true,
     "unit": "p",
-    "base_price": 161.57
+    "base_price": 65.42
   },
   {
     "id": "gm-347",
@@ -11451,10 +14571,13 @@ export const MOCK_CATALOGUE = [
       "code": "GM",
       "name": "Getaz Miauton"
     },
-    "reference": "GM/GN/3252",
+    "reference": "GM/GN/9312",
     "name": "Manomètre DN 15 variante 4",
+    "category": "mesure",
+    "specification": "DN 15",
+    "active": true,
     "unit": "p",
-    "base_price": 172.92
+    "base_price": 149.67
   },
   {
     "id": "nsb-348",
@@ -11462,10 +14585,13 @@ export const MOCK_CATALOGUE = [
       "code": "NSB",
       "name": "Nussbaum"
     },
-    "reference": "NSB-GEN-4965",
+    "reference": "NSB-GEN-7343",
     "name": "Manomètre DN 20 type 0",
+    "category": "mesure",
+    "specification": "DN 20",
+    "active": true,
     "unit": "p",
-    "base_price": 180.55
+    "base_price": 79.71
   },
   {
     "id": "st-348",
@@ -11473,10 +14599,13 @@ export const MOCK_CATALOGUE = [
       "code": "ST",
       "name": "Sanitas Troesch"
     },
-    "reference": "SAN.GEN.823550",
+    "reference": "SAN.GEN.365481",
     "name": "Manomètre DN 20 modèle 0",
+    "category": "mesure",
+    "specification": "DN 20",
+    "active": true,
     "unit": "p",
-    "base_price": 79.28
+    "base_price": 44.99
   },
   {
     "id": "gm-348",
@@ -11484,10 +14613,13 @@ export const MOCK_CATALOGUE = [
       "code": "GM",
       "name": "Getaz Miauton"
     },
-    "reference": "GM/GN/7725",
+    "reference": "GM/GN/4288",
     "name": "Manomètre DN 20 variante 0",
+    "category": "mesure",
+    "specification": "DN 20",
+    "active": true,
     "unit": "p",
-    "base_price": 119.22
+    "base_price": 20.5
   },
   {
     "id": "nsb-349",
@@ -11495,10 +14627,13 @@ export const MOCK_CATALOGUE = [
       "code": "NSB",
       "name": "Nussbaum"
     },
-    "reference": "NSB-GEN-6629",
+    "reference": "NSB-GEN-4307",
     "name": "Manomètre DN 20 type 1",
+    "category": "mesure",
+    "specification": "DN 20",
+    "active": true,
     "unit": "p",
-    "base_price": 85.51
+    "base_price": 82.77
   },
   {
     "id": "st-349",
@@ -11506,10 +14641,13 @@ export const MOCK_CATALOGUE = [
       "code": "ST",
       "name": "Sanitas Troesch"
     },
-    "reference": "SAN.GEN.974505",
+    "reference": "SAN.GEN.710049",
     "name": "Manomètre DN 20 modèle 1",
+    "category": "mesure",
+    "specification": "DN 20",
+    "active": true,
     "unit": "p",
-    "base_price": 116.35
+    "base_price": 96.54
   },
   {
     "id": "gm-349",
@@ -11517,10 +14655,13 @@ export const MOCK_CATALOGUE = [
       "code": "GM",
       "name": "Getaz Miauton"
     },
-    "reference": "GM/GN/5914",
+    "reference": "GM/GN/7781",
     "name": "Manomètre DN 20 variante 1",
+    "category": "mesure",
+    "specification": "DN 20",
+    "active": true,
     "unit": "p",
-    "base_price": 113.32
+    "base_price": 25.73
   },
   {
     "id": "nsb-350",
@@ -11528,10 +14669,13 @@ export const MOCK_CATALOGUE = [
       "code": "NSB",
       "name": "Nussbaum"
     },
-    "reference": "NSB-GEN-4215",
+    "reference": "NSB-GEN-2647",
     "name": "Manomètre DN 20 type 2",
+    "category": "mesure",
+    "specification": "DN 20",
+    "active": true,
     "unit": "p",
-    "base_price": 115.65
+    "base_price": 69.91
   },
   {
     "id": "st-350",
@@ -11539,10 +14683,13 @@ export const MOCK_CATALOGUE = [
       "code": "ST",
       "name": "Sanitas Troesch"
     },
-    "reference": "SAN.GEN.936910",
+    "reference": "SAN.GEN.476252",
     "name": "Manomètre DN 20 modèle 2",
+    "category": "mesure",
+    "specification": "DN 20",
+    "active": true,
     "unit": "p",
-    "base_price": 39.57
+    "base_price": 62.31
   },
   {
     "id": "gm-350",
@@ -11550,10 +14697,13 @@ export const MOCK_CATALOGUE = [
       "code": "GM",
       "name": "Getaz Miauton"
     },
-    "reference": "GM/GN/5397",
+    "reference": "GM/GN/3737",
     "name": "Manomètre DN 20 variante 2",
+    "category": "mesure",
+    "specification": "DN 20",
+    "active": true,
     "unit": "p",
-    "base_price": 198.31
+    "base_price": 185.93
   },
   {
     "id": "nsb-351",
@@ -11561,10 +14711,13 @@ export const MOCK_CATALOGUE = [
       "code": "NSB",
       "name": "Nussbaum"
     },
-    "reference": "NSB-GEN-6583",
+    "reference": "NSB-GEN-1839",
     "name": "Manomètre DN 20 type 3",
+    "category": "mesure",
+    "specification": "DN 20",
+    "active": true,
     "unit": "p",
-    "base_price": 123.14
+    "base_price": 43.25
   },
   {
     "id": "st-351",
@@ -11572,10 +14725,13 @@ export const MOCK_CATALOGUE = [
       "code": "ST",
       "name": "Sanitas Troesch"
     },
-    "reference": "SAN.GEN.711869",
+    "reference": "SAN.GEN.411104",
     "name": "Manomètre DN 20 modèle 3",
+    "category": "mesure",
+    "specification": "DN 20",
+    "active": true,
     "unit": "p",
-    "base_price": 208.01
+    "base_price": 65.86
   },
   {
     "id": "gm-351",
@@ -11583,10 +14739,13 @@ export const MOCK_CATALOGUE = [
       "code": "GM",
       "name": "Getaz Miauton"
     },
-    "reference": "GM/GN/9411",
+    "reference": "GM/GN/8145",
     "name": "Manomètre DN 20 variante 3",
+    "category": "mesure",
+    "specification": "DN 20",
+    "active": true,
     "unit": "p",
-    "base_price": 22.6
+    "base_price": 105.42
   },
   {
     "id": "nsb-352",
@@ -11594,10 +14753,13 @@ export const MOCK_CATALOGUE = [
       "code": "NSB",
       "name": "Nussbaum"
     },
-    "reference": "NSB-GEN-7707",
+    "reference": "NSB-GEN-8930",
     "name": "Manomètre DN 20 type 4",
+    "category": "mesure",
+    "specification": "DN 20",
+    "active": true,
     "unit": "p",
-    "base_price": 24.06
+    "base_price": 137.19
   },
   {
     "id": "st-352",
@@ -11605,10 +14767,13 @@ export const MOCK_CATALOGUE = [
       "code": "ST",
       "name": "Sanitas Troesch"
     },
-    "reference": "SAN.GEN.532768",
+    "reference": "SAN.GEN.678466",
     "name": "Manomètre DN 20 modèle 4",
+    "category": "mesure",
+    "specification": "DN 20",
+    "active": true,
     "unit": "p",
-    "base_price": 172.17
+    "base_price": 61.4
   },
   {
     "id": "gm-352",
@@ -11616,10 +14781,13 @@ export const MOCK_CATALOGUE = [
       "code": "GM",
       "name": "Getaz Miauton"
     },
-    "reference": "GM/GN/3268",
+    "reference": "GM/GN/8457",
     "name": "Manomètre DN 20 variante 4",
+    "category": "mesure",
+    "specification": "DN 20",
+    "active": true,
     "unit": "p",
-    "base_price": 105.87
+    "base_price": 200.43
   },
   {
     "id": "nsb-353",
@@ -11627,10 +14795,13 @@ export const MOCK_CATALOGUE = [
       "code": "NSB",
       "name": "Nussbaum"
     },
-    "reference": "NSB-GEN-5196",
+    "reference": "NSB-GEN-9154",
     "name": "Manomètre DN 25 type 0",
+    "category": "mesure",
+    "specification": "DN 25",
+    "active": true,
     "unit": "p",
-    "base_price": 150.37
+    "base_price": 213.64
   },
   {
     "id": "st-353",
@@ -11638,10 +14809,13 @@ export const MOCK_CATALOGUE = [
       "code": "ST",
       "name": "Sanitas Troesch"
     },
-    "reference": "SAN.GEN.247910",
+    "reference": "SAN.GEN.919327",
     "name": "Manomètre DN 25 modèle 0",
+    "category": "mesure",
+    "specification": "DN 25",
+    "active": true,
     "unit": "p",
-    "base_price": 75.88
+    "base_price": 63.08
   },
   {
     "id": "gm-353",
@@ -11649,10 +14823,13 @@ export const MOCK_CATALOGUE = [
       "code": "GM",
       "name": "Getaz Miauton"
     },
-    "reference": "GM/GN/7377",
+    "reference": "GM/GN/5272",
     "name": "Manomètre DN 25 variante 0",
+    "category": "mesure",
+    "specification": "DN 25",
+    "active": true,
     "unit": "p",
-    "base_price": 111.56
+    "base_price": 63.75
   },
   {
     "id": "nsb-354",
@@ -11660,10 +14837,13 @@ export const MOCK_CATALOGUE = [
       "code": "NSB",
       "name": "Nussbaum"
     },
-    "reference": "NSB-GEN-3662",
+    "reference": "NSB-GEN-2088",
     "name": "Manomètre DN 25 type 1",
+    "category": "mesure",
+    "specification": "DN 25",
+    "active": true,
     "unit": "p",
-    "base_price": 178.98
+    "base_price": 109.97
   },
   {
     "id": "st-354",
@@ -11671,10 +14851,13 @@ export const MOCK_CATALOGUE = [
       "code": "ST",
       "name": "Sanitas Troesch"
     },
-    "reference": "SAN.GEN.550385",
+    "reference": "SAN.GEN.640579",
     "name": "Manomètre DN 25 modèle 1",
+    "category": "mesure",
+    "specification": "DN 25",
+    "active": true,
     "unit": "p",
-    "base_price": 150.7
+    "base_price": 219.97
   },
   {
     "id": "gm-354",
@@ -11682,10 +14865,13 @@ export const MOCK_CATALOGUE = [
       "code": "GM",
       "name": "Getaz Miauton"
     },
-    "reference": "GM/GN/6221",
+    "reference": "GM/GN/3309",
     "name": "Manomètre DN 25 variante 1",
+    "category": "mesure",
+    "specification": "DN 25",
+    "active": true,
     "unit": "p",
-    "base_price": 190.6
+    "base_price": 169.15
   },
   {
     "id": "nsb-355",
@@ -11693,10 +14879,13 @@ export const MOCK_CATALOGUE = [
       "code": "NSB",
       "name": "Nussbaum"
     },
-    "reference": "NSB-GEN-3440",
+    "reference": "NSB-GEN-7735",
     "name": "Manomètre DN 25 type 2",
+    "category": "mesure",
+    "specification": "DN 25",
+    "active": true,
     "unit": "p",
-    "base_price": 41.15
+    "base_price": 58.4
   },
   {
     "id": "st-355",
@@ -11704,10 +14893,13 @@ export const MOCK_CATALOGUE = [
       "code": "ST",
       "name": "Sanitas Troesch"
     },
-    "reference": "SAN.GEN.456427",
+    "reference": "SAN.GEN.423859",
     "name": "Manomètre DN 25 modèle 2",
+    "category": "mesure",
+    "specification": "DN 25",
+    "active": true,
     "unit": "p",
-    "base_price": 208.37
+    "base_price": 185.51
   },
   {
     "id": "gm-355",
@@ -11715,10 +14907,13 @@ export const MOCK_CATALOGUE = [
       "code": "GM",
       "name": "Getaz Miauton"
     },
-    "reference": "GM/GN/5101",
+    "reference": "GM/GN/2089",
     "name": "Manomètre DN 25 variante 2",
+    "category": "mesure",
+    "specification": "DN 25",
+    "active": true,
     "unit": "p",
-    "base_price": 186.06
+    "base_price": 161.13
   },
   {
     "id": "nsb-356",
@@ -11726,10 +14921,13 @@ export const MOCK_CATALOGUE = [
       "code": "NSB",
       "name": "Nussbaum"
     },
-    "reference": "NSB-GEN-2261",
+    "reference": "NSB-GEN-4844",
     "name": "Manomètre DN 25 type 3",
+    "category": "mesure",
+    "specification": "DN 25",
+    "active": true,
     "unit": "p",
-    "base_price": 216.96
+    "base_price": 44.22
   },
   {
     "id": "st-356",
@@ -11737,10 +14935,13 @@ export const MOCK_CATALOGUE = [
       "code": "ST",
       "name": "Sanitas Troesch"
     },
-    "reference": "SAN.GEN.213755",
+    "reference": "SAN.GEN.778064",
     "name": "Manomètre DN 25 modèle 3",
+    "category": "mesure",
+    "specification": "DN 25",
+    "active": true,
     "unit": "p",
-    "base_price": 93.51
+    "base_price": 110.03
   },
   {
     "id": "gm-356",
@@ -11748,10 +14949,13 @@ export const MOCK_CATALOGUE = [
       "code": "GM",
       "name": "Getaz Miauton"
     },
-    "reference": "GM/GN/5026",
+    "reference": "GM/GN/8889",
     "name": "Manomètre DN 25 variante 3",
+    "category": "mesure",
+    "specification": "DN 25",
+    "active": true,
     "unit": "p",
-    "base_price": 192.95
+    "base_price": 210.14
   },
   {
     "id": "nsb-357",
@@ -11759,10 +14963,13 @@ export const MOCK_CATALOGUE = [
       "code": "NSB",
       "name": "Nussbaum"
     },
-    "reference": "NSB-GEN-7692",
+    "reference": "NSB-GEN-6927",
     "name": "Manomètre DN 25 type 4",
+    "category": "mesure",
+    "specification": "DN 25",
+    "active": true,
     "unit": "p",
-    "base_price": 69.43
+    "base_price": 47.9
   },
   {
     "id": "st-357",
@@ -11770,10 +14977,13 @@ export const MOCK_CATALOGUE = [
       "code": "ST",
       "name": "Sanitas Troesch"
     },
-    "reference": "SAN.GEN.630538",
+    "reference": "SAN.GEN.389271",
     "name": "Manomètre DN 25 modèle 4",
+    "category": "mesure",
+    "specification": "DN 25",
+    "active": true,
     "unit": "p",
-    "base_price": 197.89
+    "base_price": 25.85
   },
   {
     "id": "gm-357",
@@ -11781,10 +14991,13 @@ export const MOCK_CATALOGUE = [
       "code": "GM",
       "name": "Getaz Miauton"
     },
-    "reference": "GM/GN/7174",
+    "reference": "GM/GN/8074",
     "name": "Manomètre DN 25 variante 4",
+    "category": "mesure",
+    "specification": "DN 25",
+    "active": true,
     "unit": "p",
-    "base_price": 60.22
+    "base_price": 88.47
   },
   {
     "id": "nsb-358",
@@ -11792,10 +15005,13 @@ export const MOCK_CATALOGUE = [
       "code": "NSB",
       "name": "Nussbaum"
     },
-    "reference": "NSB-GEN-2859",
+    "reference": "NSB-GEN-3250",
     "name": "Manomètre DN 32 type 0",
+    "category": "mesure",
+    "specification": "DN 32",
+    "active": true,
     "unit": "p",
-    "base_price": 189.03
+    "base_price": 75.45
   },
   {
     "id": "st-358",
@@ -11803,10 +15019,13 @@ export const MOCK_CATALOGUE = [
       "code": "ST",
       "name": "Sanitas Troesch"
     },
-    "reference": "SAN.GEN.860394",
+    "reference": "SAN.GEN.534348",
     "name": "Manomètre DN 32 modèle 0",
+    "category": "mesure",
+    "specification": "DN 32",
+    "active": true,
     "unit": "p",
-    "base_price": 104.34
+    "base_price": 74.42
   },
   {
     "id": "gm-358",
@@ -11814,10 +15033,13 @@ export const MOCK_CATALOGUE = [
       "code": "GM",
       "name": "Getaz Miauton"
     },
-    "reference": "GM/GN/4116",
+    "reference": "GM/GN/3601",
     "name": "Manomètre DN 32 variante 0",
+    "category": "mesure",
+    "specification": "DN 32",
+    "active": true,
     "unit": "p",
-    "base_price": 67.77
+    "base_price": 86.08
   },
   {
     "id": "nsb-359",
@@ -11825,10 +15047,13 @@ export const MOCK_CATALOGUE = [
       "code": "NSB",
       "name": "Nussbaum"
     },
-    "reference": "NSB-GEN-1148",
+    "reference": "NSB-GEN-9020",
     "name": "Manomètre DN 32 type 1",
+    "category": "mesure",
+    "specification": "DN 32",
+    "active": true,
     "unit": "p",
-    "base_price": 217.23
+    "base_price": 204.18
   },
   {
     "id": "st-359",
@@ -11836,10 +15061,13 @@ export const MOCK_CATALOGUE = [
       "code": "ST",
       "name": "Sanitas Troesch"
     },
-    "reference": "SAN.GEN.937531",
+    "reference": "SAN.GEN.913398",
     "name": "Manomètre DN 32 modèle 1",
+    "category": "mesure",
+    "specification": "DN 32",
+    "active": true,
     "unit": "p",
-    "base_price": 25.51
+    "base_price": 215.27
   },
   {
     "id": "gm-359",
@@ -11847,10 +15075,13 @@ export const MOCK_CATALOGUE = [
       "code": "GM",
       "name": "Getaz Miauton"
     },
-    "reference": "GM/GN/8766",
+    "reference": "GM/GN/8146",
     "name": "Manomètre DN 32 variante 1",
+    "category": "mesure",
+    "specification": "DN 32",
+    "active": true,
     "unit": "p",
-    "base_price": 167.26
+    "base_price": 139.89
   },
   {
     "id": "nsb-360",
@@ -11858,10 +15089,13 @@ export const MOCK_CATALOGUE = [
       "code": "NSB",
       "name": "Nussbaum"
     },
-    "reference": "NSB-GEN-9080",
+    "reference": "NSB-GEN-7090",
     "name": "Manomètre DN 32 type 2",
+    "category": "mesure",
+    "specification": "DN 32",
+    "active": true,
     "unit": "p",
-    "base_price": 45.09
+    "base_price": 82.91
   },
   {
     "id": "st-360",
@@ -11869,10 +15103,13 @@ export const MOCK_CATALOGUE = [
       "code": "ST",
       "name": "Sanitas Troesch"
     },
-    "reference": "SAN.GEN.741382",
+    "reference": "SAN.GEN.726087",
     "name": "Manomètre DN 32 modèle 2",
+    "category": "mesure",
+    "specification": "DN 32",
+    "active": true,
     "unit": "p",
-    "base_price": 147
+    "base_price": 52.46
   },
   {
     "id": "gm-360",
@@ -11880,10 +15117,13 @@ export const MOCK_CATALOGUE = [
       "code": "GM",
       "name": "Getaz Miauton"
     },
-    "reference": "GM/GN/8359",
+    "reference": "GM/GN/4197",
     "name": "Manomètre DN 32 variante 2",
+    "category": "mesure",
+    "specification": "DN 32",
+    "active": true,
     "unit": "p",
-    "base_price": 79.8
+    "base_price": 45.65
   },
   {
     "id": "nsb-361",
@@ -11891,10 +15131,13 @@ export const MOCK_CATALOGUE = [
       "code": "NSB",
       "name": "Nussbaum"
     },
-    "reference": "NSB-GEN-7622",
+    "reference": "NSB-GEN-4054",
     "name": "Manomètre DN 32 type 3",
+    "category": "mesure",
+    "specification": "DN 32",
+    "active": true,
     "unit": "p",
-    "base_price": 144.3
+    "base_price": 94.99
   },
   {
     "id": "st-361",
@@ -11902,10 +15145,13 @@ export const MOCK_CATALOGUE = [
       "code": "ST",
       "name": "Sanitas Troesch"
     },
-    "reference": "SAN.GEN.917429",
+    "reference": "SAN.GEN.429880",
     "name": "Manomètre DN 32 modèle 3",
+    "category": "mesure",
+    "specification": "DN 32",
+    "active": true,
     "unit": "p",
-    "base_price": 203.42
+    "base_price": 187.18
   },
   {
     "id": "gm-361",
@@ -11913,8 +15159,11 @@ export const MOCK_CATALOGUE = [
       "code": "GM",
       "name": "Getaz Miauton"
     },
-    "reference": "GM/GN/9287",
+    "reference": "GM/GN/7051",
     "name": "Manomètre DN 32 variante 3",
+    "category": "mesure",
+    "specification": "DN 32",
+    "active": true,
     "unit": "p",
     "base_price": 127.59
   },
@@ -11924,10 +15173,13 @@ export const MOCK_CATALOGUE = [
       "code": "NSB",
       "name": "Nussbaum"
     },
-    "reference": "NSB-GEN-7467",
+    "reference": "NSB-GEN-3911",
     "name": "Manomètre DN 32 type 4",
+    "category": "mesure",
+    "specification": "DN 32",
+    "active": true,
     "unit": "p",
-    "base_price": 27.42
+    "base_price": 209.25
   },
   {
     "id": "st-362",
@@ -11935,10 +15187,13 @@ export const MOCK_CATALOGUE = [
       "code": "ST",
       "name": "Sanitas Troesch"
     },
-    "reference": "SAN.GEN.550045",
+    "reference": "SAN.GEN.638845",
     "name": "Manomètre DN 32 modèle 4",
+    "category": "mesure",
+    "specification": "DN 32",
+    "active": true,
     "unit": "p",
-    "base_price": 129.8
+    "base_price": 146.2
   },
   {
     "id": "gm-362",
@@ -11946,10 +15201,13 @@ export const MOCK_CATALOGUE = [
       "code": "GM",
       "name": "Getaz Miauton"
     },
-    "reference": "GM/GN/9063",
+    "reference": "GM/GN/6726",
     "name": "Manomètre DN 32 variante 4",
+    "category": "mesure",
+    "specification": "DN 32",
+    "active": true,
     "unit": "p",
-    "base_price": 115.67
+    "base_price": 153.91
   },
   {
     "id": "nsb-363",
@@ -11957,10 +15215,13 @@ export const MOCK_CATALOGUE = [
       "code": "NSB",
       "name": "Nussbaum"
     },
-    "reference": "NSB-GEN-2866",
+    "reference": "NSB-GEN-1673",
     "name": "Manomètre DN 40 type 0",
+    "category": "mesure",
+    "specification": "DN 40",
+    "active": true,
     "unit": "p",
-    "base_price": 131.67
+    "base_price": 82.44
   },
   {
     "id": "st-363",
@@ -11968,10 +15229,13 @@ export const MOCK_CATALOGUE = [
       "code": "ST",
       "name": "Sanitas Troesch"
     },
-    "reference": "SAN.GEN.562741",
+    "reference": "SAN.GEN.356469",
     "name": "Manomètre DN 40 modèle 0",
+    "category": "mesure",
+    "specification": "DN 40",
+    "active": true,
     "unit": "p",
-    "base_price": 198.25
+    "base_price": 74.29
   },
   {
     "id": "gm-363",
@@ -11979,10 +15243,13 @@ export const MOCK_CATALOGUE = [
       "code": "GM",
       "name": "Getaz Miauton"
     },
-    "reference": "GM/GN/4239",
+    "reference": "GM/GN/6211",
     "name": "Manomètre DN 40 variante 0",
+    "category": "mesure",
+    "specification": "DN 40",
+    "active": true,
     "unit": "p",
-    "base_price": 153
+    "base_price": 140.27
   },
   {
     "id": "nsb-364",
@@ -11990,10 +15257,13 @@ export const MOCK_CATALOGUE = [
       "code": "NSB",
       "name": "Nussbaum"
     },
-    "reference": "NSB-GEN-6134",
+    "reference": "NSB-GEN-5985",
     "name": "Manomètre DN 40 type 1",
+    "category": "mesure",
+    "specification": "DN 40",
+    "active": true,
     "unit": "p",
-    "base_price": 147.31
+    "base_price": 156.75
   },
   {
     "id": "st-364",
@@ -12001,10 +15271,13 @@ export const MOCK_CATALOGUE = [
       "code": "ST",
       "name": "Sanitas Troesch"
     },
-    "reference": "SAN.GEN.798308",
+    "reference": "SAN.GEN.414362",
     "name": "Manomètre DN 40 modèle 1",
+    "category": "mesure",
+    "specification": "DN 40",
+    "active": true,
     "unit": "p",
-    "base_price": 179.22
+    "base_price": 27.39
   },
   {
     "id": "gm-364",
@@ -12012,10 +15285,13 @@ export const MOCK_CATALOGUE = [
       "code": "GM",
       "name": "Getaz Miauton"
     },
-    "reference": "GM/GN/1436",
+    "reference": "GM/GN/3747",
     "name": "Manomètre DN 40 variante 1",
+    "category": "mesure",
+    "specification": "DN 40",
+    "active": true,
     "unit": "p",
-    "base_price": 95.87
+    "base_price": 162.91
   },
   {
     "id": "nsb-365",
@@ -12023,10 +15299,13 @@ export const MOCK_CATALOGUE = [
       "code": "NSB",
       "name": "Nussbaum"
     },
-    "reference": "NSB-GEN-3691",
+    "reference": "NSB-GEN-6204",
     "name": "Manomètre DN 40 type 2",
+    "category": "mesure",
+    "specification": "DN 40",
+    "active": true,
     "unit": "p",
-    "base_price": 123.9
+    "base_price": 22.7
   },
   {
     "id": "st-365",
@@ -12034,10 +15313,13 @@ export const MOCK_CATALOGUE = [
       "code": "ST",
       "name": "Sanitas Troesch"
     },
-    "reference": "SAN.GEN.128765",
+    "reference": "SAN.GEN.164676",
     "name": "Manomètre DN 40 modèle 2",
+    "category": "mesure",
+    "specification": "DN 40",
+    "active": true,
     "unit": "p",
-    "base_price": 215.38
+    "base_price": 154.87
   },
   {
     "id": "gm-365",
@@ -12045,10 +15327,13 @@ export const MOCK_CATALOGUE = [
       "code": "GM",
       "name": "Getaz Miauton"
     },
-    "reference": "GM/GN/1807",
+    "reference": "GM/GN/6272",
     "name": "Manomètre DN 40 variante 2",
+    "category": "mesure",
+    "specification": "DN 40",
+    "active": true,
     "unit": "p",
-    "base_price": 170.92
+    "base_price": 176.58
   },
   {
     "id": "nsb-366",
@@ -12056,10 +15341,13 @@ export const MOCK_CATALOGUE = [
       "code": "NSB",
       "name": "Nussbaum"
     },
-    "reference": "NSB-GEN-3630",
+    "reference": "NSB-GEN-3939",
     "name": "Manomètre DN 40 type 3",
+    "category": "mesure",
+    "specification": "DN 40",
+    "active": true,
     "unit": "p",
-    "base_price": 192.19
+    "base_price": 201.12
   },
   {
     "id": "st-366",
@@ -12067,10 +15355,13 @@ export const MOCK_CATALOGUE = [
       "code": "ST",
       "name": "Sanitas Troesch"
     },
-    "reference": "SAN.GEN.830673",
+    "reference": "SAN.GEN.214898",
     "name": "Manomètre DN 40 modèle 3",
+    "category": "mesure",
+    "specification": "DN 40",
+    "active": true,
     "unit": "p",
-    "base_price": 217.86
+    "base_price": 189.07
   },
   {
     "id": "gm-366",
@@ -12078,10 +15369,13 @@ export const MOCK_CATALOGUE = [
       "code": "GM",
       "name": "Getaz Miauton"
     },
-    "reference": "GM/GN/7866",
+    "reference": "GM/GN/1473",
     "name": "Manomètre DN 40 variante 3",
+    "category": "mesure",
+    "specification": "DN 40",
+    "active": true,
     "unit": "p",
-    "base_price": 155.58
+    "base_price": 67.14
   },
   {
     "id": "nsb-367",
@@ -12089,10 +15383,13 @@ export const MOCK_CATALOGUE = [
       "code": "NSB",
       "name": "Nussbaum"
     },
-    "reference": "NSB-GEN-4072",
+    "reference": "NSB-GEN-9637",
     "name": "Manomètre DN 40 type 4",
+    "category": "mesure",
+    "specification": "DN 40",
+    "active": true,
     "unit": "p",
-    "base_price": 137.46
+    "base_price": 165.82
   },
   {
     "id": "st-367",
@@ -12100,10 +15397,13 @@ export const MOCK_CATALOGUE = [
       "code": "ST",
       "name": "Sanitas Troesch"
     },
-    "reference": "SAN.GEN.298977",
+    "reference": "SAN.GEN.707032",
     "name": "Manomètre DN 40 modèle 4",
+    "category": "mesure",
+    "specification": "DN 40",
+    "active": true,
     "unit": "p",
-    "base_price": 150.63
+    "base_price": 127.22
   },
   {
     "id": "gm-367",
@@ -12111,10 +15411,13 @@ export const MOCK_CATALOGUE = [
       "code": "GM",
       "name": "Getaz Miauton"
     },
-    "reference": "GM/GN/4387",
+    "reference": "GM/GN/9967",
     "name": "Manomètre DN 40 variante 4",
+    "category": "mesure",
+    "specification": "DN 40",
+    "active": true,
     "unit": "p",
-    "base_price": 197.03
+    "base_price": 197.23
   },
   {
     "id": "nsb-368",
@@ -12122,10 +15425,13 @@ export const MOCK_CATALOGUE = [
       "code": "NSB",
       "name": "Nussbaum"
     },
-    "reference": "NSB-GEN-3180",
+    "reference": "NSB-GEN-1739",
     "name": "Manomètre DN 50 type 0",
+    "category": "mesure",
+    "specification": "DN 50",
+    "active": true,
     "unit": "p",
-    "base_price": 210.55
+    "base_price": 151.01
   },
   {
     "id": "st-368",
@@ -12133,10 +15439,13 @@ export const MOCK_CATALOGUE = [
       "code": "ST",
       "name": "Sanitas Troesch"
     },
-    "reference": "SAN.GEN.189672",
+    "reference": "SAN.GEN.930045",
     "name": "Manomètre DN 50 modèle 0",
+    "category": "mesure",
+    "specification": "DN 50",
+    "active": true,
     "unit": "p",
-    "base_price": 83.82
+    "base_price": 87.75
   },
   {
     "id": "gm-368",
@@ -12144,10 +15453,13 @@ export const MOCK_CATALOGUE = [
       "code": "GM",
       "name": "Getaz Miauton"
     },
-    "reference": "GM/GN/5065",
+    "reference": "GM/GN/4196",
     "name": "Manomètre DN 50 variante 0",
+    "category": "mesure",
+    "specification": "DN 50",
+    "active": true,
     "unit": "p",
-    "base_price": 46.95
+    "base_price": 125.63
   },
   {
     "id": "nsb-369",
@@ -12155,10 +15467,13 @@ export const MOCK_CATALOGUE = [
       "code": "NSB",
       "name": "Nussbaum"
     },
-    "reference": "NSB-GEN-9607",
+    "reference": "NSB-GEN-5549",
     "name": "Manomètre DN 50 type 1",
+    "category": "mesure",
+    "specification": "DN 50",
+    "active": true,
     "unit": "p",
-    "base_price": 128.94
+    "base_price": 36.41
   },
   {
     "id": "st-369",
@@ -12166,10 +15481,13 @@ export const MOCK_CATALOGUE = [
       "code": "ST",
       "name": "Sanitas Troesch"
     },
-    "reference": "SAN.GEN.693308",
+    "reference": "SAN.GEN.598702",
     "name": "Manomètre DN 50 modèle 1",
+    "category": "mesure",
+    "specification": "DN 50",
+    "active": true,
     "unit": "p",
-    "base_price": 129.35
+    "base_price": 195.22
   },
   {
     "id": "gm-369",
@@ -12177,10 +15495,13 @@ export const MOCK_CATALOGUE = [
       "code": "GM",
       "name": "Getaz Miauton"
     },
-    "reference": "GM/GN/6755",
+    "reference": "GM/GN/6677",
     "name": "Manomètre DN 50 variante 1",
+    "category": "mesure",
+    "specification": "DN 50",
+    "active": true,
     "unit": "p",
-    "base_price": 27.05
+    "base_price": 28.66
   },
   {
     "id": "nsb-370",
@@ -12188,10 +15509,13 @@ export const MOCK_CATALOGUE = [
       "code": "NSB",
       "name": "Nussbaum"
     },
-    "reference": "NSB-GEN-4170",
+    "reference": "NSB-GEN-5725",
     "name": "Manomètre DN 50 type 2",
+    "category": "mesure",
+    "specification": "DN 50",
+    "active": true,
     "unit": "p",
-    "base_price": 156.81
+    "base_price": 160.02
   },
   {
     "id": "st-370",
@@ -12199,10 +15523,13 @@ export const MOCK_CATALOGUE = [
       "code": "ST",
       "name": "Sanitas Troesch"
     },
-    "reference": "SAN.GEN.154687",
+    "reference": "SAN.GEN.525741",
     "name": "Manomètre DN 50 modèle 2",
+    "category": "mesure",
+    "specification": "DN 50",
+    "active": true,
     "unit": "p",
-    "base_price": 104.38
+    "base_price": 147.34
   },
   {
     "id": "gm-370",
@@ -12210,10 +15537,13 @@ export const MOCK_CATALOGUE = [
       "code": "GM",
       "name": "Getaz Miauton"
     },
-    "reference": "GM/GN/5772",
+    "reference": "GM/GN/1084",
     "name": "Manomètre DN 50 variante 2",
+    "category": "mesure",
+    "specification": "DN 50",
+    "active": true,
     "unit": "p",
-    "base_price": 198.21
+    "base_price": 207.42
   },
   {
     "id": "nsb-371",
@@ -12221,10 +15551,13 @@ export const MOCK_CATALOGUE = [
       "code": "NSB",
       "name": "Nussbaum"
     },
-    "reference": "NSB-GEN-3186",
+    "reference": "NSB-GEN-9700",
     "name": "Manomètre DN 50 type 3",
+    "category": "mesure",
+    "specification": "DN 50",
+    "active": true,
     "unit": "p",
-    "base_price": 60.01
+    "base_price": 77.26
   },
   {
     "id": "st-371",
@@ -12232,10 +15565,13 @@ export const MOCK_CATALOGUE = [
       "code": "ST",
       "name": "Sanitas Troesch"
     },
-    "reference": "SAN.GEN.609009",
+    "reference": "SAN.GEN.880691",
     "name": "Manomètre DN 50 modèle 3",
+    "category": "mesure",
+    "specification": "DN 50",
+    "active": true,
     "unit": "p",
-    "base_price": 172.46
+    "base_price": 213.23
   },
   {
     "id": "gm-371",
@@ -12243,10 +15579,13 @@ export const MOCK_CATALOGUE = [
       "code": "GM",
       "name": "Getaz Miauton"
     },
-    "reference": "GM/GN/3129",
+    "reference": "GM/GN/1456",
     "name": "Manomètre DN 50 variante 3",
+    "category": "mesure",
+    "specification": "DN 50",
+    "active": true,
     "unit": "p",
-    "base_price": 38.55
+    "base_price": 198.93
   },
   {
     "id": "nsb-372",
@@ -12254,10 +15593,13 @@ export const MOCK_CATALOGUE = [
       "code": "NSB",
       "name": "Nussbaum"
     },
-    "reference": "NSB-GEN-3254",
+    "reference": "NSB-GEN-6760",
     "name": "Manomètre DN 50 type 4",
+    "category": "mesure",
+    "specification": "DN 50",
+    "active": true,
     "unit": "p",
-    "base_price": 44.3
+    "base_price": 177.11
   },
   {
     "id": "st-372",
@@ -12265,10 +15607,13 @@ export const MOCK_CATALOGUE = [
       "code": "ST",
       "name": "Sanitas Troesch"
     },
-    "reference": "SAN.GEN.696883",
+    "reference": "SAN.GEN.118479",
     "name": "Manomètre DN 50 modèle 4",
+    "category": "mesure",
+    "specification": "DN 50",
+    "active": true,
     "unit": "p",
-    "base_price": 108.6
+    "base_price": 100.26
   },
   {
     "id": "gm-372",
@@ -12276,10 +15621,13 @@ export const MOCK_CATALOGUE = [
       "code": "GM",
       "name": "Getaz Miauton"
     },
-    "reference": "GM/GN/3240",
+    "reference": "GM/GN/3273",
     "name": "Manomètre DN 50 variante 4",
+    "category": "mesure",
+    "specification": "DN 50",
+    "active": true,
     "unit": "p",
-    "base_price": 59.22
+    "base_price": 201.34
   },
   {
     "id": "nsb-373",
@@ -12287,10 +15635,13 @@ export const MOCK_CATALOGUE = [
       "code": "NSB",
       "name": "Nussbaum"
     },
-    "reference": "NSB-GEN-3645",
+    "reference": "NSB-GEN-5514",
     "name": "Thermomètre 1/2\" type 0",
+    "category": "mesure",
+    "specification": "1/2\"",
+    "active": true,
     "unit": "p",
-    "base_price": 181.64
+    "base_price": 115.27
   },
   {
     "id": "st-373",
@@ -12298,10 +15649,13 @@ export const MOCK_CATALOGUE = [
       "code": "ST",
       "name": "Sanitas Troesch"
     },
-    "reference": "SAN.GEN.357793",
+    "reference": "SAN.GEN.411285",
     "name": "Thermomètre 1/2\" modèle 0",
+    "category": "mesure",
+    "specification": "1/2\"",
+    "active": true,
     "unit": "p",
-    "base_price": 184.09
+    "base_price": 41.05
   },
   {
     "id": "gm-373",
@@ -12309,10 +15663,13 @@ export const MOCK_CATALOGUE = [
       "code": "GM",
       "name": "Getaz Miauton"
     },
-    "reference": "GM/GN/5152",
+    "reference": "GM/GN/1619",
     "name": "Thermomètre 1/2\" variante 0",
+    "category": "mesure",
+    "specification": "1/2\"",
+    "active": true,
     "unit": "p",
-    "base_price": 84.06
+    "base_price": 174.47
   },
   {
     "id": "nsb-374",
@@ -12320,10 +15677,13 @@ export const MOCK_CATALOGUE = [
       "code": "NSB",
       "name": "Nussbaum"
     },
-    "reference": "NSB-GEN-1153",
+    "reference": "NSB-GEN-2961",
     "name": "Thermomètre 1/2\" type 1",
+    "category": "mesure",
+    "specification": "1/2\"",
+    "active": true,
     "unit": "p",
-    "base_price": 54.98
+    "base_price": 130.36
   },
   {
     "id": "st-374",
@@ -12331,10 +15691,13 @@ export const MOCK_CATALOGUE = [
       "code": "ST",
       "name": "Sanitas Troesch"
     },
-    "reference": "SAN.GEN.360592",
+    "reference": "SAN.GEN.639062",
     "name": "Thermomètre 1/2\" modèle 1",
+    "category": "mesure",
+    "specification": "1/2\"",
+    "active": true,
     "unit": "p",
-    "base_price": 140.79
+    "base_price": 154.36
   },
   {
     "id": "gm-374",
@@ -12342,10 +15705,13 @@ export const MOCK_CATALOGUE = [
       "code": "GM",
       "name": "Getaz Miauton"
     },
-    "reference": "GM/GN/3581",
+    "reference": "GM/GN/6877",
     "name": "Thermomètre 1/2\" variante 1",
+    "category": "mesure",
+    "specification": "1/2\"",
+    "active": true,
     "unit": "p",
-    "base_price": 163.37
+    "base_price": 130.11
   },
   {
     "id": "nsb-375",
@@ -12353,10 +15719,13 @@ export const MOCK_CATALOGUE = [
       "code": "NSB",
       "name": "Nussbaum"
     },
-    "reference": "NSB-GEN-3553",
+    "reference": "NSB-GEN-6800",
     "name": "Thermomètre 1/2\" type 2",
+    "category": "mesure",
+    "specification": "1/2\"",
+    "active": true,
     "unit": "p",
-    "base_price": 114.35
+    "base_price": 28.75
   },
   {
     "id": "st-375",
@@ -12364,10 +15733,13 @@ export const MOCK_CATALOGUE = [
       "code": "ST",
       "name": "Sanitas Troesch"
     },
-    "reference": "SAN.GEN.497022",
+    "reference": "SAN.GEN.331523",
     "name": "Thermomètre 1/2\" modèle 2",
+    "category": "mesure",
+    "specification": "1/2\"",
+    "active": true,
     "unit": "p",
-    "base_price": 112.64
+    "base_price": 145.59
   },
   {
     "id": "gm-375",
@@ -12375,10 +15747,13 @@ export const MOCK_CATALOGUE = [
       "code": "GM",
       "name": "Getaz Miauton"
     },
-    "reference": "GM/GN/8231",
+    "reference": "GM/GN/3690",
     "name": "Thermomètre 1/2\" variante 2",
+    "category": "mesure",
+    "specification": "1/2\"",
+    "active": true,
     "unit": "p",
-    "base_price": 67.07
+    "base_price": 31.96
   },
   {
     "id": "nsb-376",
@@ -12386,10 +15761,13 @@ export const MOCK_CATALOGUE = [
       "code": "NSB",
       "name": "Nussbaum"
     },
-    "reference": "NSB-GEN-2504",
+    "reference": "NSB-GEN-4047",
     "name": "Thermomètre 1/2\" type 3",
+    "category": "mesure",
+    "specification": "1/2\"",
+    "active": true,
     "unit": "p",
-    "base_price": 53.44
+    "base_price": 67.67
   },
   {
     "id": "st-376",
@@ -12397,10 +15775,13 @@ export const MOCK_CATALOGUE = [
       "code": "ST",
       "name": "Sanitas Troesch"
     },
-    "reference": "SAN.GEN.839355",
+    "reference": "SAN.GEN.283785",
     "name": "Thermomètre 1/2\" modèle 3",
+    "category": "mesure",
+    "specification": "1/2\"",
+    "active": true,
     "unit": "p",
-    "base_price": 117.2
+    "base_price": 209.52
   },
   {
     "id": "gm-376",
@@ -12408,10 +15789,13 @@ export const MOCK_CATALOGUE = [
       "code": "GM",
       "name": "Getaz Miauton"
     },
-    "reference": "GM/GN/1455",
+    "reference": "GM/GN/2482",
     "name": "Thermomètre 1/2\" variante 3",
+    "category": "mesure",
+    "specification": "1/2\"",
+    "active": true,
     "unit": "p",
-    "base_price": 93.01
+    "base_price": 183.65
   },
   {
     "id": "nsb-377",
@@ -12419,10 +15803,13 @@ export const MOCK_CATALOGUE = [
       "code": "NSB",
       "name": "Nussbaum"
     },
-    "reference": "NSB-GEN-6845",
+    "reference": "NSB-GEN-4267",
     "name": "Thermomètre 1/2\" type 4",
+    "category": "mesure",
+    "specification": "1/2\"",
+    "active": true,
     "unit": "p",
-    "base_price": 216.38
+    "base_price": 32.26
   },
   {
     "id": "st-377",
@@ -12430,10 +15817,13 @@ export const MOCK_CATALOGUE = [
       "code": "ST",
       "name": "Sanitas Troesch"
     },
-    "reference": "SAN.GEN.303707",
+    "reference": "SAN.GEN.452059",
     "name": "Thermomètre 1/2\" modèle 4",
+    "category": "mesure",
+    "specification": "1/2\"",
+    "active": true,
     "unit": "p",
-    "base_price": 90.51
+    "base_price": 158.93
   },
   {
     "id": "gm-377",
@@ -12441,10 +15831,13 @@ export const MOCK_CATALOGUE = [
       "code": "GM",
       "name": "Getaz Miauton"
     },
-    "reference": "GM/GN/2625",
+    "reference": "GM/GN/9199",
     "name": "Thermomètre 1/2\" variante 4",
+    "category": "mesure",
+    "specification": "1/2\"",
+    "active": true,
     "unit": "p",
-    "base_price": 142.96
+    "base_price": 219.9
   },
   {
     "id": "nsb-378",
@@ -12452,10 +15845,13 @@ export const MOCK_CATALOGUE = [
       "code": "NSB",
       "name": "Nussbaum"
     },
-    "reference": "NSB-GEN-5551",
+    "reference": "NSB-GEN-8770",
     "name": "Thermomètre 3/4\" type 0",
+    "category": "mesure",
+    "specification": "3/4\"",
+    "active": true,
     "unit": "p",
-    "base_price": 33.97
+    "base_price": 140.98
   },
   {
     "id": "st-378",
@@ -12463,10 +15859,13 @@ export const MOCK_CATALOGUE = [
       "code": "ST",
       "name": "Sanitas Troesch"
     },
-    "reference": "SAN.GEN.207983",
+    "reference": "SAN.GEN.993579",
     "name": "Thermomètre 3/4\" modèle 0",
+    "category": "mesure",
+    "specification": "3/4\"",
+    "active": true,
     "unit": "p",
-    "base_price": 70.03
+    "base_price": 111.11
   },
   {
     "id": "gm-378",
@@ -12474,10 +15873,13 @@ export const MOCK_CATALOGUE = [
       "code": "GM",
       "name": "Getaz Miauton"
     },
-    "reference": "GM/GN/7310",
+    "reference": "GM/GN/4293",
     "name": "Thermomètre 3/4\" variante 0",
+    "category": "mesure",
+    "specification": "3/4\"",
+    "active": true,
     "unit": "p",
-    "base_price": 206.18
+    "base_price": 79.58
   },
   {
     "id": "nsb-379",
@@ -12485,10 +15887,13 @@ export const MOCK_CATALOGUE = [
       "code": "NSB",
       "name": "Nussbaum"
     },
-    "reference": "NSB-GEN-7088",
+    "reference": "NSB-GEN-3417",
     "name": "Thermomètre 3/4\" type 1",
+    "category": "mesure",
+    "specification": "3/4\"",
+    "active": true,
     "unit": "p",
-    "base_price": 139.08
+    "base_price": 108.89
   },
   {
     "id": "st-379",
@@ -12496,10 +15901,13 @@ export const MOCK_CATALOGUE = [
       "code": "ST",
       "name": "Sanitas Troesch"
     },
-    "reference": "SAN.GEN.856096",
+    "reference": "SAN.GEN.150710",
     "name": "Thermomètre 3/4\" modèle 1",
+    "category": "mesure",
+    "specification": "3/4\"",
+    "active": true,
     "unit": "p",
-    "base_price": 43.7
+    "base_price": 142.68
   },
   {
     "id": "gm-379",
@@ -12507,10 +15915,13 @@ export const MOCK_CATALOGUE = [
       "code": "GM",
       "name": "Getaz Miauton"
     },
-    "reference": "GM/GN/5792",
+    "reference": "GM/GN/4605",
     "name": "Thermomètre 3/4\" variante 1",
+    "category": "mesure",
+    "specification": "3/4\"",
+    "active": true,
     "unit": "p",
-    "base_price": 152.24
+    "base_price": 39.39
   },
   {
     "id": "nsb-380",
@@ -12518,10 +15929,13 @@ export const MOCK_CATALOGUE = [
       "code": "NSB",
       "name": "Nussbaum"
     },
-    "reference": "NSB-GEN-2795",
+    "reference": "NSB-GEN-6075",
     "name": "Thermomètre 3/4\" type 2",
+    "category": "mesure",
+    "specification": "3/4\"",
+    "active": true,
     "unit": "p",
-    "base_price": 153.89
+    "base_price": 158.61
   },
   {
     "id": "st-380",
@@ -12529,10 +15943,13 @@ export const MOCK_CATALOGUE = [
       "code": "ST",
       "name": "Sanitas Troesch"
     },
-    "reference": "SAN.GEN.212005",
+    "reference": "SAN.GEN.721170",
     "name": "Thermomètre 3/4\" modèle 2",
+    "category": "mesure",
+    "specification": "3/4\"",
+    "active": true,
     "unit": "p",
-    "base_price": 154.64
+    "base_price": 161.32
   },
   {
     "id": "gm-380",
@@ -12540,10 +15957,13 @@ export const MOCK_CATALOGUE = [
       "code": "GM",
       "name": "Getaz Miauton"
     },
-    "reference": "GM/GN/3556",
+    "reference": "GM/GN/9216",
     "name": "Thermomètre 3/4\" variante 2",
+    "category": "mesure",
+    "specification": "3/4\"",
+    "active": true,
     "unit": "p",
-    "base_price": 75.19
+    "base_price": 191.76
   },
   {
     "id": "nsb-381",
@@ -12551,10 +15971,13 @@ export const MOCK_CATALOGUE = [
       "code": "NSB",
       "name": "Nussbaum"
     },
-    "reference": "NSB-GEN-3744",
+    "reference": "NSB-GEN-9678",
     "name": "Thermomètre 3/4\" type 3",
+    "category": "mesure",
+    "specification": "3/4\"",
+    "active": true,
     "unit": "p",
-    "base_price": 166.05
+    "base_price": 186.06
   },
   {
     "id": "st-381",
@@ -12562,10 +15985,13 @@ export const MOCK_CATALOGUE = [
       "code": "ST",
       "name": "Sanitas Troesch"
     },
-    "reference": "SAN.GEN.556480",
+    "reference": "SAN.GEN.778630",
     "name": "Thermomètre 3/4\" modèle 3",
+    "category": "mesure",
+    "specification": "3/4\"",
+    "active": true,
     "unit": "p",
-    "base_price": 178.58
+    "base_price": 149.34
   },
   {
     "id": "gm-381",
@@ -12573,10 +15999,13 @@ export const MOCK_CATALOGUE = [
       "code": "GM",
       "name": "Getaz Miauton"
     },
-    "reference": "GM/GN/6281",
+    "reference": "GM/GN/2950",
     "name": "Thermomètre 3/4\" variante 3",
+    "category": "mesure",
+    "specification": "3/4\"",
+    "active": true,
     "unit": "p",
-    "base_price": 183.45
+    "base_price": 32.02
   },
   {
     "id": "nsb-382",
@@ -12584,10 +16013,13 @@ export const MOCK_CATALOGUE = [
       "code": "NSB",
       "name": "Nussbaum"
     },
-    "reference": "NSB-GEN-8570",
+    "reference": "NSB-GEN-7035",
     "name": "Thermomètre 3/4\" type 4",
+    "category": "mesure",
+    "specification": "3/4\"",
+    "active": true,
     "unit": "p",
-    "base_price": 81.58
+    "base_price": 169.56
   },
   {
     "id": "st-382",
@@ -12595,10 +16027,13 @@ export const MOCK_CATALOGUE = [
       "code": "ST",
       "name": "Sanitas Troesch"
     },
-    "reference": "SAN.GEN.759297",
+    "reference": "SAN.GEN.806828",
     "name": "Thermomètre 3/4\" modèle 4",
+    "category": "mesure",
+    "specification": "3/4\"",
+    "active": true,
     "unit": "p",
-    "base_price": 41.92
+    "base_price": 175.07
   },
   {
     "id": "gm-382",
@@ -12606,10 +16041,13 @@ export const MOCK_CATALOGUE = [
       "code": "GM",
       "name": "Getaz Miauton"
     },
-    "reference": "GM/GN/8794",
+    "reference": "GM/GN/2532",
     "name": "Thermomètre 3/4\" variante 4",
+    "category": "mesure",
+    "specification": "3/4\"",
+    "active": true,
     "unit": "p",
-    "base_price": 140.9
+    "base_price": 163.24
   },
   {
     "id": "nsb-383",
@@ -12617,10 +16055,13 @@ export const MOCK_CATALOGUE = [
       "code": "NSB",
       "name": "Nussbaum"
     },
-    "reference": "NSB-GEN-4879",
+    "reference": "NSB-GEN-9159",
     "name": "Thermomètre 1\" type 0",
+    "category": "mesure",
+    "specification": "1\"",
+    "active": true,
     "unit": "p",
-    "base_price": 92.36
+    "base_price": 204.64
   },
   {
     "id": "st-383",
@@ -12628,10 +16069,13 @@ export const MOCK_CATALOGUE = [
       "code": "ST",
       "name": "Sanitas Troesch"
     },
-    "reference": "SAN.GEN.682192",
+    "reference": "SAN.GEN.846744",
     "name": "Thermomètre 1\" modèle 0",
+    "category": "mesure",
+    "specification": "1\"",
+    "active": true,
     "unit": "p",
-    "base_price": 147.46
+    "base_price": 85.68
   },
   {
     "id": "gm-383",
@@ -12639,10 +16083,13 @@ export const MOCK_CATALOGUE = [
       "code": "GM",
       "name": "Getaz Miauton"
     },
-    "reference": "GM/GN/3863",
+    "reference": "GM/GN/1741",
     "name": "Thermomètre 1\" variante 0",
+    "category": "mesure",
+    "specification": "1\"",
+    "active": true,
     "unit": "p",
-    "base_price": 154.52
+    "base_price": 44.07
   },
   {
     "id": "nsb-384",
@@ -12650,10 +16097,13 @@ export const MOCK_CATALOGUE = [
       "code": "NSB",
       "name": "Nussbaum"
     },
-    "reference": "NSB-GEN-5215",
+    "reference": "NSB-GEN-6916",
     "name": "Thermomètre 1\" type 1",
+    "category": "mesure",
+    "specification": "1\"",
+    "active": true,
     "unit": "p",
-    "base_price": 119.43
+    "base_price": 151.61
   },
   {
     "id": "st-384",
@@ -12661,10 +16111,13 @@ export const MOCK_CATALOGUE = [
       "code": "ST",
       "name": "Sanitas Troesch"
     },
-    "reference": "SAN.GEN.361658",
+    "reference": "SAN.GEN.837156",
     "name": "Thermomètre 1\" modèle 1",
+    "category": "mesure",
+    "specification": "1\"",
+    "active": true,
     "unit": "p",
-    "base_price": 126.58
+    "base_price": 100.96
   },
   {
     "id": "gm-384",
@@ -12672,10 +16125,13 @@ export const MOCK_CATALOGUE = [
       "code": "GM",
       "name": "Getaz Miauton"
     },
-    "reference": "GM/GN/3337",
+    "reference": "GM/GN/7536",
     "name": "Thermomètre 1\" variante 1",
+    "category": "mesure",
+    "specification": "1\"",
+    "active": true,
     "unit": "p",
-    "base_price": 138.83
+    "base_price": 211.93
   },
   {
     "id": "nsb-385",
@@ -12683,10 +16139,13 @@ export const MOCK_CATALOGUE = [
       "code": "NSB",
       "name": "Nussbaum"
     },
-    "reference": "NSB-GEN-1103",
+    "reference": "NSB-GEN-4852",
     "name": "Thermomètre 1\" type 2",
+    "category": "mesure",
+    "specification": "1\"",
+    "active": true,
     "unit": "p",
-    "base_price": 49.56
+    "base_price": 41.42
   },
   {
     "id": "st-385",
@@ -12694,10 +16153,13 @@ export const MOCK_CATALOGUE = [
       "code": "ST",
       "name": "Sanitas Troesch"
     },
-    "reference": "SAN.GEN.463219",
+    "reference": "SAN.GEN.196794",
     "name": "Thermomètre 1\" modèle 2",
+    "category": "mesure",
+    "specification": "1\"",
+    "active": true,
     "unit": "p",
-    "base_price": 56.39
+    "base_price": 200.42
   },
   {
     "id": "gm-385",
@@ -12705,10 +16167,13 @@ export const MOCK_CATALOGUE = [
       "code": "GM",
       "name": "Getaz Miauton"
     },
-    "reference": "GM/GN/7761",
+    "reference": "GM/GN/8628",
     "name": "Thermomètre 1\" variante 2",
+    "category": "mesure",
+    "specification": "1\"",
+    "active": true,
     "unit": "p",
-    "base_price": 49.79
+    "base_price": 99.36
   },
   {
     "id": "nsb-386",
@@ -12716,10 +16181,13 @@ export const MOCK_CATALOGUE = [
       "code": "NSB",
       "name": "Nussbaum"
     },
-    "reference": "NSB-GEN-5926",
+    "reference": "NSB-GEN-3781",
     "name": "Thermomètre 1\" type 3",
+    "category": "mesure",
+    "specification": "1\"",
+    "active": true,
     "unit": "p",
-    "base_price": 21.68
+    "base_price": 89.26
   },
   {
     "id": "st-386",
@@ -12727,10 +16195,13 @@ export const MOCK_CATALOGUE = [
       "code": "ST",
       "name": "Sanitas Troesch"
     },
-    "reference": "SAN.GEN.156073",
+    "reference": "SAN.GEN.812098",
     "name": "Thermomètre 1\" modèle 3",
+    "category": "mesure",
+    "specification": "1\"",
+    "active": true,
     "unit": "p",
-    "base_price": 168.45
+    "base_price": 109.25
   },
   {
     "id": "gm-386",
@@ -12738,10 +16209,13 @@ export const MOCK_CATALOGUE = [
       "code": "GM",
       "name": "Getaz Miauton"
     },
-    "reference": "GM/GN/8282",
+    "reference": "GM/GN/1977",
     "name": "Thermomètre 1\" variante 3",
+    "category": "mesure",
+    "specification": "1\"",
+    "active": true,
     "unit": "p",
-    "base_price": 192.47
+    "base_price": 57.39
   },
   {
     "id": "nsb-387",
@@ -12749,10 +16223,13 @@ export const MOCK_CATALOGUE = [
       "code": "NSB",
       "name": "Nussbaum"
     },
-    "reference": "NSB-GEN-4153",
+    "reference": "NSB-GEN-6683",
     "name": "Thermomètre 1\" type 4",
+    "category": "mesure",
+    "specification": "1\"",
+    "active": true,
     "unit": "p",
-    "base_price": 139.83
+    "base_price": 214.23
   },
   {
     "id": "st-387",
@@ -12760,10 +16237,13 @@ export const MOCK_CATALOGUE = [
       "code": "ST",
       "name": "Sanitas Troesch"
     },
-    "reference": "SAN.GEN.165788",
+    "reference": "SAN.GEN.670382",
     "name": "Thermomètre 1\" modèle 4",
+    "category": "mesure",
+    "specification": "1\"",
+    "active": true,
     "unit": "p",
-    "base_price": 31.04
+    "base_price": 125.36
   },
   {
     "id": "gm-387",
@@ -12771,10 +16251,13 @@ export const MOCK_CATALOGUE = [
       "code": "GM",
       "name": "Getaz Miauton"
     },
-    "reference": "GM/GN/4354",
+    "reference": "GM/GN/1648",
     "name": "Thermomètre 1\" variante 4",
+    "category": "mesure",
+    "specification": "1\"",
+    "active": true,
     "unit": "p",
-    "base_price": 120.76
+    "base_price": 102.9
   },
   {
     "id": "nsb-388",
@@ -12782,10 +16265,13 @@ export const MOCK_CATALOGUE = [
       "code": "NSB",
       "name": "Nussbaum"
     },
-    "reference": "NSB-GEN-4769",
+    "reference": "NSB-GEN-1791",
     "name": "Thermomètre 1 1/4\" type 0",
+    "category": "mesure",
+    "specification": "1 1/4\"",
+    "active": true,
     "unit": "p",
-    "base_price": 170.67
+    "base_price": 100.37
   },
   {
     "id": "st-388",
@@ -12793,10 +16279,13 @@ export const MOCK_CATALOGUE = [
       "code": "ST",
       "name": "Sanitas Troesch"
     },
-    "reference": "SAN.GEN.203546",
+    "reference": "SAN.GEN.348697",
     "name": "Thermomètre 1 1/4\" modèle 0",
+    "category": "mesure",
+    "specification": "1 1/4\"",
+    "active": true,
     "unit": "p",
-    "base_price": 44.16
+    "base_price": 218.91
   },
   {
     "id": "gm-388",
@@ -12804,10 +16293,13 @@ export const MOCK_CATALOGUE = [
       "code": "GM",
       "name": "Getaz Miauton"
     },
-    "reference": "GM/GN/6710",
+    "reference": "GM/GN/4764",
     "name": "Thermomètre 1 1/4\" variante 0",
+    "category": "mesure",
+    "specification": "1 1/4\"",
+    "active": true,
     "unit": "p",
-    "base_price": 108.8
+    "base_price": 66.8
   },
   {
     "id": "nsb-389",
@@ -12815,10 +16307,13 @@ export const MOCK_CATALOGUE = [
       "code": "NSB",
       "name": "Nussbaum"
     },
-    "reference": "NSB-GEN-4559",
+    "reference": "NSB-GEN-4105",
     "name": "Thermomètre 1 1/4\" type 1",
+    "category": "mesure",
+    "specification": "1 1/4\"",
+    "active": true,
     "unit": "p",
-    "base_price": 129.67
+    "base_price": 102.84
   },
   {
     "id": "st-389",
@@ -12826,10 +16321,13 @@ export const MOCK_CATALOGUE = [
       "code": "ST",
       "name": "Sanitas Troesch"
     },
-    "reference": "SAN.GEN.836207",
+    "reference": "SAN.GEN.940582",
     "name": "Thermomètre 1 1/4\" modèle 1",
+    "category": "mesure",
+    "specification": "1 1/4\"",
+    "active": true,
     "unit": "p",
-    "base_price": 211.2
+    "base_price": 121.1
   },
   {
     "id": "gm-389",
@@ -12837,10 +16335,13 @@ export const MOCK_CATALOGUE = [
       "code": "GM",
       "name": "Getaz Miauton"
     },
-    "reference": "GM/GN/4240",
+    "reference": "GM/GN/3446",
     "name": "Thermomètre 1 1/4\" variante 1",
+    "category": "mesure",
+    "specification": "1 1/4\"",
+    "active": true,
     "unit": "p",
-    "base_price": 110.28
+    "base_price": 107.54
   },
   {
     "id": "nsb-390",
@@ -12848,10 +16349,13 @@ export const MOCK_CATALOGUE = [
       "code": "NSB",
       "name": "Nussbaum"
     },
-    "reference": "NSB-GEN-7482",
+    "reference": "NSB-GEN-1716",
     "name": "Thermomètre 1 1/4\" type 2",
+    "category": "mesure",
+    "specification": "1 1/4\"",
+    "active": true,
     "unit": "p",
-    "base_price": 82.94
+    "base_price": 132.53
   },
   {
     "id": "st-390",
@@ -12859,10 +16363,13 @@ export const MOCK_CATALOGUE = [
       "code": "ST",
       "name": "Sanitas Troesch"
     },
-    "reference": "SAN.GEN.185534",
+    "reference": "SAN.GEN.232419",
     "name": "Thermomètre 1 1/4\" modèle 2",
+    "category": "mesure",
+    "specification": "1 1/4\"",
+    "active": true,
     "unit": "p",
-    "base_price": 175.98
+    "base_price": 113.63
   },
   {
     "id": "gm-390",
@@ -12870,10 +16377,13 @@ export const MOCK_CATALOGUE = [
       "code": "GM",
       "name": "Getaz Miauton"
     },
-    "reference": "GM/GN/1023",
+    "reference": "GM/GN/4134",
     "name": "Thermomètre 1 1/4\" variante 2",
+    "category": "mesure",
+    "specification": "1 1/4\"",
+    "active": true,
     "unit": "p",
-    "base_price": 93.36
+    "base_price": 28.6
   },
   {
     "id": "nsb-391",
@@ -12881,10 +16391,13 @@ export const MOCK_CATALOGUE = [
       "code": "NSB",
       "name": "Nussbaum"
     },
-    "reference": "NSB-GEN-8495",
+    "reference": "NSB-GEN-6364",
     "name": "Thermomètre 1 1/4\" type 3",
+    "category": "mesure",
+    "specification": "1 1/4\"",
+    "active": true,
     "unit": "p",
-    "base_price": 38.29
+    "base_price": 181.89
   },
   {
     "id": "st-391",
@@ -12892,10 +16405,13 @@ export const MOCK_CATALOGUE = [
       "code": "ST",
       "name": "Sanitas Troesch"
     },
-    "reference": "SAN.GEN.685976",
+    "reference": "SAN.GEN.691410",
     "name": "Thermomètre 1 1/4\" modèle 3",
+    "category": "mesure",
+    "specification": "1 1/4\"",
+    "active": true,
     "unit": "p",
-    "base_price": 212.26
+    "base_price": 20.46
   },
   {
     "id": "gm-391",
@@ -12903,10 +16419,13 @@ export const MOCK_CATALOGUE = [
       "code": "GM",
       "name": "Getaz Miauton"
     },
-    "reference": "GM/GN/3218",
+    "reference": "GM/GN/7225",
     "name": "Thermomètre 1 1/4\" variante 3",
+    "category": "mesure",
+    "specification": "1 1/4\"",
+    "active": true,
     "unit": "p",
-    "base_price": 147.24
+    "base_price": 187.65
   },
   {
     "id": "nsb-392",
@@ -12914,10 +16433,13 @@ export const MOCK_CATALOGUE = [
       "code": "NSB",
       "name": "Nussbaum"
     },
-    "reference": "NSB-GEN-3864",
+    "reference": "NSB-GEN-2789",
     "name": "Thermomètre 1 1/4\" type 4",
+    "category": "mesure",
+    "specification": "1 1/4\"",
+    "active": true,
     "unit": "p",
-    "base_price": 22.46
+    "base_price": 136.51
   },
   {
     "id": "st-392",
@@ -12925,10 +16447,13 @@ export const MOCK_CATALOGUE = [
       "code": "ST",
       "name": "Sanitas Troesch"
     },
-    "reference": "SAN.GEN.649453",
+    "reference": "SAN.GEN.415514",
     "name": "Thermomètre 1 1/4\" modèle 4",
+    "category": "mesure",
+    "specification": "1 1/4\"",
+    "active": true,
     "unit": "p",
-    "base_price": 77.98
+    "base_price": 111.84
   },
   {
     "id": "gm-392",
@@ -12936,10 +16461,13 @@ export const MOCK_CATALOGUE = [
       "code": "GM",
       "name": "Getaz Miauton"
     },
-    "reference": "GM/GN/6746",
+    "reference": "GM/GN/1513",
     "name": "Thermomètre 1 1/4\" variante 4",
+    "category": "mesure",
+    "specification": "1 1/4\"",
+    "active": true,
     "unit": "p",
-    "base_price": 191.05
+    "base_price": 95.56
   },
   {
     "id": "nsb-393",
@@ -12947,10 +16475,13 @@ export const MOCK_CATALOGUE = [
       "code": "NSB",
       "name": "Nussbaum"
     },
-    "reference": "NSB-GEN-7152",
+    "reference": "NSB-GEN-9184",
     "name": "Thermomètre 1 1/2\" type 0",
+    "category": "mesure",
+    "specification": "1 1/2\"",
+    "active": true,
     "unit": "p",
-    "base_price": 126.56
+    "base_price": 196.05
   },
   {
     "id": "st-393",
@@ -12958,10 +16489,13 @@ export const MOCK_CATALOGUE = [
       "code": "ST",
       "name": "Sanitas Troesch"
     },
-    "reference": "SAN.GEN.138685",
+    "reference": "SAN.GEN.178775",
     "name": "Thermomètre 1 1/2\" modèle 0",
+    "category": "mesure",
+    "specification": "1 1/2\"",
+    "active": true,
     "unit": "p",
-    "base_price": 44.67
+    "base_price": 71.55
   },
   {
     "id": "gm-393",
@@ -12969,10 +16503,13 @@ export const MOCK_CATALOGUE = [
       "code": "GM",
       "name": "Getaz Miauton"
     },
-    "reference": "GM/GN/3081",
+    "reference": "GM/GN/6554",
     "name": "Thermomètre 1 1/2\" variante 0",
+    "category": "mesure",
+    "specification": "1 1/2\"",
+    "active": true,
     "unit": "p",
-    "base_price": 58.73
+    "base_price": 61.57
   },
   {
     "id": "nsb-394",
@@ -12980,10 +16517,13 @@ export const MOCK_CATALOGUE = [
       "code": "NSB",
       "name": "Nussbaum"
     },
-    "reference": "NSB-GEN-1309",
+    "reference": "NSB-GEN-9529",
     "name": "Thermomètre 1 1/2\" type 1",
+    "category": "mesure",
+    "specification": "1 1/2\"",
+    "active": true,
     "unit": "p",
-    "base_price": 142.2
+    "base_price": 54.92
   },
   {
     "id": "st-394",
@@ -12991,10 +16531,13 @@ export const MOCK_CATALOGUE = [
       "code": "ST",
       "name": "Sanitas Troesch"
     },
-    "reference": "SAN.GEN.438229",
+    "reference": "SAN.GEN.755904",
     "name": "Thermomètre 1 1/2\" modèle 1",
+    "category": "mesure",
+    "specification": "1 1/2\"",
+    "active": true,
     "unit": "p",
-    "base_price": 202.71
+    "base_price": 198.87
   },
   {
     "id": "gm-394",
@@ -13002,10 +16545,13 @@ export const MOCK_CATALOGUE = [
       "code": "GM",
       "name": "Getaz Miauton"
     },
-    "reference": "GM/GN/4062",
+    "reference": "GM/GN/7105",
     "name": "Thermomètre 1 1/2\" variante 1",
+    "category": "mesure",
+    "specification": "1 1/2\"",
+    "active": true,
     "unit": "p",
-    "base_price": 154.87
+    "base_price": 154.77
   },
   {
     "id": "nsb-395",
@@ -13013,10 +16559,13 @@ export const MOCK_CATALOGUE = [
       "code": "NSB",
       "name": "Nussbaum"
     },
-    "reference": "NSB-GEN-8539",
+    "reference": "NSB-GEN-5642",
     "name": "Thermomètre 1 1/2\" type 2",
+    "category": "mesure",
+    "specification": "1 1/2\"",
+    "active": true,
     "unit": "p",
-    "base_price": 56.62
+    "base_price": 206.36
   },
   {
     "id": "st-395",
@@ -13024,10 +16573,13 @@ export const MOCK_CATALOGUE = [
       "code": "ST",
       "name": "Sanitas Troesch"
     },
-    "reference": "SAN.GEN.477318",
+    "reference": "SAN.GEN.806901",
     "name": "Thermomètre 1 1/2\" modèle 2",
+    "category": "mesure",
+    "specification": "1 1/2\"",
+    "active": true,
     "unit": "p",
-    "base_price": 210.36
+    "base_price": 45.38
   },
   {
     "id": "gm-395",
@@ -13035,10 +16587,13 @@ export const MOCK_CATALOGUE = [
       "code": "GM",
       "name": "Getaz Miauton"
     },
-    "reference": "GM/GN/9816",
+    "reference": "GM/GN/1575",
     "name": "Thermomètre 1 1/2\" variante 2",
+    "category": "mesure",
+    "specification": "1 1/2\"",
+    "active": true,
     "unit": "p",
-    "base_price": 47.09
+    "base_price": 61.02
   },
   {
     "id": "nsb-396",
@@ -13046,10 +16601,13 @@ export const MOCK_CATALOGUE = [
       "code": "NSB",
       "name": "Nussbaum"
     },
-    "reference": "NSB-GEN-1882",
+    "reference": "NSB-GEN-9234",
     "name": "Thermomètre 1 1/2\" type 3",
+    "category": "mesure",
+    "specification": "1 1/2\"",
+    "active": true,
     "unit": "p",
-    "base_price": 64.25
+    "base_price": 109.72
   },
   {
     "id": "st-396",
@@ -13057,10 +16615,13 @@ export const MOCK_CATALOGUE = [
       "code": "ST",
       "name": "Sanitas Troesch"
     },
-    "reference": "SAN.GEN.724793",
+    "reference": "SAN.GEN.704455",
     "name": "Thermomètre 1 1/2\" modèle 3",
+    "category": "mesure",
+    "specification": "1 1/2\"",
+    "active": true,
     "unit": "p",
-    "base_price": 82.62
+    "base_price": 208.69
   },
   {
     "id": "gm-396",
@@ -13068,10 +16629,13 @@ export const MOCK_CATALOGUE = [
       "code": "GM",
       "name": "Getaz Miauton"
     },
-    "reference": "GM/GN/6213",
+    "reference": "GM/GN/7841",
     "name": "Thermomètre 1 1/2\" variante 3",
+    "category": "mesure",
+    "specification": "1 1/2\"",
+    "active": true,
     "unit": "p",
-    "base_price": 89.07
+    "base_price": 198.79
   },
   {
     "id": "nsb-397",
@@ -13079,10 +16643,13 @@ export const MOCK_CATALOGUE = [
       "code": "NSB",
       "name": "Nussbaum"
     },
-    "reference": "NSB-GEN-7540",
+    "reference": "NSB-GEN-2034",
     "name": "Thermomètre 1 1/2\" type 4",
+    "category": "mesure",
+    "specification": "1 1/2\"",
+    "active": true,
     "unit": "p",
-    "base_price": 164.31
+    "base_price": 37.08
   },
   {
     "id": "st-397",
@@ -13090,10 +16657,13 @@ export const MOCK_CATALOGUE = [
       "code": "ST",
       "name": "Sanitas Troesch"
     },
-    "reference": "SAN.GEN.330734",
+    "reference": "SAN.GEN.725374",
     "name": "Thermomètre 1 1/2\" modèle 4",
+    "category": "mesure",
+    "specification": "1 1/2\"",
+    "active": true,
     "unit": "p",
-    "base_price": 212.96
+    "base_price": 32.95
   },
   {
     "id": "gm-397",
@@ -13101,10 +16671,13 @@ export const MOCK_CATALOGUE = [
       "code": "GM",
       "name": "Getaz Miauton"
     },
-    "reference": "GM/GN/5079",
+    "reference": "GM/GN/1447",
     "name": "Thermomètre 1 1/2\" variante 4",
+    "category": "mesure",
+    "specification": "1 1/2\"",
+    "active": true,
     "unit": "p",
-    "base_price": 42.14
+    "base_price": 26.83
   },
   {
     "id": "nsb-398",
@@ -13112,10 +16685,13 @@ export const MOCK_CATALOGUE = [
       "code": "NSB",
       "name": "Nussbaum"
     },
-    "reference": "NSB-GEN-6576",
+    "reference": "NSB-GEN-4548",
     "name": "Thermomètre 2\" type 0",
+    "category": "mesure",
+    "specification": "2\"",
+    "active": true,
     "unit": "p",
-    "base_price": 118.05
+    "base_price": 59.52
   },
   {
     "id": "st-398",
@@ -13123,10 +16699,13 @@ export const MOCK_CATALOGUE = [
       "code": "ST",
       "name": "Sanitas Troesch"
     },
-    "reference": "SAN.GEN.535202",
+    "reference": "SAN.GEN.357837",
     "name": "Thermomètre 2\" modèle 0",
+    "category": "mesure",
+    "specification": "2\"",
+    "active": true,
     "unit": "p",
-    "base_price": 203.86
+    "base_price": 125.6
   },
   {
     "id": "gm-398",
@@ -13134,10 +16713,13 @@ export const MOCK_CATALOGUE = [
       "code": "GM",
       "name": "Getaz Miauton"
     },
-    "reference": "GM/GN/9537",
+    "reference": "GM/GN/7743",
     "name": "Thermomètre 2\" variante 0",
+    "category": "mesure",
+    "specification": "2\"",
+    "active": true,
     "unit": "p",
-    "base_price": 190.69
+    "base_price": 124.07
   },
   {
     "id": "nsb-399",
@@ -13145,10 +16727,13 @@ export const MOCK_CATALOGUE = [
       "code": "NSB",
       "name": "Nussbaum"
     },
-    "reference": "NSB-GEN-5833",
+    "reference": "NSB-GEN-5375",
     "name": "Thermomètre 2\" type 1",
+    "category": "mesure",
+    "specification": "2\"",
+    "active": true,
     "unit": "p",
-    "base_price": 43.82
+    "base_price": 110.3
   },
   {
     "id": "st-399",
@@ -13156,10 +16741,13 @@ export const MOCK_CATALOGUE = [
       "code": "ST",
       "name": "Sanitas Troesch"
     },
-    "reference": "SAN.GEN.318141",
+    "reference": "SAN.GEN.801045",
     "name": "Thermomètre 2\" modèle 1",
+    "category": "mesure",
+    "specification": "2\"",
+    "active": true,
     "unit": "p",
-    "base_price": 61.65
+    "base_price": 216.78
   },
   {
     "id": "gm-399",
@@ -13167,10 +16755,13 @@ export const MOCK_CATALOGUE = [
       "code": "GM",
       "name": "Getaz Miauton"
     },
-    "reference": "GM/GN/6867",
+    "reference": "GM/GN/1464",
     "name": "Thermomètre 2\" variante 1",
+    "category": "mesure",
+    "specification": "2\"",
+    "active": true,
     "unit": "p",
-    "base_price": 75.61
+    "base_price": 164.49
   },
   {
     "id": "nsb-400",
@@ -13178,10 +16769,13 @@ export const MOCK_CATALOGUE = [
       "code": "NSB",
       "name": "Nussbaum"
     },
-    "reference": "NSB-GEN-5471",
+    "reference": "NSB-GEN-7470",
     "name": "Thermomètre 2\" type 2",
+    "category": "mesure",
+    "specification": "2\"",
+    "active": true,
     "unit": "p",
-    "base_price": 136.29
+    "base_price": 206.51
   },
   {
     "id": "st-400",
@@ -13189,10 +16783,13 @@ export const MOCK_CATALOGUE = [
       "code": "ST",
       "name": "Sanitas Troesch"
     },
-    "reference": "SAN.GEN.871332",
+    "reference": "SAN.GEN.570075",
     "name": "Thermomètre 2\" modèle 2",
+    "category": "mesure",
+    "specification": "2\"",
+    "active": true,
     "unit": "p",
-    "base_price": 57.14
+    "base_price": 211.38
   },
   {
     "id": "gm-400",
@@ -13200,10 +16797,13 @@ export const MOCK_CATALOGUE = [
       "code": "GM",
       "name": "Getaz Miauton"
     },
-    "reference": "GM/GN/4648",
+    "reference": "GM/GN/8598",
     "name": "Thermomètre 2\" variante 2",
+    "category": "mesure",
+    "specification": "2\"",
+    "active": true,
     "unit": "p",
-    "base_price": 127.94
+    "base_price": 208.95
   },
   {
     "id": "nsb-401",
@@ -13211,10 +16811,13 @@ export const MOCK_CATALOGUE = [
       "code": "NSB",
       "name": "Nussbaum"
     },
-    "reference": "NSB-GEN-7320",
+    "reference": "NSB-GEN-9626",
     "name": "Thermomètre 2\" type 3",
+    "category": "mesure",
+    "specification": "2\"",
+    "active": true,
     "unit": "p",
-    "base_price": 196.07
+    "base_price": 44.63
   },
   {
     "id": "st-401",
@@ -13222,10 +16825,13 @@ export const MOCK_CATALOGUE = [
       "code": "ST",
       "name": "Sanitas Troesch"
     },
-    "reference": "SAN.GEN.727289",
+    "reference": "SAN.GEN.178088",
     "name": "Thermomètre 2\" modèle 3",
+    "category": "mesure",
+    "specification": "2\"",
+    "active": true,
     "unit": "p",
-    "base_price": 109.06
+    "base_price": 87.42
   },
   {
     "id": "gm-401",
@@ -13233,10 +16839,13 @@ export const MOCK_CATALOGUE = [
       "code": "GM",
       "name": "Getaz Miauton"
     },
-    "reference": "GM/GN/4116",
+    "reference": "GM/GN/8762",
     "name": "Thermomètre 2\" variante 3",
+    "category": "mesure",
+    "specification": "2\"",
+    "active": true,
     "unit": "p",
-    "base_price": 135.46
+    "base_price": 114.35
   },
   {
     "id": "nsb-402",
@@ -13244,10 +16853,13 @@ export const MOCK_CATALOGUE = [
       "code": "NSB",
       "name": "Nussbaum"
     },
-    "reference": "NSB-GEN-4376",
+    "reference": "NSB-GEN-9380",
     "name": "Thermomètre 2\" type 4",
+    "category": "mesure",
+    "specification": "2\"",
+    "active": true,
     "unit": "p",
-    "base_price": 32.99
+    "base_price": 180.4
   },
   {
     "id": "st-402",
@@ -13255,10 +16867,13 @@ export const MOCK_CATALOGUE = [
       "code": "ST",
       "name": "Sanitas Troesch"
     },
-    "reference": "SAN.GEN.357324",
+    "reference": "SAN.GEN.741832",
     "name": "Thermomètre 2\" modèle 4",
+    "category": "mesure",
+    "specification": "2\"",
+    "active": true,
     "unit": "p",
-    "base_price": 39.1
+    "base_price": 60.25
   },
   {
     "id": "gm-402",
@@ -13266,10 +16881,13 @@ export const MOCK_CATALOGUE = [
       "code": "GM",
       "name": "Getaz Miauton"
     },
-    "reference": "GM/GN/9048",
+    "reference": "GM/GN/2433",
     "name": "Thermomètre 2\" variante 4",
+    "category": "mesure",
+    "specification": "2\"",
+    "active": true,
     "unit": "p",
-    "base_price": 92.4
+    "base_price": 42.46
   },
   {
     "id": "nsb-403",
@@ -13277,10 +16895,13 @@ export const MOCK_CATALOGUE = [
       "code": "NSB",
       "name": "Nussbaum"
     },
-    "reference": "NSB-GEN-7715",
+    "reference": "NSB-GEN-1809",
     "name": "Thermomètre DN 15 type 0",
+    "category": "mesure",
+    "specification": "DN 15",
+    "active": true,
     "unit": "p",
-    "base_price": 108.01
+    "base_price": 52.12
   },
   {
     "id": "st-403",
@@ -13288,10 +16909,13 @@ export const MOCK_CATALOGUE = [
       "code": "ST",
       "name": "Sanitas Troesch"
     },
-    "reference": "SAN.GEN.736372",
+    "reference": "SAN.GEN.262079",
     "name": "Thermomètre DN 15 modèle 0",
+    "category": "mesure",
+    "specification": "DN 15",
+    "active": true,
     "unit": "p",
-    "base_price": 168.59
+    "base_price": 192.23
   },
   {
     "id": "gm-403",
@@ -13299,10 +16923,13 @@ export const MOCK_CATALOGUE = [
       "code": "GM",
       "name": "Getaz Miauton"
     },
-    "reference": "GM/GN/9149",
+    "reference": "GM/GN/9353",
     "name": "Thermomètre DN 15 variante 0",
+    "category": "mesure",
+    "specification": "DN 15",
+    "active": true,
     "unit": "p",
-    "base_price": 79.07
+    "base_price": 149.35
   },
   {
     "id": "nsb-404",
@@ -13310,10 +16937,13 @@ export const MOCK_CATALOGUE = [
       "code": "NSB",
       "name": "Nussbaum"
     },
-    "reference": "NSB-GEN-9348",
+    "reference": "NSB-GEN-1880",
     "name": "Thermomètre DN 15 type 1",
+    "category": "mesure",
+    "specification": "DN 15",
+    "active": true,
     "unit": "p",
-    "base_price": 166.12
+    "base_price": 130.87
   },
   {
     "id": "st-404",
@@ -13321,10 +16951,13 @@ export const MOCK_CATALOGUE = [
       "code": "ST",
       "name": "Sanitas Troesch"
     },
-    "reference": "SAN.GEN.640949",
+    "reference": "SAN.GEN.630536",
     "name": "Thermomètre DN 15 modèle 1",
+    "category": "mesure",
+    "specification": "DN 15",
+    "active": true,
     "unit": "p",
-    "base_price": 182.81
+    "base_price": 124.94
   },
   {
     "id": "gm-404",
@@ -13332,10 +16965,13 @@ export const MOCK_CATALOGUE = [
       "code": "GM",
       "name": "Getaz Miauton"
     },
-    "reference": "GM/GN/8425",
+    "reference": "GM/GN/3837",
     "name": "Thermomètre DN 15 variante 1",
+    "category": "mesure",
+    "specification": "DN 15",
+    "active": true,
     "unit": "p",
-    "base_price": 86.95
+    "base_price": 34.47
   },
   {
     "id": "nsb-405",
@@ -13343,10 +16979,13 @@ export const MOCK_CATALOGUE = [
       "code": "NSB",
       "name": "Nussbaum"
     },
-    "reference": "NSB-GEN-2905",
+    "reference": "NSB-GEN-2023",
     "name": "Thermomètre DN 15 type 2",
+    "category": "mesure",
+    "specification": "DN 15",
+    "active": true,
     "unit": "p",
-    "base_price": 49.05
+    "base_price": 143.6
   },
   {
     "id": "st-405",
@@ -13354,10 +16993,13 @@ export const MOCK_CATALOGUE = [
       "code": "ST",
       "name": "Sanitas Troesch"
     },
-    "reference": "SAN.GEN.697420",
+    "reference": "SAN.GEN.187701",
     "name": "Thermomètre DN 15 modèle 2",
+    "category": "mesure",
+    "specification": "DN 15",
+    "active": true,
     "unit": "p",
-    "base_price": 171.52
+    "base_price": 98.32
   },
   {
     "id": "gm-405",
@@ -13365,10 +17007,13 @@ export const MOCK_CATALOGUE = [
       "code": "GM",
       "name": "Getaz Miauton"
     },
-    "reference": "GM/GN/1505",
+    "reference": "GM/GN/6601",
     "name": "Thermomètre DN 15 variante 2",
+    "category": "mesure",
+    "specification": "DN 15",
+    "active": true,
     "unit": "p",
-    "base_price": 163.48
+    "base_price": 127.26
   },
   {
     "id": "nsb-406",
@@ -13376,10 +17021,13 @@ export const MOCK_CATALOGUE = [
       "code": "NSB",
       "name": "Nussbaum"
     },
-    "reference": "NSB-GEN-6989",
+    "reference": "NSB-GEN-3273",
     "name": "Thermomètre DN 15 type 3",
+    "category": "mesure",
+    "specification": "DN 15",
+    "active": true,
     "unit": "p",
-    "base_price": 181.55
+    "base_price": 137.67
   },
   {
     "id": "st-406",
@@ -13387,10 +17035,13 @@ export const MOCK_CATALOGUE = [
       "code": "ST",
       "name": "Sanitas Troesch"
     },
-    "reference": "SAN.GEN.212526",
+    "reference": "SAN.GEN.251369",
     "name": "Thermomètre DN 15 modèle 3",
+    "category": "mesure",
+    "specification": "DN 15",
+    "active": true,
     "unit": "p",
-    "base_price": 178.18
+    "base_price": 171.1
   },
   {
     "id": "gm-406",
@@ -13398,10 +17049,13 @@ export const MOCK_CATALOGUE = [
       "code": "GM",
       "name": "Getaz Miauton"
     },
-    "reference": "GM/GN/4642",
+    "reference": "GM/GN/5399",
     "name": "Thermomètre DN 15 variante 3",
+    "category": "mesure",
+    "specification": "DN 15",
+    "active": true,
     "unit": "p",
-    "base_price": 64.42
+    "base_price": 212.52
   },
   {
     "id": "nsb-407",
@@ -13409,10 +17063,13 @@ export const MOCK_CATALOGUE = [
       "code": "NSB",
       "name": "Nussbaum"
     },
-    "reference": "NSB-GEN-9596",
+    "reference": "NSB-GEN-9322",
     "name": "Thermomètre DN 15 type 4",
+    "category": "mesure",
+    "specification": "DN 15",
+    "active": true,
     "unit": "p",
-    "base_price": 64.03
+    "base_price": 187.84
   },
   {
     "id": "st-407",
@@ -13420,10 +17077,13 @@ export const MOCK_CATALOGUE = [
       "code": "ST",
       "name": "Sanitas Troesch"
     },
-    "reference": "SAN.GEN.538021",
+    "reference": "SAN.GEN.576247",
     "name": "Thermomètre DN 15 modèle 4",
+    "category": "mesure",
+    "specification": "DN 15",
+    "active": true,
     "unit": "p",
-    "base_price": 195.04
+    "base_price": 37.28
   },
   {
     "id": "gm-407",
@@ -13431,10 +17091,13 @@ export const MOCK_CATALOGUE = [
       "code": "GM",
       "name": "Getaz Miauton"
     },
-    "reference": "GM/GN/7464",
+    "reference": "GM/GN/3225",
     "name": "Thermomètre DN 15 variante 4",
+    "category": "mesure",
+    "specification": "DN 15",
+    "active": true,
     "unit": "p",
-    "base_price": 167.4
+    "base_price": 29.13
   },
   {
     "id": "nsb-408",
@@ -13442,10 +17105,13 @@ export const MOCK_CATALOGUE = [
       "code": "NSB",
       "name": "Nussbaum"
     },
-    "reference": "NSB-GEN-8088",
+    "reference": "NSB-GEN-4637",
     "name": "Thermomètre DN 20 type 0",
+    "category": "mesure",
+    "specification": "DN 20",
+    "active": true,
     "unit": "p",
-    "base_price": 69.63
+    "base_price": 178.92
   },
   {
     "id": "st-408",
@@ -13453,10 +17119,13 @@ export const MOCK_CATALOGUE = [
       "code": "ST",
       "name": "Sanitas Troesch"
     },
-    "reference": "SAN.GEN.399256",
+    "reference": "SAN.GEN.311370",
     "name": "Thermomètre DN 20 modèle 0",
+    "category": "mesure",
+    "specification": "DN 20",
+    "active": true,
     "unit": "p",
-    "base_price": 43.27
+    "base_price": 43.64
   },
   {
     "id": "gm-408",
@@ -13464,10 +17133,13 @@ export const MOCK_CATALOGUE = [
       "code": "GM",
       "name": "Getaz Miauton"
     },
-    "reference": "GM/GN/2908",
+    "reference": "GM/GN/6290",
     "name": "Thermomètre DN 20 variante 0",
+    "category": "mesure",
+    "specification": "DN 20",
+    "active": true,
     "unit": "p",
-    "base_price": 202.12
+    "base_price": 100.28
   },
   {
     "id": "nsb-409",
@@ -13475,10 +17147,13 @@ export const MOCK_CATALOGUE = [
       "code": "NSB",
       "name": "Nussbaum"
     },
-    "reference": "NSB-GEN-1757",
+    "reference": "NSB-GEN-3552",
     "name": "Thermomètre DN 20 type 1",
+    "category": "mesure",
+    "specification": "DN 20",
+    "active": true,
     "unit": "p",
-    "base_price": 99.36
+    "base_price": 20.42
   },
   {
     "id": "st-409",
@@ -13486,10 +17161,13 @@ export const MOCK_CATALOGUE = [
       "code": "ST",
       "name": "Sanitas Troesch"
     },
-    "reference": "SAN.GEN.236695",
+    "reference": "SAN.GEN.870910",
     "name": "Thermomètre DN 20 modèle 1",
+    "category": "mesure",
+    "specification": "DN 20",
+    "active": true,
     "unit": "p",
-    "base_price": 156.15
+    "base_price": 104.02
   },
   {
     "id": "gm-409",
@@ -13497,10 +17175,13 @@ export const MOCK_CATALOGUE = [
       "code": "GM",
       "name": "Getaz Miauton"
     },
-    "reference": "GM/GN/6514",
+    "reference": "GM/GN/1858",
     "name": "Thermomètre DN 20 variante 1",
+    "category": "mesure",
+    "specification": "DN 20",
+    "active": true,
     "unit": "p",
-    "base_price": 149.55
+    "base_price": 195.22
   },
   {
     "id": "nsb-410",
@@ -13508,10 +17189,13 @@ export const MOCK_CATALOGUE = [
       "code": "NSB",
       "name": "Nussbaum"
     },
-    "reference": "NSB-GEN-4783",
+    "reference": "NSB-GEN-4053",
     "name": "Thermomètre DN 20 type 2",
+    "category": "mesure",
+    "specification": "DN 20",
+    "active": true,
     "unit": "p",
-    "base_price": 190.18
+    "base_price": 159.15
   },
   {
     "id": "st-410",
@@ -13519,10 +17203,13 @@ export const MOCK_CATALOGUE = [
       "code": "ST",
       "name": "Sanitas Troesch"
     },
-    "reference": "SAN.GEN.924293",
+    "reference": "SAN.GEN.876511",
     "name": "Thermomètre DN 20 modèle 2",
+    "category": "mesure",
+    "specification": "DN 20",
+    "active": true,
     "unit": "p",
-    "base_price": 151.34
+    "base_price": 73.82
   },
   {
     "id": "gm-410",
@@ -13530,10 +17217,13 @@ export const MOCK_CATALOGUE = [
       "code": "GM",
       "name": "Getaz Miauton"
     },
-    "reference": "GM/GN/9381",
+    "reference": "GM/GN/6170",
     "name": "Thermomètre DN 20 variante 2",
+    "category": "mesure",
+    "specification": "DN 20",
+    "active": true,
     "unit": "p",
-    "base_price": 193.78
+    "base_price": 36.68
   },
   {
     "id": "nsb-411",
@@ -13541,10 +17231,13 @@ export const MOCK_CATALOGUE = [
       "code": "NSB",
       "name": "Nussbaum"
     },
-    "reference": "NSB-GEN-8010",
+    "reference": "NSB-GEN-4694",
     "name": "Thermomètre DN 20 type 3",
+    "category": "mesure",
+    "specification": "DN 20",
+    "active": true,
     "unit": "p",
-    "base_price": 182.19
+    "base_price": 182.97
   },
   {
     "id": "st-411",
@@ -13552,10 +17245,13 @@ export const MOCK_CATALOGUE = [
       "code": "ST",
       "name": "Sanitas Troesch"
     },
-    "reference": "SAN.GEN.711155",
+    "reference": "SAN.GEN.809944",
     "name": "Thermomètre DN 20 modèle 3",
+    "category": "mesure",
+    "specification": "DN 20",
+    "active": true,
     "unit": "p",
-    "base_price": 171.08
+    "base_price": 201.94
   },
   {
     "id": "gm-411",
@@ -13563,10 +17259,13 @@ export const MOCK_CATALOGUE = [
       "code": "GM",
       "name": "Getaz Miauton"
     },
-    "reference": "GM/GN/6908",
+    "reference": "GM/GN/7904",
     "name": "Thermomètre DN 20 variante 3",
+    "category": "mesure",
+    "specification": "DN 20",
+    "active": true,
     "unit": "p",
-    "base_price": 60.31
+    "base_price": 172.72
   },
   {
     "id": "nsb-412",
@@ -13574,10 +17273,13 @@ export const MOCK_CATALOGUE = [
       "code": "NSB",
       "name": "Nussbaum"
     },
-    "reference": "NSB-GEN-4525",
+    "reference": "NSB-GEN-8935",
     "name": "Thermomètre DN 20 type 4",
+    "category": "mesure",
+    "specification": "DN 20",
+    "active": true,
     "unit": "p",
-    "base_price": 51.14
+    "base_price": 193.5
   },
   {
     "id": "st-412",
@@ -13585,10 +17287,13 @@ export const MOCK_CATALOGUE = [
       "code": "ST",
       "name": "Sanitas Troesch"
     },
-    "reference": "SAN.GEN.302105",
+    "reference": "SAN.GEN.590087",
     "name": "Thermomètre DN 20 modèle 4",
+    "category": "mesure",
+    "specification": "DN 20",
+    "active": true,
     "unit": "p",
-    "base_price": 43.12
+    "base_price": 53.92
   },
   {
     "id": "gm-412",
@@ -13596,10 +17301,13 @@ export const MOCK_CATALOGUE = [
       "code": "GM",
       "name": "Getaz Miauton"
     },
-    "reference": "GM/GN/4698",
+    "reference": "GM/GN/1750",
     "name": "Thermomètre DN 20 variante 4",
+    "category": "mesure",
+    "specification": "DN 20",
+    "active": true,
     "unit": "p",
-    "base_price": 31.28
+    "base_price": 198.51
   },
   {
     "id": "nsb-413",
@@ -13607,10 +17315,13 @@ export const MOCK_CATALOGUE = [
       "code": "NSB",
       "name": "Nussbaum"
     },
-    "reference": "NSB-GEN-5509",
+    "reference": "NSB-GEN-3312",
     "name": "Thermomètre DN 25 type 0",
+    "category": "mesure",
+    "specification": "DN 25",
+    "active": true,
     "unit": "p",
-    "base_price": 216.15
+    "base_price": 24.33
   },
   {
     "id": "st-413",
@@ -13618,10 +17329,13 @@ export const MOCK_CATALOGUE = [
       "code": "ST",
       "name": "Sanitas Troesch"
     },
-    "reference": "SAN.GEN.943982",
+    "reference": "SAN.GEN.309537",
     "name": "Thermomètre DN 25 modèle 0",
+    "category": "mesure",
+    "specification": "DN 25",
+    "active": true,
     "unit": "p",
-    "base_price": 133.06
+    "base_price": 204.92
   },
   {
     "id": "gm-413",
@@ -13629,10 +17343,13 @@ export const MOCK_CATALOGUE = [
       "code": "GM",
       "name": "Getaz Miauton"
     },
-    "reference": "GM/GN/6703",
+    "reference": "GM/GN/5783",
     "name": "Thermomètre DN 25 variante 0",
+    "category": "mesure",
+    "specification": "DN 25",
+    "active": true,
     "unit": "p",
-    "base_price": 114.14
+    "base_price": 113.61
   },
   {
     "id": "nsb-414",
@@ -13640,10 +17357,13 @@ export const MOCK_CATALOGUE = [
       "code": "NSB",
       "name": "Nussbaum"
     },
-    "reference": "NSB-GEN-2933",
+    "reference": "NSB-GEN-4596",
     "name": "Thermomètre DN 25 type 1",
+    "category": "mesure",
+    "specification": "DN 25",
+    "active": true,
     "unit": "p",
-    "base_price": 185.36
+    "base_price": 138.12
   },
   {
     "id": "st-414",
@@ -13651,10 +17371,13 @@ export const MOCK_CATALOGUE = [
       "code": "ST",
       "name": "Sanitas Troesch"
     },
-    "reference": "SAN.GEN.211740",
+    "reference": "SAN.GEN.806622",
     "name": "Thermomètre DN 25 modèle 1",
+    "category": "mesure",
+    "specification": "DN 25",
+    "active": true,
     "unit": "p",
-    "base_price": 154.99
+    "base_price": 46.39
   },
   {
     "id": "gm-414",
@@ -13662,10 +17385,13 @@ export const MOCK_CATALOGUE = [
       "code": "GM",
       "name": "Getaz Miauton"
     },
-    "reference": "GM/GN/4627",
+    "reference": "GM/GN/3587",
     "name": "Thermomètre DN 25 variante 1",
+    "category": "mesure",
+    "specification": "DN 25",
+    "active": true,
     "unit": "p",
-    "base_price": 24.46
+    "base_price": 170.01
   },
   {
     "id": "nsb-415",
@@ -13673,10 +17399,13 @@ export const MOCK_CATALOGUE = [
       "code": "NSB",
       "name": "Nussbaum"
     },
-    "reference": "NSB-GEN-1741",
+    "reference": "NSB-GEN-8498",
     "name": "Thermomètre DN 25 type 2",
+    "category": "mesure",
+    "specification": "DN 25",
+    "active": true,
     "unit": "p",
-    "base_price": 196.39
+    "base_price": 35.22
   },
   {
     "id": "st-415",
@@ -13684,10 +17413,13 @@ export const MOCK_CATALOGUE = [
       "code": "ST",
       "name": "Sanitas Troesch"
     },
-    "reference": "SAN.GEN.346597",
+    "reference": "SAN.GEN.948039",
     "name": "Thermomètre DN 25 modèle 2",
+    "category": "mesure",
+    "specification": "DN 25",
+    "active": true,
     "unit": "p",
-    "base_price": 89.52
+    "base_price": 163.67
   },
   {
     "id": "gm-415",
@@ -13695,10 +17427,13 @@ export const MOCK_CATALOGUE = [
       "code": "GM",
       "name": "Getaz Miauton"
     },
-    "reference": "GM/GN/3660",
+    "reference": "GM/GN/6539",
     "name": "Thermomètre DN 25 variante 2",
+    "category": "mesure",
+    "specification": "DN 25",
+    "active": true,
     "unit": "p",
-    "base_price": 69.48
+    "base_price": 103.98
   },
   {
     "id": "nsb-416",
@@ -13706,10 +17441,13 @@ export const MOCK_CATALOGUE = [
       "code": "NSB",
       "name": "Nussbaum"
     },
-    "reference": "NSB-GEN-5551",
+    "reference": "NSB-GEN-6322",
     "name": "Thermomètre DN 25 type 3",
+    "category": "mesure",
+    "specification": "DN 25",
+    "active": true,
     "unit": "p",
-    "base_price": 178.18
+    "base_price": 55.9
   },
   {
     "id": "st-416",
@@ -13717,10 +17455,13 @@ export const MOCK_CATALOGUE = [
       "code": "ST",
       "name": "Sanitas Troesch"
     },
-    "reference": "SAN.GEN.334054",
+    "reference": "SAN.GEN.814733",
     "name": "Thermomètre DN 25 modèle 3",
+    "category": "mesure",
+    "specification": "DN 25",
+    "active": true,
     "unit": "p",
-    "base_price": 88.92
+    "base_price": 91.32
   },
   {
     "id": "gm-416",
@@ -13728,10 +17469,13 @@ export const MOCK_CATALOGUE = [
       "code": "GM",
       "name": "Getaz Miauton"
     },
-    "reference": "GM/GN/2272",
+    "reference": "GM/GN/9001",
     "name": "Thermomètre DN 25 variante 3",
+    "category": "mesure",
+    "specification": "DN 25",
+    "active": true,
     "unit": "p",
-    "base_price": 159.37
+    "base_price": 69.66
   },
   {
     "id": "nsb-417",
@@ -13739,10 +17483,13 @@ export const MOCK_CATALOGUE = [
       "code": "NSB",
       "name": "Nussbaum"
     },
-    "reference": "NSB-GEN-3568",
+    "reference": "NSB-GEN-5022",
     "name": "Thermomètre DN 25 type 4",
+    "category": "mesure",
+    "specification": "DN 25",
+    "active": true,
     "unit": "p",
-    "base_price": 210.71
+    "base_price": 85.37
   },
   {
     "id": "st-417",
@@ -13750,10 +17497,13 @@ export const MOCK_CATALOGUE = [
       "code": "ST",
       "name": "Sanitas Troesch"
     },
-    "reference": "SAN.GEN.154644",
+    "reference": "SAN.GEN.226483",
     "name": "Thermomètre DN 25 modèle 4",
+    "category": "mesure",
+    "specification": "DN 25",
+    "active": true,
     "unit": "p",
-    "base_price": 192.7
+    "base_price": 188.31
   },
   {
     "id": "gm-417",
@@ -13761,10 +17511,13 @@ export const MOCK_CATALOGUE = [
       "code": "GM",
       "name": "Getaz Miauton"
     },
-    "reference": "GM/GN/7521",
+    "reference": "GM/GN/2504",
     "name": "Thermomètre DN 25 variante 4",
+    "category": "mesure",
+    "specification": "DN 25",
+    "active": true,
     "unit": "p",
-    "base_price": 207.05
+    "base_price": 137.51
   },
   {
     "id": "nsb-418",
@@ -13772,10 +17525,13 @@ export const MOCK_CATALOGUE = [
       "code": "NSB",
       "name": "Nussbaum"
     },
-    "reference": "NSB-GEN-4271",
+    "reference": "NSB-GEN-6380",
     "name": "Thermomètre DN 32 type 0",
+    "category": "mesure",
+    "specification": "DN 32",
+    "active": true,
     "unit": "p",
-    "base_price": 99.88
+    "base_price": 61.84
   },
   {
     "id": "st-418",
@@ -13783,10 +17539,13 @@ export const MOCK_CATALOGUE = [
       "code": "ST",
       "name": "Sanitas Troesch"
     },
-    "reference": "SAN.GEN.322966",
+    "reference": "SAN.GEN.576103",
     "name": "Thermomètre DN 32 modèle 0",
+    "category": "mesure",
+    "specification": "DN 32",
+    "active": true,
     "unit": "p",
-    "base_price": 43.88
+    "base_price": 157.89
   },
   {
     "id": "gm-418",
@@ -13794,10 +17553,13 @@ export const MOCK_CATALOGUE = [
       "code": "GM",
       "name": "Getaz Miauton"
     },
-    "reference": "GM/GN/6362",
+    "reference": "GM/GN/5104",
     "name": "Thermomètre DN 32 variante 0",
+    "category": "mesure",
+    "specification": "DN 32",
+    "active": true,
     "unit": "p",
-    "base_price": 89.96
+    "base_price": 212.35
   },
   {
     "id": "nsb-419",
@@ -13805,10 +17567,13 @@ export const MOCK_CATALOGUE = [
       "code": "NSB",
       "name": "Nussbaum"
     },
-    "reference": "NSB-GEN-9145",
+    "reference": "NSB-GEN-8303",
     "name": "Thermomètre DN 32 type 1",
+    "category": "mesure",
+    "specification": "DN 32",
+    "active": true,
     "unit": "p",
-    "base_price": 179.37
+    "base_price": 197.99
   },
   {
     "id": "st-419",
@@ -13816,10 +17581,13 @@ export const MOCK_CATALOGUE = [
       "code": "ST",
       "name": "Sanitas Troesch"
     },
-    "reference": "SAN.GEN.293758",
+    "reference": "SAN.GEN.109617",
     "name": "Thermomètre DN 32 modèle 1",
+    "category": "mesure",
+    "specification": "DN 32",
+    "active": true,
     "unit": "p",
-    "base_price": 138.09
+    "base_price": 79.7
   },
   {
     "id": "gm-419",
@@ -13827,10 +17595,13 @@ export const MOCK_CATALOGUE = [
       "code": "GM",
       "name": "Getaz Miauton"
     },
-    "reference": "GM/GN/3683",
+    "reference": "GM/GN/9554",
     "name": "Thermomètre DN 32 variante 1",
+    "category": "mesure",
+    "specification": "DN 32",
+    "active": true,
     "unit": "p",
-    "base_price": 71.68
+    "base_price": 206.46
   },
   {
     "id": "nsb-420",
@@ -13838,10 +17609,13 @@ export const MOCK_CATALOGUE = [
       "code": "NSB",
       "name": "Nussbaum"
     },
-    "reference": "NSB-GEN-5696",
+    "reference": "NSB-GEN-8018",
     "name": "Thermomètre DN 32 type 2",
+    "category": "mesure",
+    "specification": "DN 32",
+    "active": true,
     "unit": "p",
-    "base_price": 108.85
+    "base_price": 117.72
   },
   {
     "id": "st-420",
@@ -13849,10 +17623,13 @@ export const MOCK_CATALOGUE = [
       "code": "ST",
       "name": "Sanitas Troesch"
     },
-    "reference": "SAN.GEN.154213",
+    "reference": "SAN.GEN.565822",
     "name": "Thermomètre DN 32 modèle 2",
+    "category": "mesure",
+    "specification": "DN 32",
+    "active": true,
     "unit": "p",
-    "base_price": 189.54
+    "base_price": 72.94
   },
   {
     "id": "gm-420",
@@ -13860,10 +17637,13 @@ export const MOCK_CATALOGUE = [
       "code": "GM",
       "name": "Getaz Miauton"
     },
-    "reference": "GM/GN/5949",
+    "reference": "GM/GN/6138",
     "name": "Thermomètre DN 32 variante 2",
+    "category": "mesure",
+    "specification": "DN 32",
+    "active": true,
     "unit": "p",
-    "base_price": 47.76
+    "base_price": 20.71
   },
   {
     "id": "nsb-421",
@@ -13871,10 +17651,13 @@ export const MOCK_CATALOGUE = [
       "code": "NSB",
       "name": "Nussbaum"
     },
-    "reference": "NSB-GEN-9961",
+    "reference": "NSB-GEN-8711",
     "name": "Thermomètre DN 32 type 3",
+    "category": "mesure",
+    "specification": "DN 32",
+    "active": true,
     "unit": "p",
-    "base_price": 165.75
+    "base_price": 103.36
   },
   {
     "id": "st-421",
@@ -13882,10 +17665,13 @@ export const MOCK_CATALOGUE = [
       "code": "ST",
       "name": "Sanitas Troesch"
     },
-    "reference": "SAN.GEN.158424",
+    "reference": "SAN.GEN.717968",
     "name": "Thermomètre DN 32 modèle 3",
+    "category": "mesure",
+    "specification": "DN 32",
+    "active": true,
     "unit": "p",
-    "base_price": 174.54
+    "base_price": 140.16
   },
   {
     "id": "gm-421",
@@ -13893,10 +17679,13 @@ export const MOCK_CATALOGUE = [
       "code": "GM",
       "name": "Getaz Miauton"
     },
-    "reference": "GM/GN/5347",
+    "reference": "GM/GN/7214",
     "name": "Thermomètre DN 32 variante 3",
+    "category": "mesure",
+    "specification": "DN 32",
+    "active": true,
     "unit": "p",
-    "base_price": 204.93
+    "base_price": 138.83
   },
   {
     "id": "nsb-422",
@@ -13904,10 +17693,13 @@ export const MOCK_CATALOGUE = [
       "code": "NSB",
       "name": "Nussbaum"
     },
-    "reference": "NSB-GEN-4247",
+    "reference": "NSB-GEN-8333",
     "name": "Thermomètre DN 32 type 4",
+    "category": "mesure",
+    "specification": "DN 32",
+    "active": true,
     "unit": "p",
-    "base_price": 122.71
+    "base_price": 94.29
   },
   {
     "id": "st-422",
@@ -13915,10 +17707,13 @@ export const MOCK_CATALOGUE = [
       "code": "ST",
       "name": "Sanitas Troesch"
     },
-    "reference": "SAN.GEN.897789",
+    "reference": "SAN.GEN.540017",
     "name": "Thermomètre DN 32 modèle 4",
+    "category": "mesure",
+    "specification": "DN 32",
+    "active": true,
     "unit": "p",
-    "base_price": 64.53
+    "base_price": 100.82
   },
   {
     "id": "gm-422",
@@ -13926,10 +17721,13 @@ export const MOCK_CATALOGUE = [
       "code": "GM",
       "name": "Getaz Miauton"
     },
-    "reference": "GM/GN/3115",
+    "reference": "GM/GN/9726",
     "name": "Thermomètre DN 32 variante 4",
+    "category": "mesure",
+    "specification": "DN 32",
+    "active": true,
     "unit": "p",
-    "base_price": 63.08
+    "base_price": 27.29
   },
   {
     "id": "nsb-423",
@@ -13937,10 +17735,13 @@ export const MOCK_CATALOGUE = [
       "code": "NSB",
       "name": "Nussbaum"
     },
-    "reference": "NSB-GEN-2681",
+    "reference": "NSB-GEN-3852",
     "name": "Thermomètre DN 40 type 0",
+    "category": "mesure",
+    "specification": "DN 40",
+    "active": true,
     "unit": "p",
-    "base_price": 200.73
+    "base_price": 43.12
   },
   {
     "id": "st-423",
@@ -13948,10 +17749,13 @@ export const MOCK_CATALOGUE = [
       "code": "ST",
       "name": "Sanitas Troesch"
     },
-    "reference": "SAN.GEN.718106",
+    "reference": "SAN.GEN.913923",
     "name": "Thermomètre DN 40 modèle 0",
+    "category": "mesure",
+    "specification": "DN 40",
+    "active": true,
     "unit": "p",
-    "base_price": 95.12
+    "base_price": 188.53
   },
   {
     "id": "gm-423",
@@ -13959,10 +17763,13 @@ export const MOCK_CATALOGUE = [
       "code": "GM",
       "name": "Getaz Miauton"
     },
-    "reference": "GM/GN/3510",
+    "reference": "GM/GN/4945",
     "name": "Thermomètre DN 40 variante 0",
+    "category": "mesure",
+    "specification": "DN 40",
+    "active": true,
     "unit": "p",
-    "base_price": 78.48
+    "base_price": 170.86
   },
   {
     "id": "nsb-424",
@@ -13970,10 +17777,13 @@ export const MOCK_CATALOGUE = [
       "code": "NSB",
       "name": "Nussbaum"
     },
-    "reference": "NSB-GEN-6501",
+    "reference": "NSB-GEN-7935",
     "name": "Thermomètre DN 40 type 1",
+    "category": "mesure",
+    "specification": "DN 40",
+    "active": true,
     "unit": "p",
-    "base_price": 174.67
+    "base_price": 127.17
   },
   {
     "id": "st-424",
@@ -13981,10 +17791,13 @@ export const MOCK_CATALOGUE = [
       "code": "ST",
       "name": "Sanitas Troesch"
     },
-    "reference": "SAN.GEN.410463",
+    "reference": "SAN.GEN.807788",
     "name": "Thermomètre DN 40 modèle 1",
+    "category": "mesure",
+    "specification": "DN 40",
+    "active": true,
     "unit": "p",
-    "base_price": 124.21
+    "base_price": 21.89
   },
   {
     "id": "gm-424",
@@ -13992,10 +17805,13 @@ export const MOCK_CATALOGUE = [
       "code": "GM",
       "name": "Getaz Miauton"
     },
-    "reference": "GM/GN/8461",
+    "reference": "GM/GN/8570",
     "name": "Thermomètre DN 40 variante 1",
+    "category": "mesure",
+    "specification": "DN 40",
+    "active": true,
     "unit": "p",
-    "base_price": 93.76
+    "base_price": 96.71
   },
   {
     "id": "nsb-425",
@@ -14003,10 +17819,13 @@ export const MOCK_CATALOGUE = [
       "code": "NSB",
       "name": "Nussbaum"
     },
-    "reference": "NSB-GEN-1719",
+    "reference": "NSB-GEN-3183",
     "name": "Thermomètre DN 40 type 2",
+    "category": "mesure",
+    "specification": "DN 40",
+    "active": true,
     "unit": "p",
-    "base_price": 218.41
+    "base_price": 56.68
   },
   {
     "id": "st-425",
@@ -14014,10 +17833,13 @@ export const MOCK_CATALOGUE = [
       "code": "ST",
       "name": "Sanitas Troesch"
     },
-    "reference": "SAN.GEN.407421",
+    "reference": "SAN.GEN.882591",
     "name": "Thermomètre DN 40 modèle 2",
+    "category": "mesure",
+    "specification": "DN 40",
+    "active": true,
     "unit": "p",
-    "base_price": 33.82
+    "base_price": 112.97
   },
   {
     "id": "gm-425",
@@ -14025,10 +17847,13 @@ export const MOCK_CATALOGUE = [
       "code": "GM",
       "name": "Getaz Miauton"
     },
-    "reference": "GM/GN/1018",
+    "reference": "GM/GN/5021",
     "name": "Thermomètre DN 40 variante 2",
+    "category": "mesure",
+    "specification": "DN 40",
+    "active": true,
     "unit": "p",
-    "base_price": 126.63
+    "base_price": 214.53
   },
   {
     "id": "nsb-426",
@@ -14036,10 +17861,13 @@ export const MOCK_CATALOGUE = [
       "code": "NSB",
       "name": "Nussbaum"
     },
-    "reference": "NSB-GEN-7402",
+    "reference": "NSB-GEN-5216",
     "name": "Thermomètre DN 40 type 3",
+    "category": "mesure",
+    "specification": "DN 40",
+    "active": true,
     "unit": "p",
-    "base_price": 94.93
+    "base_price": 112.28
   },
   {
     "id": "st-426",
@@ -14047,10 +17875,13 @@ export const MOCK_CATALOGUE = [
       "code": "ST",
       "name": "Sanitas Troesch"
     },
-    "reference": "SAN.GEN.249925",
+    "reference": "SAN.GEN.830947",
     "name": "Thermomètre DN 40 modèle 3",
+    "category": "mesure",
+    "specification": "DN 40",
+    "active": true,
     "unit": "p",
-    "base_price": 115.73
+    "base_price": 172.21
   },
   {
     "id": "gm-426",
@@ -14058,10 +17889,13 @@ export const MOCK_CATALOGUE = [
       "code": "GM",
       "name": "Getaz Miauton"
     },
-    "reference": "GM/GN/6631",
+    "reference": "GM/GN/7738",
     "name": "Thermomètre DN 40 variante 3",
+    "category": "mesure",
+    "specification": "DN 40",
+    "active": true,
     "unit": "p",
-    "base_price": 157.55
+    "base_price": 103.92
   },
   {
     "id": "nsb-427",
@@ -14069,10 +17903,13 @@ export const MOCK_CATALOGUE = [
       "code": "NSB",
       "name": "Nussbaum"
     },
-    "reference": "NSB-GEN-2875",
+    "reference": "NSB-GEN-9696",
     "name": "Thermomètre DN 40 type 4",
+    "category": "mesure",
+    "specification": "DN 40",
+    "active": true,
     "unit": "p",
-    "base_price": 61.95
+    "base_price": 197.84
   },
   {
     "id": "st-427",
@@ -14080,10 +17917,13 @@ export const MOCK_CATALOGUE = [
       "code": "ST",
       "name": "Sanitas Troesch"
     },
-    "reference": "SAN.GEN.498786",
+    "reference": "SAN.GEN.242654",
     "name": "Thermomètre DN 40 modèle 4",
+    "category": "mesure",
+    "specification": "DN 40",
+    "active": true,
     "unit": "p",
-    "base_price": 55.58
+    "base_price": 44.76
   },
   {
     "id": "gm-427",
@@ -14091,10 +17931,13 @@ export const MOCK_CATALOGUE = [
       "code": "GM",
       "name": "Getaz Miauton"
     },
-    "reference": "GM/GN/3611",
+    "reference": "GM/GN/8858",
     "name": "Thermomètre DN 40 variante 4",
+    "category": "mesure",
+    "specification": "DN 40",
+    "active": true,
     "unit": "p",
-    "base_price": 78.23
+    "base_price": 129.84
   },
   {
     "id": "nsb-428",
@@ -14102,10 +17945,13 @@ export const MOCK_CATALOGUE = [
       "code": "NSB",
       "name": "Nussbaum"
     },
-    "reference": "NSB-GEN-2779",
+    "reference": "NSB-GEN-5776",
     "name": "Thermomètre DN 50 type 0",
+    "category": "mesure",
+    "specification": "DN 50",
+    "active": true,
     "unit": "p",
-    "base_price": 22.17
+    "base_price": 144.2
   },
   {
     "id": "st-428",
@@ -14113,10 +17959,13 @@ export const MOCK_CATALOGUE = [
       "code": "ST",
       "name": "Sanitas Troesch"
     },
-    "reference": "SAN.GEN.307477",
+    "reference": "SAN.GEN.722333",
     "name": "Thermomètre DN 50 modèle 0",
+    "category": "mesure",
+    "specification": "DN 50",
+    "active": true,
     "unit": "p",
-    "base_price": 132.69
+    "base_price": 39.61
   },
   {
     "id": "gm-428",
@@ -14124,10 +17973,13 @@ export const MOCK_CATALOGUE = [
       "code": "GM",
       "name": "Getaz Miauton"
     },
-    "reference": "GM/GN/7478",
+    "reference": "GM/GN/2590",
     "name": "Thermomètre DN 50 variante 0",
+    "category": "mesure",
+    "specification": "DN 50",
+    "active": true,
     "unit": "p",
-    "base_price": 72.2
+    "base_price": 75.84
   },
   {
     "id": "nsb-429",
@@ -14135,10 +17987,13 @@ export const MOCK_CATALOGUE = [
       "code": "NSB",
       "name": "Nussbaum"
     },
-    "reference": "NSB-GEN-1307",
+    "reference": "NSB-GEN-5624",
     "name": "Thermomètre DN 50 type 1",
+    "category": "mesure",
+    "specification": "DN 50",
+    "active": true,
     "unit": "p",
-    "base_price": 189.94
+    "base_price": 165.94
   },
   {
     "id": "st-429",
@@ -14146,10 +18001,13 @@ export const MOCK_CATALOGUE = [
       "code": "ST",
       "name": "Sanitas Troesch"
     },
-    "reference": "SAN.GEN.536350",
+    "reference": "SAN.GEN.435834",
     "name": "Thermomètre DN 50 modèle 1",
+    "category": "mesure",
+    "specification": "DN 50",
+    "active": true,
     "unit": "p",
-    "base_price": 25.03
+    "base_price": 90.55
   },
   {
     "id": "gm-429",
@@ -14157,10 +18015,13 @@ export const MOCK_CATALOGUE = [
       "code": "GM",
       "name": "Getaz Miauton"
     },
-    "reference": "GM/GN/5455",
+    "reference": "GM/GN/2427",
     "name": "Thermomètre DN 50 variante 1",
+    "category": "mesure",
+    "specification": "DN 50",
+    "active": true,
     "unit": "p",
-    "base_price": 57.8
+    "base_price": 219.36
   },
   {
     "id": "nsb-430",
@@ -14168,10 +18029,13 @@ export const MOCK_CATALOGUE = [
       "code": "NSB",
       "name": "Nussbaum"
     },
-    "reference": "NSB-GEN-3951",
+    "reference": "NSB-GEN-8078",
     "name": "Thermomètre DN 50 type 2",
+    "category": "mesure",
+    "specification": "DN 50",
+    "active": true,
     "unit": "p",
-    "base_price": 138.17
+    "base_price": 109.34
   },
   {
     "id": "st-430",
@@ -14179,10 +18043,13 @@ export const MOCK_CATALOGUE = [
       "code": "ST",
       "name": "Sanitas Troesch"
     },
-    "reference": "SAN.GEN.528386",
+    "reference": "SAN.GEN.638763",
     "name": "Thermomètre DN 50 modèle 2",
+    "category": "mesure",
+    "specification": "DN 50",
+    "active": true,
     "unit": "p",
-    "base_price": 35.19
+    "base_price": 136.13
   },
   {
     "id": "gm-430",
@@ -14190,10 +18057,13 @@ export const MOCK_CATALOGUE = [
       "code": "GM",
       "name": "Getaz Miauton"
     },
-    "reference": "GM/GN/3481",
+    "reference": "GM/GN/4203",
     "name": "Thermomètre DN 50 variante 2",
+    "category": "mesure",
+    "specification": "DN 50",
+    "active": true,
     "unit": "p",
-    "base_price": 72.61
+    "base_price": 65.39
   },
   {
     "id": "nsb-431",
@@ -14201,10 +18071,13 @@ export const MOCK_CATALOGUE = [
       "code": "NSB",
       "name": "Nussbaum"
     },
-    "reference": "NSB-GEN-8649",
+    "reference": "NSB-GEN-3290",
     "name": "Thermomètre DN 50 type 3",
+    "category": "mesure",
+    "specification": "DN 50",
+    "active": true,
     "unit": "p",
-    "base_price": 144.09
+    "base_price": 166.65
   },
   {
     "id": "st-431",
@@ -14212,10 +18085,13 @@ export const MOCK_CATALOGUE = [
       "code": "ST",
       "name": "Sanitas Troesch"
     },
-    "reference": "SAN.GEN.643249",
+    "reference": "SAN.GEN.994142",
     "name": "Thermomètre DN 50 modèle 3",
+    "category": "mesure",
+    "specification": "DN 50",
+    "active": true,
     "unit": "p",
-    "base_price": 207.58
+    "base_price": 69.66
   },
   {
     "id": "gm-431",
@@ -14223,10 +18099,13 @@ export const MOCK_CATALOGUE = [
       "code": "GM",
       "name": "Getaz Miauton"
     },
-    "reference": "GM/GN/6559",
+    "reference": "GM/GN/3017",
     "name": "Thermomètre DN 50 variante 3",
+    "category": "mesure",
+    "specification": "DN 50",
+    "active": true,
     "unit": "p",
-    "base_price": 156.66
+    "base_price": 202
   },
   {
     "id": "nsb-432",
@@ -14234,10 +18113,13 @@ export const MOCK_CATALOGUE = [
       "code": "NSB",
       "name": "Nussbaum"
     },
-    "reference": "NSB-GEN-2607",
+    "reference": "NSB-GEN-8712",
     "name": "Thermomètre DN 50 type 4",
+    "category": "mesure",
+    "specification": "DN 50",
+    "active": true,
     "unit": "p",
-    "base_price": 150.95
+    "base_price": 182.75
   },
   {
     "id": "st-432",
@@ -14245,10 +18127,13 @@ export const MOCK_CATALOGUE = [
       "code": "ST",
       "name": "Sanitas Troesch"
     },
-    "reference": "SAN.GEN.984353",
+    "reference": "SAN.GEN.943449",
     "name": "Thermomètre DN 50 modèle 4",
+    "category": "mesure",
+    "specification": "DN 50",
+    "active": true,
     "unit": "p",
-    "base_price": 125.89
+    "base_price": 79.43
   },
   {
     "id": "gm-432",
@@ -14256,10 +18141,13 @@ export const MOCK_CATALOGUE = [
       "code": "GM",
       "name": "Getaz Miauton"
     },
-    "reference": "GM/GN/6110",
+    "reference": "GM/GN/7568",
     "name": "Thermomètre DN 50 variante 4",
+    "category": "mesure",
+    "specification": "DN 50",
+    "active": true,
     "unit": "p",
-    "base_price": 148.84
+    "base_price": 143.38
   },
   {
     "id": "nsb-433",
@@ -14267,10 +18155,13 @@ export const MOCK_CATALOGUE = [
       "code": "NSB",
       "name": "Nussbaum"
     },
-    "reference": "NSB-GEN-9160",
+    "reference": "NSB-GEN-7810",
     "name": "Filtre à impuretés 1/2\" type 0",
+    "category": "filtre",
+    "specification": "1/2\"",
+    "active": true,
     "unit": "p",
-    "base_price": 110.5
+    "base_price": 114.09
   },
   {
     "id": "st-433",
@@ -14278,10 +18169,13 @@ export const MOCK_CATALOGUE = [
       "code": "ST",
       "name": "Sanitas Troesch"
     },
-    "reference": "SAN.GEN.228566",
+    "reference": "SAN.GEN.886316",
     "name": "Filtre à impuretés 1/2\" modèle 0",
+    "category": "filtre",
+    "specification": "1/2\"",
+    "active": true,
     "unit": "p",
-    "base_price": 113.12
+    "base_price": 80.52
   },
   {
     "id": "gm-433",
@@ -14289,10 +18183,13 @@ export const MOCK_CATALOGUE = [
       "code": "GM",
       "name": "Getaz Miauton"
     },
-    "reference": "GM/GN/1985",
+    "reference": "GM/GN/9869",
     "name": "Filtre à impuretés 1/2\" variante 0",
+    "category": "filtre",
+    "specification": "1/2\"",
+    "active": true,
     "unit": "p",
-    "base_price": 84.93
+    "base_price": 129.96
   },
   {
     "id": "nsb-434",
@@ -14300,10 +18197,13 @@ export const MOCK_CATALOGUE = [
       "code": "NSB",
       "name": "Nussbaum"
     },
-    "reference": "NSB-GEN-4346",
+    "reference": "NSB-GEN-7685",
     "name": "Filtre à impuretés 1/2\" type 1",
+    "category": "filtre",
+    "specification": "1/2\"",
+    "active": true,
     "unit": "p",
-    "base_price": 177.51
+    "base_price": 157.07
   },
   {
     "id": "st-434",
@@ -14311,10 +18211,13 @@ export const MOCK_CATALOGUE = [
       "code": "ST",
       "name": "Sanitas Troesch"
     },
-    "reference": "SAN.GEN.534329",
+    "reference": "SAN.GEN.491437",
     "name": "Filtre à impuretés 1/2\" modèle 1",
+    "category": "filtre",
+    "specification": "1/2\"",
+    "active": true,
     "unit": "p",
-    "base_price": 32.97
+    "base_price": 33.75
   },
   {
     "id": "gm-434",
@@ -14322,10 +18225,13 @@ export const MOCK_CATALOGUE = [
       "code": "GM",
       "name": "Getaz Miauton"
     },
-    "reference": "GM/GN/3958",
+    "reference": "GM/GN/5504",
     "name": "Filtre à impuretés 1/2\" variante 1",
+    "category": "filtre",
+    "specification": "1/2\"",
+    "active": true,
     "unit": "p",
-    "base_price": 26.69
+    "base_price": 131.63
   },
   {
     "id": "nsb-435",
@@ -14333,10 +18239,13 @@ export const MOCK_CATALOGUE = [
       "code": "NSB",
       "name": "Nussbaum"
     },
-    "reference": "NSB-GEN-4565",
+    "reference": "NSB-GEN-9357",
     "name": "Filtre à impuretés 1/2\" type 2",
+    "category": "filtre",
+    "specification": "1/2\"",
+    "active": true,
     "unit": "p",
-    "base_price": 123.32
+    "base_price": 83.22
   },
   {
     "id": "st-435",
@@ -14344,10 +18253,13 @@ export const MOCK_CATALOGUE = [
       "code": "ST",
       "name": "Sanitas Troesch"
     },
-    "reference": "SAN.GEN.948061",
+    "reference": "SAN.GEN.897659",
     "name": "Filtre à impuretés 1/2\" modèle 2",
+    "category": "filtre",
+    "specification": "1/2\"",
+    "active": true,
     "unit": "p",
-    "base_price": 37.67
+    "base_price": 165.2
   },
   {
     "id": "gm-435",
@@ -14355,10 +18267,13 @@ export const MOCK_CATALOGUE = [
       "code": "GM",
       "name": "Getaz Miauton"
     },
-    "reference": "GM/GN/3048",
+    "reference": "GM/GN/6171",
     "name": "Filtre à impuretés 1/2\" variante 2",
+    "category": "filtre",
+    "specification": "1/2\"",
+    "active": true,
     "unit": "p",
-    "base_price": 94.52
+    "base_price": 167.2
   },
   {
     "id": "nsb-436",
@@ -14366,10 +18281,13 @@ export const MOCK_CATALOGUE = [
       "code": "NSB",
       "name": "Nussbaum"
     },
-    "reference": "NSB-GEN-1964",
+    "reference": "NSB-GEN-2112",
     "name": "Filtre à impuretés 1/2\" type 3",
+    "category": "filtre",
+    "specification": "1/2\"",
+    "active": true,
     "unit": "p",
-    "base_price": 36.68
+    "base_price": 22.89
   },
   {
     "id": "st-436",
@@ -14377,10 +18295,13 @@ export const MOCK_CATALOGUE = [
       "code": "ST",
       "name": "Sanitas Troesch"
     },
-    "reference": "SAN.GEN.473701",
+    "reference": "SAN.GEN.372052",
     "name": "Filtre à impuretés 1/2\" modèle 3",
+    "category": "filtre",
+    "specification": "1/2\"",
+    "active": true,
     "unit": "p",
-    "base_price": 72.58
+    "base_price": 134.11
   },
   {
     "id": "gm-436",
@@ -14388,10 +18309,13 @@ export const MOCK_CATALOGUE = [
       "code": "GM",
       "name": "Getaz Miauton"
     },
-    "reference": "GM/GN/5115",
+    "reference": "GM/GN/6924",
     "name": "Filtre à impuretés 1/2\" variante 3",
+    "category": "filtre",
+    "specification": "1/2\"",
+    "active": true,
     "unit": "p",
-    "base_price": 93.68
+    "base_price": 65.32
   },
   {
     "id": "nsb-437",
@@ -14399,10 +18323,13 @@ export const MOCK_CATALOGUE = [
       "code": "NSB",
       "name": "Nussbaum"
     },
-    "reference": "NSB-GEN-5200",
+    "reference": "NSB-GEN-3690",
     "name": "Filtre à impuretés 1/2\" type 4",
+    "category": "filtre",
+    "specification": "1/2\"",
+    "active": true,
     "unit": "p",
-    "base_price": 64.4
+    "base_price": 109.72
   },
   {
     "id": "st-437",
@@ -14410,10 +18337,13 @@ export const MOCK_CATALOGUE = [
       "code": "ST",
       "name": "Sanitas Troesch"
     },
-    "reference": "SAN.GEN.628023",
+    "reference": "SAN.GEN.477383",
     "name": "Filtre à impuretés 1/2\" modèle 4",
+    "category": "filtre",
+    "specification": "1/2\"",
+    "active": true,
     "unit": "p",
-    "base_price": 209.73
+    "base_price": 71.5
   },
   {
     "id": "gm-437",
@@ -14421,10 +18351,13 @@ export const MOCK_CATALOGUE = [
       "code": "GM",
       "name": "Getaz Miauton"
     },
-    "reference": "GM/GN/4637",
+    "reference": "GM/GN/8252",
     "name": "Filtre à impuretés 1/2\" variante 4",
+    "category": "filtre",
+    "specification": "1/2\"",
+    "active": true,
     "unit": "p",
-    "base_price": 61.11
+    "base_price": 172.82
   },
   {
     "id": "nsb-438",
@@ -14432,10 +18365,13 @@ export const MOCK_CATALOGUE = [
       "code": "NSB",
       "name": "Nussbaum"
     },
-    "reference": "NSB-GEN-2554",
+    "reference": "NSB-GEN-9233",
     "name": "Filtre à impuretés 3/4\" type 0",
+    "category": "filtre",
+    "specification": "3/4\"",
+    "active": true,
     "unit": "p",
-    "base_price": 160.68
+    "base_price": 157.22
   },
   {
     "id": "st-438",
@@ -14443,10 +18379,13 @@ export const MOCK_CATALOGUE = [
       "code": "ST",
       "name": "Sanitas Troesch"
     },
-    "reference": "SAN.GEN.490244",
+    "reference": "SAN.GEN.742884",
     "name": "Filtre à impuretés 3/4\" modèle 0",
+    "category": "filtre",
+    "specification": "3/4\"",
+    "active": true,
     "unit": "p",
-    "base_price": 216.54
+    "base_price": 44.88
   },
   {
     "id": "gm-438",
@@ -14454,10 +18393,13 @@ export const MOCK_CATALOGUE = [
       "code": "GM",
       "name": "Getaz Miauton"
     },
-    "reference": "GM/GN/5644",
+    "reference": "GM/GN/7283",
     "name": "Filtre à impuretés 3/4\" variante 0",
+    "category": "filtre",
+    "specification": "3/4\"",
+    "active": true,
     "unit": "p",
-    "base_price": 200.51
+    "base_price": 22.56
   },
   {
     "id": "nsb-439",
@@ -14465,10 +18407,13 @@ export const MOCK_CATALOGUE = [
       "code": "NSB",
       "name": "Nussbaum"
     },
-    "reference": "NSB-GEN-7085",
+    "reference": "NSB-GEN-2091",
     "name": "Filtre à impuretés 3/4\" type 1",
+    "category": "filtre",
+    "specification": "3/4\"",
+    "active": true,
     "unit": "p",
-    "base_price": 62.5
+    "base_price": 137.01
   },
   {
     "id": "st-439",
@@ -14476,10 +18421,13 @@ export const MOCK_CATALOGUE = [
       "code": "ST",
       "name": "Sanitas Troesch"
     },
-    "reference": "SAN.GEN.827896",
+    "reference": "SAN.GEN.637502",
     "name": "Filtre à impuretés 3/4\" modèle 1",
+    "category": "filtre",
+    "specification": "3/4\"",
+    "active": true,
     "unit": "p",
-    "base_price": 172.1
+    "base_price": 199.93
   },
   {
     "id": "gm-439",
@@ -14487,10 +18435,13 @@ export const MOCK_CATALOGUE = [
       "code": "GM",
       "name": "Getaz Miauton"
     },
-    "reference": "GM/GN/5399",
+    "reference": "GM/GN/2881",
     "name": "Filtre à impuretés 3/4\" variante 1",
+    "category": "filtre",
+    "specification": "3/4\"",
+    "active": true,
     "unit": "p",
-    "base_price": 48.82
+    "base_price": 90.4
   },
   {
     "id": "nsb-440",
@@ -14498,10 +18449,13 @@ export const MOCK_CATALOGUE = [
       "code": "NSB",
       "name": "Nussbaum"
     },
-    "reference": "NSB-GEN-6765",
+    "reference": "NSB-GEN-8044",
     "name": "Filtre à impuretés 3/4\" type 2",
+    "category": "filtre",
+    "specification": "3/4\"",
+    "active": true,
     "unit": "p",
-    "base_price": 75.93
+    "base_price": 30.87
   },
   {
     "id": "st-440",
@@ -14509,10 +18463,13 @@ export const MOCK_CATALOGUE = [
       "code": "ST",
       "name": "Sanitas Troesch"
     },
-    "reference": "SAN.GEN.199255",
+    "reference": "SAN.GEN.927405",
     "name": "Filtre à impuretés 3/4\" modèle 2",
+    "category": "filtre",
+    "specification": "3/4\"",
+    "active": true,
     "unit": "p",
-    "base_price": 213.95
+    "base_price": 208.85
   },
   {
     "id": "gm-440",
@@ -14520,10 +18477,13 @@ export const MOCK_CATALOGUE = [
       "code": "GM",
       "name": "Getaz Miauton"
     },
-    "reference": "GM/GN/3713",
+    "reference": "GM/GN/1756",
     "name": "Filtre à impuretés 3/4\" variante 2",
+    "category": "filtre",
+    "specification": "3/4\"",
+    "active": true,
     "unit": "p",
-    "base_price": 45.49
+    "base_price": 36.94
   },
   {
     "id": "nsb-441",
@@ -14531,10 +18491,13 @@ export const MOCK_CATALOGUE = [
       "code": "NSB",
       "name": "Nussbaum"
     },
-    "reference": "NSB-GEN-2361",
+    "reference": "NSB-GEN-8277",
     "name": "Filtre à impuretés 3/4\" type 3",
+    "category": "filtre",
+    "specification": "3/4\"",
+    "active": true,
     "unit": "p",
-    "base_price": 71.87
+    "base_price": 120.14
   },
   {
     "id": "st-441",
@@ -14542,10 +18505,13 @@ export const MOCK_CATALOGUE = [
       "code": "ST",
       "name": "Sanitas Troesch"
     },
-    "reference": "SAN.GEN.877450",
+    "reference": "SAN.GEN.428815",
     "name": "Filtre à impuretés 3/4\" modèle 3",
+    "category": "filtre",
+    "specification": "3/4\"",
+    "active": true,
     "unit": "p",
-    "base_price": 93.17
+    "base_price": 158.95
   },
   {
     "id": "gm-441",
@@ -14553,10 +18519,13 @@ export const MOCK_CATALOGUE = [
       "code": "GM",
       "name": "Getaz Miauton"
     },
-    "reference": "GM/GN/2072",
+    "reference": "GM/GN/4894",
     "name": "Filtre à impuretés 3/4\" variante 3",
+    "category": "filtre",
+    "specification": "3/4\"",
+    "active": true,
     "unit": "p",
-    "base_price": 74.19
+    "base_price": 213.45
   },
   {
     "id": "nsb-442",
@@ -14564,10 +18533,13 @@ export const MOCK_CATALOGUE = [
       "code": "NSB",
       "name": "Nussbaum"
     },
-    "reference": "NSB-GEN-8874",
+    "reference": "NSB-GEN-5131",
     "name": "Filtre à impuretés 3/4\" type 4",
+    "category": "filtre",
+    "specification": "3/4\"",
+    "active": true,
     "unit": "p",
-    "base_price": 105.61
+    "base_price": 55.36
   },
   {
     "id": "st-442",
@@ -14575,10 +18547,13 @@ export const MOCK_CATALOGUE = [
       "code": "ST",
       "name": "Sanitas Troesch"
     },
-    "reference": "SAN.GEN.565230",
+    "reference": "SAN.GEN.994148",
     "name": "Filtre à impuretés 3/4\" modèle 4",
+    "category": "filtre",
+    "specification": "3/4\"",
+    "active": true,
     "unit": "p",
-    "base_price": 90.81
+    "base_price": 213.85
   },
   {
     "id": "gm-442",
@@ -14586,10 +18561,13 @@ export const MOCK_CATALOGUE = [
       "code": "GM",
       "name": "Getaz Miauton"
     },
-    "reference": "GM/GN/3338",
+    "reference": "GM/GN/3872",
     "name": "Filtre à impuretés 3/4\" variante 4",
+    "category": "filtre",
+    "specification": "3/4\"",
+    "active": true,
     "unit": "p",
-    "base_price": 178.55
+    "base_price": 150.76
   },
   {
     "id": "nsb-443",
@@ -14597,10 +18575,13 @@ export const MOCK_CATALOGUE = [
       "code": "NSB",
       "name": "Nussbaum"
     },
-    "reference": "NSB-GEN-7205",
+    "reference": "NSB-GEN-7350",
     "name": "Filtre à impuretés 1\" type 0",
+    "category": "filtre",
+    "specification": "1\"",
+    "active": true,
     "unit": "p",
-    "base_price": 202.45
+    "base_price": 212.82
   },
   {
     "id": "st-443",
@@ -14608,10 +18589,13 @@ export const MOCK_CATALOGUE = [
       "code": "ST",
       "name": "Sanitas Troesch"
     },
-    "reference": "SAN.GEN.526097",
+    "reference": "SAN.GEN.866619",
     "name": "Filtre à impuretés 1\" modèle 0",
+    "category": "filtre",
+    "specification": "1\"",
+    "active": true,
     "unit": "p",
-    "base_price": 136.15
+    "base_price": 142.87
   },
   {
     "id": "gm-443",
@@ -14619,10 +18603,13 @@ export const MOCK_CATALOGUE = [
       "code": "GM",
       "name": "Getaz Miauton"
     },
-    "reference": "GM/GN/2648",
+    "reference": "GM/GN/3653",
     "name": "Filtre à impuretés 1\" variante 0",
+    "category": "filtre",
+    "specification": "1\"",
+    "active": true,
     "unit": "p",
-    "base_price": 116.34
+    "base_price": 180.25
   },
   {
     "id": "nsb-444",
@@ -14630,10 +18617,13 @@ export const MOCK_CATALOGUE = [
       "code": "NSB",
       "name": "Nussbaum"
     },
-    "reference": "NSB-GEN-5295",
+    "reference": "NSB-GEN-3007",
     "name": "Filtre à impuretés 1\" type 1",
+    "category": "filtre",
+    "specification": "1\"",
+    "active": true,
     "unit": "p",
-    "base_price": 83.13
+    "base_price": 108.21
   },
   {
     "id": "st-444",
@@ -14641,10 +18631,13 @@ export const MOCK_CATALOGUE = [
       "code": "ST",
       "name": "Sanitas Troesch"
     },
-    "reference": "SAN.GEN.400531",
+    "reference": "SAN.GEN.193033",
     "name": "Filtre à impuretés 1\" modèle 1",
+    "category": "filtre",
+    "specification": "1\"",
+    "active": true,
     "unit": "p",
-    "base_price": 93.77
+    "base_price": 86.44
   },
   {
     "id": "gm-444",
@@ -14652,10 +18645,13 @@ export const MOCK_CATALOGUE = [
       "code": "GM",
       "name": "Getaz Miauton"
     },
-    "reference": "GM/GN/1495",
+    "reference": "GM/GN/8000",
     "name": "Filtre à impuretés 1\" variante 1",
+    "category": "filtre",
+    "specification": "1\"",
+    "active": true,
     "unit": "p",
-    "base_price": 201.63
+    "base_price": 100.66
   },
   {
     "id": "nsb-445",
@@ -14663,10 +18659,13 @@ export const MOCK_CATALOGUE = [
       "code": "NSB",
       "name": "Nussbaum"
     },
-    "reference": "NSB-GEN-3675",
+    "reference": "NSB-GEN-5224",
     "name": "Filtre à impuretés 1\" type 2",
+    "category": "filtre",
+    "specification": "1\"",
+    "active": true,
     "unit": "p",
-    "base_price": 142.56
+    "base_price": 217.11
   },
   {
     "id": "st-445",
@@ -14674,10 +18673,13 @@ export const MOCK_CATALOGUE = [
       "code": "ST",
       "name": "Sanitas Troesch"
     },
-    "reference": "SAN.GEN.856823",
+    "reference": "SAN.GEN.440463",
     "name": "Filtre à impuretés 1\" modèle 2",
+    "category": "filtre",
+    "specification": "1\"",
+    "active": true,
     "unit": "p",
-    "base_price": 36.72
+    "base_price": 128.78
   },
   {
     "id": "gm-445",
@@ -14685,10 +18687,13 @@ export const MOCK_CATALOGUE = [
       "code": "GM",
       "name": "Getaz Miauton"
     },
-    "reference": "GM/GN/7669",
+    "reference": "GM/GN/2731",
     "name": "Filtre à impuretés 1\" variante 2",
+    "category": "filtre",
+    "specification": "1\"",
+    "active": true,
     "unit": "p",
-    "base_price": 109.65
+    "base_price": 197.78
   },
   {
     "id": "nsb-446",
@@ -14696,10 +18701,13 @@ export const MOCK_CATALOGUE = [
       "code": "NSB",
       "name": "Nussbaum"
     },
-    "reference": "NSB-GEN-8271",
+    "reference": "NSB-GEN-2543",
     "name": "Filtre à impuretés 1\" type 3",
+    "category": "filtre",
+    "specification": "1\"",
+    "active": true,
     "unit": "p",
-    "base_price": 51.07
+    "base_price": 26.41
   },
   {
     "id": "st-446",
@@ -14707,10 +18715,13 @@ export const MOCK_CATALOGUE = [
       "code": "ST",
       "name": "Sanitas Troesch"
     },
-    "reference": "SAN.GEN.771814",
+    "reference": "SAN.GEN.264531",
     "name": "Filtre à impuretés 1\" modèle 3",
+    "category": "filtre",
+    "specification": "1\"",
+    "active": true,
     "unit": "p",
-    "base_price": 164.82
+    "base_price": 25.64
   },
   {
     "id": "gm-446",
@@ -14718,10 +18729,13 @@ export const MOCK_CATALOGUE = [
       "code": "GM",
       "name": "Getaz Miauton"
     },
-    "reference": "GM/GN/9409",
+    "reference": "GM/GN/5540",
     "name": "Filtre à impuretés 1\" variante 3",
+    "category": "filtre",
+    "specification": "1\"",
+    "active": true,
     "unit": "p",
-    "base_price": 179.95
+    "base_price": 151.33
   },
   {
     "id": "nsb-447",
@@ -14729,10 +18743,13 @@ export const MOCK_CATALOGUE = [
       "code": "NSB",
       "name": "Nussbaum"
     },
-    "reference": "NSB-GEN-8671",
+    "reference": "NSB-GEN-5366",
     "name": "Filtre à impuretés 1\" type 4",
+    "category": "filtre",
+    "specification": "1\"",
+    "active": true,
     "unit": "p",
-    "base_price": 48.7
+    "base_price": 121.05
   },
   {
     "id": "st-447",
@@ -14740,10 +18757,13 @@ export const MOCK_CATALOGUE = [
       "code": "ST",
       "name": "Sanitas Troesch"
     },
-    "reference": "SAN.GEN.604239",
+    "reference": "SAN.GEN.119671",
     "name": "Filtre à impuretés 1\" modèle 4",
+    "category": "filtre",
+    "specification": "1\"",
+    "active": true,
     "unit": "p",
-    "base_price": 159.45
+    "base_price": 94.49
   },
   {
     "id": "gm-447",
@@ -14751,10 +18771,13 @@ export const MOCK_CATALOGUE = [
       "code": "GM",
       "name": "Getaz Miauton"
     },
-    "reference": "GM/GN/4154",
+    "reference": "GM/GN/5526",
     "name": "Filtre à impuretés 1\" variante 4",
+    "category": "filtre",
+    "specification": "1\"",
+    "active": true,
     "unit": "p",
-    "base_price": 57.27
+    "base_price": 102.62
   },
   {
     "id": "nsb-448",
@@ -14762,10 +18785,13 @@ export const MOCK_CATALOGUE = [
       "code": "NSB",
       "name": "Nussbaum"
     },
-    "reference": "NSB-GEN-6248",
+    "reference": "NSB-GEN-2538",
     "name": "Filtre à impuretés 1 1/4\" type 0",
+    "category": "filtre",
+    "specification": "1 1/4\"",
+    "active": true,
     "unit": "p",
-    "base_price": 138.98
+    "base_price": 207.25
   },
   {
     "id": "st-448",
@@ -14773,10 +18799,13 @@ export const MOCK_CATALOGUE = [
       "code": "ST",
       "name": "Sanitas Troesch"
     },
-    "reference": "SAN.GEN.692048",
+    "reference": "SAN.GEN.115303",
     "name": "Filtre à impuretés 1 1/4\" modèle 0",
+    "category": "filtre",
+    "specification": "1 1/4\"",
+    "active": true,
     "unit": "p",
-    "base_price": 195.83
+    "base_price": 111.47
   },
   {
     "id": "gm-448",
@@ -14784,10 +18813,13 @@ export const MOCK_CATALOGUE = [
       "code": "GM",
       "name": "Getaz Miauton"
     },
-    "reference": "GM/GN/9779",
+    "reference": "GM/GN/3757",
     "name": "Filtre à impuretés 1 1/4\" variante 0",
+    "category": "filtre",
+    "specification": "1 1/4\"",
+    "active": true,
     "unit": "p",
-    "base_price": 203.74
+    "base_price": 190.7
   },
   {
     "id": "nsb-449",
@@ -14795,10 +18827,13 @@ export const MOCK_CATALOGUE = [
       "code": "NSB",
       "name": "Nussbaum"
     },
-    "reference": "NSB-GEN-4672",
+    "reference": "NSB-GEN-9744",
     "name": "Filtre à impuretés 1 1/4\" type 1",
+    "category": "filtre",
+    "specification": "1 1/4\"",
+    "active": true,
     "unit": "p",
-    "base_price": 191.94
+    "base_price": 131.26
   },
   {
     "id": "st-449",
@@ -14806,10 +18841,13 @@ export const MOCK_CATALOGUE = [
       "code": "ST",
       "name": "Sanitas Troesch"
     },
-    "reference": "SAN.GEN.124298",
+    "reference": "SAN.GEN.190279",
     "name": "Filtre à impuretés 1 1/4\" modèle 1",
+    "category": "filtre",
+    "specification": "1 1/4\"",
+    "active": true,
     "unit": "p",
-    "base_price": 147.39
+    "base_price": 124.04
   },
   {
     "id": "gm-449",
@@ -14817,10 +18855,13 @@ export const MOCK_CATALOGUE = [
       "code": "GM",
       "name": "Getaz Miauton"
     },
-    "reference": "GM/GN/6847",
+    "reference": "GM/GN/2296",
     "name": "Filtre à impuretés 1 1/4\" variante 1",
+    "category": "filtre",
+    "specification": "1 1/4\"",
+    "active": true,
     "unit": "p",
-    "base_price": 116.35
+    "base_price": 132.04
   },
   {
     "id": "nsb-450",
@@ -14828,10 +18869,13 @@ export const MOCK_CATALOGUE = [
       "code": "NSB",
       "name": "Nussbaum"
     },
-    "reference": "NSB-GEN-1691",
+    "reference": "NSB-GEN-9328",
     "name": "Filtre à impuretés 1 1/4\" type 2",
+    "category": "filtre",
+    "specification": "1 1/4\"",
+    "active": true,
     "unit": "p",
-    "base_price": 91.51
+    "base_price": 96.8
   },
   {
     "id": "st-450",
@@ -14839,10 +18883,13 @@ export const MOCK_CATALOGUE = [
       "code": "ST",
       "name": "Sanitas Troesch"
     },
-    "reference": "SAN.GEN.101656",
+    "reference": "SAN.GEN.369118",
     "name": "Filtre à impuretés 1 1/4\" modèle 2",
+    "category": "filtre",
+    "specification": "1 1/4\"",
+    "active": true,
     "unit": "p",
-    "base_price": 99.34
+    "base_price": 101.58
   },
   {
     "id": "gm-450",
@@ -14850,10 +18897,13 @@ export const MOCK_CATALOGUE = [
       "code": "GM",
       "name": "Getaz Miauton"
     },
-    "reference": "GM/GN/8220",
+    "reference": "GM/GN/6762",
     "name": "Filtre à impuretés 1 1/4\" variante 2",
+    "category": "filtre",
+    "specification": "1 1/4\"",
+    "active": true,
     "unit": "p",
-    "base_price": 103.33
+    "base_price": 148.8
   },
   {
     "id": "nsb-451",
@@ -14861,10 +18911,13 @@ export const MOCK_CATALOGUE = [
       "code": "NSB",
       "name": "Nussbaum"
     },
-    "reference": "NSB-GEN-4789",
+    "reference": "NSB-GEN-1842",
     "name": "Filtre à impuretés 1 1/4\" type 3",
+    "category": "filtre",
+    "specification": "1 1/4\"",
+    "active": true,
     "unit": "p",
-    "base_price": 36.06
+    "base_price": 128.11
   },
   {
     "id": "st-451",
@@ -14872,10 +18925,13 @@ export const MOCK_CATALOGUE = [
       "code": "ST",
       "name": "Sanitas Troesch"
     },
-    "reference": "SAN.GEN.276578",
+    "reference": "SAN.GEN.843424",
     "name": "Filtre à impuretés 1 1/4\" modèle 3",
+    "category": "filtre",
+    "specification": "1 1/4\"",
+    "active": true,
     "unit": "p",
-    "base_price": 81.94
+    "base_price": 68.1
   },
   {
     "id": "gm-451",
@@ -14883,10 +18939,13 @@ export const MOCK_CATALOGUE = [
       "code": "GM",
       "name": "Getaz Miauton"
     },
-    "reference": "GM/GN/2453",
+    "reference": "GM/GN/2933",
     "name": "Filtre à impuretés 1 1/4\" variante 3",
+    "category": "filtre",
+    "specification": "1 1/4\"",
+    "active": true,
     "unit": "p",
-    "base_price": 89.41
+    "base_price": 165.88
   },
   {
     "id": "nsb-452",
@@ -14894,10 +18953,13 @@ export const MOCK_CATALOGUE = [
       "code": "NSB",
       "name": "Nussbaum"
     },
-    "reference": "NSB-GEN-2847",
+    "reference": "NSB-GEN-5235",
     "name": "Filtre à impuretés 1 1/4\" type 4",
+    "category": "filtre",
+    "specification": "1 1/4\"",
+    "active": true,
     "unit": "p",
-    "base_price": 77.8
+    "base_price": 147.03
   },
   {
     "id": "st-452",
@@ -14905,10 +18967,13 @@ export const MOCK_CATALOGUE = [
       "code": "ST",
       "name": "Sanitas Troesch"
     },
-    "reference": "SAN.GEN.650559",
+    "reference": "SAN.GEN.865495",
     "name": "Filtre à impuretés 1 1/4\" modèle 4",
+    "category": "filtre",
+    "specification": "1 1/4\"",
+    "active": true,
     "unit": "p",
-    "base_price": 185
+    "base_price": 58.26
   },
   {
     "id": "gm-452",
@@ -14916,10 +18981,13 @@ export const MOCK_CATALOGUE = [
       "code": "GM",
       "name": "Getaz Miauton"
     },
-    "reference": "GM/GN/7964",
+    "reference": "GM/GN/7674",
     "name": "Filtre à impuretés 1 1/4\" variante 4",
+    "category": "filtre",
+    "specification": "1 1/4\"",
+    "active": true,
     "unit": "p",
-    "base_price": 103.83
+    "base_price": 39.25
   },
   {
     "id": "nsb-453",
@@ -14927,10 +18995,13 @@ export const MOCK_CATALOGUE = [
       "code": "NSB",
       "name": "Nussbaum"
     },
-    "reference": "NSB-GEN-9326",
+    "reference": "NSB-GEN-1080",
     "name": "Filtre à impuretés 1 1/2\" type 0",
+    "category": "filtre",
+    "specification": "1 1/2\"",
+    "active": true,
     "unit": "p",
-    "base_price": 186.73
+    "base_price": 70.74
   },
   {
     "id": "st-453",
@@ -14938,10 +19009,13 @@ export const MOCK_CATALOGUE = [
       "code": "ST",
       "name": "Sanitas Troesch"
     },
-    "reference": "SAN.GEN.210313",
+    "reference": "SAN.GEN.545700",
     "name": "Filtre à impuretés 1 1/2\" modèle 0",
+    "category": "filtre",
+    "specification": "1 1/2\"",
+    "active": true,
     "unit": "p",
-    "base_price": 219.18
+    "base_price": 27.53
   },
   {
     "id": "gm-453",
@@ -14949,10 +19023,13 @@ export const MOCK_CATALOGUE = [
       "code": "GM",
       "name": "Getaz Miauton"
     },
-    "reference": "GM/GN/5918",
+    "reference": "GM/GN/9606",
     "name": "Filtre à impuretés 1 1/2\" variante 0",
+    "category": "filtre",
+    "specification": "1 1/2\"",
+    "active": true,
     "unit": "p",
-    "base_price": 131.68
+    "base_price": 148.15
   },
   {
     "id": "nsb-454",
@@ -14960,10 +19037,13 @@ export const MOCK_CATALOGUE = [
       "code": "NSB",
       "name": "Nussbaum"
     },
-    "reference": "NSB-GEN-1093",
+    "reference": "NSB-GEN-7031",
     "name": "Filtre à impuretés 1 1/2\" type 1",
+    "category": "filtre",
+    "specification": "1 1/2\"",
+    "active": true,
     "unit": "p",
-    "base_price": 96.29
+    "base_price": 20.02
   },
   {
     "id": "st-454",
@@ -14971,10 +19051,13 @@ export const MOCK_CATALOGUE = [
       "code": "ST",
       "name": "Sanitas Troesch"
     },
-    "reference": "SAN.GEN.345069",
+    "reference": "SAN.GEN.307871",
     "name": "Filtre à impuretés 1 1/2\" modèle 1",
+    "category": "filtre",
+    "specification": "1 1/2\"",
+    "active": true,
     "unit": "p",
-    "base_price": 84.35
+    "base_price": 148.15
   },
   {
     "id": "gm-454",
@@ -14982,10 +19065,13 @@ export const MOCK_CATALOGUE = [
       "code": "GM",
       "name": "Getaz Miauton"
     },
-    "reference": "GM/GN/1384",
+    "reference": "GM/GN/1853",
     "name": "Filtre à impuretés 1 1/2\" variante 1",
+    "category": "filtre",
+    "specification": "1 1/2\"",
+    "active": true,
     "unit": "p",
-    "base_price": 94.57
+    "base_price": 209.79
   },
   {
     "id": "nsb-455",
@@ -14993,10 +19079,13 @@ export const MOCK_CATALOGUE = [
       "code": "NSB",
       "name": "Nussbaum"
     },
-    "reference": "NSB-GEN-3810",
+    "reference": "NSB-GEN-3286",
     "name": "Filtre à impuretés 1 1/2\" type 2",
+    "category": "filtre",
+    "specification": "1 1/2\"",
+    "active": true,
     "unit": "p",
-    "base_price": 50.47
+    "base_price": 94.63
   },
   {
     "id": "st-455",
@@ -15004,10 +19093,13 @@ export const MOCK_CATALOGUE = [
       "code": "ST",
       "name": "Sanitas Troesch"
     },
-    "reference": "SAN.GEN.119167",
+    "reference": "SAN.GEN.194344",
     "name": "Filtre à impuretés 1 1/2\" modèle 2",
+    "category": "filtre",
+    "specification": "1 1/2\"",
+    "active": true,
     "unit": "p",
-    "base_price": 30.84
+    "base_price": 69.15
   },
   {
     "id": "gm-455",
@@ -15015,10 +19107,13 @@ export const MOCK_CATALOGUE = [
       "code": "GM",
       "name": "Getaz Miauton"
     },
-    "reference": "GM/GN/1038",
+    "reference": "GM/GN/9434",
     "name": "Filtre à impuretés 1 1/2\" variante 2",
+    "category": "filtre",
+    "specification": "1 1/2\"",
+    "active": true,
     "unit": "p",
-    "base_price": 205.68
+    "base_price": 52.99
   },
   {
     "id": "nsb-456",
@@ -15026,10 +19121,13 @@ export const MOCK_CATALOGUE = [
       "code": "NSB",
       "name": "Nussbaum"
     },
-    "reference": "NSB-GEN-3072",
+    "reference": "NSB-GEN-4786",
     "name": "Filtre à impuretés 1 1/2\" type 3",
+    "category": "filtre",
+    "specification": "1 1/2\"",
+    "active": true,
     "unit": "p",
-    "base_price": 206.62
+    "base_price": 90.26
   },
   {
     "id": "st-456",
@@ -15037,10 +19135,13 @@ export const MOCK_CATALOGUE = [
       "code": "ST",
       "name": "Sanitas Troesch"
     },
-    "reference": "SAN.GEN.736647",
+    "reference": "SAN.GEN.738835",
     "name": "Filtre à impuretés 1 1/2\" modèle 3",
+    "category": "filtre",
+    "specification": "1 1/2\"",
+    "active": true,
     "unit": "p",
-    "base_price": 82.95
+    "base_price": 202.62
   },
   {
     "id": "gm-456",
@@ -15048,10 +19149,13 @@ export const MOCK_CATALOGUE = [
       "code": "GM",
       "name": "Getaz Miauton"
     },
-    "reference": "GM/GN/6163",
+    "reference": "GM/GN/6826",
     "name": "Filtre à impuretés 1 1/2\" variante 3",
+    "category": "filtre",
+    "specification": "1 1/2\"",
+    "active": true,
     "unit": "p",
-    "base_price": 69.85
+    "base_price": 65.45
   },
   {
     "id": "nsb-457",
@@ -15059,10 +19163,13 @@ export const MOCK_CATALOGUE = [
       "code": "NSB",
       "name": "Nussbaum"
     },
-    "reference": "NSB-GEN-4574",
+    "reference": "NSB-GEN-9153",
     "name": "Filtre à impuretés 1 1/2\" type 4",
+    "category": "filtre",
+    "specification": "1 1/2\"",
+    "active": true,
     "unit": "p",
-    "base_price": 109.08
+    "base_price": 196.65
   },
   {
     "id": "st-457",
@@ -15070,10 +19177,13 @@ export const MOCK_CATALOGUE = [
       "code": "ST",
       "name": "Sanitas Troesch"
     },
-    "reference": "SAN.GEN.811672",
+    "reference": "SAN.GEN.854125",
     "name": "Filtre à impuretés 1 1/2\" modèle 4",
+    "category": "filtre",
+    "specification": "1 1/2\"",
+    "active": true,
     "unit": "p",
-    "base_price": 86.84
+    "base_price": 149.2
   },
   {
     "id": "gm-457",
@@ -15081,10 +19191,13 @@ export const MOCK_CATALOGUE = [
       "code": "GM",
       "name": "Getaz Miauton"
     },
-    "reference": "GM/GN/4927",
+    "reference": "GM/GN/5045",
     "name": "Filtre à impuretés 1 1/2\" variante 4",
+    "category": "filtre",
+    "specification": "1 1/2\"",
+    "active": true,
     "unit": "p",
-    "base_price": 31.09
+    "base_price": 151.85
   },
   {
     "id": "nsb-458",
@@ -15092,10 +19205,13 @@ export const MOCK_CATALOGUE = [
       "code": "NSB",
       "name": "Nussbaum"
     },
-    "reference": "NSB-GEN-5204",
+    "reference": "NSB-GEN-1509",
     "name": "Filtre à impuretés 2\" type 0",
+    "category": "filtre",
+    "specification": "2\"",
+    "active": true,
     "unit": "p",
-    "base_price": 84.4
+    "base_price": 172.35
   },
   {
     "id": "st-458",
@@ -15103,10 +19219,13 @@ export const MOCK_CATALOGUE = [
       "code": "ST",
       "name": "Sanitas Troesch"
     },
-    "reference": "SAN.GEN.848419",
+    "reference": "SAN.GEN.395199",
     "name": "Filtre à impuretés 2\" modèle 0",
+    "category": "filtre",
+    "specification": "2\"",
+    "active": true,
     "unit": "p",
-    "base_price": 144.13
+    "base_price": 160.4
   },
   {
     "id": "gm-458",
@@ -15114,10 +19233,13 @@ export const MOCK_CATALOGUE = [
       "code": "GM",
       "name": "Getaz Miauton"
     },
-    "reference": "GM/GN/7846",
+    "reference": "GM/GN/3863",
     "name": "Filtre à impuretés 2\" variante 0",
+    "category": "filtre",
+    "specification": "2\"",
+    "active": true,
     "unit": "p",
-    "base_price": 141.35
+    "base_price": 168.78
   },
   {
     "id": "nsb-459",
@@ -15125,10 +19247,13 @@ export const MOCK_CATALOGUE = [
       "code": "NSB",
       "name": "Nussbaum"
     },
-    "reference": "NSB-GEN-5976",
+    "reference": "NSB-GEN-4277",
     "name": "Filtre à impuretés 2\" type 1",
+    "category": "filtre",
+    "specification": "2\"",
+    "active": true,
     "unit": "p",
-    "base_price": 97.08
+    "base_price": 189.62
   },
   {
     "id": "st-459",
@@ -15136,10 +19261,13 @@ export const MOCK_CATALOGUE = [
       "code": "ST",
       "name": "Sanitas Troesch"
     },
-    "reference": "SAN.GEN.670487",
+    "reference": "SAN.GEN.130016",
     "name": "Filtre à impuretés 2\" modèle 1",
+    "category": "filtre",
+    "specification": "2\"",
+    "active": true,
     "unit": "p",
-    "base_price": 60.08
+    "base_price": 184.14
   },
   {
     "id": "gm-459",
@@ -15147,10 +19275,13 @@ export const MOCK_CATALOGUE = [
       "code": "GM",
       "name": "Getaz Miauton"
     },
-    "reference": "GM/GN/6995",
+    "reference": "GM/GN/8270",
     "name": "Filtre à impuretés 2\" variante 1",
+    "category": "filtre",
+    "specification": "2\"",
+    "active": true,
     "unit": "p",
-    "base_price": 201.41
+    "base_price": 141.34
   },
   {
     "id": "nsb-460",
@@ -15158,10 +19289,13 @@ export const MOCK_CATALOGUE = [
       "code": "NSB",
       "name": "Nussbaum"
     },
-    "reference": "NSB-GEN-2223",
+    "reference": "NSB-GEN-2318",
     "name": "Filtre à impuretés 2\" type 2",
+    "category": "filtre",
+    "specification": "2\"",
+    "active": true,
     "unit": "p",
-    "base_price": 136.14
+    "base_price": 27.05
   },
   {
     "id": "st-460",
@@ -15169,10 +19303,13 @@ export const MOCK_CATALOGUE = [
       "code": "ST",
       "name": "Sanitas Troesch"
     },
-    "reference": "SAN.GEN.321902",
+    "reference": "SAN.GEN.748605",
     "name": "Filtre à impuretés 2\" modèle 2",
+    "category": "filtre",
+    "specification": "2\"",
+    "active": true,
     "unit": "p",
-    "base_price": 126.33
+    "base_price": 104.56
   },
   {
     "id": "gm-460",
@@ -15180,10 +19317,13 @@ export const MOCK_CATALOGUE = [
       "code": "GM",
       "name": "Getaz Miauton"
     },
-    "reference": "GM/GN/5537",
+    "reference": "GM/GN/8945",
     "name": "Filtre à impuretés 2\" variante 2",
+    "category": "filtre",
+    "specification": "2\"",
+    "active": true,
     "unit": "p",
-    "base_price": 78.69
+    "base_price": 150.38
   },
   {
     "id": "nsb-461",
@@ -15191,10 +19331,13 @@ export const MOCK_CATALOGUE = [
       "code": "NSB",
       "name": "Nussbaum"
     },
-    "reference": "NSB-GEN-5823",
+    "reference": "NSB-GEN-4187",
     "name": "Filtre à impuretés 2\" type 3",
+    "category": "filtre",
+    "specification": "2\"",
+    "active": true,
     "unit": "p",
-    "base_price": 54.56
+    "base_price": 205.26
   },
   {
     "id": "st-461",
@@ -15202,10 +19345,13 @@ export const MOCK_CATALOGUE = [
       "code": "ST",
       "name": "Sanitas Troesch"
     },
-    "reference": "SAN.GEN.426686",
+    "reference": "SAN.GEN.103324",
     "name": "Filtre à impuretés 2\" modèle 3",
+    "category": "filtre",
+    "specification": "2\"",
+    "active": true,
     "unit": "p",
-    "base_price": 183.28
+    "base_price": 199.23
   },
   {
     "id": "gm-461",
@@ -15213,10 +19359,13 @@ export const MOCK_CATALOGUE = [
       "code": "GM",
       "name": "Getaz Miauton"
     },
-    "reference": "GM/GN/4142",
+    "reference": "GM/GN/3102",
     "name": "Filtre à impuretés 2\" variante 3",
+    "category": "filtre",
+    "specification": "2\"",
+    "active": true,
     "unit": "p",
-    "base_price": 117.3
+    "base_price": 103.65
   },
   {
     "id": "nsb-462",
@@ -15224,10 +19373,13 @@ export const MOCK_CATALOGUE = [
       "code": "NSB",
       "name": "Nussbaum"
     },
-    "reference": "NSB-GEN-8915",
+    "reference": "NSB-GEN-6235",
     "name": "Filtre à impuretés 2\" type 4",
+    "category": "filtre",
+    "specification": "2\"",
+    "active": true,
     "unit": "p",
-    "base_price": 148.86
+    "base_price": 191.08
   },
   {
     "id": "st-462",
@@ -15235,10 +19387,13 @@ export const MOCK_CATALOGUE = [
       "code": "ST",
       "name": "Sanitas Troesch"
     },
-    "reference": "SAN.GEN.522192",
+    "reference": "SAN.GEN.477965",
     "name": "Filtre à impuretés 2\" modèle 4",
+    "category": "filtre",
+    "specification": "2\"",
+    "active": true,
     "unit": "p",
-    "base_price": 59.77
+    "base_price": 165.92
   },
   {
     "id": "gm-462",
@@ -15246,10 +19401,13 @@ export const MOCK_CATALOGUE = [
       "code": "GM",
       "name": "Getaz Miauton"
     },
-    "reference": "GM/GN/4962",
+    "reference": "GM/GN/5750",
     "name": "Filtre à impuretés 2\" variante 4",
+    "category": "filtre",
+    "specification": "2\"",
+    "active": true,
     "unit": "p",
-    "base_price": 37.15
+    "base_price": 27.71
   },
   {
     "id": "nsb-463",
@@ -15257,10 +19415,13 @@ export const MOCK_CATALOGUE = [
       "code": "NSB",
       "name": "Nussbaum"
     },
-    "reference": "NSB-GEN-4534",
+    "reference": "NSB-GEN-1548",
     "name": "Filtre à impuretés DN 15 type 0",
+    "category": "filtre",
+    "specification": "DN 15",
+    "active": true,
     "unit": "p",
-    "base_price": 147.68
+    "base_price": 42.22
   },
   {
     "id": "st-463",
@@ -15268,10 +19429,13 @@ export const MOCK_CATALOGUE = [
       "code": "ST",
       "name": "Sanitas Troesch"
     },
-    "reference": "SAN.GEN.312460",
+    "reference": "SAN.GEN.756729",
     "name": "Filtre à impuretés DN 15 modèle 0",
+    "category": "filtre",
+    "specification": "DN 15",
+    "active": true,
     "unit": "p",
-    "base_price": 76.58
+    "base_price": 107.62
   },
   {
     "id": "gm-463",
@@ -15279,10 +19443,13 @@ export const MOCK_CATALOGUE = [
       "code": "GM",
       "name": "Getaz Miauton"
     },
-    "reference": "GM/GN/5463",
+    "reference": "GM/GN/6198",
     "name": "Filtre à impuretés DN 15 variante 0",
+    "category": "filtre",
+    "specification": "DN 15",
+    "active": true,
     "unit": "p",
-    "base_price": 148.52
+    "base_price": 156.97
   },
   {
     "id": "nsb-464",
@@ -15290,10 +19457,13 @@ export const MOCK_CATALOGUE = [
       "code": "NSB",
       "name": "Nussbaum"
     },
-    "reference": "NSB-GEN-8519",
+    "reference": "NSB-GEN-8635",
     "name": "Filtre à impuretés DN 15 type 1",
+    "category": "filtre",
+    "specification": "DN 15",
+    "active": true,
     "unit": "p",
-    "base_price": 134.23
+    "base_price": 84.3
   },
   {
     "id": "st-464",
@@ -15301,10 +19471,13 @@ export const MOCK_CATALOGUE = [
       "code": "ST",
       "name": "Sanitas Troesch"
     },
-    "reference": "SAN.GEN.923548",
+    "reference": "SAN.GEN.937519",
     "name": "Filtre à impuretés DN 15 modèle 1",
+    "category": "filtre",
+    "specification": "DN 15",
+    "active": true,
     "unit": "p",
-    "base_price": 174.29
+    "base_price": 50.81
   },
   {
     "id": "gm-464",
@@ -15312,10 +19485,13 @@ export const MOCK_CATALOGUE = [
       "code": "GM",
       "name": "Getaz Miauton"
     },
-    "reference": "GM/GN/4249",
+    "reference": "GM/GN/4340",
     "name": "Filtre à impuretés DN 15 variante 1",
+    "category": "filtre",
+    "specification": "DN 15",
+    "active": true,
     "unit": "p",
-    "base_price": 140.5
+    "base_price": 104.43
   },
   {
     "id": "nsb-465",
@@ -15323,10 +19499,13 @@ export const MOCK_CATALOGUE = [
       "code": "NSB",
       "name": "Nussbaum"
     },
-    "reference": "NSB-GEN-4670",
+    "reference": "NSB-GEN-4716",
     "name": "Filtre à impuretés DN 15 type 2",
+    "category": "filtre",
+    "specification": "DN 15",
+    "active": true,
     "unit": "p",
-    "base_price": 130.18
+    "base_price": 179.07
   },
   {
     "id": "st-465",
@@ -15334,10 +19513,13 @@ export const MOCK_CATALOGUE = [
       "code": "ST",
       "name": "Sanitas Troesch"
     },
-    "reference": "SAN.GEN.942673",
+    "reference": "SAN.GEN.817864",
     "name": "Filtre à impuretés DN 15 modèle 2",
+    "category": "filtre",
+    "specification": "DN 15",
+    "active": true,
     "unit": "p",
-    "base_price": 56.7
+    "base_price": 126.99
   },
   {
     "id": "gm-465",
@@ -15345,10 +19527,13 @@ export const MOCK_CATALOGUE = [
       "code": "GM",
       "name": "Getaz Miauton"
     },
-    "reference": "GM/GN/2051",
+    "reference": "GM/GN/9573",
     "name": "Filtre à impuretés DN 15 variante 2",
+    "category": "filtre",
+    "specification": "DN 15",
+    "active": true,
     "unit": "p",
-    "base_price": 51.01
+    "base_price": 86.04
   },
   {
     "id": "nsb-466",
@@ -15356,10 +19541,13 @@ export const MOCK_CATALOGUE = [
       "code": "NSB",
       "name": "Nussbaum"
     },
-    "reference": "NSB-GEN-2860",
+    "reference": "NSB-GEN-9577",
     "name": "Filtre à impuretés DN 15 type 3",
+    "category": "filtre",
+    "specification": "DN 15",
+    "active": true,
     "unit": "p",
-    "base_price": 211.89
+    "base_price": 131.25
   },
   {
     "id": "st-466",
@@ -15367,10 +19555,13 @@ export const MOCK_CATALOGUE = [
       "code": "ST",
       "name": "Sanitas Troesch"
     },
-    "reference": "SAN.GEN.443515",
+    "reference": "SAN.GEN.643539",
     "name": "Filtre à impuretés DN 15 modèle 3",
+    "category": "filtre",
+    "specification": "DN 15",
+    "active": true,
     "unit": "p",
-    "base_price": 107.71
+    "base_price": 64.02
   },
   {
     "id": "gm-466",
@@ -15378,10 +19569,13 @@ export const MOCK_CATALOGUE = [
       "code": "GM",
       "name": "Getaz Miauton"
     },
-    "reference": "GM/GN/8605",
+    "reference": "GM/GN/1959",
     "name": "Filtre à impuretés DN 15 variante 3",
+    "category": "filtre",
+    "specification": "DN 15",
+    "active": true,
     "unit": "p",
-    "base_price": 83.01
+    "base_price": 21.34
   },
   {
     "id": "nsb-467",
@@ -15389,10 +19583,13 @@ export const MOCK_CATALOGUE = [
       "code": "NSB",
       "name": "Nussbaum"
     },
-    "reference": "NSB-GEN-8224",
+    "reference": "NSB-GEN-1451",
     "name": "Filtre à impuretés DN 15 type 4",
+    "category": "filtre",
+    "specification": "DN 15",
+    "active": true,
     "unit": "p",
-    "base_price": 195.07
+    "base_price": 217.62
   },
   {
     "id": "st-467",
@@ -15400,10 +19597,13 @@ export const MOCK_CATALOGUE = [
       "code": "ST",
       "name": "Sanitas Troesch"
     },
-    "reference": "SAN.GEN.337176",
+    "reference": "SAN.GEN.563355",
     "name": "Filtre à impuretés DN 15 modèle 4",
+    "category": "filtre",
+    "specification": "DN 15",
+    "active": true,
     "unit": "p",
-    "base_price": 128.12
+    "base_price": 217.89
   },
   {
     "id": "gm-467",
@@ -15411,10 +19611,13 @@ export const MOCK_CATALOGUE = [
       "code": "GM",
       "name": "Getaz Miauton"
     },
-    "reference": "GM/GN/7864",
+    "reference": "GM/GN/2856",
     "name": "Filtre à impuretés DN 15 variante 4",
+    "category": "filtre",
+    "specification": "DN 15",
+    "active": true,
     "unit": "p",
-    "base_price": 88.65
+    "base_price": 151.34
   },
   {
     "id": "nsb-468",
@@ -15422,10 +19625,13 @@ export const MOCK_CATALOGUE = [
       "code": "NSB",
       "name": "Nussbaum"
     },
-    "reference": "NSB-GEN-9843",
+    "reference": "NSB-GEN-6610",
     "name": "Filtre à impuretés DN 20 type 0",
+    "category": "filtre",
+    "specification": "DN 20",
+    "active": true,
     "unit": "p",
-    "base_price": 107.39
+    "base_price": 199.81
   },
   {
     "id": "st-468",
@@ -15433,10 +19639,13 @@ export const MOCK_CATALOGUE = [
       "code": "ST",
       "name": "Sanitas Troesch"
     },
-    "reference": "SAN.GEN.755008",
+    "reference": "SAN.GEN.851898",
     "name": "Filtre à impuretés DN 20 modèle 0",
+    "category": "filtre",
+    "specification": "DN 20",
+    "active": true,
     "unit": "p",
-    "base_price": 139.9
+    "base_price": 207.04
   },
   {
     "id": "gm-468",
@@ -15444,10 +19653,13 @@ export const MOCK_CATALOGUE = [
       "code": "GM",
       "name": "Getaz Miauton"
     },
-    "reference": "GM/GN/6320",
+    "reference": "GM/GN/5880",
     "name": "Filtre à impuretés DN 20 variante 0",
+    "category": "filtre",
+    "specification": "DN 20",
+    "active": true,
     "unit": "p",
-    "base_price": 199.41
+    "base_price": 29.01
   },
   {
     "id": "nsb-469",
@@ -15455,10 +19667,13 @@ export const MOCK_CATALOGUE = [
       "code": "NSB",
       "name": "Nussbaum"
     },
-    "reference": "NSB-GEN-3012",
+    "reference": "NSB-GEN-5907",
     "name": "Filtre à impuretés DN 20 type 1",
+    "category": "filtre",
+    "specification": "DN 20",
+    "active": true,
     "unit": "p",
-    "base_price": 186.6
+    "base_price": 85.24
   },
   {
     "id": "st-469",
@@ -15466,10 +19681,13 @@ export const MOCK_CATALOGUE = [
       "code": "ST",
       "name": "Sanitas Troesch"
     },
-    "reference": "SAN.GEN.640813",
+    "reference": "SAN.GEN.432192",
     "name": "Filtre à impuretés DN 20 modèle 1",
+    "category": "filtre",
+    "specification": "DN 20",
+    "active": true,
     "unit": "p",
-    "base_price": 58.1
+    "base_price": 195.47
   },
   {
     "id": "gm-469",
@@ -15477,10 +19695,13 @@ export const MOCK_CATALOGUE = [
       "code": "GM",
       "name": "Getaz Miauton"
     },
-    "reference": "GM/GN/6641",
+    "reference": "GM/GN/4697",
     "name": "Filtre à impuretés DN 20 variante 1",
+    "category": "filtre",
+    "specification": "DN 20",
+    "active": true,
     "unit": "p",
-    "base_price": 178.81
+    "base_price": 78.94
   },
   {
     "id": "nsb-470",
@@ -15488,10 +19709,13 @@ export const MOCK_CATALOGUE = [
       "code": "NSB",
       "name": "Nussbaum"
     },
-    "reference": "NSB-GEN-2333",
+    "reference": "NSB-GEN-5699",
     "name": "Filtre à impuretés DN 20 type 2",
+    "category": "filtre",
+    "specification": "DN 20",
+    "active": true,
     "unit": "p",
-    "base_price": 152.66
+    "base_price": 68.15
   },
   {
     "id": "st-470",
@@ -15499,10 +19723,13 @@ export const MOCK_CATALOGUE = [
       "code": "ST",
       "name": "Sanitas Troesch"
     },
-    "reference": "SAN.GEN.202160",
+    "reference": "SAN.GEN.746464",
     "name": "Filtre à impuretés DN 20 modèle 2",
+    "category": "filtre",
+    "specification": "DN 20",
+    "active": true,
     "unit": "p",
-    "base_price": 79.94
+    "base_price": 181.83
   },
   {
     "id": "gm-470",
@@ -15510,10 +19737,13 @@ export const MOCK_CATALOGUE = [
       "code": "GM",
       "name": "Getaz Miauton"
     },
-    "reference": "GM/GN/4443",
+    "reference": "GM/GN/9067",
     "name": "Filtre à impuretés DN 20 variante 2",
+    "category": "filtre",
+    "specification": "DN 20",
+    "active": true,
     "unit": "p",
-    "base_price": 93.63
+    "base_price": 216.42
   },
   {
     "id": "nsb-471",
@@ -15521,10 +19751,13 @@ export const MOCK_CATALOGUE = [
       "code": "NSB",
       "name": "Nussbaum"
     },
-    "reference": "NSB-GEN-2604",
+    "reference": "NSB-GEN-9639",
     "name": "Filtre à impuretés DN 20 type 3",
+    "category": "filtre",
+    "specification": "DN 20",
+    "active": true,
     "unit": "p",
-    "base_price": 176.62
+    "base_price": 76.88
   },
   {
     "id": "st-471",
@@ -15532,10 +19765,13 @@ export const MOCK_CATALOGUE = [
       "code": "ST",
       "name": "Sanitas Troesch"
     },
-    "reference": "SAN.GEN.295378",
+    "reference": "SAN.GEN.675324",
     "name": "Filtre à impuretés DN 20 modèle 3",
+    "category": "filtre",
+    "specification": "DN 20",
+    "active": true,
     "unit": "p",
-    "base_price": 81.05
+    "base_price": 106.63
   },
   {
     "id": "gm-471",
@@ -15543,10 +19779,13 @@ export const MOCK_CATALOGUE = [
       "code": "GM",
       "name": "Getaz Miauton"
     },
-    "reference": "GM/GN/6492",
+    "reference": "GM/GN/3589",
     "name": "Filtre à impuretés DN 20 variante 3",
+    "category": "filtre",
+    "specification": "DN 20",
+    "active": true,
     "unit": "p",
-    "base_price": 180.25
+    "base_price": 22.65
   },
   {
     "id": "nsb-472",
@@ -15554,10 +19793,13 @@ export const MOCK_CATALOGUE = [
       "code": "NSB",
       "name": "Nussbaum"
     },
-    "reference": "NSB-GEN-3759",
+    "reference": "NSB-GEN-5755",
     "name": "Filtre à impuretés DN 20 type 4",
+    "category": "filtre",
+    "specification": "DN 20",
+    "active": true,
     "unit": "p",
-    "base_price": 175.75
+    "base_price": 215.55
   },
   {
     "id": "st-472",
@@ -15565,10 +19807,13 @@ export const MOCK_CATALOGUE = [
       "code": "ST",
       "name": "Sanitas Troesch"
     },
-    "reference": "SAN.GEN.151476",
+    "reference": "SAN.GEN.769848",
     "name": "Filtre à impuretés DN 20 modèle 4",
+    "category": "filtre",
+    "specification": "DN 20",
+    "active": true,
     "unit": "p",
-    "base_price": 177.37
+    "base_price": 51.21
   },
   {
     "id": "gm-472",
@@ -15576,10 +19821,13 @@ export const MOCK_CATALOGUE = [
       "code": "GM",
       "name": "Getaz Miauton"
     },
-    "reference": "GM/GN/6303",
+    "reference": "GM/GN/1404",
     "name": "Filtre à impuretés DN 20 variante 4",
+    "category": "filtre",
+    "specification": "DN 20",
+    "active": true,
     "unit": "p",
-    "base_price": 205.89
+    "base_price": 133.8
   },
   {
     "id": "nsb-473",
@@ -15587,10 +19835,13 @@ export const MOCK_CATALOGUE = [
       "code": "NSB",
       "name": "Nussbaum"
     },
-    "reference": "NSB-GEN-1793",
+    "reference": "NSB-GEN-5201",
     "name": "Filtre à impuretés DN 25 type 0",
+    "category": "filtre",
+    "specification": "DN 25",
+    "active": true,
     "unit": "p",
-    "base_price": 63.17
+    "base_price": 194.7
   },
   {
     "id": "st-473",
@@ -15598,10 +19849,13 @@ export const MOCK_CATALOGUE = [
       "code": "ST",
       "name": "Sanitas Troesch"
     },
-    "reference": "SAN.GEN.369555",
+    "reference": "SAN.GEN.674732",
     "name": "Filtre à impuretés DN 25 modèle 0",
+    "category": "filtre",
+    "specification": "DN 25",
+    "active": true,
     "unit": "p",
-    "base_price": 211.07
+    "base_price": 39
   },
   {
     "id": "gm-473",
@@ -15609,10 +19863,13 @@ export const MOCK_CATALOGUE = [
       "code": "GM",
       "name": "Getaz Miauton"
     },
-    "reference": "GM/GN/8273",
+    "reference": "GM/GN/7923",
     "name": "Filtre à impuretés DN 25 variante 0",
+    "category": "filtre",
+    "specification": "DN 25",
+    "active": true,
     "unit": "p",
-    "base_price": 163.94
+    "base_price": 185.88
   },
   {
     "id": "nsb-474",
@@ -15620,10 +19877,13 @@ export const MOCK_CATALOGUE = [
       "code": "NSB",
       "name": "Nussbaum"
     },
-    "reference": "NSB-GEN-1596",
+    "reference": "NSB-GEN-3132",
     "name": "Filtre à impuretés DN 25 type 1",
+    "category": "filtre",
+    "specification": "DN 25",
+    "active": true,
     "unit": "p",
-    "base_price": 43.11
+    "base_price": 46.13
   },
   {
     "id": "st-474",
@@ -15631,10 +19891,13 @@ export const MOCK_CATALOGUE = [
       "code": "ST",
       "name": "Sanitas Troesch"
     },
-    "reference": "SAN.GEN.473525",
+    "reference": "SAN.GEN.497481",
     "name": "Filtre à impuretés DN 25 modèle 1",
+    "category": "filtre",
+    "specification": "DN 25",
+    "active": true,
     "unit": "p",
-    "base_price": 119.74
+    "base_price": 51.71
   },
   {
     "id": "gm-474",
@@ -15642,10 +19905,13 @@ export const MOCK_CATALOGUE = [
       "code": "GM",
       "name": "Getaz Miauton"
     },
-    "reference": "GM/GN/7535",
+    "reference": "GM/GN/4408",
     "name": "Filtre à impuretés DN 25 variante 1",
+    "category": "filtre",
+    "specification": "DN 25",
+    "active": true,
     "unit": "p",
-    "base_price": 188.55
+    "base_price": 210.63
   },
   {
     "id": "nsb-475",
@@ -15653,10 +19919,13 @@ export const MOCK_CATALOGUE = [
       "code": "NSB",
       "name": "Nussbaum"
     },
-    "reference": "NSB-GEN-2959",
+    "reference": "NSB-GEN-5658",
     "name": "Filtre à impuretés DN 25 type 2",
+    "category": "filtre",
+    "specification": "DN 25",
+    "active": true,
     "unit": "p",
-    "base_price": 131
+    "base_price": 105.68
   },
   {
     "id": "st-475",
@@ -15664,10 +19933,13 @@ export const MOCK_CATALOGUE = [
       "code": "ST",
       "name": "Sanitas Troesch"
     },
-    "reference": "SAN.GEN.142826",
+    "reference": "SAN.GEN.506889",
     "name": "Filtre à impuretés DN 25 modèle 2",
+    "category": "filtre",
+    "specification": "DN 25",
+    "active": true,
     "unit": "p",
-    "base_price": 49.25
+    "base_price": 98.28
   },
   {
     "id": "gm-475",
@@ -15675,10 +19947,13 @@ export const MOCK_CATALOGUE = [
       "code": "GM",
       "name": "Getaz Miauton"
     },
-    "reference": "GM/GN/2223",
+    "reference": "GM/GN/2198",
     "name": "Filtre à impuretés DN 25 variante 2",
+    "category": "filtre",
+    "specification": "DN 25",
+    "active": true,
     "unit": "p",
-    "base_price": 94.96
+    "base_price": 216.2
   },
   {
     "id": "nsb-476",
@@ -15686,10 +19961,13 @@ export const MOCK_CATALOGUE = [
       "code": "NSB",
       "name": "Nussbaum"
     },
-    "reference": "NSB-GEN-8947",
+    "reference": "NSB-GEN-5647",
     "name": "Filtre à impuretés DN 25 type 3",
+    "category": "filtre",
+    "specification": "DN 25",
+    "active": true,
     "unit": "p",
-    "base_price": 201.07
+    "base_price": 32.4
   },
   {
     "id": "st-476",
@@ -15697,10 +19975,13 @@ export const MOCK_CATALOGUE = [
       "code": "ST",
       "name": "Sanitas Troesch"
     },
-    "reference": "SAN.GEN.409887",
+    "reference": "SAN.GEN.792015",
     "name": "Filtre à impuretés DN 25 modèle 3",
+    "category": "filtre",
+    "specification": "DN 25",
+    "active": true,
     "unit": "p",
-    "base_price": 136.24
+    "base_price": 202.7
   },
   {
     "id": "gm-476",
@@ -15708,10 +19989,13 @@ export const MOCK_CATALOGUE = [
       "code": "GM",
       "name": "Getaz Miauton"
     },
-    "reference": "GM/GN/7659",
+    "reference": "GM/GN/8897",
     "name": "Filtre à impuretés DN 25 variante 3",
+    "category": "filtre",
+    "specification": "DN 25",
+    "active": true,
     "unit": "p",
-    "base_price": 197.52
+    "base_price": 134.26
   },
   {
     "id": "nsb-477",
@@ -15719,10 +20003,13 @@ export const MOCK_CATALOGUE = [
       "code": "NSB",
       "name": "Nussbaum"
     },
-    "reference": "NSB-GEN-7100",
+    "reference": "NSB-GEN-4716",
     "name": "Filtre à impuretés DN 25 type 4",
+    "category": "filtre",
+    "specification": "DN 25",
+    "active": true,
     "unit": "p",
-    "base_price": 34.1
+    "base_price": 205.63
   },
   {
     "id": "st-477",
@@ -15730,10 +20017,13 @@ export const MOCK_CATALOGUE = [
       "code": "ST",
       "name": "Sanitas Troesch"
     },
-    "reference": "SAN.GEN.143124",
+    "reference": "SAN.GEN.325805",
     "name": "Filtre à impuretés DN 25 modèle 4",
+    "category": "filtre",
+    "specification": "DN 25",
+    "active": true,
     "unit": "p",
-    "base_price": 78.02
+    "base_price": 86.82
   },
   {
     "id": "gm-477",
@@ -15741,10 +20031,13 @@ export const MOCK_CATALOGUE = [
       "code": "GM",
       "name": "Getaz Miauton"
     },
-    "reference": "GM/GN/1039",
+    "reference": "GM/GN/1198",
     "name": "Filtre à impuretés DN 25 variante 4",
+    "category": "filtre",
+    "specification": "DN 25",
+    "active": true,
     "unit": "p",
-    "base_price": 149.24
+    "base_price": 108.84
   },
   {
     "id": "nsb-478",
@@ -15752,10 +20045,13 @@ export const MOCK_CATALOGUE = [
       "code": "NSB",
       "name": "Nussbaum"
     },
-    "reference": "NSB-GEN-3212",
+    "reference": "NSB-GEN-5952",
     "name": "Filtre à impuretés DN 32 type 0",
+    "category": "filtre",
+    "specification": "DN 32",
+    "active": true,
     "unit": "p",
-    "base_price": 99.09
+    "base_price": 157.62
   },
   {
     "id": "st-478",
@@ -15763,10 +20059,13 @@ export const MOCK_CATALOGUE = [
       "code": "ST",
       "name": "Sanitas Troesch"
     },
-    "reference": "SAN.GEN.562459",
+    "reference": "SAN.GEN.442306",
     "name": "Filtre à impuretés DN 32 modèle 0",
+    "category": "filtre",
+    "specification": "DN 32",
+    "active": true,
     "unit": "p",
-    "base_price": 93.67
+    "base_price": 124.68
   },
   {
     "id": "gm-478",
@@ -15774,10 +20073,13 @@ export const MOCK_CATALOGUE = [
       "code": "GM",
       "name": "Getaz Miauton"
     },
-    "reference": "GM/GN/4973",
+    "reference": "GM/GN/2661",
     "name": "Filtre à impuretés DN 32 variante 0",
+    "category": "filtre",
+    "specification": "DN 32",
+    "active": true,
     "unit": "p",
-    "base_price": 165.22
+    "base_price": 196.51
   },
   {
     "id": "nsb-479",
@@ -15785,10 +20087,13 @@ export const MOCK_CATALOGUE = [
       "code": "NSB",
       "name": "Nussbaum"
     },
-    "reference": "NSB-GEN-5760",
+    "reference": "NSB-GEN-1269",
     "name": "Filtre à impuretés DN 32 type 1",
+    "category": "filtre",
+    "specification": "DN 32",
+    "active": true,
     "unit": "p",
-    "base_price": 117.79
+    "base_price": 154.26
   },
   {
     "id": "st-479",
@@ -15796,10 +20101,13 @@ export const MOCK_CATALOGUE = [
       "code": "ST",
       "name": "Sanitas Troesch"
     },
-    "reference": "SAN.GEN.808237",
+    "reference": "SAN.GEN.386801",
     "name": "Filtre à impuretés DN 32 modèle 1",
+    "category": "filtre",
+    "specification": "DN 32",
+    "active": true,
     "unit": "p",
-    "base_price": 150.51
+    "base_price": 90.13
   },
   {
     "id": "gm-479",
@@ -15807,10 +20115,13 @@ export const MOCK_CATALOGUE = [
       "code": "GM",
       "name": "Getaz Miauton"
     },
-    "reference": "GM/GN/9471",
+    "reference": "GM/GN/6942",
     "name": "Filtre à impuretés DN 32 variante 1",
+    "category": "filtre",
+    "specification": "DN 32",
+    "active": true,
     "unit": "p",
-    "base_price": 118.52
+    "base_price": 138.98
   },
   {
     "id": "nsb-480",
@@ -15818,10 +20129,13 @@ export const MOCK_CATALOGUE = [
       "code": "NSB",
       "name": "Nussbaum"
     },
-    "reference": "NSB-GEN-3136",
+    "reference": "NSB-GEN-3312",
     "name": "Filtre à impuretés DN 32 type 2",
+    "category": "filtre",
+    "specification": "DN 32",
+    "active": true,
     "unit": "p",
-    "base_price": 188.56
+    "base_price": 197.9
   },
   {
     "id": "st-480",
@@ -15829,10 +20143,13 @@ export const MOCK_CATALOGUE = [
       "code": "ST",
       "name": "Sanitas Troesch"
     },
-    "reference": "SAN.GEN.340459",
+    "reference": "SAN.GEN.992030",
     "name": "Filtre à impuretés DN 32 modèle 2",
+    "category": "filtre",
+    "specification": "DN 32",
+    "active": true,
     "unit": "p",
-    "base_price": 73.05
+    "base_price": 185.82
   },
   {
     "id": "gm-480",
@@ -15840,10 +20157,13 @@ export const MOCK_CATALOGUE = [
       "code": "GM",
       "name": "Getaz Miauton"
     },
-    "reference": "GM/GN/5087",
+    "reference": "GM/GN/6592",
     "name": "Filtre à impuretés DN 32 variante 2",
+    "category": "filtre",
+    "specification": "DN 32",
+    "active": true,
     "unit": "p",
-    "base_price": 186.62
+    "base_price": 136.18
   },
   {
     "id": "nsb-481",
@@ -15851,10 +20171,13 @@ export const MOCK_CATALOGUE = [
       "code": "NSB",
       "name": "Nussbaum"
     },
-    "reference": "NSB-GEN-5082",
+    "reference": "NSB-GEN-4241",
     "name": "Filtre à impuretés DN 32 type 3",
+    "category": "filtre",
+    "specification": "DN 32",
+    "active": true,
     "unit": "p",
-    "base_price": 109.44
+    "base_price": 184.93
   },
   {
     "id": "st-481",
@@ -15862,10 +20185,13 @@ export const MOCK_CATALOGUE = [
       "code": "ST",
       "name": "Sanitas Troesch"
     },
-    "reference": "SAN.GEN.133345",
+    "reference": "SAN.GEN.612475",
     "name": "Filtre à impuretés DN 32 modèle 3",
+    "category": "filtre",
+    "specification": "DN 32",
+    "active": true,
     "unit": "p",
-    "base_price": 23.07
+    "base_price": 176.39
   },
   {
     "id": "gm-481",
@@ -15873,10 +20199,13 @@ export const MOCK_CATALOGUE = [
       "code": "GM",
       "name": "Getaz Miauton"
     },
-    "reference": "GM/GN/8691",
+    "reference": "GM/GN/3806",
     "name": "Filtre à impuretés DN 32 variante 3",
+    "category": "filtre",
+    "specification": "DN 32",
+    "active": true,
     "unit": "p",
-    "base_price": 183.98
+    "base_price": 103
   },
   {
     "id": "nsb-482",
@@ -15884,10 +20213,13 @@ export const MOCK_CATALOGUE = [
       "code": "NSB",
       "name": "Nussbaum"
     },
-    "reference": "NSB-GEN-2041",
+    "reference": "NSB-GEN-6276",
     "name": "Filtre à impuretés DN 32 type 4",
+    "category": "filtre",
+    "specification": "DN 32",
+    "active": true,
     "unit": "p",
-    "base_price": 127.01
+    "base_price": 158.81
   },
   {
     "id": "st-482",
@@ -15895,10 +20227,13 @@ export const MOCK_CATALOGUE = [
       "code": "ST",
       "name": "Sanitas Troesch"
     },
-    "reference": "SAN.GEN.362568",
+    "reference": "SAN.GEN.542863",
     "name": "Filtre à impuretés DN 32 modèle 4",
+    "category": "filtre",
+    "specification": "DN 32",
+    "active": true,
     "unit": "p",
-    "base_price": 146.06
+    "base_price": 53.9
   },
   {
     "id": "gm-482",
@@ -15906,10 +20241,13 @@ export const MOCK_CATALOGUE = [
       "code": "GM",
       "name": "Getaz Miauton"
     },
-    "reference": "GM/GN/8834",
+    "reference": "GM/GN/4109",
     "name": "Filtre à impuretés DN 32 variante 4",
+    "category": "filtre",
+    "specification": "DN 32",
+    "active": true,
     "unit": "p",
-    "base_price": 81.57
+    "base_price": 89.52
   },
   {
     "id": "nsb-483",
@@ -15917,10 +20255,13 @@ export const MOCK_CATALOGUE = [
       "code": "NSB",
       "name": "Nussbaum"
     },
-    "reference": "NSB-GEN-6038",
+    "reference": "NSB-GEN-3024",
     "name": "Filtre à impuretés DN 40 type 0",
+    "category": "filtre",
+    "specification": "DN 40",
+    "active": true,
     "unit": "p",
-    "base_price": 188.53
+    "base_price": 91.83
   },
   {
     "id": "st-483",
@@ -15928,10 +20269,13 @@ export const MOCK_CATALOGUE = [
       "code": "ST",
       "name": "Sanitas Troesch"
     },
-    "reference": "SAN.GEN.971627",
+    "reference": "SAN.GEN.216413",
     "name": "Filtre à impuretés DN 40 modèle 0",
+    "category": "filtre",
+    "specification": "DN 40",
+    "active": true,
     "unit": "p",
-    "base_price": 204.21
+    "base_price": 132.04
   },
   {
     "id": "gm-483",
@@ -15939,10 +20283,13 @@ export const MOCK_CATALOGUE = [
       "code": "GM",
       "name": "Getaz Miauton"
     },
-    "reference": "GM/GN/6516",
+    "reference": "GM/GN/1026",
     "name": "Filtre à impuretés DN 40 variante 0",
+    "category": "filtre",
+    "specification": "DN 40",
+    "active": true,
     "unit": "p",
-    "base_price": 108.3
+    "base_price": 201.35
   },
   {
     "id": "nsb-484",
@@ -15950,10 +20297,13 @@ export const MOCK_CATALOGUE = [
       "code": "NSB",
       "name": "Nussbaum"
     },
-    "reference": "NSB-GEN-3838",
+    "reference": "NSB-GEN-9714",
     "name": "Filtre à impuretés DN 40 type 1",
+    "category": "filtre",
+    "specification": "DN 40",
+    "active": true,
     "unit": "p",
-    "base_price": 76.18
+    "base_price": 79.32
   },
   {
     "id": "st-484",
@@ -15961,10 +20311,13 @@ export const MOCK_CATALOGUE = [
       "code": "ST",
       "name": "Sanitas Troesch"
     },
-    "reference": "SAN.GEN.732310",
+    "reference": "SAN.GEN.831993",
     "name": "Filtre à impuretés DN 40 modèle 1",
+    "category": "filtre",
+    "specification": "DN 40",
+    "active": true,
     "unit": "p",
-    "base_price": 145.39
+    "base_price": 27.74
   },
   {
     "id": "gm-484",
@@ -15972,10 +20325,13 @@ export const MOCK_CATALOGUE = [
       "code": "GM",
       "name": "Getaz Miauton"
     },
-    "reference": "GM/GN/9219",
+    "reference": "GM/GN/5332",
     "name": "Filtre à impuretés DN 40 variante 1",
+    "category": "filtre",
+    "specification": "DN 40",
+    "active": true,
     "unit": "p",
-    "base_price": 162.78
+    "base_price": 157.76
   },
   {
     "id": "nsb-485",
@@ -15983,10 +20339,13 @@ export const MOCK_CATALOGUE = [
       "code": "NSB",
       "name": "Nussbaum"
     },
-    "reference": "NSB-GEN-8422",
+    "reference": "NSB-GEN-9572",
     "name": "Filtre à impuretés DN 40 type 2",
+    "category": "filtre",
+    "specification": "DN 40",
+    "active": true,
     "unit": "p",
-    "base_price": 167.64
+    "base_price": 85.68
   },
   {
     "id": "st-485",
@@ -15994,10 +20353,13 @@ export const MOCK_CATALOGUE = [
       "code": "ST",
       "name": "Sanitas Troesch"
     },
-    "reference": "SAN.GEN.659337",
+    "reference": "SAN.GEN.452888",
     "name": "Filtre à impuretés DN 40 modèle 2",
+    "category": "filtre",
+    "specification": "DN 40",
+    "active": true,
     "unit": "p",
-    "base_price": 42.28
+    "base_price": 42.93
   },
   {
     "id": "gm-485",
@@ -16005,10 +20367,13 @@ export const MOCK_CATALOGUE = [
       "code": "GM",
       "name": "Getaz Miauton"
     },
-    "reference": "GM/GN/5340",
+    "reference": "GM/GN/8521",
     "name": "Filtre à impuretés DN 40 variante 2",
+    "category": "filtre",
+    "specification": "DN 40",
+    "active": true,
     "unit": "p",
-    "base_price": 204.82
+    "base_price": 169.73
   },
   {
     "id": "nsb-486",
@@ -16016,10 +20381,13 @@ export const MOCK_CATALOGUE = [
       "code": "NSB",
       "name": "Nussbaum"
     },
-    "reference": "NSB-GEN-4373",
+    "reference": "NSB-GEN-9397",
     "name": "Filtre à impuretés DN 40 type 3",
+    "category": "filtre",
+    "specification": "DN 40",
+    "active": true,
     "unit": "p",
-    "base_price": 111.4
+    "base_price": 81.6
   },
   {
     "id": "st-486",
@@ -16027,10 +20395,13 @@ export const MOCK_CATALOGUE = [
       "code": "ST",
       "name": "Sanitas Troesch"
     },
-    "reference": "SAN.GEN.359731",
+    "reference": "SAN.GEN.776893",
     "name": "Filtre à impuretés DN 40 modèle 3",
+    "category": "filtre",
+    "specification": "DN 40",
+    "active": true,
     "unit": "p",
-    "base_price": 189.71
+    "base_price": 37.57
   },
   {
     "id": "gm-486",
@@ -16038,10 +20409,13 @@ export const MOCK_CATALOGUE = [
       "code": "GM",
       "name": "Getaz Miauton"
     },
-    "reference": "GM/GN/2238",
+    "reference": "GM/GN/8993",
     "name": "Filtre à impuretés DN 40 variante 3",
+    "category": "filtre",
+    "specification": "DN 40",
+    "active": true,
     "unit": "p",
-    "base_price": 130.58
+    "base_price": 193.81
   },
   {
     "id": "nsb-487",
@@ -16049,10 +20423,13 @@ export const MOCK_CATALOGUE = [
       "code": "NSB",
       "name": "Nussbaum"
     },
-    "reference": "NSB-GEN-6852",
+    "reference": "NSB-GEN-7498",
     "name": "Filtre à impuretés DN 40 type 4",
+    "category": "filtre",
+    "specification": "DN 40",
+    "active": true,
     "unit": "p",
-    "base_price": 202.09
+    "base_price": 32.94
   },
   {
     "id": "st-487",
@@ -16060,10 +20437,13 @@ export const MOCK_CATALOGUE = [
       "code": "ST",
       "name": "Sanitas Troesch"
     },
-    "reference": "SAN.GEN.356328",
+    "reference": "SAN.GEN.173675",
     "name": "Filtre à impuretés DN 40 modèle 4",
+    "category": "filtre",
+    "specification": "DN 40",
+    "active": true,
     "unit": "p",
-    "base_price": 176.72
+    "base_price": 137.72
   },
   {
     "id": "gm-487",
@@ -16071,10 +20451,13 @@ export const MOCK_CATALOGUE = [
       "code": "GM",
       "name": "Getaz Miauton"
     },
-    "reference": "GM/GN/5471",
+    "reference": "GM/GN/1451",
     "name": "Filtre à impuretés DN 40 variante 4",
+    "category": "filtre",
+    "specification": "DN 40",
+    "active": true,
     "unit": "p",
-    "base_price": 176.32
+    "base_price": 154.61
   },
   {
     "id": "nsb-488",
@@ -16082,10 +20465,13 @@ export const MOCK_CATALOGUE = [
       "code": "NSB",
       "name": "Nussbaum"
     },
-    "reference": "NSB-GEN-3892",
+    "reference": "NSB-GEN-2573",
     "name": "Filtre à impuretés DN 50 type 0",
+    "category": "filtre",
+    "specification": "DN 50",
+    "active": true,
     "unit": "p",
-    "base_price": 200.17
+    "base_price": 191.15
   },
   {
     "id": "st-488",
@@ -16093,10 +20479,13 @@ export const MOCK_CATALOGUE = [
       "code": "ST",
       "name": "Sanitas Troesch"
     },
-    "reference": "SAN.GEN.501332",
+    "reference": "SAN.GEN.220694",
     "name": "Filtre à impuretés DN 50 modèle 0",
+    "category": "filtre",
+    "specification": "DN 50",
+    "active": true,
     "unit": "p",
-    "base_price": 175.29
+    "base_price": 67.61
   },
   {
     "id": "gm-488",
@@ -16104,10 +20493,13 @@ export const MOCK_CATALOGUE = [
       "code": "GM",
       "name": "Getaz Miauton"
     },
-    "reference": "GM/GN/1739",
+    "reference": "GM/GN/6467",
     "name": "Filtre à impuretés DN 50 variante 0",
+    "category": "filtre",
+    "specification": "DN 50",
+    "active": true,
     "unit": "p",
-    "base_price": 55.89
+    "base_price": 150.85
   },
   {
     "id": "nsb-489",
@@ -16115,10 +20507,13 @@ export const MOCK_CATALOGUE = [
       "code": "NSB",
       "name": "Nussbaum"
     },
-    "reference": "NSB-GEN-2003",
+    "reference": "NSB-GEN-7967",
     "name": "Filtre à impuretés DN 50 type 1",
+    "category": "filtre",
+    "specification": "DN 50",
+    "active": true,
     "unit": "p",
-    "base_price": 96.36
+    "base_price": 67.74
   },
   {
     "id": "st-489",
@@ -16126,10 +20521,13 @@ export const MOCK_CATALOGUE = [
       "code": "ST",
       "name": "Sanitas Troesch"
     },
-    "reference": "SAN.GEN.910131",
+    "reference": "SAN.GEN.247890",
     "name": "Filtre à impuretés DN 50 modèle 1",
+    "category": "filtre",
+    "specification": "DN 50",
+    "active": true,
     "unit": "p",
-    "base_price": 103.99
+    "base_price": 75.73
   },
   {
     "id": "gm-489",
@@ -16137,10 +20535,13 @@ export const MOCK_CATALOGUE = [
       "code": "GM",
       "name": "Getaz Miauton"
     },
-    "reference": "GM/GN/9883",
+    "reference": "GM/GN/7093",
     "name": "Filtre à impuretés DN 50 variante 1",
+    "category": "filtre",
+    "specification": "DN 50",
+    "active": true,
     "unit": "p",
-    "base_price": 139.15
+    "base_price": 180.96
   },
   {
     "id": "nsb-490",
@@ -16148,10 +20549,13 @@ export const MOCK_CATALOGUE = [
       "code": "NSB",
       "name": "Nussbaum"
     },
-    "reference": "NSB-GEN-5940",
+    "reference": "NSB-GEN-4103",
     "name": "Filtre à impuretés DN 50 type 2",
+    "category": "filtre",
+    "specification": "DN 50",
+    "active": true,
     "unit": "p",
-    "base_price": 40.84
+    "base_price": 148.81
   },
   {
     "id": "st-490",
@@ -16159,10 +20563,13 @@ export const MOCK_CATALOGUE = [
       "code": "ST",
       "name": "Sanitas Troesch"
     },
-    "reference": "SAN.GEN.356599",
+    "reference": "SAN.GEN.715627",
     "name": "Filtre à impuretés DN 50 modèle 2",
+    "category": "filtre",
+    "specification": "DN 50",
+    "active": true,
     "unit": "p",
-    "base_price": 50.56
+    "base_price": 38.95
   },
   {
     "id": "gm-490",
@@ -16170,10 +20577,13 @@ export const MOCK_CATALOGUE = [
       "code": "GM",
       "name": "Getaz Miauton"
     },
-    "reference": "GM/GN/7749",
+    "reference": "GM/GN/1488",
     "name": "Filtre à impuretés DN 50 variante 2",
+    "category": "filtre",
+    "specification": "DN 50",
+    "active": true,
     "unit": "p",
-    "base_price": 148.51
+    "base_price": 105.57
   },
   {
     "id": "nsb-491",
@@ -16181,10 +20591,13 @@ export const MOCK_CATALOGUE = [
       "code": "NSB",
       "name": "Nussbaum"
     },
-    "reference": "NSB-GEN-4070",
+    "reference": "NSB-GEN-4006",
     "name": "Filtre à impuretés DN 50 type 3",
+    "category": "filtre",
+    "specification": "DN 50",
+    "active": true,
     "unit": "p",
-    "base_price": 145
+    "base_price": 29.43
   },
   {
     "id": "st-491",
@@ -16192,10 +20605,13 @@ export const MOCK_CATALOGUE = [
       "code": "ST",
       "name": "Sanitas Troesch"
     },
-    "reference": "SAN.GEN.684310",
+    "reference": "SAN.GEN.349305",
     "name": "Filtre à impuretés DN 50 modèle 3",
+    "category": "filtre",
+    "specification": "DN 50",
+    "active": true,
     "unit": "p",
-    "base_price": 193.45
+    "base_price": 126.95
   },
   {
     "id": "gm-491",
@@ -16203,10 +20619,13 @@ export const MOCK_CATALOGUE = [
       "code": "GM",
       "name": "Getaz Miauton"
     },
-    "reference": "GM/GN/7236",
+    "reference": "GM/GN/1008",
     "name": "Filtre à impuretés DN 50 variante 3",
+    "category": "filtre",
+    "specification": "DN 50",
+    "active": true,
     "unit": "p",
-    "base_price": 187.41
+    "base_price": 38.47
   },
   {
     "id": "nsb-492",
@@ -16214,10 +20633,13 @@ export const MOCK_CATALOGUE = [
       "code": "NSB",
       "name": "Nussbaum"
     },
-    "reference": "NSB-GEN-8012",
+    "reference": "NSB-GEN-7822",
     "name": "Filtre à impuretés DN 50 type 4",
+    "category": "filtre",
+    "specification": "DN 50",
+    "active": true,
     "unit": "p",
-    "base_price": 198.88
+    "base_price": 101.26
   },
   {
     "id": "st-492",
@@ -16225,10 +20647,13 @@ export const MOCK_CATALOGUE = [
       "code": "ST",
       "name": "Sanitas Troesch"
     },
-    "reference": "SAN.GEN.181311",
+    "reference": "SAN.GEN.345570",
     "name": "Filtre à impuretés DN 50 modèle 4",
+    "category": "filtre",
+    "specification": "DN 50",
+    "active": true,
     "unit": "p",
-    "base_price": 119.17
+    "base_price": 77.84
   },
   {
     "id": "gm-492",
@@ -16236,10 +20661,13 @@ export const MOCK_CATALOGUE = [
       "code": "GM",
       "name": "Getaz Miauton"
     },
-    "reference": "GM/GN/7023",
+    "reference": "GM/GN/8994",
     "name": "Filtre à impuretés DN 50 variante 4",
+    "category": "filtre",
+    "specification": "DN 50",
+    "active": true,
     "unit": "p",
-    "base_price": 74.76
+    "base_price": 130.53
   },
   {
     "id": "nsb-493",
@@ -16247,10 +20675,13 @@ export const MOCK_CATALOGUE = [
       "code": "NSB",
       "name": "Nussbaum"
     },
-    "reference": "NSB-GEN-4489",
+    "reference": "NSB-GEN-5483",
     "name": "Désemboueur 1/2\" type 0",
+    "category": "accessoire",
+    "specification": "1/2\"",
+    "active": true,
     "unit": "p",
-    "base_price": 207.59
+    "base_price": 177.46
   },
   {
     "id": "st-493",
@@ -16258,10 +20689,13 @@ export const MOCK_CATALOGUE = [
       "code": "ST",
       "name": "Sanitas Troesch"
     },
-    "reference": "SAN.GEN.270491",
+    "reference": "SAN.GEN.266906",
     "name": "Désemboueur 1/2\" modèle 0",
+    "category": "accessoire",
+    "specification": "1/2\"",
+    "active": true,
     "unit": "p",
-    "base_price": 195.89
+    "base_price": 187.87
   },
   {
     "id": "gm-493",
@@ -16269,10 +20703,13 @@ export const MOCK_CATALOGUE = [
       "code": "GM",
       "name": "Getaz Miauton"
     },
-    "reference": "GM/GN/1753",
+    "reference": "GM/GN/7652",
     "name": "Désemboueur 1/2\" variante 0",
+    "category": "accessoire",
+    "specification": "1/2\"",
+    "active": true,
     "unit": "p",
-    "base_price": 101.8
+    "base_price": 122.45
   },
   {
     "id": "nsb-494",
@@ -16280,10 +20717,13 @@ export const MOCK_CATALOGUE = [
       "code": "NSB",
       "name": "Nussbaum"
     },
-    "reference": "NSB-GEN-9849",
+    "reference": "NSB-GEN-2963",
     "name": "Désemboueur 1/2\" type 1",
+    "category": "accessoire",
+    "specification": "1/2\"",
+    "active": true,
     "unit": "p",
-    "base_price": 53.32
+    "base_price": 141.76
   },
   {
     "id": "st-494",
@@ -16291,10 +20731,13 @@ export const MOCK_CATALOGUE = [
       "code": "ST",
       "name": "Sanitas Troesch"
     },
-    "reference": "SAN.GEN.451393",
+    "reference": "SAN.GEN.515726",
     "name": "Désemboueur 1/2\" modèle 1",
+    "category": "accessoire",
+    "specification": "1/2\"",
+    "active": true,
     "unit": "p",
-    "base_price": 192.4
+    "base_price": 118.67
   },
   {
     "id": "gm-494",
@@ -16302,10 +20745,13 @@ export const MOCK_CATALOGUE = [
       "code": "GM",
       "name": "Getaz Miauton"
     },
-    "reference": "GM/GN/3044",
+    "reference": "GM/GN/2481",
     "name": "Désemboueur 1/2\" variante 1",
+    "category": "accessoire",
+    "specification": "1/2\"",
+    "active": true,
     "unit": "p",
-    "base_price": 215.4
+    "base_price": 58.74
   },
   {
     "id": "nsb-495",
@@ -16313,10 +20759,13 @@ export const MOCK_CATALOGUE = [
       "code": "NSB",
       "name": "Nussbaum"
     },
-    "reference": "NSB-GEN-2429",
+    "reference": "NSB-GEN-7517",
     "name": "Désemboueur 1/2\" type 2",
+    "category": "accessoire",
+    "specification": "1/2\"",
+    "active": true,
     "unit": "p",
-    "base_price": 172.51
+    "base_price": 156.78
   },
   {
     "id": "st-495",
@@ -16324,10 +20773,13 @@ export const MOCK_CATALOGUE = [
       "code": "ST",
       "name": "Sanitas Troesch"
     },
-    "reference": "SAN.GEN.868928",
+    "reference": "SAN.GEN.107862",
     "name": "Désemboueur 1/2\" modèle 2",
+    "category": "accessoire",
+    "specification": "1/2\"",
+    "active": true,
     "unit": "p",
-    "base_price": 75.37
+    "base_price": 41.22
   },
   {
     "id": "gm-495",
@@ -16335,10 +20787,13 @@ export const MOCK_CATALOGUE = [
       "code": "GM",
       "name": "Getaz Miauton"
     },
-    "reference": "GM/GN/6523",
+    "reference": "GM/GN/5300",
     "name": "Désemboueur 1/2\" variante 2",
+    "category": "accessoire",
+    "specification": "1/2\"",
+    "active": true,
     "unit": "p",
-    "base_price": 64.87
+    "base_price": 56.54
   },
   {
     "id": "nsb-496",
@@ -16346,10 +20801,13 @@ export const MOCK_CATALOGUE = [
       "code": "NSB",
       "name": "Nussbaum"
     },
-    "reference": "NSB-GEN-1726",
+    "reference": "NSB-GEN-2074",
     "name": "Désemboueur 1/2\" type 3",
+    "category": "accessoire",
+    "specification": "1/2\"",
+    "active": true,
     "unit": "p",
-    "base_price": 160.14
+    "base_price": 142.69
   },
   {
     "id": "st-496",
@@ -16357,10 +20815,13 @@ export const MOCK_CATALOGUE = [
       "code": "ST",
       "name": "Sanitas Troesch"
     },
-    "reference": "SAN.GEN.740594",
+    "reference": "SAN.GEN.419345",
     "name": "Désemboueur 1/2\" modèle 3",
+    "category": "accessoire",
+    "specification": "1/2\"",
+    "active": true,
     "unit": "p",
-    "base_price": 200.39
+    "base_price": 53.62
   },
   {
     "id": "gm-496",
@@ -16368,10 +20829,13 @@ export const MOCK_CATALOGUE = [
       "code": "GM",
       "name": "Getaz Miauton"
     },
-    "reference": "GM/GN/8597",
+    "reference": "GM/GN/9416",
     "name": "Désemboueur 1/2\" variante 3",
+    "category": "accessoire",
+    "specification": "1/2\"",
+    "active": true,
     "unit": "p",
-    "base_price": 156.78
+    "base_price": 108.37
   },
   {
     "id": "nsb-497",
@@ -16379,10 +20843,13 @@ export const MOCK_CATALOGUE = [
       "code": "NSB",
       "name": "Nussbaum"
     },
-    "reference": "NSB-GEN-3492",
+    "reference": "NSB-GEN-8210",
     "name": "Désemboueur 1/2\" type 4",
+    "category": "accessoire",
+    "specification": "1/2\"",
+    "active": true,
     "unit": "p",
-    "base_price": 162.15
+    "base_price": 207.53
   },
   {
     "id": "st-497",
@@ -16390,10 +20857,13 @@ export const MOCK_CATALOGUE = [
       "code": "ST",
       "name": "Sanitas Troesch"
     },
-    "reference": "SAN.GEN.758738",
+    "reference": "SAN.GEN.806550",
     "name": "Désemboueur 1/2\" modèle 4",
+    "category": "accessoire",
+    "specification": "1/2\"",
+    "active": true,
     "unit": "p",
-    "base_price": 51.39
+    "base_price": 188.51
   },
   {
     "id": "gm-497",
@@ -16401,10 +20871,13 @@ export const MOCK_CATALOGUE = [
       "code": "GM",
       "name": "Getaz Miauton"
     },
-    "reference": "GM/GN/8065",
+    "reference": "GM/GN/1292",
     "name": "Désemboueur 1/2\" variante 4",
+    "category": "accessoire",
+    "specification": "1/2\"",
+    "active": true,
     "unit": "p",
-    "base_price": 125.19
+    "base_price": 181.61
   },
   {
     "id": "nsb-498",
@@ -16412,10 +20885,13 @@ export const MOCK_CATALOGUE = [
       "code": "NSB",
       "name": "Nussbaum"
     },
-    "reference": "NSB-GEN-1013",
+    "reference": "NSB-GEN-2218",
     "name": "Désemboueur 3/4\" type 0",
+    "category": "accessoire",
+    "specification": "3/4\"",
+    "active": true,
     "unit": "p",
-    "base_price": 161.34
+    "base_price": 125.17
   },
   {
     "id": "st-498",
@@ -16423,10 +20899,13 @@ export const MOCK_CATALOGUE = [
       "code": "ST",
       "name": "Sanitas Troesch"
     },
-    "reference": "SAN.GEN.977851",
+    "reference": "SAN.GEN.767420",
     "name": "Désemboueur 3/4\" modèle 0",
+    "category": "accessoire",
+    "specification": "3/4\"",
+    "active": true,
     "unit": "p",
-    "base_price": 148.49
+    "base_price": 51.38
   },
   {
     "id": "gm-498",
@@ -16434,10 +20913,13 @@ export const MOCK_CATALOGUE = [
       "code": "GM",
       "name": "Getaz Miauton"
     },
-    "reference": "GM/GN/7571",
+    "reference": "GM/GN/9960",
     "name": "Désemboueur 3/4\" variante 0",
+    "category": "accessoire",
+    "specification": "3/4\"",
+    "active": true,
     "unit": "p",
-    "base_price": 139.25
+    "base_price": 40.12
   },
   {
     "id": "nsb-499",
@@ -16445,10 +20927,13 @@ export const MOCK_CATALOGUE = [
       "code": "NSB",
       "name": "Nussbaum"
     },
-    "reference": "NSB-GEN-4541",
+    "reference": "NSB-GEN-7007",
     "name": "Désemboueur 3/4\" type 1",
+    "category": "accessoire",
+    "specification": "3/4\"",
+    "active": true,
     "unit": "p",
-    "base_price": 33.84
+    "base_price": 149.18
   },
   {
     "id": "st-499",
@@ -16456,10 +20941,13 @@ export const MOCK_CATALOGUE = [
       "code": "ST",
       "name": "Sanitas Troesch"
     },
-    "reference": "SAN.GEN.518786",
+    "reference": "SAN.GEN.961473",
     "name": "Désemboueur 3/4\" modèle 1",
+    "category": "accessoire",
+    "specification": "3/4\"",
+    "active": true,
     "unit": "p",
-    "base_price": 119.24
+    "base_price": 200.08
   },
   {
     "id": "gm-499",
@@ -16467,10 +20955,13 @@ export const MOCK_CATALOGUE = [
       "code": "GM",
       "name": "Getaz Miauton"
     },
-    "reference": "GM/GN/4361",
+    "reference": "GM/GN/8900",
     "name": "Désemboueur 3/4\" variante 1",
+    "category": "accessoire",
+    "specification": "3/4\"",
+    "active": true,
     "unit": "p",
-    "base_price": 118.38
+    "base_price": 165.86
   },
   {
     "id": "nsb-500",
@@ -16478,10 +20969,13 @@ export const MOCK_CATALOGUE = [
       "code": "NSB",
       "name": "Nussbaum"
     },
-    "reference": "NSB-GEN-4817",
+    "reference": "NSB-GEN-2029",
     "name": "Désemboueur 3/4\" type 2",
+    "category": "accessoire",
+    "specification": "3/4\"",
+    "active": true,
     "unit": "p",
-    "base_price": 168.59
+    "base_price": 182.68
   },
   {
     "id": "st-500",
@@ -16489,10 +20983,13 @@ export const MOCK_CATALOGUE = [
       "code": "ST",
       "name": "Sanitas Troesch"
     },
-    "reference": "SAN.GEN.836427",
+    "reference": "SAN.GEN.275546",
     "name": "Désemboueur 3/4\" modèle 2",
+    "category": "accessoire",
+    "specification": "3/4\"",
+    "active": true,
     "unit": "p",
-    "base_price": 143.09
+    "base_price": 105.53
   },
   {
     "id": "gm-500",
@@ -16500,10 +20997,13 @@ export const MOCK_CATALOGUE = [
       "code": "GM",
       "name": "Getaz Miauton"
     },
-    "reference": "GM/GN/6412",
+    "reference": "GM/GN/5669",
     "name": "Désemboueur 3/4\" variante 2",
+    "category": "accessoire",
+    "specification": "3/4\"",
+    "active": true,
     "unit": "p",
-    "base_price": 51.37
+    "base_price": 217.69
   },
   {
     "id": "nsb-501",
@@ -16511,10 +21011,13 @@ export const MOCK_CATALOGUE = [
       "code": "NSB",
       "name": "Nussbaum"
     },
-    "reference": "NSB-GEN-4475",
+    "reference": "NSB-GEN-2440",
     "name": "Désemboueur 3/4\" type 3",
+    "category": "accessoire",
+    "specification": "3/4\"",
+    "active": true,
     "unit": "p",
-    "base_price": 133.44
+    "base_price": 197.22
   },
   {
     "id": "st-501",
@@ -16522,10 +21025,13 @@ export const MOCK_CATALOGUE = [
       "code": "ST",
       "name": "Sanitas Troesch"
     },
-    "reference": "SAN.GEN.101954",
+    "reference": "SAN.GEN.825077",
     "name": "Désemboueur 3/4\" modèle 3",
+    "category": "accessoire",
+    "specification": "3/4\"",
+    "active": true,
     "unit": "p",
-    "base_price": 83.09
+    "base_price": 134.9
   },
   {
     "id": "gm-501",
@@ -16533,10 +21039,13 @@ export const MOCK_CATALOGUE = [
       "code": "GM",
       "name": "Getaz Miauton"
     },
-    "reference": "GM/GN/9188",
+    "reference": "GM/GN/6990",
     "name": "Désemboueur 3/4\" variante 3",
+    "category": "accessoire",
+    "specification": "3/4\"",
+    "active": true,
     "unit": "p",
-    "base_price": 86.31
+    "base_price": 166.52
   },
   {
     "id": "nsb-502",
@@ -16544,10 +21053,13 @@ export const MOCK_CATALOGUE = [
       "code": "NSB",
       "name": "Nussbaum"
     },
-    "reference": "NSB-GEN-3832",
+    "reference": "NSB-GEN-1913",
     "name": "Désemboueur 3/4\" type 4",
+    "category": "accessoire",
+    "specification": "3/4\"",
+    "active": true,
     "unit": "p",
-    "base_price": 197.41
+    "base_price": 175.05
   },
   {
     "id": "st-502",
@@ -16555,10 +21067,13 @@ export const MOCK_CATALOGUE = [
       "code": "ST",
       "name": "Sanitas Troesch"
     },
-    "reference": "SAN.GEN.672311",
+    "reference": "SAN.GEN.505121",
     "name": "Désemboueur 3/4\" modèle 4",
+    "category": "accessoire",
+    "specification": "3/4\"",
+    "active": true,
     "unit": "p",
-    "base_price": 181.34
+    "base_price": 72.46
   },
   {
     "id": "gm-502",
@@ -16566,10 +21081,13 @@ export const MOCK_CATALOGUE = [
       "code": "GM",
       "name": "Getaz Miauton"
     },
-    "reference": "GM/GN/9317",
+    "reference": "GM/GN/8862",
     "name": "Désemboueur 3/4\" variante 4",
+    "category": "accessoire",
+    "specification": "3/4\"",
+    "active": true,
     "unit": "p",
-    "base_price": 35.93
+    "base_price": 167.52
   },
   {
     "id": "nsb-503",
@@ -16577,10 +21095,13 @@ export const MOCK_CATALOGUE = [
       "code": "NSB",
       "name": "Nussbaum"
     },
-    "reference": "NSB-GEN-6128",
+    "reference": "NSB-GEN-2408",
     "name": "Désemboueur 1\" type 0",
+    "category": "accessoire",
+    "specification": "1\"",
+    "active": true,
     "unit": "p",
-    "base_price": 101.53
+    "base_price": 93.71
   },
   {
     "id": "st-503",
@@ -16588,10 +21109,13 @@ export const MOCK_CATALOGUE = [
       "code": "ST",
       "name": "Sanitas Troesch"
     },
-    "reference": "SAN.GEN.854654",
+    "reference": "SAN.GEN.372410",
     "name": "Désemboueur 1\" modèle 0",
+    "category": "accessoire",
+    "specification": "1\"",
+    "active": true,
     "unit": "p",
-    "base_price": 45.66
+    "base_price": 211.85
   },
   {
     "id": "gm-503",
@@ -16599,10 +21123,13 @@ export const MOCK_CATALOGUE = [
       "code": "GM",
       "name": "Getaz Miauton"
     },
-    "reference": "GM/GN/2909",
+    "reference": "GM/GN/9176",
     "name": "Désemboueur 1\" variante 0",
+    "category": "accessoire",
+    "specification": "1\"",
+    "active": true,
     "unit": "p",
-    "base_price": 46.27
+    "base_price": 41.91
   },
   {
     "id": "nsb-504",
@@ -16610,10 +21137,13 @@ export const MOCK_CATALOGUE = [
       "code": "NSB",
       "name": "Nussbaum"
     },
-    "reference": "NSB-GEN-9264",
+    "reference": "NSB-GEN-6805",
     "name": "Désemboueur 1\" type 1",
+    "category": "accessoire",
+    "specification": "1\"",
+    "active": true,
     "unit": "p",
-    "base_price": 184.98
+    "base_price": 182.77
   },
   {
     "id": "st-504",
@@ -16621,10 +21151,13 @@ export const MOCK_CATALOGUE = [
       "code": "ST",
       "name": "Sanitas Troesch"
     },
-    "reference": "SAN.GEN.321866",
+    "reference": "SAN.GEN.600081",
     "name": "Désemboueur 1\" modèle 1",
+    "category": "accessoire",
+    "specification": "1\"",
+    "active": true,
     "unit": "p",
-    "base_price": 20.38
+    "base_price": 52.64
   },
   {
     "id": "gm-504",
@@ -16632,10 +21165,13 @@ export const MOCK_CATALOGUE = [
       "code": "GM",
       "name": "Getaz Miauton"
     },
-    "reference": "GM/GN/2445",
+    "reference": "GM/GN/8418",
     "name": "Désemboueur 1\" variante 1",
+    "category": "accessoire",
+    "specification": "1\"",
+    "active": true,
     "unit": "p",
-    "base_price": 99.24
+    "base_price": 123.15
   },
   {
     "id": "nsb-505",
@@ -16643,10 +21179,13 @@ export const MOCK_CATALOGUE = [
       "code": "NSB",
       "name": "Nussbaum"
     },
-    "reference": "NSB-GEN-1518",
+    "reference": "NSB-GEN-4860",
     "name": "Désemboueur 1\" type 2",
+    "category": "accessoire",
+    "specification": "1\"",
+    "active": true,
     "unit": "p",
-    "base_price": 22.03
+    "base_price": 160.29
   },
   {
     "id": "st-505",
@@ -16654,10 +21193,13 @@ export const MOCK_CATALOGUE = [
       "code": "ST",
       "name": "Sanitas Troesch"
     },
-    "reference": "SAN.GEN.582106",
+    "reference": "SAN.GEN.278390",
     "name": "Désemboueur 1\" modèle 2",
+    "category": "accessoire",
+    "specification": "1\"",
+    "active": true,
     "unit": "p",
-    "base_price": 42.63
+    "base_price": 39.78
   },
   {
     "id": "gm-505",
@@ -16665,10 +21207,13 @@ export const MOCK_CATALOGUE = [
       "code": "GM",
       "name": "Getaz Miauton"
     },
-    "reference": "GM/GN/2201",
+    "reference": "GM/GN/8276",
     "name": "Désemboueur 1\" variante 2",
+    "category": "accessoire",
+    "specification": "1\"",
+    "active": true,
     "unit": "p",
-    "base_price": 195.97
+    "base_price": 83.53
   },
   {
     "id": "nsb-506",
@@ -16676,10 +21221,13 @@ export const MOCK_CATALOGUE = [
       "code": "NSB",
       "name": "Nussbaum"
     },
-    "reference": "NSB-GEN-9020",
+    "reference": "NSB-GEN-6575",
     "name": "Désemboueur 1\" type 3",
+    "category": "accessoire",
+    "specification": "1\"",
+    "active": true,
     "unit": "p",
-    "base_price": 209.49
+    "base_price": 125.81
   },
   {
     "id": "st-506",
@@ -16687,10 +21235,13 @@ export const MOCK_CATALOGUE = [
       "code": "ST",
       "name": "Sanitas Troesch"
     },
-    "reference": "SAN.GEN.185631",
+    "reference": "SAN.GEN.369520",
     "name": "Désemboueur 1\" modèle 3",
+    "category": "accessoire",
+    "specification": "1\"",
+    "active": true,
     "unit": "p",
-    "base_price": 146.68
+    "base_price": 97.34
   },
   {
     "id": "gm-506",
@@ -16698,10 +21249,13 @@ export const MOCK_CATALOGUE = [
       "code": "GM",
       "name": "Getaz Miauton"
     },
-    "reference": "GM/GN/9980",
+    "reference": "GM/GN/2157",
     "name": "Désemboueur 1\" variante 3",
+    "category": "accessoire",
+    "specification": "1\"",
+    "active": true,
     "unit": "p",
-    "base_price": 47.14
+    "base_price": 189.43
   },
   {
     "id": "nsb-507",
@@ -16709,10 +21263,13 @@ export const MOCK_CATALOGUE = [
       "code": "NSB",
       "name": "Nussbaum"
     },
-    "reference": "NSB-GEN-9400",
+    "reference": "NSB-GEN-6182",
     "name": "Désemboueur 1\" type 4",
+    "category": "accessoire",
+    "specification": "1\"",
+    "active": true,
     "unit": "p",
-    "base_price": 96.68
+    "base_price": 174.4
   },
   {
     "id": "st-507",
@@ -16720,10 +21277,13 @@ export const MOCK_CATALOGUE = [
       "code": "ST",
       "name": "Sanitas Troesch"
     },
-    "reference": "SAN.GEN.559421",
+    "reference": "SAN.GEN.840048",
     "name": "Désemboueur 1\" modèle 4",
+    "category": "accessoire",
+    "specification": "1\"",
+    "active": true,
     "unit": "p",
-    "base_price": 191.03
+    "base_price": 78.4
   },
   {
     "id": "gm-507",
@@ -16731,10 +21291,13 @@ export const MOCK_CATALOGUE = [
       "code": "GM",
       "name": "Getaz Miauton"
     },
-    "reference": "GM/GN/2726",
+    "reference": "GM/GN/1368",
     "name": "Désemboueur 1\" variante 4",
+    "category": "accessoire",
+    "specification": "1\"",
+    "active": true,
     "unit": "p",
-    "base_price": 101.52
+    "base_price": 217.22
   },
   {
     "id": "nsb-508",
@@ -16742,10 +21305,13 @@ export const MOCK_CATALOGUE = [
       "code": "NSB",
       "name": "Nussbaum"
     },
-    "reference": "NSB-GEN-2760",
+    "reference": "NSB-GEN-6335",
     "name": "Désemboueur 1 1/4\" type 0",
+    "category": "accessoire",
+    "specification": "1 1/4\"",
+    "active": true,
     "unit": "p",
-    "base_price": 198.81
+    "base_price": 163.19
   },
   {
     "id": "st-508",
@@ -16753,10 +21319,13 @@ export const MOCK_CATALOGUE = [
       "code": "ST",
       "name": "Sanitas Troesch"
     },
-    "reference": "SAN.GEN.494262",
+    "reference": "SAN.GEN.870764",
     "name": "Désemboueur 1 1/4\" modèle 0",
+    "category": "accessoire",
+    "specification": "1 1/4\"",
+    "active": true,
     "unit": "p",
-    "base_price": 192.26
+    "base_price": 139.16
   },
   {
     "id": "gm-508",
@@ -16764,10 +21333,13 @@ export const MOCK_CATALOGUE = [
       "code": "GM",
       "name": "Getaz Miauton"
     },
-    "reference": "GM/GN/3139",
+    "reference": "GM/GN/8710",
     "name": "Désemboueur 1 1/4\" variante 0",
+    "category": "accessoire",
+    "specification": "1 1/4\"",
+    "active": true,
     "unit": "p",
-    "base_price": 89.17
+    "base_price": 62.95
   },
   {
     "id": "nsb-509",
@@ -16775,10 +21347,13 @@ export const MOCK_CATALOGUE = [
       "code": "NSB",
       "name": "Nussbaum"
     },
-    "reference": "NSB-GEN-4356",
+    "reference": "NSB-GEN-5981",
     "name": "Désemboueur 1 1/4\" type 1",
+    "category": "accessoire",
+    "specification": "1 1/4\"",
+    "active": true,
     "unit": "p",
-    "base_price": 213.36
+    "base_price": 113.19
   },
   {
     "id": "st-509",
@@ -16786,10 +21361,13 @@ export const MOCK_CATALOGUE = [
       "code": "ST",
       "name": "Sanitas Troesch"
     },
-    "reference": "SAN.GEN.338181",
+    "reference": "SAN.GEN.934571",
     "name": "Désemboueur 1 1/4\" modèle 1",
+    "category": "accessoire",
+    "specification": "1 1/4\"",
+    "active": true,
     "unit": "p",
-    "base_price": 33.51
+    "base_price": 199.01
   },
   {
     "id": "gm-509",
@@ -16797,10 +21375,13 @@ export const MOCK_CATALOGUE = [
       "code": "GM",
       "name": "Getaz Miauton"
     },
-    "reference": "GM/GN/4882",
+    "reference": "GM/GN/9716",
     "name": "Désemboueur 1 1/4\" variante 1",
+    "category": "accessoire",
+    "specification": "1 1/4\"",
+    "active": true,
     "unit": "p",
-    "base_price": 183.58
+    "base_price": 172.05
   },
   {
     "id": "nsb-510",
@@ -16808,10 +21389,13 @@ export const MOCK_CATALOGUE = [
       "code": "NSB",
       "name": "Nussbaum"
     },
-    "reference": "NSB-GEN-9902",
+    "reference": "NSB-GEN-4682",
     "name": "Désemboueur 1 1/4\" type 2",
+    "category": "accessoire",
+    "specification": "1 1/4\"",
+    "active": true,
     "unit": "p",
-    "base_price": 121.65
+    "base_price": 122.83
   },
   {
     "id": "st-510",
@@ -16819,10 +21403,13 @@ export const MOCK_CATALOGUE = [
       "code": "ST",
       "name": "Sanitas Troesch"
     },
-    "reference": "SAN.GEN.573437",
+    "reference": "SAN.GEN.429768",
     "name": "Désemboueur 1 1/4\" modèle 2",
+    "category": "accessoire",
+    "specification": "1 1/4\"",
+    "active": true,
     "unit": "p",
-    "base_price": 78.74
+    "base_price": 34.79
   },
   {
     "id": "gm-510",
@@ -16830,10 +21417,13 @@ export const MOCK_CATALOGUE = [
       "code": "GM",
       "name": "Getaz Miauton"
     },
-    "reference": "GM/GN/8122",
+    "reference": "GM/GN/2658",
     "name": "Désemboueur 1 1/4\" variante 2",
+    "category": "accessoire",
+    "specification": "1 1/4\"",
+    "active": true,
     "unit": "p",
-    "base_price": 39.87
+    "base_price": 100.43
   },
   {
     "id": "nsb-511",
@@ -16841,10 +21431,13 @@ export const MOCK_CATALOGUE = [
       "code": "NSB",
       "name": "Nussbaum"
     },
-    "reference": "NSB-GEN-6140",
+    "reference": "NSB-GEN-5046",
     "name": "Désemboueur 1 1/4\" type 3",
+    "category": "accessoire",
+    "specification": "1 1/4\"",
+    "active": true,
     "unit": "p",
-    "base_price": 95.75
+    "base_price": 174.76
   },
   {
     "id": "st-511",
@@ -16852,10 +21445,13 @@ export const MOCK_CATALOGUE = [
       "code": "ST",
       "name": "Sanitas Troesch"
     },
-    "reference": "SAN.GEN.751153",
+    "reference": "SAN.GEN.671781",
     "name": "Désemboueur 1 1/4\" modèle 3",
+    "category": "accessoire",
+    "specification": "1 1/4\"",
+    "active": true,
     "unit": "p",
-    "base_price": 178.95
+    "base_price": 184.61
   },
   {
     "id": "gm-511",
@@ -16863,10 +21459,13 @@ export const MOCK_CATALOGUE = [
       "code": "GM",
       "name": "Getaz Miauton"
     },
-    "reference": "GM/GN/2579",
+    "reference": "GM/GN/6369",
     "name": "Désemboueur 1 1/4\" variante 3",
+    "category": "accessoire",
+    "specification": "1 1/4\"",
+    "active": true,
     "unit": "p",
-    "base_price": 219.78
+    "base_price": 182.31
   },
   {
     "id": "nsb-512",
@@ -16874,10 +21473,13 @@ export const MOCK_CATALOGUE = [
       "code": "NSB",
       "name": "Nussbaum"
     },
-    "reference": "NSB-GEN-3951",
+    "reference": "NSB-GEN-6187",
     "name": "Désemboueur 1 1/4\" type 4",
+    "category": "accessoire",
+    "specification": "1 1/4\"",
+    "active": true,
     "unit": "p",
-    "base_price": 197.66
+    "base_price": 204.45
   },
   {
     "id": "st-512",
@@ -16885,10 +21487,13 @@ export const MOCK_CATALOGUE = [
       "code": "ST",
       "name": "Sanitas Troesch"
     },
-    "reference": "SAN.GEN.147800",
+    "reference": "SAN.GEN.721968",
     "name": "Désemboueur 1 1/4\" modèle 4",
+    "category": "accessoire",
+    "specification": "1 1/4\"",
+    "active": true,
     "unit": "p",
-    "base_price": 98.02
+    "base_price": 121.24
   },
   {
     "id": "gm-512",
@@ -16896,10 +21501,13 @@ export const MOCK_CATALOGUE = [
       "code": "GM",
       "name": "Getaz Miauton"
     },
-    "reference": "GM/GN/7084",
+    "reference": "GM/GN/8209",
     "name": "Désemboueur 1 1/4\" variante 4",
+    "category": "accessoire",
+    "specification": "1 1/4\"",
+    "active": true,
     "unit": "p",
-    "base_price": 93.04
+    "base_price": 205.22
   },
   {
     "id": "nsb-513",
@@ -16907,10 +21515,13 @@ export const MOCK_CATALOGUE = [
       "code": "NSB",
       "name": "Nussbaum"
     },
-    "reference": "NSB-GEN-3918",
+    "reference": "NSB-GEN-8908",
     "name": "Désemboueur 1 1/2\" type 0",
+    "category": "accessoire",
+    "specification": "1 1/2\"",
+    "active": true,
     "unit": "p",
-    "base_price": 75.08
+    "base_price": 218.09
   },
   {
     "id": "st-513",
@@ -16918,10 +21529,13 @@ export const MOCK_CATALOGUE = [
       "code": "ST",
       "name": "Sanitas Troesch"
     },
-    "reference": "SAN.GEN.485016",
+    "reference": "SAN.GEN.378059",
     "name": "Désemboueur 1 1/2\" modèle 0",
+    "category": "accessoire",
+    "specification": "1 1/2\"",
+    "active": true,
     "unit": "p",
-    "base_price": 48.06
+    "base_price": 159.48
   },
   {
     "id": "gm-513",
@@ -16929,10 +21543,13 @@ export const MOCK_CATALOGUE = [
       "code": "GM",
       "name": "Getaz Miauton"
     },
-    "reference": "GM/GN/8037",
+    "reference": "GM/GN/6504",
     "name": "Désemboueur 1 1/2\" variante 0",
+    "category": "accessoire",
+    "specification": "1 1/2\"",
+    "active": true,
     "unit": "p",
-    "base_price": 47.89
+    "base_price": 191.44
   },
   {
     "id": "nsb-514",
@@ -16940,10 +21557,13 @@ export const MOCK_CATALOGUE = [
       "code": "NSB",
       "name": "Nussbaum"
     },
-    "reference": "NSB-GEN-5850",
+    "reference": "NSB-GEN-6355",
     "name": "Désemboueur 1 1/2\" type 1",
+    "category": "accessoire",
+    "specification": "1 1/2\"",
+    "active": true,
     "unit": "p",
-    "base_price": 98.17
+    "base_price": 60.48
   },
   {
     "id": "st-514",
@@ -16951,10 +21571,13 @@ export const MOCK_CATALOGUE = [
       "code": "ST",
       "name": "Sanitas Troesch"
     },
-    "reference": "SAN.GEN.661534",
+    "reference": "SAN.GEN.248228",
     "name": "Désemboueur 1 1/2\" modèle 1",
+    "category": "accessoire",
+    "specification": "1 1/2\"",
+    "active": true,
     "unit": "p",
-    "base_price": 120.35
+    "base_price": 64.91
   },
   {
     "id": "gm-514",
@@ -16962,10 +21585,13 @@ export const MOCK_CATALOGUE = [
       "code": "GM",
       "name": "Getaz Miauton"
     },
-    "reference": "GM/GN/4926",
+    "reference": "GM/GN/1603",
     "name": "Désemboueur 1 1/2\" variante 1",
+    "category": "accessoire",
+    "specification": "1 1/2\"",
+    "active": true,
     "unit": "p",
-    "base_price": 144.93
+    "base_price": 21.7
   },
   {
     "id": "nsb-515",
@@ -16973,10 +21599,13 @@ export const MOCK_CATALOGUE = [
       "code": "NSB",
       "name": "Nussbaum"
     },
-    "reference": "NSB-GEN-5216",
+    "reference": "NSB-GEN-4173",
     "name": "Désemboueur 1 1/2\" type 2",
+    "category": "accessoire",
+    "specification": "1 1/2\"",
+    "active": true,
     "unit": "p",
-    "base_price": 176.17
+    "base_price": 192.81
   },
   {
     "id": "st-515",
@@ -16984,10 +21613,13 @@ export const MOCK_CATALOGUE = [
       "code": "ST",
       "name": "Sanitas Troesch"
     },
-    "reference": "SAN.GEN.595665",
+    "reference": "SAN.GEN.665357",
     "name": "Désemboueur 1 1/2\" modèle 2",
+    "category": "accessoire",
+    "specification": "1 1/2\"",
+    "active": true,
     "unit": "p",
-    "base_price": 110.99
+    "base_price": 154.72
   },
   {
     "id": "gm-515",
@@ -16995,10 +21627,13 @@ export const MOCK_CATALOGUE = [
       "code": "GM",
       "name": "Getaz Miauton"
     },
-    "reference": "GM/GN/8787",
+    "reference": "GM/GN/2328",
     "name": "Désemboueur 1 1/2\" variante 2",
+    "category": "accessoire",
+    "specification": "1 1/2\"",
+    "active": true,
     "unit": "p",
-    "base_price": 142.88
+    "base_price": 187.01
   },
   {
     "id": "nsb-516",
@@ -17006,10 +21641,13 @@ export const MOCK_CATALOGUE = [
       "code": "NSB",
       "name": "Nussbaum"
     },
-    "reference": "NSB-GEN-8353",
+    "reference": "NSB-GEN-5668",
     "name": "Désemboueur 1 1/2\" type 3",
+    "category": "accessoire",
+    "specification": "1 1/2\"",
+    "active": true,
     "unit": "p",
-    "base_price": 184.54
+    "base_price": 198.58
   },
   {
     "id": "st-516",
@@ -17017,10 +21655,13 @@ export const MOCK_CATALOGUE = [
       "code": "ST",
       "name": "Sanitas Troesch"
     },
-    "reference": "SAN.GEN.673845",
+    "reference": "SAN.GEN.269703",
     "name": "Désemboueur 1 1/2\" modèle 3",
+    "category": "accessoire",
+    "specification": "1 1/2\"",
+    "active": true,
     "unit": "p",
-    "base_price": 39.71
+    "base_price": 129.45
   },
   {
     "id": "gm-516",
@@ -17028,10 +21669,13 @@ export const MOCK_CATALOGUE = [
       "code": "GM",
       "name": "Getaz Miauton"
     },
-    "reference": "GM/GN/2292",
+    "reference": "GM/GN/8153",
     "name": "Désemboueur 1 1/2\" variante 3",
+    "category": "accessoire",
+    "specification": "1 1/2\"",
+    "active": true,
     "unit": "p",
-    "base_price": 89.56
+    "base_price": 152.78
   },
   {
     "id": "nsb-517",
@@ -17039,10 +21683,13 @@ export const MOCK_CATALOGUE = [
       "code": "NSB",
       "name": "Nussbaum"
     },
-    "reference": "NSB-GEN-5159",
+    "reference": "NSB-GEN-3690",
     "name": "Désemboueur 1 1/2\" type 4",
+    "category": "accessoire",
+    "specification": "1 1/2\"",
+    "active": true,
     "unit": "p",
-    "base_price": 40.92
+    "base_price": 133.14
   },
   {
     "id": "st-517",
@@ -17050,10 +21697,13 @@ export const MOCK_CATALOGUE = [
       "code": "ST",
       "name": "Sanitas Troesch"
     },
-    "reference": "SAN.GEN.835197",
+    "reference": "SAN.GEN.990958",
     "name": "Désemboueur 1 1/2\" modèle 4",
+    "category": "accessoire",
+    "specification": "1 1/2\"",
+    "active": true,
     "unit": "p",
-    "base_price": 94.31
+    "base_price": 96.27
   },
   {
     "id": "gm-517",
@@ -17061,10 +21711,13 @@ export const MOCK_CATALOGUE = [
       "code": "GM",
       "name": "Getaz Miauton"
     },
-    "reference": "GM/GN/8743",
+    "reference": "GM/GN/4639",
     "name": "Désemboueur 1 1/2\" variante 4",
+    "category": "accessoire",
+    "specification": "1 1/2\"",
+    "active": true,
     "unit": "p",
-    "base_price": 27.04
+    "base_price": 43.09
   },
   {
     "id": "nsb-518",
@@ -17072,10 +21725,13 @@ export const MOCK_CATALOGUE = [
       "code": "NSB",
       "name": "Nussbaum"
     },
-    "reference": "NSB-GEN-5602",
+    "reference": "NSB-GEN-2413",
     "name": "Désemboueur 2\" type 0",
+    "category": "accessoire",
+    "specification": "2\"",
+    "active": true,
     "unit": "p",
-    "base_price": 146.88
+    "base_price": 201.21
   },
   {
     "id": "st-518",
@@ -17083,10 +21739,13 @@ export const MOCK_CATALOGUE = [
       "code": "ST",
       "name": "Sanitas Troesch"
     },
-    "reference": "SAN.GEN.818511",
+    "reference": "SAN.GEN.742915",
     "name": "Désemboueur 2\" modèle 0",
+    "category": "accessoire",
+    "specification": "2\"",
+    "active": true,
     "unit": "p",
-    "base_price": 45.84
+    "base_price": 149.9
   },
   {
     "id": "gm-518",
@@ -17094,10 +21753,13 @@ export const MOCK_CATALOGUE = [
       "code": "GM",
       "name": "Getaz Miauton"
     },
-    "reference": "GM/GN/5099",
+    "reference": "GM/GN/5350",
     "name": "Désemboueur 2\" variante 0",
+    "category": "accessoire",
+    "specification": "2\"",
+    "active": true,
     "unit": "p",
-    "base_price": 43.66
+    "base_price": 99.62
   },
   {
     "id": "nsb-519",
@@ -17105,10 +21767,13 @@ export const MOCK_CATALOGUE = [
       "code": "NSB",
       "name": "Nussbaum"
     },
-    "reference": "NSB-GEN-3960",
+    "reference": "NSB-GEN-3468",
     "name": "Désemboueur 2\" type 1",
+    "category": "accessoire",
+    "specification": "2\"",
+    "active": true,
     "unit": "p",
-    "base_price": 135.1
+    "base_price": 122.52
   },
   {
     "id": "st-519",
@@ -17116,10 +21781,13 @@ export const MOCK_CATALOGUE = [
       "code": "ST",
       "name": "Sanitas Troesch"
     },
-    "reference": "SAN.GEN.442984",
+    "reference": "SAN.GEN.641914",
     "name": "Désemboueur 2\" modèle 1",
+    "category": "accessoire",
+    "specification": "2\"",
+    "active": true,
     "unit": "p",
-    "base_price": 50.99
+    "base_price": 124.75
   },
   {
     "id": "gm-519",
@@ -17127,10 +21795,13 @@ export const MOCK_CATALOGUE = [
       "code": "GM",
       "name": "Getaz Miauton"
     },
-    "reference": "GM/GN/5812",
+    "reference": "GM/GN/3237",
     "name": "Désemboueur 2\" variante 1",
+    "category": "accessoire",
+    "specification": "2\"",
+    "active": true,
     "unit": "p",
-    "base_price": 138.44
+    "base_price": 216.41
   },
   {
     "id": "nsb-520",
@@ -17138,10 +21809,13 @@ export const MOCK_CATALOGUE = [
       "code": "NSB",
       "name": "Nussbaum"
     },
-    "reference": "NSB-GEN-8707",
+    "reference": "NSB-GEN-8785",
     "name": "Désemboueur 2\" type 2",
+    "category": "accessoire",
+    "specification": "2\"",
+    "active": true,
     "unit": "p",
-    "base_price": 71.91
+    "base_price": 94.79
   },
   {
     "id": "st-520",
@@ -17149,10 +21823,13 @@ export const MOCK_CATALOGUE = [
       "code": "ST",
       "name": "Sanitas Troesch"
     },
-    "reference": "SAN.GEN.288151",
+    "reference": "SAN.GEN.261413",
     "name": "Désemboueur 2\" modèle 2",
+    "category": "accessoire",
+    "specification": "2\"",
+    "active": true,
     "unit": "p",
-    "base_price": 158.33
+    "base_price": 71.87
   },
   {
     "id": "gm-520",
@@ -17160,10 +21837,13 @@ export const MOCK_CATALOGUE = [
       "code": "GM",
       "name": "Getaz Miauton"
     },
-    "reference": "GM/GN/6027",
+    "reference": "GM/GN/2833",
     "name": "Désemboueur 2\" variante 2",
+    "category": "accessoire",
+    "specification": "2\"",
+    "active": true,
     "unit": "p",
-    "base_price": 54.36
+    "base_price": 70.03
   },
   {
     "id": "nsb-521",
@@ -17171,10 +21851,13 @@ export const MOCK_CATALOGUE = [
       "code": "NSB",
       "name": "Nussbaum"
     },
-    "reference": "NSB-GEN-3195",
+    "reference": "NSB-GEN-3343",
     "name": "Désemboueur 2\" type 3",
+    "category": "accessoire",
+    "specification": "2\"",
+    "active": true,
     "unit": "p",
-    "base_price": 150.81
+    "base_price": 176.01
   },
   {
     "id": "st-521",
@@ -17182,10 +21865,13 @@ export const MOCK_CATALOGUE = [
       "code": "ST",
       "name": "Sanitas Troesch"
     },
-    "reference": "SAN.GEN.449028",
+    "reference": "SAN.GEN.953493",
     "name": "Désemboueur 2\" modèle 3",
+    "category": "accessoire",
+    "specification": "2\"",
+    "active": true,
     "unit": "p",
-    "base_price": 156.57
+    "base_price": 20.94
   },
   {
     "id": "gm-521",
@@ -17193,10 +21879,13 @@ export const MOCK_CATALOGUE = [
       "code": "GM",
       "name": "Getaz Miauton"
     },
-    "reference": "GM/GN/4755",
+    "reference": "GM/GN/7778",
     "name": "Désemboueur 2\" variante 3",
+    "category": "accessoire",
+    "specification": "2\"",
+    "active": true,
     "unit": "p",
-    "base_price": 169.19
+    "base_price": 20.07
   },
   {
     "id": "nsb-522",
@@ -17204,10 +21893,13 @@ export const MOCK_CATALOGUE = [
       "code": "NSB",
       "name": "Nussbaum"
     },
-    "reference": "NSB-GEN-2478",
+    "reference": "NSB-GEN-4914",
     "name": "Désemboueur 2\" type 4",
+    "category": "accessoire",
+    "specification": "2\"",
+    "active": true,
     "unit": "p",
-    "base_price": 30.51
+    "base_price": 195.27
   },
   {
     "id": "st-522",
@@ -17215,10 +21907,13 @@ export const MOCK_CATALOGUE = [
       "code": "ST",
       "name": "Sanitas Troesch"
     },
-    "reference": "SAN.GEN.717182",
+    "reference": "SAN.GEN.549057",
     "name": "Désemboueur 2\" modèle 4",
+    "category": "accessoire",
+    "specification": "2\"",
+    "active": true,
     "unit": "p",
-    "base_price": 147.88
+    "base_price": 81.57
   },
   {
     "id": "gm-522",
@@ -17226,10 +21921,13 @@ export const MOCK_CATALOGUE = [
       "code": "GM",
       "name": "Getaz Miauton"
     },
-    "reference": "GM/GN/1802",
+    "reference": "GM/GN/9414",
     "name": "Désemboueur 2\" variante 4",
+    "category": "accessoire",
+    "specification": "2\"",
+    "active": true,
     "unit": "p",
-    "base_price": 213.14
+    "base_price": 209.31
   },
   {
     "id": "nsb-523",
@@ -17237,10 +21935,13 @@ export const MOCK_CATALOGUE = [
       "code": "NSB",
       "name": "Nussbaum"
     },
-    "reference": "NSB-GEN-8518",
+    "reference": "NSB-GEN-8444",
     "name": "Désemboueur DN 15 type 0",
+    "category": "accessoire",
+    "specification": "DN 15",
+    "active": true,
     "unit": "p",
-    "base_price": 25.16
+    "base_price": 138.98
   },
   {
     "id": "st-523",
@@ -17248,10 +21949,13 @@ export const MOCK_CATALOGUE = [
       "code": "ST",
       "name": "Sanitas Troesch"
     },
-    "reference": "SAN.GEN.581984",
+    "reference": "SAN.GEN.668458",
     "name": "Désemboueur DN 15 modèle 0",
+    "category": "accessoire",
+    "specification": "DN 15",
+    "active": true,
     "unit": "p",
-    "base_price": 82.11
+    "base_price": 218.47
   },
   {
     "id": "gm-523",
@@ -17259,10 +21963,13 @@ export const MOCK_CATALOGUE = [
       "code": "GM",
       "name": "Getaz Miauton"
     },
-    "reference": "GM/GN/7547",
+    "reference": "GM/GN/2048",
     "name": "Désemboueur DN 15 variante 0",
+    "category": "accessoire",
+    "specification": "DN 15",
+    "active": true,
     "unit": "p",
-    "base_price": 85.81
+    "base_price": 219.33
   },
   {
     "id": "nsb-524",
@@ -17270,10 +21977,13 @@ export const MOCK_CATALOGUE = [
       "code": "NSB",
       "name": "Nussbaum"
     },
-    "reference": "NSB-GEN-4169",
+    "reference": "NSB-GEN-7148",
     "name": "Désemboueur DN 15 type 1",
+    "category": "accessoire",
+    "specification": "DN 15",
+    "active": true,
     "unit": "p",
-    "base_price": 176.79
+    "base_price": 130.98
   },
   {
     "id": "st-524",
@@ -17281,10 +21991,13 @@ export const MOCK_CATALOGUE = [
       "code": "ST",
       "name": "Sanitas Troesch"
     },
-    "reference": "SAN.GEN.200410",
+    "reference": "SAN.GEN.931694",
     "name": "Désemboueur DN 15 modèle 1",
+    "category": "accessoire",
+    "specification": "DN 15",
+    "active": true,
     "unit": "p",
-    "base_price": 156.63
+    "base_price": 73.42
   },
   {
     "id": "gm-524",
@@ -17292,10 +22005,13 @@ export const MOCK_CATALOGUE = [
       "code": "GM",
       "name": "Getaz Miauton"
     },
-    "reference": "GM/GN/8002",
+    "reference": "GM/GN/7154",
     "name": "Désemboueur DN 15 variante 1",
+    "category": "accessoire",
+    "specification": "DN 15",
+    "active": true,
     "unit": "p",
-    "base_price": 193.09
+    "base_price": 125.39
   },
   {
     "id": "nsb-525",
@@ -17303,10 +22019,13 @@ export const MOCK_CATALOGUE = [
       "code": "NSB",
       "name": "Nussbaum"
     },
-    "reference": "NSB-GEN-8390",
+    "reference": "NSB-GEN-4382",
     "name": "Désemboueur DN 15 type 2",
+    "category": "accessoire",
+    "specification": "DN 15",
+    "active": true,
     "unit": "p",
-    "base_price": 111.01
+    "base_price": 199.44
   },
   {
     "id": "st-525",
@@ -17314,10 +22033,13 @@ export const MOCK_CATALOGUE = [
       "code": "ST",
       "name": "Sanitas Troesch"
     },
-    "reference": "SAN.GEN.778551",
+    "reference": "SAN.GEN.593518",
     "name": "Désemboueur DN 15 modèle 2",
+    "category": "accessoire",
+    "specification": "DN 15",
+    "active": true,
     "unit": "p",
-    "base_price": 205.87
+    "base_price": 86.6
   },
   {
     "id": "gm-525",
@@ -17325,10 +22047,13 @@ export const MOCK_CATALOGUE = [
       "code": "GM",
       "name": "Getaz Miauton"
     },
-    "reference": "GM/GN/5629",
+    "reference": "GM/GN/9786",
     "name": "Désemboueur DN 15 variante 2",
+    "category": "accessoire",
+    "specification": "DN 15",
+    "active": true,
     "unit": "p",
-    "base_price": 57.49
+    "base_price": 89.92
   },
   {
     "id": "nsb-526",
@@ -17336,10 +22061,13 @@ export const MOCK_CATALOGUE = [
       "code": "NSB",
       "name": "Nussbaum"
     },
-    "reference": "NSB-GEN-2078",
+    "reference": "NSB-GEN-7550",
     "name": "Désemboueur DN 15 type 3",
+    "category": "accessoire",
+    "specification": "DN 15",
+    "active": true,
     "unit": "p",
-    "base_price": 65.56
+    "base_price": 143.85
   },
   {
     "id": "st-526",
@@ -17347,10 +22075,13 @@ export const MOCK_CATALOGUE = [
       "code": "ST",
       "name": "Sanitas Troesch"
     },
-    "reference": "SAN.GEN.701097",
+    "reference": "SAN.GEN.596693",
     "name": "Désemboueur DN 15 modèle 3",
+    "category": "accessoire",
+    "specification": "DN 15",
+    "active": true,
     "unit": "p",
-    "base_price": 191.88
+    "base_price": 78.75
   },
   {
     "id": "gm-526",
@@ -17358,10 +22089,13 @@ export const MOCK_CATALOGUE = [
       "code": "GM",
       "name": "Getaz Miauton"
     },
-    "reference": "GM/GN/3229",
+    "reference": "GM/GN/2560",
     "name": "Désemboueur DN 15 variante 3",
+    "category": "accessoire",
+    "specification": "DN 15",
+    "active": true,
     "unit": "p",
-    "base_price": 83.36
+    "base_price": 171.93
   },
   {
     "id": "nsb-527",
@@ -17369,10 +22103,13 @@ export const MOCK_CATALOGUE = [
       "code": "NSB",
       "name": "Nussbaum"
     },
-    "reference": "NSB-GEN-5726",
+    "reference": "NSB-GEN-3918",
     "name": "Désemboueur DN 15 type 4",
+    "category": "accessoire",
+    "specification": "DN 15",
+    "active": true,
     "unit": "p",
-    "base_price": 215.7
+    "base_price": 67.67
   },
   {
     "id": "st-527",
@@ -17380,10 +22117,13 @@ export const MOCK_CATALOGUE = [
       "code": "ST",
       "name": "Sanitas Troesch"
     },
-    "reference": "SAN.GEN.343969",
+    "reference": "SAN.GEN.469501",
     "name": "Désemboueur DN 15 modèle 4",
+    "category": "accessoire",
+    "specification": "DN 15",
+    "active": true,
     "unit": "p",
-    "base_price": 175.1
+    "base_price": 154.1
   },
   {
     "id": "gm-527",
@@ -17391,10 +22131,13 @@ export const MOCK_CATALOGUE = [
       "code": "GM",
       "name": "Getaz Miauton"
     },
-    "reference": "GM/GN/5283",
+    "reference": "GM/GN/4845",
     "name": "Désemboueur DN 15 variante 4",
+    "category": "accessoire",
+    "specification": "DN 15",
+    "active": true,
     "unit": "p",
-    "base_price": 201.86
+    "base_price": 218.28
   },
   {
     "id": "nsb-528",
@@ -17402,10 +22145,13 @@ export const MOCK_CATALOGUE = [
       "code": "NSB",
       "name": "Nussbaum"
     },
-    "reference": "NSB-GEN-6613",
+    "reference": "NSB-GEN-5207",
     "name": "Désemboueur DN 20 type 0",
+    "category": "accessoire",
+    "specification": "DN 20",
+    "active": true,
     "unit": "p",
-    "base_price": 174.98
+    "base_price": 37.52
   },
   {
     "id": "st-528",
@@ -17413,10 +22159,13 @@ export const MOCK_CATALOGUE = [
       "code": "ST",
       "name": "Sanitas Troesch"
     },
-    "reference": "SAN.GEN.184625",
+    "reference": "SAN.GEN.745168",
     "name": "Désemboueur DN 20 modèle 0",
+    "category": "accessoire",
+    "specification": "DN 20",
+    "active": true,
     "unit": "p",
-    "base_price": 162.77
+    "base_price": 196.09
   },
   {
     "id": "gm-528",
@@ -17424,10 +22173,13 @@ export const MOCK_CATALOGUE = [
       "code": "GM",
       "name": "Getaz Miauton"
     },
-    "reference": "GM/GN/5068",
+    "reference": "GM/GN/4053",
     "name": "Désemboueur DN 20 variante 0",
+    "category": "accessoire",
+    "specification": "DN 20",
+    "active": true,
     "unit": "p",
-    "base_price": 75.72
+    "base_price": 30.99
   },
   {
     "id": "nsb-529",
@@ -17435,10 +22187,13 @@ export const MOCK_CATALOGUE = [
       "code": "NSB",
       "name": "Nussbaum"
     },
-    "reference": "NSB-GEN-2020",
+    "reference": "NSB-GEN-7125",
     "name": "Désemboueur DN 20 type 1",
+    "category": "accessoire",
+    "specification": "DN 20",
+    "active": true,
     "unit": "p",
-    "base_price": 211.26
+    "base_price": 65.15
   },
   {
     "id": "st-529",
@@ -17446,10 +22201,13 @@ export const MOCK_CATALOGUE = [
       "code": "ST",
       "name": "Sanitas Troesch"
     },
-    "reference": "SAN.GEN.843412",
+    "reference": "SAN.GEN.642214",
     "name": "Désemboueur DN 20 modèle 1",
+    "category": "accessoire",
+    "specification": "DN 20",
+    "active": true,
     "unit": "p",
-    "base_price": 70.82
+    "base_price": 88.82
   },
   {
     "id": "gm-529",
@@ -17457,10 +22215,13 @@ export const MOCK_CATALOGUE = [
       "code": "GM",
       "name": "Getaz Miauton"
     },
-    "reference": "GM/GN/8685",
+    "reference": "GM/GN/1210",
     "name": "Désemboueur DN 20 variante 1",
+    "category": "accessoire",
+    "specification": "DN 20",
+    "active": true,
     "unit": "p",
-    "base_price": 163.83
+    "base_price": 208.68
   },
   {
     "id": "nsb-530",
@@ -17468,10 +22229,13 @@ export const MOCK_CATALOGUE = [
       "code": "NSB",
       "name": "Nussbaum"
     },
-    "reference": "NSB-GEN-1264",
+    "reference": "NSB-GEN-3035",
     "name": "Désemboueur DN 20 type 2",
+    "category": "accessoire",
+    "specification": "DN 20",
+    "active": true,
     "unit": "p",
-    "base_price": 26.68
+    "base_price": 176.81
   },
   {
     "id": "st-530",
@@ -17479,10 +22243,13 @@ export const MOCK_CATALOGUE = [
       "code": "ST",
       "name": "Sanitas Troesch"
     },
-    "reference": "SAN.GEN.967506",
+    "reference": "SAN.GEN.298273",
     "name": "Désemboueur DN 20 modèle 2",
+    "category": "accessoire",
+    "specification": "DN 20",
+    "active": true,
     "unit": "p",
-    "base_price": 92.15
+    "base_price": 72.57
   },
   {
     "id": "gm-530",
@@ -17490,10 +22257,13 @@ export const MOCK_CATALOGUE = [
       "code": "GM",
       "name": "Getaz Miauton"
     },
-    "reference": "GM/GN/1560",
+    "reference": "GM/GN/7327",
     "name": "Désemboueur DN 20 variante 2",
+    "category": "accessoire",
+    "specification": "DN 20",
+    "active": true,
     "unit": "p",
-    "base_price": 77.12
+    "base_price": 119.52
   },
   {
     "id": "nsb-531",
@@ -17501,10 +22271,13 @@ export const MOCK_CATALOGUE = [
       "code": "NSB",
       "name": "Nussbaum"
     },
-    "reference": "NSB-GEN-1238",
+    "reference": "NSB-GEN-8732",
     "name": "Désemboueur DN 20 type 3",
+    "category": "accessoire",
+    "specification": "DN 20",
+    "active": true,
     "unit": "p",
-    "base_price": 55.98
+    "base_price": 192.56
   },
   {
     "id": "st-531",
@@ -17512,10 +22285,13 @@ export const MOCK_CATALOGUE = [
       "code": "ST",
       "name": "Sanitas Troesch"
     },
-    "reference": "SAN.GEN.561947",
+    "reference": "SAN.GEN.940205",
     "name": "Désemboueur DN 20 modèle 3",
+    "category": "accessoire",
+    "specification": "DN 20",
+    "active": true,
     "unit": "p",
-    "base_price": 119.02
+    "base_price": 173.57
   },
   {
     "id": "gm-531",
@@ -17523,10 +22299,13 @@ export const MOCK_CATALOGUE = [
       "code": "GM",
       "name": "Getaz Miauton"
     },
-    "reference": "GM/GN/2243",
+    "reference": "GM/GN/9276",
     "name": "Désemboueur DN 20 variante 3",
+    "category": "accessoire",
+    "specification": "DN 20",
+    "active": true,
     "unit": "p",
-    "base_price": 32.87
+    "base_price": 211.79
   },
   {
     "id": "nsb-532",
@@ -17534,10 +22313,13 @@ export const MOCK_CATALOGUE = [
       "code": "NSB",
       "name": "Nussbaum"
     },
-    "reference": "NSB-GEN-4508",
+    "reference": "NSB-GEN-7472",
     "name": "Désemboueur DN 20 type 4",
+    "category": "accessoire",
+    "specification": "DN 20",
+    "active": true,
     "unit": "p",
-    "base_price": 180.38
+    "base_price": 183.87
   },
   {
     "id": "st-532",
@@ -17545,10 +22327,13 @@ export const MOCK_CATALOGUE = [
       "code": "ST",
       "name": "Sanitas Troesch"
     },
-    "reference": "SAN.GEN.558358",
+    "reference": "SAN.GEN.702286",
     "name": "Désemboueur DN 20 modèle 4",
+    "category": "accessoire",
+    "specification": "DN 20",
+    "active": true,
     "unit": "p",
-    "base_price": 183.41
+    "base_price": 71
   },
   {
     "id": "gm-532",
@@ -17556,10 +22341,13 @@ export const MOCK_CATALOGUE = [
       "code": "GM",
       "name": "Getaz Miauton"
     },
-    "reference": "GM/GN/4164",
+    "reference": "GM/GN/1675",
     "name": "Désemboueur DN 20 variante 4",
+    "category": "accessoire",
+    "specification": "DN 20",
+    "active": true,
     "unit": "p",
-    "base_price": 121.45
+    "base_price": 35.51
   },
   {
     "id": "nsb-533",
@@ -17567,10 +22355,13 @@ export const MOCK_CATALOGUE = [
       "code": "NSB",
       "name": "Nussbaum"
     },
-    "reference": "NSB-GEN-6297",
+    "reference": "NSB-GEN-4420",
     "name": "Désemboueur DN 25 type 0",
+    "category": "accessoire",
+    "specification": "DN 25",
+    "active": true,
     "unit": "p",
-    "base_price": 43.24
+    "base_price": 161.84
   },
   {
     "id": "st-533",
@@ -17578,10 +22369,13 @@ export const MOCK_CATALOGUE = [
       "code": "ST",
       "name": "Sanitas Troesch"
     },
-    "reference": "SAN.GEN.496660",
+    "reference": "SAN.GEN.511014",
     "name": "Désemboueur DN 25 modèle 0",
+    "category": "accessoire",
+    "specification": "DN 25",
+    "active": true,
     "unit": "p",
-    "base_price": 72.57
+    "base_price": 77.56
   },
   {
     "id": "gm-533",
@@ -17589,10 +22383,13 @@ export const MOCK_CATALOGUE = [
       "code": "GM",
       "name": "Getaz Miauton"
     },
-    "reference": "GM/GN/8327",
+    "reference": "GM/GN/3341",
     "name": "Désemboueur DN 25 variante 0",
+    "category": "accessoire",
+    "specification": "DN 25",
+    "active": true,
     "unit": "p",
-    "base_price": 183.55
+    "base_price": 84.68
   },
   {
     "id": "nsb-534",
@@ -17600,10 +22397,13 @@ export const MOCK_CATALOGUE = [
       "code": "NSB",
       "name": "Nussbaum"
     },
-    "reference": "NSB-GEN-2729",
+    "reference": "NSB-GEN-3401",
     "name": "Désemboueur DN 25 type 1",
+    "category": "accessoire",
+    "specification": "DN 25",
+    "active": true,
     "unit": "p",
-    "base_price": 50.93
+    "base_price": 125.87
   },
   {
     "id": "st-534",
@@ -17611,10 +22411,13 @@ export const MOCK_CATALOGUE = [
       "code": "ST",
       "name": "Sanitas Troesch"
     },
-    "reference": "SAN.GEN.921810",
+    "reference": "SAN.GEN.524429",
     "name": "Désemboueur DN 25 modèle 1",
+    "category": "accessoire",
+    "specification": "DN 25",
+    "active": true,
     "unit": "p",
-    "base_price": 142.76
+    "base_price": 100.64
   },
   {
     "id": "gm-534",
@@ -17622,10 +22425,13 @@ export const MOCK_CATALOGUE = [
       "code": "GM",
       "name": "Getaz Miauton"
     },
-    "reference": "GM/GN/4455",
+    "reference": "GM/GN/5333",
     "name": "Désemboueur DN 25 variante 1",
+    "category": "accessoire",
+    "specification": "DN 25",
+    "active": true,
     "unit": "p",
-    "base_price": 78.47
+    "base_price": 219.67
   },
   {
     "id": "nsb-535",
@@ -17633,10 +22439,13 @@ export const MOCK_CATALOGUE = [
       "code": "NSB",
       "name": "Nussbaum"
     },
-    "reference": "NSB-GEN-7081",
+    "reference": "NSB-GEN-7458",
     "name": "Désemboueur DN 25 type 2",
+    "category": "accessoire",
+    "specification": "DN 25",
+    "active": true,
     "unit": "p",
-    "base_price": 40.49
+    "base_price": 122.6
   },
   {
     "id": "st-535",
@@ -17644,10 +22453,13 @@ export const MOCK_CATALOGUE = [
       "code": "ST",
       "name": "Sanitas Troesch"
     },
-    "reference": "SAN.GEN.562434",
+    "reference": "SAN.GEN.756279",
     "name": "Désemboueur DN 25 modèle 2",
+    "category": "accessoire",
+    "specification": "DN 25",
+    "active": true,
     "unit": "p",
-    "base_price": 80.21
+    "base_price": 35.06
   },
   {
     "id": "gm-535",
@@ -17655,10 +22467,13 @@ export const MOCK_CATALOGUE = [
       "code": "GM",
       "name": "Getaz Miauton"
     },
-    "reference": "GM/GN/4591",
+    "reference": "GM/GN/5558",
     "name": "Désemboueur DN 25 variante 2",
+    "category": "accessoire",
+    "specification": "DN 25",
+    "active": true,
     "unit": "p",
-    "base_price": 116.93
+    "base_price": 197.12
   },
   {
     "id": "nsb-536",
@@ -17666,10 +22481,13 @@ export const MOCK_CATALOGUE = [
       "code": "NSB",
       "name": "Nussbaum"
     },
-    "reference": "NSB-GEN-3162",
+    "reference": "NSB-GEN-7558",
     "name": "Désemboueur DN 25 type 3",
+    "category": "accessoire",
+    "specification": "DN 25",
+    "active": true,
     "unit": "p",
-    "base_price": 41.29
+    "base_price": 20.32
   },
   {
     "id": "st-536",
@@ -17677,10 +22495,13 @@ export const MOCK_CATALOGUE = [
       "code": "ST",
       "name": "Sanitas Troesch"
     },
-    "reference": "SAN.GEN.247497",
+    "reference": "SAN.GEN.558563",
     "name": "Désemboueur DN 25 modèle 3",
+    "category": "accessoire",
+    "specification": "DN 25",
+    "active": true,
     "unit": "p",
-    "base_price": 180.04
+    "base_price": 127.61
   },
   {
     "id": "gm-536",
@@ -17688,10 +22509,13 @@ export const MOCK_CATALOGUE = [
       "code": "GM",
       "name": "Getaz Miauton"
     },
-    "reference": "GM/GN/6407",
+    "reference": "GM/GN/8392",
     "name": "Désemboueur DN 25 variante 3",
+    "category": "accessoire",
+    "specification": "DN 25",
+    "active": true,
     "unit": "p",
-    "base_price": 97.01
+    "base_price": 71.05
   },
   {
     "id": "nsb-537",
@@ -17699,10 +22523,13 @@ export const MOCK_CATALOGUE = [
       "code": "NSB",
       "name": "Nussbaum"
     },
-    "reference": "NSB-GEN-8073",
+    "reference": "NSB-GEN-1196",
     "name": "Désemboueur DN 25 type 4",
+    "category": "accessoire",
+    "specification": "DN 25",
+    "active": true,
     "unit": "p",
-    "base_price": 124.92
+    "base_price": 120.19
   },
   {
     "id": "st-537",
@@ -17710,10 +22537,13 @@ export const MOCK_CATALOGUE = [
       "code": "ST",
       "name": "Sanitas Troesch"
     },
-    "reference": "SAN.GEN.349211",
+    "reference": "SAN.GEN.124807",
     "name": "Désemboueur DN 25 modèle 4",
+    "category": "accessoire",
+    "specification": "DN 25",
+    "active": true,
     "unit": "p",
-    "base_price": 116.38
+    "base_price": 192.55
   },
   {
     "id": "gm-537",
@@ -17721,10 +22551,13 @@ export const MOCK_CATALOGUE = [
       "code": "GM",
       "name": "Getaz Miauton"
     },
-    "reference": "GM/GN/7526",
+    "reference": "GM/GN/6938",
     "name": "Désemboueur DN 25 variante 4",
+    "category": "accessoire",
+    "specification": "DN 25",
+    "active": true,
     "unit": "p",
-    "base_price": 33.49
+    "base_price": 114.19
   },
   {
     "id": "nsb-538",
@@ -17732,10 +22565,13 @@ export const MOCK_CATALOGUE = [
       "code": "NSB",
       "name": "Nussbaum"
     },
-    "reference": "NSB-GEN-8258",
+    "reference": "NSB-GEN-1178",
     "name": "Désemboueur DN 32 type 0",
+    "category": "accessoire",
+    "specification": "DN 32",
+    "active": true,
     "unit": "p",
-    "base_price": 142.06
+    "base_price": 116.6
   },
   {
     "id": "st-538",
@@ -17743,10 +22579,13 @@ export const MOCK_CATALOGUE = [
       "code": "ST",
       "name": "Sanitas Troesch"
     },
-    "reference": "SAN.GEN.787826",
+    "reference": "SAN.GEN.324343",
     "name": "Désemboueur DN 32 modèle 0",
+    "category": "accessoire",
+    "specification": "DN 32",
+    "active": true,
     "unit": "p",
-    "base_price": 95.65
+    "base_price": 146.63
   },
   {
     "id": "gm-538",
@@ -17754,10 +22593,13 @@ export const MOCK_CATALOGUE = [
       "code": "GM",
       "name": "Getaz Miauton"
     },
-    "reference": "GM/GN/6555",
+    "reference": "GM/GN/2465",
     "name": "Désemboueur DN 32 variante 0",
+    "category": "accessoire",
+    "specification": "DN 32",
+    "active": true,
     "unit": "p",
-    "base_price": 138
+    "base_price": 58.43
   },
   {
     "id": "nsb-539",
@@ -17765,10 +22607,13 @@ export const MOCK_CATALOGUE = [
       "code": "NSB",
       "name": "Nussbaum"
     },
-    "reference": "NSB-GEN-4796",
+    "reference": "NSB-GEN-2822",
     "name": "Désemboueur DN 32 type 1",
+    "category": "accessoire",
+    "specification": "DN 32",
+    "active": true,
     "unit": "p",
-    "base_price": 89.78
+    "base_price": 41.39
   },
   {
     "id": "st-539",
@@ -17776,10 +22621,13 @@ export const MOCK_CATALOGUE = [
       "code": "ST",
       "name": "Sanitas Troesch"
     },
-    "reference": "SAN.GEN.238996",
+    "reference": "SAN.GEN.246479",
     "name": "Désemboueur DN 32 modèle 1",
+    "category": "accessoire",
+    "specification": "DN 32",
+    "active": true,
     "unit": "p",
-    "base_price": 155.07
+    "base_price": 162.17
   },
   {
     "id": "gm-539",
@@ -17787,10 +22635,13 @@ export const MOCK_CATALOGUE = [
       "code": "GM",
       "name": "Getaz Miauton"
     },
-    "reference": "GM/GN/5663",
+    "reference": "GM/GN/6606",
     "name": "Désemboueur DN 32 variante 1",
+    "category": "accessoire",
+    "specification": "DN 32",
+    "active": true,
     "unit": "p",
-    "base_price": 61.83
+    "base_price": 185.7
   },
   {
     "id": "nsb-540",
@@ -17798,10 +22649,13 @@ export const MOCK_CATALOGUE = [
       "code": "NSB",
       "name": "Nussbaum"
     },
-    "reference": "NSB-GEN-8151",
+    "reference": "NSB-GEN-7019",
     "name": "Désemboueur DN 32 type 2",
+    "category": "accessoire",
+    "specification": "DN 32",
+    "active": true,
     "unit": "p",
-    "base_price": 105.38
+    "base_price": 133.64
   },
   {
     "id": "st-540",
@@ -17809,10 +22663,13 @@ export const MOCK_CATALOGUE = [
       "code": "ST",
       "name": "Sanitas Troesch"
     },
-    "reference": "SAN.GEN.977825",
+    "reference": "SAN.GEN.608683",
     "name": "Désemboueur DN 32 modèle 2",
+    "category": "accessoire",
+    "specification": "DN 32",
+    "active": true,
     "unit": "p",
-    "base_price": 26.7
+    "base_price": 211.71
   },
   {
     "id": "gm-540",
@@ -17820,10 +22677,13 @@ export const MOCK_CATALOGUE = [
       "code": "GM",
       "name": "Getaz Miauton"
     },
-    "reference": "GM/GN/6682",
+    "reference": "GM/GN/9835",
     "name": "Désemboueur DN 32 variante 2",
+    "category": "accessoire",
+    "specification": "DN 32",
+    "active": true,
     "unit": "p",
-    "base_price": 151.84
+    "base_price": 49.45
   },
   {
     "id": "nsb-541",
@@ -17831,10 +22691,13 @@ export const MOCK_CATALOGUE = [
       "code": "NSB",
       "name": "Nussbaum"
     },
-    "reference": "NSB-GEN-2521",
+    "reference": "NSB-GEN-1721",
     "name": "Désemboueur DN 32 type 3",
+    "category": "accessoire",
+    "specification": "DN 32",
+    "active": true,
     "unit": "p",
-    "base_price": 136.06
+    "base_price": 96.6
   },
   {
     "id": "st-541",
@@ -17842,10 +22705,13 @@ export const MOCK_CATALOGUE = [
       "code": "ST",
       "name": "Sanitas Troesch"
     },
-    "reference": "SAN.GEN.669684",
+    "reference": "SAN.GEN.248553",
     "name": "Désemboueur DN 32 modèle 3",
+    "category": "accessoire",
+    "specification": "DN 32",
+    "active": true,
     "unit": "p",
-    "base_price": 62.63
+    "base_price": 112.92
   },
   {
     "id": "gm-541",
@@ -17853,10 +22719,13 @@ export const MOCK_CATALOGUE = [
       "code": "GM",
       "name": "Getaz Miauton"
     },
-    "reference": "GM/GN/1159",
+    "reference": "GM/GN/2229",
     "name": "Désemboueur DN 32 variante 3",
+    "category": "accessoire",
+    "specification": "DN 32",
+    "active": true,
     "unit": "p",
-    "base_price": 195.17
+    "base_price": 49
   },
   {
     "id": "nsb-542",
@@ -17864,10 +22733,13 @@ export const MOCK_CATALOGUE = [
       "code": "NSB",
       "name": "Nussbaum"
     },
-    "reference": "NSB-GEN-9434",
+    "reference": "NSB-GEN-7602",
     "name": "Désemboueur DN 32 type 4",
+    "category": "accessoire",
+    "specification": "DN 32",
+    "active": true,
     "unit": "p",
-    "base_price": 73.53
+    "base_price": 155.69
   },
   {
     "id": "st-542",
@@ -17875,10 +22747,13 @@ export const MOCK_CATALOGUE = [
       "code": "ST",
       "name": "Sanitas Troesch"
     },
-    "reference": "SAN.GEN.299031",
+    "reference": "SAN.GEN.257708",
     "name": "Désemboueur DN 32 modèle 4",
+    "category": "accessoire",
+    "specification": "DN 32",
+    "active": true,
     "unit": "p",
-    "base_price": 32.66
+    "base_price": 74.19
   },
   {
     "id": "gm-542",
@@ -17886,10 +22761,13 @@ export const MOCK_CATALOGUE = [
       "code": "GM",
       "name": "Getaz Miauton"
     },
-    "reference": "GM/GN/4016",
+    "reference": "GM/GN/5051",
     "name": "Désemboueur DN 32 variante 4",
+    "category": "accessoire",
+    "specification": "DN 32",
+    "active": true,
     "unit": "p",
-    "base_price": 94.34
+    "base_price": 189.12
   },
   {
     "id": "nsb-543",
@@ -17897,10 +22775,13 @@ export const MOCK_CATALOGUE = [
       "code": "NSB",
       "name": "Nussbaum"
     },
-    "reference": "NSB-GEN-2455",
+    "reference": "NSB-GEN-1646",
     "name": "Désemboueur DN 40 type 0",
+    "category": "accessoire",
+    "specification": "DN 40",
+    "active": true,
     "unit": "p",
-    "base_price": 181.87
+    "base_price": 96.46
   },
   {
     "id": "st-543",
@@ -17908,10 +22789,13 @@ export const MOCK_CATALOGUE = [
       "code": "ST",
       "name": "Sanitas Troesch"
     },
-    "reference": "SAN.GEN.194213",
+    "reference": "SAN.GEN.337376",
     "name": "Désemboueur DN 40 modèle 0",
+    "category": "accessoire",
+    "specification": "DN 40",
+    "active": true,
     "unit": "p",
-    "base_price": 103.72
+    "base_price": 207.43
   },
   {
     "id": "gm-543",
@@ -17919,10 +22803,13 @@ export const MOCK_CATALOGUE = [
       "code": "GM",
       "name": "Getaz Miauton"
     },
-    "reference": "GM/GN/5456",
+    "reference": "GM/GN/5903",
     "name": "Désemboueur DN 40 variante 0",
+    "category": "accessoire",
+    "specification": "DN 40",
+    "active": true,
     "unit": "p",
-    "base_price": 38.23
+    "base_price": 202.6
   },
   {
     "id": "nsb-544",
@@ -17930,10 +22817,13 @@ export const MOCK_CATALOGUE = [
       "code": "NSB",
       "name": "Nussbaum"
     },
-    "reference": "NSB-GEN-4361",
+    "reference": "NSB-GEN-6279",
     "name": "Désemboueur DN 40 type 1",
+    "category": "accessoire",
+    "specification": "DN 40",
+    "active": true,
     "unit": "p",
-    "base_price": 172.52
+    "base_price": 202.9
   },
   {
     "id": "st-544",
@@ -17941,10 +22831,13 @@ export const MOCK_CATALOGUE = [
       "code": "ST",
       "name": "Sanitas Troesch"
     },
-    "reference": "SAN.GEN.391283",
+    "reference": "SAN.GEN.589390",
     "name": "Désemboueur DN 40 modèle 1",
+    "category": "accessoire",
+    "specification": "DN 40",
+    "active": true,
     "unit": "p",
-    "base_price": 190.22
+    "base_price": 135.7
   },
   {
     "id": "gm-544",
@@ -17952,10 +22845,13 @@ export const MOCK_CATALOGUE = [
       "code": "GM",
       "name": "Getaz Miauton"
     },
-    "reference": "GM/GN/7555",
+    "reference": "GM/GN/5011",
     "name": "Désemboueur DN 40 variante 1",
+    "category": "accessoire",
+    "specification": "DN 40",
+    "active": true,
     "unit": "p",
-    "base_price": 54.95
+    "base_price": 44.19
   },
   {
     "id": "nsb-545",
@@ -17963,10 +22859,13 @@ export const MOCK_CATALOGUE = [
       "code": "NSB",
       "name": "Nussbaum"
     },
-    "reference": "NSB-GEN-1552",
+    "reference": "NSB-GEN-4606",
     "name": "Désemboueur DN 40 type 2",
+    "category": "accessoire",
+    "specification": "DN 40",
+    "active": true,
     "unit": "p",
-    "base_price": 159.89
+    "base_price": 72.83
   },
   {
     "id": "st-545",
@@ -17974,10 +22873,13 @@ export const MOCK_CATALOGUE = [
       "code": "ST",
       "name": "Sanitas Troesch"
     },
-    "reference": "SAN.GEN.544415",
+    "reference": "SAN.GEN.480799",
     "name": "Désemboueur DN 40 modèle 2",
+    "category": "accessoire",
+    "specification": "DN 40",
+    "active": true,
     "unit": "p",
-    "base_price": 160.71
+    "base_price": 191.26
   },
   {
     "id": "gm-545",
@@ -17985,10 +22887,13 @@ export const MOCK_CATALOGUE = [
       "code": "GM",
       "name": "Getaz Miauton"
     },
-    "reference": "GM/GN/5814",
+    "reference": "GM/GN/3563",
     "name": "Désemboueur DN 40 variante 2",
+    "category": "accessoire",
+    "specification": "DN 40",
+    "active": true,
     "unit": "p",
-    "base_price": 110.89
+    "base_price": 179.55
   },
   {
     "id": "nsb-546",
@@ -17996,10 +22901,13 @@ export const MOCK_CATALOGUE = [
       "code": "NSB",
       "name": "Nussbaum"
     },
-    "reference": "NSB-GEN-9173",
+    "reference": "NSB-GEN-7014",
     "name": "Désemboueur DN 40 type 3",
+    "category": "accessoire",
+    "specification": "DN 40",
+    "active": true,
     "unit": "p",
-    "base_price": 63.21
+    "base_price": 143.09
   },
   {
     "id": "st-546",
@@ -18007,10 +22915,13 @@ export const MOCK_CATALOGUE = [
       "code": "ST",
       "name": "Sanitas Troesch"
     },
-    "reference": "SAN.GEN.818378",
+    "reference": "SAN.GEN.780396",
     "name": "Désemboueur DN 40 modèle 3",
+    "category": "accessoire",
+    "specification": "DN 40",
+    "active": true,
     "unit": "p",
-    "base_price": 27.61
+    "base_price": 214.48
   },
   {
     "id": "gm-546",
@@ -18018,10 +22929,13 @@ export const MOCK_CATALOGUE = [
       "code": "GM",
       "name": "Getaz Miauton"
     },
-    "reference": "GM/GN/6020",
+    "reference": "GM/GN/9506",
     "name": "Désemboueur DN 40 variante 3",
+    "category": "accessoire",
+    "specification": "DN 40",
+    "active": true,
     "unit": "p",
-    "base_price": 169.65
+    "base_price": 37.05
   },
   {
     "id": "nsb-547",
@@ -18029,10 +22943,13 @@ export const MOCK_CATALOGUE = [
       "code": "NSB",
       "name": "Nussbaum"
     },
-    "reference": "NSB-GEN-6526",
+    "reference": "NSB-GEN-4909",
     "name": "Désemboueur DN 40 type 4",
+    "category": "accessoire",
+    "specification": "DN 40",
+    "active": true,
     "unit": "p",
-    "base_price": 156.17
+    "base_price": 110.29
   },
   {
     "id": "st-547",
@@ -18040,10 +22957,13 @@ export const MOCK_CATALOGUE = [
       "code": "ST",
       "name": "Sanitas Troesch"
     },
-    "reference": "SAN.GEN.534840",
+    "reference": "SAN.GEN.423623",
     "name": "Désemboueur DN 40 modèle 4",
+    "category": "accessoire",
+    "specification": "DN 40",
+    "active": true,
     "unit": "p",
-    "base_price": 144.59
+    "base_price": 168.79
   },
   {
     "id": "gm-547",
@@ -18051,10 +22971,13 @@ export const MOCK_CATALOGUE = [
       "code": "GM",
       "name": "Getaz Miauton"
     },
-    "reference": "GM/GN/7492",
+    "reference": "GM/GN/2188",
     "name": "Désemboueur DN 40 variante 4",
+    "category": "accessoire",
+    "specification": "DN 40",
+    "active": true,
     "unit": "p",
-    "base_price": 29.64
+    "base_price": 41.47
   },
   {
     "id": "nsb-548",
@@ -18062,10 +22985,13 @@ export const MOCK_CATALOGUE = [
       "code": "NSB",
       "name": "Nussbaum"
     },
-    "reference": "NSB-GEN-5791",
+    "reference": "NSB-GEN-9355",
     "name": "Désemboueur DN 50 type 0",
+    "category": "accessoire",
+    "specification": "DN 50",
+    "active": true,
     "unit": "p",
-    "base_price": 91.95
+    "base_price": 36.77
   },
   {
     "id": "st-548",
@@ -18073,10 +22999,13 @@ export const MOCK_CATALOGUE = [
       "code": "ST",
       "name": "Sanitas Troesch"
     },
-    "reference": "SAN.GEN.391833",
+    "reference": "SAN.GEN.807618",
     "name": "Désemboueur DN 50 modèle 0",
+    "category": "accessoire",
+    "specification": "DN 50",
+    "active": true,
     "unit": "p",
-    "base_price": 209.23
+    "base_price": 205.08
   },
   {
     "id": "gm-548",
@@ -18084,10 +23013,13 @@ export const MOCK_CATALOGUE = [
       "code": "GM",
       "name": "Getaz Miauton"
     },
-    "reference": "GM/GN/3134",
+    "reference": "GM/GN/9439",
     "name": "Désemboueur DN 50 variante 0",
+    "category": "accessoire",
+    "specification": "DN 50",
+    "active": true,
     "unit": "p",
-    "base_price": 122.4
+    "base_price": 36.93
   },
   {
     "id": "nsb-549",
@@ -18095,10 +23027,13 @@ export const MOCK_CATALOGUE = [
       "code": "NSB",
       "name": "Nussbaum"
     },
-    "reference": "NSB-GEN-5850",
+    "reference": "NSB-GEN-1649",
     "name": "Désemboueur DN 50 type 1",
+    "category": "accessoire",
+    "specification": "DN 50",
+    "active": true,
     "unit": "p",
-    "base_price": 92.4
+    "base_price": 120.82
   },
   {
     "id": "st-549",
@@ -18106,10 +23041,13 @@ export const MOCK_CATALOGUE = [
       "code": "ST",
       "name": "Sanitas Troesch"
     },
-    "reference": "SAN.GEN.303573",
+    "reference": "SAN.GEN.438699",
     "name": "Désemboueur DN 50 modèle 1",
+    "category": "accessoire",
+    "specification": "DN 50",
+    "active": true,
     "unit": "p",
-    "base_price": 176.02
+    "base_price": 78.73
   },
   {
     "id": "gm-549",
@@ -18117,10 +23055,13 @@ export const MOCK_CATALOGUE = [
       "code": "GM",
       "name": "Getaz Miauton"
     },
-    "reference": "GM/GN/4981",
+    "reference": "GM/GN/7301",
     "name": "Désemboueur DN 50 variante 1",
+    "category": "accessoire",
+    "specification": "DN 50",
+    "active": true,
     "unit": "p",
-    "base_price": 156.34
+    "base_price": 100.16
   },
   {
     "id": "nsb-550",
@@ -18128,10 +23069,13 @@ export const MOCK_CATALOGUE = [
       "code": "NSB",
       "name": "Nussbaum"
     },
-    "reference": "NSB-GEN-2687",
+    "reference": "NSB-GEN-3745",
     "name": "Désemboueur DN 50 type 2",
+    "category": "accessoire",
+    "specification": "DN 50",
+    "active": true,
     "unit": "p",
-    "base_price": 72.94
+    "base_price": 59.4
   },
   {
     "id": "st-550",
@@ -18139,10 +23083,13 @@ export const MOCK_CATALOGUE = [
       "code": "ST",
       "name": "Sanitas Troesch"
     },
-    "reference": "SAN.GEN.570924",
+    "reference": "SAN.GEN.411925",
     "name": "Désemboueur DN 50 modèle 2",
+    "category": "accessoire",
+    "specification": "DN 50",
+    "active": true,
     "unit": "p",
-    "base_price": 108.62
+    "base_price": 98.83
   },
   {
     "id": "gm-550",
@@ -18150,10 +23097,13 @@ export const MOCK_CATALOGUE = [
       "code": "GM",
       "name": "Getaz Miauton"
     },
-    "reference": "GM/GN/7640",
+    "reference": "GM/GN/7759",
     "name": "Désemboueur DN 50 variante 2",
+    "category": "accessoire",
+    "specification": "DN 50",
+    "active": true,
     "unit": "p",
-    "base_price": 107.65
+    "base_price": 177.58
   },
   {
     "id": "nsb-551",
@@ -18161,10 +23111,13 @@ export const MOCK_CATALOGUE = [
       "code": "NSB",
       "name": "Nussbaum"
     },
-    "reference": "NSB-GEN-1125",
+    "reference": "NSB-GEN-1577",
     "name": "Désemboueur DN 50 type 3",
+    "category": "accessoire",
+    "specification": "DN 50",
+    "active": true,
     "unit": "p",
-    "base_price": 35.5
+    "base_price": 78.05
   },
   {
     "id": "st-551",
@@ -18172,10 +23125,13 @@ export const MOCK_CATALOGUE = [
       "code": "ST",
       "name": "Sanitas Troesch"
     },
-    "reference": "SAN.GEN.445369",
+    "reference": "SAN.GEN.423867",
     "name": "Désemboueur DN 50 modèle 3",
+    "category": "accessoire",
+    "specification": "DN 50",
+    "active": true,
     "unit": "p",
-    "base_price": 213.53
+    "base_price": 212.72
   },
   {
     "id": "gm-551",
@@ -18183,10 +23139,13 @@ export const MOCK_CATALOGUE = [
       "code": "GM",
       "name": "Getaz Miauton"
     },
-    "reference": "GM/GN/5435",
+    "reference": "GM/GN/4291",
     "name": "Désemboueur DN 50 variante 3",
+    "category": "accessoire",
+    "specification": "DN 50",
+    "active": true,
     "unit": "p",
-    "base_price": 163.2
+    "base_price": 29.81
   },
   {
     "id": "nsb-552",
@@ -18194,10 +23153,13 @@ export const MOCK_CATALOGUE = [
       "code": "NSB",
       "name": "Nussbaum"
     },
-    "reference": "NSB-GEN-8920",
+    "reference": "NSB-GEN-5264",
     "name": "Désemboueur DN 50 type 4",
+    "category": "accessoire",
+    "specification": "DN 50",
+    "active": true,
     "unit": "p",
-    "base_price": 81.7
+    "base_price": 169.81
   },
   {
     "id": "st-552",
@@ -18205,10 +23167,13 @@ export const MOCK_CATALOGUE = [
       "code": "ST",
       "name": "Sanitas Troesch"
     },
-    "reference": "SAN.GEN.463674",
+    "reference": "SAN.GEN.281093",
     "name": "Désemboueur DN 50 modèle 4",
+    "category": "accessoire",
+    "specification": "DN 50",
+    "active": true,
     "unit": "p",
-    "base_price": 23.89
+    "base_price": 204.66
   },
   {
     "id": "gm-552",
@@ -18216,10 +23181,13 @@ export const MOCK_CATALOGUE = [
       "code": "GM",
       "name": "Getaz Miauton"
     },
-    "reference": "GM/GN/8095",
+    "reference": "GM/GN/1734",
     "name": "Désemboueur DN 50 variante 4",
+    "category": "accessoire",
+    "specification": "DN 50",
+    "active": true,
     "unit": "p",
-    "base_price": 86.26
+    "base_price": 78.38
   },
   {
     "id": "nsb-553",
@@ -18227,10 +23195,13 @@ export const MOCK_CATALOGUE = [
       "code": "NSB",
       "name": "Nussbaum"
     },
-    "reference": "NSB-GEN-5201",
+    "reference": "NSB-GEN-7553",
     "name": "Purgeur automatique 1/2\" type 0",
+    "category": "soupape",
+    "specification": "1/2\"",
+    "active": true,
     "unit": "p",
-    "base_price": 140.69
+    "base_price": 216.27
   },
   {
     "id": "st-553",
@@ -18238,10 +23209,13 @@ export const MOCK_CATALOGUE = [
       "code": "ST",
       "name": "Sanitas Troesch"
     },
-    "reference": "SAN.GEN.647628",
+    "reference": "SAN.GEN.615772",
     "name": "Purgeur automatique 1/2\" modèle 0",
+    "category": "soupape",
+    "specification": "1/2\"",
+    "active": true,
     "unit": "p",
-    "base_price": 122.11
+    "base_price": 208.16
   },
   {
     "id": "gm-553",
@@ -18249,10 +23223,13 @@ export const MOCK_CATALOGUE = [
       "code": "GM",
       "name": "Getaz Miauton"
     },
-    "reference": "GM/GN/8852",
+    "reference": "GM/GN/7648",
     "name": "Purgeur automatique 1/2\" variante 0",
+    "category": "soupape",
+    "specification": "1/2\"",
+    "active": true,
     "unit": "p",
-    "base_price": 22.19
+    "base_price": 167.36
   },
   {
     "id": "nsb-554",
@@ -18260,10 +23237,13 @@ export const MOCK_CATALOGUE = [
       "code": "NSB",
       "name": "Nussbaum"
     },
-    "reference": "NSB-GEN-5443",
+    "reference": "NSB-GEN-9784",
     "name": "Purgeur automatique 1/2\" type 1",
+    "category": "soupape",
+    "specification": "1/2\"",
+    "active": true,
     "unit": "p",
-    "base_price": 48.79
+    "base_price": 143.43
   },
   {
     "id": "st-554",
@@ -18271,10 +23251,13 @@ export const MOCK_CATALOGUE = [
       "code": "ST",
       "name": "Sanitas Troesch"
     },
-    "reference": "SAN.GEN.111507",
+    "reference": "SAN.GEN.932398",
     "name": "Purgeur automatique 1/2\" modèle 1",
+    "category": "soupape",
+    "specification": "1/2\"",
+    "active": true,
     "unit": "p",
-    "base_price": 202.13
+    "base_price": 63.2
   },
   {
     "id": "gm-554",
@@ -18282,10 +23265,13 @@ export const MOCK_CATALOGUE = [
       "code": "GM",
       "name": "Getaz Miauton"
     },
-    "reference": "GM/GN/5942",
+    "reference": "GM/GN/1696",
     "name": "Purgeur automatique 1/2\" variante 1",
+    "category": "soupape",
+    "specification": "1/2\"",
+    "active": true,
     "unit": "p",
-    "base_price": 188.57
+    "base_price": 191.34
   },
   {
     "id": "nsb-555",
@@ -18293,10 +23279,13 @@ export const MOCK_CATALOGUE = [
       "code": "NSB",
       "name": "Nussbaum"
     },
-    "reference": "NSB-GEN-1821",
+    "reference": "NSB-GEN-2812",
     "name": "Purgeur automatique 1/2\" type 2",
+    "category": "soupape",
+    "specification": "1/2\"",
+    "active": true,
     "unit": "p",
-    "base_price": 106.1
+    "base_price": 170.05
   },
   {
     "id": "st-555",
@@ -18304,10 +23293,13 @@ export const MOCK_CATALOGUE = [
       "code": "ST",
       "name": "Sanitas Troesch"
     },
-    "reference": "SAN.GEN.237041",
+    "reference": "SAN.GEN.366361",
     "name": "Purgeur automatique 1/2\" modèle 2",
+    "category": "soupape",
+    "specification": "1/2\"",
+    "active": true,
     "unit": "p",
-    "base_price": 89.23
+    "base_price": 70.61
   },
   {
     "id": "gm-555",
@@ -18315,10 +23307,13 @@ export const MOCK_CATALOGUE = [
       "code": "GM",
       "name": "Getaz Miauton"
     },
-    "reference": "GM/GN/6594",
+    "reference": "GM/GN/5769",
     "name": "Purgeur automatique 1/2\" variante 2",
+    "category": "soupape",
+    "specification": "1/2\"",
+    "active": true,
     "unit": "p",
-    "base_price": 160.52
+    "base_price": 181.47
   },
   {
     "id": "nsb-556",
@@ -18326,10 +23321,13 @@ export const MOCK_CATALOGUE = [
       "code": "NSB",
       "name": "Nussbaum"
     },
-    "reference": "NSB-GEN-7504",
+    "reference": "NSB-GEN-5078",
     "name": "Purgeur automatique 1/2\" type 3",
+    "category": "soupape",
+    "specification": "1/2\"",
+    "active": true,
     "unit": "p",
-    "base_price": 22.93
+    "base_price": 199.5
   },
   {
     "id": "st-556",
@@ -18337,10 +23335,13 @@ export const MOCK_CATALOGUE = [
       "code": "ST",
       "name": "Sanitas Troesch"
     },
-    "reference": "SAN.GEN.865727",
+    "reference": "SAN.GEN.834113",
     "name": "Purgeur automatique 1/2\" modèle 3",
+    "category": "soupape",
+    "specification": "1/2\"",
+    "active": true,
     "unit": "p",
-    "base_price": 155.66
+    "base_price": 22.1
   },
   {
     "id": "gm-556",
@@ -18348,10 +23349,13 @@ export const MOCK_CATALOGUE = [
       "code": "GM",
       "name": "Getaz Miauton"
     },
-    "reference": "GM/GN/5709",
+    "reference": "GM/GN/9048",
     "name": "Purgeur automatique 1/2\" variante 3",
+    "category": "soupape",
+    "specification": "1/2\"",
+    "active": true,
     "unit": "p",
-    "base_price": 40.87
+    "base_price": 80.52
   },
   {
     "id": "nsb-557",
@@ -18359,10 +23363,13 @@ export const MOCK_CATALOGUE = [
       "code": "NSB",
       "name": "Nussbaum"
     },
-    "reference": "NSB-GEN-1599",
+    "reference": "NSB-GEN-5934",
     "name": "Purgeur automatique 1/2\" type 4",
+    "category": "soupape",
+    "specification": "1/2\"",
+    "active": true,
     "unit": "p",
-    "base_price": 127.72
+    "base_price": 142.26
   },
   {
     "id": "st-557",
@@ -18370,10 +23377,13 @@ export const MOCK_CATALOGUE = [
       "code": "ST",
       "name": "Sanitas Troesch"
     },
-    "reference": "SAN.GEN.833509",
+    "reference": "SAN.GEN.912520",
     "name": "Purgeur automatique 1/2\" modèle 4",
+    "category": "soupape",
+    "specification": "1/2\"",
+    "active": true,
     "unit": "p",
-    "base_price": 140.98
+    "base_price": 149.27
   },
   {
     "id": "gm-557",
@@ -18381,10 +23391,13 @@ export const MOCK_CATALOGUE = [
       "code": "GM",
       "name": "Getaz Miauton"
     },
-    "reference": "GM/GN/4816",
+    "reference": "GM/GN/7956",
     "name": "Purgeur automatique 1/2\" variante 4",
+    "category": "soupape",
+    "specification": "1/2\"",
+    "active": true,
     "unit": "p",
-    "base_price": 216.8
+    "base_price": 201.5
   },
   {
     "id": "nsb-558",
@@ -18392,10 +23405,13 @@ export const MOCK_CATALOGUE = [
       "code": "NSB",
       "name": "Nussbaum"
     },
-    "reference": "NSB-GEN-6033",
+    "reference": "NSB-GEN-9165",
     "name": "Purgeur automatique 3/4\" type 0",
+    "category": "soupape",
+    "specification": "3/4\"",
+    "active": true,
     "unit": "p",
-    "base_price": 70.06
+    "base_price": 120.52
   },
   {
     "id": "st-558",
@@ -18403,10 +23419,13 @@ export const MOCK_CATALOGUE = [
       "code": "ST",
       "name": "Sanitas Troesch"
     },
-    "reference": "SAN.GEN.217233",
+    "reference": "SAN.GEN.575328",
     "name": "Purgeur automatique 3/4\" modèle 0",
+    "category": "soupape",
+    "specification": "3/4\"",
+    "active": true,
     "unit": "p",
-    "base_price": 135.32
+    "base_price": 193.01
   },
   {
     "id": "gm-558",
@@ -18414,10 +23433,13 @@ export const MOCK_CATALOGUE = [
       "code": "GM",
       "name": "Getaz Miauton"
     },
-    "reference": "GM/GN/1078",
+    "reference": "GM/GN/4081",
     "name": "Purgeur automatique 3/4\" variante 0",
+    "category": "soupape",
+    "specification": "3/4\"",
+    "active": true,
     "unit": "p",
-    "base_price": 136.4
+    "base_price": 142.28
   },
   {
     "id": "nsb-559",
@@ -18425,10 +23447,13 @@ export const MOCK_CATALOGUE = [
       "code": "NSB",
       "name": "Nussbaum"
     },
-    "reference": "NSB-GEN-9372",
+    "reference": "NSB-GEN-5126",
     "name": "Purgeur automatique 3/4\" type 1",
+    "category": "soupape",
+    "specification": "3/4\"",
+    "active": true,
     "unit": "p",
-    "base_price": 205.37
+    "base_price": 75.03
   },
   {
     "id": "st-559",
@@ -18436,10 +23461,13 @@ export const MOCK_CATALOGUE = [
       "code": "ST",
       "name": "Sanitas Troesch"
     },
-    "reference": "SAN.GEN.641299",
+    "reference": "SAN.GEN.433300",
     "name": "Purgeur automatique 3/4\" modèle 1",
+    "category": "soupape",
+    "specification": "3/4\"",
+    "active": true,
     "unit": "p",
-    "base_price": 197.32
+    "base_price": 35.87
   },
   {
     "id": "gm-559",
@@ -18447,10 +23475,13 @@ export const MOCK_CATALOGUE = [
       "code": "GM",
       "name": "Getaz Miauton"
     },
-    "reference": "GM/GN/7825",
+    "reference": "GM/GN/5787",
     "name": "Purgeur automatique 3/4\" variante 1",
+    "category": "soupape",
+    "specification": "3/4\"",
+    "active": true,
     "unit": "p",
-    "base_price": 208.88
+    "base_price": 55.39
   },
   {
     "id": "nsb-560",
@@ -18458,10 +23489,13 @@ export const MOCK_CATALOGUE = [
       "code": "NSB",
       "name": "Nussbaum"
     },
-    "reference": "NSB-GEN-9561",
+    "reference": "NSB-GEN-9704",
     "name": "Purgeur automatique 3/4\" type 2",
+    "category": "soupape",
+    "specification": "3/4\"",
+    "active": true,
     "unit": "p",
-    "base_price": 178.23
+    "base_price": 105.33
   },
   {
     "id": "st-560",
@@ -18469,10 +23503,13 @@ export const MOCK_CATALOGUE = [
       "code": "ST",
       "name": "Sanitas Troesch"
     },
-    "reference": "SAN.GEN.830454",
+    "reference": "SAN.GEN.949110",
     "name": "Purgeur automatique 3/4\" modèle 2",
+    "category": "soupape",
+    "specification": "3/4\"",
+    "active": true,
     "unit": "p",
-    "base_price": 79.61
+    "base_price": 100.72
   },
   {
     "id": "gm-560",
@@ -18480,10 +23517,13 @@ export const MOCK_CATALOGUE = [
       "code": "GM",
       "name": "Getaz Miauton"
     },
-    "reference": "GM/GN/5516",
+    "reference": "GM/GN/8163",
     "name": "Purgeur automatique 3/4\" variante 2",
+    "category": "soupape",
+    "specification": "3/4\"",
+    "active": true,
     "unit": "p",
-    "base_price": 193.72
+    "base_price": 190.98
   },
   {
     "id": "nsb-561",
@@ -18491,10 +23531,13 @@ export const MOCK_CATALOGUE = [
       "code": "NSB",
       "name": "Nussbaum"
     },
-    "reference": "NSB-GEN-6317",
+    "reference": "NSB-GEN-4269",
     "name": "Purgeur automatique 3/4\" type 3",
+    "category": "soupape",
+    "specification": "3/4\"",
+    "active": true,
     "unit": "p",
-    "base_price": 184.92
+    "base_price": 85.6
   },
   {
     "id": "st-561",
@@ -18502,10 +23545,13 @@ export const MOCK_CATALOGUE = [
       "code": "ST",
       "name": "Sanitas Troesch"
     },
-    "reference": "SAN.GEN.726563",
+    "reference": "SAN.GEN.599065",
     "name": "Purgeur automatique 3/4\" modèle 3",
+    "category": "soupape",
+    "specification": "3/4\"",
+    "active": true,
     "unit": "p",
-    "base_price": 72.05
+    "base_price": 208.96
   },
   {
     "id": "gm-561",
@@ -18513,10 +23559,13 @@ export const MOCK_CATALOGUE = [
       "code": "GM",
       "name": "Getaz Miauton"
     },
-    "reference": "GM/GN/1091",
+    "reference": "GM/GN/7824",
     "name": "Purgeur automatique 3/4\" variante 3",
+    "category": "soupape",
+    "specification": "3/4\"",
+    "active": true,
     "unit": "p",
-    "base_price": 75.47
+    "base_price": 143.77
   },
   {
     "id": "nsb-562",
@@ -18524,10 +23573,13 @@ export const MOCK_CATALOGUE = [
       "code": "NSB",
       "name": "Nussbaum"
     },
-    "reference": "NSB-GEN-2763",
+    "reference": "NSB-GEN-5440",
     "name": "Purgeur automatique 3/4\" type 4",
+    "category": "soupape",
+    "specification": "3/4\"",
+    "active": true,
     "unit": "p",
-    "base_price": 20.3
+    "base_price": 69.63
   },
   {
     "id": "st-562",
@@ -18535,10 +23587,13 @@ export const MOCK_CATALOGUE = [
       "code": "ST",
       "name": "Sanitas Troesch"
     },
-    "reference": "SAN.GEN.516234",
+    "reference": "SAN.GEN.817924",
     "name": "Purgeur automatique 3/4\" modèle 4",
+    "category": "soupape",
+    "specification": "3/4\"",
+    "active": true,
     "unit": "p",
-    "base_price": 183.6
+    "base_price": 122.84
   },
   {
     "id": "gm-562",
@@ -18546,10 +23601,13 @@ export const MOCK_CATALOGUE = [
       "code": "GM",
       "name": "Getaz Miauton"
     },
-    "reference": "GM/GN/3823",
+    "reference": "GM/GN/1660",
     "name": "Purgeur automatique 3/4\" variante 4",
+    "category": "soupape",
+    "specification": "3/4\"",
+    "active": true,
     "unit": "p",
-    "base_price": 23.5
+    "base_price": 130.33
   },
   {
     "id": "nsb-563",
@@ -18557,10 +23615,13 @@ export const MOCK_CATALOGUE = [
       "code": "NSB",
       "name": "Nussbaum"
     },
-    "reference": "NSB-GEN-4845",
+    "reference": "NSB-GEN-8074",
     "name": "Purgeur automatique 1\" type 0",
+    "category": "soupape",
+    "specification": "1\"",
+    "active": true,
     "unit": "p",
-    "base_price": 201.98
+    "base_price": 87.4
   },
   {
     "id": "st-563",
@@ -18568,10 +23629,13 @@ export const MOCK_CATALOGUE = [
       "code": "ST",
       "name": "Sanitas Troesch"
     },
-    "reference": "SAN.GEN.220880",
+    "reference": "SAN.GEN.429183",
     "name": "Purgeur automatique 1\" modèle 0",
+    "category": "soupape",
+    "specification": "1\"",
+    "active": true,
     "unit": "p",
-    "base_price": 142.75
+    "base_price": 115.24
   },
   {
     "id": "gm-563",
@@ -18579,10 +23643,13 @@ export const MOCK_CATALOGUE = [
       "code": "GM",
       "name": "Getaz Miauton"
     },
-    "reference": "GM/GN/4207",
+    "reference": "GM/GN/1759",
     "name": "Purgeur automatique 1\" variante 0",
+    "category": "soupape",
+    "specification": "1\"",
+    "active": true,
     "unit": "p",
-    "base_price": 176.07
+    "base_price": 45.99
   },
   {
     "id": "nsb-564",
@@ -18590,10 +23657,13 @@ export const MOCK_CATALOGUE = [
       "code": "NSB",
       "name": "Nussbaum"
     },
-    "reference": "NSB-GEN-3380",
+    "reference": "NSB-GEN-4386",
     "name": "Purgeur automatique 1\" type 1",
+    "category": "soupape",
+    "specification": "1\"",
+    "active": true,
     "unit": "p",
-    "base_price": 117.26
+    "base_price": 149.44
   },
   {
     "id": "st-564",
@@ -18601,10 +23671,13 @@ export const MOCK_CATALOGUE = [
       "code": "ST",
       "name": "Sanitas Troesch"
     },
-    "reference": "SAN.GEN.354579",
+    "reference": "SAN.GEN.608402",
     "name": "Purgeur automatique 1\" modèle 1",
+    "category": "soupape",
+    "specification": "1\"",
+    "active": true,
     "unit": "p",
-    "base_price": 134.06
+    "base_price": 37.29
   },
   {
     "id": "gm-564",
@@ -18612,10 +23685,13 @@ export const MOCK_CATALOGUE = [
       "code": "GM",
       "name": "Getaz Miauton"
     },
-    "reference": "GM/GN/7643",
+    "reference": "GM/GN/9906",
     "name": "Purgeur automatique 1\" variante 1",
+    "category": "soupape",
+    "specification": "1\"",
+    "active": true,
     "unit": "p",
-    "base_price": 173.01
+    "base_price": 32.13
   },
   {
     "id": "nsb-565",
@@ -18623,10 +23699,13 @@ export const MOCK_CATALOGUE = [
       "code": "NSB",
       "name": "Nussbaum"
     },
-    "reference": "NSB-GEN-1513",
+    "reference": "NSB-GEN-9757",
     "name": "Purgeur automatique 1\" type 2",
+    "category": "soupape",
+    "specification": "1\"",
+    "active": true,
     "unit": "p",
-    "base_price": 20.13
+    "base_price": 103.67
   },
   {
     "id": "st-565",
@@ -18634,10 +23713,13 @@ export const MOCK_CATALOGUE = [
       "code": "ST",
       "name": "Sanitas Troesch"
     },
-    "reference": "SAN.GEN.350186",
+    "reference": "SAN.GEN.822369",
     "name": "Purgeur automatique 1\" modèle 2",
+    "category": "soupape",
+    "specification": "1\"",
+    "active": true,
     "unit": "p",
-    "base_price": 164.81
+    "base_price": 133.68
   },
   {
     "id": "gm-565",
@@ -18645,10 +23727,13 @@ export const MOCK_CATALOGUE = [
       "code": "GM",
       "name": "Getaz Miauton"
     },
-    "reference": "GM/GN/8622",
+    "reference": "GM/GN/9540",
     "name": "Purgeur automatique 1\" variante 2",
+    "category": "soupape",
+    "specification": "1\"",
+    "active": true,
     "unit": "p",
-    "base_price": 129.47
+    "base_price": 103.61
   },
   {
     "id": "nsb-566",
@@ -18656,10 +23741,13 @@ export const MOCK_CATALOGUE = [
       "code": "NSB",
       "name": "Nussbaum"
     },
-    "reference": "NSB-GEN-2788",
+    "reference": "NSB-GEN-5597",
     "name": "Purgeur automatique 1\" type 3",
+    "category": "soupape",
+    "specification": "1\"",
+    "active": true,
     "unit": "p",
-    "base_price": 137.3
+    "base_price": 96.25
   },
   {
     "id": "st-566",
@@ -18667,10 +23755,13 @@ export const MOCK_CATALOGUE = [
       "code": "ST",
       "name": "Sanitas Troesch"
     },
-    "reference": "SAN.GEN.852046",
+    "reference": "SAN.GEN.779063",
     "name": "Purgeur automatique 1\" modèle 3",
+    "category": "soupape",
+    "specification": "1\"",
+    "active": true,
     "unit": "p",
-    "base_price": 96.02
+    "base_price": 37.26
   },
   {
     "id": "gm-566",
@@ -18678,10 +23769,13 @@ export const MOCK_CATALOGUE = [
       "code": "GM",
       "name": "Getaz Miauton"
     },
-    "reference": "GM/GN/2004",
+    "reference": "GM/GN/4328",
     "name": "Purgeur automatique 1\" variante 3",
+    "category": "soupape",
+    "specification": "1\"",
+    "active": true,
     "unit": "p",
-    "base_price": 202
+    "base_price": 77.21
   },
   {
     "id": "nsb-567",
@@ -18689,10 +23783,13 @@ export const MOCK_CATALOGUE = [
       "code": "NSB",
       "name": "Nussbaum"
     },
-    "reference": "NSB-GEN-4856",
+    "reference": "NSB-GEN-3247",
     "name": "Purgeur automatique 1\" type 4",
+    "category": "soupape",
+    "specification": "1\"",
+    "active": true,
     "unit": "p",
-    "base_price": 103.79
+    "base_price": 100.27
   },
   {
     "id": "st-567",
@@ -18700,10 +23797,13 @@ export const MOCK_CATALOGUE = [
       "code": "ST",
       "name": "Sanitas Troesch"
     },
-    "reference": "SAN.GEN.220602",
+    "reference": "SAN.GEN.444629",
     "name": "Purgeur automatique 1\" modèle 4",
+    "category": "soupape",
+    "specification": "1\"",
+    "active": true,
     "unit": "p",
-    "base_price": 204.62
+    "base_price": 39.21
   },
   {
     "id": "gm-567",
@@ -18711,10 +23811,13 @@ export const MOCK_CATALOGUE = [
       "code": "GM",
       "name": "Getaz Miauton"
     },
-    "reference": "GM/GN/5420",
+    "reference": "GM/GN/1350",
     "name": "Purgeur automatique 1\" variante 4",
+    "category": "soupape",
+    "specification": "1\"",
+    "active": true,
     "unit": "p",
-    "base_price": 50.2
+    "base_price": 79.39
   },
   {
     "id": "nsb-568",
@@ -18722,10 +23825,13 @@ export const MOCK_CATALOGUE = [
       "code": "NSB",
       "name": "Nussbaum"
     },
-    "reference": "NSB-GEN-1721",
+    "reference": "NSB-GEN-8359",
     "name": "Purgeur automatique 1 1/4\" type 0",
+    "category": "soupape",
+    "specification": "1 1/4\"",
+    "active": true,
     "unit": "p",
-    "base_price": 215.89
+    "base_price": 41.37
   },
   {
     "id": "st-568",
@@ -18733,10 +23839,13 @@ export const MOCK_CATALOGUE = [
       "code": "ST",
       "name": "Sanitas Troesch"
     },
-    "reference": "SAN.GEN.465995",
+    "reference": "SAN.GEN.170659",
     "name": "Purgeur automatique 1 1/4\" modèle 0",
+    "category": "soupape",
+    "specification": "1 1/4\"",
+    "active": true,
     "unit": "p",
-    "base_price": 94.16
+    "base_price": 214.71
   },
   {
     "id": "gm-568",
@@ -18744,10 +23853,13 @@ export const MOCK_CATALOGUE = [
       "code": "GM",
       "name": "Getaz Miauton"
     },
-    "reference": "GM/GN/3293",
+    "reference": "GM/GN/1064",
     "name": "Purgeur automatique 1 1/4\" variante 0",
+    "category": "soupape",
+    "specification": "1 1/4\"",
+    "active": true,
     "unit": "p",
-    "base_price": 56.89
+    "base_price": 170.29
   },
   {
     "id": "nsb-569",
@@ -18755,10 +23867,13 @@ export const MOCK_CATALOGUE = [
       "code": "NSB",
       "name": "Nussbaum"
     },
-    "reference": "NSB-GEN-3833",
+    "reference": "NSB-GEN-1754",
     "name": "Purgeur automatique 1 1/4\" type 1",
+    "category": "soupape",
+    "specification": "1 1/4\"",
+    "active": true,
     "unit": "p",
-    "base_price": 79.14
+    "base_price": 130.08
   },
   {
     "id": "st-569",
@@ -18766,10 +23881,13 @@ export const MOCK_CATALOGUE = [
       "code": "ST",
       "name": "Sanitas Troesch"
     },
-    "reference": "SAN.GEN.326992",
+    "reference": "SAN.GEN.657995",
     "name": "Purgeur automatique 1 1/4\" modèle 1",
+    "category": "soupape",
+    "specification": "1 1/4\"",
+    "active": true,
     "unit": "p",
-    "base_price": 136.62
+    "base_price": 94.96
   },
   {
     "id": "gm-569",
@@ -18777,10 +23895,13 @@ export const MOCK_CATALOGUE = [
       "code": "GM",
       "name": "Getaz Miauton"
     },
-    "reference": "GM/GN/4578",
+    "reference": "GM/GN/9913",
     "name": "Purgeur automatique 1 1/4\" variante 1",
+    "category": "soupape",
+    "specification": "1 1/4\"",
+    "active": true,
     "unit": "p",
-    "base_price": 70.72
+    "base_price": 132.94
   },
   {
     "id": "nsb-570",
@@ -18788,10 +23909,13 @@ export const MOCK_CATALOGUE = [
       "code": "NSB",
       "name": "Nussbaum"
     },
-    "reference": "NSB-GEN-1521",
+    "reference": "NSB-GEN-4532",
     "name": "Purgeur automatique 1 1/4\" type 2",
+    "category": "soupape",
+    "specification": "1 1/4\"",
+    "active": true,
     "unit": "p",
-    "base_price": 59.73
+    "base_price": 27.58
   },
   {
     "id": "st-570",
@@ -18799,10 +23923,13 @@ export const MOCK_CATALOGUE = [
       "code": "ST",
       "name": "Sanitas Troesch"
     },
-    "reference": "SAN.GEN.190989",
+    "reference": "SAN.GEN.742083",
     "name": "Purgeur automatique 1 1/4\" modèle 2",
+    "category": "soupape",
+    "specification": "1 1/4\"",
+    "active": true,
     "unit": "p",
-    "base_price": 171.08
+    "base_price": 66.85
   },
   {
     "id": "gm-570",
@@ -18810,10 +23937,13 @@ export const MOCK_CATALOGUE = [
       "code": "GM",
       "name": "Getaz Miauton"
     },
-    "reference": "GM/GN/9826",
+    "reference": "GM/GN/2115",
     "name": "Purgeur automatique 1 1/4\" variante 2",
+    "category": "soupape",
+    "specification": "1 1/4\"",
+    "active": true,
     "unit": "p",
-    "base_price": 101.69
+    "base_price": 32.16
   },
   {
     "id": "nsb-571",
@@ -18821,10 +23951,13 @@ export const MOCK_CATALOGUE = [
       "code": "NSB",
       "name": "Nussbaum"
     },
-    "reference": "NSB-GEN-8417",
+    "reference": "NSB-GEN-2879",
     "name": "Purgeur automatique 1 1/4\" type 3",
+    "category": "soupape",
+    "specification": "1 1/4\"",
+    "active": true,
     "unit": "p",
-    "base_price": 119.18
+    "base_price": 57.75
   },
   {
     "id": "st-571",
@@ -18832,10 +23965,13 @@ export const MOCK_CATALOGUE = [
       "code": "ST",
       "name": "Sanitas Troesch"
     },
-    "reference": "SAN.GEN.514010",
+    "reference": "SAN.GEN.689039",
     "name": "Purgeur automatique 1 1/4\" modèle 3",
+    "category": "soupape",
+    "specification": "1 1/4\"",
+    "active": true,
     "unit": "p",
-    "base_price": 171.01
+    "base_price": 153.14
   },
   {
     "id": "gm-571",
@@ -18843,10 +23979,13 @@ export const MOCK_CATALOGUE = [
       "code": "GM",
       "name": "Getaz Miauton"
     },
-    "reference": "GM/GN/6103",
+    "reference": "GM/GN/9709",
     "name": "Purgeur automatique 1 1/4\" variante 3",
+    "category": "soupape",
+    "specification": "1 1/4\"",
+    "active": true,
     "unit": "p",
-    "base_price": 57.9
+    "base_price": 150.87
   },
   {
     "id": "nsb-572",
@@ -18854,10 +23993,13 @@ export const MOCK_CATALOGUE = [
       "code": "NSB",
       "name": "Nussbaum"
     },
-    "reference": "NSB-GEN-8832",
+    "reference": "NSB-GEN-6242",
     "name": "Purgeur automatique 1 1/4\" type 4",
+    "category": "soupape",
+    "specification": "1 1/4\"",
+    "active": true,
     "unit": "p",
-    "base_price": 127.36
+    "base_price": 96.37
   },
   {
     "id": "st-572",
@@ -18865,10 +24007,13 @@ export const MOCK_CATALOGUE = [
       "code": "ST",
       "name": "Sanitas Troesch"
     },
-    "reference": "SAN.GEN.567336",
+    "reference": "SAN.GEN.277735",
     "name": "Purgeur automatique 1 1/4\" modèle 4",
+    "category": "soupape",
+    "specification": "1 1/4\"",
+    "active": true,
     "unit": "p",
-    "base_price": 188.67
+    "base_price": 133.83
   },
   {
     "id": "gm-572",
@@ -18876,10 +24021,13 @@ export const MOCK_CATALOGUE = [
       "code": "GM",
       "name": "Getaz Miauton"
     },
-    "reference": "GM/GN/3108",
+    "reference": "GM/GN/9300",
     "name": "Purgeur automatique 1 1/4\" variante 4",
+    "category": "soupape",
+    "specification": "1 1/4\"",
+    "active": true,
     "unit": "p",
-    "base_price": 152.69
+    "base_price": 122.88
   },
   {
     "id": "nsb-573",
@@ -18887,10 +24035,13 @@ export const MOCK_CATALOGUE = [
       "code": "NSB",
       "name": "Nussbaum"
     },
-    "reference": "NSB-GEN-7483",
+    "reference": "NSB-GEN-1417",
     "name": "Purgeur automatique 1 1/2\" type 0",
+    "category": "soupape",
+    "specification": "1 1/2\"",
+    "active": true,
     "unit": "p",
-    "base_price": 136.3
+    "base_price": 23.22
   },
   {
     "id": "st-573",
@@ -18898,10 +24049,13 @@ export const MOCK_CATALOGUE = [
       "code": "ST",
       "name": "Sanitas Troesch"
     },
-    "reference": "SAN.GEN.490402",
+    "reference": "SAN.GEN.831579",
     "name": "Purgeur automatique 1 1/2\" modèle 0",
+    "category": "soupape",
+    "specification": "1 1/2\"",
+    "active": true,
     "unit": "p",
-    "base_price": 116.1
+    "base_price": 44.09
   },
   {
     "id": "gm-573",
@@ -18909,10 +24063,13 @@ export const MOCK_CATALOGUE = [
       "code": "GM",
       "name": "Getaz Miauton"
     },
-    "reference": "GM/GN/7256",
+    "reference": "GM/GN/5777",
     "name": "Purgeur automatique 1 1/2\" variante 0",
+    "category": "soupape",
+    "specification": "1 1/2\"",
+    "active": true,
     "unit": "p",
-    "base_price": 58.52
+    "base_price": 201.38
   },
   {
     "id": "nsb-574",
@@ -18920,10 +24077,13 @@ export const MOCK_CATALOGUE = [
       "code": "NSB",
       "name": "Nussbaum"
     },
-    "reference": "NSB-GEN-6810",
+    "reference": "NSB-GEN-1504",
     "name": "Purgeur automatique 1 1/2\" type 1",
+    "category": "soupape",
+    "specification": "1 1/2\"",
+    "active": true,
     "unit": "p",
-    "base_price": 51.64
+    "base_price": 211.89
   },
   {
     "id": "st-574",
@@ -18931,10 +24091,13 @@ export const MOCK_CATALOGUE = [
       "code": "ST",
       "name": "Sanitas Troesch"
     },
-    "reference": "SAN.GEN.293477",
+    "reference": "SAN.GEN.927262",
     "name": "Purgeur automatique 1 1/2\" modèle 1",
+    "category": "soupape",
+    "specification": "1 1/2\"",
+    "active": true,
     "unit": "p",
-    "base_price": 88.08
+    "base_price": 166.04
   },
   {
     "id": "gm-574",
@@ -18942,10 +24105,13 @@ export const MOCK_CATALOGUE = [
       "code": "GM",
       "name": "Getaz Miauton"
     },
-    "reference": "GM/GN/4229",
+    "reference": "GM/GN/6579",
     "name": "Purgeur automatique 1 1/2\" variante 1",
+    "category": "soupape",
+    "specification": "1 1/2\"",
+    "active": true,
     "unit": "p",
-    "base_price": 155.79
+    "base_price": 171.12
   },
   {
     "id": "nsb-575",
@@ -18953,10 +24119,13 @@ export const MOCK_CATALOGUE = [
       "code": "NSB",
       "name": "Nussbaum"
     },
-    "reference": "NSB-GEN-3723",
+    "reference": "NSB-GEN-8107",
     "name": "Purgeur automatique 1 1/2\" type 2",
+    "category": "soupape",
+    "specification": "1 1/2\"",
+    "active": true,
     "unit": "p",
-    "base_price": 206.62
+    "base_price": 146.79
   },
   {
     "id": "st-575",
@@ -18964,10 +24133,13 @@ export const MOCK_CATALOGUE = [
       "code": "ST",
       "name": "Sanitas Troesch"
     },
-    "reference": "SAN.GEN.456737",
+    "reference": "SAN.GEN.935114",
     "name": "Purgeur automatique 1 1/2\" modèle 2",
+    "category": "soupape",
+    "specification": "1 1/2\"",
+    "active": true,
     "unit": "p",
-    "base_price": 88.11
+    "base_price": 58.53
   },
   {
     "id": "gm-575",
@@ -18975,10 +24147,13 @@ export const MOCK_CATALOGUE = [
       "code": "GM",
       "name": "Getaz Miauton"
     },
-    "reference": "GM/GN/5456",
+    "reference": "GM/GN/7815",
     "name": "Purgeur automatique 1 1/2\" variante 2",
+    "category": "soupape",
+    "specification": "1 1/2\"",
+    "active": true,
     "unit": "p",
-    "base_price": 99.06
+    "base_price": 214.59
   },
   {
     "id": "nsb-576",
@@ -18986,10 +24161,13 @@ export const MOCK_CATALOGUE = [
       "code": "NSB",
       "name": "Nussbaum"
     },
-    "reference": "NSB-GEN-1385",
+    "reference": "NSB-GEN-5385",
     "name": "Purgeur automatique 1 1/2\" type 3",
+    "category": "soupape",
+    "specification": "1 1/2\"",
+    "active": true,
     "unit": "p",
-    "base_price": 210.98
+    "base_price": 181.33
   },
   {
     "id": "st-576",
@@ -18997,10 +24175,13 @@ export const MOCK_CATALOGUE = [
       "code": "ST",
       "name": "Sanitas Troesch"
     },
-    "reference": "SAN.GEN.609719",
+    "reference": "SAN.GEN.557076",
     "name": "Purgeur automatique 1 1/2\" modèle 3",
+    "category": "soupape",
+    "specification": "1 1/2\"",
+    "active": true,
     "unit": "p",
-    "base_price": 158.02
+    "base_price": 201.06
   },
   {
     "id": "gm-576",
@@ -19008,10 +24189,13 @@ export const MOCK_CATALOGUE = [
       "code": "GM",
       "name": "Getaz Miauton"
     },
-    "reference": "GM/GN/8425",
+    "reference": "GM/GN/1743",
     "name": "Purgeur automatique 1 1/2\" variante 3",
+    "category": "soupape",
+    "specification": "1 1/2\"",
+    "active": true,
     "unit": "p",
-    "base_price": 139.08
+    "base_price": 151.74
   },
   {
     "id": "nsb-577",
@@ -19019,10 +24203,13 @@ export const MOCK_CATALOGUE = [
       "code": "NSB",
       "name": "Nussbaum"
     },
-    "reference": "NSB-GEN-7143",
+    "reference": "NSB-GEN-4482",
     "name": "Purgeur automatique 1 1/2\" type 4",
+    "category": "soupape",
+    "specification": "1 1/2\"",
+    "active": true,
     "unit": "p",
-    "base_price": 188.22
+    "base_price": 26.92
   },
   {
     "id": "st-577",
@@ -19030,10 +24217,13 @@ export const MOCK_CATALOGUE = [
       "code": "ST",
       "name": "Sanitas Troesch"
     },
-    "reference": "SAN.GEN.406352",
+    "reference": "SAN.GEN.711156",
     "name": "Purgeur automatique 1 1/2\" modèle 4",
+    "category": "soupape",
+    "specification": "1 1/2\"",
+    "active": true,
     "unit": "p",
-    "base_price": 122.31
+    "base_price": 42.4
   },
   {
     "id": "gm-577",
@@ -19041,10 +24231,13 @@ export const MOCK_CATALOGUE = [
       "code": "GM",
       "name": "Getaz Miauton"
     },
-    "reference": "GM/GN/8586",
+    "reference": "GM/GN/1253",
     "name": "Purgeur automatique 1 1/2\" variante 4",
+    "category": "soupape",
+    "specification": "1 1/2\"",
+    "active": true,
     "unit": "p",
-    "base_price": 188.32
+    "base_price": 102.36
   },
   {
     "id": "nsb-578",
@@ -19052,10 +24245,13 @@ export const MOCK_CATALOGUE = [
       "code": "NSB",
       "name": "Nussbaum"
     },
-    "reference": "NSB-GEN-3141",
+    "reference": "NSB-GEN-5156",
     "name": "Purgeur automatique 2\" type 0",
+    "category": "soupape",
+    "specification": "2\"",
+    "active": true,
     "unit": "p",
-    "base_price": 195.85
+    "base_price": 29.78
   },
   {
     "id": "st-578",
@@ -19063,10 +24259,13 @@ export const MOCK_CATALOGUE = [
       "code": "ST",
       "name": "Sanitas Troesch"
     },
-    "reference": "SAN.GEN.146569",
+    "reference": "SAN.GEN.206520",
     "name": "Purgeur automatique 2\" modèle 0",
+    "category": "soupape",
+    "specification": "2\"",
+    "active": true,
     "unit": "p",
-    "base_price": 196.55
+    "base_price": 148.1
   },
   {
     "id": "gm-578",
@@ -19074,10 +24273,13 @@ export const MOCK_CATALOGUE = [
       "code": "GM",
       "name": "Getaz Miauton"
     },
-    "reference": "GM/GN/8770",
+    "reference": "GM/GN/3634",
     "name": "Purgeur automatique 2\" variante 0",
+    "category": "soupape",
+    "specification": "2\"",
+    "active": true,
     "unit": "p",
-    "base_price": 167.16
+    "base_price": 82.53
   },
   {
     "id": "nsb-579",
@@ -19085,10 +24287,13 @@ export const MOCK_CATALOGUE = [
       "code": "NSB",
       "name": "Nussbaum"
     },
-    "reference": "NSB-GEN-7926",
+    "reference": "NSB-GEN-8648",
     "name": "Purgeur automatique 2\" type 1",
+    "category": "soupape",
+    "specification": "2\"",
+    "active": true,
     "unit": "p",
-    "base_price": 52.78
+    "base_price": 96.32
   },
   {
     "id": "st-579",
@@ -19096,10 +24301,13 @@ export const MOCK_CATALOGUE = [
       "code": "ST",
       "name": "Sanitas Troesch"
     },
-    "reference": "SAN.GEN.839870",
+    "reference": "SAN.GEN.771414",
     "name": "Purgeur automatique 2\" modèle 1",
+    "category": "soupape",
+    "specification": "2\"",
+    "active": true,
     "unit": "p",
-    "base_price": 163.94
+    "base_price": 120.66
   },
   {
     "id": "gm-579",
@@ -19107,10 +24315,13 @@ export const MOCK_CATALOGUE = [
       "code": "GM",
       "name": "Getaz Miauton"
     },
-    "reference": "GM/GN/4361",
+    "reference": "GM/GN/6748",
     "name": "Purgeur automatique 2\" variante 1",
+    "category": "soupape",
+    "specification": "2\"",
+    "active": true,
     "unit": "p",
-    "base_price": 67.56
+    "base_price": 166.43
   },
   {
     "id": "nsb-580",
@@ -19118,10 +24329,13 @@ export const MOCK_CATALOGUE = [
       "code": "NSB",
       "name": "Nussbaum"
     },
-    "reference": "NSB-GEN-7289",
+    "reference": "NSB-GEN-2305",
     "name": "Purgeur automatique 2\" type 2",
+    "category": "soupape",
+    "specification": "2\"",
+    "active": true,
     "unit": "p",
-    "base_price": 57.26
+    "base_price": 155.87
   },
   {
     "id": "st-580",
@@ -19129,10 +24343,13 @@ export const MOCK_CATALOGUE = [
       "code": "ST",
       "name": "Sanitas Troesch"
     },
-    "reference": "SAN.GEN.781575",
+    "reference": "SAN.GEN.210717",
     "name": "Purgeur automatique 2\" modèle 2",
+    "category": "soupape",
+    "specification": "2\"",
+    "active": true,
     "unit": "p",
-    "base_price": 50.36
+    "base_price": 68.55
   },
   {
     "id": "gm-580",
@@ -19140,10 +24357,13 @@ export const MOCK_CATALOGUE = [
       "code": "GM",
       "name": "Getaz Miauton"
     },
-    "reference": "GM/GN/3833",
+    "reference": "GM/GN/6411",
     "name": "Purgeur automatique 2\" variante 2",
+    "category": "soupape",
+    "specification": "2\"",
+    "active": true,
     "unit": "p",
-    "base_price": 81.39
+    "base_price": 49.64
   },
   {
     "id": "nsb-581",
@@ -19151,10 +24371,13 @@ export const MOCK_CATALOGUE = [
       "code": "NSB",
       "name": "Nussbaum"
     },
-    "reference": "NSB-GEN-1266",
+    "reference": "NSB-GEN-7496",
     "name": "Purgeur automatique 2\" type 3",
+    "category": "soupape",
+    "specification": "2\"",
+    "active": true,
     "unit": "p",
-    "base_price": 200.12
+    "base_price": 88.75
   },
   {
     "id": "st-581",
@@ -19162,10 +24385,13 @@ export const MOCK_CATALOGUE = [
       "code": "ST",
       "name": "Sanitas Troesch"
     },
-    "reference": "SAN.GEN.534635",
+    "reference": "SAN.GEN.226419",
     "name": "Purgeur automatique 2\" modèle 3",
+    "category": "soupape",
+    "specification": "2\"",
+    "active": true,
     "unit": "p",
-    "base_price": 57.62
+    "base_price": 44.16
   },
   {
     "id": "gm-581",
@@ -19173,10 +24399,13 @@ export const MOCK_CATALOGUE = [
       "code": "GM",
       "name": "Getaz Miauton"
     },
-    "reference": "GM/GN/7127",
+    "reference": "GM/GN/2291",
     "name": "Purgeur automatique 2\" variante 3",
+    "category": "soupape",
+    "specification": "2\"",
+    "active": true,
     "unit": "p",
-    "base_price": 214.89
+    "base_price": 202.72
   },
   {
     "id": "nsb-582",
@@ -19184,10 +24413,13 @@ export const MOCK_CATALOGUE = [
       "code": "NSB",
       "name": "Nussbaum"
     },
-    "reference": "NSB-GEN-6000",
+    "reference": "NSB-GEN-2915",
     "name": "Purgeur automatique 2\" type 4",
+    "category": "soupape",
+    "specification": "2\"",
+    "active": true,
     "unit": "p",
-    "base_price": 23.66
+    "base_price": 140.42
   },
   {
     "id": "st-582",
@@ -19195,10 +24427,13 @@ export const MOCK_CATALOGUE = [
       "code": "ST",
       "name": "Sanitas Troesch"
     },
-    "reference": "SAN.GEN.818762",
+    "reference": "SAN.GEN.378254",
     "name": "Purgeur automatique 2\" modèle 4",
+    "category": "soupape",
+    "specification": "2\"",
+    "active": true,
     "unit": "p",
-    "base_price": 177.06
+    "base_price": 67.37
   },
   {
     "id": "gm-582",
@@ -19206,10 +24441,13 @@ export const MOCK_CATALOGUE = [
       "code": "GM",
       "name": "Getaz Miauton"
     },
-    "reference": "GM/GN/8340",
+    "reference": "GM/GN/6006",
     "name": "Purgeur automatique 2\" variante 4",
+    "category": "soupape",
+    "specification": "2\"",
+    "active": true,
     "unit": "p",
-    "base_price": 33.42
+    "base_price": 85.17
   },
   {
     "id": "nsb-583",
@@ -19217,10 +24455,13 @@ export const MOCK_CATALOGUE = [
       "code": "NSB",
       "name": "Nussbaum"
     },
-    "reference": "NSB-GEN-6136",
+    "reference": "NSB-GEN-1204",
     "name": "Purgeur automatique DN 15 type 0",
+    "category": "soupape",
+    "specification": "DN 15",
+    "active": true,
     "unit": "p",
-    "base_price": 116.47
+    "base_price": 168
   },
   {
     "id": "st-583",
@@ -19228,10 +24469,13 @@ export const MOCK_CATALOGUE = [
       "code": "ST",
       "name": "Sanitas Troesch"
     },
-    "reference": "SAN.GEN.704361",
+    "reference": "SAN.GEN.961547",
     "name": "Purgeur automatique DN 15 modèle 0",
+    "category": "soupape",
+    "specification": "DN 15",
+    "active": true,
     "unit": "p",
-    "base_price": 91.26
+    "base_price": 20.21
   },
   {
     "id": "gm-583",
@@ -19239,10 +24483,13 @@ export const MOCK_CATALOGUE = [
       "code": "GM",
       "name": "Getaz Miauton"
     },
-    "reference": "GM/GN/3646",
+    "reference": "GM/GN/2291",
     "name": "Purgeur automatique DN 15 variante 0",
+    "category": "soupape",
+    "specification": "DN 15",
+    "active": true,
     "unit": "p",
-    "base_price": 114.41
+    "base_price": 40.47
   },
   {
     "id": "nsb-584",
@@ -19250,10 +24497,13 @@ export const MOCK_CATALOGUE = [
       "code": "NSB",
       "name": "Nussbaum"
     },
-    "reference": "NSB-GEN-3673",
+    "reference": "NSB-GEN-6268",
     "name": "Purgeur automatique DN 15 type 1",
+    "category": "soupape",
+    "specification": "DN 15",
+    "active": true,
     "unit": "p",
-    "base_price": 153.53
+    "base_price": 27.92
   },
   {
     "id": "st-584",
@@ -19261,10 +24511,13 @@ export const MOCK_CATALOGUE = [
       "code": "ST",
       "name": "Sanitas Troesch"
     },
-    "reference": "SAN.GEN.531231",
+    "reference": "SAN.GEN.731180",
     "name": "Purgeur automatique DN 15 modèle 1",
+    "category": "soupape",
+    "specification": "DN 15",
+    "active": true,
     "unit": "p",
-    "base_price": 24.31
+    "base_price": 110.36
   },
   {
     "id": "gm-584",
@@ -19272,10 +24525,13 @@ export const MOCK_CATALOGUE = [
       "code": "GM",
       "name": "Getaz Miauton"
     },
-    "reference": "GM/GN/7936",
+    "reference": "GM/GN/9619",
     "name": "Purgeur automatique DN 15 variante 1",
+    "category": "soupape",
+    "specification": "DN 15",
+    "active": true,
     "unit": "p",
-    "base_price": 128.81
+    "base_price": 123.12
   },
   {
     "id": "nsb-585",
@@ -19283,10 +24539,13 @@ export const MOCK_CATALOGUE = [
       "code": "NSB",
       "name": "Nussbaum"
     },
-    "reference": "NSB-GEN-7914",
+    "reference": "NSB-GEN-7349",
     "name": "Purgeur automatique DN 15 type 2",
+    "category": "soupape",
+    "specification": "DN 15",
+    "active": true,
     "unit": "p",
-    "base_price": 183.58
+    "base_price": 218.49
   },
   {
     "id": "st-585",
@@ -19294,10 +24553,13 @@ export const MOCK_CATALOGUE = [
       "code": "ST",
       "name": "Sanitas Troesch"
     },
-    "reference": "SAN.GEN.126129",
+    "reference": "SAN.GEN.107820",
     "name": "Purgeur automatique DN 15 modèle 2",
+    "category": "soupape",
+    "specification": "DN 15",
+    "active": true,
     "unit": "p",
-    "base_price": 20.31
+    "base_price": 198.53
   },
   {
     "id": "gm-585",
@@ -19305,10 +24567,13 @@ export const MOCK_CATALOGUE = [
       "code": "GM",
       "name": "Getaz Miauton"
     },
-    "reference": "GM/GN/4709",
+    "reference": "GM/GN/4548",
     "name": "Purgeur automatique DN 15 variante 2",
+    "category": "soupape",
+    "specification": "DN 15",
+    "active": true,
     "unit": "p",
-    "base_price": 138.37
+    "base_price": 103.99
   },
   {
     "id": "nsb-586",
@@ -19316,10 +24581,13 @@ export const MOCK_CATALOGUE = [
       "code": "NSB",
       "name": "Nussbaum"
     },
-    "reference": "NSB-GEN-4904",
+    "reference": "NSB-GEN-4145",
     "name": "Purgeur automatique DN 15 type 3",
+    "category": "soupape",
+    "specification": "DN 15",
+    "active": true,
     "unit": "p",
-    "base_price": 124.47
+    "base_price": 112.35
   },
   {
     "id": "st-586",
@@ -19327,10 +24595,13 @@ export const MOCK_CATALOGUE = [
       "code": "ST",
       "name": "Sanitas Troesch"
     },
-    "reference": "SAN.GEN.438705",
+    "reference": "SAN.GEN.987089",
     "name": "Purgeur automatique DN 15 modèle 3",
+    "category": "soupape",
+    "specification": "DN 15",
+    "active": true,
     "unit": "p",
-    "base_price": 166.14
+    "base_price": 209.59
   },
   {
     "id": "gm-586",
@@ -19338,10 +24609,13 @@ export const MOCK_CATALOGUE = [
       "code": "GM",
       "name": "Getaz Miauton"
     },
-    "reference": "GM/GN/9945",
+    "reference": "GM/GN/4132",
     "name": "Purgeur automatique DN 15 variante 3",
+    "category": "soupape",
+    "specification": "DN 15",
+    "active": true,
     "unit": "p",
-    "base_price": 60.71
+    "base_price": 159.86
   },
   {
     "id": "nsb-587",
@@ -19349,10 +24623,13 @@ export const MOCK_CATALOGUE = [
       "code": "NSB",
       "name": "Nussbaum"
     },
-    "reference": "NSB-GEN-9069",
+    "reference": "NSB-GEN-5776",
     "name": "Purgeur automatique DN 15 type 4",
+    "category": "soupape",
+    "specification": "DN 15",
+    "active": true,
     "unit": "p",
-    "base_price": 115.92
+    "base_price": 85.46
   },
   {
     "id": "st-587",
@@ -19360,10 +24637,13 @@ export const MOCK_CATALOGUE = [
       "code": "ST",
       "name": "Sanitas Troesch"
     },
-    "reference": "SAN.GEN.466962",
+    "reference": "SAN.GEN.858208",
     "name": "Purgeur automatique DN 15 modèle 4",
+    "category": "soupape",
+    "specification": "DN 15",
+    "active": true,
     "unit": "p",
-    "base_price": 176.37
+    "base_price": 159.71
   },
   {
     "id": "gm-587",
@@ -19371,10 +24651,13 @@ export const MOCK_CATALOGUE = [
       "code": "GM",
       "name": "Getaz Miauton"
     },
-    "reference": "GM/GN/9582",
+    "reference": "GM/GN/2087",
     "name": "Purgeur automatique DN 15 variante 4",
+    "category": "soupape",
+    "specification": "DN 15",
+    "active": true,
     "unit": "p",
-    "base_price": 69.42
+    "base_price": 21.1
   },
   {
     "id": "nsb-588",
@@ -19382,10 +24665,13 @@ export const MOCK_CATALOGUE = [
       "code": "NSB",
       "name": "Nussbaum"
     },
-    "reference": "NSB-GEN-6921",
+    "reference": "NSB-GEN-7622",
     "name": "Purgeur automatique DN 20 type 0",
+    "category": "soupape",
+    "specification": "DN 20",
+    "active": true,
     "unit": "p",
-    "base_price": 175.39
+    "base_price": 86.21
   },
   {
     "id": "st-588",
@@ -19393,10 +24679,13 @@ export const MOCK_CATALOGUE = [
       "code": "ST",
       "name": "Sanitas Troesch"
     },
-    "reference": "SAN.GEN.886182",
+    "reference": "SAN.GEN.567229",
     "name": "Purgeur automatique DN 20 modèle 0",
+    "category": "soupape",
+    "specification": "DN 20",
+    "active": true,
     "unit": "p",
-    "base_price": 129.57
+    "base_price": 53.77
   },
   {
     "id": "gm-588",
@@ -19404,10 +24693,13 @@ export const MOCK_CATALOGUE = [
       "code": "GM",
       "name": "Getaz Miauton"
     },
-    "reference": "GM/GN/4644",
+    "reference": "GM/GN/2840",
     "name": "Purgeur automatique DN 20 variante 0",
+    "category": "soupape",
+    "specification": "DN 20",
+    "active": true,
     "unit": "p",
-    "base_price": 86.76
+    "base_price": 153.14
   },
   {
     "id": "nsb-589",
@@ -19415,10 +24707,13 @@ export const MOCK_CATALOGUE = [
       "code": "NSB",
       "name": "Nussbaum"
     },
-    "reference": "NSB-GEN-4007",
+    "reference": "NSB-GEN-7536",
     "name": "Purgeur automatique DN 20 type 1",
+    "category": "soupape",
+    "specification": "DN 20",
+    "active": true,
     "unit": "p",
-    "base_price": 200.06
+    "base_price": 163.75
   },
   {
     "id": "st-589",
@@ -19426,10 +24721,13 @@ export const MOCK_CATALOGUE = [
       "code": "ST",
       "name": "Sanitas Troesch"
     },
-    "reference": "SAN.GEN.550838",
+    "reference": "SAN.GEN.877231",
     "name": "Purgeur automatique DN 20 modèle 1",
+    "category": "soupape",
+    "specification": "DN 20",
+    "active": true,
     "unit": "p",
-    "base_price": 62.06
+    "base_price": 196.23
   },
   {
     "id": "gm-589",
@@ -19437,10 +24735,13 @@ export const MOCK_CATALOGUE = [
       "code": "GM",
       "name": "Getaz Miauton"
     },
-    "reference": "GM/GN/2651",
+    "reference": "GM/GN/9777",
     "name": "Purgeur automatique DN 20 variante 1",
+    "category": "soupape",
+    "specification": "DN 20",
+    "active": true,
     "unit": "p",
-    "base_price": 137.5
+    "base_price": 192.67
   },
   {
     "id": "nsb-590",
@@ -19448,10 +24749,13 @@ export const MOCK_CATALOGUE = [
       "code": "NSB",
       "name": "Nussbaum"
     },
-    "reference": "NSB-GEN-6370",
+    "reference": "NSB-GEN-2491",
     "name": "Purgeur automatique DN 20 type 2",
+    "category": "soupape",
+    "specification": "DN 20",
+    "active": true,
     "unit": "p",
-    "base_price": 170.15
+    "base_price": 67.31
   },
   {
     "id": "st-590",
@@ -19459,10 +24763,13 @@ export const MOCK_CATALOGUE = [
       "code": "ST",
       "name": "Sanitas Troesch"
     },
-    "reference": "SAN.GEN.172693",
+    "reference": "SAN.GEN.261107",
     "name": "Purgeur automatique DN 20 modèle 2",
+    "category": "soupape",
+    "specification": "DN 20",
+    "active": true,
     "unit": "p",
-    "base_price": 100.96
+    "base_price": 147.19
   },
   {
     "id": "gm-590",
@@ -19470,10 +24777,13 @@ export const MOCK_CATALOGUE = [
       "code": "GM",
       "name": "Getaz Miauton"
     },
-    "reference": "GM/GN/2749",
+    "reference": "GM/GN/6070",
     "name": "Purgeur automatique DN 20 variante 2",
+    "category": "soupape",
+    "specification": "DN 20",
+    "active": true,
     "unit": "p",
-    "base_price": 110.01
+    "base_price": 166.64
   },
   {
     "id": "nsb-591",
@@ -19481,10 +24791,13 @@ export const MOCK_CATALOGUE = [
       "code": "NSB",
       "name": "Nussbaum"
     },
-    "reference": "NSB-GEN-4929",
+    "reference": "NSB-GEN-4033",
     "name": "Purgeur automatique DN 20 type 3",
+    "category": "soupape",
+    "specification": "DN 20",
+    "active": true,
     "unit": "p",
-    "base_price": 74.27
+    "base_price": 46.67
   },
   {
     "id": "st-591",
@@ -19492,10 +24805,13 @@ export const MOCK_CATALOGUE = [
       "code": "ST",
       "name": "Sanitas Troesch"
     },
-    "reference": "SAN.GEN.682861",
+    "reference": "SAN.GEN.992388",
     "name": "Purgeur automatique DN 20 modèle 3",
+    "category": "soupape",
+    "specification": "DN 20",
+    "active": true,
     "unit": "p",
-    "base_price": 55.63
+    "base_price": 20.31
   },
   {
     "id": "gm-591",
@@ -19503,10 +24819,13 @@ export const MOCK_CATALOGUE = [
       "code": "GM",
       "name": "Getaz Miauton"
     },
-    "reference": "GM/GN/8985",
+    "reference": "GM/GN/4235",
     "name": "Purgeur automatique DN 20 variante 3",
+    "category": "soupape",
+    "specification": "DN 20",
+    "active": true,
     "unit": "p",
-    "base_price": 196.27
+    "base_price": 24.4
   },
   {
     "id": "nsb-592",
@@ -19514,10 +24833,13 @@ export const MOCK_CATALOGUE = [
       "code": "NSB",
       "name": "Nussbaum"
     },
-    "reference": "NSB-GEN-9929",
+    "reference": "NSB-GEN-9583",
     "name": "Purgeur automatique DN 20 type 4",
+    "category": "soupape",
+    "specification": "DN 20",
+    "active": true,
     "unit": "p",
-    "base_price": 104.07
+    "base_price": 111.81
   },
   {
     "id": "st-592",
@@ -19525,10 +24847,13 @@ export const MOCK_CATALOGUE = [
       "code": "ST",
       "name": "Sanitas Troesch"
     },
-    "reference": "SAN.GEN.983239",
+    "reference": "SAN.GEN.559819",
     "name": "Purgeur automatique DN 20 modèle 4",
+    "category": "soupape",
+    "specification": "DN 20",
+    "active": true,
     "unit": "p",
-    "base_price": 32.46
+    "base_price": 148.56
   },
   {
     "id": "gm-592",
@@ -19536,10 +24861,13 @@ export const MOCK_CATALOGUE = [
       "code": "GM",
       "name": "Getaz Miauton"
     },
-    "reference": "GM/GN/6758",
+    "reference": "GM/GN/3604",
     "name": "Purgeur automatique DN 20 variante 4",
+    "category": "soupape",
+    "specification": "DN 20",
+    "active": true,
     "unit": "p",
-    "base_price": 101.38
+    "base_price": 138.17
   },
   {
     "id": "nsb-593",
@@ -19547,10 +24875,13 @@ export const MOCK_CATALOGUE = [
       "code": "NSB",
       "name": "Nussbaum"
     },
-    "reference": "NSB-GEN-8774",
+    "reference": "NSB-GEN-8328",
     "name": "Purgeur automatique DN 25 type 0",
+    "category": "soupape",
+    "specification": "DN 25",
+    "active": true,
     "unit": "p",
-    "base_price": 183.8
+    "base_price": 124.73
   },
   {
     "id": "st-593",
@@ -19558,10 +24889,13 @@ export const MOCK_CATALOGUE = [
       "code": "ST",
       "name": "Sanitas Troesch"
     },
-    "reference": "SAN.GEN.668704",
+    "reference": "SAN.GEN.370976",
     "name": "Purgeur automatique DN 25 modèle 0",
+    "category": "soupape",
+    "specification": "DN 25",
+    "active": true,
     "unit": "p",
-    "base_price": 53.36
+    "base_price": 158.75
   },
   {
     "id": "gm-593",
@@ -19569,10 +24903,13 @@ export const MOCK_CATALOGUE = [
       "code": "GM",
       "name": "Getaz Miauton"
     },
-    "reference": "GM/GN/3824",
+    "reference": "GM/GN/2557",
     "name": "Purgeur automatique DN 25 variante 0",
+    "category": "soupape",
+    "specification": "DN 25",
+    "active": true,
     "unit": "p",
-    "base_price": 74.38
+    "base_price": 145.47
   },
   {
     "id": "nsb-594",
@@ -19580,10 +24917,13 @@ export const MOCK_CATALOGUE = [
       "code": "NSB",
       "name": "Nussbaum"
     },
-    "reference": "NSB-GEN-9731",
+    "reference": "NSB-GEN-8894",
     "name": "Purgeur automatique DN 25 type 1",
+    "category": "soupape",
+    "specification": "DN 25",
+    "active": true,
     "unit": "p",
-    "base_price": 182.56
+    "base_price": 94.36
   },
   {
     "id": "st-594",
@@ -19591,10 +24931,13 @@ export const MOCK_CATALOGUE = [
       "code": "ST",
       "name": "Sanitas Troesch"
     },
-    "reference": "SAN.GEN.369350",
+    "reference": "SAN.GEN.224145",
     "name": "Purgeur automatique DN 25 modèle 1",
+    "category": "soupape",
+    "specification": "DN 25",
+    "active": true,
     "unit": "p",
-    "base_price": 32.67
+    "base_price": 159.02
   },
   {
     "id": "gm-594",
@@ -19602,10 +24945,13 @@ export const MOCK_CATALOGUE = [
       "code": "GM",
       "name": "Getaz Miauton"
     },
-    "reference": "GM/GN/4245",
+    "reference": "GM/GN/3802",
     "name": "Purgeur automatique DN 25 variante 1",
+    "category": "soupape",
+    "specification": "DN 25",
+    "active": true,
     "unit": "p",
-    "base_price": 108.37
+    "base_price": 82.03
   },
   {
     "id": "nsb-595",
@@ -19613,10 +24959,13 @@ export const MOCK_CATALOGUE = [
       "code": "NSB",
       "name": "Nussbaum"
     },
-    "reference": "NSB-GEN-4789",
+    "reference": "NSB-GEN-2907",
     "name": "Purgeur automatique DN 25 type 2",
+    "category": "soupape",
+    "specification": "DN 25",
+    "active": true,
     "unit": "p",
-    "base_price": 54.86
+    "base_price": 63.52
   },
   {
     "id": "st-595",
@@ -19624,10 +24973,13 @@ export const MOCK_CATALOGUE = [
       "code": "ST",
       "name": "Sanitas Troesch"
     },
-    "reference": "SAN.GEN.346443",
+    "reference": "SAN.GEN.995992",
     "name": "Purgeur automatique DN 25 modèle 2",
+    "category": "soupape",
+    "specification": "DN 25",
+    "active": true,
     "unit": "p",
-    "base_price": 39.03
+    "base_price": 42.55
   },
   {
     "id": "gm-595",
@@ -19635,10 +24987,13 @@ export const MOCK_CATALOGUE = [
       "code": "GM",
       "name": "Getaz Miauton"
     },
-    "reference": "GM/GN/8093",
+    "reference": "GM/GN/3308",
     "name": "Purgeur automatique DN 25 variante 2",
+    "category": "soupape",
+    "specification": "DN 25",
+    "active": true,
     "unit": "p",
-    "base_price": 130.23
+    "base_price": 204
   },
   {
     "id": "nsb-596",
@@ -19646,10 +25001,13 @@ export const MOCK_CATALOGUE = [
       "code": "NSB",
       "name": "Nussbaum"
     },
-    "reference": "NSB-GEN-5225",
+    "reference": "NSB-GEN-1275",
     "name": "Purgeur automatique DN 25 type 3",
+    "category": "soupape",
+    "specification": "DN 25",
+    "active": true,
     "unit": "p",
-    "base_price": 83.8
+    "base_price": 86.44
   },
   {
     "id": "st-596",
@@ -19657,10 +25015,13 @@ export const MOCK_CATALOGUE = [
       "code": "ST",
       "name": "Sanitas Troesch"
     },
-    "reference": "SAN.GEN.341982",
+    "reference": "SAN.GEN.373522",
     "name": "Purgeur automatique DN 25 modèle 3",
+    "category": "soupape",
+    "specification": "DN 25",
+    "active": true,
     "unit": "p",
-    "base_price": 135.5
+    "base_price": 37.45
   },
   {
     "id": "gm-596",
@@ -19668,10 +25029,13 @@ export const MOCK_CATALOGUE = [
       "code": "GM",
       "name": "Getaz Miauton"
     },
-    "reference": "GM/GN/7141",
+    "reference": "GM/GN/7585",
     "name": "Purgeur automatique DN 25 variante 3",
+    "category": "soupape",
+    "specification": "DN 25",
+    "active": true,
     "unit": "p",
-    "base_price": 30.69
+    "base_price": 88.51
   },
   {
     "id": "nsb-597",
@@ -19679,10 +25043,13 @@ export const MOCK_CATALOGUE = [
       "code": "NSB",
       "name": "Nussbaum"
     },
-    "reference": "NSB-GEN-3024",
+    "reference": "NSB-GEN-4226",
     "name": "Purgeur automatique DN 25 type 4",
+    "category": "soupape",
+    "specification": "DN 25",
+    "active": true,
     "unit": "p",
-    "base_price": 80.86
+    "base_price": 215.65
   },
   {
     "id": "st-597",
@@ -19690,10 +25057,13 @@ export const MOCK_CATALOGUE = [
       "code": "ST",
       "name": "Sanitas Troesch"
     },
-    "reference": "SAN.GEN.381248",
+    "reference": "SAN.GEN.883520",
     "name": "Purgeur automatique DN 25 modèle 4",
+    "category": "soupape",
+    "specification": "DN 25",
+    "active": true,
     "unit": "p",
-    "base_price": 100.2
+    "base_price": 127.81
   },
   {
     "id": "gm-597",
@@ -19701,10 +25071,13 @@ export const MOCK_CATALOGUE = [
       "code": "GM",
       "name": "Getaz Miauton"
     },
-    "reference": "GM/GN/2223",
+    "reference": "GM/GN/5774",
     "name": "Purgeur automatique DN 25 variante 4",
+    "category": "soupape",
+    "specification": "DN 25",
+    "active": true,
     "unit": "p",
-    "base_price": 79.34
+    "base_price": 98.7
   },
   {
     "id": "nsb-598",
@@ -19712,10 +25085,13 @@ export const MOCK_CATALOGUE = [
       "code": "NSB",
       "name": "Nussbaum"
     },
-    "reference": "NSB-GEN-3090",
+    "reference": "NSB-GEN-8114",
     "name": "Purgeur automatique DN 32 type 0",
+    "category": "soupape",
+    "specification": "DN 32",
+    "active": true,
     "unit": "p",
-    "base_price": 140.02
+    "base_price": 192.77
   },
   {
     "id": "st-598",
@@ -19723,10 +25099,13 @@ export const MOCK_CATALOGUE = [
       "code": "ST",
       "name": "Sanitas Troesch"
     },
-    "reference": "SAN.GEN.380957",
+    "reference": "SAN.GEN.999352",
     "name": "Purgeur automatique DN 32 modèle 0",
+    "category": "soupape",
+    "specification": "DN 32",
+    "active": true,
     "unit": "p",
-    "base_price": 103.49
+    "base_price": 151.34
   },
   {
     "id": "gm-598",
@@ -19734,10 +25113,13 @@ export const MOCK_CATALOGUE = [
       "code": "GM",
       "name": "Getaz Miauton"
     },
-    "reference": "GM/GN/8983",
+    "reference": "GM/GN/3651",
     "name": "Purgeur automatique DN 32 variante 0",
+    "category": "soupape",
+    "specification": "DN 32",
+    "active": true,
     "unit": "p",
-    "base_price": 152.16
+    "base_price": 158.07
   },
   {
     "id": "nsb-599",
@@ -19745,10 +25127,13 @@ export const MOCK_CATALOGUE = [
       "code": "NSB",
       "name": "Nussbaum"
     },
-    "reference": "NSB-GEN-5975",
+    "reference": "NSB-GEN-4462",
     "name": "Purgeur automatique DN 32 type 1",
+    "category": "soupape",
+    "specification": "DN 32",
+    "active": true,
     "unit": "p",
-    "base_price": 183.44
+    "base_price": 87.81
   },
   {
     "id": "st-599",
@@ -19756,10 +25141,13 @@ export const MOCK_CATALOGUE = [
       "code": "ST",
       "name": "Sanitas Troesch"
     },
-    "reference": "SAN.GEN.672385",
+    "reference": "SAN.GEN.650284",
     "name": "Purgeur automatique DN 32 modèle 1",
+    "category": "soupape",
+    "specification": "DN 32",
+    "active": true,
     "unit": "p",
-    "base_price": 136.34
+    "base_price": 74.13
   },
   {
     "id": "gm-599",
@@ -19767,10 +25155,13 @@ export const MOCK_CATALOGUE = [
       "code": "GM",
       "name": "Getaz Miauton"
     },
-    "reference": "GM/GN/4376",
+    "reference": "GM/GN/3488",
     "name": "Purgeur automatique DN 32 variante 1",
+    "category": "soupape",
+    "specification": "DN 32",
+    "active": true,
     "unit": "p",
-    "base_price": 182.77
+    "base_price": 30
   },
   {
     "id": "nsb-600",
@@ -19778,10 +25169,13 @@ export const MOCK_CATALOGUE = [
       "code": "NSB",
       "name": "Nussbaum"
     },
-    "reference": "NSB-GEN-5844",
+    "reference": "NSB-GEN-5497",
     "name": "Purgeur automatique DN 32 type 2",
+    "category": "soupape",
+    "specification": "DN 32",
+    "active": true,
     "unit": "p",
-    "base_price": 210.44
+    "base_price": 151.93
   },
   {
     "id": "st-600",
@@ -19789,10 +25183,13 @@ export const MOCK_CATALOGUE = [
       "code": "ST",
       "name": "Sanitas Troesch"
     },
-    "reference": "SAN.GEN.539212",
+    "reference": "SAN.GEN.547724",
     "name": "Purgeur automatique DN 32 modèle 2",
+    "category": "soupape",
+    "specification": "DN 32",
+    "active": true,
     "unit": "p",
-    "base_price": 25.91
+    "base_price": 156.04
   },
   {
     "id": "gm-600",
@@ -19800,10 +25197,13 @@ export const MOCK_CATALOGUE = [
       "code": "GM",
       "name": "Getaz Miauton"
     },
-    "reference": "GM/GN/3660",
+    "reference": "GM/GN/7897",
     "name": "Purgeur automatique DN 32 variante 2",
+    "category": "soupape",
+    "specification": "DN 32",
+    "active": true,
     "unit": "p",
-    "base_price": 122.5
+    "base_price": 118.77
   },
   {
     "id": "nsb-601",
@@ -19811,10 +25211,13 @@ export const MOCK_CATALOGUE = [
       "code": "NSB",
       "name": "Nussbaum"
     },
-    "reference": "NSB-GEN-8921",
+    "reference": "NSB-GEN-1720",
     "name": "Purgeur automatique DN 32 type 3",
+    "category": "soupape",
+    "specification": "DN 32",
+    "active": true,
     "unit": "p",
-    "base_price": 150.03
+    "base_price": 125.05
   },
   {
     "id": "st-601",
@@ -19822,10 +25225,13 @@ export const MOCK_CATALOGUE = [
       "code": "ST",
       "name": "Sanitas Troesch"
     },
-    "reference": "SAN.GEN.519253",
+    "reference": "SAN.GEN.748627",
     "name": "Purgeur automatique DN 32 modèle 3",
+    "category": "soupape",
+    "specification": "DN 32",
+    "active": true,
     "unit": "p",
-    "base_price": 72.79
+    "base_price": 58.68
   },
   {
     "id": "gm-601",
@@ -19833,10 +25239,13 @@ export const MOCK_CATALOGUE = [
       "code": "GM",
       "name": "Getaz Miauton"
     },
-    "reference": "GM/GN/6229",
+    "reference": "GM/GN/9328",
     "name": "Purgeur automatique DN 32 variante 3",
+    "category": "soupape",
+    "specification": "DN 32",
+    "active": true,
     "unit": "p",
-    "base_price": 208.39
+    "base_price": 143.4
   },
   {
     "id": "nsb-602",
@@ -19844,10 +25253,13 @@ export const MOCK_CATALOGUE = [
       "code": "NSB",
       "name": "Nussbaum"
     },
-    "reference": "NSB-GEN-1780",
+    "reference": "NSB-GEN-6516",
     "name": "Purgeur automatique DN 32 type 4",
+    "category": "soupape",
+    "specification": "DN 32",
+    "active": true,
     "unit": "p",
-    "base_price": 163.86
+    "base_price": 41.24
   },
   {
     "id": "st-602",
@@ -19855,10 +25267,13 @@ export const MOCK_CATALOGUE = [
       "code": "ST",
       "name": "Sanitas Troesch"
     },
-    "reference": "SAN.GEN.346160",
+    "reference": "SAN.GEN.506579",
     "name": "Purgeur automatique DN 32 modèle 4",
+    "category": "soupape",
+    "specification": "DN 32",
+    "active": true,
     "unit": "p",
-    "base_price": 33.28
+    "base_price": 171.22
   },
   {
     "id": "gm-602",
@@ -19866,10 +25281,13 @@ export const MOCK_CATALOGUE = [
       "code": "GM",
       "name": "Getaz Miauton"
     },
-    "reference": "GM/GN/6162",
+    "reference": "GM/GN/8110",
     "name": "Purgeur automatique DN 32 variante 4",
+    "category": "soupape",
+    "specification": "DN 32",
+    "active": true,
     "unit": "p",
-    "base_price": 46.97
+    "base_price": 174.37
   },
   {
     "id": "nsb-603",
@@ -19877,10 +25295,13 @@ export const MOCK_CATALOGUE = [
       "code": "NSB",
       "name": "Nussbaum"
     },
-    "reference": "NSB-GEN-8647",
+    "reference": "NSB-GEN-9469",
     "name": "Purgeur automatique DN 40 type 0",
+    "category": "soupape",
+    "specification": "DN 40",
+    "active": true,
     "unit": "p",
-    "base_price": 194.67
+    "base_price": 174.36
   },
   {
     "id": "st-603",
@@ -19888,10 +25309,13 @@ export const MOCK_CATALOGUE = [
       "code": "ST",
       "name": "Sanitas Troesch"
     },
-    "reference": "SAN.GEN.423286",
+    "reference": "SAN.GEN.450575",
     "name": "Purgeur automatique DN 40 modèle 0",
+    "category": "soupape",
+    "specification": "DN 40",
+    "active": true,
     "unit": "p",
-    "base_price": 175.37
+    "base_price": 62
   },
   {
     "id": "gm-603",
@@ -19899,10 +25323,13 @@ export const MOCK_CATALOGUE = [
       "code": "GM",
       "name": "Getaz Miauton"
     },
-    "reference": "GM/GN/7814",
+    "reference": "GM/GN/2574",
     "name": "Purgeur automatique DN 40 variante 0",
+    "category": "soupape",
+    "specification": "DN 40",
+    "active": true,
     "unit": "p",
-    "base_price": 34.51
+    "base_price": 181.73
   },
   {
     "id": "nsb-604",
@@ -19910,10 +25337,13 @@ export const MOCK_CATALOGUE = [
       "code": "NSB",
       "name": "Nussbaum"
     },
-    "reference": "NSB-GEN-5222",
+    "reference": "NSB-GEN-6464",
     "name": "Purgeur automatique DN 40 type 1",
+    "category": "soupape",
+    "specification": "DN 40",
+    "active": true,
     "unit": "p",
-    "base_price": 89.68
+    "base_price": 103.24
   },
   {
     "id": "st-604",
@@ -19921,10 +25351,13 @@ export const MOCK_CATALOGUE = [
       "code": "ST",
       "name": "Sanitas Troesch"
     },
-    "reference": "SAN.GEN.923633",
+    "reference": "SAN.GEN.702184",
     "name": "Purgeur automatique DN 40 modèle 1",
+    "category": "soupape",
+    "specification": "DN 40",
+    "active": true,
     "unit": "p",
-    "base_price": 80.27
+    "base_price": 171.78
   },
   {
     "id": "gm-604",
@@ -19932,10 +25365,13 @@ export const MOCK_CATALOGUE = [
       "code": "GM",
       "name": "Getaz Miauton"
     },
-    "reference": "GM/GN/6439",
+    "reference": "GM/GN/6227",
     "name": "Purgeur automatique DN 40 variante 1",
+    "category": "soupape",
+    "specification": "DN 40",
+    "active": true,
     "unit": "p",
-    "base_price": 85.19
+    "base_price": 211.92
   },
   {
     "id": "nsb-605",
@@ -19943,10 +25379,13 @@ export const MOCK_CATALOGUE = [
       "code": "NSB",
       "name": "Nussbaum"
     },
-    "reference": "NSB-GEN-6531",
+    "reference": "NSB-GEN-7514",
     "name": "Purgeur automatique DN 40 type 2",
+    "category": "soupape",
+    "specification": "DN 40",
+    "active": true,
     "unit": "p",
-    "base_price": 77.96
+    "base_price": 66.3
   },
   {
     "id": "st-605",
@@ -19954,10 +25393,13 @@ export const MOCK_CATALOGUE = [
       "code": "ST",
       "name": "Sanitas Troesch"
     },
-    "reference": "SAN.GEN.390703",
+    "reference": "SAN.GEN.487752",
     "name": "Purgeur automatique DN 40 modèle 2",
+    "category": "soupape",
+    "specification": "DN 40",
+    "active": true,
     "unit": "p",
-    "base_price": 173.38
+    "base_price": 82.51
   },
   {
     "id": "gm-605",
@@ -19965,10 +25407,13 @@ export const MOCK_CATALOGUE = [
       "code": "GM",
       "name": "Getaz Miauton"
     },
-    "reference": "GM/GN/7319",
+    "reference": "GM/GN/8427",
     "name": "Purgeur automatique DN 40 variante 2",
+    "category": "soupape",
+    "specification": "DN 40",
+    "active": true,
     "unit": "p",
-    "base_price": 69.79
+    "base_price": 136.3
   },
   {
     "id": "nsb-606",
@@ -19976,10 +25421,13 @@ export const MOCK_CATALOGUE = [
       "code": "NSB",
       "name": "Nussbaum"
     },
-    "reference": "NSB-GEN-9547",
+    "reference": "NSB-GEN-4962",
     "name": "Purgeur automatique DN 40 type 3",
+    "category": "soupape",
+    "specification": "DN 40",
+    "active": true,
     "unit": "p",
-    "base_price": 146.09
+    "base_price": 33.98
   },
   {
     "id": "st-606",
@@ -19987,10 +25435,13 @@ export const MOCK_CATALOGUE = [
       "code": "ST",
       "name": "Sanitas Troesch"
     },
-    "reference": "SAN.GEN.481201",
+    "reference": "SAN.GEN.123359",
     "name": "Purgeur automatique DN 40 modèle 3",
+    "category": "soupape",
+    "specification": "DN 40",
+    "active": true,
     "unit": "p",
-    "base_price": 91.32
+    "base_price": 118.72
   },
   {
     "id": "gm-606",
@@ -19998,10 +25449,13 @@ export const MOCK_CATALOGUE = [
       "code": "GM",
       "name": "Getaz Miauton"
     },
-    "reference": "GM/GN/5591",
+    "reference": "GM/GN/4012",
     "name": "Purgeur automatique DN 40 variante 3",
+    "category": "soupape",
+    "specification": "DN 40",
+    "active": true,
     "unit": "p",
-    "base_price": 192.52
+    "base_price": 131.61
   },
   {
     "id": "nsb-607",
@@ -20009,10 +25463,13 @@ export const MOCK_CATALOGUE = [
       "code": "NSB",
       "name": "Nussbaum"
     },
-    "reference": "NSB-GEN-1419",
+    "reference": "NSB-GEN-8034",
     "name": "Purgeur automatique DN 40 type 4",
+    "category": "soupape",
+    "specification": "DN 40",
+    "active": true,
     "unit": "p",
-    "base_price": 125.69
+    "base_price": 116.81
   },
   {
     "id": "st-607",
@@ -20020,10 +25477,13 @@ export const MOCK_CATALOGUE = [
       "code": "ST",
       "name": "Sanitas Troesch"
     },
-    "reference": "SAN.GEN.530870",
+    "reference": "SAN.GEN.814519",
     "name": "Purgeur automatique DN 40 modèle 4",
+    "category": "soupape",
+    "specification": "DN 40",
+    "active": true,
     "unit": "p",
-    "base_price": 122.4
+    "base_price": 169.61
   },
   {
     "id": "gm-607",
@@ -20031,10 +25491,13 @@ export const MOCK_CATALOGUE = [
       "code": "GM",
       "name": "Getaz Miauton"
     },
-    "reference": "GM/GN/3328",
+    "reference": "GM/GN/9538",
     "name": "Purgeur automatique DN 40 variante 4",
+    "category": "soupape",
+    "specification": "DN 40",
+    "active": true,
     "unit": "p",
-    "base_price": 65.92
+    "base_price": 202.44
   },
   {
     "id": "nsb-608",
@@ -20042,10 +25505,13 @@ export const MOCK_CATALOGUE = [
       "code": "NSB",
       "name": "Nussbaum"
     },
-    "reference": "NSB-GEN-9227",
+    "reference": "NSB-GEN-3270",
     "name": "Purgeur automatique DN 50 type 0",
+    "category": "soupape",
+    "specification": "DN 50",
+    "active": true,
     "unit": "p",
-    "base_price": 147.59
+    "base_price": 150.62
   },
   {
     "id": "st-608",
@@ -20053,10 +25519,13 @@ export const MOCK_CATALOGUE = [
       "code": "ST",
       "name": "Sanitas Troesch"
     },
-    "reference": "SAN.GEN.817315",
+    "reference": "SAN.GEN.543630",
     "name": "Purgeur automatique DN 50 modèle 0",
+    "category": "soupape",
+    "specification": "DN 50",
+    "active": true,
     "unit": "p",
-    "base_price": 80.03
+    "base_price": 189.42
   },
   {
     "id": "gm-608",
@@ -20064,10 +25533,13 @@ export const MOCK_CATALOGUE = [
       "code": "GM",
       "name": "Getaz Miauton"
     },
-    "reference": "GM/GN/7287",
+    "reference": "GM/GN/3154",
     "name": "Purgeur automatique DN 50 variante 0",
+    "category": "soupape",
+    "specification": "DN 50",
+    "active": true,
     "unit": "p",
-    "base_price": 24.65
+    "base_price": 175.56
   },
   {
     "id": "nsb-609",
@@ -20075,10 +25547,13 @@ export const MOCK_CATALOGUE = [
       "code": "NSB",
       "name": "Nussbaum"
     },
-    "reference": "NSB-GEN-7471",
+    "reference": "NSB-GEN-4135",
     "name": "Purgeur automatique DN 50 type 1",
+    "category": "soupape",
+    "specification": "DN 50",
+    "active": true,
     "unit": "p",
-    "base_price": 49.24
+    "base_price": 44.28
   },
   {
     "id": "st-609",
@@ -20086,10 +25561,13 @@ export const MOCK_CATALOGUE = [
       "code": "ST",
       "name": "Sanitas Troesch"
     },
-    "reference": "SAN.GEN.945943",
+    "reference": "SAN.GEN.573081",
     "name": "Purgeur automatique DN 50 modèle 1",
+    "category": "soupape",
+    "specification": "DN 50",
+    "active": true,
     "unit": "p",
-    "base_price": 150.14
+    "base_price": 109.1
   },
   {
     "id": "gm-609",
@@ -20097,10 +25575,13 @@ export const MOCK_CATALOGUE = [
       "code": "GM",
       "name": "Getaz Miauton"
     },
-    "reference": "GM/GN/7941",
+    "reference": "GM/GN/7240",
     "name": "Purgeur automatique DN 50 variante 1",
+    "category": "soupape",
+    "specification": "DN 50",
+    "active": true,
     "unit": "p",
-    "base_price": 137.73
+    "base_price": 150
   },
   {
     "id": "nsb-610",
@@ -20108,10 +25589,13 @@ export const MOCK_CATALOGUE = [
       "code": "NSB",
       "name": "Nussbaum"
     },
-    "reference": "NSB-GEN-6623",
+    "reference": "NSB-GEN-3262",
     "name": "Purgeur automatique DN 50 type 2",
+    "category": "soupape",
+    "specification": "DN 50",
+    "active": true,
     "unit": "p",
-    "base_price": 98.34
+    "base_price": 204.75
   },
   {
     "id": "st-610",
@@ -20119,10 +25603,13 @@ export const MOCK_CATALOGUE = [
       "code": "ST",
       "name": "Sanitas Troesch"
     },
-    "reference": "SAN.GEN.439962",
+    "reference": "SAN.GEN.535559",
     "name": "Purgeur automatique DN 50 modèle 2",
+    "category": "soupape",
+    "specification": "DN 50",
+    "active": true,
     "unit": "p",
-    "base_price": 212.8
+    "base_price": 119.81
   },
   {
     "id": "gm-610",
@@ -20130,10 +25617,13 @@ export const MOCK_CATALOGUE = [
       "code": "GM",
       "name": "Getaz Miauton"
     },
-    "reference": "GM/GN/4962",
+    "reference": "GM/GN/7481",
     "name": "Purgeur automatique DN 50 variante 2",
+    "category": "soupape",
+    "specification": "DN 50",
+    "active": true,
     "unit": "p",
-    "base_price": 31.04
+    "base_price": 54.35
   },
   {
     "id": "nsb-611",
@@ -20141,10 +25631,13 @@ export const MOCK_CATALOGUE = [
       "code": "NSB",
       "name": "Nussbaum"
     },
-    "reference": "NSB-GEN-2729",
+    "reference": "NSB-GEN-9870",
     "name": "Purgeur automatique DN 50 type 3",
+    "category": "soupape",
+    "specification": "DN 50",
+    "active": true,
     "unit": "p",
-    "base_price": 108.7
+    "base_price": 106.29
   },
   {
     "id": "st-611",
@@ -20152,10 +25645,13 @@ export const MOCK_CATALOGUE = [
       "code": "ST",
       "name": "Sanitas Troesch"
     },
-    "reference": "SAN.GEN.201127",
+    "reference": "SAN.GEN.143719",
     "name": "Purgeur automatique DN 50 modèle 3",
+    "category": "soupape",
+    "specification": "DN 50",
+    "active": true,
     "unit": "p",
-    "base_price": 61.38
+    "base_price": 42.19
   },
   {
     "id": "gm-611",
@@ -20163,10 +25659,13 @@ export const MOCK_CATALOGUE = [
       "code": "GM",
       "name": "Getaz Miauton"
     },
-    "reference": "GM/GN/7833",
+    "reference": "GM/GN/6719",
     "name": "Purgeur automatique DN 50 variante 3",
+    "category": "soupape",
+    "specification": "DN 50",
+    "active": true,
     "unit": "p",
-    "base_price": 56.43
+    "base_price": 100.68
   },
   {
     "id": "nsb-612",
@@ -20174,10 +25673,13 @@ export const MOCK_CATALOGUE = [
       "code": "NSB",
       "name": "Nussbaum"
     },
-    "reference": "NSB-GEN-9511",
+    "reference": "NSB-GEN-3380",
     "name": "Purgeur automatique DN 50 type 4",
+    "category": "soupape",
+    "specification": "DN 50",
+    "active": true,
     "unit": "p",
-    "base_price": 118.13
+    "base_price": 49.94
   },
   {
     "id": "st-612",
@@ -20185,10 +25687,13 @@ export const MOCK_CATALOGUE = [
       "code": "ST",
       "name": "Sanitas Troesch"
     },
-    "reference": "SAN.GEN.932538",
+    "reference": "SAN.GEN.590974",
     "name": "Purgeur automatique DN 50 modèle 4",
+    "category": "soupape",
+    "specification": "DN 50",
+    "active": true,
     "unit": "p",
-    "base_price": 190.87
+    "base_price": 199.93
   },
   {
     "id": "gm-612",
@@ -20196,9 +25701,12 @@ export const MOCK_CATALOGUE = [
       "code": "GM",
       "name": "Getaz Miauton"
     },
-    "reference": "GM/GN/9480",
+    "reference": "GM/GN/8176",
     "name": "Purgeur automatique DN 50 variante 4",
+    "category": "soupape",
+    "specification": "DN 50",
+    "active": true,
     "unit": "p",
-    "base_price": 151.8
+    "base_price": 124.06
   }
 ];

@@ -29,7 +29,20 @@ let stCount = 1;
 let nsbCount = 1;
 let gmCount = 1;
 
+function getCategory(mat) {
+  if (mat.includes('Tuyau')) return 'tuyau_inox';
+  if (mat.includes('Coude')) return 'coude_sertir';
+  if (mat.includes('Manchon')) return 'manchon';
+  if (mat.includes('Collier')) return 'collier';
+  if (mat.includes('Isolation')) return 'isolation';
+  if (mat.includes('transition')) return 'transition';
+  if (mat.includes('Vanne') || mat.includes('Clapet')) return 'robinet';
+  if (mat.includes('Raccords')) return 'raccord';
+  return 'autre';
+}
+
 for (let i = 0; i < materials.length; i++) {
+  const cat = getCategory(materials[i]);
   for (let d = 0; d < diameters.length; d++) {
     // Nussbaum
     items.push({
@@ -37,6 +50,9 @@ for (let i = 0; i < materials.length; i++) {
       supplier: SUPPLIERS.NSB,
       reference: `NSB-${Math.floor(1000 + Math.random() * 9000)}-${diameters[d]}`,
       name: `${materials[i]} Ø ${diameters[d]} mm`,
+      category: cat,
+      specification: `Ø ${diameters[d]} mm`,
+      active: true,
       unit: materials[i].includes('Tuyau') || materials[i].includes('Isolation') ? 'm' : 'p',
       base_price: parseFloat((Math.random() * 50 + 5).toFixed(2))
     });
@@ -46,6 +62,9 @@ for (let i = 0; i < materials.length; i++) {
       supplier: SUPPLIERS.ST,
       reference: `SAN.${Math.floor(100000 + Math.random() * 900000)}`,
       name: `${materials[i]} Ø ${diameters[d]} mm`,
+      category: cat,
+      specification: `Ø ${diameters[d]} mm`,
+      active: true,
       unit: materials[i].includes('Tuyau') || materials[i].includes('Isolation') ? 'm' : 'p',
       base_price: parseFloat((Math.random() * 50 + 5).toFixed(2))
     });
@@ -55,6 +74,9 @@ for (let i = 0; i < materials.length; i++) {
       supplier: SUPPLIERS.GM,
       reference: `GM/${Math.floor(10 + Math.random() * 90)}/${Math.floor(1000 + Math.random() * 9000)}`,
       name: `${materials[i]} Ø ${diameters[d]} mm`,
+      category: cat,
+      specification: `Ø ${diameters[d]} mm`,
+      active: true,
       unit: materials[i].includes('Tuyau') || materials[i].includes('Isolation') ? 'm' : 'p',
       base_price: parseFloat((Math.random() * 50 + 5).toFixed(2))
     });
@@ -65,7 +87,17 @@ for (let i = 0; i < materials.length; i++) {
 const generic = ['Pompe de circulation', 'Vase d\'expansion', 'Soupape de sécurité', 'Manomètre', 'Thermomètre', 'Filtre à impuretés', 'Désemboueur', 'Purgeur automatique'];
 const sizes = ['1/2"', '3/4"', '1"', '1 1/4"', '1 1/2"', '2"', 'DN 15', 'DN 20', 'DN 25', 'DN 32', 'DN 40', 'DN 50'];
 
+function getGenericCategory(gen) {
+  if (gen.includes('Pompe') || gen.includes('Désemboueur')) return 'accessoire';
+  if (gen.includes('Vase')) return 'vase_expansion';
+  if (gen.includes('Soupape') || gen.includes('Purgeur')) return 'soupape';
+  if (gen.includes('Manomètre') || gen.includes('Thermomètre')) return 'mesure';
+  if (gen.includes('Filtre')) return 'filtre';
+  return 'autre';
+}
+
 for (let i = 0; i < generic.length; i++) {
+  const gCat = getGenericCategory(generic[i]);
   for (let s = 0; s < sizes.length; s++) {
     for (let j = 0; j < 5; j++) { // 5 variants per size
       items.push({
@@ -73,6 +105,9 @@ for (let i = 0; i < generic.length; i++) {
         supplier: SUPPLIERS.NSB,
         reference: `NSB-GEN-${Math.floor(1000 + Math.random() * 9000)}`,
         name: `${generic[i]} ${sizes[s]} type ${j}`,
+        category: gCat,
+        specification: sizes[s],
+        active: true,
         unit: 'p',
         base_price: parseFloat((Math.random() * 200 + 20).toFixed(2))
       });
@@ -81,6 +116,9 @@ for (let i = 0; i < generic.length; i++) {
         supplier: SUPPLIERS.ST,
         reference: `SAN.GEN.${Math.floor(100000 + Math.random() * 900000)}`,
         name: `${generic[i]} ${sizes[s]} modèle ${j}`,
+        category: gCat,
+        specification: sizes[s],
+        active: true,
         unit: 'p',
         base_price: parseFloat((Math.random() * 200 + 20).toFixed(2))
       });
@@ -89,6 +127,9 @@ for (let i = 0; i < generic.length; i++) {
         supplier: SUPPLIERS.GM,
         reference: `GM/GN/${Math.floor(1000 + Math.random() * 9000)}`,
         name: `${generic[i]} ${sizes[s]} variante ${j}`,
+        category: gCat,
+        specification: sizes[s],
+        active: true,
         unit: 'p',
         base_price: parseFloat((Math.random() * 200 + 20).toFixed(2))
       });
