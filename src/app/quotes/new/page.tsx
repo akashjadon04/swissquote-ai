@@ -1,11 +1,11 @@
 'use client';
 
-import React, { useState, useEffect, useCallback, useMemo } from 'react';
+import React, { useState, useEffect, useCallback, useMemo, useRef } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
-import { PenTool, Bot, ClipboardCheck, DollarSign, FileText, AlertCircle, ArrowLeft, ArrowRight } from 'lucide-react';
+import { PenTool, Bot, ClipboardCheck, DollarSign, FileText, AlertCircle, ArrowLeft, ArrowRight, Download, Loader2, Eye } from 'lucide-react';
 import { Sidebar, MobileBottomNav, TopBar } from '@/components/layout/Sidebar';
 import { useAppStore, useQuoteStore } from '@/store';
-import { AIProcessingState, Button, AnimatedSaveButton, QuotePDFPreview, QuoteHistoryLog } from '@/components/ui';
+import { AIProcessingState, Button, AnimatedSaveButton, QuotePDFPreview, QuoteHistoryLog, PremiumPDFTemplate } from '@/components/ui';
 import type { AIExtractionResult, MatchResult, CatalogueArticle, Quote } from '@/types/database.types';
 import { formatAmount, formatCHF } from '@/lib/financial';
 import { useTranslation } from '@/lib/i18n';
@@ -32,7 +32,30 @@ export default function NewQuotePage() {
   const [matchResult, setMatchResult] = useState<MatchResult | null>(null);
   const [provider, setProvider] = useState<string>('');
   const [isPdfPreviewOpen, setIsPdfPreviewOpen] = useState(false);
+  const [isSilentDownloading, setIsSilentDownloading] = useState(false);
   const [showLowQualityWarning, setShowLowQualityWarning] = useState(false);
+  const hiddenPdfRef = useRef<HTMLDivElement>(null);
+
+  const handleSilentDownload = async () => {
+    if (!hiddenPdfRef.current) return;
+    setIsSilentDownloading(true);
+    try {
+      const html2pdf = (await import('html2pdf.js')).default;
+      const element = hiddenPdfRef.current;
+      const opt = {
+        margin:       [0, 0, 0, 0] as [number, number, number, number],
+        filename:     `Devis_${quote.id || 'Nouveau'}.pdf`,
+        image:        { type: 'jpeg' as const, quality: 0.98 },
+        html2canvas:  { scale: 2, useCORS: true, logging: false },
+        jsPDF:        { unit: 'mm' as const, format: 'a4' as const, orientation: 'portrait' as const }
+      };
+      await html2pdf().set(opt).from(element).save();
+    } catch (error) {
+      console.error('Error generating PDF', error);
+    } finally {
+      setIsSilentDownloading(false);
+    }
+  };
 
   const promptScore = useMemo(() => {
     if (!description) return 0;
@@ -769,10 +792,19 @@ export default function NewQuotePage() {
                     <Button 
                       variant="secondary" 
                       onClick={() => setIsPdfPreviewOpen(true)} 
-                      iconLeft={<FileText size={16} />}
+                      iconLeft={<Eye size={16} />}
+                      className="print:hidden hidden md:flex"
+                    >
+                      {t('quoteWizard', 'previewPdf') || 'Aperçu PDF'}
+                    </Button>
+                    <Button 
+                      variant="primary" 
+                      onClick={handleSilentDownload} 
+                      disabled={isSilentDownloading}
+                      iconLeft={isSilentDownloading ? <Loader2 className="animate-spin" size={16}/> : <Download size={16} />}
                       className="print:hidden"
                     >
-                      {t('quoteWizard', 'downloadPdf') || 'Télécharger PDF'}
+                      {isSilentDownloading ? 'Génération...' : t('quoteWizard', 'downloadPdf')}
                     </Button>
                     <div className="flex items-center gap-3">
                       <span className="text-sm font-medium text-text-muted hidden md:inline">{t('quoteWizard', 'saveQuote')}</span>
@@ -820,6 +852,9 @@ export default function NewQuotePage() {
         onClose={() => setIsPdfPreviewOpen(false)} 
         quote={quote} 
       />
+      <div className="fixed -left-[9999px] -top-[9999px] opacity-0 pointer-events-none">
+        <PremiumPDFTemplate ref={hiddenPdfRef} quote={quote} />
+      </div>
     </div>
   );
 }

@@ -262,33 +262,42 @@ export const PremiumPDFTemplate = React.forwardRef<HTMLDivElement, PremiumPDFTem
             
             <div style={{ display: 'flex', justifyContent: 'space-between', marginBottom: '12px', fontSize: '13px', color: '#475569' }}>
               <span>Total Matière HT</span>
-              <span style={{ fontWeight: 600, color: '#0F172A' }}>{formatCHF((quote as any).total_material_excl_vat || 0)}</span>
+              <span style={{ fontWeight: 600, color: '#0F172A' }}>{formatCHF((quote.financials.materialsSubtotal + quote.financials.materialsMargin) || 0)}</span>
             </div>
             
             <div style={{ display: 'flex', justifyContent: 'space-between', marginBottom: '12px', fontSize: '13px', color: '#475569' }}>
               <span>Total Main d'Œuvre HT</span>
-              <span style={{ fontWeight: 600, color: '#0F172A' }}>{formatCHF((quote as any).total_labor_excl_vat || 0)}</span>
+              <span style={{ fontWeight: 600, color: '#0F172A' }}>{formatCHF((quote.financials.labourTotal + quote.financials.travelFee) || 0)}</span>
             </div>
             
             <div style={{ height: '1px', background: '#CBD5E1', margin: '12px 0' }} />
             
             <div style={{ display: 'flex', justifyContent: 'space-between', marginBottom: '12px', fontSize: '14px', fontWeight: 700, color: '#0F172A' }}>
               <span>Total HT</span>
-              <span>{formatCHF((quote as any).total_excl_vat || 0)}</span>
+              <span>{formatCHF(quote.financials.subtotalExclVat || 0)}</span>
             </div>
             
             <div style={{ display: 'flex', justifyContent: 'space-between', marginBottom: '16px', fontSize: '13px', color: '#64748b' }}>
-              <span>TVA (8.1%)</span>
-              <span>{formatCHF((quote as any).vat_amount || 0)}</span>
+              <span>TVA ({(quote.financials.vatRate * 100).toFixed(1)}%)</span>
+              <span>{formatCHF(quote.financials.vatAmount || 0)}</span>
             </div>
             
             {/* The Grand Total Box */}
-            <div style={{ background: 'linear-gradient(135deg, #1A365D, #3B82F6)', padding: '16px', borderRadius: '8px', color: '#fff', display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
-              <span style={{ fontSize: '12px', fontWeight: 700, textTransform: 'uppercase', letterSpacing: '1px', opacity: 0.9 }}>
+            <div style={{ 
+              background: 'linear-gradient(135deg, #1A365D, #2563EB)', 
+              color: '#fff', 
+              padding: '20px', 
+              borderRadius: '12px',
+              display: 'flex',
+              justifyContent: 'space-between',
+              alignItems: 'center',
+              boxShadow: '0 10px 25px rgba(37, 99, 235, 0.2)'
+            }}>
+              <span style={{ fontSize: '14px', fontWeight: 700, textTransform: 'uppercase', letterSpacing: '1px' }}>
                 Total TTC
               </span>
               <span style={{ fontSize: '20px', fontWeight: 900 }}>
-                {formatCHF((quote as any).total_incl_vat || 0)}
+                {formatCHF(quote.financials.totalInclVat || 0)}
               </span>
             </div>
 
