@@ -100,8 +100,8 @@ async function extractWithOpenRouterKey(
   apiKey: string,
   keyIndex: number
 ): Promise<AIExtractionResult> {
-  // Use the ultra-fast free Llama 3.3 model instead of the slow generic router
-  const model = process.env.OPENROUTER_MODEL || 'meta-llama/llama-3.3-70b-instruct:free';
+  // Use openrouter/free to automatically route to the best available free model
+  const model = process.env.OPENROUTER_MODEL || 'openrouter/free';
 
   const response = await fetch('https://openrouter.ai/api/v1/chat/completions', {
     method: 'POST',
