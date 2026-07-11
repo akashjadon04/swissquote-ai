@@ -304,14 +304,16 @@
 .qd-items-table tbody tr:hover { background: var(--color-surface-2); }
 .qd-items-table tbody tr.item-missing { background: #FEF9F2; }
 
-.col-ref   { width: 100px; }
-.col-desc  { min-width: 200px; }
-.col-spec  { width: 80px; }
-.col-qty   { width: 50px; text-align: right; }
-.col-unit  { width: 40px; text-align: center; }
-.col-price { width: 80px; text-align: right; }
-.col-total { width: 90px; text-align: right; }
-.col-confidence { width: 60px; }
+@media (min-width: 768px) {
+  .col-ref   { width: 100px; }
+  .col-desc  { min-width: 200px; }
+  .col-spec  { width: 80px; }
+  .col-qty   { width: 50px; text-align: right; }
+  .col-unit  { width: 40px; text-align: center; }
+  .col-price { width: 80px; text-align: right; }
+  .col-total { width: 90px; text-align: right; }
+  .col-confidence { width: 60px; }
+}
 
 .item-desc { color: var(--color-text-primary); }
 .item-spec { color: var(--color-text-muted); font-size: 12px; }

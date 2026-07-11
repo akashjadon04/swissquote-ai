@@ -7,6 +7,7 @@ import { motion, AnimatePresence } from 'framer-motion';
 import { useAppStore } from '@/store';
 import { useTranslation } from '@/lib/i18n';
 import { LanguageToggle } from '@/components/ui';
+import { useTheme } from 'next-themes';
 
 // ─────────────────────────────────────────
 // Icons (inline SVGs — no dependency)
@@ -276,17 +277,20 @@ function SidebarContent({ pathname, collapsed = false }: { pathname: string; col
 // ─────────────────────────────────────────
 
 function ThemeToggle({ collapsed }: { collapsed: boolean }) {
-  const [isDark, setIsDark] = useState(false);
+  const { theme, setTheme, resolvedTheme } = useTheme();
+  const [mounted, setMounted] = useState(false);
 
   useEffect(() => {
-    Promise.resolve().then(() => setIsDark(document.documentElement.getAttribute('data-theme') === 'dark'));
+    setMounted(true);
   }, []);
 
+  if (!mounted) {
+    return <div className="w-10 h-6"></div>; // Placeholder
+  }
+
+  const isDark = resolvedTheme === 'dark';
   const toggle = () => {
-    const next = !isDark;
-    setIsDark(next);
-    document.documentElement.setAttribute('data-theme', next ? 'dark' : 'light');
-    localStorage.setItem('theme', next ? 'dark' : 'light');
+    setTheme(isDark ? 'light' : 'dark');
   };
 
   return (
@@ -329,7 +333,6 @@ function ThemeToggle({ collapsed }: { collapsed: boolean }) {
           </div>
         </div>
       </label>
-      {!collapsed && <span className="text-sm font-medium text-text-muted">{isDark ? 'Mode sombre' : 'Mode clair'}</span>}
     </div>
   );
 }

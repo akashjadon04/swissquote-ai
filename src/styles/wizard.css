@@ -458,13 +458,15 @@
   background: var(--color-danger-light);
 }
 
-.col-ref { width: 120px; }
-.col-desc { min-width: 200px; }
-.col-spec { width: 100px; }
-.col-qty { width: 80px; }
-.col-unit { width: 60px; }
-.col-price { width: 100px; text-align: right; }
-.col-total { width: 110px; text-align: right; }
+@media (min-width: 768px) {
+  .col-ref { width: 120px; }
+  .col-desc { min-width: 200px; }
+  .col-spec { width: 100px; }
+  .col-qty { width: 80px; }
+  .col-unit { width: 60px; }
+  .col-price { width: 100px; text-align: right; }
+  .col-total { width: 110px; text-align: right; }
+}
 
 .articles-table td.col-price,
 .articles-table td.col-total,
