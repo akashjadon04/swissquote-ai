@@ -50,9 +50,9 @@ FORMAT DE SORTIE — JSON strict :
   "exclusions_suggested": ["string — éléments probablement hors-devis à signaler"]
 }
 
-IMPORTANT: Quand une description mentionne des tuyaux avec une longueur (ex: "depuis la chaufferie jusqu'à la nourrice"), estime une quantité raisonnable en mètres si le contexte le permet, sinon retourne null.
+IMPORTANT: NE JAMAIS ESTIMER DE QUANTITÉS OU DE MESURES. Si une quantité ou une mesure n'est pas explicitement mentionnée dans le texte, tu DOIS retourner "null" pour "quantity" et ajouter une note dans "intervention_flags" pour indiquer qu'une vérification manuelle de la quantité est requise. Une quantité inventée est une erreur grave.
 
-Pour chaque article identifié, inclus TOUS les accessoires nécessaires (raccords, fixations, colliers, isolation) même s'ils ne sont pas explicitement mentionnés dans la description — un plombier les ajouterait systématiquement.
+Pour chaque article identifié, inclus TOUS les accessoires nécessaires (raccords, fixations, colliers, isolation) même s'ils ne sont pas explicitement mentionnés dans la description — un plombier les ajouterait systématiquement. S'ils ne sont pas mentionnés avec des quantités, laisse "quantity": null.
 
 Ne retourne rien d'autre que le JSON. Aucun caractère avant ou après.`;
 
@@ -93,7 +93,7 @@ async function extractWithGemini(description: string): Promise<AIExtractionResul
 
   const genAI = new GoogleGenerativeAI(apiKey);
   const model = genAI.getGenerativeModel({
-    model: process.env.GEMINI_MODEL || 'gemini-2.5-flash',
+    model: process.env.GEMINI_MODEL || 'gemini-3.5-flash',
     generationConfig: {
       temperature: 0.1,
       topP: 0.95,

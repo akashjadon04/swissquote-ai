@@ -19,7 +19,12 @@ export async function GET(request: NextRequest) {
 }
 
 export async function POST(request: NextRequest) {
-  const body = await request.json();
+  let body;
+    try {
+      body = await request.json();
+    } catch (e) {
+      return NextResponse.json({ error: 'Format JSON invalide' }, { status: 400 });
+    }
   const supabase = getServerSupabase();
 
   if (!body.name?.trim()) {

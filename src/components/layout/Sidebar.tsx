@@ -5,6 +5,8 @@ import Link from 'next/link';
 import { usePathname } from 'next/navigation';
 import { motion, AnimatePresence } from 'framer-motion';
 import { useAppStore } from '@/store';
+import { useTranslation } from '@/lib/i18n';
+import { LanguageToggle } from '@/components/ui';
 
 // ─────────────────────────────────────────
 // Icons (inline SVGs — no dependency)
@@ -93,14 +95,7 @@ const Icons = {
 // Navigation Items
 // ─────────────────────────────────────────
 
-const navItems = [
-  { href: '/', label: 'Tableau de bord', icon: Icons.dashboard },
-  { href: '/quotes', label: 'Devis', icon: Icons.quote },
-  { href: '/catalogue', label: 'Catalogue', icon: Icons.catalogue },
-  { href: '/clients', label: 'Clients', icon: Icons.clients },
-  { href: '/config', label: 'Configuration', icon: Icons.config },
-  { href: '/admin/audit', label: 'Journal', icon: Icons.audit },
-];
+// Navigation Items will be defined inside components using translations
 
 // ─────────────────────────────────────────
 // Sidebar Component
@@ -111,7 +106,7 @@ export function Sidebar() {
   const { sidebarOpen, toggleSidebar, isMobile } = useAppStore();
   const [mounted, setMounted] = useState(false);
 
-  useEffect(() => { setMounted(true); }, []);
+  useEffect(() => { Promise.resolve().then(() => setMounted(true)); }, []);
   if (!mounted) return null;
 
   // Mobile: overlay sidebar
@@ -156,6 +151,16 @@ export function Sidebar() {
 
 function SidebarContent({ pathname, collapsed = false }: { pathname: string; collapsed?: boolean }) {
   const { toggleSidebar, setCommandPaletteOpen } = useAppStore();
+  const { t } = useTranslation();
+
+  const navItems = [
+    { href: '/', label: t('sidebar', 'dashboard'), icon: Icons.dashboard },
+    { href: '/quotes', label: t('sidebar', 'quotes'), icon: Icons.quote },
+    { href: '/catalogue', label: t('sidebar', 'catalogue'), icon: Icons.catalogue },
+    { href: '/clients', label: t('sidebar', 'clients'), icon: Icons.clients },
+    { href: '/config', label: t('sidebar', 'settings'), icon: Icons.config },
+    { href: '/admin', label: t('sidebar', 'audit'), icon: Icons.audit },
+  ];
 
   return (
     <div className="sidebar-content">
@@ -181,12 +186,12 @@ function SidebarContent({ pathname, collapsed = false }: { pathname: string; col
           )}
         </div>
         {!collapsed && (
-          <button className="sidebar-collapse-btn" onClick={toggleSidebar} aria-label="Réduire">
+          <button className="sidebar-collapse-btn" onClick={toggleSidebar} aria-label={t('generic', 'collapse')}>
             {Icons.chevronLeft}
           </button>
         )}
         {collapsed && (
-          <button className="sidebar-collapse-btn" onClick={toggleSidebar} aria-label="Développer">
+          <button className="sidebar-collapse-btn" onClick={toggleSidebar} aria-label={t('generic', 'expand')}>
             {Icons.menu}
           </button>
         )}
@@ -196,7 +201,7 @@ function SidebarContent({ pathname, collapsed = false }: { pathname: string; col
       <div className="sidebar-cta">
         <Link href="/quotes/new" className="btn-new-quote clay-button">
           {Icons.plus}
-          {!collapsed && <span>Nouveau devis</span>}
+          {!collapsed && <span>{t('dashboard', 'newQuote')}</span>}
         </Link>
       </div>
 
@@ -207,7 +212,7 @@ function SidebarContent({ pathname, collapsed = false }: { pathname: string; col
           onClick={() => setCommandPaletteOpen(true)}
         >
           {Icons.search}
-          <span>Rechercher...</span>
+          <span>{t('generic', 'search')}</span>
           <kbd>⌘K</kbd>
         </button>
       )}
@@ -274,7 +279,7 @@ function ThemeToggle({ collapsed }: { collapsed: boolean }) {
   const [isDark, setIsDark] = useState(false);
 
   useEffect(() => {
-    setIsDark(document.documentElement.getAttribute('data-theme') === 'dark');
+    Promise.resolve().then(() => setIsDark(document.documentElement.getAttribute('data-theme') === 'dark'));
   }, []);
 
   const toggle = () => {
@@ -305,7 +310,15 @@ function ThemeToggle({ collapsed }: { collapsed: boolean }) {
 
 export function MobileBottomNav() {
   const pathname = usePathname();
-  const mobileNavItems = navItems.slice(0, 5); // First 5 items
+  const { t } = useTranslation();
+
+  const mobileNavItems = [
+    { href: '/', label: t('sidebar', 'dashboard'), icon: Icons.dashboard },
+    { href: '/quotes', label: t('sidebar', 'quotes'), icon: Icons.quote },
+    { href: '/catalogue', label: t('sidebar', 'catalogue'), icon: Icons.catalogue },
+    { href: '/clients', label: t('sidebar', 'clients'), icon: Icons.clients },
+    { href: '/config', label: t('sidebar', 'settings'), icon: Icons.config },
+  ];
 
   return (
     <nav className="mobile-bottom-nav">
@@ -342,6 +355,7 @@ export function MobileBottomNav() {
 
 export function TopBar({ title, breadcrumb }: { title?: string; breadcrumb?: string[] }) {
   const { toggleSidebar, isMobile, setCommandPaletteOpen } = useAppStore();
+  const { t } = useTranslation();
 
   return (
     <header className="topbar">
@@ -365,17 +379,18 @@ export function TopBar({ title, breadcrumb }: { title?: string; breadcrumb?: str
         )}
         {title && !breadcrumb && <h1 className="topbar-title">{title}</h1>}
       </div>
-      <div className="topbar-right">
+      <div className="topbar-right flex items-center gap-4">
         {!isMobile && (
           <button
             className="topbar-search-btn"
             onClick={() => setCommandPaletteOpen(true)}
           >
             {Icons.search}
-            <span>Rechercher</span>
+            <span>{t('topbar', 'search')}</span>
             <kbd>⌘K</kbd>
           </button>
         )}
+        <LanguageToggle />
       </div>
     </header>
   );

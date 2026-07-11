@@ -4,6 +4,7 @@ import React, { useEffect, useState, useCallback } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { Sidebar, MobileBottomNav, TopBar } from '@/components/layout/Sidebar';
 import { useAppStore } from '@/store';
+import { useTranslation } from '@/lib/i18n';
 
 // ─────────────────────────────────────────
 // Types
@@ -32,6 +33,7 @@ const CANTONS = [
 
 export default function ConfigPage() {
   const { setIsMobile } = useAppStore();
+  const { t } = useTranslation();
   const [config, setConfig] = useState<Partial<ConfigValues>>({});
   const [loading, setLoading] = useState(true);
   const [saving, setSaving] = useState<string | null>(null);
@@ -78,7 +80,7 @@ export default function ConfigPage() {
     <div className="app-layout">
       <Sidebar />
       <main className="app-main">
-        <TopBar title="Configuration" />
+        <TopBar title={t('sidebar', 'settings')} />
         <div className="page-content">
           {loading ? (
             <div className="skeleton-list">
@@ -94,15 +96,15 @@ export default function ConfigPage() {
 
               {/* Company Info */}
               <div className="config-card clay-card">
-                <h3 className="config-card-title">🏢 Informations société</h3>
+                <h3 className="config-card-title">{t('config', 'companyInfo')}</h3>
                 {[
-                  { field: 'name', label: 'Nom de la société' },
-                  { field: 'address', label: 'Adresse' },
-                  { field: 'postal', label: 'Code postal' },
-                  { field: 'city', label: 'Ville' },
-                  { field: 'phone', label: 'Téléphone' },
-                  { field: 'email', label: 'Email' },
-                  { field: 'tva_number', label: 'Numéro TVA' },
+                  { field: 'name', label: t('config', 'companyName') },
+                  { field: 'address', label: t('config', 'address') },
+                  { field: 'postal', label: t('config', 'postal') },
+                  { field: 'city', label: t('config', 'city') },
+                  { field: 'phone', label: t('config', 'phone') },
+                  { field: 'email', label: t('config', 'email') },
+                  { field: 'tva_number', label: t('config', 'tvaNumber') },
                 ].map(({ field, label }) => (
                   <div key={field} className="config-field">
                     <label className="config-label">{label}</label>
@@ -132,10 +134,10 @@ export default function ConfigPage() {
 
               {/* Financial Defaults */}
               <div className="config-card clay-card">
-                <h3 className="config-card-title">💰 Paramètres financiers</h3>
+                <h3 className="config-card-title">{t('config', 'financialParams')}</h3>
 
                 <div className="config-field">
-                  <label className="config-label">Marge matériaux par défaut (%)</label>
+                  <label className="config-label">{t('config', 'defaultMargin')}</label>
                   <div style={{ display: 'flex', gap: 'var(--space-2)', alignItems: 'center' }}>
                     <input
                       type="number"
@@ -150,7 +152,7 @@ export default function ConfigPage() {
                 </div>
 
                 <div className="config-field">
-                  <label className="config-label">TVA Suisse (%)</label>
+                  <label className="config-label">{t('config', 'vatRate')}</label>
                   <div style={{ display: 'flex', gap: 'var(--space-2)', alignItems: 'center' }}>
                     <input
                       type="number"
@@ -166,7 +168,7 @@ export default function ConfigPage() {
                 </div>
 
                 <div className="config-field">
-                  <label className="config-label">Frais de déplacement par défaut (CHF)</label>
+                  <label className="config-label">{t('config', 'travelFee')}</label>
                   <div style={{ display: 'flex', gap: 'var(--space-2)', alignItems: 'center' }}>
                     <input
                       type="number"
@@ -181,7 +183,7 @@ export default function ConfigPage() {
                 </div>
 
                 <div className="config-field">
-                  <label className="config-label">Canton par défaut</label>
+                  <label className="config-label">{t('config', 'defaultCanton')}</label>
                   <select
                     className="config-input"
                     style={{ maxWidth: 200 }}
@@ -193,7 +195,7 @@ export default function ConfigPage() {
                 </div>
 
                 <div className="config-field">
-                  <label className="config-label">Fournisseur préféré par défaut</label>
+                  <label className="config-label">{t('config', 'preferredSupplier')}</label>
                   <select
                     className="config-input"
                     style={{ maxWidth: 200 }}
@@ -209,7 +211,7 @@ export default function ConfigPage() {
 
               {/* Labour Rates by Canton */}
               <div className="config-card clay-card">
-                <h3 className="config-card-title">⏱️ Taux horaires par canton (CHF/h)</h3>
+                <h3 className="config-card-title">{t('config', 'labourRates')}</h3>
                 <table className="labour-rates-table">
                   <thead>
                     <tr>
@@ -254,10 +256,10 @@ export default function ConfigPage() {
 
               {/* AI + System */}
               <div className="config-card clay-card">
-                <h3 className="config-card-title">🤖 Système et numérotation</h3>
+                <h3 className="config-card-title">{t('config', 'systemAndNumbers')}</h3>
 
                 <div className="config-field">
-                  <label className="config-label">Dernier numéro de devis</label>
+                  <label className="config-label">{t('config', 'lastQuoteNumber')}</label>
                   <div style={{ display: 'flex', gap: 'var(--space-2)', alignItems: 'center' }}>
                     <input
                       type="number"
@@ -267,14 +269,14 @@ export default function ConfigPage() {
                       onBlur={(e) => save('quote_counter', e.target.value)}
                     />
                     <span style={{ fontSize: 'var(--text-sm)', color: 'var(--color-text-muted)' }}>
-                      → prochain: {(Number(config.quote_counter) || 21648) + 1}/AL/jf
+                      {t('config', 'nextQuote').replace('{num}', String((Number(config.quote_counter) || 21648) + 1))}
                     </span>
                     <SavedBadge show={saved === 'quote_counter'} />
                   </div>
                 </div>
 
                 <div className="config-field">
-                  <label className="config-label">Limite requêtes Gemini / jour</label>
+                  <label className="config-label">{t('config', 'aiLimit')}</label>
                   <div style={{ display: 'flex', gap: 'var(--space-2)', alignItems: 'center' }}>
                     <input
                       type="number"
@@ -283,7 +285,7 @@ export default function ConfigPage() {
                       defaultValue={Number(config.gemini_daily_requests) || 1500}
                       onBlur={(e) => save('gemini_daily_requests', parseInt(e.target.value))}
                     />
-                    <span style={{ fontSize: 'var(--text-sm)', color: 'var(--color-text-muted)' }}>req/jour</span>
+                    <span style={{ fontSize: 'var(--text-sm)', color: 'var(--color-text-muted)' }}>{t('config', 'reqPerDay')}</span>
                     <SavedBadge show={saved === 'gemini_daily_requests'} />
                   </div>
                 </div>
@@ -291,11 +293,11 @@ export default function ConfigPage() {
                 {/* AI provider info */}
                 <div style={{ marginTop: 'var(--space-4)', padding: 'var(--space-3)', background: 'var(--color-accent-light)', borderRadius: 'var(--radius-md)', fontSize: 'var(--text-sm)' }}>
                   <div style={{ fontWeight: 600, marginBottom: 'var(--space-1)', color: 'var(--color-accent)' }}>
-                    ⚡ Cascade IA configurée
+                    {t('config', 'aiCascade')}
                   </div>
                   <div style={{ color: 'var(--color-text-muted)' }}>
-                    Primaire: Gemini 2.0 Flash (gratuit, 1500/j)<br />
-                    Secondaire: OpenRouter free tier (cascade automatique)
+                    {t('config', 'aiPrimary')}<br />
+                    {t('config', 'aiSecondary')}
                   </div>
                 </div>
               </div>
@@ -310,6 +312,7 @@ export default function ConfigPage() {
 }
 
 function SavedBadge({ show }: { show: boolean }) {
+  const { t } = useTranslation();
   return (
     <AnimatePresence>
       {show && (
@@ -320,7 +323,7 @@ function SavedBadge({ show }: { show: boolean }) {
           exit={{ opacity: 0, scale: 0.8 }}
           style={{ fontSize: 12 }}
         >
-          ✓ Enregistré
+          {t('config', 'saved')}
         </motion.span>
       )}
     </AnimatePresence>

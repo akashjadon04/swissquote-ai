@@ -31,7 +31,12 @@ export async function GET() {
 
 export async function PATCH(request: NextRequest) {
   try {
-    const body = await request.json();
+    let body;
+    try {
+      body = await request.json();
+    } catch (e) {
+      return NextResponse.json({ error: 'Format JSON invalide' }, { status: 400 });
+    }
     const { key, value } = body;
 
     if (!key || value === undefined) {

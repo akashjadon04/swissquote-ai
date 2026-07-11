@@ -140,8 +140,8 @@ export default function QuoteDetailPage() {
   };
 
   const downloadPDF = () => {
-    window.open(`/api/quotes/${id}/pdf`, '_blank');
-    toast.success('Génération du PDF en cours…');
+    window.open(`/quotes/${id}/print`, '_blank');
+    toast.success('Ouverture de l\'aperçu PDF…');
   };
 
   const duplicate = async () => {

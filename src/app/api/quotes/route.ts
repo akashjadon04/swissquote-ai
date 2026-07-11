@@ -1,5 +1,16 @@
 import { NextRequest, NextResponse } from 'next/server';
 import { getServerSupabase } from '@/lib/supabase';
+import { z } from 'zod';
+
+const quoteSchema = z.object({
+  status: z.enum(['draft', 'review', 'finalized', 'missing_items', 'sent', 'accepted', 'invoiced']).optional(),
+  clientId: z.string().uuid().nullable().optional(),
+  clientName: z.string().nullable().optional(),
+  description: z.string(),
+  materialsSubtotal: z.number().nullable().optional(),
+  labourHours: z.number().nullable().optional(),
+  totalInclVat: z.number().nullable().optional(),
+}).passthrough();
 
 // ═══════════════════════════════════════════
 // /api/quotes — Quote List + Create
@@ -16,12 +27,20 @@ export async function GET(request: NextRequest) {
     const sortOrder = (url.searchParams.get('sortOrder') || 'desc') as 'asc' | 'desc';
 
     const supabase = getServerSupabase();
+    const sessionId = request.headers.get('x-session-id');
+    const isAdmin = url.searchParams.get('admin') === 'true';
 
     let query = supabase
       .from('sq_quotes')
       .select('*', { count: 'exact' });
 
     if (status) query = query.eq('status', status);
+    
+    // Isolate by session unless admin
+    if (!isAdmin && sessionId) {
+      query = query.like('ai_provider', `%#${sessionId}`);
+    }
+
     if (search) {
       query = query.or(
         `quote_number.ilike.%${search}%,client_name.ilike.%${search}%,building_address.ilike.%${search}%,original_description.ilike.%${search}%`
@@ -56,23 +75,28 @@ export async function GET(request: NextRequest) {
 
 export async function POST(request: NextRequest) {
   try {
-    const body = await request.json();
+    let bodyRaw;
+    try {
+      bodyRaw = await request.json();
+    } catch (e) {
+      return NextResponse.json({ error: 'Format JSON invalide' }, { status: 400 });
+    }
+    const parseResult = quoteSchema.safeParse(bodyRaw);
+    
+    if (!parseResult.success) {
+      return NextResponse.json({ error: 'Données invalides', details: parseResult.error.format() }, { status: 400 });
+    }
+    
+    const body = parseResult.data;
     const supabase = getServerSupabase();
 
-    // Get next quote number
-    const { data: config } = await supabase
-      .from('sq_configurations')
-      .select('value')
-      .eq('key', 'quote_counter')
-      .single();
-
-    const counter = parseInt(String(config?.value || '21648')) + 1;
-    const quoteNumber = `${counter}/AL/jf`;
-
-    await supabase
-      .from('sq_configurations')
-      .update({ value: String(counter) })
-      .eq('key', 'quote_counter');
+    // Use RPC to avoid race conditions when generating quote numbers
+    const { data: quoteNumber, error: rpcError } = await supabase.rpc('generate_next_quote_number');
+    
+    if (rpcError || !quoteNumber) {
+      console.error('[API] RPC generate_next_quote_number failed:', rpcError);
+      return NextResponse.json({ error: 'Erreur de génération du numéro de devis' }, { status: 500 });
+    }
 
     const { data: user } = await supabase
       .from('sq_users')
@@ -106,7 +130,7 @@ export async function POST(request: NextRequest) {
         subject_line: body.subjectLine || null,
         original_description: body.description,
         ai_extraction: body.aiExtraction || null,
-        ai_provider: body.aiProvider || null,
+        ai_provider: `${body.aiProvider || 'unknown'}#${request.headers.get('x-session-id') || 'default'}`,
         intervention_type: body.interventionType || null,
         technical_summary: body.technicalSummary || null,
         ai_confidence: body.aiConfidence || null,

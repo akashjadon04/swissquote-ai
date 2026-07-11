@@ -1,0 +1,56 @@
+/* From Uiverse.io by Shoh2008 - Adapted for SwissQuote AI */
+.checkbox-wrapper-41 {
+  --size: 60px; /* Reduced from 100px to fit topbar nicely */
+}
+
+.checkbox-wrapper-41 input[type="checkbox"] {
+  -webkit-appearance: none;
+  width: var(--size);
+  height: calc(var(--size) / 2);
+  background-color: var(--color-surface);
+  border: 3px solid var(--color-border);
+  border-radius: 30px 100px 100px 100px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+  outline: none;
+  cursor: pointer;
+  position: relative;
+  transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+  display: flex;
+  align-items: center;
+}
+
+.checkbox-wrapper-41 input[type="checkbox"]::before {
+  content: "FR";
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 800;
+  font-size: 10px;
+  color: var(--color-accent);
+  position: absolute;
+  width: calc(var(--size) / 2);
+  height: calc(var(--size) / 2);
+  left: 0;
+  top: 50%;
+  transform: translateY(-50%) scale(0.85);
+  border: 3px solid var(--color-accent);
+  border-radius: 30px 100px 100px 100px;
+  background-color: var(--color-surface);
+  box-sizing: border-box;
+  transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.checkbox-wrapper-41 input[type="checkbox"]:checked {
+  background-color: var(--color-accent);
+  border-color: var(--color-accent);
+  border-radius: 100px 100px 30px 100px;
+}
+
+.checkbox-wrapper-41 input[type="checkbox"]:checked::before {
+  content: "EN";
+  left: 50%;
+  color: var(--color-surface);
+  background-color: var(--color-accent);
+  border-color: var(--color-surface);
+  border-radius: 100px 100px 30px 100px;
+}

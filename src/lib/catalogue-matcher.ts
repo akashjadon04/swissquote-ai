@@ -169,6 +169,8 @@ function matchSingleArticle(
   preferredSupplier?: SupplierCode
 ): { matched: true } & MatchedArticle | { matched: false } & MissingArticle {
   
+  // We no longer abort here. The quantity check is handled in the UI by defaulting to 0 for manual review.
+
   // Step 1: Filter by preferred supplier first, then fall back to all
   let candidates = preferredSupplier
     ? catalogue.filter(a => a.supplier?.code === preferredSupplier && a.active)

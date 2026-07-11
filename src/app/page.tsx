@@ -7,6 +7,12 @@ import { Sidebar, MobileBottomNav, TopBar } from '@/components/layout/Sidebar';
 import { useAppStore } from '@/store';
 import { formatCHF } from '@/lib/financial';
 import type { Quote } from '@/types/database.types';
+import { useTranslation } from '@/lib/i18n';
+import { FileText, Edit2, CheckCircle, DollarSign, Plus, LayoutGrid } from 'lucide-react';
+import { EmptyState, Button } from '@/components/ui';
+import dynamic from 'next/dynamic';
+
+const Player = dynamic(() => import('@lottiefiles/react-lottie-player').then(mod => mod.Player), { ssr: false });
 
 // ─────────────────────────────────────────
 // Dashboard Layout
@@ -14,6 +20,7 @@ import type { Quote } from '@/types/database.types';
 
 export default function DashboardPage() {
   const { setIsMobile } = useAppStore();
+  const { t } = useTranslation();
   const [quotes, setQuotes] = useState<Quote[]>([]);
   const [stats, setStats] = useState({ total: 0, draft: 0, finalized: 0, revenue: 0 });
   const [loading, setLoading] = useState(true);
@@ -28,7 +35,12 @@ export default function DashboardPage() {
   useEffect(() => {
     async function fetchQuotes() {
       try {
-        const res = await fetch('/api/quotes?pageSize=10&sortBy=created_at&sortOrder=desc');
+        const sessionId = localStorage.getItem('swissquote_session_id') || 'default-session';
+        const res = await fetch('/api/quotes?pageSize=10&sortBy=created_at&sortOrder=desc', {
+          headers: {
+            'x-session-id': sessionId
+          }
+        });
         const data = await res.json();
         setQuotes(data.data || []);
         
@@ -53,14 +65,14 @@ export default function DashboardPage() {
     <div className="app-layout">
       <Sidebar />
       <main className="app-main">
-        <TopBar title="Tableau de bord" />
+        <TopBar title={t('sidebar', 'dashboard')} />
         <div className="page-content">
           {/* Stats Bar */}
           <div className="stats-bar">
-            <StatCard label="Total devis" value={String(stats.total)} icon="📋" delay={0} />
-            <StatCard label="Brouillons" value={String(stats.draft)} icon="✏️" delay={0.1} />
-            <StatCard label="Finalisés" value={String(stats.finalized)} icon="✅" delay={0.2} />
-            <StatCard label="Chiffre d'affaires" value={formatCHF(stats.revenue)} icon="💰" delay={0.3} />
+            <StatCard label={t('dashboard', 'activeQuotes')} value={String(stats.total)} icon={<FileText size={20} />} delay={0} />
+            <StatCard label={t('quotes', 'status.draft')} value={String(stats.draft)} icon={<Edit2 size={20} />} delay={0.1} />
+            <StatCard label={t('quotes', 'status.finalized')} value={String(stats.finalized)} icon={<CheckCircle size={20} />} delay={0.2} />
+            <StatCard label={t('dashboard', 'totalRevenue')} value={formatCHF(stats.revenue)} icon={<DollarSign size={20} />} delay={0.3} />
           </div>
 
           {/* Quick Actions */}
@@ -72,13 +84,11 @@ export default function DashboardPage() {
                 className="quick-action-content"
               >
                 <div className="quick-action-icon">
-                  <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round">
-                    <path d="M12 5v14M5 12h14" />
-                  </svg>
+                  <Plus size={24} />
                 </div>
                 <div>
-                  <h3>Nouveau devis</h3>
-                  <p>Créer un devis à partir d&apos;une description</p>
+                  <h3>{t('dashboard', 'newQuote')}</h3>
+                  <p>{t('quotes', 'emptyDesc')}</p>
                 </div>
               </motion.div>
             </Link>
@@ -89,13 +99,11 @@ export default function DashboardPage() {
                 className="quick-action-content"
               >
                 <div className="quick-action-icon secondary">
-                  <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round">
-                    <path d="M4 4h16v16H4zM4 8h16M8 4v16" />
-                  </svg>
+                  <LayoutGrid size={24} />
                 </div>
                 <div>
-                  <h3>Catalogue</h3>
-                  <p>Gérer les articles et fournisseurs</p>
+                  <h3>{t('sidebar', 'catalogue')}</h3>
+                  <p>{t('catalogue', 'emptyDesc')}</p>
                 </div>
               </motion.div>
             </Link>
@@ -104,8 +112,8 @@ export default function DashboardPage() {
           {/* Recent Quotes */}
           <div className="recent-section">
             <div className="section-header">
-              <h2>Devis récents</h2>
-              <Link href="/quotes" className="view-all-link">Voir tout →</Link>
+              <h2>{t('dashboard', 'recentQuotes')}</h2>
+              <Link href="/quotes" className="view-all-link">{t('dashboard', 'viewAll')} →</Link>
             </div>
 
             {loading ? (
@@ -119,14 +127,30 @@ export default function DashboardPage() {
                 ))}
               </div>
             ) : quotes.length === 0 ? (
-              <div className="empty-state clay-card">
-                <div className="empty-icon">📝</div>
-                <h3>Aucun devis</h3>
-                <p>Commencez par créer votre premier devis.</p>
-                <Link href="/quotes/new" className="clay-button clay-button--primary">
-                  Nouveau devis
-                </Link>
-              </div>
+              <motion.div 
+                initial={{ opacity: 0, y: 30 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true, margin: "-50px" }}
+                transition={{ duration: 0.6, ease: "easeOut" }}
+                className="clay-card p-6 flex flex-col items-center justify-center min-h-[300px] text-center gap-4 relative overflow-hidden"
+              >
+                <div className="absolute inset-0 bg-accent/5 blur-3xl rounded-full scale-150 pointer-events-none" />
+                <div className="mt-2 mb-2">
+                  <Player
+                    autoplay
+                    loop
+                    src="https://assets3.lottiefiles.com/packages/lf20_ot5gqdfc.json"
+                    style={{ height: '180px', width: '180px' }}
+                  />
+                </div>
+                <div className="relative z-10 flex flex-col items-center">
+                  <h3 className="text-2xl font-bold mb-2">{t('quotes', 'emptyTitle')}</h3>
+                  <p className="text-text-muted mb-6 max-w-sm">{t('quotes', 'emptyDesc')}</p>
+                  <Link href="/quotes/new" tabIndex={-1}>
+                    <Button variant="primary" iconLeft={<Plus size={16}/>}>{t('dashboard', 'newQuote')}</Button>
+                  </Link>
+                </div>
+              </motion.div>
             ) : (
               <div className="quote-list">
                 {quotes.map((quote, index) => (
@@ -146,15 +170,15 @@ export default function DashboardPage() {
 // Stat Card Component
 // ─────────────────────────────────────────
 
-function StatCard({ label, value, icon, delay }: { label: string; value: string; icon: string; delay: number }) {
+function StatCard({ label, value, icon, delay }: { label: string; value: string; icon: React.ReactNode; delay: number }) {
   return (
     <motion.div
-      className="stat-card clay-card"
-      initial={{ opacity: 0, y: 20 }}
+      initial={{ opacity: 0, y: 10 }}
       animate={{ opacity: 1, y: 0 }}
-      transition={{ delay, type: 'spring', damping: 20 }}
+      transition={{ delay }}
+      className="stat-card clay-card"
     >
-      <span className="stat-icon">{icon}</span>
+      <div className="stat-icon flex items-center justify-center text-accent bg-accent/10 rounded-full w-10 h-10">{icon}</div>
       <div className="stat-content">
         <span className="stat-value">{value}</span>
         <span className="stat-label">{label}</span>

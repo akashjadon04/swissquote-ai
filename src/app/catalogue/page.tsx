@@ -5,6 +5,9 @@ import { motion } from 'framer-motion';
 import { Sidebar, MobileBottomNav, TopBar } from '@/components/layout/Sidebar';
 import { useAppStore } from '@/store';
 import { formatAmount } from '@/lib/financial';
+import { EmptyState, Button } from '@/components/ui';
+import { useTranslation } from '@/lib/i18n';
+import { Box, X, ArrowLeft, ArrowRight, Search } from 'lucide-react';
 
 interface CatalogueArticle {
   id: string;
@@ -29,6 +32,7 @@ const SUPPLIER_COLORS: Record<string, string> = {
 
 export default function CataloguePage() {
   const { setIsMobile } = useAppStore();
+  const { t } = useTranslation();
   const [articles, setArticles] = useState<CatalogueArticle[]>([]);
   const [total, setTotal] = useState(0);
   const [loading, setLoading] = useState(true);
@@ -76,41 +80,38 @@ export default function CataloguePage() {
     }
   }, [page, searchDebounce, supplierFilter, categoryFilter, categories.length]);
 
-  useEffect(() => { fetchArticles(); }, [fetchArticles]);
+  useEffect(() => { Promise.resolve().then(() => fetchArticles()); }, [fetchArticles]);
 
   return (
     <div className="app-layout">
       <Sidebar />
       <main className="app-main">
-        <TopBar title="Catalogue articles" />
+        <TopBar title={t('catalogue', 'title')} />
         <div className="page-content">
 
           {/* Controls */}
           <div className="ql-header">
             <div className="ql-search-wrap">
-              <svg className="ql-search-icon" width="16" height="16" viewBox="0 0 16 16" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round">
-                <circle cx="7" cy="7" r="4" />
-                <path d="M13 13l-2.8-2.8" />
-              </svg>
+              <Search className="ql-search-icon text-text-muted" size={16} />
               <input
                 className="ql-search-input"
                 type="text"
-                placeholder="Référence, description, spécification..."
+                placeholder={t('catalogue', 'searchPlaceholder')}
                 value={search}
                 onChange={e => setSearch(e.target.value)}
               />
-              {search && <button className="ql-search-clear" onClick={() => setSearch('')}>✕</button>}
+              {search && <button className="ql-search-clear" onClick={() => setSearch('')}><X size={14} /></button>}
             </div>
             <div className="ql-controls">
               <select className="ql-filter-select" value={supplierFilter} onChange={e => { setSupplierFilter(e.target.value); setPage(1); }}>
-                <option value="">Tous les fournisseurs</option>
+                <option value="">{t('catalogue', 'allSuppliers')}</option>
                 <option value="NSB">Nussbaum</option>
                 <option value="ST">Sanitas Troesch</option>
                 <option value="GM">Getaz Miauton</option>
               </select>
               {categories.length > 0 && (
                 <select className="ql-filter-select" value={categoryFilter} onChange={e => { setCategoryFilter(e.target.value); setPage(1); }}>
-                  <option value="">Toutes les catégories</option>
+                  <option value="">{t('catalogue', 'allCategories')}</option>
                   {categories.map(cat => (
                     <option key={cat} value={cat}>{cat}</option>
                   ))}
@@ -126,13 +127,13 @@ export default function CataloguePage() {
             <table className="catalogue-table">
               <thead>
                 <tr>
-                  <th>Fournisseur</th>
-                  <th>Référence</th>
-                  <th>Désignation</th>
-                  <th>Spéc.</th>
-                  <th>Catégorie</th>
-                  <th>Unité</th>
-                  <th style={{ textAlign: 'right' }}>Prix unitaire HT</th>
+                  <th>{t('catalogue', 'columns.supplier')}</th>
+                  <th>{t('catalogue', 'columns.reference')}</th>
+                  <th>{t('catalogue', 'columns.description')}</th>
+                  <th>{t('catalogue', 'columns.specification')}</th>
+                  <th>{t('catalogue', 'columns.category')}</th>
+                  <th>{t('catalogue', 'columns.unit')}</th>
+                  <th style={{ textAlign: 'right' }}>{t('catalogue', 'columns.unitPrice')}</th>
                 </tr>
               </thead>
               <tbody>
@@ -144,8 +145,12 @@ export default function CataloguePage() {
                   ))
                 ) : articles.length === 0 ? (
                   <tr>
-                    <td colSpan={7} style={{ textAlign: 'center', padding: '40px', color: 'var(--color-text-muted)' }}>
-                      Aucun article trouvé
+                    <td colSpan={7}>
+                      <EmptyState
+                        icon={Box}
+                        title={t('catalogue', 'emptyTitle')}
+                        description={t('catalogue', 'emptyDesc')}
+                      />
                     </td>
                   </tr>
                 ) : (
@@ -192,10 +197,10 @@ export default function CataloguePage() {
 
           {/* Pagination */}
           {total > 50 && (
-            <div className="ql-pagination">
-              <button className="clay-button" disabled={page === 1} onClick={() => setPage(p => p - 1)}>← Préc.</button>
-              <span>Page {page} / {Math.ceil(total / 50)}</span>
-              <button className="clay-button" disabled={page * 50 >= total} onClick={() => setPage(p => p + 1)}>Suiv. →</button>
+            <div className="ql-pagination flex items-center justify-center gap-4 mt-8">
+              <Button variant="secondary" disabled={page === 1} onClick={() => setPage(p => p - 1)} iconLeft={<ArrowLeft size={16} />}>Préc.</Button>
+              <span className="text-sm text-text-muted font-medium">Page {page} / {Math.ceil(total / 50)}</span>
+              <Button variant="secondary" disabled={page * 50 >= total} onClick={() => setPage(p => p + 1)} iconRight={<ArrowRight size={16} />}>Suiv.</Button>
             </div>
           )}
         </div>

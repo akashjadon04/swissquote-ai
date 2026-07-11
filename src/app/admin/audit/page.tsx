@@ -4,6 +4,7 @@ import React, { useEffect, useState, useCallback } from 'react';
 import { motion } from 'framer-motion';
 import { Sidebar, MobileBottomNav, TopBar } from '@/components/layout/Sidebar';
 import { useAppStore } from '@/store';
+import { useTranslation } from '@/lib/i18n';
 
 interface AuditEntry {
   id: string;
@@ -32,6 +33,7 @@ const ENTITY_LABELS: Record<string, string> = {
 
 export default function AuditPage() {
   const { setIsMobile } = useAppStore();
+  const { t } = useTranslation();
   const [entries, setEntries] = useState<AuditEntry[]>([]);
   const [loading, setLoading] = useState(true);
   const [page, setPage] = useState(1);
@@ -55,15 +57,15 @@ export default function AuditPage() {
     finally { setLoading(false); }
   }, [page]);
 
-  useEffect(() => { fetchLog(); }, [fetchLog]);
+  useEffect(() => { Promise.resolve().then(() => fetchLog()); }, [fetchLog]);
 
   return (
     <div className="app-layout">
       <Sidebar />
       <main className="app-main">
-        <TopBar title="Journal d'activité" />
+        <TopBar title={t('sidebar', 'audit')} />
         <div className="page-content">
-          <div className="ql-count">{total} événements</div>
+          <div className="ql-count">{total} {t('admin', 'events')}</div>
 
           <div className="audit-timeline clay-card">
             {loading ? (
@@ -76,7 +78,7 @@ export default function AuditPage() {
             ) : entries.length === 0 ? (
               <div className="empty-state" style={{ padding: 'var(--space-8)', textAlign: 'center' }}>
                 <div className="empty-icon">📋</div>
-                <p style={{ color: 'var(--color-text-muted)' }}>Aucun événement enregistré.</p>
+                <p style={{ color: 'var(--color-text-muted)' }}>{t('admin', 'noEvents')}</p>
               </div>
             ) : (
               entries.map((entry, i) => {
@@ -124,9 +126,9 @@ export default function AuditPage() {
 
           {total > 30 && (
             <div className="ql-pagination">
-              <button className="clay-button" disabled={page === 1} onClick={() => setPage(p => p - 1)}>← Préc.</button>
-              <span>Page {page} / {Math.ceil(total / 30)}</span>
-              <button className="clay-button" disabled={page * 30 >= total} onClick={() => setPage(p => p + 1)}>Suiv. →</button>
+              <button className="clay-button" disabled={page === 1} onClick={() => setPage(p => p - 1)}>{t('generic', 'prev')}</button>
+              <span>{t('generic', 'page')} {page} / {Math.ceil(total / 30)}</span>
+              <button className="clay-button" disabled={page * 30 >= total} onClick={() => setPage(p => p + 1)}>{t('generic', 'next')}</button>
             </div>
           )}
         </div>

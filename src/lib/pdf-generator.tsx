@@ -596,7 +596,7 @@ function QuoteDocument({ quote }: { quote: PDFQuote }) {
         {quote.has_missing_items && (
           <View style={styles.missingWarning}>
             <Text style={styles.missingWarningText}>
-              ⚠ Ce devis contient des articles non référencés (signalés "Article manquant"). Le total indiqué est partiel. Les articles manquants devront être sourcés et ajoutés manuellement.
+              ⚠ Ce devis contient des articles non référencés (signalés &quot;Article manquant&quot;). Le total indiqué est partiel. Les articles manquants devront être sourcés et ajoutés manuellement.
             </Text>
           </View>
         )}
@@ -617,7 +617,7 @@ function QuoteDocument({ quote }: { quote: PDFQuote }) {
           </View>
           <View style={[styles.financialRow, styles.financialRowAlt]}>
             <Text style={styles.financialLabel}>
-              Main-d'œuvre ({quote.labour_hours ?? 0}h × CHF {formatAmountPDF(quote.labour_rate)}/h)
+              Main-d&apos;œuvre ({quote.labour_hours ?? 0}h × CHF {formatAmountPDF(quote.labour_rate)}/h)
             </Text>
             <Text style={styles.financialValue}>{formatCHFPDF(quote.labour_total)}</Text>
           </View>

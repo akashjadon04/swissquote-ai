@@ -2,7 +2,6 @@
 
 import { forwardRef, type ButtonHTMLAttributes, type ReactNode } from 'react';
 import { motion, type HTMLMotionProps } from 'framer-motion';
-import styles from './Button.module.css';
 
 /* ─── Types ─────────────────────────────────────────────────── */
 
@@ -28,20 +27,13 @@ export interface ButtonProps
 
 function LoadingDots() {
   return (
-    <span className="dot-pulse" aria-hidden="true">
-      <span className="dot-pulse__dot" />
-      <span className="dot-pulse__dot" />
-      <span className="dot-pulse__dot" />
+    <span className="dot-pulse" aria-hidden="true" style={{ position: 'relative', zIndex: 10 }}>
+      <span className="dot-pulse__dot" style={{ backgroundColor: 'currentColor' }} />
+      <span className="dot-pulse__dot" style={{ backgroundColor: 'currentColor' }} />
+      <span className="dot-pulse__dot" style={{ backgroundColor: 'currentColor' }} />
     </span>
   );
 }
-
-/* ─── Motion Config ─────────────────────────────────────────── */
-
-const motionProps: Partial<HTMLMotionProps<'button'>> = {
-  whileTap: { scale: 0.97 },
-  transition: { type: 'spring', stiffness: 500, damping: 30 },
-};
 
 /* ─── Component ─────────────────────────────────────────────── */
 
@@ -63,49 +55,35 @@ export const Button = forwardRef<HTMLButtonElement, ButtonProps>(
   ) => {
     const isDisabled = disabled || loading;
 
-    const classes = [
-      'clay-button',
-      `clay-button--${variant}`,
-      `clay-button--${size}`,
-      styles.button,
-      fullWidth ? styles.fullWidth : '',
-      loading ? styles.loading : '',
-      className,
-    ]
-      .filter(Boolean)
-      .join(' ');
+    // Apply btn-12 classes provided by user
+    let btnClasses = `btn-12 ${className}`;
+    if (variant === 'secondary') {
+      btnClasses += ' secondary';
+    }
+    if (fullWidth) {
+      btnClasses += ' w-full';
+    }
 
     return (
-      <motion.button
+      <button
         ref={ref}
-        className={classes}
+        className={btnClasses}
         disabled={isDisabled}
-        aria-busy={loading || undefined}
-        {...motionProps}
-        {...(rest as HTMLMotionProps<'button'>)}
+        aria-busy={loading}
+        {...rest}
       >
         {loading ? (
           <LoadingDots />
         ) : (
           <>
-            {iconLeft && (
-              <span className={styles.icon} aria-hidden="true">
-                {iconLeft}
-              </span>
-            )}
-            {children && <span className={styles.label}>{children}</span>}
-            {iconRight && (
-              <span className={styles.icon} aria-hidden="true">
-                {iconRight}
-              </span>
-            )}
+            {iconLeft && <span>{iconLeft}</span>}
+            {children && <span>{children}</span>}
+            {iconRight && <span>{iconRight}</span>}
           </>
         )}
-      </motion.button>
+      </button>
     );
   }
 );
 
 Button.displayName = 'Button';
-
-export default Button;

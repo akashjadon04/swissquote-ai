@@ -13,6 +13,8 @@ import '@/styles/quotes-list.css';
 import '@/styles/catalogue.css';
 import '@/styles/command-palette.css';
 import '@/styles/quote-detail.css';
+import '@/styles/buttons.css';
+import '@/styles/toggle.css';
 
 const inter = Inter({
   subsets: ['latin', 'latin-ext'],
@@ -35,6 +37,16 @@ export const metadata: Metadata = {
     'Plateforme IA de création de devis pour les entreprises de plomberie suisses. Rapide, précis, professionnel.',
   applicationName: 'SwissQuote AI',
   keywords: ['devis', 'plomberie', 'sanitaire', 'suisse', 'IA', 'swissquote'],
+  manifest: '/manifest.json',
+  appleWebApp: {
+    capable: true,
+    statusBarStyle: 'default',
+    title: 'SwissQuote AI',
+  },
+  icons: {
+    icon: '/icon-192.png',
+    apple: '/icon-192.png',
+  },
 };
 
 export const viewport: Viewport = {
@@ -55,6 +67,7 @@ export default function RootLayout({
   return (
     <html
       lang="fr"
+      translate="no"
       className={`${inter.variable} ${jetbrainsMono.variable}`}
       suppressHydrationWarning
     >

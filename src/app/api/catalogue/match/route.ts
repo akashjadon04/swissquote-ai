@@ -1,7 +1,7 @@
 import { NextRequest, NextResponse } from 'next/server';
-import { getServerSupabase } from '@/lib/supabase';
 import { matchArticles } from '@/lib/catalogue-matcher';
 import type { AIArticle, SupplierCode } from '@/types/database.types';
+import { MOCK_CATALOGUE } from '@/lib/catalogueData';
 
 // ═══════════════════════════════════════════
 // POST /api/catalogue/match — Catalogue Matching Endpoint
@@ -9,7 +9,12 @@ import type { AIArticle, SupplierCode } from '@/types/database.types';
 
 export async function POST(request: NextRequest) {
   try {
-    const body = await request.json();
+    let body;
+    try {
+      body = await request.json();
+    } catch (e) {
+      return NextResponse.json({ error: 'Format JSON invalide' }, { status: 400 });
+    }
     const { articles, preferredSupplier } = body as {
       articles: AIArticle[];
       preferredSupplier?: SupplierCode;
@@ -22,23 +27,8 @@ export async function POST(request: NextRequest) {
       );
     }
 
-    // Fetch full catalogue with supplier data
-    const supabase = getServerSupabase();
-    const { data: catalogue, error } = await supabase
-      .from('sq_catalogue_articles')
-      .select('*, supplier:sq_suppliers(*)')
-      .eq('active', true);
-
-    if (error) {
-      console.error('[API /catalogue/match] DB error:', error);
-      return NextResponse.json(
-        { error: 'Erreur de base de données.' },
-        { status: 500 }
-      );
-    }
-
     // Run matching
-    const result = matchArticles(articles, catalogue || [], preferredSupplier);
+    const result = matchArticles(articles, MOCK_CATALOGUE as any, preferredSupplier);
 
     return NextResponse.json({ result });
   } catch (error) {

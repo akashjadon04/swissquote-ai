@@ -6,6 +6,9 @@ import { motion, AnimatePresence } from 'framer-motion';
 import { Sidebar, MobileBottomNav, TopBar } from '@/components/layout/Sidebar';
 import { useAppStore } from '@/store';
 import { formatCHF } from '@/lib/financial';
+import { EmptyState, Button } from '@/components/ui';
+import { useTranslation } from '@/lib/i18n';
+import { FileText, Plus, AlertCircle, Edit2, Download, Copy, Trash2, ArrowLeft, ArrowRight, Search, LayoutList, LayoutGrid } from 'lucide-react';
 
 // ─────────────────────────────────────────
 // Types
@@ -47,6 +50,7 @@ const SUPPLIER_LABELS: Record<string, string> = { NSB: 'Nussbaum', ST: 'Sanitas 
 
 export default function QuotesPage() {
   const { setIsMobile, isMobile } = useAppStore();
+  const { t } = useTranslation();
   const [quotes, setQuotes] = useState<Quote[]>([]);
   const [total, setTotal] = useState(0);
   const [page, setPage] = useState(1);
@@ -83,7 +87,8 @@ export default function QuotesPage() {
         ...(statusFilter ? { status: statusFilter } : {}),
         ...(searchDebounce ? { search: searchDebounce } : {}),
       });
-      const res = await fetch(`/api/quotes?${params}`);
+      const { apiFetch } = await import('@/lib/api');
+      const res = await apiFetch(`/api/quotes?${params}`);
       const data = await res.json();
       setQuotes(data.data || []);
       setTotal(data.total || 0);
@@ -94,7 +99,7 @@ export default function QuotesPage() {
     }
   }, [page, statusFilter, searchDebounce]);
 
-  useEffect(() => { fetchQuotes(); }, [fetchQuotes]);
+  useEffect(() => { Promise.resolve().then(() => fetchQuotes()); }, [fetchQuotes]);
 
   // Group by status for kanban
   const kanbanGroups = (['draft', 'review', 'finalized', 'missing_items', 'sent', 'accepted'] as QuoteStatus[]).map(s => ({
@@ -107,16 +112,13 @@ export default function QuotesPage() {
     <div className="app-layout">
       <Sidebar />
       <main className="app-main">
-        <TopBar title="Devis" />
+        <TopBar title={t('sidebar', 'quotes')} />
         <div className="page-content">
 
           {/* Header Row */}
           <div className="ql-header">
             <div className="ql-search-wrap">
-              <svg className="ql-search-icon" width="16" height="16" viewBox="0 0 16 16" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round">
-                <circle cx="7" cy="7" r="4" />
-                <path d="M13 13l-2.8-2.8" />
-              </svg>
+              <Search className="ql-search-icon text-text-muted" size={16} />
               <input
                 className="ql-search-input"
                 type="text"
@@ -138,7 +140,7 @@ export default function QuotesPage() {
               >
                 <option value="">Tous les statuts</option>
                 {Object.entries(STATUS_CONFIG).map(([k, v]) => (
-                  <option key={k} value={k}>{v.label}</option>
+                  <option key={k} value={k}>{t('quotes', `status.${k}`)}</option>
                 ))}
               </select>
 
@@ -150,29 +152,22 @@ export default function QuotesPage() {
                     onClick={() => setViewMode('list')}
                     title="Vue liste"
                   >
-                    <svg width="16" height="16" viewBox="0 0 16 16" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round">
-                      <path d="M2 4h12M2 8h12M2 12h12" />
-                    </svg>
+                    <LayoutList size={16} />
                   </button>
                   <button
                     className={`ql-view-btn ${viewMode === 'kanban' ? 'active' : ''}`}
                     onClick={() => setViewMode('kanban')}
                     title="Vue Kanban"
                   >
-                    <svg width="16" height="16" viewBox="0 0 16 16" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round">
-                      <rect x="1" y="2" width="4" height="12" rx="1" />
-                      <rect x="6" y="2" width="4" height="9" rx="1" />
-                      <rect x="11" y="2" width="4" height="7" rx="1" />
-                    </svg>
+                    <LayoutGrid size={16} />
                   </button>
                 </div>
               )}
 
-              <Link href="/quotes/new" className="clay-button clay-button--primary ql-new-btn">
-                <svg width="16" height="16" viewBox="0 0 16 16" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round">
-                  <path d="M8 2v12M2 8h12" />
-                </svg>
-                {!isMobile && <span>Nouveau devis</span>}
+              <Link href="/quotes/new" tabIndex={-1}>
+                <Button variant="primary" iconLeft={<Plus size={16} />}>
+                  {!isMobile && <span>{t('dashboard', 'newQuote')}</span>}
+                </Button>
               </Link>
             </div>
           </div>
@@ -196,19 +191,21 @@ export default function QuotesPage() {
                 </div>
               </motion.div>
             ) : quotes.length === 0 ? (
-              <motion.div key="empty" initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }}>
-                <div className="empty-state clay-card">
-                  <div className="empty-icon">📋</div>
-                  <h3>{search || statusFilter ? 'Aucun résultat' : 'Aucun devis'}</h3>
-                  <p>
-                    {search || statusFilter
-                      ? 'Essayez de modifier vos filtres ou votre recherche.'
-                      : 'Créez votre premier devis en quelques secondes avec l\'IA.'}
-                  </p>
-                  <Link href="/quotes/new" className="clay-button clay-button--primary">
-                    Nouveau devis
-                  </Link>
-                </div>
+              <motion.div key="empty" initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} className="flex-1 flex flex-col justify-center">
+                <EmptyState
+                  icon={FileText}
+                  title={search || statusFilter ? t('generic', 'noResults') : t('quotes', 'emptyTitle')}
+                  description={search || statusFilter
+                    ? t('quotes', 'emptySearch')
+                    : t('quotes', 'emptyDesc')}
+                  action={
+                    <Link href="/quotes/new">
+                      <button className="btn-12">
+                        <span>{t('dashboard', 'newQuote')}</span>
+                      </button>
+                    </Link>
+                  }
+                />
               </motion.div>
             ) : viewMode === 'list' ? (
               <motion.div key="list" initial={{ opacity: 0 }} animate={{ opacity: 1 }}>
@@ -220,18 +217,10 @@ export default function QuotesPage() {
 
                 {/* Pagination */}
                 {total > 20 && (
-                  <div className="ql-pagination">
-                    <button
-                      className="clay-button"
-                      disabled={page === 1}
-                      onClick={() => setPage(p => p - 1)}
-                    >← Préc.</button>
-                    <span>Page {page} / {Math.ceil(total / 20)}</span>
-                    <button
-                      className="clay-button"
-                      disabled={page * 20 >= total}
-                      onClick={() => setPage(p => p + 1)}
-                    >Suiv. →</button>
+                  <div className="ql-pagination flex items-center justify-center gap-4 mt-8">
+                    <Button variant="secondary" disabled={page === 1} onClick={() => setPage(p => p - 1)} iconLeft={<ArrowLeft size={16} />}>Préc.</Button>
+                    <span className="text-sm font-medium text-text-muted">Page {page} / {Math.ceil(total / 20)}</span>
+                    <Button variant="secondary" disabled={page * 20 >= total} onClick={() => setPage(p => p + 1)} iconRight={<ArrowRight size={16} />}>Suiv.</Button>
                   </div>
                 )}
               </motion.div>
@@ -280,7 +269,8 @@ function QuoteListRow({ quote, index, onRefresh }: { quote: Quote; index: number
 
   const handleStatusChange = async (newStatus: string) => {
     setMenuOpen(false);
-    await fetch(`/api/quotes/${quote.id}`, {
+    const { apiFetch } = await import('@/lib/api');
+    await apiFetch(`/api/quotes/${quote.id}`, {
       method: 'PATCH',
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify({ status: newStatus }),
@@ -310,7 +300,7 @@ function QuoteListRow({ quote, index, onRefresh }: { quote: Quote; index: number
               </span>
             )}
             {quote.has_missing_items && (
-              <span className="ql-missing-badge">⚠️</span>
+              <AlertCircle size={16} className="text-danger inline-block" />
             )}
           </div>
           <div className="ql-row-status">
@@ -357,28 +347,30 @@ function QuoteListRow({ quote, index, onRefresh }: { quote: Quote; index: number
                   ))}
                 </div>
                 <div className="ql-dropdown-divider" />
-                <Link href={`/quotes/${quote.id}`} className="ql-dropdown-item">
-                  ✏️ Modifier
+                <Link href={`/quotes/${quote.id}`} className="ql-dropdown-item flex items-center gap-2">
+                  <Edit2 size={14} /> Modifier
                 </Link>
-                <Link href={`/quotes/${quote.id}/pdf`} className="ql-dropdown-item">
-                  📄 Télécharger PDF
+                <Link href={`/quotes/${quote.id}/pdf`} className="ql-dropdown-item flex items-center gap-2">
+                  <Download size={14} /> Télécharger PDF
                 </Link>
-                <button className="ql-dropdown-item" onClick={async () => {
-                  await fetch(`/api/quotes/${quote.id}/duplicate`, { method: 'POST' });
+                <button className="ql-dropdown-item flex items-center gap-2" onClick={async () => {
+                  const { apiFetch } = await import('@/lib/api');
+                  await apiFetch(`/api/quotes/${quote.id}/duplicate`, { method: 'POST' });
                   setMenuOpen(false);
                   onRefresh();
                 }}>
-                  📋 Dupliquer
+                  <Copy size={14} /> Dupliquer
                 </button>
                 <div className="ql-dropdown-divider" />
-                <button className="ql-dropdown-item danger" onClick={async () => {
+                <button className="ql-dropdown-item danger flex items-center gap-2" onClick={async () => {
                   if (confirm('Supprimer ce devis définitivement ?')) {
-                    await fetch(`/api/quotes/${quote.id}`, { method: 'DELETE' });
+                    const { apiFetch } = await import('@/lib/api');
+                    await apiFetch(`/api/quotes/${quote.id}`, { method: 'DELETE' });
                     setMenuOpen(false);
                     onRefresh();
                   }
                 }}>
-                  🗑️ Supprimer
+                  <Trash2 size={14} /> Supprimer
                 </button>
               </motion.div>
             )}
@@ -414,7 +406,9 @@ function KanbanCard({ quote }: { quote: Quote }) {
           <span className="kanban-card-date">{date}</span>
         </div>
         {quote.has_missing_items && (
-          <div className="kanban-card-warning">⚠️ Articles manquants</div>
+          <div className="kanban-card-warning flex items-center gap-1">
+            <AlertCircle size={14} /> Articles manquants
+          </div>
         )}
       </motion.div>
     </Link>

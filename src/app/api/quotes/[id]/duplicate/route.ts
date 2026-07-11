@@ -20,20 +20,10 @@ export async function POST(_request: NextRequest, { params }: { params: Promise<
     return NextResponse.json({ error: 'Devis introuvable.' }, { status: 404 });
   }
 
-  // Get next quote number
-  const { data: config } = await supabase
-    .from('sq_configurations')
-    .select('value')
-    .eq('key', 'quote_counter')
-    .single();
-
-  const counter = parseInt(String(config?.value || '21648')) + 1;
-  const quoteNumber = `${counter}/AL/jf`;
-
-  await supabase
-    .from('sq_configurations')
-    .update({ value: String(counter) })
-    .eq('key', 'quote_counter');
+  const { data: quoteNumber, error: rpcError } = await supabase.rpc('generate_next_quote_number');
+  if (rpcError || !quoteNumber) {
+    return NextResponse.json({ error: 'Erreur de génération du numéro de devis' }, { status: 500 });
+  }
 
   // Create duplicate
   const { id: _id, created_at, updated_at, ...quoteData } = original;

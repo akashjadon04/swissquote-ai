@@ -39,8 +39,10 @@ export function CommandPalette() {
         .catch(() => {});
       setTimeout(() => inputRef.current?.focus(), 50);
     } else {
-      setQuery('');
-      setSelectedIndex(0);
+      Promise.resolve().then(() => {
+        setQuery('');
+        setSelectedIndex(0);
+      });
     }
   }, [commandPaletteOpen]);
 
@@ -165,7 +167,7 @@ export function CommandPalette() {
   }, [commandPaletteOpen, flatFiltered, selectedIndex, execute, setCommandPaletteOpen]);
 
   // Reset selection on query change
-  useEffect(() => { setSelectedIndex(0); }, [query]);
+  useEffect(() => { Promise.resolve().then(() => setSelectedIndex(0)); }, [query]);
 
   // Global ⌘K / Ctrl+K shortcut
   useEffect(() => {

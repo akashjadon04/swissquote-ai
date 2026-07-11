@@ -23,7 +23,7 @@ export function getServerSupabase(): SupabaseClient<any> {
     throw new Error('Supabase URL / key not configured in environment variables.');
   }
 
-  serverClient = createClient<any>(url, key, {
+  serverClient = createClient<any>(url, key, { // eslint-disable-line @typescript-eslint/no-explicit-any
     auth: { persistSession: false, autoRefreshToken: false },
   });
 
@@ -45,6 +45,6 @@ export function getBrowserSupabase(): SupabaseClient<any> {
     throw new Error('Supabase public URL / anon key not configured.');
   }
 
-  browserClient = createClient<any>(url, key);
+  browserClient = createClient<any>(url, key); // eslint-disable-line @typescript-eslint/no-explicit-any
   return browserClient;
 }

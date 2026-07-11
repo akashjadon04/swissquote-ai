@@ -24,6 +24,8 @@ function checkRateLimit(ip: string): boolean {
   return true;
 }
 
+export const maxDuration = 60; // Allow 60 seconds on Vercel Pro/Hobby for AI processing
+
 export async function POST(request: NextRequest) {
   try {
     // Rate limiting
@@ -36,7 +38,12 @@ export async function POST(request: NextRequest) {
     }
 
     // Parse body
-    const body = await request.json();
+    let body;
+    try {
+      body = await request.json();
+    } catch (e) {
+      return NextResponse.json({ error: 'Format JSON invalide' }, { status: 400 });
+    }
     const { description } = body;
 
     if (!description || typeof description !== 'string') {
@@ -61,15 +68,19 @@ export async function POST(request: NextRequest) {
     }
 
     // Extract with AI (Gemini → OpenRouter cascade)
+    // Abort signal could be wired into extractFromDescription for complete safety, 
+    // but maxDuration prevents Vercel 504 timeouts.
     const result = await extractFromDescription(description.trim());
 
     return NextResponse.json(result);
   } catch (error) {
     const message = error instanceof Error ? error.message : 'Erreur interne';
-    console.error('[API /ai/extract] Error:', message);
+    // Log detailed error internally
+    console.error('[API /ai/extract] CRITICAL ERROR:', message, error);
 
+    // Sanitize response to prevent information leakage
     return NextResponse.json(
-      { error: `Extraction AI échouée: ${message}` },
+      { error: 'Le traitement par l\'IA a échoué. Veuillez réessayer.' },
       { status: 502 }
     );
   }
