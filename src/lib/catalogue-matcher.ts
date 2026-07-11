@@ -62,7 +62,9 @@ function extractDiameterMm(dim: string | null | undefined): number | null {
  * Scores similarity between AI label and catalogue description.
  * Uses keyword overlap with weighting for technical terms.
  */
-function descriptionScore(catalogueDesc: string, aiLabel: string): number {
+function descriptionScore(catalogueDesc: string | null | undefined, aiLabel: string | null | undefined): number {
+  if (!catalogueDesc || !aiLabel) return 0;
+  
   const technicalTerms = new Set([
     'inox', 'acier', 'cuivre', 'pvc', 'press', 'sertir', 'filet',
     'mâle', 'femelle', 'coude', 'manchon', 'tuyau', 'tube', 'collier',
@@ -115,8 +117,8 @@ const CATEGORY_ALIASES: Record<string, string[]> = {
   mamelon: ['mamelon', 'double_mamelon'],
 };
 
-function matchCategory(aiCategory: string, catalogueCategory: string | null): boolean {
-  if (!catalogueCategory) return false;
+function matchCategory(aiCategory: string | null | undefined, catalogueCategory: string | null | undefined): boolean {
+  if (!catalogueCategory || !aiCategory) return false;
 
   const aiCat = aiCategory.toLowerCase();
   const catCat = catalogueCategory.toLowerCase();
