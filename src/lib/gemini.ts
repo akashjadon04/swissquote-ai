@@ -2,13 +2,13 @@ import { GoogleGenerativeAI } from '@google/generative-ai';
 import type { AIExtractionResult } from '@/types/database.types';
 
 // ═══════════════════════════════════════════
-// SwissQuote AI — Gemini + OpenRouter Cascade
+// SwissQuote AI — AI Extraction Engine
+// Cascade: Gemini 3.5-flash → OpenRouter/free (key 1 → 2 → 3)
 // ═══════════════════════════════════════════
 
 // ─────────────────────────────────────────
-// System Prompt (French — strict JSON-only)
+// System Prompt — strict JSON extraction only
 // ─────────────────────────────────────────
-
 const SYSTEM_PROMPT = `Tu es un moteur d'extraction sémantique spécialisé dans les travaux de plomberie suisse.
 
 TON UNIQUE RÔLE :
@@ -50,50 +50,24 @@ FORMAT DE SORTIE — JSON strict :
   "exclusions_suggested": ["string — éléments probablement hors-devis à signaler"]
 }
 
-IMPORTANT: NE JAMAIS ESTIMER DE QUANTITÉS OU DE MESURES. Si une quantité ou une mesure n'est pas explicitement mentionnée dans le texte, tu DOIS retourner "null" pour "quantity" et ajouter une note dans "intervention_flags" pour indiquer qu'une vérification manuelle de la quantité est requise. Une quantité inventée est une erreur grave.
-
-Pour chaque article identifié, inclus TOUS les accessoires nécessaires (raccords, fixations, colliers, isolation) même s'ils ne sont pas explicitement mentionnés dans la description — un plombier les ajouterait systématiquement. S'ils ne sont pas mentionnés avec des quantités, laisse "quantity": null.
-
+RÈGLE CRITIQUE : NE JAMAIS ESTIMER DE QUANTITÉS. Si non précisé → "quantity": null et ajouter un flag de vérification manuelle.
+Pour chaque article, inclure les accessoires nécessaires (raccords, colliers, isolation) avec "quantity": null si non mentionnés.
 Ne retourne rien d'autre que le JSON. Aucun caractère avant ou après.`;
 
 // ─────────────────────────────────────────
-// Rate Limiting (simple in-memory for Gemini free tier)
-// ─────────────────────────────────────────
-
-const geminiUsage = {
-  count: 0,
-  resetDate: new Date().toDateString(),
-  limit: 1400, // Leave 100 buffer under the 1500 limit
-};
-
-function checkGeminiRateLimit(): boolean {
-  const today = new Date().toDateString();
-  if (geminiUsage.resetDate !== today) {
-    geminiUsage.count = 0;
-    geminiUsage.resetDate = today;
-  }
-  return geminiUsage.count < geminiUsage.limit;
-}
-
-function incrementGeminiUsage() {
-  geminiUsage.count++;
-}
-
-// ─────────────────────────────────────────
-// Gemini Client
+// Gemini — Primary provider
+// Model: gemini-3.5-flash (from GEMINI_MODEL env, default: gemini-3.5-flash)
 // ─────────────────────────────────────────
 
 async function extractWithGemini(description: string): Promise<AIExtractionResult> {
   const apiKey = process.env.GEMINI_API_KEY;
-  if (!apiKey) throw new Error('GEMINI_API_KEY not configured');
+  if (!apiKey) throw new Error('GEMINI_API_KEY not set');
 
-  if (!checkGeminiRateLimit()) {
-    throw new Error('GEMINI_RATE_LIMIT_EXCEEDED');
-  }
+  const modelName = process.env.GEMINI_MODEL || 'gemini-3.5-flash';
 
   const genAI = new GoogleGenerativeAI(apiKey);
   const model = genAI.getGenerativeModel({
-    model: process.env.GEMINI_MODEL || 'gemini-3.5-flash',
+    model: modelName,
     generationConfig: {
       temperature: 0.1,
       topP: 0.95,
@@ -103,42 +77,42 @@ async function extractWithGemini(description: string): Promise<AIExtractionResul
   });
 
   const result = await model.generateContent({
-    contents: [
-      { role: 'user', parts: [{ text: description }] },
-    ],
+    contents: [{ role: 'user', parts: [{ text: description }] }],
     systemInstruction: { role: 'system', parts: [{ text: SYSTEM_PROMPT }] },
   });
 
-  incrementGeminiUsage();
-
   const text = result.response.text();
+  console.log(`[AI] Gemini (${modelName}) responded`);
   return parseAIResponse(text);
 }
 
 // ─────────────────────────────────────────
-// OpenRouter Multi-Key Cascade
-// Each key is tried in sequence until one succeeds.
-// Keys come from comma-separated OPENROUTER_API_KEYS env var,
-// or fall back to single OPENROUTER_API_KEY.
+// OpenRouter — Fallback provider
+// Model: openrouter/free (auto-selects best available free model)
+// Keys: OPENROUTER_API_KEYS (comma-separated), tried in order
 // ─────────────────────────────────────────
 
 function getOpenRouterKeys(): string[] {
-  // Support multiple keys: OPENROUTER_API_KEYS="key1,key2,key3"
+  // Primary: comma-separated multi-key list
   const multi = process.env.OPENROUTER_API_KEYS;
   if (multi) {
     const keys = multi.split(',').map(k => k.trim()).filter(Boolean);
     if (keys.length > 0) return keys;
   }
-  // Fallback to single key
+  // Fallback: single key
   const single = process.env.OPENROUTER_API_KEY;
-  if (single) return [single];
+  if (single?.trim()) return [single.trim()];
   return [];
 }
 
 async function extractWithOpenRouterKey(
   description: string,
-  apiKey: string
+  apiKey: string,
+  keyIndex: number
 ): Promise<AIExtractionResult> {
+  // openrouter/free: official OpenRouter router that picks the best free model automatically
+  const model = process.env.OPENROUTER_MODEL || 'openrouter/free';
+
   const response = await fetch('https://openrouter.ai/api/v1/chat/completions', {
     method: 'POST',
     headers: {
@@ -148,15 +122,7 @@ async function extractWithOpenRouterKey(
       'X-Title': 'SwissQuote AI',
     },
     body: JSON.stringify({
-      // "openrouter/free" routes to the best available free model
-      model: process.env.OPENROUTER_MODEL || 'openrouter/auto',
-      models: [
-        'google/gemini-2.5-flash',
-        'google/gemini-flash-1.5',
-        'meta-llama/llama-3.3-70b-instruct:free',
-        'mistralai/mistral-7b-instruct:free',
-      ],
-      route: 'fallback',
+      model,
       messages: [
         { role: 'system', content: SYSTEM_PROMPT },
         { role: 'user', content: description },
@@ -168,35 +134,40 @@ async function extractWithOpenRouterKey(
   });
 
   if (!response.ok) {
-    const error = await response.text();
-    throw new Error(`OpenRouter error: ${response.status} — ${error}`);
+    const errText = await response.text().catch(() => response.statusText);
+    throw new Error(`OpenRouter key ${keyIndex + 1} HTTP ${response.status}: ${errText}`);
   }
 
   const data = await response.json();
-  const text = data.choices?.[0]?.message?.content;
 
-  if (!text) throw new Error('OpenRouter returned empty response');
+  // Handle OpenRouter error response (200 with error body)
+  if (data.error) {
+    throw new Error(`OpenRouter key ${keyIndex + 1} error: ${data.error.message || JSON.stringify(data.error)}`);
+  }
+
+  const text = data.choices?.[0]?.message?.content;
+  if (!text) throw new Error(`OpenRouter key ${keyIndex + 1} returned empty content`);
+
+  console.log(`[AI] OpenRouter (${model}, key ${keyIndex + 1}) responded`);
   return parseAIResponse(text);
 }
 
 async function extractWithOpenRouter(description: string): Promise<AIExtractionResult> {
   const keys = getOpenRouterKeys();
-  if (keys.length === 0) throw new Error('No OpenRouter API keys configured');
+  if (keys.length === 0) throw new Error('No OpenRouter API keys configured (set OPENROUTER_API_KEYS)');
 
   const errors: string[] = [];
-
   for (let i = 0; i < keys.length; i++) {
     try {
-      console.log(`[SwissQuote AI] Trying OpenRouter key ${i + 1}/${keys.length}...`);
-      return await extractWithOpenRouterKey(description, keys[i]);
+      return await extractWithOpenRouterKey(description, keys[i], i);
     } catch (err) {
       const msg = err instanceof Error ? err.message : String(err);
-      errors.push(`Key ${i + 1}: ${msg}`);
-      console.warn(`[SwissQuote AI] OpenRouter key ${i + 1} failed: ${msg}`);
+      errors.push(msg);
+      console.warn(`[AI] OpenRouter key ${i + 1}/${keys.length} failed: ${msg}`);
     }
   }
 
-  throw new Error(`All OpenRouter keys failed: ${errors.join(' | ')}`);
+  throw new Error(`All ${keys.length} OpenRouter key(s) failed: ${errors.join(' | ')}`);
 }
 
 // ─────────────────────────────────────────
@@ -204,50 +175,35 @@ async function extractWithOpenRouter(description: string): Promise<AIExtractionR
 // ─────────────────────────────────────────
 
 function parseAIResponse(text: string): AIExtractionResult {
-  // Strip any markdown code fences the model might add
   let cleaned = text.trim();
+  // Strip markdown code fences if present
   if (cleaned.startsWith('```')) {
-    cleaned = cleaned.replace(/^```(?:json)?\s*/, '').replace(/\s*```$/, '');
+    cleaned = cleaned.replace(/^```(?:json)?\s*/i, '').replace(/\s*```$/, '');
   }
 
   const parsed = JSON.parse(cleaned);
 
-  // Validate required fields
   if (!parsed.intervention_type || !parsed.sections || !Array.isArray(parsed.sections)) {
-    throw new Error('Invalid AI response structure');
+    throw new Error('AI response missing required fields (intervention_type, sections)');
   }
 
-  // Normalize confidence values
-  if (typeof parsed.confidence_global !== 'number') {
-    parsed.confidence_global = 0.5;
-  }
+  if (typeof parsed.confidence_global !== 'number') parsed.confidence_global = 0.5;
 
-  // Ensure all sections have articles array
   for (const section of parsed.sections) {
-    if (!Array.isArray(section.articles)) {
-      section.articles = [];
-    }
+    if (!Array.isArray(section.articles)) section.articles = [];
     for (const article of section.articles) {
-      if (typeof article.confidence !== 'number') {
-        article.confidence = 0.5;
-      }
+      if (typeof article.confidence !== 'number') article.confidence = 0.5;
     }
   }
 
-  // Ensure flags arrays exist
-  if (!Array.isArray(parsed.intervention_flags)) {
-    parsed.intervention_flags = [];
-  }
-  if (!Array.isArray(parsed.exclusions_suggested)) {
-    parsed.exclusions_suggested = [];
-  }
+  if (!Array.isArray(parsed.intervention_flags)) parsed.intervention_flags = [];
+  if (!Array.isArray(parsed.exclusions_suggested)) parsed.exclusions_suggested = [];
 
   return parsed as AIExtractionResult;
 }
 
 // ─────────────────────────────────────────
-// Main Export: Extract with Cascade
-// Order: Gemini → OpenRouter (key 1 → key 2 → key 3)
+// Main Export — Cascade: Gemini → OpenRouter
 // ─────────────────────────────────────────
 
 export interface ExtractionResponse {
@@ -259,31 +215,21 @@ export interface ExtractionResponse {
 export async function extractFromDescription(description: string): Promise<ExtractionResponse> {
   const startTime = Date.now();
 
-  // Try Gemini first
+  // 1. Try Gemini first
   try {
     const extraction = await extractWithGemini(description);
-    console.log(`[SwissQuote AI] ✓ Gemini succeeded in ${Date.now() - startTime}ms`);
-    return {
-      extraction,
-      provider: 'gemini',
-      processingTimeMs: Date.now() - startTime,
-    };
-  } catch (error) {
-    const errorMessage = error instanceof Error ? error.message : String(error);
-    console.warn(`[SwissQuote AI] Gemini failed: ${errorMessage}. Cascading to OpenRouter...`);
+    return { extraction, provider: 'gemini', processingTimeMs: Date.now() - startTime };
+  } catch (geminiError) {
+    const geminiMsg = geminiError instanceof Error ? geminiError.message : String(geminiError);
+    console.warn(`[AI] Gemini failed (${geminiMsg}), cascading to OpenRouter...`);
 
-    // Cascade to OpenRouter (tries all 3 keys)
+    // 2. Cascade to OpenRouter (rotates through all 3 keys)
     try {
       const extraction = await extractWithOpenRouter(description);
-      console.log(`[SwissQuote AI] ✓ OpenRouter succeeded in ${Date.now() - startTime}ms`);
-      return {
-        extraction,
-        provider: 'openrouter',
-        processingTimeMs: Date.now() - startTime,
-      };
-    } catch (fallbackError) {
-      const fbMessage = fallbackError instanceof Error ? fallbackError.message : String(fallbackError);
-      throw new Error(`All AI providers failed. Gemini: ${errorMessage}. OpenRouter: ${fbMessage}`);
+      return { extraction, provider: 'openrouter', processingTimeMs: Date.now() - startTime };
+    } catch (openrouterError) {
+      const openrouterMsg = openrouterError instanceof Error ? openrouterError.message : String(openrouterError);
+      throw new Error(`All AI providers failed.\nGemini: ${geminiMsg}\nOpenRouter: ${openrouterMsg}`);
     }
   }
 }
