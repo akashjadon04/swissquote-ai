@@ -413,47 +413,63 @@ function ItemsTab({ quote, onRefresh }: { quote: FullQuote; onRefresh: () => voi
             <p className="qd-section-desc">{section.description}</p>
           )}
 
-          <div className="qd-items-table-wrap">
-            <table className="qd-items-table">
-              <thead>
+          <div className="qd-items-table-wrap mt-4 mb-10 overflow-x-auto w-full">
+            <table className="qd-items-table w-full text-left border-collapse block md:table">
+              <thead className="hidden md:table-header-group">
                 <tr>
-                  <th className="col-ref">Référence</th>
-                  <th className="col-desc">Désignation</th>
-                  <th className="col-spec">Spéc.</th>
-                  <th className="col-qty">Qté</th>
-                  <th className="col-unit">U.</th>
-                  <th className="col-price">P.U. HT</th>
-                  <th className="col-total">Total HT</th>
-                  <th className="col-confidence">IA</th>
+                  <th className="col-ref p-4 font-semibold text-text-muted">Référence</th>
+                  <th className="col-desc p-4 font-semibold text-text-muted">Désignation</th>
+                  <th className="col-spec p-4 font-semibold text-text-muted">Spéc.</th>
+                  <th className="col-qty p-4 font-semibold text-text-muted">Qté</th>
+                  <th className="col-unit p-4 font-semibold text-text-muted">U.</th>
+                  <th className="col-price p-4 font-semibold text-text-muted">P.U. HT</th>
+                  <th className="col-total p-4 font-semibold text-text-muted">Total HT</th>
+                  <th className="col-confidence p-4 font-semibold text-text-muted">IA</th>
                 </tr>
               </thead>
-              <tbody>
+              <tbody className="divide-y divide-border-strong block md:table-row-group">
                 {section.items.sort((a, b) => a.sort_order - b.sort_order).map(item => (
-                  <tr key={item.id} className={item.is_missing ? 'item-missing' : ''}>
-                    <td>
+                  <tr key={item.id} className={`group hover:bg-surface-2 transition-colors flex flex-col md:table-row mb-4 md:mb-0 border border-border md:border-0 rounded-xl md:rounded-none overflow-hidden p-4 md:p-0 relative ${item.is_missing ? 'item-missing bg-danger/10' : 'bg-surface-1 md:bg-transparent'}`}>
+                    <td className="p-2 md:p-4 border-b border-border/30 md:border-0 block md:table-cell">
+                      <span className="md:hidden text-[10px] font-bold text-text-muted uppercase tracking-wider block mb-1">Référence</span>
                       {item.reference
-                        ? <code className="cat-ref">{item.reference}</code>
-                        : <span className="missing-label">Manquant</span>
+                        ? <code className="cat-ref px-2 py-1 bg-surface-2 rounded-md text-sm border border-border-strong font-mono shadow-sm">{item.reference}</code>
+                        : <span className="missing-label text-xs text-danger font-semibold bg-danger/20 px-2 py-0.5 rounded-full border border-danger/30">Manquant</span>
                       }
                     </td>
-                    <td className="item-desc">{item.description}</td>
-                    <td className="item-spec">{item.specification || '—'}</td>
-                    <td className="item-num">{item.quantity}</td>
-                    <td className="item-unit">{item.unit}</td>
-                    <td className="item-num">
+                    <td className="item-desc p-2 md:p-4 border-b border-border/30 md:border-0 block md:table-cell">
+                      <span className="md:hidden text-[10px] font-bold text-text-muted uppercase tracking-wider block mb-1">Désignation</span>
+                      <span className="font-medium text-text-primary">{item.description}</span>
+                    </td>
+                    <td className="item-spec p-2 md:p-4 border-b border-border/30 md:border-0 block md:table-cell text-text-muted">
+                      <span className="md:hidden text-[10px] font-bold text-text-muted uppercase tracking-wider block mb-1">Spéc.</span>
+                      {item.specification || '—'}
+                    </td>
+                    <td className="item-num p-2 md:p-4 border-b border-border/30 md:border-0 flex items-center justify-between md:table-cell">
+                      <span className="md:hidden text-[10px] font-bold text-text-muted uppercase tracking-wider block">Qté</span>
+                      {item.quantity}
+                    </td>
+                    <td className="item-unit p-2 md:p-4 border-b border-border/30 md:border-0 flex items-center justify-between md:table-cell text-text-muted">
+                      <span className="md:hidden text-[10px] font-bold text-text-muted uppercase tracking-wider block">U.</span>
+                      {item.unit}
+                    </td>
+                    <td className="item-num p-2 md:p-4 border-b border-border/30 md:border-0 flex items-center justify-between md:table-cell">
+                      <span className="md:hidden text-[10px] font-bold text-text-muted uppercase tracking-wider block">P.U. HT</span>
                       {item.unit_price ? formatAmount(item.unit_price) : '—'}
                     </td>
-                    <td className="item-num item-total">
-                      {item.line_total ? <strong>{formatAmount(item.line_total)}</strong> : '—'}
+                    <td className="item-num item-total p-2 md:p-4 flex items-center justify-between md:table-cell">
+                      <span className="md:hidden text-[10px] font-bold text-text-muted uppercase tracking-wider block">Total HT</span>
+                      {item.line_total ? <strong className="text-accent-light">{formatAmount(item.line_total)}</strong> : '—'}
                     </td>
-                    <td>
+                    <td className="p-2 md:p-4 flex flex-col md:table-cell justify-center">
+                      <span className="md:hidden text-[10px] font-bold text-text-muted uppercase tracking-wider block mb-1">IA Confiance</span>
                       {item.ai_confidence !== null && (
                         <div
-                          className="confidence-bar"
+                          className="confidence-bar w-full md:w-16 h-1.5 bg-surface-3 rounded-full overflow-hidden"
                           title={`${Math.round(item.ai_confidence * 100)}% confiance`}
                         >
                           <div
-                            className="confidence-fill"
+                            className="confidence-fill h-full rounded-full"
                             style={{
                               width: `${Math.round(item.ai_confidence * 100)}%`,
                               background: item.ai_confidence > 0.75 ? 'var(--color-success)' : item.ai_confidence > 0.5 ? 'var(--color-warning)' : 'var(--color-danger)',

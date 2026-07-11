@@ -256,7 +256,7 @@ function SidebarContent({ pathname, collapsed = false }: { pathname: string; col
 
       {/* Bottom section */}
       <div className="sidebar-footer">
-        <ThemeToggle collapsed={collapsed} />
+        <LanguageToggle />
         {!collapsed && (
           <div className="sidebar-user">
             <div className="user-avatar">AL</div>
@@ -390,7 +390,7 @@ export function TopBar({ title, breadcrumb }: { title?: string; breadcrumb?: str
             <kbd>⌘K</kbd>
           </button>
         )}
-        <LanguageToggle />
+        <ThemeToggle collapsed={false} />
       </div>
     </header>
   );

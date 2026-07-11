@@ -462,8 +462,8 @@ export default function NewQuotePage() {
                       <span>{section.sectionLabel}</span>
                     </div>
                     <div className="neo-table-container mt-4 mb-10 overflow-x-auto w-full">
-                      <table className="articles-table w-full text-left border-collapse">
-                        <thead className="bg-surface-2/30">
+                      <table className="articles-table w-full text-left border-collapse block md:table">
+                        <thead className="bg-surface-2/30 hidden md:table-header-group">
                           <tr>
                             <th className="col-ref p-4 font-semibold text-text-muted">{t('catalogue', 'columns.reference')}</th>
                             <th className="col-desc p-4 font-semibold text-text-muted">{t('catalogue', 'columns.description')}</th>
@@ -474,14 +474,15 @@ export default function NewQuotePage() {
                             <th className="col-total p-4 font-semibold text-text-muted">{t('catalogue', 'columns.total') || 'Total'}</th>
                           </tr>
                         </thead>
-                        <tbody className="divide-y divide-border-strong">
+                        <tbody className="divide-y divide-border-strong block md:table-row-group">
                           {section.items.map((item, iIdx) => (
-                            <tr key={item.id} className={`group hover:bg-surface-2 transition-colors ${item.isMissing ? 'bg-danger/10' : ''}`}>
-                              <td className="col-ref p-4">
+                            <tr key={item.id} className={`group hover:bg-surface-2 transition-colors flex flex-col md:table-row mb-4 md:mb-0 border border-border md:border-0 rounded-xl md:rounded-none overflow-hidden p-4 md:p-0 relative ${item.isMissing ? 'bg-danger/10' : 'bg-surface-1 md:bg-transparent'}`}>
+                              <td className="col-ref p-2 md:p-4 border-b border-border/30 md:border-0 block md:table-cell">
+                                <span className="md:hidden text-[10px] font-bold text-text-muted uppercase tracking-wider block mb-1">{t('catalogue', 'columns.reference')}</span>
                                 {item.isMissing ? (
                                   <input
                                     type="text"
-                                    className="neo-input w-24 text-sm font-mono"
+                                    className="neo-input w-full md:w-24 text-sm font-mono"
                                     placeholder="Réf..."
                                     value={item.reference || ''}
                                     onChange={(e) => useQuoteStore.getState().updateItem(sIdx, iIdx, { reference: e.target.value })}
@@ -492,7 +493,8 @@ export default function NewQuotePage() {
                                   <AlertCircle size={16} className="text-danger inline-block" />
                                 )}
                               </td>
-                              <td className="col-desc p-4">
+                              <td className="col-desc p-2 md:p-4 border-b border-border/30 md:border-0 block md:table-cell">
+                                <span className="md:hidden text-[10px] font-bold text-text-muted uppercase tracking-wider block mb-1">{t('catalogue', 'columns.description')}</span>
                                 <div className="flex flex-col gap-1">
                                   {item.isMissing ? (
                                     <input
@@ -506,7 +508,7 @@ export default function NewQuotePage() {
                                   )}
                                   {item.isMissing && (
                                     <div className="flex flex-col gap-2 mt-1">
-                                      <div className="flex items-center gap-2">
+                                      <div className="flex items-center gap-2 flex-wrap">
                                         <span className="text-xs text-danger font-semibold bg-danger/20 px-2 py-0.5 rounded-full w-fit border border-danger/30">
                                           {t('quoteWizard', 'articleNotFound')}
                                         </span>
@@ -551,11 +553,15 @@ export default function NewQuotePage() {
                                   )}
                                 </div>
                               </td>
-                              <td className="col-spec p-4 text-text-muted">{item.specification || '—'}</td>
-                              <td className="col-qty p-4">
+                              <td className="col-spec p-2 md:p-4 border-b border-border/30 md:border-0 block md:table-cell text-text-muted">
+                                <span className="md:hidden text-[10px] font-bold text-text-muted uppercase tracking-wider block mb-1">{t('catalogue', 'columns.specification')}</span>
+                                {item.specification || '—'}
+                              </td>
+                              <td className="col-qty p-2 md:p-4 border-b border-border/30 md:border-0 flex items-center justify-between md:table-cell">
+                                <span className="md:hidden text-[10px] font-bold text-text-muted uppercase tracking-wider block">{t('catalogue', 'columns.quantity')}</span>
                                 <input
                                   type="number"
-                                  className={`neo-input w-20 ${item.quantity === 0 ? 'border-danger border-2 bg-danger/5 text-danger font-bold shadow-[0_0_10px_rgba(239,68,68,0.2)]' : ''}`}
+                                  className={`neo-input w-24 md:w-20 ${item.quantity === 0 ? 'border-danger border-2 bg-danger/5 text-danger font-bold shadow-[0_0_10px_rgba(239,68,68,0.2)]' : ''}`}
                                   value={item.quantity === 0 ? '' : item.quantity}
                                   placeholder="0"
                                   min={0}
@@ -567,8 +573,12 @@ export default function NewQuotePage() {
                                   }}
                                 />
                               </td>
-                              <td className="col-unit p-4 text-text-muted">{item.unit}</td>
-                              <td className="col-price p-4">
+                              <td className="col-unit p-2 md:p-4 border-b border-border/30 md:border-0 flex items-center justify-between md:table-cell text-text-muted">
+                                <span className="md:hidden text-[10px] font-bold text-text-muted uppercase tracking-wider block">{t('catalogue', 'columns.unit')}</span>
+                                {item.unit}
+                              </td>
+                              <td className="col-price p-2 md:p-4 border-b border-border/30 md:border-0 flex items-center justify-between md:table-cell">
+                                <span className="md:hidden text-[10px] font-bold text-text-muted uppercase tracking-wider block">{t('catalogue', 'columns.unitPrice')}</span>
                                 {item.isMissing ? (
                                   <input
                                     type="number"
@@ -581,7 +591,8 @@ export default function NewQuotePage() {
                                   formatAmount(item.unitPrice)
                                 ) : '—'}
                               </td>
-                              <td className="col-total p-4">
+                              <td className="col-total p-2 md:p-4 flex items-center justify-between md:table-cell">
+                                <span className="md:hidden text-[10px] font-bold text-text-muted uppercase tracking-wider block">{t('catalogue', 'columns.total') || 'Total'}</span>
                                 {item.lineTotal ? (
                                   <strong className="text-accent-light">{formatAmount(item.lineTotal)}</strong>
                                 ) : item.isMissing && item.unitPrice && item.quantity ? (
