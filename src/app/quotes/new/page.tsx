@@ -478,41 +478,33 @@ export default function NewQuotePage() {
                         </thead>
                         <tbody className="divide-y divide-border-strong">
                           {section.items.map((item, iIdx) => (
-                            <tr key={item.id} className={`group hover:bg-surface-2 transition-colors ${item.isMissing ? 'bg-danger/10' : ''}`}>
+                            <tr key={item.id} className={`group hover:bg-surface-2 transition-colors ${item.isMissing ? 'bg-danger/5' : ''}`}>
                               <td className="col-ref p-4">
-                                {item.isMissing ? (
-                                  <input type="text" className="neo-input w-24 text-sm font-mono" placeholder="Réf..." value={item.reference || ''} onChange={(e) => useQuoteStore.getState().updateItem(sIdx, iIdx, { reference: e.target.value })} />
-                                ) : item.reference ? (
-                                  <code className="px-2 py-1 bg-surface-2 rounded-md text-sm border border-border-strong font-mono">{item.reference}</code>
-                                ) : <AlertCircle size={16} className="text-danger" />}
+                                <input type="text" className={`neo-input w-24 text-sm font-mono ${!item.reference ? 'border-warning border bg-warning/5' : ''}`} placeholder="Réf..." value={item.reference || ''} onChange={(e) => useQuoteStore.getState().updateItem(sIdx, iIdx, { reference: e.target.value })} />
                               </td>
                               <td className="col-desc p-4">
-                                {item.isMissing ? (
-                                  <input type="text" className="neo-input w-full font-medium" value={item.description} onChange={(e) => useQuoteStore.getState().updateItem(sIdx, iIdx, { description: e.target.value })} />
-                                ) : (
-                                  <span className="font-medium text-text-primary">{item.description}</span>
-                                )}
+                                <input type="text" className={`neo-input w-full font-medium ${!item.description ? 'border-danger border-2 bg-danger/5' : ''}`} placeholder="Description..." value={item.description || ''} onChange={(e) => useQuoteStore.getState().updateItem(sIdx, iIdx, { description: e.target.value })} />
                                 {item.isMissing && (
                                   <div className="flex items-center gap-2 mt-1 flex-wrap">
-                                    <span className="text-xs text-danger font-semibold bg-danger/20 px-2 py-0.5 rounded-full border border-danger/30">{t('quoteWizard', 'articleNotFound')}</span>
+                                    <span className="text-xs text-danger font-semibold bg-danger/10 px-2 py-0.5 rounded-full border border-danger/20">{t('quoteWizard', 'articleNotFound')}</span>
                                     <button className="text-xs text-accent font-semibold bg-accent/10 px-2 py-0.5 rounded-full border border-accent/20 hover:bg-accent/20 transition-colors" onClick={() => useQuoteStore.getState().updateItem(sIdx, iIdx, { isMissing: false })}>
                                       {locale === 'en' ? 'Validate ✓' : 'Valider ✓'}
                                     </button>
                                   </div>
                                 )}
                               </td>
-                              <td className="col-spec p-4 text-text-muted text-sm">{item.specification || '—'}</td>
+                              <td className="col-spec p-4 text-sm">
+                                <input type="text" className="neo-input w-full text-sm" placeholder="Spéc..." value={item.specification || ''} onChange={(e) => useQuoteStore.getState().updateItem(sIdx, iIdx, { specification: e.target.value })} />
+                              </td>
                               <td className="col-qty p-4">
-                                <input type="number" className={`neo-input w-20 ${item.quantity === 0 ? 'border-danger border-2 bg-danger/5 text-danger font-bold' : ''}`} value={item.quantity === 0 ? '' : item.quantity} placeholder="0" min={0} step={0.1}
+                                <input type="number" className={`neo-input w-20 ${item.quantity === 0 || !item.quantity ? 'border-danger border-2 bg-danger/5 text-danger font-bold' : ''}`} value={item.quantity || ''} placeholder="0" min={0} step={0.1}
                                   onChange={(e) => useQuoteStore.getState().updateItem(sIdx, iIdx, { quantity: parseFloat(e.target.value) || 0 })} />
                               </td>
-                              <td className="col-unit p-4 text-text-muted text-sm">{item.unit}</td>
+                              <td className="col-unit p-4 text-sm">
+                                <input type="text" className={`neo-input w-20 text-sm ${!item.unit ? 'border-danger border-2 bg-danger/5' : ''}`} placeholder="Unité" value={item.unit || ''} onChange={(e) => useQuoteStore.getState().updateItem(sIdx, iIdx, { unit: e.target.value })} />
+                              </td>
                               <td className="col-price p-4">
-                                {item.isMissing ? (
-                                  <input type="number" className="neo-input w-24" placeholder="CHF" value={item.unitPrice || ''} onChange={(e) => useQuoteStore.getState().updateItem(sIdx, iIdx, { unitPrice: parseFloat(e.target.value) || 0 })} />
-                                ) : item.unitPrice ? (
-                                  <span className="font-medium">{formatAmount(item.unitPrice)}</span>
-                                ) : '—'}
+                                <input type="number" className={`neo-input w-24 ${!item.unitPrice ? 'border-danger border-2 bg-danger/5' : ''}`} placeholder="CHF" value={item.unitPrice || ''} onChange={(e) => useQuoteStore.getState().updateItem(sIdx, iIdx, { unitPrice: parseFloat(e.target.value) || 0 })} />
                               </td>
                               <td className="col-total p-4 font-bold text-accent">
                                 {item.lineTotal ? formatAmount(item.lineTotal) : (item.unitPrice && item.quantity ? formatAmount(item.unitPrice * item.quantity) : '—')}
@@ -529,24 +521,16 @@ export default function NewQuotePage() {
                         <div key={item.id} className={`rounded-2xl border p-4 flex flex-col gap-3 shadow-sm ${item.isMissing ? 'border-danger/40 bg-danger/5' : 'border-border bg-surface-1'}`}>
                           {/* Row: Référence */}
                           <div className="flex items-center justify-between gap-3">
-                            <span className="text-[11px] font-bold text-text-muted uppercase tracking-wider w-28 shrink-0">{t('catalogue', 'columns.reference')}</span>
-                            {item.isMissing ? (
-                              <input type="text" className="neo-input flex-1 text-sm font-mono" placeholder="Réf..." value={item.reference || ''} onChange={(e) => useQuoteStore.getState().updateItem(sIdx, iIdx, { reference: e.target.value })} />
-                            ) : (
-                              <code className="px-2 py-1 bg-surface-2 rounded-md text-sm border border-border font-mono">{item.reference || '—'}</code>
-                            )}
+                            <span className="text-[11px] font-bold text-text-muted uppercase tracking-wider w-24 shrink-0">{t('catalogue', 'columns.reference')}</span>
+                            <input type="text" className={`neo-input flex-1 text-sm font-mono ${!item.reference ? 'border-warning border bg-warning/5' : ''}`} placeholder="Réf..." value={item.reference || ''} onChange={(e) => useQuoteStore.getState().updateItem(sIdx, iIdx, { reference: e.target.value })} />
                           </div>
                           {/* Row: Désignation */}
                           <div className="flex flex-col gap-1">
                             <span className="text-[11px] font-bold text-text-muted uppercase tracking-wider">{t('catalogue', 'columns.description')}</span>
-                            {item.isMissing ? (
-                              <input type="text" className="neo-input w-full text-sm" value={item.description} onChange={(e) => useQuoteStore.getState().updateItem(sIdx, iIdx, { description: e.target.value })} />
-                            ) : (
-                              <span className="text-sm font-medium text-text-primary leading-snug">{item.description}</span>
-                            )}
+                            <input type="text" className={`neo-input w-full text-sm font-medium ${!item.description ? 'border-danger border-2 bg-danger/5' : ''}`} placeholder="Description..." value={item.description || ''} onChange={(e) => useQuoteStore.getState().updateItem(sIdx, iIdx, { description: e.target.value })} />
                             {item.isMissing && (
                               <div className="flex items-center gap-2 mt-1 flex-wrap">
-                                <span className="text-xs text-danger font-semibold bg-danger/20 px-2 py-0.5 rounded-full border border-danger/30">{t('quoteWizard', 'articleNotFound')}</span>
+                                <span className="text-xs text-danger font-semibold bg-danger/10 px-2 py-0.5 rounded-full border border-danger/20">{t('quoteWizard', 'articleNotFound')}</span>
                                 <button className="text-xs text-accent font-semibold bg-accent/10 px-2 py-0.5 rounded-full border border-accent/20 hover:bg-accent/20 transition-colors" onClick={() => useQuoteStore.getState().updateItem(sIdx, iIdx, { isMissing: false })}>
                                   {locale === 'en' ? 'Validate ✓' : 'Valider ✓'}
                                 </button>
@@ -554,33 +538,27 @@ export default function NewQuotePage() {
                             )}
                           </div>
                           {/* Row: Spéc */}
-                          {item.specification && (
-                            <div className="flex items-center justify-between gap-3">
-                              <span className="text-[11px] font-bold text-text-muted uppercase tracking-wider w-28 shrink-0">{t('catalogue', 'columns.specification')}</span>
-                              <span className="text-sm text-text-muted">{item.specification}</span>
-                            </div>
-                          )}
+                          <div className="flex items-center justify-between gap-3">
+                            <span className="text-[11px] font-bold text-text-muted uppercase tracking-wider w-24 shrink-0">{t('catalogue', 'columns.specification')}</span>
+                            <input type="text" className="neo-input flex-1 text-sm" placeholder="Spécification..." value={item.specification || ''} onChange={(e) => useQuoteStore.getState().updateItem(sIdx, iIdx, { specification: e.target.value })} />
+                          </div>
                           {/* Row: Qté + Unité */}
                           <div className="flex items-center gap-4">
                             <div className="flex items-center gap-2 flex-1">
-                              <span className="text-[11px] font-bold text-text-muted uppercase tracking-wider w-10 shrink-0">Qté</span>
-                              <input type="number" className={`neo-input flex-1 ${item.quantity === 0 ? 'border-danger border-2 bg-danger/5 text-danger font-bold' : ''}`} value={item.quantity === 0 ? '' : item.quantity} placeholder="0" min={0} step={0.1}
+                              <span className="text-[11px] font-bold text-text-muted uppercase tracking-wider w-8 shrink-0">Qté</span>
+                              <input type="number" className={`neo-input flex-1 ${item.quantity === 0 || !item.quantity ? 'border-danger border-2 bg-danger/5 text-danger font-bold' : ''}`} value={item.quantity || ''} placeholder="0" min={0} step={0.1}
                                 onChange={(e) => useQuoteStore.getState().updateItem(sIdx, iIdx, { quantity: parseFloat(e.target.value) || 0 })} />
                             </div>
-                            <div className="flex items-center gap-2">
+                            <div className="flex items-center gap-2 w-1/3">
                               <span className="text-[11px] font-bold text-text-muted uppercase tracking-wider">Unité</span>
-                              <span className="text-sm font-medium bg-surface-2 px-2 py-1 rounded-md border border-border">{item.unit}</span>
+                              <input type="text" className={`neo-input w-full text-sm ${!item.unit ? 'border-danger border-2 bg-danger/5' : ''}`} placeholder="Unité" value={item.unit || ''} onChange={(e) => useQuoteStore.getState().updateItem(sIdx, iIdx, { unit: e.target.value })} />
                             </div>
                           </div>
                           {/* Row: Prix + Total */}
                           <div className="flex items-center gap-4 pt-2 border-t border-border/50">
                             <div className="flex items-center gap-2 flex-1">
                               <span className="text-[11px] font-bold text-text-muted uppercase tracking-wider shrink-0">P.U. HT</span>
-                              {item.isMissing ? (
-                                <input type="number" className="neo-input flex-1" placeholder="CHF" value={item.unitPrice || ''} onChange={(e) => useQuoteStore.getState().updateItem(sIdx, iIdx, { unitPrice: parseFloat(e.target.value) || 0 })} />
-                              ) : (
-                                <span className="text-sm font-medium">{item.unitPrice ? formatAmount(item.unitPrice) : '—'}</span>
-                              )}
+                              <input type="number" className={`neo-input flex-1 ${!item.unitPrice ? 'border-danger border-2 bg-danger/5' : ''}`} placeholder="CHF" value={item.unitPrice || ''} onChange={(e) => useQuoteStore.getState().updateItem(sIdx, iIdx, { unitPrice: parseFloat(e.target.value) || 0 })} />
                             </div>
                             <div className="flex items-center gap-2">
                               <span className="text-[11px] font-bold text-text-muted uppercase tracking-wider shrink-0">Total</span>
@@ -594,7 +572,7 @@ export default function NewQuotePage() {
                     </div>
                   </div>
                 ))}
-
+ 
                 {/* Navigation */}
                 <div className="wizard-nav flex gap-4">
                   <Button
