@@ -456,14 +456,16 @@ export default function NewQuotePage() {
 
                 {/* Articles Table */}
                 {quote.sections.map((section, sIdx) => (
-                  <div key={section.id} className="article-section">
+                  <div key={section.id} className="article-section mb-8">
                     <div className="section-title">
                       <span className="section-code">{section.sectionCode}</span>
                       <span>{section.sectionLabel}</span>
                     </div>
-                    <div className="neo-table-container mt-4 mb-10 overflow-x-auto w-full">
-                      <table className="articles-table w-full text-left border-collapse block md:table">
-                        <thead className="bg-surface-2/30 hidden md:table-header-group">
+
+                    {/* ── DESKTOP: real table ── */}
+                    <div className="neo-table-container mt-4 hidden md:block overflow-x-auto w-full">
+                      <table className="articles-table w-full text-left border-collapse">
+                        <thead className="bg-surface-2/30">
                           <tr>
                             <th className="col-ref p-4 font-semibold text-text-muted">{t('catalogue', 'columns.reference')}</th>
                             <th className="col-desc p-4 font-semibold text-text-muted">{t('catalogue', 'columns.description')}</th>
@@ -474,135 +476,121 @@ export default function NewQuotePage() {
                             <th className="col-total p-4 font-semibold text-text-muted">{t('catalogue', 'columns.total') || 'Total'}</th>
                           </tr>
                         </thead>
-                        <tbody className="divide-y divide-border-strong block md:table-row-group">
+                        <tbody className="divide-y divide-border-strong">
                           {section.items.map((item, iIdx) => (
-                            <tr key={item.id} className={`group hover:bg-surface-2 transition-colors flex flex-col md:table-row mb-4 md:mb-0 border border-border md:border-0 rounded-xl md:rounded-none overflow-hidden p-4 md:p-0 relative gap-3 md:gap-0 ${item.isMissing ? 'bg-danger/10' : 'bg-surface-1 md:bg-transparent'}`}>
-                              <td className="col-ref md:p-4 border-b border-border/30 md:border-0 flex flex-col md:table-cell gap-1">
-                                <span className="md:hidden text-[10px] font-bold text-text-muted uppercase tracking-wider">{t('catalogue', 'columns.reference')}</span>
+                            <tr key={item.id} className={`group hover:bg-surface-2 transition-colors ${item.isMissing ? 'bg-danger/10' : ''}`}>
+                              <td className="col-ref p-4">
                                 {item.isMissing ? (
-                                  <input
-                                    type="text"
-                                    className="neo-input w-full md:w-24 text-sm font-mono"
-                                    placeholder="Réf..."
-                                    value={item.reference || ''}
-                                    onChange={(e) => useQuoteStore.getState().updateItem(sIdx, iIdx, { reference: e.target.value })}
-                                  />
+                                  <input type="text" className="neo-input w-24 text-sm font-mono" placeholder="Réf..." value={item.reference || ''} onChange={(e) => useQuoteStore.getState().updateItem(sIdx, iIdx, { reference: e.target.value })} />
                                 ) : item.reference ? (
-                                  <code className="px-2 py-1 bg-surface-2 rounded-md text-sm border border-border-strong font-mono shadow-sm w-fit">{item.reference}</code>
+                                  <code className="px-2 py-1 bg-surface-2 rounded-md text-sm border border-border-strong font-mono">{item.reference}</code>
+                                ) : <AlertCircle size={16} className="text-danger" />}
+                              </td>
+                              <td className="col-desc p-4">
+                                {item.isMissing ? (
+                                  <input type="text" className="neo-input w-full font-medium" value={item.description} onChange={(e) => useQuoteStore.getState().updateItem(sIdx, iIdx, { description: e.target.value })} />
                                 ) : (
-                                  <AlertCircle size={16} className="text-danger inline-block" />
+                                  <span className="font-medium text-text-primary">{item.description}</span>
+                                )}
+                                {item.isMissing && (
+                                  <div className="flex items-center gap-2 mt-1 flex-wrap">
+                                    <span className="text-xs text-danger font-semibold bg-danger/20 px-2 py-0.5 rounded-full border border-danger/30">{t('quoteWizard', 'articleNotFound')}</span>
+                                    <button className="text-xs text-accent font-semibold bg-accent/10 px-2 py-0.5 rounded-full border border-accent/20 hover:bg-accent/20 transition-colors" onClick={() => useQuoteStore.getState().updateItem(sIdx, iIdx, { isMissing: false })}>
+                                      {locale === 'en' ? 'Validate ✓' : 'Valider ✓'}
+                                    </button>
+                                  </div>
                                 )}
                               </td>
-                              <td className="col-desc md:p-4 border-b border-border/30 md:border-0 flex flex-col md:table-cell gap-1">
-                                <span className="md:hidden text-[10px] font-bold text-text-muted uppercase tracking-wider">{t('catalogue', 'columns.description')}</span>
-                                <div className="flex flex-col gap-1 w-full">
-                                  {item.isMissing ? (
-                                    <input
-                                      type="text"
-                                      className="neo-input w-full font-medium"
-                                      value={item.description}
-                                      onChange={(e) => useQuoteStore.getState().updateItem(sIdx, iIdx, { description: e.target.value })}
-                                    />
-                                  ) : (
-                                    <span className="font-medium text-text-primary text-sm md:text-base leading-tight">{item.description}</span>
-                                  )}
-                                  {item.isMissing && (
-                                    <div className="flex flex-col gap-2 mt-1">
-                                      <div className="flex items-center gap-2 flex-wrap">
-                                        <span className="text-xs text-danger font-semibold bg-danger/20 px-2 py-0.5 rounded-full w-fit border border-danger/30">
-                                          {t('quoteWizard', 'articleNotFound')}
-                                        </span>
-                                        <button 
-                                          className="text-xs text-accent font-semibold bg-accent/10 px-2 py-0.5 rounded-full border border-accent/20 hover:bg-accent/20 transition-colors"
-                                          onClick={() => useQuoteStore.getState().updateItem(sIdx, iIdx, { isMissing: false })}
-                                        >
-                                          {locale === 'en' ? 'Manual Validation ✓' : 'Valider manuel ✓'}
-                                        </button>
-                                      </div>
-                                      {(item as any).suggestions?.length > 0 && (
-                                        <div className="mt-2 text-sm bg-surface-2 p-2 rounded-lg border border-border">
-                                          <div className="text-xs text-text-muted mb-1 uppercase font-semibold tracking-wider">{locale === 'en' ? 'Possible alternatives :' : 'Alternatives possibles :'}</div>
-                                          <div className="flex flex-col gap-1">
-                                            {(item as any).suggestions.map((sug: any, sugIdx: number) => (
-                                              <button
-                                                key={sug.id || sugIdx}
-                                                className="text-left p-2 rounded-md hover:bg-surface-3 transition-colors flex items-center justify-between group/sug"
-                                                onClick={() => {
-                                                  useQuoteStore.getState().updateItem(sIdx, iIdx, {
-                                                    reference: sug.reference,
-                                                    description: sug.name || sug.description,
-                                                    unitPrice: sug.base_price || sug.price || 0,
-                                                    isMissing: false,
-                                                    supplierCode: sug.supplier?.code || sug.supplier_id,
-                                                  });
-                                                }}
-                                              >
-                                                <div className="flex flex-col">
-                                                  <span className="font-medium text-text-primary">{sug.name || sug.description}</span>
-                                                  <span className="text-xs text-text-muted">{sug.reference} ({sug.supplier?.code || sug.supplier_id})</span>
-                                                </div>
-                                                <div className="text-accent opacity-0 group-hover/sug:opacity-100 transition-opacity">
-                                                  {locale === 'en' ? 'Select →' : 'Sélectionner →'}
-                                                </div>
-                                              </button>
-                                            ))}
-                                          </div>
-                                        </div>
-                                      )}
-                                    </div>
-                                  )}
-                                </div>
+                              <td className="col-spec p-4 text-text-muted text-sm">{item.specification || '—'}</td>
+                              <td className="col-qty p-4">
+                                <input type="number" className={`neo-input w-20 ${item.quantity === 0 ? 'border-danger border-2 bg-danger/5 text-danger font-bold' : ''}`} value={item.quantity === 0 ? '' : item.quantity} placeholder="0" min={0} step={0.1}
+                                  onChange={(e) => useQuoteStore.getState().updateItem(sIdx, iIdx, { quantity: parseFloat(e.target.value) || 0 })} />
                               </td>
-                              <td className="col-spec md:p-4 border-b border-border/30 md:border-0 flex items-center justify-between md:table-cell text-text-muted">
-                                <span className="md:hidden text-[10px] font-bold text-text-muted uppercase tracking-wider">{t('catalogue', 'columns.specification')}</span>
-                                <span className="text-sm md:text-base">{item.specification || '—'}</span>
-                              </td>
-                              <td className="col-qty md:p-4 border-b border-border/30 md:border-0 flex items-center justify-between md:table-cell">
-                                <span className="md:hidden text-[10px] font-bold text-text-muted uppercase tracking-wider">{t('catalogue', 'columns.quantity')}</span>
-                                <input
-                                  type="number"
-                                  className={`neo-input w-24 md:w-20 ${item.quantity === 0 ? 'border-danger border-2 bg-danger/5 text-danger font-bold shadow-[0_0_10px_rgba(239,68,68,0.2)]' : ''}`}
-                                  value={item.quantity === 0 ? '' : item.quantity}
-                                  placeholder="0"
-                                  min={0}
-                                  step={0.1}
-                                  onChange={(e) => {
-                                    useQuoteStore.getState().updateItem(sIdx, iIdx, {
-                                      quantity: parseFloat(e.target.value) || 0,
-                                    });
-                                  }}
-                                />
-                              </td>
-                              <td className="col-unit md:p-4 border-b border-border/30 md:border-0 flex items-center justify-between md:table-cell text-text-muted">
-                                <span className="md:hidden text-[10px] font-bold text-text-muted uppercase tracking-wider">{t('catalogue', 'columns.unit')}</span>
-                                <span className="font-medium text-sm md:text-base">{item.unit}</span>
-                              </td>
-                              <td className="col-price md:p-4 border-b border-border/30 md:border-0 flex items-center justify-between md:table-cell">
-                                <span className="md:hidden text-[10px] font-bold text-text-muted uppercase tracking-wider">{t('catalogue', 'columns.unitPrice')}</span>
+                              <td className="col-unit p-4 text-text-muted text-sm">{item.unit}</td>
+                              <td className="col-price p-4">
                                 {item.isMissing ? (
-                                  <input
-                                    type="number"
-                                    className="neo-input w-24"
-                                    placeholder="Prix CHF"
-                                    value={item.unitPrice || ''}
-                                    onChange={(e) => useQuoteStore.getState().updateItem(sIdx, iIdx, { unitPrice: parseFloat(e.target.value) || 0 })}
-                                  />
+                                  <input type="number" className="neo-input w-24" placeholder="CHF" value={item.unitPrice || ''} onChange={(e) => useQuoteStore.getState().updateItem(sIdx, iIdx, { unitPrice: parseFloat(e.target.value) || 0 })} />
                                 ) : item.unitPrice ? (
-                                  <span className="font-medium text-sm md:text-base">{formatAmount(item.unitPrice)}</span>
+                                  <span className="font-medium">{formatAmount(item.unitPrice)}</span>
                                 ) : '—'}
                               </td>
-                              <td className="col-total md:p-4 flex items-center justify-between md:table-cell bg-surface-2/30 md:bg-transparent -mx-4 px-4 md:mx-0 py-3 md:py-4 rounded-b-xl md:rounded-none">
-                                <span className="md:hidden text-[10px] font-bold text-text-muted uppercase tracking-wider">{t('catalogue', 'columns.total') || 'Total'}</span>
-                                {item.lineTotal ? (
-                                  <strong className="text-accent-light text-lg md:text-base">{formatAmount(item.lineTotal)}</strong>
-                                ) : item.isMissing && item.unitPrice && item.quantity ? (
-                                  <strong className="text-accent-light text-lg md:text-base">{formatAmount(item.unitPrice * item.quantity)}</strong>
-                                ) : '—'}
+                              <td className="col-total p-4 font-bold text-accent">
+                                {item.lineTotal ? formatAmount(item.lineTotal) : (item.unitPrice && item.quantity ? formatAmount(item.unitPrice * item.quantity) : '—')}
                               </td>
                             </tr>
                           ))}
                         </tbody>
                       </table>
+                    </div>
+
+                    {/* ── MOBILE: card-form layout ── */}
+                    <div className="md:hidden flex flex-col gap-3 mt-3">
+                      {section.items.map((item, iIdx) => (
+                        <div key={item.id} className={`rounded-2xl border p-4 flex flex-col gap-3 shadow-sm ${item.isMissing ? 'border-danger/40 bg-danger/5' : 'border-border bg-surface-1'}`}>
+                          {/* Row: Référence */}
+                          <div className="flex items-center justify-between gap-3">
+                            <span className="text-[11px] font-bold text-text-muted uppercase tracking-wider w-28 shrink-0">{t('catalogue', 'columns.reference')}</span>
+                            {item.isMissing ? (
+                              <input type="text" className="neo-input flex-1 text-sm font-mono" placeholder="Réf..." value={item.reference || ''} onChange={(e) => useQuoteStore.getState().updateItem(sIdx, iIdx, { reference: e.target.value })} />
+                            ) : (
+                              <code className="px-2 py-1 bg-surface-2 rounded-md text-sm border border-border font-mono">{item.reference || '—'}</code>
+                            )}
+                          </div>
+                          {/* Row: Désignation */}
+                          <div className="flex flex-col gap-1">
+                            <span className="text-[11px] font-bold text-text-muted uppercase tracking-wider">{t('catalogue', 'columns.description')}</span>
+                            {item.isMissing ? (
+                              <input type="text" className="neo-input w-full text-sm" value={item.description} onChange={(e) => useQuoteStore.getState().updateItem(sIdx, iIdx, { description: e.target.value })} />
+                            ) : (
+                              <span className="text-sm font-medium text-text-primary leading-snug">{item.description}</span>
+                            )}
+                            {item.isMissing && (
+                              <div className="flex items-center gap-2 mt-1 flex-wrap">
+                                <span className="text-xs text-danger font-semibold bg-danger/20 px-2 py-0.5 rounded-full border border-danger/30">{t('quoteWizard', 'articleNotFound')}</span>
+                                <button className="text-xs text-accent font-semibold bg-accent/10 px-2 py-0.5 rounded-full border border-accent/20 hover:bg-accent/20 transition-colors" onClick={() => useQuoteStore.getState().updateItem(sIdx, iIdx, { isMissing: false })}>
+                                  {locale === 'en' ? 'Validate ✓' : 'Valider ✓'}
+                                </button>
+                              </div>
+                            )}
+                          </div>
+                          {/* Row: Spéc */}
+                          {item.specification && (
+                            <div className="flex items-center justify-between gap-3">
+                              <span className="text-[11px] font-bold text-text-muted uppercase tracking-wider w-28 shrink-0">{t('catalogue', 'columns.specification')}</span>
+                              <span className="text-sm text-text-muted">{item.specification}</span>
+                            </div>
+                          )}
+                          {/* Row: Qté + Unité */}
+                          <div className="flex items-center gap-4">
+                            <div className="flex items-center gap-2 flex-1">
+                              <span className="text-[11px] font-bold text-text-muted uppercase tracking-wider w-10 shrink-0">Qté</span>
+                              <input type="number" className={`neo-input flex-1 ${item.quantity === 0 ? 'border-danger border-2 bg-danger/5 text-danger font-bold' : ''}`} value={item.quantity === 0 ? '' : item.quantity} placeholder="0" min={0} step={0.1}
+                                onChange={(e) => useQuoteStore.getState().updateItem(sIdx, iIdx, { quantity: parseFloat(e.target.value) || 0 })} />
+                            </div>
+                            <div className="flex items-center gap-2">
+                              <span className="text-[11px] font-bold text-text-muted uppercase tracking-wider">Unité</span>
+                              <span className="text-sm font-medium bg-surface-2 px-2 py-1 rounded-md border border-border">{item.unit}</span>
+                            </div>
+                          </div>
+                          {/* Row: Prix + Total */}
+                          <div className="flex items-center gap-4 pt-2 border-t border-border/50">
+                            <div className="flex items-center gap-2 flex-1">
+                              <span className="text-[11px] font-bold text-text-muted uppercase tracking-wider shrink-0">P.U. HT</span>
+                              {item.isMissing ? (
+                                <input type="number" className="neo-input flex-1" placeholder="CHF" value={item.unitPrice || ''} onChange={(e) => useQuoteStore.getState().updateItem(sIdx, iIdx, { unitPrice: parseFloat(e.target.value) || 0 })} />
+                              ) : (
+                                <span className="text-sm font-medium">{item.unitPrice ? formatAmount(item.unitPrice) : '—'}</span>
+                              )}
+                            </div>
+                            <div className="flex items-center gap-2">
+                              <span className="text-[11px] font-bold text-text-muted uppercase tracking-wider shrink-0">Total</span>
+                              <strong className="text-accent font-bold text-base">
+                                {item.lineTotal ? formatAmount(item.lineTotal) : (item.unitPrice && item.quantity ? formatAmount(item.unitPrice * item.quantity) : '—')}
+                              </strong>
+                            </div>
+                          </div>
+                        </div>
+                      ))}
                     </div>
                   </div>
                 ))}
