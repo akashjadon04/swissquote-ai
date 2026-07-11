@@ -15,6 +15,7 @@ import '@/styles/command-palette.css';
 import '@/styles/quote-detail.css';
 import '@/styles/buttons.css';
 import '@/styles/toggle.css';
+import '@/styles/bb8-toggle.css';
 
 const inter = Inter({
   subsets: ['latin', 'latin-ext'],

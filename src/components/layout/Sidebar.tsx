@@ -290,17 +290,47 @@ function ThemeToggle({ collapsed }: { collapsed: boolean }) {
   };
 
   return (
-    <button className="theme-toggle" onClick={toggle} title={isDark ? 'Mode clair' : 'Mode sombre'}>
-      <motion.div
-        key={isDark ? 'dark' : 'light'}
-        initial={{ scale: 0, rotate: -180 }}
-        animate={{ scale: 1, rotate: 0 }}
-        transition={{ type: 'spring', damping: 15 }}
-      >
-        {isDark ? Icons.sun : Icons.moon}
-      </motion.div>
-      {!collapsed && <span>{isDark ? 'Mode clair' : 'Mode sombre'}</span>}
-    </button>
+    <div className="flex items-center gap-2">
+      <label className="bb8-toggle" title={isDark ? 'Mode clair' : 'Mode sombre'}>
+        <input 
+          className="bb8-toggle__checkbox" 
+          type="checkbox" 
+          onChange={toggle} 
+          checked={isDark} 
+        />
+        <div className="bb8-toggle__container">
+          <div className="bb8-toggle__scenery">
+            <div className="bb8-toggle__star"></div>
+            <div className="bb8-toggle__star"></div>
+            <div className="bb8-toggle__star"></div>
+            <div className="bb8-toggle__star"></div>
+            <div className="bb8-toggle__star"></div>
+            <div className="bb8-toggle__star"></div>
+            <div className="bb8-toggle__star"></div>
+            <div className="tatto-1"></div>
+            <div className="tatto-2"></div>
+            <div className="gomrassen"></div>
+            <div className="hermes"></div>
+            <div className="chenini"></div>
+            <div className="bb8-toggle__cloud"></div>
+            <div className="bb8-toggle__cloud"></div>
+            <div className="bb8-toggle__cloud"></div>
+          </div>
+          <div className="bb8">
+            <div className="bb8__head-container">
+              <div className="bb8__antenna"></div>
+              <div className="bb8__antenna"></div>
+              <div className="bb8__head"></div>
+            </div>
+            <div className="bb8__body"></div>
+          </div>
+          <div className="artificial__hidden">
+            <div className="bb8__shadow"></div>
+          </div>
+        </div>
+      </label>
+      {!collapsed && <span className="text-sm font-medium text-text-muted">{isDark ? 'Mode sombre' : 'Mode clair'}</span>}
+    </div>
   );
 }
 

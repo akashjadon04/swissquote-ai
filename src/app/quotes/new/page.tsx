@@ -476,9 +476,9 @@ export default function NewQuotePage() {
                         </thead>
                         <tbody className="divide-y divide-border-strong block md:table-row-group">
                           {section.items.map((item, iIdx) => (
-                            <tr key={item.id} className={`group hover:bg-surface-2 transition-colors flex flex-col md:table-row mb-4 md:mb-0 border border-border md:border-0 rounded-xl md:rounded-none overflow-hidden p-4 md:p-0 relative ${item.isMissing ? 'bg-danger/10' : 'bg-surface-1 md:bg-transparent'}`}>
-                              <td className="col-ref p-2 md:p-4 border-b border-border/30 md:border-0 block md:table-cell">
-                                <span className="md:hidden text-[10px] font-bold text-text-muted uppercase tracking-wider block mb-1">{t('catalogue', 'columns.reference')}</span>
+                            <tr key={item.id} className={`group hover:bg-surface-2 transition-colors flex flex-col md:table-row mb-4 md:mb-0 border border-border md:border-0 rounded-xl md:rounded-none overflow-hidden p-4 md:p-0 relative gap-3 md:gap-0 ${item.isMissing ? 'bg-danger/10' : 'bg-surface-1 md:bg-transparent'}`}>
+                              <td className="col-ref md:p-4 border-b border-border/30 md:border-0 flex flex-col md:table-cell gap-1">
+                                <span className="md:hidden text-[10px] font-bold text-text-muted uppercase tracking-wider">{t('catalogue', 'columns.reference')}</span>
                                 {item.isMissing ? (
                                   <input
                                     type="text"
@@ -488,14 +488,14 @@ export default function NewQuotePage() {
                                     onChange={(e) => useQuoteStore.getState().updateItem(sIdx, iIdx, { reference: e.target.value })}
                                   />
                                 ) : item.reference ? (
-                                  <code className="px-2 py-1 bg-surface-2 rounded-md text-sm border border-border-strong font-mono shadow-sm">{item.reference}</code>
+                                  <code className="px-2 py-1 bg-surface-2 rounded-md text-sm border border-border-strong font-mono shadow-sm w-fit">{item.reference}</code>
                                 ) : (
                                   <AlertCircle size={16} className="text-danger inline-block" />
                                 )}
                               </td>
-                              <td className="col-desc p-2 md:p-4 border-b border-border/30 md:border-0 block md:table-cell">
-                                <span className="md:hidden text-[10px] font-bold text-text-muted uppercase tracking-wider block mb-1">{t('catalogue', 'columns.description')}</span>
-                                <div className="flex flex-col gap-1">
+                              <td className="col-desc md:p-4 border-b border-border/30 md:border-0 flex flex-col md:table-cell gap-1">
+                                <span className="md:hidden text-[10px] font-bold text-text-muted uppercase tracking-wider">{t('catalogue', 'columns.description')}</span>
+                                <div className="flex flex-col gap-1 w-full">
                                   {item.isMissing ? (
                                     <input
                                       type="text"
@@ -504,7 +504,7 @@ export default function NewQuotePage() {
                                       onChange={(e) => useQuoteStore.getState().updateItem(sIdx, iIdx, { description: e.target.value })}
                                     />
                                   ) : (
-                                    <span className="font-medium text-text-primary">{item.description}</span>
+                                    <span className="font-medium text-text-primary text-sm md:text-base leading-tight">{item.description}</span>
                                   )}
                                   {item.isMissing && (
                                     <div className="flex flex-col gap-2 mt-1">
@@ -553,12 +553,12 @@ export default function NewQuotePage() {
                                   )}
                                 </div>
                               </td>
-                              <td className="col-spec p-2 md:p-4 border-b border-border/30 md:border-0 block md:table-cell text-text-muted">
-                                <span className="md:hidden text-[10px] font-bold text-text-muted uppercase tracking-wider block mb-1">{t('catalogue', 'columns.specification')}</span>
-                                {item.specification || '—'}
+                              <td className="col-spec md:p-4 border-b border-border/30 md:border-0 flex items-center justify-between md:table-cell text-text-muted">
+                                <span className="md:hidden text-[10px] font-bold text-text-muted uppercase tracking-wider">{t('catalogue', 'columns.specification')}</span>
+                                <span className="text-sm md:text-base">{item.specification || '—'}</span>
                               </td>
-                              <td className="col-qty p-2 md:p-4 border-b border-border/30 md:border-0 flex items-center justify-between md:table-cell">
-                                <span className="md:hidden text-[10px] font-bold text-text-muted uppercase tracking-wider block">{t('catalogue', 'columns.quantity')}</span>
+                              <td className="col-qty md:p-4 border-b border-border/30 md:border-0 flex items-center justify-between md:table-cell">
+                                <span className="md:hidden text-[10px] font-bold text-text-muted uppercase tracking-wider">{t('catalogue', 'columns.quantity')}</span>
                                 <input
                                   type="number"
                                   className={`neo-input w-24 md:w-20 ${item.quantity === 0 ? 'border-danger border-2 bg-danger/5 text-danger font-bold shadow-[0_0_10px_rgba(239,68,68,0.2)]' : ''}`}
@@ -573,12 +573,12 @@ export default function NewQuotePage() {
                                   }}
                                 />
                               </td>
-                              <td className="col-unit p-2 md:p-4 border-b border-border/30 md:border-0 flex items-center justify-between md:table-cell text-text-muted">
-                                <span className="md:hidden text-[10px] font-bold text-text-muted uppercase tracking-wider block">{t('catalogue', 'columns.unit')}</span>
-                                {item.unit}
+                              <td className="col-unit md:p-4 border-b border-border/30 md:border-0 flex items-center justify-between md:table-cell text-text-muted">
+                                <span className="md:hidden text-[10px] font-bold text-text-muted uppercase tracking-wider">{t('catalogue', 'columns.unit')}</span>
+                                <span className="font-medium text-sm md:text-base">{item.unit}</span>
                               </td>
-                              <td className="col-price p-2 md:p-4 border-b border-border/30 md:border-0 flex items-center justify-between md:table-cell">
-                                <span className="md:hidden text-[10px] font-bold text-text-muted uppercase tracking-wider block">{t('catalogue', 'columns.unitPrice')}</span>
+                              <td className="col-price md:p-4 border-b border-border/30 md:border-0 flex items-center justify-between md:table-cell">
+                                <span className="md:hidden text-[10px] font-bold text-text-muted uppercase tracking-wider">{t('catalogue', 'columns.unitPrice')}</span>
                                 {item.isMissing ? (
                                   <input
                                     type="number"
@@ -588,15 +588,15 @@ export default function NewQuotePage() {
                                     onChange={(e) => useQuoteStore.getState().updateItem(sIdx, iIdx, { unitPrice: parseFloat(e.target.value) || 0 })}
                                   />
                                 ) : item.unitPrice ? (
-                                  formatAmount(item.unitPrice)
+                                  <span className="font-medium text-sm md:text-base">{formatAmount(item.unitPrice)}</span>
                                 ) : '—'}
                               </td>
-                              <td className="col-total p-2 md:p-4 flex items-center justify-between md:table-cell">
-                                <span className="md:hidden text-[10px] font-bold text-text-muted uppercase tracking-wider block">{t('catalogue', 'columns.total') || 'Total'}</span>
+                              <td className="col-total md:p-4 flex items-center justify-between md:table-cell bg-surface-2/30 md:bg-transparent -mx-4 px-4 md:mx-0 py-3 md:py-4 rounded-b-xl md:rounded-none">
+                                <span className="md:hidden text-[10px] font-bold text-text-muted uppercase tracking-wider">{t('catalogue', 'columns.total') || 'Total'}</span>
                                 {item.lineTotal ? (
-                                  <strong className="text-accent-light">{formatAmount(item.lineTotal)}</strong>
+                                  <strong className="text-accent-light text-lg md:text-base">{formatAmount(item.lineTotal)}</strong>
                                 ) : item.isMissing && item.unitPrice && item.quantity ? (
-                                  <strong className="text-accent-light">{formatAmount(item.unitPrice * item.quantity)}</strong>
+                                  <strong className="text-accent-light text-lg md:text-base">{formatAmount(item.unitPrice * item.quantity)}</strong>
                                 ) : '—'}
                               </td>
                             </tr>
