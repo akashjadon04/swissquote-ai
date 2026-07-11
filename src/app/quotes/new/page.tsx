@@ -335,9 +335,9 @@ export default function NewQuotePage() {
                         </span>
                         <span className={promptScore >= 80 ? 'text-success' : 'text-warning'}>{promptScore}%</span>
                       </div>
-                      <div className="w-full bg-surface-2 rounded-full h-3 shadow-inner overflow-hidden border border-border">
+                      <div className="w-full bg-black/5 dark:bg-white/5 rounded-full h-4 p-[2px] shadow-[inset_0_2px_4px_rgba(0,0,0,0.1)] border border-border/50">
                         <motion.div 
-                          className={`h-full ${promptScore >= 80 ? 'bg-success shadow-[0_0_10px_rgba(34,197,94,0.5)]' : promptScore >= 50 ? 'bg-warning' : 'bg-danger'}`}
+                          className={`h-full rounded-full transition-all duration-300 ${promptScore >= 80 ? 'bg-gradient-to-r from-emerald-500 to-green-400 shadow-[0_0_12px_rgba(34,197,94,0.6)]' : promptScore >= 50 ? 'bg-gradient-to-r from-amber-500 to-yellow-400' : 'bg-gradient-to-r from-red-500 to-rose-400'}`}
                           initial={{ width: 0 }}
                           animate={{ width: `${promptScore}%` }}
                           transition={{ duration: 0.3 }}
@@ -380,9 +380,9 @@ export default function NewQuotePage() {
                   <h3>{t('quoteWizard', 'orChooseTemplate')}</h3>
                   <div className="template-grid">
                     {[
-                      { label: t('quoteWizard', 'templates.replacement.title'), text: "Coupure d'eau et vidange des installations. Démontage, dépose et évacuation de la conduite existante depuis la chaufferie jusqu'au sous-sol au droit de la cave n°1. Reprise sur la conduite d'eau chaude dans la chaufferie. Remplacement en tuyau type Inox Ø 54 mm depuis la chaufferie jusqu'à la nourrice existante. Vidange des colonnes d'eau chaude de l'immeuble. Remplacement des conduites horizontales en tuyau type Inox Ø 28 mm, y compris raccords et fixations. Reprise sur les pieds de colonnes. Réfection des isolations avec finition PVC. Remise en pression des installations." },
-                      { label: t('quoteWizard', 'templates.installation.title'), text: "Fourniture et pose de robinetterie neuve dans salle de bain: mitigeur lavabo Ø 15 mm, mitigeur douche encastré Ø 20 mm, robinet d'arrêt sous lavabo. Y compris raccordements, joints, flexibles et mise en eau." },
-                      { label: t('quoteWizard', 'templates.urgent.title'), text: "Fuite sur colonne montante eau froide au 3ème étage. Coupure d'eau urgente. Remplacement de la section endommagée en tuyau inox Ø 28 mm sur environ 2 mètres. Raccords de transition, colliers de fixation. Remise en pression et contrôle d'étanchéité." },
+                      { label: t('quoteWizard', 'templates.replacement.title'), text: "Client: Jean Dupont, 1000 Lausanne. Intervention prévue le 15 août. Coupure d'eau et vidange des installations. Démontage, dépose et évacuation de la conduite existante depuis la chaufferie jusqu'au sous-sol au droit de la cave n°1. Reprise sur la conduite d'eau chaude dans la chaufferie. Fourniture et pose de: 15m de Tuyau acier inox 1:4521 Optipress Ø 54 mm, 25m de Tuyau acier inox 1:4521 Optipress Ø 28 mm, 12 pces de Coude à sertir 90° inox, 8 pces de Manchon coulissant à sertir inox, 40 pces de Collier de fixation isophonique pour tube, et 30m d'Isolation PIR + finition PVC. Remise en pression, purge et contrôle d'étanchéité." },
+                      { label: t('quoteWizard', 'templates.installation.title'), text: "Client: Marie Curie, 1201 Genève. Installation salle de bain: Fourniture et pose de robinetterie neuve. 2 pces de Vanne à bille, 5m de Tuyau acier inox 1:4521 Optipress Ø 15 mm, 4 pces de Coude à sertir 90° inox, 1 pce de Clapet anti-retour, et 10 pces de Raccords de raccordement. Y compris raccordements, joints, flexibles et mise en eau." },
+                      { label: t('quoteWizard', 'templates.urgent.title'), text: "Client: Hôpital Cantonal, 1700 Fribourg. Dépannage urgent: Fuite sur colonne montante d'eau froide au 3ème étage. Remplacement de la section endommagée comprenant: 3m de Tuyau acier inox 1:4521 Optipress Ø 35 mm, 2 pces de Pièce de transition à sertir inox fileté, 3 pces de Manchon coulissant à sertir inox, 5 pces de Collier de fixation isophonique pour tube, et 1 pce de Purgeur automatique. Remise en pression et contrôle." },
                     ].map((tpl) => (
                       <button
                         key={tpl.label}
