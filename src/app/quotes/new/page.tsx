@@ -570,7 +570,6 @@ export default function NewQuotePage() {
                       variant="primary"
                       iconRight={<ArrowRight size={16} />}
                       onClick={() => setCurrentStep(3)}
-                      disabled={hasUnresolvedItems}
                     >
                       {t('quoteWizard', 'continueToFinancials')}
                     </Button>

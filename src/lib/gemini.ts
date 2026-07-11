@@ -18,99 +18,37 @@ import type { AIExtractionResult } from '@/types/database.types';
 // The model acts as a senior Swiss plumber reading a job description and
 // decomposing it into a structured list of materials needed — nothing more.
 // ─────────────────────────────────────────────────────────────────────────────
-const SYSTEM_PROMPT = `Tu es un expert en plomberie suisse avec 20 ans d'expérience dans les installations sanitaires, chauffage et distribution d'eau (ECS/EF). Tu maîtrises parfaitement:
-- Les normes SIA et SICC suisses
-- Les matériaux standards: inox Optipress (Nussbaum), cuivre, PPSU, multicouche
-- Les raccords à sertir, à compression, filetés
-- L'isolation thermique des canalisations
-- Les installations de nourrices, colonnes montantes, chaufferies
+const SYSTEM_PROMPT = `Tu es un expert en plomberie suisse (normes SIA/SICC).
+Rôle: Décomposer une description de travaux en articles techniques.
 
-TON UNIQUE RÔLE:
-Lire une description de travaux de plomberie en français (rédigée comme un technicien le ferait) et décomposer le chantier en articles techniques nécessaires à sa réalisation.
+RÈGLES ABSOLUES:
+1. JAMAIS de prix, de références catalogue, d'heures ou TVA.
+2. JAMAIS de quantité non mentionnée (utiliser null).
+3. Format JSON STRICT. Aucun texte avant/après.
 
-RÈGLES ABSOLUES — VIOLATIONS INTERDITES:
-1. Tu ne produis JAMAIS de prix unitaires, totaux ou estimations de coût
-2. Tu ne produis JAMAIS de références de catalogue (ex: NSB-xxx, SAN.xxx, GM/xx/xxx)
-3. Tu ne produis JAMAIS d'estimations d'heures de main-d'œuvre
-4. Tu ne produis JAMAIS de TVA, marges, frais de déplacement
-5. Tu ne produis JAMAIS de markdown, de commentaires, ou de texte hors JSON
-6. Tu NE DEVINES JAMAIS une quantité non explicitement mentionnée → "quantity": null
-7. Tu NE DEVINES JAMAIS une dimension non explicitement mentionnée → "dimension": null
-8. Une quantité inventée est AUSSI GRAVE qu'un prix inventé — elle sera facturée au client
-
-TON EXPERTISE DE PLOMBIER:
-En tant qu'expert, tu sais qu'un chantier implique systématiquement des articles non listés dans la description (raccords, fixations, colliers, isolation, pièces de transition). Tu les identifies et les listes, mais avec "quantity": null puisque non précisés. Le technicien les quantifiera sur site.
-
-Pour chaque tronçon de tuyauterie, un plombier expérimenté prévoit systématiquement:
-- Les coudes nécessaires aux changements de direction
-- Les manchons de jonction
-- Les colliers de fixation (environ 1 tous les 1-1.5m pour l'inox)
-- L'isolation thermique (coquilles en mousse, finition PVC)
-- Les pièces de transition vers les diamètres existants
-- Les robinets d'arrêt aux points de raccordement
-
-IDENTIFICATION DU TYPE D'INTERVENTION:
-Identifie le type principal parmi: remplacement_canalisation, installation_robinetterie, 
-installation_sanitaire, renovation_isolation, mise_en_pression, coupure_eau, 
-installation_nourrice, remplacement_chauffe_eau, remplacement_colonne, depannage_urgent, autre
-
-ORGANISATION EN SECTIONS:
-Décompose le chantier en sections logiques correspondant aux zones géographiques ou phases du chantier:
-- Ex: "Chaufferie", "Distribution sous-sol", "Colonnes montantes", "Réfection isolation", "Remise en service"
-- Chaque section regroupe les articles qui lui appartiennent
-- Si la description mentionne explicitement des zones (chaufferie, sous-sol, cave n°X), utilise-les
-
-FORMAT DE SORTIE — JSON strict, rien d'autre:
+FORMAT DE SORTIE JSON:
 {
-  "intervention_type": "string — code du type d'intervention",
-  "technical_summary": "string — résumé technique en français, 3-5 phrases, comme dans un rapport de visite: type de travaux, matériaux principaux, zones concernées, points d'attention. Rédige comme un technicien senior.",
-  "confidence_global": number entre 0.0 et 1.0,
-  "sections": [
-    {
-      "section_label": "string — nom de la zone/phase (ex: Chaufferie, Distribution sous-sol, Colonnes ECS)",
-      "description_verbatim": "string — fragment exact de la description source correspondant à cette section",
-      "articles": [
-        {
-          "label": "string — description technique précise de l'article en français, comme dans un catalogue professionnel (ex: 'Tuyau acier inoxydable type Optipress Ø 54 mm', 'Coude 90° à sertir inox Ø 28 mm', 'Collier de fixation inox Ø 54 mm', 'Coquille isolante 30mm laine minérale Ø 54 finition PVC')",
-          "material_type": "string — catégorie technique: tuyau_inox | tuyau_cuivre | coude_sertir | coude_filète | manchon | manchon_transition | collier | collier_double | isolation_coquille | robinet_arret | robinet_vanne | nourrice | reducteur | bouchon | mamelon | joint | bride | presse_etoupe | siphon | autre",
-          "dimension": "string ou null — diamètre/DN précis si mentionné (ex: 'Ø 54 mm', 'DN 40', '1½\"', 'Ø 28 mm'), null si non précisé",
-          "quantity": number ou null — quantité explicitement mentionnée, null si non précisée ou à mesurer sur site,
-          "unit": "string ou null — unité: 'm' pour tuyaux/isolations, 'p' ou 'u' pour pièces, 'jeu' pour ensembles, null si quantity est null",
-          "confidence": number entre 0.0 et 1.0,
-          "needs_site_measurement": boolean — true si la quantité dépend d'une mesure sur site
-        }
-      ]
-    }
-  ],
-  "intervention_flags": [
-    "string — point d'attention pour le technicien (ex: 'Quantité de tuyau Ø 54mm à mesurer sur site: la description mentionne 15m mais d'autres tronçons ne sont pas quantifiés', 'Diamètre de la nourrice existante non précisé, à vérifier sur site', 'Coupure d'eau générale requise — coordination avec la gérance')"
-  ],
-  "exclusions_suggested": [
-    "string — travaux probablement hors-devis à signaler au client (ex: 'Travaux de peinture et remise en état des gaines techniques', 'Évacuation des déchets de chantier si > 1m³', 'Prestations électriques liées au remplacement du chauffe-eau')"
-  ]
+  "intervention_type": "string",
+  "technical_summary": "string (3 phrases max)",
+  "confidence_global": 0.0 - 1.0,
+  "sections": [{
+    "section_label": "string",
+    "description_verbatim": "string",
+    "articles": [{
+      "label": "string (ex: Tuyau inox Optipress Ø 54 mm, Coude 90° sertir inox Ø 54 mm)",
+      "material_type": "string",
+      "dimension": "string ou null",
+      "quantity": number ou null,
+      "unit": "string ou null",
+      "confidence": 0.0 - 1.0,
+      "needs_site_measurement": boolean
+    }]
+  }],
+  "intervention_flags": ["string"],
+  "exclusions_suggested": ["string"]
 }
 
-EXEMPLES DE LABELS D'ARTICLES CORRECTS (pour le matching catalogue):
-✓ "Tuyau acier inoxydable 1.4521 Optipress Ø 54 mm" 
-✓ "Coude 90° à sertir inox Ø 54 mm"
-✓ "Manchon égal à sertir inox Ø 54 mm"
-✓ "Collier double rail inox Ø 54 mm"
-✓ "Coquille isolante mousse synthétique épaisseur 30mm Ø 54 mm finition PVC blanc"
-✓ "Pièce de transition inox/cuivre Ø 54 mm / Ø 52 mm"
-✓ "Robinet à boisseau sphérique inox 1½\" PN25"
-✓ "Tuyau acier inoxydable 1.4521 Optipress Ø 28 mm"
-✓ "Coude 90° à sertir inox Ø 28 mm"
-
-EXEMPLES D'ARTICLES À SYSTÉMATIQUEMENT INCLURE:
-Pour un remplacement de conduite principale Ø 54 mm:
-→ Tuyau Ø 54mm (quantity: selon description, ex 15m)
-→ Coudes 90° Ø 54mm (quantity: null — nombre selon plan)
-→ Manchons Ø 54mm (quantity: null)
-→ Colliers fixation Ø 54mm (quantity: null — selon longueur)
-→ Isolation Ø 54mm (quantity: null ou identique au tuyau si mentionné)
-→ Pièces transition aux extrémités (quantity: null)
-
-Ne retourne RIEN d'autre que le JSON. Zéro caractère avant ou après le JSON.`;
+Important: Inclus toujours raccords, colliers et isolations associés aux tuyaux avec quantity: null si non quantifiés.`;
 
 // ─────────────────────────────────────────────────────────────────────────────
 // Gemini — Primary (gemini-3.5-flash)
@@ -125,9 +63,9 @@ async function extractWithGemini(description: string): Promise<AIExtractionResul
   const model = genAI.getGenerativeModel({
     model: modelName,
     generationConfig: {
-      temperature: 0.1,       // Low temp → deterministic, factual
+      temperature: 0.1,       // Low temp -> deterministic, factual
       topP: 0.95,
-      maxOutputTokens: 8192,
+      maxOutputTokens: 2048,
       responseMimeType: 'application/json',
     },
   });
@@ -181,7 +119,7 @@ async function extractWithOpenRouterKey(
         { role: 'user', content: description },
       ],
       temperature: 0.1,
-      max_tokens: 8192,
+      max_tokens: 2048,
       response_format: { type: 'json_object' },
     }),
   });
