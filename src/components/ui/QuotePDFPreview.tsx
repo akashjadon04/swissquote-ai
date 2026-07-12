@@ -89,16 +89,9 @@ export function QuotePDFPreview({ quote, isOpen, onClose }: QuotePDFPreviewProps
               variant="secondary"
               onClick={onClose}
               iconLeft={<ArrowLeft size={16} />}
-              className="md:flex hidden"
             >
               Retour
             </Button>
-            <button
-              onClick={onClose}
-              className="md:hidden p-2 rounded-full hover:bg-surface-2 transition-colors text-text-muted hover:text-text-primary"
-            >
-              <ArrowLeft size={24} />
-            </button>
             <Button
               variant="primary"
               iconLeft={isGenerating ? <Loader2 className="animate-spin" size={16}/> : <Download size={16} />}
