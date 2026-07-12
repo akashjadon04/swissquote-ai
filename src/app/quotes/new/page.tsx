@@ -339,7 +339,7 @@ export default function NewQuotePage() {
                     <div className="mt-4 flex flex-col gap-2">
                       <div className="flex justify-between items-center text-xs font-semibold uppercase tracking-wider">
                         <span className={promptScore >= 80 ? 'text-success' : 'text-warning'}>
-                          {locale === 'en' ? 'Prompt Quality' : 'QualitÃƒÂ© du prompt'}
+                          {locale === 'en' ? 'Prompt Quality' : 'Qualité du prompt'}
                         </span>
                         <span className={promptScore >= 80 ? 'text-success' : 'text-warning'}>{promptScore}%</span>
                       </div>
