@@ -256,7 +256,7 @@ async function extractWithOpenRouterKey(
   const text = data.choices?.[0]?.message?.content;
   if (!text) throw new Error(`OpenRouter key ${keyIndex + 1} returned empty content`);
 
-  console.log(`[AI] âœ“ OpenRouter (${model}, key ${keyIndex + 1}) responded`);
+  console.log(`[AI] ✓ OpenRouter (${models[0]} fallback array, key ${keyIndex + 1}) responded`);
   return parseAIResponse(text);
 }
 
