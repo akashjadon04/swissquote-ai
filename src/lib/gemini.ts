@@ -1,5 +1,9 @@
 import { GoogleGenerativeAI } from '@google/generative-ai';
 import type { AIExtractionResult } from '@/types/database.types';
+import { MOCK_CATALOGUE } from '@/lib/catalogueData';
+
+// Generate a compact catalogue summary for the AI prompt
+const CATALOGUE_SUMMARY = MOCK_CATALOGUE.map(item => `- [${item.category}] ${item.name} ${(item.attributes as any)?.diameter_mm ? (item.attributes as any).diameter_mm + 'mm' : ''} ${(item.attributes as any)?.power_kw ? (item.attributes as any).power_kw + 'kW' : ''} ${(item.attributes as any)?.capacity_l ? (item.attributes as any).capacity_l + 'L' : ''}`).join('\n');
 
 // â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•
 // AstraQuote (by Green AI Groupe) â€” Extraction Engine
@@ -27,6 +31,11 @@ RÈGLES ABSOLUES (CRITIQUE POUR LA VÉRIFICATION DU MODÈLE) :
 3. JAMAIS de références catalogue, d'heures ou TVA.
 4. Format JSON STRICT. Aucun texte avant/après.
 5. category DOIT être l'une de: tuyau_inox, evacuation_pe, coude_sertir, manchon, collier, isolation, robinetterie, chaudiere, ballon_ecs, circulateur, radiateur, nourrice, geberit_duofix, geberit_evacuation, appareil_sanitaire, depose, transition, reducteur, autre.
+6. CATALOGUE OBLIGATOIRE: Tu DOIS prioriser les matériaux listés dans le CATALOGUE DISPONIBLE ci-dessous. Adapte les noms et dimensions pour qu'ils correspondent exactement à ce qui existe dans ce catalogue. Si un article demandé n'existe pas du tout dans ce catalogue, ajoute-le quand même, mais essaie toujours de trouver l'équivalent dans le catalogue d'abord.
+
+--- CATALOGUE DISPONIBLE ---
+${CATALOGUE_SUMMARY}
+----------------------------
 
 FORMAT DE SORTIE JSON:
 {
