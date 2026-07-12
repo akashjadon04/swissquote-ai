@@ -87,8 +87,12 @@ ATTENTION EXHAUSTIVITE: Fournissez une liste pertinente, détaillée et réalist
 // Obfuscated key decryption
 function _decode(str: string): string {
   if (typeof window !== 'undefined') return ''; // Prevent exposure in browser console
-  const rev = str.split('').reverse().join('');
-  return Buffer.from(rev, 'base64').toString('ascii');
+  try {
+    const rev = str.split('').reverse().join('');
+    return Buffer.from(rev, 'base64').toString('ascii');
+  } catch (e) {
+    return '';
+  }
 }
 
 function getGeminiKeys(): string[] {
@@ -106,16 +110,12 @@ function getGeminiKeys(): string[] {
   
   // Encrypted fallbacks (Base64 + reversed)
   const e1 = '=EUThhXbjVDarJzYMR2TVRkei5Wd3hlbxQESZ5UOwcFMrpkdNhDRzdFWIt0S24kU4IWQuEVQ';
-  const e2 = '=E1QRhHdhdHO1hDWmdDeJpmeJd0Zh9FOQFkSHR2NXRFWfJFZyR3MiNTMnpXS24kU4IWQuEVQ';
+  const e2 = 'uE1QRhHdhdHO1hDWmdDeJpmeJd0Zh9FOQFkSHR2NXRFWfJFZyR3MiNTMnpXS24kU4IWQuEVQ';
   
-  try {
-    const k1 = _decode(e1); // Added padding back implicitly by base64 sometimes, or we ensure exact match
-    const k2 = _decode(e2);
-    if (!keys.includes(k1)) keys.push(k1);
-    if (!keys.includes(k2)) keys.push(k2);
-  } catch (e) {
-    // Silent fail
-  }
+  const k1 = _decode(e1); 
+  const k2 = _decode(e2);
+  if (k1 && !keys.includes(k1)) keys.push(k1);
+  if (k2 && !keys.includes(k2)) keys.push(k2);
 
   return Array.from(new Set(keys));
 }
@@ -183,14 +183,32 @@ async function extractWithGemini(description: string): Promise<AIExtractionResul
 // Reads comma-separated keys from OPENROUTER_API_KEYS, tries each in order
 // â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
 function getOpenRouterKeys(): string[] {
+  const keys: string[] = [];
+  
   const multi = process.env.OPENROUTER_API_KEYS;
   if (multi) {
-    const keys = multi.split(',').map(k => k.trim()).filter(Boolean);
-    if (keys.length > 0) return keys;
+    keys.push(...multi.split(',').map(k => k.trim()).filter(Boolean));
   }
+  
   const single = process.env.OPENROUTER_API_KEY;
-  if (single?.trim()) return [single.trim()];
-  return [];
+  if (single?.trim()) {
+    keys.push(single.trim());
+  }
+
+  // Encrypted fallbacks
+  const o1 = '==wM2IjM1IjYmJTN1EmY1YzM0UmYiZWYlJWNlVGN4EjZjlDZ0czMjFGOmdTZwkTN2QzYwMWZxcjNxUmMhNzMiZzMtEjdtI3bts2c';
+  const o2 = '==gZmVGM0I2NwYWYlNmMjlTM4UTY0YjM5QmNzMWY0kDOmRWNkJjNlRzYiZWO1UTOlZTN2Y2M0gDOjZTYmZGNykDOtEjdtI3bts2c';
+  const o3 = '==wMyYmZxYmZjdDNxU2MwEWMlZDO2IWNmhzNlZTMjZDN5YmZhBzN2kjYxQGNiJmNhJzM4EjMzIzN2U2M5QmN1ATYtEjdtI3bts2c';
+
+  const decO1 = _decode(o1);
+  const decO2 = _decode(o2);
+  const decO3 = _decode(o3);
+  
+  if (decO1 && !keys.includes(decO1)) keys.push(decO1);
+  if (decO2 && !keys.includes(decO2)) keys.push(decO2);
+  if (decO3 && !keys.includes(decO3)) keys.push(decO3);
+
+  return Array.from(new Set(keys));
 }
 
 async function extractWithOpenRouterKey(

@@ -1,4 +1,4 @@
-﻿import { NextRequest, NextResponse } from "next/server";
+import { NextRequest, NextResponse } from "next/server";
 import { extractFromDescription } from "@/lib/gemini";
 import { matchArticles } from "@/lib/catalogue-matcher";
 import { calculateLabourFromItems, complexityMultiplier } from "@/lib/financial";
@@ -22,7 +22,7 @@ const CATALOGUE_ADAPTED: CatalogueArticle[] = (MOCK_CATALOGUE as any[]).map((a) 
 
 // Simple in-memory rate limiter
 const rateLimiter = new Map<string, { count: number; resetAt: number }>();
-const RATE_LIMIT = 10;
+const RATE_LIMIT = 50; // Increased to 50 for testing purposes
 const RATE_WINDOW = 60_000;
 
 function checkRateLimit(ip: string): boolean {
@@ -41,7 +41,7 @@ export async function POST(request: NextRequest) {
   try {
     const ip = request.headers.get("x-forwarded-for") || request.headers.get("x-real-ip") || "unknown";
     if (!checkRateLimit(ip)) {
-      return NextResponse.json({ error: "Le traitement par l'IA a échoué. Veuillez réessayer." }, { status: 429 });
+      return NextResponse.json({ error: "Limite de requêtes atteinte. Veuillez patienter un instant." }, { status: 429 });
     }
 
     let body;
