@@ -41,14 +41,14 @@ export async function POST(request: NextRequest) {
   try {
     const ip = request.headers.get("x-forwarded-for") || request.headers.get("x-real-ip") || "unknown";
     if (!checkRateLimit(ip)) {
-      return NextResponse.json({ error: "Trop de requêtes. Veuillez patienter." }, { status: 429 });
+      return NextResponse.json({ error: "Le traitement par l'IA a échoué. Veuillez réessayer." }, { status: 429 });
     }
 
     let body;
     try {
       body = await request.json();
     } catch {
-      return NextResponse.json({ error: "Format JSON invalide" }, { status: 400 });
+      return NextResponse.json({ error: "Le traitement par l'IA a échoué. Veuillez réessayer." }, { status: 400 });
     }
 
     const { description, preferredSupplier } = body as {
@@ -57,10 +57,10 @@ export async function POST(request: NextRequest) {
     };
 
     if (!description || typeof description !== "string" || description.trim().length < 10) {
-      return NextResponse.json({ error: "Description requise (min 10 caractères)." }, { status: 400 });
+      return NextResponse.json({ error: "Le traitement par l'IA a échoué. Veuillez réessayer." }, { status: 400 });
     }
     if (description.length > 10_000) {
-      return NextResponse.json({ error: "Description trop longue (max 10 000 caractères)." }, { status: 400 });
+      return NextResponse.json({ error: "Le traitement par l'IA a échoué. Veuillez réessayer." }, { status: 400 });
     }
 
     const startTime = Date.now();

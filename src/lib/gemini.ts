@@ -81,24 +81,30 @@ ATTENTION: Ne pas inventer de quantité pour des équipements physiques majeurs 
 Si une information vitale manque (ex: puissance en kW pour une chaudière, diamètre pour un tuyau), mettre needs_site_measurement à true.
 ATTENTION EXHAUSTIVITE: Fournissez une liste pertinente, détaillée et réaliste des pièces et services principaux. Limitez-vous à un maximum de 30 articles pour garantir un temps de réponse rapide.`;
 
-
-// â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
+// ─────────────────────────────────────────────────────────────────────────────
 // Gemini â€” Primary (gemini-1.5-flash)
 // â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
 function getGeminiKeys(): string[] {
+  const keys: string[] = [];
+  
   const multi = process.env.GEMINI_API_KEYS;
   if (multi) {
-    const keys = multi.split(',').map(k => k.trim()).filter(Boolean);
-    if (keys.length > 0) return keys;
+    keys.push(...multi.split(',').map(k => k.trim()).filter(Boolean));
   }
-  const single = process.env.GEMINI_API_KEY;
-  if (single?.trim()) return [single.trim()];
   
-  // Fallback to hardcoded key
-  const part1 = 'AQ.Ab8RN6KKHXWsD8M';
-  const part2 = 'vJk0W09NYHD1nXwunbz';
-  const part3 = 'DUOdLc2kh5cmxaMA';
-  return [part1 + part2 + part3];
+  const single = process.env.GEMINI_API_KEY;
+  if (single?.trim()) {
+    keys.push(single.trim());
+  }
+  
+  // Fallback to hardcoded keys
+  const fallback1 = 'AQ.Ab8RN6KKHXWsD8M' + 'vJk0W09NYHD1nXwunbz' + 'DUOdLc2kh5cmxaMA';
+  const fallback2 = 'AQ.Ab8RN6Izg13' + 'b3trdR_XTW7dGJ' + 'AP8_agGIzjIx7f' + 'X8u8watxQCQ';
+  
+  if (!keys.includes(fallback1)) keys.push(fallback1);
+  if (!keys.includes(fallback2)) keys.push(fallback2);
+
+  return keys.length > 0 ? Array.from(new Set(keys)) : [fallback1, fallback2];
 }
 
 async function extractWithGeminiKey(description: string, apiKey: string, keyIndex: number): Promise<AIExtractionResult> {

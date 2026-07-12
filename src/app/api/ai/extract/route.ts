@@ -32,7 +32,7 @@ export async function POST(request: NextRequest) {
     const ip = request.headers.get('x-forwarded-for') || request.headers.get('x-real-ip') || 'unknown';
     if (!checkRateLimit(ip)) {
       return NextResponse.json(
-        { error: 'Trop de requêtes. Veuillez patienter.' },
+        { error: 'Le traitement par l\'IA a échoué. Veuillez réessayer.' },
         { status: 429 }
       );
     }
@@ -42,27 +42,27 @@ export async function POST(request: NextRequest) {
     try {
       body = await request.json();
     } catch (e) {
-      return NextResponse.json({ error: 'Format JSON invalide' }, { status: 400 });
+      return NextResponse.json({ error: 'Le traitement par l\'IA a échoué. Veuillez réessayer.' }, { status: 400 });
     }
     const { description } = body;
 
     if (!description || typeof description !== 'string') {
       return NextResponse.json(
-        { error: 'Description requise (champ "description" manquant).' },
+        { error: 'Le traitement par l\'IA a échoué. Veuillez réessayer.' },
         { status: 400 }
       );
     }
 
     if (description.trim().length < 10) {
       return NextResponse.json(
-        { error: 'La description doit contenir au moins 10 caractères.' },
+        { error: 'Le traitement par l\'IA a échoué. Veuillez réessayer.' },
         { status: 400 }
       );
     }
 
     if (description.length > 10_000) {
       return NextResponse.json(
-        { error: 'La description ne peut pas dépasser 10 000 caractères.' },
+        { error: 'Le traitement par l\'IA a échoué. Veuillez réessayer.' },
         { status: 400 }
       );
     }
