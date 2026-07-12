@@ -10,7 +10,7 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  gap: var(--space-2);
+  gap: 0;
   margin-bottom: var(--space-8);
   padding: var(--space-4) 0;
 }
@@ -70,6 +70,7 @@
   height: 2px;
   background: var(--color-border);
   margin: 0 var(--space-2);
+  transition: background-color 500ms ease;
 }
 
 .wizard-step.completed + .wizard-step .wizard-step-connector,

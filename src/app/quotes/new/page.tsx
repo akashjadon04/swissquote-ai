@@ -807,7 +807,7 @@ export default function NewQuotePage() {
                       iconLeft={<Eye size={16} />}
                       className="print:hidden hidden md:flex"
                     >
-                      {t('quoteWizard', 'previewPdf') || 'AperÃƒÂ§u PDF'}
+                      {t('quoteWizard', 'previewPdf') || 'Aperçu PDF'}
                     </Button>
                     <Button 
                       variant="primary" 

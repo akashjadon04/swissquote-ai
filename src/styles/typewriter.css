@@ -8,6 +8,11 @@
   --tool: #FBC56C;
   --duration: 3s;
   position: relative;
+  width: 120px;
+  height: 56px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
   -webkit-animation: bounce05 var(--duration) linear infinite;
   animation: bounce05 var(--duration) linear infinite;
 }

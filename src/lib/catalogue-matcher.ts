@@ -124,9 +124,9 @@ export function matchArticles(
     const options = {
       keys: ['description', 'specification', 'category', 'supplier_id', 'reference'],
       includeScore: true,
-      threshold: 0.7, // Allow fuzzy matches
+      threshold: 0.85, // Allow fuzzy matches
       ignoreLocation: true,
-      useExtendedSearch: true
+      useExtendedSearch: false
     };
     globalFuse = new Fuse(catalogue.filter(a => a.active), options);
     lastCatalogueLength = catalogue.length;
@@ -168,13 +168,13 @@ export function matchArticles(
         if (attr.hardBlock) return { article, score: -1 };
 
         // Inverse fuse score (lower is better in Fuse, so 1 - score is similarity)
-        const similarity = 1 - (result.score || 1);
+        const similarity = 1 - (result.score ?? 1);
         
         // Final blended score
         const finalScore = (similarity * 0.6) + (attr.score * 0.4) + supplierBoost;
         return { article, score: finalScore };
       })
-      .filter(c => c.score >= 0.45) // Threshold for a good match
+      .filter(c => c.score >= 0.40) // Threshold for a good match
       .sort((a, b) => b.score - a.score);
 
     if (scoredCandidates.length > 0) {
