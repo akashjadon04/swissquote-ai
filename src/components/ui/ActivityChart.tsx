@@ -1,3 +1,4 @@
+'use client';
 import React from 'react';
 import { motion } from 'framer-motion';
 import { AreaChart, Area, XAxis, YAxis, Tooltip, ResponsiveContainer } from 'recharts';
@@ -37,7 +38,7 @@ export function ActivityChart() {
             <Tooltip 
               contentStyle={{ backgroundColor: 'rgba(255, 255, 255, 0.9)', backdropFilter: 'blur(10px)', borderRadius: '16px', border: '1px solid rgba(0,0,0,0.05)', boxShadow: '0 10px 40px rgba(0,0,0,0.1)' }}
               itemStyle={{ color: '#2563eb', fontWeight: 'bold' }}
-              formatter={(value: number) => [formatCHF(value), "CA"]}
+              formatter={(value: any) => [formatCHF(Number(value) || 0), "CA"]}
             />
             <Area type="monotone" dataKey="revenue" stroke="#2563eb" strokeWidth={4} fillOpacity={1} fill="url(#colorRev)" />
           </AreaChart>

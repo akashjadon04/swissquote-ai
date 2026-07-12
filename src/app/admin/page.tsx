@@ -8,9 +8,9 @@ import { formatCHF } from "@/lib/financial";
 export default function AdminDashboardPage() {
   const fakeStats = { total: 12, draft: 3, finalized: 6, revenue: 257651.25 };
   const fakeQuotes = [
-    { id: "1", quote_number: "Q-2024-001", status: "finalized", client_name: "Rolex SA", building_address: "Rue FranA ois-Dussaud 3, 1211 GenA"ve", created_at: new Date().toISOString(), total_incl_vat: 145000.50, has_missing_items: false },
+    { id: "1", quote_number: "Q-2024-001", status: "finalized", client_name: "Rolex SA", building_address: "Rue FranA ois-Dussaud 3, 1211 Geneve", created_at: new Date().toISOString(), total_incl_vat: 145000.50, has_missing_items: false },
     { id: "2", quote_number: "Q-2024-002", status: "sent", client_name: "Patek Philippe", building_address: "Chemin du Pont-du-Centenaire 141, 1228 Plan-les-Ouates", created_at: new Date(Date.now() - 86400000).toISOString(), total_incl_vat: 89250.00, has_missing_items: false },
-    { id: "3", quote_number: "Q-2024-003", status: "review", client_name: "Clinique La Colline", building_address: "Avenue de la Roseraie 76, 1205 GenA"ve", created_at: new Date(Date.now() - 172800000).toISOString(), total_incl_vat: 23400.75, has_missing_items: true },
+    { id: "3", quote_number: "Q-2024-003", status: "review", client_name: "Clinique La Colline", building_address: "Avenue de la Roseraie 76, 1205 Geneve", created_at: new Date(Date.now() - 172800000).toISOString(), total_incl_vat: 23400.75, has_missing_items: true },
   ];
 
   return (
@@ -35,7 +35,7 @@ export default function AdminDashboardPage() {
                 <div key={quote.id} className="quote-card clay-card">
                   <div className="quote-header">
                     <span className="quote-number">{quote.quote_number}</span>
-                    <span className={\`status-badge \${quote.status}\`}>{quote.status}</span>
+                    <span className={`status-badge ${quote.status}`}>{quote.status}</span>
                   </div>
                   <h3 className="quote-client">{quote.client_name}</h3>
                   <p className="quote-address">{quote.building_address}</p>
