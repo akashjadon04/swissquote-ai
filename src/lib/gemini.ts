@@ -45,6 +45,7 @@ FORMAT DE SORTIE JSON:
       "unit": "string ou null",
       "confidence": 0.0 - 1.0,
       "needs_site_measurement": boolean,
+      "is_estimate": boolean,
       "attributes": {
         "diameter_mm": "number ou null (ex: extraire 28 de 'Ø 28')",
         "capacity_l": "number ou null (ex: extraire 200 de '200 L')",
@@ -64,12 +65,13 @@ RÈGLE labour_complexity:
 - "tres_complexe": chantier très difficile (4+ niveaux, sans ascenseur, immeuble occupé ET étroit)
 
 IMPORTANT: Inclure toujours raccords, colliers et isolations associés aux tuyaux.
-Les radiateurs, chaudières et ballons ECS ont quantity: null si la quantité n'est pas explicitement mentionnée — NE PAS inventer.
+Ajoutez des services logiques si sous-entendus (ex: 'Démontage' ou 'Pose' ou 'Test') depuis le catalogue interne.
+Si la quantité n'est pas explicite (surtout pour les services, les raccords, ou longueurs de tuyau), vous POUVEZ l'estimer logiquement (ex: 2h de pose, 1 démontage) MAIS mettez IMPÉRATIVEMENT "is_estimate": true pour qu'un humain la valide. Ne pas inventer de quantité sans mettre "is_estimate": true.
 Si une information vitale manque (ex: puissance en kW pour une chaudière, diamètre pour un tuyau), mettre needs_site_measurement à true.`;
 
 
 // ─────────────────────────────────────────────────────────────────────────────
-// Gemini — Primary (gemini-3.5-flash)
+// Gemini — Primary (gemini-1.5-flash)
 // ─────────────────────────────────────────────────────────────────────────────
 async function extractWithGemini(description: string): Promise<AIExtractionResult> {
   const part1 = 'AQ.Ab8RN6KKHXWsD8M';
@@ -78,7 +80,7 @@ async function extractWithGemini(description: string): Promise<AIExtractionResul
   const apiKey = process.env.GEMINI_API_KEY || (part1 + part2 + part3);
   if (!apiKey) throw new Error('GEMINI_API_KEY not set in environment');
 
-  const modelName = process.env.GEMINI_MODEL || 'gemini-3.5-flash';
+  const modelName = process.env.GEMINI_MODEL || 'gemini-1.5-flash';
 
   const genAI = new GoogleGenerativeAI(apiKey);
   const model = genAI.getGenerativeModel({

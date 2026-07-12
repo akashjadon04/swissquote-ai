@@ -2,6 +2,8 @@ import type { Metadata, Viewport } from 'next';
 import { Inter, JetBrains_Mono } from 'next/font/google';
 import { ThemeProvider } from 'next-themes';
 import { CommandPalette } from '@/components/ui/CommandPalette';
+import { MagicOrb } from '@/components/ui/MagicOrb';
+import { PageTransition } from '@/components/ui/PageTransition';
 import { Toaster } from 'sonner';
 
 import '@/styles/globals.css';
@@ -77,8 +79,9 @@ export default function RootLayout({
           attribute="data-theme"
           defaultTheme="light"
         >
-          {children}
+          <PageTransition>{children}</PageTransition>
           {/* Global overlays — available everywhere */}
+          <MagicOrb />
           <CommandPalette />
           <Toaster
             position="bottom-right"

@@ -213,6 +213,7 @@ export interface QuoteItem {
   matched_text_end: number | null;
   is_missing: boolean;
   is_manually_added: boolean;
+  is_estimate: boolean;
   sort_order: number;
   created_at: string;
   // Joined

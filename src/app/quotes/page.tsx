@@ -6,9 +6,9 @@ import { motion, AnimatePresence } from 'framer-motion';
 import { Sidebar, MobileBottomNav, TopBar } from '@/components/layout/Sidebar';
 import { useAppStore } from '@/store';
 import { formatCHF } from '@/lib/financial';
-import { EmptyState, Button } from '@/components/ui';
+import { EmptyState, Button, ParallaxStats } from '@/components/ui';
 import { useTranslation } from '@/lib/i18n';
-import { FileText, Plus, AlertCircle, Edit2, Download, Copy, Trash2, ArrowLeft, ArrowRight, Search, LayoutList, LayoutGrid } from 'lucide-react';
+import { FileText, Plus, AlertCircle, Edit2, Download, Copy, Trash2, ArrowLeft, ArrowRight, Search, LayoutList, LayoutGrid, CheckCircle, TrendingUp, Clock } from 'lucide-react';
 
 // ─────────────────────────────────────────
 // Types
@@ -114,6 +114,35 @@ export default function QuotesPage() {
       <main className="app-main">
         <TopBar title={t('sidebar', 'quotes')} />
         <div className="page-content">
+          
+          {/* Dynamic 3D Parallax Stats Grid */}
+          {!loading && quotes.length > 0 && (
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-8">
+              <ParallaxStats 
+                title="Total Chiffré" 
+                value={formatCHF(quotes.reduce((acc, q) => acc + (q.total_incl_vat || 0), 0))}
+                subtitle="Volume d'affaires global"
+                icon={<TrendingUp size={24} />}
+                gradient="from-blue-600 to-indigo-800"
+                trend={{ value: 12.5, label: 'vs mois dernier' }}
+              />
+              <ParallaxStats 
+                title="Devis Acceptés" 
+                value={quotes.filter(q => q.status === 'accepted' || q.status === 'invoiced').length}
+                subtitle="Taux de conversion excellent"
+                icon={<CheckCircle size={24} />}
+                gradient="from-emerald-500 to-teal-700"
+                trend={{ value: 5.2, label: 'vs mois dernier' }}
+              />
+              <ParallaxStats 
+                title="En Attente" 
+                value={quotes.filter(q => q.status === 'sent' || q.status === 'review').length}
+                subtitle="Nécessite une action"
+                icon={<Clock size={24} />}
+                gradient="from-orange-500 to-amber-700"
+              />
+            </div>
+          )}
 
           {/* Header Row */}
           <div className="ql-header">
@@ -390,26 +419,43 @@ function KanbanCard({ quote }: { quote: Quote }) {
   return (
     <Link href={`/quotes/${quote.id}`}>
       <motion.div
-        className="kanban-card clay-card"
-        whileHover={{ y: -2 }}
+        className="relative overflow-hidden p-4 rounded-2xl mb-4 border border-white/60 bg-white/40 backdrop-blur-xl shadow-[0_8px_30px_rgb(0,0,0,0.04)] hover:shadow-[0_12px_40px_rgb(37,99,235,0.12)] hover:bg-white/80 transition-all group"
+        whileHover={{ y: -4, scale: 1.02 }}
         whileTap={{ scale: 0.98 }}
       >
-        <div className="kanban-card-number">{quote.quote_number}</div>
-        {quote.client_name && <div className="kanban-card-client">{quote.client_name}</div>}
-        {quote.building_address && (
-          <div className="kanban-card-address">{quote.building_address}</div>
-        )}
-        <div className="kanban-card-footer">
-          {quote.total_incl_vat && (
-            <span className="kanban-card-total">{formatCHF(quote.total_incl_vat)}</span>
-          )}
-          <span className="kanban-card-date">{date}</span>
+        <div className="absolute inset-0 bg-gradient-to-br from-white/80 to-white/20 opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none" />
+        
+        <div className="flex justify-between items-start mb-3 relative z-10">
+          <span className="text-[11px] font-black tracking-wider text-accent bg-accent/10 px-2.5 py-1 rounded-md border border-accent/20 shadow-sm">
+            {quote.quote_number}
+          </span>
+          <span className="text-[10px] text-text-muted font-semibold bg-black/5 px-2 py-0.5 rounded-full">{date}</span>
         </div>
-        {quote.has_missing_items && (
-          <div className="kanban-card-warning flex items-center gap-1">
-            <AlertCircle size={14} /> Articles manquants
-          </div>
+        
+        {quote.client_name && (
+          <h4 className="text-sm font-extrabold text-text mb-1 truncate relative z-10 group-hover:text-accent transition-colors">{quote.client_name}</h4>
         )}
+        
+        {quote.building_address && (
+          <p className="text-[11px] font-medium text-text-muted truncate mb-4 relative z-10 flex items-center gap-1.5">
+            <span className="w-1.5 h-1.5 rounded-full bg-text-muted/40" />
+            {quote.building_address}
+          </p>
+        )}
+        
+        <div className="flex justify-between items-center mt-2 pt-3 border-t border-black/5 relative z-10">
+          {quote.total_incl_vat ? (
+            <span className="text-sm font-black text-text bg-gradient-to-r from-blue-600 to-indigo-600 bg-clip-text text-transparent">{formatCHF(quote.total_incl_vat)}</span>
+          ) : (
+            <span className="text-[11px] text-text-muted italic font-medium">Montant à définir</span>
+          )}
+          
+          {quote.has_missing_items && (
+            <div className="flex items-center justify-center w-7 h-7 rounded-full bg-danger/10 text-danger border border-danger/20 shadow-inner" title="Articles manquants">
+              <AlertCircle size={14} />
+            </div>
+          )}
+        </div>
       </motion.div>
     </Link>
   );

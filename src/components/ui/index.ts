@@ -27,3 +27,6 @@ export { default as BlurText } from './BlurText';
 export { QuotePDFPreview } from './QuotePDFPreview';
 export { QuoteHistoryLog } from './QuoteHistoryLog';
 export { PremiumPDFTemplate } from './PremiumPDFTemplate';
+export { MagicOrb } from './MagicOrb';
+export { ParallaxStats } from './ParallaxStats';
+export { PageTransition } from './PageTransition';

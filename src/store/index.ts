@@ -18,9 +18,10 @@ export interface QuoteItem {
   lineTotal: number | null;
   supplierCode: string | null;
   supplierName: string | null;
+  isMissing?: boolean;
+  is_estimate?: boolean;
   aiLabel: string | null;
   aiConfidence: number | null;
-  isMissing: boolean;
   isManuallyAdded: boolean;
   matchedTextStart: number | null;
   matchedTextEnd: number | null;

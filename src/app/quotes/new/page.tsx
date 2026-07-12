@@ -182,6 +182,7 @@ export default function NewQuotePage() {
                 aiLabel: article.label,
                 aiConfidence: matched.matchConfidence,
                 isMissing: false,
+                is_estimate: !!(article as any).is_estimate,
                 isManuallyAdded: false,
                 matchedTextStart: null,
                 matchedTextEnd: null,
@@ -204,6 +205,7 @@ export default function NewQuotePage() {
               aiLabel: article.label,
               aiConfidence: article.confidence,
               isMissing: true,
+              is_estimate: !!(article as any).is_estimate,
               isManuallyAdded: false,
               matchedTextStart: null,
               matchedTextEnd: null,
@@ -476,17 +478,17 @@ export default function NewQuotePage() {
                       <table className="articles-table w-full text-left border-collapse">
                         <thead className="bg-surface-2/30">
                           <tr>
-                            <th className="col-ref p-4 font-semibold text-text-muted">{t('catalogue', 'columns.reference')}</th>
-                            <th className="col-desc p-4 font-semibold text-text-muted">{t('catalogue', 'columns.description')}</th>
-                            <th className="col-qty p-4 font-semibold text-text-muted">{t('catalogue', 'columns.quantity')}</th>
-                            <th className="col-unit p-4 font-semibold text-text-muted">{t('catalogue', 'columns.unit')}</th>
-                            <th className="col-price p-4 font-semibold text-text-muted">{t('catalogue', 'columns.unitPrice')}</th>
-                            <th className="col-total p-4 font-semibold text-text-muted">{t('catalogue', 'columns.total') || 'Total'}</th>
+                            <th className="col-ref p-4 font-semibold text-text-muted min-w-[120px]">{t('catalogue', 'columns.reference')}</th>
+                            <th className="col-desc p-4 font-semibold text-text-muted min-w-[300px]">{t('catalogue', 'columns.description')}</th>
+                            <th className="col-qty p-4 font-semibold text-text-muted min-w-[100px]">{t('catalogue', 'columns.quantity')}</th>
+                            <th className="col-unit p-4 font-semibold text-text-muted min-w-[100px]">{t('catalogue', 'columns.unit')}</th>
+                            <th className="col-price p-4 font-semibold text-text-muted min-w-[120px]">{t('catalogue', 'columns.unitPrice')}</th>
+                            <th className="col-total p-4 font-semibold text-text-muted min-w-[120px]">{t('catalogue', 'columns.total') || 'Total'}</th>
                           </tr>
                         </thead>
                         <tbody className="divide-y divide-border-strong">
                           {section.items.map((item, iIdx) => (
-                            <tr key={item.id} className={`group hover:bg-surface-2 transition-colors ${item.isMissing ? 'bg-danger/5' : (item.reference && !item.isMissing ? 'bg-green-50/30 border-green-200' : '')}`}>
+                            <tr key={item.id} className={`group hover:bg-surface-2 transition-colors ${item.isMissing ? 'bg-danger/5' : (item.is_estimate ? 'bg-orange-50/30 border-orange-200' : (item.reference ? 'bg-green-50/30 border-green-200' : ''))}`}>
                               <td className="col-ref p-4">
                                 <input type="text" className={`neo-input w-24 text-sm font-mono ${!item.reference ? 'border-warning border bg-warning/5' : ''}`} placeholder="Réf..." value={item.reference || ''} onChange={(e) => useQuoteStore.getState().updateItem(sIdx, iIdx, { reference: e.target.value })} />
                               </td>
@@ -496,6 +498,16 @@ export default function NewQuotePage() {
                                   <div className="flex items-center gap-2 mt-1 flex-wrap">
                                     <span className="text-xs text-danger font-semibold bg-danger/10 px-2 py-0.5 rounded-full border border-danger/20">{t('quoteWizard', 'articleNotFound')}</span>
                                     <button className="text-xs text-accent font-semibold bg-accent/10 px-2 py-0.5 rounded-full border border-accent/20 hover:bg-accent/20 transition-colors" onClick={() => useQuoteStore.getState().updateItem(sIdx, iIdx, { isMissing: false })}>
+                                      {locale === 'en' ? 'Validate ✓' : 'Valider ✓'}
+                                    </button>
+                                  </div>
+                                )}
+                                {item.is_estimate && (
+                                  <div className="flex items-center gap-2 mt-1 flex-wrap">
+                                    <span className="text-xs text-orange-600 font-semibold bg-orange-100 px-2 py-0.5 rounded-full border border-orange-200">
+                                      {locale === 'en' ? 'AI Estimate - Please Verify' : 'Estimation IA - À Vérifier'}
+                                    </span>
+                                    <button className="text-xs text-accent font-semibold bg-accent/10 px-2 py-0.5 rounded-full border border-accent/20 hover:bg-accent/20 transition-colors" onClick={() => useQuoteStore.getState().updateItem(sIdx, iIdx, { is_estimate: false })}>
                                       {locale === 'en' ? 'Validate ✓' : 'Valider ✓'}
                                     </button>
                                   </div>
@@ -851,9 +863,12 @@ export default function NewQuotePage() {
         onClose={() => setIsPdfPreviewOpen(false)} 
         quote={quote} 
       />
-      <div className="fixed -left-[9999px] -top-[9999px] opacity-0 pointer-events-none">
-        <PremiumPDFTemplate ref={hiddenPdfRef} quote={quote} />
-      </div>
+        <div 
+          style={{ position: 'fixed', left: '-9999px', top: '-9999px', opacity: 0, pointerEvents: 'none' }}
+          className="print:hidden"
+        >
+          <PremiumPDFTemplate ref={hiddenPdfRef} quote={quote} />
+        </div>
     </div>
   );
 }

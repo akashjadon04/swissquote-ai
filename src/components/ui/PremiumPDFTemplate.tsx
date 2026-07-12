@@ -258,26 +258,40 @@ export const PremiumPDFTemplate = React.forwardRef<HTMLDivElement, PremiumPDFTem
 
         {/* FINANCIAL SUMMARY TOTALS */}
         <div style={{ display: 'flex', justifyContent: 'flex-end', marginTop: '10mm', marginBottom: '20mm' }}>
-          <div style={{ width: '80mm', background: '#F8FAFC', borderRadius: '12px', border: '1px solid #E2E8F0', padding: '20px', boxShadow: '0 10px 15px -3px rgba(0,0,0,0.05)' }}>
+          <div style={{ width: '100mm', background: '#F8FAFC', borderRadius: '12px', border: '1px solid #E2E8F0', padding: '24px', boxShadow: '0 10px 15px -3px rgba(0,0,0,0.05)' }}>
             
-            <div style={{ display: 'flex', justifyContent: 'space-between', marginBottom: '12px', fontSize: '13px', color: '#475569' }}>
-              <span>Total Matière HT</span>
-              <span style={{ fontWeight: 600, color: '#0F172A' }}>{formatCHF((quote.financials.materialsSubtotal + quote.financials.materialsMargin) || 0)}</span>
+            <div style={{ display: 'flex', justifyContent: 'space-between', marginBottom: '8px', fontSize: '13px', color: '#475569' }}>
+              <span>Matière & Fournitures HT</span>
+              <span style={{ fontWeight: 600, color: '#0F172A' }}>{formatCHF(quote.financials.materialsSubtotal || 0)}</span>
             </div>
+
+            {quote.financials.materialsMargin > 0 && (
+              <div style={{ display: 'flex', justifyContent: 'space-between', marginBottom: '8px', fontSize: '13px', color: '#475569' }}>
+                <span>Frais divers et marge ({quote.financials.materialsMarginPct}%)</span>
+                <span style={{ fontWeight: 600, color: '#0F172A' }}>{formatCHF(quote.financials.materialsMargin)}</span>
+              </div>
+            )}
             
-            <div style={{ display: 'flex', justifyContent: 'space-between', marginBottom: '12px', fontSize: '13px', color: '#475569' }}>
-              <span>Total Main d'Œuvre HT</span>
-              <span style={{ fontWeight: 600, color: '#0F172A' }}>{formatCHF((quote.financials.labourTotal + quote.financials.travelFee) || 0)}</span>
+            <div style={{ display: 'flex', justifyContent: 'space-between', marginBottom: '8px', fontSize: '13px', color: '#475569' }}>
+              <span>Main d'Œuvre ({quote.financials.labourHours}h x {quote.financials.labourRate})</span>
+              <span style={{ fontWeight: 600, color: '#0F172A' }}>{formatCHF(quote.financials.labourTotal || 0)}</span>
             </div>
+
+            {quote.financials.travelFee > 0 && (
+              <div style={{ display: 'flex', justifyContent: 'space-between', marginBottom: '12px', fontSize: '13px', color: '#475569' }}>
+                <span>Frais de déplacement</span>
+                <span style={{ fontWeight: 600, color: '#0F172A' }}>{formatCHF(quote.financials.travelFee)}</span>
+              </div>
+            )}
             
-            <div style={{ height: '1px', background: '#CBD5E1', margin: '12px 0' }} />
+            <div style={{ height: '1px', background: '#CBD5E1', margin: '16px 0' }} />
             
-            <div style={{ display: 'flex', justifyContent: 'space-between', marginBottom: '12px', fontSize: '14px', fontWeight: 700, color: '#0F172A' }}>
-              <span>Total HT</span>
+            <div style={{ display: 'flex', justifyContent: 'space-between', marginBottom: '12px', fontSize: '15px', fontWeight: 800, color: '#0F172A' }}>
+              <span>Total Net HT</span>
               <span>{formatCHF(quote.financials.subtotalExclVat || 0)}</span>
             </div>
             
-            <div style={{ display: 'flex', justifyContent: 'space-between', marginBottom: '16px', fontSize: '13px', color: '#64748b' }}>
+            <div style={{ display: 'flex', justifyContent: 'space-between', marginBottom: '20px', fontSize: '14px', color: '#64748b' }}>
               <span>TVA ({(quote.financials.vatRate * 100).toFixed(1)}%)</span>
               <span>{formatCHF(quote.financials.vatAmount || 0)}</span>
             </div>
@@ -286,17 +300,17 @@ export const PremiumPDFTemplate = React.forwardRef<HTMLDivElement, PremiumPDFTem
             <div style={{ 
               background: 'linear-gradient(135deg, #1A365D, #2563EB)', 
               color: '#fff', 
-              padding: '20px', 
+              padding: '24px', 
               borderRadius: '12px',
               display: 'flex',
               justifyContent: 'space-between',
               alignItems: 'center',
               boxShadow: '0 10px 25px rgba(37, 99, 235, 0.2)'
             }}>
-              <span style={{ fontSize: '14px', fontWeight: 700, textTransform: 'uppercase', letterSpacing: '1px' }}>
+              <span style={{ fontSize: '16px', fontWeight: 800, textTransform: 'uppercase', letterSpacing: '1px' }}>
                 Total TTC
               </span>
-              <span style={{ fontSize: '20px', fontWeight: 900 }}>
+              <span style={{ fontSize: '24px', fontWeight: 900 }}>
                 {formatCHF(quote.financials.totalInclVat || 0)}
               </span>
             </div>

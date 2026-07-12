@@ -360,72 +360,91 @@
 
 .kanban-board {
   display: grid;
-  grid-template-columns: repeat(6, minmax(220px, 1fr));
-  gap: var(--space-4);
-  overflow-x: auto;
-  padding-bottom: var(--space-4);
-  -webkit-overflow-scrolling: touch;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: 24px;
+  align-items: flex-start;
+  padding-bottom: 32px;
 }
 
-@media (max-width: 1280px) {
+@media (max-width: 1024px) {
   .kanban-board {
-    grid-template-columns: repeat(3, minmax(220px, 1fr));
+    display: flex;
+    overflow-x: auto;
+    padding-bottom: 24px;
+    scroll-snap-type: x mandatory;
+    scroll-padding: 24px;
+    margin: 0 -24px;
+    padding-left: 24px;
+    padding-right: 24px;
+    
+    &::-webkit-scrollbar {
+      display: none;
+    }
   }
 }
 
 .kanban-column {
   display: flex;
   flex-direction: column;
-  gap: var(--space-3);
+  gap: 16px;
   min-height: 200px;
+  flex-shrink: 0;
+  width: 100%;
+}
+
+@media (max-width: 1024px) {
+  .kanban-column {
+    width: 280px;
+    scroll-snap-align: start;
+  }
 }
 
 .kanban-column-header {
   display: flex;
   align-items: center;
-  gap: var(--space-2);
-  padding: var(--space-2) var(--space-3);
-  background: var(--color-surface);
-  border-radius: var(--radius-md);
-  border: 1px solid var(--color-border);
+  gap: 12px;
+  padding: 12px 16px;
+  background: rgba(255, 255, 255, 0.4);
+  backdrop-filter: blur(12px);
+  border-radius: 16px;
+  border: 1px solid rgba(255, 255, 255, 0.6);
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.03);
 }
 
 .kanban-status-dot {
-  width: 8px;
-  height: 8px;
+  width: 10px;
+  height: 10px;
   border-radius: 50%;
   flex-shrink: 0;
+  box-shadow: 0 0 10px currentColor;
 }
 
 .kanban-column-title {
-  font-size: var(--text-sm);
-  font-weight: 600;
+  font-size: 14px;
+  font-weight: 800;
   flex: 1;
   color: var(--color-text-primary);
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
 }
 
 .kanban-column-count {
   font-size: 12px;
-  font-weight: 700;
-  color: var(--color-text-muted);
-  background: var(--color-surface-2);
-  padding: 1px 6px;
+  font-weight: 800;
+  color: var(--color-text);
+  background: rgba(0, 0, 0, 0.05);
+  padding: 2px 10px;
   border-radius: 100px;
 }
 
 .kanban-cards {
   display: flex;
   flex-direction: column;
-  gap: var(--space-2);
+  gap: 0;
 }
 
 .kanban-card {
-  padding: var(--space-3);
-  display: flex;
-  flex-direction: column;
-  gap: var(--space-2);
-  text-decoration: none;
-  color: inherit;
+  /* Card styling moved to inline tailwind classes */
   cursor: pointer;
 }
 

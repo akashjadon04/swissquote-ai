@@ -146,6 +146,7 @@ export const translations = {
     // Quote Wizard
     quoteWizard: {
       devis: 'Devis',
+      previewPdf: 'Aperçu PDF',
       technicalSummary: 'Résumé technique',
       articleNotFound: 'Article non trouvé',
       downloadPdf: 'Télécharger PDF',
@@ -332,6 +333,7 @@ export const translations = {
     },
     quoteWizard: {
       devis: 'Quote',
+      previewPdf: 'Preview PDF',
       technicalSummary: 'Technical Summary',
       articleNotFound: 'Article not found',
       downloadPdf: 'Download PDF',
