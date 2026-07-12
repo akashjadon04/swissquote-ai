@@ -122,7 +122,9 @@ export default function NewQuotePage() {
       }
 
       const data = await res.json();
-      const { extraction, provider, matchResult, labourHours: calculatedLabourHours, labourComplexity: _labourComplexity, realMatchRate } = data;
+      const { provider, labourHours: calculatedLabourHours, labourComplexity: _labourComplexity, realMatchRate } = data;
+      const matchResult = data.matchResult as MatchResult;
+      const extraction = data.extraction as AIExtractionResult;
 
 
       setExtraction(extraction);
@@ -149,7 +151,7 @@ export default function NewQuotePage() {
 
       // Build sections with matched items
       const sections = extraction.sections.map(
-        (section: { section_label: string; description_verbatim: string; articles: Array<{ label: string; material_type: string; dimension: string | null; quantity: number | null; unit: string | null; confidence: number }> }, sIdx: number) => ({
+        (section, sIdx) => ({
           id: `section-${sIdx}`,
           sectionCode: String(25 + sIdx),
           sectionLabel: section.section_label,
@@ -896,6 +898,9 @@ export default function NewQuotePage() {
     </div>
   );
 }
+
+
+
 
 
 
