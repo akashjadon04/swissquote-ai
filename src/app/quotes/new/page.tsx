@@ -2,7 +2,7 @@
 
 import React, { useState, useEffect, useCallback, useMemo, useRef } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
-import { PenTool, Bot, ClipboardCheck, DollarSign, FileText, AlertCircle, ArrowLeft, ArrowRight, Download, Loader2, Eye } from 'lucide-react';
+import { PenTool, Bot, ClipboardCheck, DollarSign, FileText, AlertCircle, ArrowLeft, ArrowRight, Download, Loader2, Eye, Check } from 'lucide-react';
 import { Sidebar, MobileBottomNav, TopBar } from '@/components/layout/Sidebar';
 import { useAppStore, useQuoteStore } from '@/store';
 import { AIProcessingState, Button, AnimatedSaveButton, QuotePDFPreview, PremiumPDFTemplate } from '@/components/ui';
@@ -274,24 +274,36 @@ export default function NewQuotePage() {
       <main className="app-main">
         <TopBar breadcrumb={[t('sidebar', 'quotes'), t('dashboard', 'newQuote')]} />
         <div className="page-content">
-            {/* Step Indicator */}
-            <div className="mb-6 flex items-center justify-between">
-              <div className="flex items-center gap-2 text-sm font-medium text-text-muted">
-                <span className="bg-surface-2 text-text-primary px-3 py-1 rounded-full border shadow-sm">
-                  {t('quoteWizard', `steps.${STEPS[currentStep].id}`)}
-                </span>
-                <span className="opacity-60">
-                  {currentStep + 1} / {STEPS.length}
-                </span>
+            {/* Graphical Step Indicator */}
+            <div className="wizard-steps relative flex justify-between items-center mb-8 px-4 md:px-12">
+              <div className="absolute top-5 left-10 right-10 md:left-20 md:right-20 h-[2px] bg-border z-0">
+                <div 
+                  className="h-full bg-primary transition-all duration-500 ease-in-out" 
+                  style={{ width: `${(currentStep / (STEPS.length - 1)) * 100}%` }} 
+                />
               </div>
-              <div className="flex gap-1">
-                {STEPS.map((_, i) => (
-                  <div 
-                    key={i} 
-                    className={`h-1.5 rounded-full transition-all duration-500 ${i === currentStep ? 'w-6 bg-primary' : (i < currentStep ? 'w-2 bg-primary/40' : 'w-2 bg-border')}`}
-                  />
-                ))}
-              </div>
+              
+              {STEPS.map((step, i) => (
+                <div
+                  key={step.id}
+                  className={`wizard-step relative z-10 flex flex-col items-center gap-2 ${
+                    i === currentStep ? 'active text-primary' : 
+                    i < currentStep ? 'completed text-primary' : 'text-text-muted opacity-60'
+                  }`}
+                >
+                  <div className={`wizard-step-icon w-10 h-10 rounded-full flex items-center justify-center border-2 bg-surface-1 shadow-sm transition-all duration-300 ${
+                    i === currentStep ? 'border-primary bg-primary/10 scale-110' : 
+                    i < currentStep ? 'border-primary bg-primary text-white' : 'border-border'
+                  }`}>
+                    {i < currentStep ? <Check size={18} /> : step.icon}
+                  </div>
+                  {!isMobile && (
+                    <span className={`wizard-step-label text-sm font-semibold mt-1 ${i === currentStep ? 'text-primary' : ''}`}>
+                      {step.label}
+                    </span>
+                  )}
+                </div>
+              ))}
             </div>
 
           <div className="wizard-content relative">
