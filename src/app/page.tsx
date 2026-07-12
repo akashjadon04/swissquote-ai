@@ -9,7 +9,7 @@ import { formatCHF } from '@/lib/financial';
 import type { Quote } from '@/types/database.types';
 import { useTranslation } from '@/lib/i18n';
 import { FileText, Edit2, CheckCircle, DollarSign, Plus, LayoutGrid } from 'lucide-react';
-import { EmptyState, Button } from '@/components/ui';
+import { EmptyState, Button, GreetingWidget, ActivityChart } from '@/components/ui';
 import dynamic from 'next/dynamic';
 
 const Player = dynamic(() => import('@lottiefiles/react-lottie-player').then(mod => mod.Player), { ssr: false });
@@ -42,39 +42,18 @@ export default function DashboardPage() {
           }
         });
         const data = await res.json();
-        setQuotes(data.data || []);
         
         // Calculate stats
         const all = data.data || [];
-        if (all.length === 0) {
-          // MOCK DATA FOR ELITE DEMO (Tableau de bord empty state)
-          setQuotes([
-            { id: '1', quote_number: 'Q-2024-001', status: 'finalized', client_name: 'Rolex SA', building_address: 'Rue François-Dussaud 3, 1211 Genève', created_at: new Date().toISOString(), total_incl_vat: 145000.50, has_missing_items: false },
-            { id: '2', quote_number: 'Q-2024-002', status: 'sent', client_name: 'Patek Philippe', building_address: 'Chemin du Pont-du-Centenaire 141, 1228 Plan-les-Ouates', created_at: new Date(Date.now() - 86400000).toISOString(), total_incl_vat: 89250.00, has_missing_items: false },
-            { id: '3', quote_number: 'Q-2024-003', status: 'review', client_name: 'Clinique La Colline', building_address: 'Avenue de la Roseraie 76, 1205 Genève', created_at: new Date(Date.now() - 172800000).toISOString(), total_incl_vat: 23400.75, has_missing_items: true },
-          ] as Quote[]);
-          setStats({
-            total: 12,
-            draft: 3,
-            finalized: 6,
-            revenue: 257651.25,
-          });
-        } else {
-          setStats({
-            total: data.total || 0,
-            draft: all.filter((q: Quote) => q.status === 'draft').length,
-            finalized: all.filter((q: Quote) => q.status === 'finalized').length,
-            revenue: all.reduce((sum: number, q: Quote) => sum + (q.total_incl_vat || 0), 0),
-          });
-        }
-      } catch {
-        // Fallback mock data for demo
-        setQuotes([
-          { id: '1', quote_number: 'Q-2024-001', status: 'finalized', client_name: 'Rolex SA', building_address: 'Rue François-Dussaud 3, 1211 Genève', created_at: new Date().toISOString(), total_incl_vat: 145000.50, has_missing_items: false },
-          { id: '2', quote_number: 'Q-2024-002', status: 'sent', client_name: 'Patek Philippe', building_address: 'Chemin du Pont-du-Centenaire 141, 1228 Plan-les-Ouates', created_at: new Date(Date.now() - 86400000).toISOString(), total_incl_vat: 89250.00, has_missing_items: false },
-          { id: '3', quote_number: 'Q-2024-003', status: 'review', client_name: 'Clinique La Colline', building_address: 'Avenue de la Roseraie 76, 1205 Genève', created_at: new Date(Date.now() - 172800000).toISOString(), total_incl_vat: 23400.75, has_missing_items: true },
-        ] as Quote[]);
-        setStats({ total: 12, draft: 3, finalized: 6, revenue: 257651.25 });
+        setQuotes(all.slice(0, 5)); // Keep max 5 recent quotes
+        setStats({
+          total: data.total || 0,
+          draft: all.filter((q: Quote) => q.status === 'draft').length,
+          finalized: all.filter((q: Quote) => q.status === 'finalized' || q.status === 'accepted' || q.status === 'invoiced').length,
+          revenue: all.reduce((sum: number, q: Quote) => sum + (q.total_incl_vat || 0), 0),
+        });
+      } catch (error) {
+        console.error('Failed to fetch dashboard quotes:', error);
       } finally {
         setLoading(false);
       }
@@ -88,6 +67,8 @@ export default function DashboardPage() {
       <main className="app-main">
         <TopBar title={t('sidebar', 'dashboard')} />
         <div className="page-content">
+          <GreetingWidget />
+          
           {/* Stats Bar */}
           <div className="stats-bar">
             <StatCard label={t('dashboard', 'activeQuotes')} value={String(stats.total)} icon={<FileText size={20} />} delay={0} />
@@ -95,6 +76,8 @@ export default function DashboardPage() {
             <StatCard label={"Pipeline (En cours)"} value={String(stats.total - stats.draft - stats.finalized)} icon={<Edit2 size={20} />} delay={0.2} />
             <StatCard label={t('dashboard', 'totalRevenue')} value={formatCHF(stats.revenue)} icon={<DollarSign size={20} />} delay={0.3} />
           </div>
+
+          <ActivityChart />
 
           {/* Quick Actions */}
           <div className="quick-actions">

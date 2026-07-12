@@ -30,3 +30,7 @@ export { PremiumPDFTemplate } from './PremiumPDFTemplate';
 export { MagicOrb } from './MagicOrb';
 export { ParallaxStats } from './ParallaxStats';
 export { PageTransition } from './PageTransition';
+export { GreetingWidget } from './GreetingWidget';
+export { DashboardMetricsTicker } from './DashboardMetricsTicker';
+export { ActivityChart } from './ActivityChart';
+export { FloatingActions } from './FloatingActions';

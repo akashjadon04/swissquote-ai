@@ -31,6 +31,8 @@ const jetbrainsMono = JetBrains_Mono({
   display: 'swap',
 });
 
+import { DashboardMetricsTicker, FloatingActions } from '@/components/ui';
+
 export const metadata: Metadata = {
   title: {
     default: 'AstraQuote (by Green AI Groupe) — Devis Intelligents',
@@ -79,8 +81,10 @@ export default function RootLayout({
           attribute="data-theme"
           defaultTheme="light"
         >
+          <DashboardMetricsTicker />
           <PageTransition>{children}</PageTransition>
           {/* Global overlays — available everywhere */}
+          <FloatingActions />
           <MagicOrb />
           <CommandPalette />
           <Toaster
