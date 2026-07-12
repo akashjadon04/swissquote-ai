@@ -133,12 +133,12 @@ export default function NewQuotePage() {
 
       // Labour rate by canton
       const LABOUR_RATES: Record<string, number> = {
-        'Genève': 145, 'Vaud': 138, 'Valais': 130, 'Fribourg': 132,
-        'Neuchâtel': 135, 'Jura': 128, 'Berne': 140, 'Zürich': 148,
-        'Bâle': 142, 'Lucerne': 136,
+        'Genève': 120, 'Vaud': 120, 'Valais': 120, 'Fribourg': 120,
+        'Neuchâtel': 120, 'Jura': 120, 'Berne': 120, 'Zürich': 120,
+        'Bâle': 120, 'Lucerne': 120,
       };
       const canton = quote.canton || 'Genève';
-      const labourRate = LABOUR_RATES[canton] || 145;
+      const labourRate = LABOUR_RATES[canton] || 120;
       const interventionType = extraction.intervention_type;
       // Use server-calculated labour hours (based on actual items + complexity)
       // NEVER use hardcoded hours — null quantities = 0 hours (user must fill in)
@@ -486,7 +486,7 @@ export default function NewQuotePage() {
                         </thead>
                         <tbody className="divide-y divide-border-strong">
                           {section.items.map((item, iIdx) => (
-                            <tr key={item.id} className={`group hover:bg-surface-2 transition-colors ${item.isMissing ? 'bg-danger/5' : ''}`}>
+                            <tr key={item.id} className={`group hover:bg-surface-2 transition-colors ${item.isMissing ? 'bg-danger/5' : (item.reference && !item.isMissing ? 'bg-green-50/30 border-green-200' : '')}`}>
                               <td className="col-ref p-4">
                                 <input type="text" className={`neo-input w-24 text-sm font-mono ${!item.reference ? 'border-warning border bg-warning/5' : ''}`} placeholder="Réf..." value={item.reference || ''} onChange={(e) => useQuoteStore.getState().updateItem(sIdx, iIdx, { reference: e.target.value })} />
                               </td>
@@ -523,7 +523,7 @@ export default function NewQuotePage() {
                     {/* ── MOBILE: card-form layout ── */}
                     <div className="md:hidden flex flex-col gap-3 mt-3">
                       {section.items.map((item, iIdx) => (
-                        <div key={item.id} className={`rounded-2xl border p-4 flex flex-col gap-3 shadow-sm ${item.isMissing ? 'border-danger/40 bg-danger/5' : 'border-border bg-surface-1'}`}>
+                        <div key={item.id} className={`rounded-2xl border p-4 flex flex-col gap-3 shadow-sm ${item.isMissing ? 'border-danger/40 bg-danger/5' : (item.reference && !item.isMissing ? 'bg-green-50/30 border-green-200' : 'border-border bg-surface-1')}`}>
                           {/* Row: Référence */}
                           <div className="flex items-center justify-between gap-3">
                             <span className="text-[11px] font-bold text-text-muted uppercase tracking-wider w-24 shrink-0">{t('catalogue', 'columns.reference')}</span>
@@ -626,11 +626,11 @@ export default function NewQuotePage() {
                         value={quote.canton}
                         onChange={(e) => {
                           const cantonRates: Record<string, number> = {
-                            'Genève': 145, 'Vaud': 138, 'Valais': 130,
-                            'Fribourg': 132, 'Neuchâtel': 135, 'Jura': 128,
-                            'Berne': 140, 'Zürich': 148, 'Bâle': 142, 'Lucerne': 136,
+                            'Genève': 120, 'Vaud': 120, 'Valais': 120,
+                            'Fribourg': 120, 'Neuchâtel': 120, 'Jura': 120,
+                            'Berne': 120, 'Zürich': 120, 'Bâle': 120, 'Lucerne': 120,
                           };
-                          const newRate = cantonRates[e.target.value] || 145;
+                          const newRate = cantonRates[e.target.value] || 120;
                           setQuote({
                             canton: e.target.value,
                             financials: {
@@ -641,9 +641,9 @@ export default function NewQuotePage() {
                           useQuoteStore.getState().recalculateFinancials();
                         }}
                       >
-                        {Object.keys({ 'Genève': 145, 'Vaud': 138, 'Valais': 130, 'Fribourg': 132, 'Neuchâtel': 135, 'Jura': 128, 'Berne': 140, 'Zürich': 148, 'Bâle': 142, 'Lucerne': 136 }).map(c => (
-                          <option key={c} value={c}>{c}</option>
-                        ))}
+                        {Object.keys({ 'Genève': 120, 'Vaud': 120, 'Valais': 120, 'Fribourg': 120, 'Neuchâtel': 120, 'Jura': 120, 'Berne': 120, 'Zürich': 120, 'Bâle': 120, 'Lucerne': 120 }).map(c => (
+                            <option key={c} value={c}>{c}</option>
+                          ))}
                       </select>
                     </div>
 

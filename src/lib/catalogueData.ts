@@ -1965,7 +1965,8 @@ export const MOCK_CATALOGUE = [
     "specification": "UP320 6/3L",
     "active": true,
     "unit": "p",
-    "base_price": 148.00
+    "base_price": 148.00,
+    "attributes": { "capacity_l": 3 }
   },
   {
     "id": "geb-10",
@@ -1976,7 +1977,8 @@ export const MOCK_CATALOGUE = [
     "specification": "DN 70/50 inox",
     "active": true,
     "unit": "p",
-    "base_price": 185.00
+    "base_price": 185.00,
+    "attributes": { "dn": 70 }
   },
   {
     "id": "geb-11",
@@ -1987,7 +1989,8 @@ export const MOCK_CATALOGUE = [
     "specification": "DN 50",
     "active": true,
     "unit": "p",
-    "base_price": 42.00
+    "base_price": 42.00,
+    "attributes": { "dn": 50 }
   },
   {
     "id": "geb-12",
@@ -1998,7 +2001,8 @@ export const MOCK_CATALOGUE = [
     "specification": "DN 70",
     "active": true,
     "unit": "p",
-    "base_price": 52.00
+    "base_price": 52.00,
+    "attributes": { "dn": 70 }
   },
   // PE Drainage Pipes (Geberit Silent-db20 / Silent-PP)
   {
@@ -2010,7 +2014,8 @@ export const MOCK_CATALOGUE = [
     "specification": "DN 32",
     "active": true,
     "unit": "m",
-    "base_price": 8.40
+    "base_price": 8.40,
+    "attributes": { "dn": 32 }
   },
   {
     "id": "geb-21",
@@ -2021,7 +2026,8 @@ export const MOCK_CATALOGUE = [
     "specification": "DN 40",
     "active": true,
     "unit": "m",
-    "base_price": 10.20
+    "base_price": 10.20,
+    "attributes": { "dn": 40 }
   },
   {
     "id": "geb-22",
@@ -2032,7 +2038,8 @@ export const MOCK_CATALOGUE = [
     "specification": "DN 50",
     "active": true,
     "unit": "m",
-    "base_price": 12.80
+    "base_price": 12.80,
+    "attributes": { "dn": 50 }
   },
   {
     "id": "geb-23",
@@ -2043,7 +2050,8 @@ export const MOCK_CATALOGUE = [
     "specification": "DN 70",
     "active": true,
     "unit": "m",
-    "base_price": 18.50
+    "base_price": 18.50,
+    "attributes": { "dn": 70 }
   },
   {
     "id": "geb-24",
@@ -2054,7 +2062,8 @@ export const MOCK_CATALOGUE = [
     "specification": "DN 90",
     "active": true,
     "unit": "m",
-    "base_price": 24.60
+    "base_price": 24.60,
+    "attributes": { "dn": 90 }
   },
   {
     "id": "geb-25",
@@ -2065,7 +2074,8 @@ export const MOCK_CATALOGUE = [
     "specification": "DN 110",
     "active": true,
     "unit": "m",
-    "base_price": 32.80
+    "base_price": 32.80,
+    "attributes": { "dn": 110 }
   },
   {
     "id": "geb-26",
@@ -2076,7 +2086,8 @@ export const MOCK_CATALOGUE = [
     "specification": "DN 125",
     "active": true,
     "unit": "m",
-    "base_price": 42.00
+    "base_price": 42.00,
+    "attributes": { "dn": 125 }
   },
   {
     "id": "geb-27",
@@ -2087,7 +2098,8 @@ export const MOCK_CATALOGUE = [
     "specification": "DN 160",
     "active": true,
     "unit": "m",
-    "base_price": 68.00
+    "base_price": 68.00,
+    "attributes": { "dn": 160 }
   },
   // Coudes PE Ã©vacuation
   {
@@ -2099,7 +2111,8 @@ export const MOCK_CATALOGUE = [
     "specification": "DN 32 87Â°",
     "active": true,
     "unit": "p",
-    "base_price": 4.80
+    "base_price": 4.80,
+    "attributes": { "dn": 32 }
   },
   {
     "id": "geb-31",
@@ -2110,7 +2123,8 @@ export const MOCK_CATALOGUE = [
     "specification": "DN 50 87Â°",
     "active": true,
     "unit": "p",
-    "base_price": 7.20
+    "base_price": 7.20,
+    "attributes": { "dn": 50 }
   },
   {
     "id": "geb-32",
@@ -2121,7 +2135,8 @@ export const MOCK_CATALOGUE = [
     "specification": "DN 110 87Â°",
     "active": true,
     "unit": "p",
-    "base_price": 18.40
+    "base_price": 18.40,
+    "attributes": { "dn": 110 }
   },
   {
     "id": "geb-33",
@@ -2132,7 +2147,8 @@ export const MOCK_CATALOGUE = [
     "specification": "DN 110/50",
     "active": true,
     "unit": "p",
-    "base_price": 24.60
+    "base_price": 24.60,
+    "attributes": { "dn": 110 }
   },
   // â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•
   // CHAUDIÃˆRES Ã€ CONDENSATION (Viessmann / Vaillant equivalents)
@@ -2147,7 +2163,8 @@ export const MOCK_CATALOGUE = [
     "specification": "15 kW condensation gaz",
     "active": true,
     "unit": "p",
-    "base_price": 1850.00
+    "base_price": 1850.00,
+    "attributes": { "power_kw": 15 }
   },
   {
     "id": "chd-2",
@@ -2158,7 +2175,8 @@ export const MOCK_CATALOGUE = [
     "specification": "18 kW condensation gaz",
     "active": true,
     "unit": "p",
-    "base_price": 2100.00
+    "base_price": 2100.00,
+    "attributes": { "power_kw": 18 }
   },
   {
     "id": "chd-3",
@@ -2169,7 +2187,8 @@ export const MOCK_CATALOGUE = [
     "specification": "24 kW condensation gaz",
     "active": true,
     "unit": "p",
-    "base_price": 2450.00
+    "base_price": 2450.00,
+    "attributes": { "power_kw": 24 }
   },
   {
     "id": "chd-4",
@@ -2180,7 +2199,8 @@ export const MOCK_CATALOGUE = [
     "specification": "30 kW condensation gaz",
     "active": true,
     "unit": "p",
-    "base_price": 2950.00
+    "base_price": 2950.00,
+    "attributes": { "power_kw": 30 }
   },
   {
     "id": "chd-5",
@@ -2191,7 +2211,8 @@ export const MOCK_CATALOGUE = [
     "specification": "35 kW condensation gaz",
     "active": true,
     "unit": "p",
-    "base_price": 3400.00
+    "base_price": 3400.00,
+    "attributes": { "power_kw": 35 }
   },
   {
     "id": "chd-6",
@@ -2202,7 +2223,8 @@ export const MOCK_CATALOGUE = [
     "specification": "45 kW condensation gaz",
     "active": true,
     "unit": "p",
-    "base_price": 4100.00
+    "base_price": 4100.00,
+    "attributes": { "power_kw": 45 }
   },
   {
     "id": "chd-7",
@@ -2213,7 +2235,8 @@ export const MOCK_CATALOGUE = [
     "specification": "24 kW condensation gaz sol",
     "active": true,
     "unit": "p",
-    "base_price": 3200.00
+    "base_price": 3200.00,
+    "attributes": { "power_kw": 24 }
   },
   {
     "id": "chd-8",
@@ -2224,7 +2247,8 @@ export const MOCK_CATALOGUE = [
     "specification": "40 kW condensation gaz sol",
     "active": true,
     "unit": "p",
-    "base_price": 4800.00
+    "base_price": 4800.00,
+    "attributes": { "power_kw": 40 }
   },
   // â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•
   // BALLONS ECS (Eau Chaude Sanitaire)
@@ -2238,7 +2262,8 @@ export const MOCK_CATALOGUE = [
     "specification": "80 L",
     "active": true,
     "unit": "p",
-    "base_price": 480.00
+    "base_price": 480.00,
+    "attributes": { "capacity_l": 80 }
   },
   {
     "id": "ecs-2",
@@ -2249,7 +2274,8 @@ export const MOCK_CATALOGUE = [
     "specification": "100 L",
     "active": true,
     "unit": "p",
-    "base_price": 580.00
+    "base_price": 580.00,
+    "attributes": { "capacity_l": 100 }
   },
   {
     "id": "ecs-3",
@@ -2260,7 +2286,8 @@ export const MOCK_CATALOGUE = [
     "specification": "150 L",
     "active": true,
     "unit": "p",
-    "base_price": 720.00
+    "base_price": 720.00,
+    "attributes": { "capacity_l": 150 }
   },
   {
     "id": "ecs-4",
@@ -2271,7 +2298,8 @@ export const MOCK_CATALOGUE = [
     "specification": "200 L",
     "active": true,
     "unit": "p",
-    "base_price": 920.00
+    "base_price": 920.00,
+    "attributes": { "capacity_l": 200 }
   },
   {
     "id": "ecs-5",
@@ -2282,7 +2310,8 @@ export const MOCK_CATALOGUE = [
     "specification": "300 L",
     "active": true,
     "unit": "p",
-    "base_price": 1350.00
+    "base_price": 1350.00,
+    "attributes": { "capacity_l": 300 }
   },
   {
     "id": "ecs-6",
@@ -2293,7 +2322,8 @@ export const MOCK_CATALOGUE = [
     "specification": "500 L",
     "active": true,
     "unit": "p",
-    "base_price": 2200.00
+    "base_price": 2200.00,
+    "attributes": { "capacity_l": 500 }
   },
   // â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•
   // RADIATEURS PANNEAU (quantitÃ© toujours null â€” demander Ã  l'utilisateur)
@@ -2307,7 +2337,8 @@ export const MOCK_CATALOGUE = [
     "specification": "Type 11 H600 L600",
     "active": true,
     "unit": "p",
-    "base_price": 145.00
+    "base_price": 145.00,
+    "attributes": { "capacity_l": 600 }
   },
   {
     "id": "rad-2",
@@ -2318,7 +2349,8 @@ export const MOCK_CATALOGUE = [
     "specification": "Type 21 H600 L800",
     "active": true,
     "unit": "p",
-    "base_price": 195.00
+    "base_price": 195.00,
+    "attributes": { "capacity_l": 600 }
   },
   {
     "id": "rad-3",
@@ -2329,7 +2361,8 @@ export const MOCK_CATALOGUE = [
     "specification": "Type 22 H600 L1000",
     "active": true,
     "unit": "p",
-    "base_price": 245.00
+    "base_price": 245.00,
+    "attributes": { "capacity_l": 600 }
   },
   {
     "id": "rad-4",
@@ -2340,7 +2373,8 @@ export const MOCK_CATALOGUE = [
     "specification": "Type 22 H600 L1200",
     "active": true,
     "unit": "p",
-    "base_price": 285.00
+    "base_price": 285.00,
+    "attributes": { "capacity_l": 600 }
   },
   {
     "id": "rad-5",
@@ -2351,7 +2385,8 @@ export const MOCK_CATALOGUE = [
     "specification": "Type 22 H900 L1000",
     "active": true,
     "unit": "p",
-    "base_price": 320.00
+    "base_price": 320.00,
+    "attributes": { "capacity_l": 900 }
   },
   {
     "id": "rad-6",
@@ -2362,7 +2397,8 @@ export const MOCK_CATALOGUE = [
     "specification": "Type 33 H600 L1000",
     "active": true,
     "unit": "p",
-    "base_price": 365.00
+    "base_price": 365.00,
+    "attributes": { "capacity_l": 600 }
   },
   // â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•
   // ROBINETTERIE / VANNES
@@ -2511,7 +2547,8 @@ export const MOCK_CATALOGUE = [
     "specification": "DN 25 H=4m Q=2.5m3/h",
     "active": true,
     "unit": "p",
-    "base_price": 285.00
+    "base_price": 285.00,
+    "attributes": { "dn": 25 }
   },
   {
     "id": "cir-2",
@@ -2522,7 +2559,8 @@ export const MOCK_CATALOGUE = [
     "specification": "DN 25 H=6m Q=3m3/h",
     "active": true,
     "unit": "p",
-    "base_price": 345.00
+    "base_price": 345.00,
+    "attributes": { "dn": 25 }
   },
   {
     "id": "cir-3",
@@ -2533,7 +2571,8 @@ export const MOCK_CATALOGUE = [
     "specification": "DN 25 vitesse variable EC",
     "active": true,
     "unit": "p",
-    "base_price": 480.00
+    "base_price": 480.00,
+    "attributes": { "dn": 25 }
   },
   {
     "id": "cir-4",
@@ -2544,7 +2583,8 @@ export const MOCK_CATALOGUE = [
     "specification": "DN 25 Classe A",
     "active": true,
     "unit": "p",
-    "base_price": 395.00
+    "base_price": 395.00,
+    "attributes": { "dn": 25 }
   },
   // â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•
   // NOURRICE / COLLECTEUR / DISTRIBUTION
@@ -2825,6 +2865,3074 @@ export const MOCK_CATALOGUE = [
     "unit": "p",
     "base_price": 52.00
   }
+  {
+      "id": "auto-10000",
+      "supplier": {
+          "code": "NSB",
+          "name": "Nussbaum"
+      },
+      "reference": "AUTO-NSB-10001",
+      "name": "Tuyau acier inox Optipress Ø 15 mm",
+      "category": "tuyau_inox",
+      "specification": "Optipress inox d=15",
+      "active": true,
+      "unit": "m",
+      "base_price": 22.5,
+      "attributes": {
+          "diameter_mm": 15,
+          "material": "inox"
+      }
+  },
+  {
+      "id": "auto-10001",
+      "supplier": {
+          "code": "NSB",
+          "name": "Nussbaum"
+      },
+      "reference": "AUTO-NSB-10002",
+      "name": "Coude à sertir 90° inox Ø 15 mm",
+      "category": "coude_sertir",
+      "specification": "Coude 90 inox d=15",
+      "active": true,
+      "unit": "p",
+      "base_price": 9.5,
+      "attributes": {
+          "diameter_mm": 15,
+          "material": "inox"
+      }
+  },
+  {
+      "id": "auto-10002",
+      "supplier": {
+          "code": "NSB",
+          "name": "Nussbaum"
+      },
+      "reference": "AUTO-NSB-10003",
+      "name": "Manchon coulissant à sertir inox Ø 15 mm",
+      "category": "manchon",
+      "specification": "Manchon inox d=15",
+      "active": true,
+      "unit": "p",
+      "base_price": 7,
+      "attributes": {
+          "diameter_mm": 15,
+          "material": "inox"
+      }
+  },
+  {
+      "id": "auto-10003",
+      "supplier": {
+          "code": "NSB",
+          "name": "Nussbaum"
+      },
+      "reference": "AUTO-NSB-10004",
+      "name": "Collier de fixation isophonique Ø 15 mm",
+      "category": "collier",
+      "specification": "Collier d=15",
+      "active": true,
+      "unit": "p",
+      "base_price": 4.5,
+      "attributes": {
+          "diameter_mm": 15
+      }
+  },
+  {
+      "id": "auto-10004",
+      "supplier": {
+          "code": "NSB",
+          "name": "Nussbaum"
+      },
+      "reference": "AUTO-NSB-10005",
+      "name": "Isolation PIR + PVC pour tube Ø 15 mm",
+      "category": "isolation",
+      "specification": "Isol PIR d=15",
+      "active": true,
+      "unit": "m",
+      "base_price": 10.25,
+      "attributes": {
+          "diameter_mm": 15
+      }
+  },
+  {
+      "id": "auto-10005",
+      "supplier": {
+          "code": "NSB",
+          "name": "Nussbaum"
+      },
+      "reference": "AUTO-NSB-10006",
+      "name": "Tuyau acier inox Optipress Ø 18 mm",
+      "category": "tuyau_inox",
+      "specification": "Optipress inox d=18",
+      "active": true,
+      "unit": "m",
+      "base_price": 24,
+      "attributes": {
+          "diameter_mm": 18,
+          "material": "inox"
+      }
+  },
+  {
+      "id": "auto-10006",
+      "supplier": {
+          "code": "NSB",
+          "name": "Nussbaum"
+      },
+      "reference": "AUTO-NSB-10007",
+      "name": "Coude à sertir 90° inox Ø 18 mm",
+      "category": "coude_sertir",
+      "specification": "Coude 90 inox d=18",
+      "active": true,
+      "unit": "p",
+      "base_price": 10.399999999999999,
+      "attributes": {
+          "diameter_mm": 18,
+          "material": "inox"
+      }
+  },
+  {
+      "id": "auto-10007",
+      "supplier": {
+          "code": "NSB",
+          "name": "Nussbaum"
+      },
+      "reference": "AUTO-NSB-10008",
+      "name": "Manchon coulissant à sertir inox Ø 18 mm",
+      "category": "manchon",
+      "specification": "Manchon inox d=18",
+      "active": true,
+      "unit": "p",
+      "base_price": 7.6,
+      "attributes": {
+          "diameter_mm": 18,
+          "material": "inox"
+      }
+  },
+  {
+      "id": "auto-10008",
+      "supplier": {
+          "code": "NSB",
+          "name": "Nussbaum"
+      },
+      "reference": "AUTO-NSB-10009",
+      "name": "Collier de fixation isophonique Ø 18 mm",
+      "category": "collier",
+      "specification": "Collier d=18",
+      "active": true,
+      "unit": "p",
+      "base_price": 4.8,
+      "attributes": {
+          "diameter_mm": 18
+      }
+  },
+  {
+      "id": "auto-10009",
+      "supplier": {
+          "code": "NSB",
+          "name": "Nussbaum"
+      },
+      "reference": "AUTO-NSB-10010",
+      "name": "Isolation PIR + PVC pour tube Ø 18 mm",
+      "category": "isolation",
+      "specification": "Isol PIR d=18",
+      "active": true,
+      "unit": "m",
+      "base_price": 10.7,
+      "attributes": {
+          "diameter_mm": 18
+      }
+  },
+  {
+      "id": "auto-10010",
+      "supplier": {
+          "code": "NSB",
+          "name": "Nussbaum"
+      },
+      "reference": "AUTO-NSB-10011",
+      "name": "Tuyau acier inox Optipress Ø 22 mm",
+      "category": "tuyau_inox",
+      "specification": "Optipress inox d=22",
+      "active": true,
+      "unit": "m",
+      "base_price": 26,
+      "attributes": {
+          "diameter_mm": 22,
+          "material": "inox"
+      }
+  },
+  {
+      "id": "auto-10011",
+      "supplier": {
+          "code": "NSB",
+          "name": "Nussbaum"
+      },
+      "reference": "AUTO-NSB-10012",
+      "name": "Coude à sertir 90° inox Ø 22 mm",
+      "category": "coude_sertir",
+      "specification": "Coude 90 inox d=22",
+      "active": true,
+      "unit": "p",
+      "base_price": 11.6,
+      "attributes": {
+          "diameter_mm": 22,
+          "material": "inox"
+      }
+  },
+  {
+      "id": "auto-10012",
+      "supplier": {
+          "code": "NSB",
+          "name": "Nussbaum"
+      },
+      "reference": "AUTO-NSB-10013",
+      "name": "Manchon coulissant à sertir inox Ø 22 mm",
+      "category": "manchon",
+      "specification": "Manchon inox d=22",
+      "active": true,
+      "unit": "p",
+      "base_price": 8.4,
+      "attributes": {
+          "diameter_mm": 22,
+          "material": "inox"
+      }
+  },
+  {
+      "id": "auto-10013",
+      "supplier": {
+          "code": "NSB",
+          "name": "Nussbaum"
+      },
+      "reference": "AUTO-NSB-10014",
+      "name": "Collier de fixation isophonique Ø 22 mm",
+      "category": "collier",
+      "specification": "Collier d=22",
+      "active": true,
+      "unit": "p",
+      "base_price": 5.2,
+      "attributes": {
+          "diameter_mm": 22
+      }
+  },
+  {
+      "id": "auto-10014",
+      "supplier": {
+          "code": "NSB",
+          "name": "Nussbaum"
+      },
+      "reference": "AUTO-NSB-10015",
+      "name": "Isolation PIR + PVC pour tube Ø 22 mm",
+      "category": "isolation",
+      "specification": "Isol PIR d=22",
+      "active": true,
+      "unit": "m",
+      "base_price": 11.3,
+      "attributes": {
+          "diameter_mm": 22
+      }
+  },
+  {
+      "id": "auto-10015",
+      "supplier": {
+          "code": "NSB",
+          "name": "Nussbaum"
+      },
+      "reference": "AUTO-NSB-10016",
+      "name": "Tuyau acier inox Optipress Ø 28 mm",
+      "category": "tuyau_inox",
+      "specification": "Optipress inox d=28",
+      "active": true,
+      "unit": "m",
+      "base_price": 29,
+      "attributes": {
+          "diameter_mm": 28,
+          "material": "inox"
+      }
+  },
+  {
+      "id": "auto-10016",
+      "supplier": {
+          "code": "NSB",
+          "name": "Nussbaum"
+      },
+      "reference": "AUTO-NSB-10017",
+      "name": "Coude à sertir 90° inox Ø 28 mm",
+      "category": "coude_sertir",
+      "specification": "Coude 90 inox d=28",
+      "active": true,
+      "unit": "p",
+      "base_price": 13.4,
+      "attributes": {
+          "diameter_mm": 28,
+          "material": "inox"
+      }
+  },
+  {
+      "id": "auto-10017",
+      "supplier": {
+          "code": "NSB",
+          "name": "Nussbaum"
+      },
+      "reference": "AUTO-NSB-10018",
+      "name": "Manchon coulissant à sertir inox Ø 28 mm",
+      "category": "manchon",
+      "specification": "Manchon inox d=28",
+      "active": true,
+      "unit": "p",
+      "base_price": 9.600000000000001,
+      "attributes": {
+          "diameter_mm": 28,
+          "material": "inox"
+      }
+  },
+  {
+      "id": "auto-10018",
+      "supplier": {
+          "code": "NSB",
+          "name": "Nussbaum"
+      },
+      "reference": "AUTO-NSB-10019",
+      "name": "Collier de fixation isophonique Ø 28 mm",
+      "category": "collier",
+      "specification": "Collier d=28",
+      "active": true,
+      "unit": "p",
+      "base_price": 5.800000000000001,
+      "attributes": {
+          "diameter_mm": 28
+      }
+  },
+  {
+      "id": "auto-10019",
+      "supplier": {
+          "code": "NSB",
+          "name": "Nussbaum"
+      },
+      "reference": "AUTO-NSB-10020",
+      "name": "Isolation PIR + PVC pour tube Ø 28 mm",
+      "category": "isolation",
+      "specification": "Isol PIR d=28",
+      "active": true,
+      "unit": "m",
+      "base_price": 12.2,
+      "attributes": {
+          "diameter_mm": 28
+      }
+  },
+  {
+      "id": "auto-10020",
+      "supplier": {
+          "code": "NSB",
+          "name": "Nussbaum"
+      },
+      "reference": "AUTO-NSB-10021",
+      "name": "Tuyau acier inox Optipress Ø 35 mm",
+      "category": "tuyau_inox",
+      "specification": "Optipress inox d=35",
+      "active": true,
+      "unit": "m",
+      "base_price": 32.5,
+      "attributes": {
+          "diameter_mm": 35,
+          "material": "inox"
+      }
+  },
+  {
+      "id": "auto-10021",
+      "supplier": {
+          "code": "NSB",
+          "name": "Nussbaum"
+      },
+      "reference": "AUTO-NSB-10022",
+      "name": "Coude à sertir 90° inox Ø 35 mm",
+      "category": "coude_sertir",
+      "specification": "Coude 90 inox d=35",
+      "active": true,
+      "unit": "p",
+      "base_price": 15.5,
+      "attributes": {
+          "diameter_mm": 35,
+          "material": "inox"
+      }
+  },
+  {
+      "id": "auto-10022",
+      "supplier": {
+          "code": "NSB",
+          "name": "Nussbaum"
+      },
+      "reference": "AUTO-NSB-10023",
+      "name": "Manchon coulissant à sertir inox Ø 35 mm",
+      "category": "manchon",
+      "specification": "Manchon inox d=35",
+      "active": true,
+      "unit": "p",
+      "base_price": 11,
+      "attributes": {
+          "diameter_mm": 35,
+          "material": "inox"
+      }
+  },
+  {
+      "id": "auto-10023",
+      "supplier": {
+          "code": "NSB",
+          "name": "Nussbaum"
+      },
+      "reference": "AUTO-NSB-10024",
+      "name": "Collier de fixation isophonique Ø 35 mm",
+      "category": "collier",
+      "specification": "Collier d=35",
+      "active": true,
+      "unit": "p",
+      "base_price": 6.5,
+      "attributes": {
+          "diameter_mm": 35
+      }
+  },
+  {
+      "id": "auto-10024",
+      "supplier": {
+          "code": "NSB",
+          "name": "Nussbaum"
+      },
+      "reference": "AUTO-NSB-10025",
+      "name": "Isolation PIR + PVC pour tube Ø 35 mm",
+      "category": "isolation",
+      "specification": "Isol PIR d=35",
+      "active": true,
+      "unit": "m",
+      "base_price": 13.25,
+      "attributes": {
+          "diameter_mm": 35
+      }
+  },
+  {
+      "id": "auto-10025",
+      "supplier": {
+          "code": "NSB",
+          "name": "Nussbaum"
+      },
+      "reference": "AUTO-NSB-10026",
+      "name": "Tuyau acier inox Optipress Ø 42 mm",
+      "category": "tuyau_inox",
+      "specification": "Optipress inox d=42",
+      "active": true,
+      "unit": "m",
+      "base_price": 36,
+      "attributes": {
+          "diameter_mm": 42,
+          "material": "inox"
+      }
+  },
+  {
+      "id": "auto-10026",
+      "supplier": {
+          "code": "NSB",
+          "name": "Nussbaum"
+      },
+      "reference": "AUTO-NSB-10027",
+      "name": "Coude à sertir 90° inox Ø 42 mm",
+      "category": "coude_sertir",
+      "specification": "Coude 90 inox d=42",
+      "active": true,
+      "unit": "p",
+      "base_price": 17.6,
+      "attributes": {
+          "diameter_mm": 42,
+          "material": "inox"
+      }
+  },
+  {
+      "id": "auto-10027",
+      "supplier": {
+          "code": "NSB",
+          "name": "Nussbaum"
+      },
+      "reference": "AUTO-NSB-10028",
+      "name": "Manchon coulissant à sertir inox Ø 42 mm",
+      "category": "manchon",
+      "specification": "Manchon inox d=42",
+      "active": true,
+      "unit": "p",
+      "base_price": 12.4,
+      "attributes": {
+          "diameter_mm": 42,
+          "material": "inox"
+      }
+  },
+  {
+      "id": "auto-10028",
+      "supplier": {
+          "code": "NSB",
+          "name": "Nussbaum"
+      },
+      "reference": "AUTO-NSB-10029",
+      "name": "Collier de fixation isophonique Ø 42 mm",
+      "category": "collier",
+      "specification": "Collier d=42",
+      "active": true,
+      "unit": "p",
+      "base_price": 7.2,
+      "attributes": {
+          "diameter_mm": 42
+      }
+  },
+  {
+      "id": "auto-10029",
+      "supplier": {
+          "code": "NSB",
+          "name": "Nussbaum"
+      },
+      "reference": "AUTO-NSB-10030",
+      "name": "Isolation PIR + PVC pour tube Ø 42 mm",
+      "category": "isolation",
+      "specification": "Isol PIR d=42",
+      "active": true,
+      "unit": "m",
+      "base_price": 14.3,
+      "attributes": {
+          "diameter_mm": 42
+      }
+  },
+  {
+      "id": "auto-10030",
+      "supplier": {
+          "code": "NSB",
+          "name": "Nussbaum"
+      },
+      "reference": "AUTO-NSB-10031",
+      "name": "Tuyau acier inox Optipress Ø 54 mm",
+      "category": "tuyau_inox",
+      "specification": "Optipress inox d=54",
+      "active": true,
+      "unit": "m",
+      "base_price": 42,
+      "attributes": {
+          "diameter_mm": 54,
+          "material": "inox"
+      }
+  },
+  {
+      "id": "auto-10031",
+      "supplier": {
+          "code": "NSB",
+          "name": "Nussbaum"
+      },
+      "reference": "AUTO-NSB-10032",
+      "name": "Coude à sertir 90° inox Ø 54 mm",
+      "category": "coude_sertir",
+      "specification": "Coude 90 inox d=54",
+      "active": true,
+      "unit": "p",
+      "base_price": 21.2,
+      "attributes": {
+          "diameter_mm": 54,
+          "material": "inox"
+      }
+  },
+  {
+      "id": "auto-10032",
+      "supplier": {
+          "code": "NSB",
+          "name": "Nussbaum"
+      },
+      "reference": "AUTO-NSB-10033",
+      "name": "Manchon coulissant à sertir inox Ø 54 mm",
+      "category": "manchon",
+      "specification": "Manchon inox d=54",
+      "active": true,
+      "unit": "p",
+      "base_price": 14.8,
+      "attributes": {
+          "diameter_mm": 54,
+          "material": "inox"
+      }
+  },
+  {
+      "id": "auto-10033",
+      "supplier": {
+          "code": "NSB",
+          "name": "Nussbaum"
+      },
+      "reference": "AUTO-NSB-10034",
+      "name": "Collier de fixation isophonique Ø 54 mm",
+      "category": "collier",
+      "specification": "Collier d=54",
+      "active": true,
+      "unit": "p",
+      "base_price": 8.4,
+      "attributes": {
+          "diameter_mm": 54
+      }
+  },
+  {
+      "id": "auto-10034",
+      "supplier": {
+          "code": "NSB",
+          "name": "Nussbaum"
+      },
+      "reference": "AUTO-NSB-10035",
+      "name": "Isolation PIR + PVC pour tube Ø 54 mm",
+      "category": "isolation",
+      "specification": "Isol PIR d=54",
+      "active": true,
+      "unit": "m",
+      "base_price": 16.1,
+      "attributes": {
+          "diameter_mm": 54
+      }
+  },
+  {
+      "id": "auto-10035",
+      "supplier": {
+          "code": "NSB",
+          "name": "Nussbaum"
+      },
+      "reference": "AUTO-NSB-10036",
+      "name": "Tuyau acier inox Optipress Ø 76 mm",
+      "category": "tuyau_inox",
+      "specification": "Optipress inox d=76",
+      "active": true,
+      "unit": "m",
+      "base_price": 53,
+      "attributes": {
+          "diameter_mm": 76,
+          "material": "inox"
+      }
+  },
+  {
+      "id": "auto-10036",
+      "supplier": {
+          "code": "NSB",
+          "name": "Nussbaum"
+      },
+      "reference": "AUTO-NSB-10037",
+      "name": "Coude à sertir 90° inox Ø 76 mm",
+      "category": "coude_sertir",
+      "specification": "Coude 90 inox d=76",
+      "active": true,
+      "unit": "p",
+      "base_price": 27.8,
+      "attributes": {
+          "diameter_mm": 76,
+          "material": "inox"
+      }
+  },
+  {
+      "id": "auto-10037",
+      "supplier": {
+          "code": "NSB",
+          "name": "Nussbaum"
+      },
+      "reference": "AUTO-NSB-10038",
+      "name": "Manchon coulissant à sertir inox Ø 76 mm",
+      "category": "manchon",
+      "specification": "Manchon inox d=76",
+      "active": true,
+      "unit": "p",
+      "base_price": 19.200000000000003,
+      "attributes": {
+          "diameter_mm": 76,
+          "material": "inox"
+      }
+  },
+  {
+      "id": "auto-10038",
+      "supplier": {
+          "code": "NSB",
+          "name": "Nussbaum"
+      },
+      "reference": "AUTO-NSB-10039",
+      "name": "Collier de fixation isophonique Ø 76 mm",
+      "category": "collier",
+      "specification": "Collier d=76",
+      "active": true,
+      "unit": "p",
+      "base_price": 10.600000000000001,
+      "attributes": {
+          "diameter_mm": 76
+      }
+  },
+  {
+      "id": "auto-10039",
+      "supplier": {
+          "code": "NSB",
+          "name": "Nussbaum"
+      },
+      "reference": "AUTO-NSB-10040",
+      "name": "Isolation PIR + PVC pour tube Ø 76 mm",
+      "category": "isolation",
+      "specification": "Isol PIR d=76",
+      "active": true,
+      "unit": "m",
+      "base_price": 19.4,
+      "attributes": {
+          "diameter_mm": 76
+      }
+  },
+  {
+      "id": "auto-10040",
+      "supplier": {
+          "code": "NSB",
+          "name": "Nussbaum"
+      },
+      "reference": "AUTO-NSB-10041",
+      "name": "Tuyau acier inox Optipress Ø 89 mm",
+      "category": "tuyau_inox",
+      "specification": "Optipress inox d=89",
+      "active": true,
+      "unit": "m",
+      "base_price": 59.5,
+      "attributes": {
+          "diameter_mm": 89,
+          "material": "inox"
+      }
+  },
+  {
+      "id": "auto-10041",
+      "supplier": {
+          "code": "NSB",
+          "name": "Nussbaum"
+      },
+      "reference": "AUTO-NSB-10042",
+      "name": "Coude à sertir 90° inox Ø 89 mm",
+      "category": "coude_sertir",
+      "specification": "Coude 90 inox d=89",
+      "active": true,
+      "unit": "p",
+      "base_price": 31.7,
+      "attributes": {
+          "diameter_mm": 89,
+          "material": "inox"
+      }
+  },
+  {
+      "id": "auto-10042",
+      "supplier": {
+          "code": "NSB",
+          "name": "Nussbaum"
+      },
+      "reference": "AUTO-NSB-10043",
+      "name": "Manchon coulissant à sertir inox Ø 89 mm",
+      "category": "manchon",
+      "specification": "Manchon inox d=89",
+      "active": true,
+      "unit": "p",
+      "base_price": 21.8,
+      "attributes": {
+          "diameter_mm": 89,
+          "material": "inox"
+      }
+  },
+  {
+      "id": "auto-10043",
+      "supplier": {
+          "code": "NSB",
+          "name": "Nussbaum"
+      },
+      "reference": "AUTO-NSB-10044",
+      "name": "Collier de fixation isophonique Ø 89 mm",
+      "category": "collier",
+      "specification": "Collier d=89",
+      "active": true,
+      "unit": "p",
+      "base_price": 11.9,
+      "attributes": {
+          "diameter_mm": 89
+      }
+  },
+  {
+      "id": "auto-10044",
+      "supplier": {
+          "code": "NSB",
+          "name": "Nussbaum"
+      },
+      "reference": "AUTO-NSB-10045",
+      "name": "Isolation PIR + PVC pour tube Ø 89 mm",
+      "category": "isolation",
+      "specification": "Isol PIR d=89",
+      "active": true,
+      "unit": "m",
+      "base_price": 21.35,
+      "attributes": {
+          "diameter_mm": 89
+      }
+  },
+  {
+      "id": "auto-10045",
+      "supplier": {
+          "code": "NSB",
+          "name": "Nussbaum"
+      },
+      "reference": "AUTO-NSB-10046",
+      "name": "Tuyau acier inox Optipress Ø 108 mm",
+      "category": "tuyau_inox",
+      "specification": "Optipress inox d=108",
+      "active": true,
+      "unit": "m",
+      "base_price": 69,
+      "attributes": {
+          "diameter_mm": 108,
+          "material": "inox"
+      }
+  },
+  {
+      "id": "auto-10046",
+      "supplier": {
+          "code": "NSB",
+          "name": "Nussbaum"
+      },
+      "reference": "AUTO-NSB-10047",
+      "name": "Coude à sertir 90° inox Ø 108 mm",
+      "category": "coude_sertir",
+      "specification": "Coude 90 inox d=108",
+      "active": true,
+      "unit": "p",
+      "base_price": 37.4,
+      "attributes": {
+          "diameter_mm": 108,
+          "material": "inox"
+      }
+  },
+  {
+      "id": "auto-10047",
+      "supplier": {
+          "code": "NSB",
+          "name": "Nussbaum"
+      },
+      "reference": "AUTO-NSB-10048",
+      "name": "Manchon coulissant à sertir inox Ø 108 mm",
+      "category": "manchon",
+      "specification": "Manchon inox d=108",
+      "active": true,
+      "unit": "p",
+      "base_price": 25.6,
+      "attributes": {
+          "diameter_mm": 108,
+          "material": "inox"
+      }
+  },
+  {
+      "id": "auto-10048",
+      "supplier": {
+          "code": "NSB",
+          "name": "Nussbaum"
+      },
+      "reference": "AUTO-NSB-10049",
+      "name": "Collier de fixation isophonique Ø 108 mm",
+      "category": "collier",
+      "specification": "Collier d=108",
+      "active": true,
+      "unit": "p",
+      "base_price": 13.8,
+      "attributes": {
+          "diameter_mm": 108
+      }
+  },
+  {
+      "id": "auto-10049",
+      "supplier": {
+          "code": "NSB",
+          "name": "Nussbaum"
+      },
+      "reference": "AUTO-NSB-10050",
+      "name": "Isolation PIR + PVC pour tube Ø 108 mm",
+      "category": "isolation",
+      "specification": "Isol PIR d=108",
+      "active": true,
+      "unit": "m",
+      "base_price": 24.2,
+      "attributes": {
+          "diameter_mm": 108
+      }
+  },
+  {
+      "id": "auto-10050",
+      "supplier": {
+          "code": "GEB",
+          "name": "Geberit"
+      },
+      "reference": "AUTO-GEB-10051",
+      "name": "Tuyau évacuation PE Geberit Silent Ø 40 mm",
+      "category": "evacuation_pe",
+      "specification": "Silent-PE d=40",
+      "active": true,
+      "unit": "m",
+      "base_price": 18,
+      "attributes": {
+          "diameter_mm": 40,
+          "material": "PE"
+      }
+  },
+  {
+      "id": "auto-10051",
+      "supplier": {
+          "code": "GEB",
+          "name": "Geberit"
+      },
+      "reference": "AUTO-GEB-10052",
+      "name": "Coude PE Geberit Silent 90° Ø 40 mm",
+      "category": "coude_sertir",
+      "specification": "Coude PE 90 d=40",
+      "active": true,
+      "unit": "p",
+      "base_price": 8,
+      "attributes": {
+          "diameter_mm": 40,
+          "material": "PE"
+      }
+  },
+  {
+      "id": "auto-10052",
+      "supplier": {
+          "code": "GEB",
+          "name": "Geberit"
+      },
+      "reference": "AUTO-GEB-10053",
+      "name": "Coude PE Geberit Silent 45° Ø 40 mm",
+      "category": "coude_sertir",
+      "specification": "Coude PE 45 d=40",
+      "active": true,
+      "unit": "p",
+      "base_price": 8,
+      "attributes": {
+          "diameter_mm": 40,
+          "material": "PE"
+      }
+  },
+  {
+      "id": "auto-10053",
+      "supplier": {
+          "code": "GEB",
+          "name": "Geberit"
+      },
+      "reference": "AUTO-GEB-10054",
+      "name": "Manchon électrosoudable PE Ø 40 mm",
+      "category": "manchon",
+      "specification": "Manchon PE d=40",
+      "active": true,
+      "unit": "p",
+      "base_price": 12,
+      "attributes": {
+          "diameter_mm": 40,
+          "material": "PE"
+      }
+  },
+  {
+      "id": "auto-10054",
+      "supplier": {
+          "code": "GEB",
+          "name": "Geberit"
+      },
+      "reference": "AUTO-GEB-10055",
+      "name": "Tuyau évacuation PE Geberit Silent Ø 50 mm",
+      "category": "evacuation_pe",
+      "specification": "Silent-PE d=50",
+      "active": true,
+      "unit": "m",
+      "base_price": 20,
+      "attributes": {
+          "diameter_mm": 50,
+          "material": "PE"
+      }
+  },
+  {
+      "id": "auto-10055",
+      "supplier": {
+          "code": "GEB",
+          "name": "Geberit"
+      },
+      "reference": "AUTO-GEB-10056",
+      "name": "Coude PE Geberit Silent 90° Ø 50 mm",
+      "category": "coude_sertir",
+      "specification": "Coude PE 90 d=50",
+      "active": true,
+      "unit": "p",
+      "base_price": 9,
+      "attributes": {
+          "diameter_mm": 50,
+          "material": "PE"
+      }
+  },
+  {
+      "id": "auto-10056",
+      "supplier": {
+          "code": "GEB",
+          "name": "Geberit"
+      },
+      "reference": "AUTO-GEB-10057",
+      "name": "Coude PE Geberit Silent 45° Ø 50 mm",
+      "category": "coude_sertir",
+      "specification": "Coude PE 45 d=50",
+      "active": true,
+      "unit": "p",
+      "base_price": 9,
+      "attributes": {
+          "diameter_mm": 50,
+          "material": "PE"
+      }
+  },
+  {
+      "id": "auto-10057",
+      "supplier": {
+          "code": "GEB",
+          "name": "Geberit"
+      },
+      "reference": "AUTO-GEB-10058",
+      "name": "Manchon électrosoudable PE Ø 50 mm",
+      "category": "manchon",
+      "specification": "Manchon PE d=50",
+      "active": true,
+      "unit": "p",
+      "base_price": 13.5,
+      "attributes": {
+          "diameter_mm": 50,
+          "material": "PE"
+      }
+  },
+  {
+      "id": "auto-10058",
+      "supplier": {
+          "code": "GEB",
+          "name": "Geberit"
+      },
+      "reference": "AUTO-GEB-10059",
+      "name": "Tuyau évacuation PE Geberit Silent Ø 56 mm",
+      "category": "evacuation_pe",
+      "specification": "Silent-PE d=56",
+      "active": true,
+      "unit": "m",
+      "base_price": 21.200000000000003,
+      "attributes": {
+          "diameter_mm": 56,
+          "material": "PE"
+      }
+  },
+  {
+      "id": "auto-10059",
+      "supplier": {
+          "code": "GEB",
+          "name": "Geberit"
+      },
+      "reference": "AUTO-GEB-10060",
+      "name": "Coude PE Geberit Silent 90° Ø 56 mm",
+      "category": "coude_sertir",
+      "specification": "Coude PE 90 d=56",
+      "active": true,
+      "unit": "p",
+      "base_price": 9.600000000000001,
+      "attributes": {
+          "diameter_mm": 56,
+          "material": "PE"
+      }
+  },
+  {
+      "id": "auto-10060",
+      "supplier": {
+          "code": "GEB",
+          "name": "Geberit"
+      },
+      "reference": "AUTO-GEB-10061",
+      "name": "Coude PE Geberit Silent 45° Ø 56 mm",
+      "category": "coude_sertir",
+      "specification": "Coude PE 45 d=56",
+      "active": true,
+      "unit": "p",
+      "base_price": 9.600000000000001,
+      "attributes": {
+          "diameter_mm": 56,
+          "material": "PE"
+      }
+  },
+  {
+      "id": "auto-10061",
+      "supplier": {
+          "code": "GEB",
+          "name": "Geberit"
+      },
+      "reference": "AUTO-GEB-10062",
+      "name": "Manchon électrosoudable PE Ø 56 mm",
+      "category": "manchon",
+      "specification": "Manchon PE d=56",
+      "active": true,
+      "unit": "p",
+      "base_price": 14.4,
+      "attributes": {
+          "diameter_mm": 56,
+          "material": "PE"
+      }
+  },
+  {
+      "id": "auto-10062",
+      "supplier": {
+          "code": "GEB",
+          "name": "Geberit"
+      },
+      "reference": "AUTO-GEB-10063",
+      "name": "Tuyau évacuation PE Geberit Silent Ø 63 mm",
+      "category": "evacuation_pe",
+      "specification": "Silent-PE d=63",
+      "active": true,
+      "unit": "m",
+      "base_price": 22.6,
+      "attributes": {
+          "diameter_mm": 63,
+          "material": "PE"
+      }
+  },
+  {
+      "id": "auto-10063",
+      "supplier": {
+          "code": "GEB",
+          "name": "Geberit"
+      },
+      "reference": "AUTO-GEB-10064",
+      "name": "Coude PE Geberit Silent 90° Ø 63 mm",
+      "category": "coude_sertir",
+      "specification": "Coude PE 90 d=63",
+      "active": true,
+      "unit": "p",
+      "base_price": 10.3,
+      "attributes": {
+          "diameter_mm": 63,
+          "material": "PE"
+      }
+  },
+  {
+      "id": "auto-10064",
+      "supplier": {
+          "code": "GEB",
+          "name": "Geberit"
+      },
+      "reference": "AUTO-GEB-10065",
+      "name": "Coude PE Geberit Silent 45° Ø 63 mm",
+      "category": "coude_sertir",
+      "specification": "Coude PE 45 d=63",
+      "active": true,
+      "unit": "p",
+      "base_price": 10.3,
+      "attributes": {
+          "diameter_mm": 63,
+          "material": "PE"
+      }
+  },
+  {
+      "id": "auto-10065",
+      "supplier": {
+          "code": "GEB",
+          "name": "Geberit"
+      },
+      "reference": "AUTO-GEB-10066",
+      "name": "Manchon électrosoudable PE Ø 63 mm",
+      "category": "manchon",
+      "specification": "Manchon PE d=63",
+      "active": true,
+      "unit": "p",
+      "base_price": 15.45,
+      "attributes": {
+          "diameter_mm": 63,
+          "material": "PE"
+      }
+  },
+  {
+      "id": "auto-10066",
+      "supplier": {
+          "code": "GEB",
+          "name": "Geberit"
+      },
+      "reference": "AUTO-GEB-10067",
+      "name": "Tuyau évacuation PE Geberit Silent Ø 75 mm",
+      "category": "evacuation_pe",
+      "specification": "Silent-PE d=75",
+      "active": true,
+      "unit": "m",
+      "base_price": 25,
+      "attributes": {
+          "diameter_mm": 75,
+          "material": "PE"
+      }
+  },
+  {
+      "id": "auto-10067",
+      "supplier": {
+          "code": "GEB",
+          "name": "Geberit"
+      },
+      "reference": "AUTO-GEB-10068",
+      "name": "Coude PE Geberit Silent 90° Ø 75 mm",
+      "category": "coude_sertir",
+      "specification": "Coude PE 90 d=75",
+      "active": true,
+      "unit": "p",
+      "base_price": 11.5,
+      "attributes": {
+          "diameter_mm": 75,
+          "material": "PE"
+      }
+  },
+  {
+      "id": "auto-10068",
+      "supplier": {
+          "code": "GEB",
+          "name": "Geberit"
+      },
+      "reference": "AUTO-GEB-10069",
+      "name": "Coude PE Geberit Silent 45° Ø 75 mm",
+      "category": "coude_sertir",
+      "specification": "Coude PE 45 d=75",
+      "active": true,
+      "unit": "p",
+      "base_price": 11.5,
+      "attributes": {
+          "diameter_mm": 75,
+          "material": "PE"
+      }
+  },
+  {
+      "id": "auto-10069",
+      "supplier": {
+          "code": "GEB",
+          "name": "Geberit"
+      },
+      "reference": "AUTO-GEB-10070",
+      "name": "Manchon électrosoudable PE Ø 75 mm",
+      "category": "manchon",
+      "specification": "Manchon PE d=75",
+      "active": true,
+      "unit": "p",
+      "base_price": 17.25,
+      "attributes": {
+          "diameter_mm": 75,
+          "material": "PE"
+      }
+  },
+  {
+      "id": "auto-10070",
+      "supplier": {
+          "code": "GEB",
+          "name": "Geberit"
+      },
+      "reference": "AUTO-GEB-10071",
+      "name": "Tuyau évacuation PE Geberit Silent Ø 90 mm",
+      "category": "evacuation_pe",
+      "specification": "Silent-PE d=90",
+      "active": true,
+      "unit": "m",
+      "base_price": 28,
+      "attributes": {
+          "diameter_mm": 90,
+          "material": "PE"
+      }
+  },
+  {
+      "id": "auto-10071",
+      "supplier": {
+          "code": "GEB",
+          "name": "Geberit"
+      },
+      "reference": "AUTO-GEB-10072",
+      "name": "Coude PE Geberit Silent 90° Ø 90 mm",
+      "category": "coude_sertir",
+      "specification": "Coude PE 90 d=90",
+      "active": true,
+      "unit": "p",
+      "base_price": 13,
+      "attributes": {
+          "diameter_mm": 90,
+          "material": "PE"
+      }
+  },
+  {
+      "id": "auto-10072",
+      "supplier": {
+          "code": "GEB",
+          "name": "Geberit"
+      },
+      "reference": "AUTO-GEB-10073",
+      "name": "Coude PE Geberit Silent 45° Ø 90 mm",
+      "category": "coude_sertir",
+      "specification": "Coude PE 45 d=90",
+      "active": true,
+      "unit": "p",
+      "base_price": 13,
+      "attributes": {
+          "diameter_mm": 90,
+          "material": "PE"
+      }
+  },
+  {
+      "id": "auto-10073",
+      "supplier": {
+          "code": "GEB",
+          "name": "Geberit"
+      },
+      "reference": "AUTO-GEB-10074",
+      "name": "Manchon électrosoudable PE Ø 90 mm",
+      "category": "manchon",
+      "specification": "Manchon PE d=90",
+      "active": true,
+      "unit": "p",
+      "base_price": 19.5,
+      "attributes": {
+          "diameter_mm": 90,
+          "material": "PE"
+      }
+  },
+  {
+      "id": "auto-10074",
+      "supplier": {
+          "code": "GEB",
+          "name": "Geberit"
+      },
+      "reference": "AUTO-GEB-10075",
+      "name": "Tuyau évacuation PE Geberit Silent Ø 110 mm",
+      "category": "evacuation_pe",
+      "specification": "Silent-PE d=110",
+      "active": true,
+      "unit": "m",
+      "base_price": 32,
+      "attributes": {
+          "diameter_mm": 110,
+          "material": "PE"
+      }
+  },
+  {
+      "id": "auto-10075",
+      "supplier": {
+          "code": "GEB",
+          "name": "Geberit"
+      },
+      "reference": "AUTO-GEB-10076",
+      "name": "Coude PE Geberit Silent 90° Ø 110 mm",
+      "category": "coude_sertir",
+      "specification": "Coude PE 90 d=110",
+      "active": true,
+      "unit": "p",
+      "base_price": 15,
+      "attributes": {
+          "diameter_mm": 110,
+          "material": "PE"
+      }
+  },
+  {
+      "id": "auto-10076",
+      "supplier": {
+          "code": "GEB",
+          "name": "Geberit"
+      },
+      "reference": "AUTO-GEB-10077",
+      "name": "Coude PE Geberit Silent 45° Ø 110 mm",
+      "category": "coude_sertir",
+      "specification": "Coude PE 45 d=110",
+      "active": true,
+      "unit": "p",
+      "base_price": 15,
+      "attributes": {
+          "diameter_mm": 110,
+          "material": "PE"
+      }
+  },
+  {
+      "id": "auto-10077",
+      "supplier": {
+          "code": "GEB",
+          "name": "Geberit"
+      },
+      "reference": "AUTO-GEB-10078",
+      "name": "Manchon électrosoudable PE Ø 110 mm",
+      "category": "manchon",
+      "specification": "Manchon PE d=110",
+      "active": true,
+      "unit": "p",
+      "base_price": 22.5,
+      "attributes": {
+          "diameter_mm": 110,
+          "material": "PE"
+      }
+  },
+  {
+      "id": "auto-10078",
+      "supplier": {
+          "code": "GEB",
+          "name": "Geberit"
+      },
+      "reference": "AUTO-GEB-10079",
+      "name": "Tuyau évacuation PE Geberit Silent Ø 125 mm",
+      "category": "evacuation_pe",
+      "specification": "Silent-PE d=125",
+      "active": true,
+      "unit": "m",
+      "base_price": 35,
+      "attributes": {
+          "diameter_mm": 125,
+          "material": "PE"
+      }
+  },
+  {
+      "id": "auto-10079",
+      "supplier": {
+          "code": "GEB",
+          "name": "Geberit"
+      },
+      "reference": "AUTO-GEB-10080",
+      "name": "Coude PE Geberit Silent 90° Ø 125 mm",
+      "category": "coude_sertir",
+      "specification": "Coude PE 90 d=125",
+      "active": true,
+      "unit": "p",
+      "base_price": 16.5,
+      "attributes": {
+          "diameter_mm": 125,
+          "material": "PE"
+      }
+  },
+  {
+      "id": "auto-10080",
+      "supplier": {
+          "code": "GEB",
+          "name": "Geberit"
+      },
+      "reference": "AUTO-GEB-10081",
+      "name": "Coude PE Geberit Silent 45° Ø 125 mm",
+      "category": "coude_sertir",
+      "specification": "Coude PE 45 d=125",
+      "active": true,
+      "unit": "p",
+      "base_price": 16.5,
+      "attributes": {
+          "diameter_mm": 125,
+          "material": "PE"
+      }
+  },
+  {
+      "id": "auto-10081",
+      "supplier": {
+          "code": "GEB",
+          "name": "Geberit"
+      },
+      "reference": "AUTO-GEB-10082",
+      "name": "Manchon électrosoudable PE Ø 125 mm",
+      "category": "manchon",
+      "specification": "Manchon PE d=125",
+      "active": true,
+      "unit": "p",
+      "base_price": 24.75,
+      "attributes": {
+          "diameter_mm": 125,
+          "material": "PE"
+      }
+  },
+  {
+      "id": "auto-10082",
+      "supplier": {
+          "code": "GEB",
+          "name": "Geberit"
+      },
+      "reference": "AUTO-GEB-10083",
+      "name": "Tuyau évacuation PE Geberit Silent Ø 160 mm",
+      "category": "evacuation_pe",
+      "specification": "Silent-PE d=160",
+      "active": true,
+      "unit": "m",
+      "base_price": 42,
+      "attributes": {
+          "diameter_mm": 160,
+          "material": "PE"
+      }
+  },
+  {
+      "id": "auto-10083",
+      "supplier": {
+          "code": "GEB",
+          "name": "Geberit"
+      },
+      "reference": "AUTO-GEB-10084",
+      "name": "Coude PE Geberit Silent 90° Ø 160 mm",
+      "category": "coude_sertir",
+      "specification": "Coude PE 90 d=160",
+      "active": true,
+      "unit": "p",
+      "base_price": 20,
+      "attributes": {
+          "diameter_mm": 160,
+          "material": "PE"
+      }
+  },
+  {
+      "id": "auto-10084",
+      "supplier": {
+          "code": "GEB",
+          "name": "Geberit"
+      },
+      "reference": "AUTO-GEB-10085",
+      "name": "Coude PE Geberit Silent 45° Ø 160 mm",
+      "category": "coude_sertir",
+      "specification": "Coude PE 45 d=160",
+      "active": true,
+      "unit": "p",
+      "base_price": 20,
+      "attributes": {
+          "diameter_mm": 160,
+          "material": "PE"
+      }
+  },
+  {
+      "id": "auto-10085",
+      "supplier": {
+          "code": "GEB",
+          "name": "Geberit"
+      },
+      "reference": "AUTO-GEB-10086",
+      "name": "Manchon électrosoudable PE Ø 160 mm",
+      "category": "manchon",
+      "specification": "Manchon PE d=160",
+      "active": true,
+      "unit": "p",
+      "base_price": 30,
+      "attributes": {
+          "diameter_mm": 160,
+          "material": "PE"
+      }
+  },
+  {
+      "id": "auto-10086",
+      "supplier": {
+          "code": "GEB",
+          "name": "Geberit"
+      },
+      "reference": "AUTO-GEB-10087",
+      "name": "Tuyau évacuation PE Geberit Silent Ø 200 mm",
+      "category": "evacuation_pe",
+      "specification": "Silent-PE d=200",
+      "active": true,
+      "unit": "m",
+      "base_price": 50,
+      "attributes": {
+          "diameter_mm": 200,
+          "material": "PE"
+      }
+  },
+  {
+      "id": "auto-10087",
+      "supplier": {
+          "code": "GEB",
+          "name": "Geberit"
+      },
+      "reference": "AUTO-GEB-10088",
+      "name": "Coude PE Geberit Silent 90° Ø 200 mm",
+      "category": "coude_sertir",
+      "specification": "Coude PE 90 d=200",
+      "active": true,
+      "unit": "p",
+      "base_price": 24,
+      "attributes": {
+          "diameter_mm": 200,
+          "material": "PE"
+      }
+  },
+  {
+      "id": "auto-10088",
+      "supplier": {
+          "code": "GEB",
+          "name": "Geberit"
+      },
+      "reference": "AUTO-GEB-10089",
+      "name": "Coude PE Geberit Silent 45° Ø 200 mm",
+      "category": "coude_sertir",
+      "specification": "Coude PE 45 d=200",
+      "active": true,
+      "unit": "p",
+      "base_price": 24,
+      "attributes": {
+          "diameter_mm": 200,
+          "material": "PE"
+      }
+  },
+  {
+      "id": "auto-10089",
+      "supplier": {
+          "code": "GEB",
+          "name": "Geberit"
+      },
+      "reference": "AUTO-GEB-10090",
+      "name": "Manchon électrosoudable PE Ø 200 mm",
+      "category": "manchon",
+      "specification": "Manchon PE d=200",
+      "active": true,
+      "unit": "p",
+      "base_price": 36,
+      "attributes": {
+          "diameter_mm": 200,
+          "material": "PE"
+      }
+  },
+  {
+      "id": "auto-10090",
+      "supplier": {
+          "code": "ST",
+          "name": "Sanitas Troesch"
+      },
+      "reference": "AUTO-ST-10091",
+      "name": "Chaudière gaz à condensation murale 10 kW",
+      "category": "chaudiere",
+      "specification": "10 kW condensation gaz",
+      "active": true,
+      "unit": "p",
+      "base_price": 2500,
+      "attributes": {
+          "power_kw": 10
+      }
+  },
+  {
+      "id": "auto-10091",
+      "supplier": {
+          "code": "ST",
+          "name": "Sanitas Troesch"
+      },
+      "reference": "AUTO-ST-10092",
+      "name": "Chaudière mazout à condensation 10 kW",
+      "category": "chaudiere",
+      "specification": "10 kW condensation mazout",
+      "active": true,
+      "unit": "p",
+      "base_price": 3100,
+      "attributes": {
+          "power_kw": 10
+      }
+  },
+  {
+      "id": "auto-10092",
+      "supplier": {
+          "code": "ST",
+          "name": "Sanitas Troesch"
+      },
+      "reference": "AUTO-ST-10093",
+      "name": "Pompe à chaleur air-eau 10 kW",
+      "category": "chaudiere",
+      "specification": "10 kW PAC air-eau",
+      "active": true,
+      "unit": "p",
+      "base_price": 10000,
+      "attributes": {
+          "power_kw": 10
+      }
+  },
+  {
+      "id": "auto-10093",
+      "supplier": {
+          "code": "ST",
+          "name": "Sanitas Troesch"
+      },
+      "reference": "AUTO-ST-10094",
+      "name": "Chaudière gaz à condensation murale 14 kW",
+      "category": "chaudiere",
+      "specification": "14 kW condensation gaz",
+      "active": true,
+      "unit": "p",
+      "base_price": 2700,
+      "attributes": {
+          "power_kw": 14
+      }
+  },
+  {
+      "id": "auto-10094",
+      "supplier": {
+          "code": "ST",
+          "name": "Sanitas Troesch"
+      },
+      "reference": "AUTO-ST-10095",
+      "name": "Chaudière mazout à condensation 14 kW",
+      "category": "chaudiere",
+      "specification": "14 kW condensation mazout",
+      "active": true,
+      "unit": "p",
+      "base_price": 3340,
+      "attributes": {
+          "power_kw": 14
+      }
+  },
+  {
+      "id": "auto-10095",
+      "supplier": {
+          "code": "ST",
+          "name": "Sanitas Troesch"
+      },
+      "reference": "AUTO-ST-10096",
+      "name": "Pompe à chaleur air-eau 14 kW",
+      "category": "chaudiere",
+      "specification": "14 kW PAC air-eau",
+      "active": true,
+      "unit": "p",
+      "base_price": 10800,
+      "attributes": {
+          "power_kw": 14
+      }
+  },
+  {
+      "id": "auto-10096",
+      "supplier": {
+          "code": "ST",
+          "name": "Sanitas Troesch"
+      },
+      "reference": "AUTO-ST-10097",
+      "name": "Chaudière gaz à condensation murale 18 kW",
+      "category": "chaudiere",
+      "specification": "18 kW condensation gaz",
+      "active": true,
+      "unit": "p",
+      "base_price": 2900,
+      "attributes": {
+          "power_kw": 18
+      }
+  },
+  {
+      "id": "auto-10097",
+      "supplier": {
+          "code": "ST",
+          "name": "Sanitas Troesch"
+      },
+      "reference": "AUTO-ST-10098",
+      "name": "Chaudière mazout à condensation 18 kW",
+      "category": "chaudiere",
+      "specification": "18 kW condensation mazout",
+      "active": true,
+      "unit": "p",
+      "base_price": 3580,
+      "attributes": {
+          "power_kw": 18
+      }
+  },
+  {
+      "id": "auto-10098",
+      "supplier": {
+          "code": "ST",
+          "name": "Sanitas Troesch"
+      },
+      "reference": "AUTO-ST-10099",
+      "name": "Pompe à chaleur air-eau 18 kW",
+      "category": "chaudiere",
+      "specification": "18 kW PAC air-eau",
+      "active": true,
+      "unit": "p",
+      "base_price": 11600,
+      "attributes": {
+          "power_kw": 18
+      }
+  },
+  {
+      "id": "auto-10099",
+      "supplier": {
+          "code": "ST",
+          "name": "Sanitas Troesch"
+      },
+      "reference": "AUTO-ST-10100",
+      "name": "Chaudière gaz à condensation murale 24 kW",
+      "category": "chaudiere",
+      "specification": "24 kW condensation gaz",
+      "active": true,
+      "unit": "p",
+      "base_price": 3200,
+      "attributes": {
+          "power_kw": 24
+      }
+  },
+  {
+      "id": "auto-10100",
+      "supplier": {
+          "code": "ST",
+          "name": "Sanitas Troesch"
+      },
+      "reference": "AUTO-ST-10101",
+      "name": "Chaudière mazout à condensation 24 kW",
+      "category": "chaudiere",
+      "specification": "24 kW condensation mazout",
+      "active": true,
+      "unit": "p",
+      "base_price": 3940,
+      "attributes": {
+          "power_kw": 24
+      }
+  },
+  {
+      "id": "auto-10101",
+      "supplier": {
+          "code": "ST",
+          "name": "Sanitas Troesch"
+      },
+      "reference": "AUTO-ST-10102",
+      "name": "Pompe à chaleur air-eau 24 kW",
+      "category": "chaudiere",
+      "specification": "24 kW PAC air-eau",
+      "active": true,
+      "unit": "p",
+      "base_price": 12800,
+      "attributes": {
+          "power_kw": 24
+      }
+  },
+  {
+      "id": "auto-10102",
+      "supplier": {
+          "code": "ST",
+          "name": "Sanitas Troesch"
+      },
+      "reference": "AUTO-ST-10103",
+      "name": "Chaudière gaz à condensation murale 30 kW",
+      "category": "chaudiere",
+      "specification": "30 kW condensation gaz",
+      "active": true,
+      "unit": "p",
+      "base_price": 3500,
+      "attributes": {
+          "power_kw": 30
+      }
+  },
+  {
+      "id": "auto-10103",
+      "supplier": {
+          "code": "ST",
+          "name": "Sanitas Troesch"
+      },
+      "reference": "AUTO-ST-10104",
+      "name": "Chaudière mazout à condensation 30 kW",
+      "category": "chaudiere",
+      "specification": "30 kW condensation mazout",
+      "active": true,
+      "unit": "p",
+      "base_price": 4300,
+      "attributes": {
+          "power_kw": 30
+      }
+  },
+  {
+      "id": "auto-10104",
+      "supplier": {
+          "code": "ST",
+          "name": "Sanitas Troesch"
+      },
+      "reference": "AUTO-ST-10105",
+      "name": "Pompe à chaleur air-eau 30 kW",
+      "category": "chaudiere",
+      "specification": "30 kW PAC air-eau",
+      "active": true,
+      "unit": "p",
+      "base_price": 14000,
+      "attributes": {
+          "power_kw": 30
+      }
+  },
+  {
+      "id": "auto-10105",
+      "supplier": {
+          "code": "ST",
+          "name": "Sanitas Troesch"
+      },
+      "reference": "AUTO-ST-10106",
+      "name": "Chaudière gaz à condensation murale 35 kW",
+      "category": "chaudiere",
+      "specification": "35 kW condensation gaz",
+      "active": true,
+      "unit": "p",
+      "base_price": 3750,
+      "attributes": {
+          "power_kw": 35
+      }
+  },
+  {
+      "id": "auto-10106",
+      "supplier": {
+          "code": "ST",
+          "name": "Sanitas Troesch"
+      },
+      "reference": "AUTO-ST-10107",
+      "name": "Chaudière mazout à condensation 35 kW",
+      "category": "chaudiere",
+      "specification": "35 kW condensation mazout",
+      "active": true,
+      "unit": "p",
+      "base_price": 4600,
+      "attributes": {
+          "power_kw": 35
+      }
+  },
+  {
+      "id": "auto-10107",
+      "supplier": {
+          "code": "ST",
+          "name": "Sanitas Troesch"
+      },
+      "reference": "AUTO-ST-10108",
+      "name": "Pompe à chaleur air-eau 35 kW",
+      "category": "chaudiere",
+      "specification": "35 kW PAC air-eau",
+      "active": true,
+      "unit": "p",
+      "base_price": 15000,
+      "attributes": {
+          "power_kw": 35
+      }
+  },
+  {
+      "id": "auto-10108",
+      "supplier": {
+          "code": "ST",
+          "name": "Sanitas Troesch"
+      },
+      "reference": "AUTO-ST-10109",
+      "name": "Chaudière gaz à condensation murale 40 kW",
+      "category": "chaudiere",
+      "specification": "40 kW condensation gaz",
+      "active": true,
+      "unit": "p",
+      "base_price": 4000,
+      "attributes": {
+          "power_kw": 40
+      }
+  },
+  {
+      "id": "auto-10109",
+      "supplier": {
+          "code": "ST",
+          "name": "Sanitas Troesch"
+      },
+      "reference": "AUTO-ST-10110",
+      "name": "Chaudière mazout à condensation 40 kW",
+      "category": "chaudiere",
+      "specification": "40 kW condensation mazout",
+      "active": true,
+      "unit": "p",
+      "base_price": 4900,
+      "attributes": {
+          "power_kw": 40
+      }
+  },
+  {
+      "id": "auto-10110",
+      "supplier": {
+          "code": "ST",
+          "name": "Sanitas Troesch"
+      },
+      "reference": "AUTO-ST-10111",
+      "name": "Pompe à chaleur air-eau 40 kW",
+      "category": "chaudiere",
+      "specification": "40 kW PAC air-eau",
+      "active": true,
+      "unit": "p",
+      "base_price": 16000,
+      "attributes": {
+          "power_kw": 40
+      }
+  },
+  {
+      "id": "auto-10111",
+      "supplier": {
+          "code": "ST",
+          "name": "Sanitas Troesch"
+      },
+      "reference": "AUTO-ST-10112",
+      "name": "Chaudière gaz à condensation murale 50 kW",
+      "category": "chaudiere",
+      "specification": "50 kW condensation gaz",
+      "active": true,
+      "unit": "p",
+      "base_price": 4500,
+      "attributes": {
+          "power_kw": 50
+      }
+  },
+  {
+      "id": "auto-10112",
+      "supplier": {
+          "code": "ST",
+          "name": "Sanitas Troesch"
+      },
+      "reference": "AUTO-ST-10113",
+      "name": "Chaudière mazout à condensation 50 kW",
+      "category": "chaudiere",
+      "specification": "50 kW condensation mazout",
+      "active": true,
+      "unit": "p",
+      "base_price": 5500,
+      "attributes": {
+          "power_kw": 50
+      }
+  },
+  {
+      "id": "auto-10113",
+      "supplier": {
+          "code": "ST",
+          "name": "Sanitas Troesch"
+      },
+      "reference": "AUTO-ST-10114",
+      "name": "Pompe à chaleur air-eau 50 kW",
+      "category": "chaudiere",
+      "specification": "50 kW PAC air-eau",
+      "active": true,
+      "unit": "p",
+      "base_price": 18000,
+      "attributes": {
+          "power_kw": 50
+      }
+  },
+  {
+      "id": "auto-10114",
+      "supplier": {
+          "code": "ST",
+          "name": "Sanitas Troesch"
+      },
+      "reference": "AUTO-ST-10115",
+      "name": "Chaudière gaz à condensation murale 60 kW",
+      "category": "chaudiere",
+      "specification": "60 kW condensation gaz",
+      "active": true,
+      "unit": "p",
+      "base_price": 5000,
+      "attributes": {
+          "power_kw": 60
+      }
+  },
+  {
+      "id": "auto-10115",
+      "supplier": {
+          "code": "ST",
+          "name": "Sanitas Troesch"
+      },
+      "reference": "AUTO-ST-10116",
+      "name": "Chaudière mazout à condensation 60 kW",
+      "category": "chaudiere",
+      "specification": "60 kW condensation mazout",
+      "active": true,
+      "unit": "p",
+      "base_price": 6100,
+      "attributes": {
+          "power_kw": 60
+      }
+  },
+  {
+      "id": "auto-10116",
+      "supplier": {
+          "code": "ST",
+          "name": "Sanitas Troesch"
+      },
+      "reference": "AUTO-ST-10117",
+      "name": "Pompe à chaleur air-eau 60 kW",
+      "category": "chaudiere",
+      "specification": "60 kW PAC air-eau",
+      "active": true,
+      "unit": "p",
+      "base_price": 20000,
+      "attributes": {
+          "power_kw": 60
+      }
+  },
+  {
+      "id": "auto-10117",
+      "supplier": {
+          "code": "ST",
+          "name": "Sanitas Troesch"
+      },
+      "reference": "AUTO-ST-10118",
+      "name": "Chaudière gaz à condensation murale 80 kW",
+      "category": "chaudiere",
+      "specification": "80 kW condensation gaz",
+      "active": true,
+      "unit": "p",
+      "base_price": 6000,
+      "attributes": {
+          "power_kw": 80
+      }
+  },
+  {
+      "id": "auto-10118",
+      "supplier": {
+          "code": "ST",
+          "name": "Sanitas Troesch"
+      },
+      "reference": "AUTO-ST-10119",
+      "name": "Chaudière mazout à condensation 80 kW",
+      "category": "chaudiere",
+      "specification": "80 kW condensation mazout",
+      "active": true,
+      "unit": "p",
+      "base_price": 7300,
+      "attributes": {
+          "power_kw": 80
+      }
+  },
+  {
+      "id": "auto-10119",
+      "supplier": {
+          "code": "ST",
+          "name": "Sanitas Troesch"
+      },
+      "reference": "AUTO-ST-10120",
+      "name": "Pompe à chaleur air-eau 80 kW",
+      "category": "chaudiere",
+      "specification": "80 kW PAC air-eau",
+      "active": true,
+      "unit": "p",
+      "base_price": 24000,
+      "attributes": {
+          "power_kw": 80
+      }
+  },
+  {
+      "id": "auto-10120",
+      "supplier": {
+          "code": "ST",
+          "name": "Sanitas Troesch"
+      },
+      "reference": "AUTO-ST-10121",
+      "name": "Chaudière gaz à condensation murale 100 kW",
+      "category": "chaudiere",
+      "specification": "100 kW condensation gaz",
+      "active": true,
+      "unit": "p",
+      "base_price": 7000,
+      "attributes": {
+          "power_kw": 100
+      }
+  },
+  {
+      "id": "auto-10121",
+      "supplier": {
+          "code": "ST",
+          "name": "Sanitas Troesch"
+      },
+      "reference": "AUTO-ST-10122",
+      "name": "Chaudière mazout à condensation 100 kW",
+      "category": "chaudiere",
+      "specification": "100 kW condensation mazout",
+      "active": true,
+      "unit": "p",
+      "base_price": 8500,
+      "attributes": {
+          "power_kw": 100
+      }
+  },
+  {
+      "id": "auto-10122",
+      "supplier": {
+          "code": "ST",
+          "name": "Sanitas Troesch"
+      },
+      "reference": "AUTO-ST-10123",
+      "name": "Pompe à chaleur air-eau 100 kW",
+      "category": "chaudiere",
+      "specification": "100 kW PAC air-eau",
+      "active": true,
+      "unit": "p",
+      "base_price": 28000,
+      "attributes": {
+          "power_kw": 100
+      }
+  },
+  {
+      "id": "auto-10123",
+      "supplier": {
+          "code": "ST",
+          "name": "Sanitas Troesch"
+      },
+      "reference": "AUTO-ST-10124",
+      "name": "Chaudière gaz à condensation murale 120 kW",
+      "category": "chaudiere",
+      "specification": "120 kW condensation gaz",
+      "active": true,
+      "unit": "p",
+      "base_price": 8000,
+      "attributes": {
+          "power_kw": 120
+      }
+  },
+  {
+      "id": "auto-10124",
+      "supplier": {
+          "code": "ST",
+          "name": "Sanitas Troesch"
+      },
+      "reference": "AUTO-ST-10125",
+      "name": "Chaudière mazout à condensation 120 kW",
+      "category": "chaudiere",
+      "specification": "120 kW condensation mazout",
+      "active": true,
+      "unit": "p",
+      "base_price": 9700,
+      "attributes": {
+          "power_kw": 120
+      }
+  },
+  {
+      "id": "auto-10125",
+      "supplier": {
+          "code": "ST",
+          "name": "Sanitas Troesch"
+      },
+      "reference": "AUTO-ST-10126",
+      "name": "Pompe à chaleur air-eau 120 kW",
+      "category": "chaudiere",
+      "specification": "120 kW PAC air-eau",
+      "active": true,
+      "unit": "p",
+      "base_price": 32000,
+      "attributes": {
+          "power_kw": 120
+      }
+  },
+  {
+      "id": "auto-10126",
+      "supplier": {
+          "code": "GM",
+          "name": "Getaz Miauton"
+      },
+      "reference": "AUTO-GM-10127",
+      "name": "Ballon d'eau chaude sanitaire (ECS) émaillé 50 L",
+      "category": "ballon_ecs",
+      "specification": "50 L ecs emaille",
+      "active": true,
+      "unit": "p",
+      "base_price": 600,
+      "attributes": {
+          "capacity_l": 50
+      }
+  },
+  {
+      "id": "auto-10127",
+      "supplier": {
+          "code": "GM",
+          "name": "Getaz Miauton"
+      },
+      "reference": "AUTO-GM-10128",
+      "name": "Boiler pompe à chaleur 50 L",
+      "category": "ballon_ecs",
+      "specification": "50 L PAC boiler",
+      "active": true,
+      "unit": "p",
+      "base_price": 1650,
+      "attributes": {
+          "capacity_l": 50
+      }
+  },
+  {
+      "id": "auto-10128",
+      "supplier": {
+          "code": "GM",
+          "name": "Getaz Miauton"
+      },
+      "reference": "AUTO-GM-10129",
+      "name": "Ballon d'eau chaude sanitaire (ECS) émaillé 80 L",
+      "category": "ballon_ecs",
+      "specification": "80 L ecs emaille",
+      "active": true,
+      "unit": "p",
+      "base_price": 660,
+      "attributes": {
+          "capacity_l": 80
+      }
+  },
+  {
+      "id": "auto-10129",
+      "supplier": {
+          "code": "GM",
+          "name": "Getaz Miauton"
+      },
+      "reference": "AUTO-GM-10130",
+      "name": "Boiler pompe à chaleur 80 L",
+      "category": "ballon_ecs",
+      "specification": "80 L PAC boiler",
+      "active": true,
+      "unit": "p",
+      "base_price": 1740,
+      "attributes": {
+          "capacity_l": 80
+      }
+  },
+  {
+      "id": "auto-10130",
+      "supplier": {
+          "code": "GM",
+          "name": "Getaz Miauton"
+      },
+      "reference": "AUTO-GM-10131",
+      "name": "Ballon d'eau chaude sanitaire (ECS) émaillé 100 L",
+      "category": "ballon_ecs",
+      "specification": "100 L ecs emaille",
+      "active": true,
+      "unit": "p",
+      "base_price": 700,
+      "attributes": {
+          "capacity_l": 100
+      }
+  },
+  {
+      "id": "auto-10131",
+      "supplier": {
+          "code": "GM",
+          "name": "Getaz Miauton"
+      },
+      "reference": "AUTO-GM-10132",
+      "name": "Boiler pompe à chaleur 100 L",
+      "category": "ballon_ecs",
+      "specification": "100 L PAC boiler",
+      "active": true,
+      "unit": "p",
+      "base_price": 1800,
+      "attributes": {
+          "capacity_l": 100
+      }
+  },
+  {
+      "id": "auto-10132",
+      "supplier": {
+          "code": "GM",
+          "name": "Getaz Miauton"
+      },
+      "reference": "AUTO-GM-10133",
+      "name": "Ballon d'eau chaude sanitaire (ECS) émaillé 150 L",
+      "category": "ballon_ecs",
+      "specification": "150 L ecs emaille",
+      "active": true,
+      "unit": "p",
+      "base_price": 800,
+      "attributes": {
+          "capacity_l": 150
+      }
+  },
+  {
+      "id": "auto-10133",
+      "supplier": {
+          "code": "GM",
+          "name": "Getaz Miauton"
+      },
+      "reference": "AUTO-GM-10134",
+      "name": "Boiler pompe à chaleur 150 L",
+      "category": "ballon_ecs",
+      "specification": "150 L PAC boiler",
+      "active": true,
+      "unit": "p",
+      "base_price": 1950,
+      "attributes": {
+          "capacity_l": 150
+      }
+  },
+  {
+      "id": "auto-10134",
+      "supplier": {
+          "code": "GM",
+          "name": "Getaz Miauton"
+      },
+      "reference": "AUTO-GM-10135",
+      "name": "Ballon d'eau chaude sanitaire (ECS) émaillé 200 L",
+      "category": "ballon_ecs",
+      "specification": "200 L ecs emaille",
+      "active": true,
+      "unit": "p",
+      "base_price": 900,
+      "attributes": {
+          "capacity_l": 200
+      }
+  },
+  {
+      "id": "auto-10135",
+      "supplier": {
+          "code": "GM",
+          "name": "Getaz Miauton"
+      },
+      "reference": "AUTO-GM-10136",
+      "name": "Boiler pompe à chaleur 200 L",
+      "category": "ballon_ecs",
+      "specification": "200 L PAC boiler",
+      "active": true,
+      "unit": "p",
+      "base_price": 2100,
+      "attributes": {
+          "capacity_l": 200
+      }
+  },
+  {
+      "id": "auto-10136",
+      "supplier": {
+          "code": "GM",
+          "name": "Getaz Miauton"
+      },
+      "reference": "AUTO-GM-10137",
+      "name": "Ballon d'eau chaude sanitaire (ECS) émaillé 300 L",
+      "category": "ballon_ecs",
+      "specification": "300 L ecs emaille",
+      "active": true,
+      "unit": "p",
+      "base_price": 1100,
+      "attributes": {
+          "capacity_l": 300
+      }
+  },
+  {
+      "id": "auto-10137",
+      "supplier": {
+          "code": "GM",
+          "name": "Getaz Miauton"
+      },
+      "reference": "AUTO-GM-10138",
+      "name": "Boiler pompe à chaleur 300 L",
+      "category": "ballon_ecs",
+      "specification": "300 L PAC boiler",
+      "active": true,
+      "unit": "p",
+      "base_price": 2400,
+      "attributes": {
+          "capacity_l": 300
+      }
+  },
+  {
+      "id": "auto-10138",
+      "supplier": {
+          "code": "GM",
+          "name": "Getaz Miauton"
+      },
+      "reference": "AUTO-GM-10139",
+      "name": "Ballon d'eau chaude sanitaire (ECS) émaillé 400 L",
+      "category": "ballon_ecs",
+      "specification": "400 L ecs emaille",
+      "active": true,
+      "unit": "p",
+      "base_price": 1300,
+      "attributes": {
+          "capacity_l": 400
+      }
+  },
+  {
+      "id": "auto-10139",
+      "supplier": {
+          "code": "GM",
+          "name": "Getaz Miauton"
+      },
+      "reference": "AUTO-GM-10140",
+      "name": "Boiler pompe à chaleur 400 L",
+      "category": "ballon_ecs",
+      "specification": "400 L PAC boiler",
+      "active": true,
+      "unit": "p",
+      "base_price": 2700,
+      "attributes": {
+          "capacity_l": 400
+      }
+  },
+  {
+      "id": "auto-10140",
+      "supplier": {
+          "code": "GM",
+          "name": "Getaz Miauton"
+      },
+      "reference": "AUTO-GM-10141",
+      "name": "Ballon d'eau chaude sanitaire (ECS) émaillé 500 L",
+      "category": "ballon_ecs",
+      "specification": "500 L ecs emaille",
+      "active": true,
+      "unit": "p",
+      "base_price": 1500,
+      "attributes": {
+          "capacity_l": 500
+      }
+  },
+  {
+      "id": "auto-10141",
+      "supplier": {
+          "code": "GM",
+          "name": "Getaz Miauton"
+      },
+      "reference": "AUTO-GM-10142",
+      "name": "Boiler pompe à chaleur 500 L",
+      "category": "ballon_ecs",
+      "specification": "500 L PAC boiler",
+      "active": true,
+      "unit": "p",
+      "base_price": 3000,
+      "attributes": {
+          "capacity_l": 500
+      }
+  },
+  {
+      "id": "auto-10142",
+      "supplier": {
+          "code": "GM",
+          "name": "Getaz Miauton"
+      },
+      "reference": "AUTO-GM-10143",
+      "name": "Ballon d'eau chaude sanitaire (ECS) émaillé 800 L",
+      "category": "ballon_ecs",
+      "specification": "800 L ecs emaille",
+      "active": true,
+      "unit": "p",
+      "base_price": 2100,
+      "attributes": {
+          "capacity_l": 800
+      }
+  },
+  {
+      "id": "auto-10143",
+      "supplier": {
+          "code": "GM",
+          "name": "Getaz Miauton"
+      },
+      "reference": "AUTO-GM-10144",
+      "name": "Boiler pompe à chaleur 800 L",
+      "category": "ballon_ecs",
+      "specification": "800 L PAC boiler",
+      "active": true,
+      "unit": "p",
+      "base_price": 3900,
+      "attributes": {
+          "capacity_l": 800
+      }
+  },
+  {
+      "id": "auto-10144",
+      "supplier": {
+          "code": "GM",
+          "name": "Getaz Miauton"
+      },
+      "reference": "AUTO-GM-10145",
+      "name": "Ballon d'eau chaude sanitaire (ECS) émaillé 1000 L",
+      "category": "ballon_ecs",
+      "specification": "1000 L ecs emaille",
+      "active": true,
+      "unit": "p",
+      "base_price": 2500,
+      "attributes": {
+          "capacity_l": 1000
+      }
+  },
+  {
+      "id": "auto-10145",
+      "supplier": {
+          "code": "GM",
+          "name": "Getaz Miauton"
+      },
+      "reference": "AUTO-GM-10146",
+      "name": "Boiler pompe à chaleur 1000 L",
+      "category": "ballon_ecs",
+      "specification": "1000 L PAC boiler",
+      "active": true,
+      "unit": "p",
+      "base_price": 4500,
+      "attributes": {
+          "capacity_l": 1000
+      }
+  },
+  {
+      "id": "auto-10146",
+      "supplier": {
+          "code": "GM",
+          "name": "Getaz Miauton"
+      },
+      "reference": "AUTO-GM-10147",
+      "name": "Radiateur panneau type 11 standard",
+      "category": "radiateur",
+      "specification": "Type 11",
+      "active": true,
+      "unit": "p",
+      "base_price": 155,
+      "attributes": {}
+  },
+  {
+      "id": "auto-10147",
+      "supplier": {
+          "code": "GM",
+          "name": "Getaz Miauton"
+      },
+      "reference": "AUTO-GM-10148",
+      "name": "Radiateur sèche-serviettes type 11",
+      "category": "radiateur",
+      "specification": "Type 11 salle de bain",
+      "active": true,
+      "unit": "p",
+      "base_price": 255,
+      "attributes": {}
+  },
+  {
+      "id": "auto-10148",
+      "supplier": {
+          "code": "GM",
+          "name": "Getaz Miauton"
+      },
+      "reference": "AUTO-GM-10149",
+      "name": "Radiateur panneau type 21 standard",
+      "category": "radiateur",
+      "specification": "Type 21",
+      "active": true,
+      "unit": "p",
+      "base_price": 205,
+      "attributes": {}
+  },
+  {
+      "id": "auto-10149",
+      "supplier": {
+          "code": "GM",
+          "name": "Getaz Miauton"
+      },
+      "reference": "AUTO-GM-10150",
+      "name": "Radiateur sèche-serviettes type 21",
+      "category": "radiateur",
+      "specification": "Type 21 salle de bain",
+      "active": true,
+      "unit": "p",
+      "base_price": 305,
+      "attributes": {}
+  },
+  {
+      "id": "auto-10150",
+      "supplier": {
+          "code": "GM",
+          "name": "Getaz Miauton"
+      },
+      "reference": "AUTO-GM-10151",
+      "name": "Radiateur panneau type 22 standard",
+      "category": "radiateur",
+      "specification": "Type 22",
+      "active": true,
+      "unit": "p",
+      "base_price": 210,
+      "attributes": {}
+  },
+  {
+      "id": "auto-10151",
+      "supplier": {
+          "code": "GM",
+          "name": "Getaz Miauton"
+      },
+      "reference": "AUTO-GM-10152",
+      "name": "Radiateur sèche-serviettes type 22",
+      "category": "radiateur",
+      "specification": "Type 22 salle de bain",
+      "active": true,
+      "unit": "p",
+      "base_price": 310,
+      "attributes": {}
+  },
+  {
+      "id": "auto-10152",
+      "supplier": {
+          "code": "GM",
+          "name": "Getaz Miauton"
+      },
+      "reference": "AUTO-GM-10153",
+      "name": "Radiateur panneau type 33 standard",
+      "category": "radiateur",
+      "specification": "Type 33",
+      "active": true,
+      "unit": "p",
+      "base_price": 265,
+      "attributes": {}
+  },
+  {
+      "id": "auto-10153",
+      "supplier": {
+          "code": "GM",
+          "name": "Getaz Miauton"
+      },
+      "reference": "AUTO-GM-10154",
+      "name": "Radiateur sèche-serviettes type 33",
+      "category": "radiateur",
+      "specification": "Type 33 salle de bain",
+      "active": true,
+      "unit": "p",
+      "base_price": 365,
+      "attributes": {}
+  },
+  {
+      "id": "auto-10154",
+      "supplier": {
+          "code": "NSB",
+          "name": "Nussbaum"
+      },
+      "reference": "AUTO-NSB-10155",
+      "name": "Vanne à bille passage intégral DN 15",
+      "category": "robinetterie",
+      "specification": "Vanne bille DN 15",
+      "active": true,
+      "unit": "p",
+      "base_price": 42.5,
+      "attributes": {
+          "dn": 15
+      }
+  },
+  {
+      "id": "auto-10155",
+      "supplier": {
+          "code": "NSB",
+          "name": "Nussbaum"
+      },
+      "reference": "AUTO-NSB-10156",
+      "name": "Clapet anti-retour DN 15",
+      "category": "robinetterie",
+      "specification": "Clapet retour DN 15",
+      "active": true,
+      "unit": "p",
+      "base_price": 60,
+      "attributes": {
+          "dn": 15
+      }
+  },
+  {
+      "id": "auto-10156",
+      "supplier": {
+          "code": "NSB",
+          "name": "Nussbaum"
+      },
+      "reference": "AUTO-NSB-10157",
+      "name": "Réducteur de pression DN 15",
+      "category": "reducteur",
+      "specification": "Reducteur DN 15",
+      "active": true,
+      "unit": "p",
+      "base_price": 125,
+      "attributes": {
+          "dn": 15
+      }
+  },
+  {
+      "id": "auto-10157",
+      "supplier": {
+          "code": "NSB",
+          "name": "Nussbaum"
+      },
+      "reference": "AUTO-NSB-10158",
+      "name": "Vanne à bille passage intégral DN 20",
+      "category": "robinetterie",
+      "specification": "Vanne bille DN 20",
+      "active": true,
+      "unit": "p",
+      "base_price": 50,
+      "attributes": {
+          "dn": 20
+      }
+  },
+  {
+      "id": "auto-10158",
+      "supplier": {
+          "code": "NSB",
+          "name": "Nussbaum"
+      },
+      "reference": "AUTO-NSB-10159",
+      "name": "Clapet anti-retour DN 20",
+      "category": "robinetterie",
+      "specification": "Clapet retour DN 20",
+      "active": true,
+      "unit": "p",
+      "base_price": 70,
+      "attributes": {
+          "dn": 20
+      }
+  },
+  {
+      "id": "auto-10159",
+      "supplier": {
+          "code": "NSB",
+          "name": "Nussbaum"
+      },
+      "reference": "AUTO-NSB-10160",
+      "name": "Réducteur de pression DN 20",
+      "category": "reducteur",
+      "specification": "Reducteur DN 20",
+      "active": true,
+      "unit": "p",
+      "base_price": 140,
+      "attributes": {
+          "dn": 20
+      }
+  },
+  {
+      "id": "auto-10160",
+      "supplier": {
+          "code": "NSB",
+          "name": "Nussbaum"
+      },
+      "reference": "AUTO-NSB-10161",
+      "name": "Vanne à bille passage intégral DN 25",
+      "category": "robinetterie",
+      "specification": "Vanne bille DN 25",
+      "active": true,
+      "unit": "p",
+      "base_price": 57.5,
+      "attributes": {
+          "dn": 25
+      }
+  },
+  {
+      "id": "auto-10161",
+      "supplier": {
+          "code": "NSB",
+          "name": "Nussbaum"
+      },
+      "reference": "AUTO-NSB-10162",
+      "name": "Clapet anti-retour DN 25",
+      "category": "robinetterie",
+      "specification": "Clapet retour DN 25",
+      "active": true,
+      "unit": "p",
+      "base_price": 80,
+      "attributes": {
+          "dn": 25
+      }
+  },
+  {
+      "id": "auto-10162",
+      "supplier": {
+          "code": "NSB",
+          "name": "Nussbaum"
+      },
+      "reference": "AUTO-NSB-10163",
+      "name": "Réducteur de pression DN 25",
+      "category": "reducteur",
+      "specification": "Reducteur DN 25",
+      "active": true,
+      "unit": "p",
+      "base_price": 155,
+      "attributes": {
+          "dn": 25
+      }
+  },
+  {
+      "id": "auto-10163",
+      "supplier": {
+          "code": "NSB",
+          "name": "Nussbaum"
+      },
+      "reference": "AUTO-NSB-10164",
+      "name": "Vanne à bille passage intégral DN 32",
+      "category": "robinetterie",
+      "specification": "Vanne bille DN 32",
+      "active": true,
+      "unit": "p",
+      "base_price": 68,
+      "attributes": {
+          "dn": 32
+      }
+  },
+  {
+      "id": "auto-10164",
+      "supplier": {
+          "code": "NSB",
+          "name": "Nussbaum"
+      },
+      "reference": "AUTO-NSB-10165",
+      "name": "Clapet anti-retour DN 32",
+      "category": "robinetterie",
+      "specification": "Clapet retour DN 32",
+      "active": true,
+      "unit": "p",
+      "base_price": 94,
+      "attributes": {
+          "dn": 32
+      }
+  },
+  {
+      "id": "auto-10165",
+      "supplier": {
+          "code": "NSB",
+          "name": "Nussbaum"
+      },
+      "reference": "AUTO-NSB-10166",
+      "name": "Réducteur de pression DN 32",
+      "category": "reducteur",
+      "specification": "Reducteur DN 32",
+      "active": true,
+      "unit": "p",
+      "base_price": 176,
+      "attributes": {
+          "dn": 32
+      }
+  },
+  {
+      "id": "auto-10166",
+      "supplier": {
+          "code": "NSB",
+          "name": "Nussbaum"
+      },
+      "reference": "AUTO-NSB-10167",
+      "name": "Vanne à bille passage intégral DN 40",
+      "category": "robinetterie",
+      "specification": "Vanne bille DN 40",
+      "active": true,
+      "unit": "p",
+      "base_price": 80,
+      "attributes": {
+          "dn": 40
+      }
+  },
+  {
+      "id": "auto-10167",
+      "supplier": {
+          "code": "NSB",
+          "name": "Nussbaum"
+      },
+      "reference": "AUTO-NSB-10168",
+      "name": "Clapet anti-retour DN 40",
+      "category": "robinetterie",
+      "specification": "Clapet retour DN 40",
+      "active": true,
+      "unit": "p",
+      "base_price": 110,
+      "attributes": {
+          "dn": 40
+      }
+  },
+  {
+      "id": "auto-10168",
+      "supplier": {
+          "code": "NSB",
+          "name": "Nussbaum"
+      },
+      "reference": "AUTO-NSB-10169",
+      "name": "Réducteur de pression DN 40",
+      "category": "reducteur",
+      "specification": "Reducteur DN 40",
+      "active": true,
+      "unit": "p",
+      "base_price": 200,
+      "attributes": {
+          "dn": 40
+      }
+  },
+  {
+      "id": "auto-10169",
+      "supplier": {
+          "code": "NSB",
+          "name": "Nussbaum"
+      },
+      "reference": "AUTO-NSB-10170",
+      "name": "Vanne à bille passage intégral DN 50",
+      "category": "robinetterie",
+      "specification": "Vanne bille DN 50",
+      "active": true,
+      "unit": "p",
+      "base_price": 95,
+      "attributes": {
+          "dn": 50
+      }
+  },
+  {
+      "id": "auto-10170",
+      "supplier": {
+          "code": "NSB",
+          "name": "Nussbaum"
+      },
+      "reference": "AUTO-NSB-10171",
+      "name": "Clapet anti-retour DN 50",
+      "category": "robinetterie",
+      "specification": "Clapet retour DN 50",
+      "active": true,
+      "unit": "p",
+      "base_price": 130,
+      "attributes": {
+          "dn": 50
+      }
+  },
+  {
+      "id": "auto-10171",
+      "supplier": {
+          "code": "NSB",
+          "name": "Nussbaum"
+      },
+      "reference": "AUTO-NSB-10172",
+      "name": "Réducteur de pression DN 50",
+      "category": "reducteur",
+      "specification": "Reducteur DN 50",
+      "active": true,
+      "unit": "p",
+      "base_price": 230,
+      "attributes": {
+          "dn": 50
+      }
+  },
+  {
+      "id": "auto-10172",
+      "supplier": {
+          "code": "GEB",
+          "name": "Geberit"
+      },
+      "reference": "AUTO-GEB-10173",
+      "name": "Bâti-support Geberit Duofix WC suspendu h=112cm",
+      "category": "geberit_duofix",
+      "specification": "h=112cm",
+      "active": true,
+      "unit": "p",
+      "base_price": 250,
+      "attributes": {}
+  },
+  {
+      "id": "auto-10173",
+      "supplier": {
+          "code": "GEB",
+          "name": "Geberit"
+      },
+      "reference": "AUTO-GEB-10174",
+      "name": "Bâti-support Geberit Duofix WC suspendu h=82cm",
+      "category": "geberit_duofix",
+      "specification": "h=82cm",
+      "active": true,
+      "unit": "p",
+      "base_price": 270,
+      "attributes": {}
+  },
+  {
+      "id": "auto-10174",
+      "supplier": {
+          "code": "ST",
+          "name": "Sanitas Troesch"
+      },
+      "reference": "AUTO-ST-10175",
+      "name": "Lavabo céramique blanc 60cm",
+      "category": "appareil_sanitaire",
+      "specification": "60cm",
+      "active": true,
+      "unit": "p",
+      "base_price": 120,
+      "attributes": {}
+  },
+  {
+      "id": "auto-10175",
+      "supplier": {
+          "code": "ST",
+          "name": "Sanitas Troesch"
+      },
+      "reference": "AUTO-ST-10176",
+      "name": "Cuvette WC suspendue sans bride",
+      "category": "appareil_sanitaire",
+      "specification": "Rimless",
+      "active": true,
+      "unit": "p",
+      "base_price": 180,
+      "attributes": {}
+  },
+  {
+      "id": "auto-10176",
+      "supplier": {
+          "code": "ST",
+          "name": "Sanitas Troesch"
+      },
+      "reference": "AUTO-ST-10177",
+      "name": "Mitigeur de lavabo chromé",
+      "category": "robinetterie",
+      "specification": "Chrome",
+      "active": true,
+      "unit": "p",
+      "base_price": 95,
+      "attributes": {}
+  },
+  {
+      "id": "auto-10177",
+      "supplier": {
+          "code": "ST",
+          "name": "Sanitas Troesch"
+      },
+      "reference": "AUTO-ST-10178",
+      "name": "Mitigeur de douche thermostatique",
+      "category": "robinetterie",
+      "specification": "Thermostatique",
+      "active": true,
+      "unit": "p",
+      "base_price": 220,
+      "attributes": {}
+  },
 ];
 
 

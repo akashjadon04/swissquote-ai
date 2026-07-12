@@ -1,4 +1,4 @@
-﻿import type { AIArticle, CatalogueArticle, MatchedArticle, MissingArticle, MatchResult, SupplierCode } from "@/types/database.types";
+import type { AIArticle, CatalogueArticle, MatchedArticle, MissingArticle, MatchResult, SupplierCode } from "@/types/database.types";
 
 // Category aliases — comprehensive coverage for all product types
 const CATEGORY_ALIASES: Record<string, string[]> = {
@@ -120,30 +120,44 @@ function descScore(catDesc: string | null | undefined, aiLabel: string | null | 
   return total > 0 ? score / total : 0;
 }
 
-function attrScore(aiArticle: AIArticle, catSpec: string | null | undefined): { score: number; hardBlock: boolean } {
+function attrScore(aiArticle: AIArticle, catArticle: CatalogueArticle): { score: number; hardBlock: boolean } {
+  const aiAttrs = aiArticle.attributes || {};
+  const catAttrs = catArticle.attributes || {};
   const aiText = [aiArticle.label, aiArticle.dimension, aiArticle.material_type].filter(Boolean).join(" ");
+  const catSpec = catArticle.specification;
 
-  const aiKw = extractKw(aiText);
-  const catKw = extractKw(catSpec);
+  // power_kw
+  const aiKw = aiAttrs.power_kw ?? extractKw(aiText);
+  const catKw = catAttrs.power_kw ?? extractKw(catSpec);
   if (aiKw !== null && catKw !== null) {
     if (Math.abs(aiKw - catKw) <= 2) return { score: 1.0, hardBlock: false };
     if (Math.abs(aiKw - catKw) <= 5) return { score: 0.5, hardBlock: false };
     return { score: 0, hardBlock: true }; // wrong kW
   }
 
-  const aiL = extractLitres(aiText);
-  const catL = extractLitres(catSpec);
+  // capacity_l
+  const aiL = aiAttrs.capacity_l ?? extractLitres(aiText);
+  const catL = catAttrs.capacity_l ?? extractLitres(catSpec);
   if (aiL !== null && catL !== null) {
     if (Math.abs(aiL - catL) <= 20) return { score: 1.0, hardBlock: false };
     if (Math.abs(aiL - catL) <= 50) return { score: 0.5, hardBlock: false };
     return { score: 0, hardBlock: true };
   }
 
-  const aiD = extractDiameterMm(aiArticle.dimension);
-  const catD = extractDiameterMm(catSpec);
+  // diameter_mm
+  const aiD = aiAttrs.diameter_mm ?? extractDiameterMm(aiArticle.dimension) ?? extractDiameterMm(aiText);
+  const catD = catAttrs.diameter_mm ?? extractDiameterMm(catSpec);
   if (aiD !== null && catD !== null) {
     if (Math.abs(aiD - catD) < 2) return { score: 1.0, hardBlock: false };
     if (Math.abs(aiD - catD) < 5) return { score: 0.3, hardBlock: false };
+    return { score: 0, hardBlock: true };
+  }
+  
+  // dn
+  const aiDn = aiAttrs.dn;
+  const catDn = catAttrs.dn;
+  if (aiDn !== null && aiDn !== undefined && catDn !== null && catDn !== undefined) {
+    if (Math.abs(aiDn - catDn) < 2) return { score: 1.0, hardBlock: false };
     return { score: 0, hardBlock: true };
   }
 
@@ -153,7 +167,7 @@ function attrScore(aiArticle: AIArticle, catSpec: string | null | undefined): { 
 function scoreCandidates(aiArticle: AIArticle, candidates: CatalogueArticle[]): { article: CatalogueArticle; score: number }[] {
   return candidates
     .map(article => {
-      const attr = attrScore(aiArticle, article.specification);
+      const attr = attrScore(aiArticle, article);
       if (attr.hardBlock) return { article, score: -1 };
 
       const desc = descScore(article.description, aiArticle.label);
@@ -201,6 +215,16 @@ function matchSingleArticle(
     if (scored.length > 0 && scored[0].score >= threshold) return scored;
     return null;
   };
+
+  if (aiArticle.needs_site_measurement) {
+    const suggestions = scoreCandidates(aiArticle, catalogue.filter(a => a.active)).slice(0, 3).map(s => s.article);
+    return {
+      matched: false,
+      aiArticle,
+      reason: `Information manquante, mesure sur site requise pour "${aiArticle.label}"`,
+      suggestions,
+    };
+  }
 
   let scored = preferredSupplier
     ? tryPool(catalogue.filter(a => a.supplier?.code === preferredSupplier))

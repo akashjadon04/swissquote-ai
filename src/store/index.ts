@@ -139,7 +139,7 @@ export const useAppStore = create<AppState>()(
       toastMessage: null,
       setToastMessage: (toastMessage) => set({ toastMessage }),
     }),
-    { name: 'swissquote-app' }
+    { name: 'AstraQuote-app' }
   )
 );
 
@@ -184,7 +184,7 @@ const DEFAULT_QUOTE: QuoteData = {
   financials: { ...DEFAULT_FINANCIALS },
   canton: 'Genève',
   preferredSupplier: 'NSB',
-  companyName: 'SwissQuote AI',
+  companyName: 'AstraQuote (by Green AI Groupe)',
   companyAddress: '',
   technicianName: '',
   exclusions: [],
@@ -405,6 +405,6 @@ export const useQuoteStore = create<QuoteState>()(
         });
       },
     }),
-    { name: 'swissquote-quote' }
+    { name: 'AstraQuote-quote' }
   )
 );

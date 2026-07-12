@@ -149,7 +149,7 @@ export async function POST(request: NextRequest) {
         canton: body.canton || 'Genève',
         has_missing_items: body.hasMissingItems || false,
         exclusions: body.exclusions || null,
-        company_name: companyInfo?.name || 'SwissQuote AI',
+        company_name: companyInfo?.name || 'AstraQuote (by Green AI Groupe)',
         company_address: companyInfo?.address
           ? `${companyInfo.address}, ${companyInfo.postal} ${companyInfo.city}`
           : null,

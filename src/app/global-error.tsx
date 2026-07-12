@@ -11,7 +11,7 @@ export default function GlobalError({
   reset: () => void;
 }) {
   useEffect(() => {
-    console.error('[SwissQuote AI] Global error:', error);
+    console.error('[AstraQuote (by Green AI Groupe)] Global error:', error);
   }, [error]);
 
   return (

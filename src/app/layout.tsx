@@ -31,18 +31,18 @@ const jetbrainsMono = JetBrains_Mono({
 
 export const metadata: Metadata = {
   title: {
-    default: 'SwissQuote AI — Devis Intelligents',
-    template: '%s | SwissQuote AI',
+    default: 'AstraQuote (by Green AI Groupe) — Devis Intelligents',
+    template: '%s | AstraQuote (by Green AI Groupe)',
   },
   description:
     'Plateforme IA de création de devis pour les entreprises de plomberie suisses. Rapide, précis, professionnel.',
-  applicationName: 'SwissQuote AI',
-  keywords: ['devis', 'plomberie', 'sanitaire', 'suisse', 'IA', 'swissquote'],
+  applicationName: 'AstraQuote (by Green AI Groupe)',
+  keywords: ['devis', 'plomberie', 'sanitaire', 'suisse', 'IA', 'AstraQuote'],
   manifest: '/manifest.json',
   appleWebApp: {
     capable: true,
     statusBarStyle: 'default',
-    title: 'SwissQuote AI',
+    title: 'AstraQuote (by Green AI Groupe)',
   },
   icons: {
     icon: '/icon-192.png',

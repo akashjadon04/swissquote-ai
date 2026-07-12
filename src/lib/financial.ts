@@ -1,7 +1,7 @@
 import type { FinancialSummary, QuoteConfig } from '@/types/database.types';
 
 // ═══════════════════════════════════════════
-// SwissQuote AI — Financial Calculation Engine
+// AstraQuote (by Green AI Groupe) — Financial Calculation Engine
 // ═══════════════════════════════════════════
 // All amounts in CHF, rounded to 2 decimal places.
 // Pure functions — fully testable, zero side effects.
@@ -156,13 +156,13 @@ export const LABOUR_TIME_TABLE: Record<string, number> = {
   robinetterie:      0.75,  // 45 min per valve/mixer/tap
   reducteur:         0.50,  // 30 min per pressure reducer
   // Major equipment — per unit
-  chaudiere:         12.0,  // 12h per boiler (decommission + install + commission)
+  chaudiere:         16.0,  // 16h per boiler (decommission + install + commission)
   ballon_ecs:         4.0,  // 4h per hot water tank
   circulateur:        2.0,  // 2h per circulator pump
   radiateur:          2.5,  // 2.5h per radiator panel (incl. connections)
   nourrice:           1.5,  // 1.5h per distribution manifold
   // Geberit — per unit
-  geberit_duofix:     3.5,  // 3.5h per wall-hung toilet frame
+  geberit_duofix:     4.0,  // 4h per wall-hung toilet frame
   geberit_evacuation: 1.0,  // 1h per drain/trap
   // Sanitaire — per unit
   appareil_sanitaire: 2.0,  // 2h per sanitary appliance

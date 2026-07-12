@@ -10,7 +10,7 @@ import {
 } from '@react-pdf/renderer';
 
 // ═══════════════════════════════════════════
-// SwissQuote AI — PDF Document (J.J. Pallud format)
+// AstraQuote (by Green AI Groupe) — PDF Document (J.J. Pallud format)
 // ═══════════════════════════════════════════
 
 // Register fonts (Helvetica is built-in, no external needed)
@@ -467,9 +467,9 @@ function QuoteDocument({ quote }: { quote: PDFQuote }) {
   return (
     <Document
       title={`Devis ${quote.quote_number}`}
-      author={quote.company_name || 'SwissQuote AI'}
+      author={quote.company_name || 'AstraQuote (by Green AI Groupe)'}
       subject="Devis de travaux"
-      creator="SwissQuote AI"
+      creator="AstraQuote (by Green AI Groupe)"
     >
       <Page size="A4" style={styles.page}>
         {/* Header */}
@@ -666,7 +666,7 @@ function QuoteDocument({ quote }: { quote: PDFQuote }) {
         {/* Footer */}
         <View style={styles.footer} fixed>
           <Text style={styles.footerText}>
-            {quote.company_name || 'J.J. Pallud SA'} — {quote.company_address || 'Genève'} — Devis généré par SwissQuote AI
+            {quote.company_name || 'J.J. Pallud SA'} — {quote.company_address || 'Genève'} — Devis généré par AstraQuote (by Green AI Groupe)
           </Text>
           <Text style={styles.pageNumber} render={({ pageNumber, totalPages }) => `Page ${pageNumber} / ${totalPages}`} />
         </View>

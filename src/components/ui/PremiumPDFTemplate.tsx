@@ -68,7 +68,7 @@ export const PremiumPDFTemplate = React.forwardRef<HTMLDivElement, PremiumPDFTem
         letterSpacing: '20px',
         textTransform: 'uppercase'
       }}>
-        SWISSQUOTE AI
+        AstraQuote (by Green AI Groupe)
       </div>
 
       {/* 
@@ -100,7 +100,7 @@ export const PremiumPDFTemplate = React.forwardRef<HTMLDivElement, PremiumPDFTem
                 SQ
               </div>
               <h1 style={{ margin: 0, fontSize: '32px', fontWeight: 900, color: '#0F172A', letterSpacing: '-1px' }}>
-                SwissQuote <span style={{ color: '#3B82F6' }}>AI</span>
+                AstraQuote <span style={{ color: '#3B82F6' }}>AI</span>
               </h1>
             </div>
             
@@ -115,7 +115,7 @@ export const PremiumPDFTemplate = React.forwardRef<HTMLDivElement, PremiumPDFTem
                 <Phone size={14} color="#3B82F6"/> +41 22 123 45 67
               </p>
               <p style={{ margin: '0 0 0 0', fontSize: '12px', color: '#475569', display: 'flex', alignItems: 'center', gap: '8px' }}>
-                <Globe size={14} color="#3B82F6"/> www.swissquote-ai.ch
+                <Globe size={14} color="#3B82F6"/> www.AstraQuote-ai.ch
               </p>
             </div>
           </div>
@@ -316,7 +316,7 @@ export const PremiumPDFTemplate = React.forwardRef<HTMLDivElement, PremiumPDFTem
               <p style={{ fontSize: '9px', color: '#64748b', lineHeight: '1.6', textAlign: 'justify' }}>
                 Ce devis est valable 30 jours à compter de sa date d'émission. Les travaux débuteront après réception 
                 du devis signé et versement d'un acompte de 30%. En signant ce document, le client accepte les conditions 
-                générales de vente de SwissQuote AI. Tout travail supplémentaire non inclus dans ce devis fera l'objet 
+                générales de vente de AstraQuote (by Green AI Groupe). Tout travail supplémentaire non inclus dans ce devis fera l'objet 
                 d'un avenant séparé. Le délai d'exécution estimé sera confirmé à la signature.
               </p>
             </div>
@@ -336,7 +336,7 @@ export const PremiumPDFTemplate = React.forwardRef<HTMLDivElement, PremiumPDFTem
           </div>
 
           <div style={{ textAlign: 'center', marginTop: '15mm', fontSize: '9px', color: '#94A3B8' }}>
-            SwissQuote AI Sàrl • CHE-123.456.789 TVA • IBAN: CH93 0000 0000 0000 0000 0 • contact@swissquote-ai.ch
+            AstraQuote (by Green AI Groupe) Sàrl • CHE-123.456.789 TVA • IBAN: CH93 0000 0000 0000 0000 0 • contact@AstraQuote-ai.ch
           </div>
         </div>
 

@@ -65,17 +65,19 @@ export default function PrintQuotePage({ params }: { params: { id: string } }) {
   const createdDate = new Date(quote.created_at).toLocaleDateString('fr-CH', { day: 'numeric', month: 'long', year: 'numeric' });
 
   return (
-    <div className="bg-white min-h-screen text-black" style={{ fontFamily: 'Arial, sans-serif' }}>
+    <div className="bg-white min-h-screen text-black" style={{ fontFamily: 'Inter, sans-serif' }}>
+      <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
       <div className="max-w-[21cm] mx-auto p-12 print:p-0">
         
         {/* Header: Company Logo (Left) and Client Address (Right) */}
         <div className="flex justify-between items-start mb-16">
           <div className="w-1/2">
-            <h1 className="text-3xl font-bold text-blue-900 mb-2">SwissQuote</h1>
+            <h1 className="text-3xl font-bold text-blue-900 mb-2">AstraQuote</h1>
+            <p className="text-sm text-gray-600 font-medium mb-1">by Green AI Groupe</p>
             <p className="text-sm text-gray-600">
               Rue de l'Artisanat 42<br />
               1200 Genève<br />
-              info@swissquote-plomberie.ch<br />
+              info@astraquote.ch<br />
               IDE: CHE-123.456.789 TVA
             </p>
           </div>

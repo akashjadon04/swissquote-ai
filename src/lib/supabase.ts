@@ -1,7 +1,7 @@
 import { createClient, SupabaseClient } from '@supabase/supabase-js';
 
 // ─────────────────────────────────────────
-// SwissQuote AI — Supabase Client Singletons
+// AstraQuote (by Green AI Groupe) — Supabase Client Singletons
 // Using `any` for Database generic to avoid generated-types coupling.
 // All table access is via runtime string names (sq_*).
 // ─────────────────────────────────────────

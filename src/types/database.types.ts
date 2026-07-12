@@ -1,5 +1,5 @@
 // ═══════════════════════════════════════════
-// SwissQuote AI — Type Definitions
+// AstraQuote (by Green AI Groupe) — Type Definitions
 // ═══════════════════════════════════════════
 
 // ─────────────────────────────────────────
@@ -67,6 +67,14 @@ export interface CatalogueArticle {
   active: boolean;
   created_at: string;
   updated_at: string;
+  // Structured Attributes for semantic matching
+  attributes?: {
+    diameter_mm?: number;
+    capacity_l?: number;
+    power_kw?: number;
+    material?: string;
+    dn?: number;
+  };
   // Joined
   supplier?: Supplier;
 }
@@ -244,6 +252,13 @@ export interface AIArticle {
   unit: string | null;
   confidence: number;
   needs_site_measurement?: boolean;
+  attributes?: {
+    diameter_mm?: number | null;
+    capacity_l?: number | null;
+    power_kw?: number | null;
+    material?: string | null;
+    dn?: number | null;
+  };
   // Category resolved during matching (set by catalogue-matcher)
   resolvedCategory?: string;
 }

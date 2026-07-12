@@ -181,7 +181,7 @@ function SidebarContent({ pathname, collapsed = false }: { pathname: string; col
               animate={{ opacity: 1 }}
               transition={{ delay: 0.1 }}
             >
-              <span className="logo-name">SwissQuote</span>
+              <span className="logo-name">AstraQuote</span>
               <span className="logo-badge">AI</span>
             </motion.div>
           )}

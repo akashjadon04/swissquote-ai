@@ -1,5 +1,5 @@
 /* ═══════════════════════════════════════════════════════════════
-   SwissQuote AI — UI Component Barrel Export
+   AstraQuote (by Green AI Groupe) — UI Component Barrel Export
    ═══════════════════════════════════════════════════════════════ */
 
 export { Button, type ButtonProps } from './Button';

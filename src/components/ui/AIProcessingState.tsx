@@ -1,10 +1,25 @@
 'use client';
 
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import { motion } from 'framer-motion';
 import { BlurText } from './index';
 
 export function AIProcessingState() {
+  const [step, setStep] = useState(0);
+  const loadingSteps = [
+    'Analyse des prestations...',
+    'Matching catalogue fournisseurs...',
+    'Estimation main-d\'œuvre...',
+    'Calcul financier...'
+  ];
+
+  useEffect(() => {
+    const timer = setInterval(() => {
+      setStep((prev) => (prev + 1) % loadingSteps.length);
+    }, 2500);
+    return () => clearInterval(timer);
+  }, [loadingSteps.length]);
+
   const TypewriterAnimation = () => (
     <div className="typewriter">
       <div className="slide"><i></i></div>
@@ -37,8 +52,9 @@ export function AIProcessingState() {
             ✨
           </motion.div>
           <BlurText 
-            text="Powered by Astra AI v1" 
-            delay={100} 
+            key={step}
+            text={loadingSteps[step]} 
+            delay={50} 
             className="text-sm font-semibold tracking-wide bg-gradient-to-r from-accent to-accent-hover bg-clip-text text-transparent"
           />
         </div>

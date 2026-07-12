@@ -17,7 +17,7 @@ export const useLocaleStore = create<LocaleState>()(
       toggleLocale: () => set((state) => ({ locale: state.locale === 'fr' ? 'en' : 'fr' })),
     }),
     {
-      name: 'swissquote-locale',
+      name: 'AstraQuote-locale',
     }
   )
 );

@@ -2,7 +2,7 @@ import { GoogleGenerativeAI } from '@google/generative-ai';
 import type { AIExtractionResult } from '@/types/database.types';
 
 // ═══════════════════════════════════════════════════════════════════════════
-// SwissQuote AI — Extraction Engine
+// AstraQuote (by Green AI Groupe) — Extraction Engine
 // Cascade: Gemini 3.5-flash (primary) → OpenRouter/free (key 1 → 2 → 3)
 //
 // ARCHITECTURE RULE (the product's core guarantee):
@@ -44,7 +44,14 @@ FORMAT DE SORTIE JSON:
       "quantity": number ou null,
       "unit": "string ou null",
       "confidence": 0.0 - 1.0,
-      "needs_site_measurement": boolean
+      "needs_site_measurement": boolean,
+      "attributes": {
+        "diameter_mm": "number ou null (ex: extraire 28 de 'Ø 28')",
+        "capacity_l": "number ou null (ex: extraire 200 de '200 L')",
+        "power_kw": "number ou null (ex: extraire 24 de '24 kW')",
+        "material": "string ou null",
+        "dn": "number ou null"
+      }
     }]
   }],
   "intervention_flags": ["string"],
@@ -57,7 +64,8 @@ RÈGLE labour_complexity:
 - "tres_complexe": chantier très difficile (4+ niveaux, sans ascenseur, immeuble occupé ET étroit)
 
 IMPORTANT: Inclure toujours raccords, colliers et isolations associés aux tuyaux.
-Les radiateurs, chaudières et ballons ECS ont quantity: null si la quantité n'est pas explicitement mentionnée — NE PAS inventer.`;
+Les radiateurs, chaudières et ballons ECS ont quantity: null si la quantité n'est pas explicitement mentionnée — NE PAS inventer.
+Si une information vitale manque (ex: puissance en kW pour une chaudière, diamètre pour un tuyau), mettre needs_site_measurement à true.`;
 
 
 // ─────────────────────────────────────────────────────────────────────────────
@@ -122,8 +130,8 @@ async function extractWithOpenRouterKey(
     headers: {
       'Content-Type': 'application/json',
       'Authorization': `Bearer ${apiKey}`,
-      'HTTP-Referer': 'https://swissquote-ai.vercel.app',
-      'X-Title': 'SwissQuote AI',
+      'HTTP-Referer': 'https://AstraQuote-ai.vercel.app',
+      'X-Title': 'AstraQuote (by Green AI Groupe)',
     },
     body: JSON.stringify({
       model,
@@ -205,6 +213,16 @@ function parseAIResponse(text: string): AIExtractionResult {
       if (article.quantity !== null && typeof article.quantity !== 'number') {
         article.quantity = null;
       }
+      
+      // Normalize attributes
+      if (!article.attributes) {
+        article.attributes = {};
+      }
+      const attrs = article.attributes;
+      if (attrs.diameter_mm !== undefined && typeof attrs.diameter_mm !== 'number') attrs.diameter_mm = null;
+      if (attrs.capacity_l !== undefined && typeof attrs.capacity_l !== 'number') attrs.capacity_l = null;
+      if (attrs.power_kw !== undefined && typeof attrs.power_kw !== 'number') attrs.power_kw = null;
+      if (attrs.dn !== undefined && typeof attrs.dn !== 'number') attrs.dn = null;
     }
   }
 
