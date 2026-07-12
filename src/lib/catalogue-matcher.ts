@@ -126,7 +126,7 @@ export function matchArticles(
     const options = {
       keys: ['description', 'specification', 'category', 'supplier_id', 'reference'],
       includeScore: true,
-      threshold: 0.4, // Strict fuzzy matches to prevent false positives
+      threshold: 0.6, // Default fuzzy match (balanced)
       ignoreLocation: true,
       useExtendedSearch: false
     };
