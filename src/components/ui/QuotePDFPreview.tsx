@@ -2,7 +2,7 @@
 
 import React, { useRef, useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
-import { X, Download, FileText, Loader2 } from 'lucide-react';
+import { X, Download, FileText, Loader2, ArrowLeft } from 'lucide-react';
 import { Button } from './Button';
 import { QuoteData } from '@/store';
 import { useTranslation } from '@/lib/i18n';
@@ -86,6 +86,20 @@ export function QuotePDFPreview({ quote, isOpen, onClose }: QuotePDFPreviewProps
           
           <div className="flex items-center gap-3">
             <Button
+              variant="secondary"
+              onClick={onClose}
+              iconLeft={<ArrowLeft size={16} />}
+              className="md:flex hidden"
+            >
+              Retour
+            </Button>
+            <button
+              onClick={onClose}
+              className="md:hidden p-2 rounded-full hover:bg-surface-2 transition-colors text-text-muted hover:text-text-primary"
+            >
+              <ArrowLeft size={24} />
+            </button>
+            <Button
               variant="primary"
               iconLeft={isGenerating ? <Loader2 className="animate-spin" size={16}/> : <Download size={16} />}
               onClick={handleGenerate}
@@ -93,12 +107,6 @@ export function QuotePDFPreview({ quote, isOpen, onClose }: QuotePDFPreviewProps
             >
               {isGenerating ? 'Génération...' : t('quoteWizard', 'downloadPdf')}
             </Button>
-            <button
-              onClick={onClose}
-              className="p-2 rounded-full hover:bg-surface-2 transition-colors text-text-muted hover:text-text-primary"
-            >
-              <X size={24} />
-            </button>
           </div>
         </div>
 

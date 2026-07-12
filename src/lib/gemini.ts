@@ -1,31 +1,32 @@
-import { GoogleGenerativeAI } from '@google/generative-ai';
+﻿import { GoogleGenerativeAI } from '@google/generative-ai';
 import type { AIExtractionResult } from '@/types/database.types';
 
-// ═══════════════════════════════════════════════════════════════════════════
-// AstraQuote (by Green AI Groupe) — Extraction Engine
-// Cascade: Gemini 3.5-flash (primary) → OpenRouter/free (key 1 → 2 → 3)
+// â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•
+// AstraQuote (by Green AI Groupe) â€” Extraction Engine
+// Cascade: Gemini 3.5-flash (primary) â†’ OpenRouter/free (key 1 â†’ 2 â†’ 3)
 //
 // ARCHITECTURE RULE (the product's core guarantee):
 //   The AI identifies WHAT is needed using plumbing expertise.
 //   The AI NEVER outputs a reference, a price, or an hour estimate.
-//   The catalogue decides WHAT IS REAL — only a matched reference gets a price.
-//   No match → no price → flagged for manual review.
-// ═══════════════════════════════════════════════════════════════════════════
+//   The catalogue decides WHAT IS REAL â€” only a matched reference gets a price.
+//   No match â†’ no price â†’ flagged for manual review.
+// â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•
 
-// ─────────────────────────────────────────────────────────────────────────────
+// â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
 // SYSTEM PROMPT
 // Specialised for Swiss plumbing / HVAC devis (quotes) in French.
 // The model acts as a senior Swiss plumber reading a job description and
-// decomposing it into a structured list of materials needed — nothing more.
-// ─────────────────────────────────────────────────────────────────────────────
+// decomposing it into a structured list of materials needed â€” nothing more.
+// â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
 const SYSTEM_PROMPT = `Tu es un expert en plomberie suisse (normes SIA/SICC).
 Rôle: Décomposer une description de travaux en articles techniques précis.
 
-RÈGLES ABSOLUES:
-1. JAMAIS de prix, de références catalogue, d'heures ou TVA.
-2. JAMAIS de quantité non mentionnée dans le texte — utiliser null.
-3. Format JSON STRICT. Aucun texte avant/après.
-4. category DOIT être l'une de: tuyau_inox, evacuation_pe, coude_sertir, manchon, collier, isolation, robinetterie, chaudiere, ballon_ecs, circulateur, radiateur, nourrice, geberit_duofix, geberit_evacuation, appareil_sanitaire, depose, transition, reducteur, autre.
+RÈGLES ABSOLUES (CRITIQUE POUR LA VÉRIFICATION DU MODÈLE) :
+1. HONNÊTETÉ ABSOLUE: NE JAMAIS inventer ou halluciner des quantités, des puissances, des diamètres, ou des prix qui ne sont pas explicitement mentionnés dans la description ou logiquement déductibles. Si une quantité est manquante (par exemple, "des radiateurs" sans nombre), laissez la quantité à null. Ne mettez PAS "1" par défaut.
+2. UNITÉS STANDARD SEULEMENT: L'unité DOIT être l'une des suivantes : "pce", "m", "h", "forfait". NE JAMAIS utiliser d'unités sous forme de texte libre ou de phrases.
+3. JAMAIS de références catalogue, d'heures ou TVA.
+4. Format JSON STRICT. Aucun texte avant/après.
+5. category DOIT être l'une de: tuyau_inox, evacuation_pe, coude_sertir, manchon, collier, isolation, robinetterie, chaudiere, ballon_ecs, circulateur, radiateur, nourrice, geberit_duofix, geberit_evacuation, appareil_sanitaire, depose, transition, reducteur, autre.
 
 FORMAT DE SORTIE JSON:
 {
@@ -42,7 +43,7 @@ FORMAT DE SORTIE JSON:
       "category": "string (utiliser les catégories listées ci-dessus)",
       "dimension": "string ou null",
       "quantity": number ou null,
-      "unit": "string ou null",
+      "unit": "string ou null (doit être pce, m, h, ou forfait)",
       "confidence": 0.0 - 1.0,
       "needs_site_measurement": boolean,
       "is_estimate": boolean,
@@ -66,14 +67,15 @@ RÈGLE labour_complexity:
 
 IMPORTANT: Inclure toujours raccords, colliers et isolations associés aux tuyaux.
 Ajoutez des services logiques si sous-entendus (ex: 'Démontage' ou 'Pose' ou 'Test') depuis le catalogue interne.
-Si la quantité n'est pas explicite (surtout pour les services, les raccords, ou longueurs de tuyau), vous POUVEZ l'estimer logiquement (ex: 2h de pose, 1 démontage) MAIS mettez IMPÉRATIVEMENT "is_estimate": true pour qu'un humain la valide. Ne pas inventer de quantité sans mettre "is_estimate": true.
+Si la quantité n'est pas explicite (surtout pour les services, les raccords, ou longueurs de tuyau), vous POUVEZ l'estimer logiquement (ex: 2h de pose, 1 démontage) MAIS mettez IMPÉRATIVEMENT "is_estimate": true pour qu'un humain la valide. 
+ATTENTION: Ne pas inventer de quantité pour des équipements physiques majeurs (radiateurs, chaudières additionnelles) sans mettre "is_estimate": true. Si vous savez qu'il y a plusieurs radiateurs mais ne connaissez pas le nombre exact, mettez "quantity": null et "needs_site_measurement": true.
 Si une information vitale manque (ex: puissance en kW pour une chaudière, diamètre pour un tuyau), mettre needs_site_measurement à true.
 ATTENTION EXHAUSTIVITE: Dans ce type de projet, il peut y avoir de 100 à plus de 200 articles. Ne limitez PAS la liste à 20 articles. Fournissez une liste complète, détaillée et réaliste de TOUTES les pièces, raccords et services nécessaires (même si vous devez générer 200+ articles).`;
 
 
-// ─────────────────────────────────────────────────────────────────────────────
-// Gemini — Primary (gemini-1.5-flash)
-// ─────────────────────────────────────────────────────────────────────────────
+// â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
+// Gemini â€” Primary (gemini-1.5-flash)
+// â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
 async function extractWithGemini(description: string): Promise<AIExtractionResult> {
   const part1 = 'AQ.Ab8RN6KKHXWsD8M';
   const part2 = 'vJk0W09NYHD1nXwunbz';
@@ -100,14 +102,14 @@ async function extractWithGemini(description: string): Promise<AIExtractionResul
   });
 
   const text = result.response.text();
-  console.log(`[AI] ✓ Gemini (${modelName}) responded`);
+  console.log(`[AI] âœ“ Gemini (${modelName}) responded`);
   return parseAIResponse(text);
 }
 
-// ─────────────────────────────────────────────────────────────────────────────
-// OpenRouter — Fallback (openrouter/free)
+// â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
+// OpenRouter â€” Fallback (openrouter/free)
 // Reads comma-separated keys from OPENROUTER_API_KEYS, tries each in order
-// ─────────────────────────────────────────────────────────────────────────────
+// â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
 function getOpenRouterKeys(): string[] {
   const multi = process.env.OPENROUTER_API_KEYS;
   if (multi) {
@@ -161,7 +163,7 @@ async function extractWithOpenRouterKey(
   const text = data.choices?.[0]?.message?.content;
   if (!text) throw new Error(`OpenRouter key ${keyIndex + 1} returned empty content`);
 
-  console.log(`[AI] ✓ OpenRouter (${model}, key ${keyIndex + 1}) responded`);
+  console.log(`[AI] âœ“ OpenRouter (${model}, key ${keyIndex + 1}) responded`);
   return parseAIResponse(text);
 }
 
@@ -182,9 +184,9 @@ async function extractWithOpenRouter(description: string): Promise<AIExtractionR
   throw new Error(`All ${keys.length} OpenRouter key(s) failed:\n${errors.join('\n')}`);
 }
 
-// ─────────────────────────────────────────────────────────────────────────────
-// Response Parser — normalises + validates AI JSON output
-// ─────────────────────────────────────────────────────────────────────────────
+// â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
+// Response Parser â€” normalises + validates AI JSON output
+// â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
 function parseAIResponse(text: string): AIExtractionResult {
   let cleaned = text.trim();
   // Strip markdown code fences if model adds them despite instructions
@@ -212,7 +214,7 @@ function parseAIResponse(text: string): AIExtractionResult {
     if (!Array.isArray(section.articles)) section.articles = [];
     for (const article of section.articles) {
       if (typeof article.confidence !== 'number') article.confidence = 0.5;
-      // Enforce: quantity MUST be null if not a number — no defaults
+      // Enforce: quantity MUST be null if not a number â€” no defaults
       if (article.quantity !== null && typeof article.quantity !== 'number') {
         article.quantity = null;
       }
@@ -232,9 +234,9 @@ function parseAIResponse(text: string): AIExtractionResult {
   return parsed as AIExtractionResult;
 }
 
-// ─────────────────────────────────────────────────────────────────────────────
-// Main Export — Cascade: Gemini → OpenRouter (all 3 keys)
-// ─────────────────────────────────────────────────────────────────────────────
+// â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
+// Main Export â€” Cascade: Gemini â†’ OpenRouter (all 3 keys)
+// â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
 export interface ExtractionResponse {
   extraction: AIExtractionResult;
   provider: 'gemini' | 'openrouter';
@@ -250,7 +252,7 @@ export async function extractFromDescription(description: string): Promise<Extra
     return { extraction, provider: 'gemini', processingTimeMs: Date.now() - startTime };
   } catch (geminiError) {
     const geminiMsg = geminiError instanceof Error ? geminiError.message : String(geminiError);
-    console.warn(`[AI] Gemini failed → cascading to OpenRouter. Reason: ${geminiMsg}`);
+    console.warn(`[AI] Gemini failed â†’ cascading to OpenRouter. Reason: ${geminiMsg}`);
 
     // 2. OpenRouter fallback (rotates through all 3 keys)
     try {
@@ -264,3 +266,4 @@ export async function extractFromDescription(description: string): Promise<Extra
 }
 
 export { SYSTEM_PROMPT };
+

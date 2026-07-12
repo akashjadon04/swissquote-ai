@@ -1,9 +1,10 @@
-import { create } from 'zustand';
+﻿import { create } from 'zustand';
 import { devtools } from 'zustand/middleware';
+import { calculateLabourFromItems } from '@/lib/financial';
 
-// ─────────────────────────────────────────
+// â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
 // Types
-// ─────────────────────────────────────────
+// â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
 
 export type QuoteStatus = 'draft' | 'review' | 'finalized' | 'missing_items' | 'sent' | 'accepted' | 'invoiced';
 
@@ -42,6 +43,7 @@ export interface QuoteFinancials {
   materialsMarginPct: number;
   materialsMargin: number;
   labourHours: number;
+    isLabourManual?: boolean;
   labourRate: number;
   labourTotal: number;
   travelFee: number;
@@ -88,15 +90,15 @@ export interface QuoteData {
   version: number;
 }
 
-// ─────────────────────────────────────────
+// â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
 // Wizard Steps
-// ─────────────────────────────────────────
+// â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
 
 export type WizardStep = 'client' | 'description' | 'processing' | 'review' | 'preview';
 
-// ─────────────────────────────────────────
+// â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
 // App Store
-// ─────────────────────────────────────────
+// â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
 
 interface AppState {
   // Theme
@@ -144,9 +146,9 @@ export const useAppStore = create<AppState>()(
   )
 );
 
-// ─────────────────────────────────────────
+// â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
 // Quote Store (with undo/redo)
-// ─────────────────────────────────────────
+// â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
 
 const DEFAULT_FINANCIALS: QuoteFinancials = {
   materialsSubtotal: 0,
@@ -183,7 +185,7 @@ const DEFAULT_QUOTE: QuoteData = {
   aiConfidence: null,
   sections: [],
   financials: { ...DEFAULT_FINANCIALS },
-  canton: 'Genève',
+  canton: 'GenÃ¨ve',
   preferredSupplier: 'NSB',
   companyName: 'AstraQuote (by Green AI Groupe)',
   companyAddress: '',
@@ -409,3 +411,6 @@ export const useQuoteStore = create<QuoteState>()(
     { name: 'AstraQuote-quote' }
   )
 );
+
+
+
