@@ -439,14 +439,14 @@ export default function NewQuotePage() {
                         {provider === 'gemini' ? '✨ Powered by Astra AI' : '🌐 OpenRouter'}
                       </span>
                     )}
-                    {quote?.aiConfidence !== undefined && (
+                    {typeof quote?.aiConfidence === 'number' && (
                       <span className="confidence-badge" style={{
-                        backgroundColor: quote.aiConfidence > 0.8 ? 'var(--color-success-light)' :
-                          quote.aiConfidence > 0.5 ? 'var(--color-warning-light)' : 'var(--color-danger-light)',
-                        color: quote.aiConfidence > 0.8 ? 'var(--color-success)' :
-                          quote.aiConfidence > 0.5 ? 'var(--color-warning)' : 'var(--color-danger)',
+                        backgroundColor: quote!.aiConfidence > 0.8 ? 'var(--color-success-light)' :
+                          quote!.aiConfidence > 0.5 ? 'var(--color-warning-light)' : 'var(--color-danger-light)',
+                        color: quote!.aiConfidence > 0.8 ? 'var(--color-success)' :
+                          quote!.aiConfidence > 0.5 ? 'var(--color-warning)' : 'var(--color-danger)',
                       }}>
-                        {locale === 'en' ? 'Confidence' : 'Confiance'}: {(quote.aiConfidence * 100).toFixed(0)}%
+                        {locale === 'en' ? 'Confidence' : 'Confiance'}: {(quote!.aiConfidence * 100).toFixed(0)}%
                       </span>
                     )}
                     {matchResult && (
@@ -849,7 +849,7 @@ export default function NewQuotePage() {
                             aiProvider: quote.aiProvider,
                             interventionType: quote.interventionType,
                             technicalSummary: quote.technicalSummary,
-                            aiConfidence: quote.aiConfidence,
+                            aiConfidence: quote!.aiConfidence,
                             preferredSupplier: quote.preferredSupplier,
                             canton: quote.canton,
                             hasMissingItems: quote.hasMissingItems,
