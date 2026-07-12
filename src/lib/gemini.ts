@@ -159,16 +159,20 @@ async function extractWithGeminiKey(description: string, apiKey: string, keyInde
 }
 
 async function extractWithGemini(description: string): Promise<AIExtractionResult> {
-  const keys = getGeminiKeys();
+  const allKeys = getGeminiKeys();
+  const keys = [...allKeys].sort((a, b) => (badGeminiKeys.has(a) ? 1 : 0) - (badGeminiKeys.has(b) ? 1 : 0));
   const errors: string[] = [];
   
   for (let i = 0; i < keys.length; i++) {
     try {
-      return await withTimeout(extractWithGeminiKey(description, keys[i], i), 15000, `Timeout after 15s (Key ${i + 1})`);
+      const res = await withTimeout(extractWithGeminiKey(description, keys[i], i), 25000, `Timeout after 25s (Key ${i + 1})`);
+      badGeminiKeys.delete(keys[i]);
+      return res;
     } catch (err) {
       const msg = err instanceof Error ? err.message : String(err);
       errors.push(`Key ${i + 1}: ${msg}`);
       console.warn(`[AI] Gemini key ${i + 1}/${keys.length} failed: ${msg}`);
+      badGeminiKeys.add(keys[i]);
     }
   }
   throw new Error(`All ${keys.length} Gemini key(s) failed:\n${errors.join('\n')}`);
@@ -236,17 +240,21 @@ async function extractWithOpenRouterKey(
 }
 
 async function extractWithOpenRouter(description: string): Promise<AIExtractionResult> {
-  const keys = getOpenRouterKeys();
-  if (keys.length === 0) throw new Error('No OpenRouter API keys configured (OPENROUTER_API_KEYS)');
+  const allKeys = getOpenRouterKeys();
+  if (allKeys.length === 0) throw new Error('No OpenRouter API keys configured (OPENROUTER_API_KEYS)');
+  const keys = [...allKeys].sort((a, b) => (badOpenRouterKeys.has(a) ? 1 : 0) - (badOpenRouterKeys.has(b) ? 1 : 0));
 
   const errors: string[] = [];
   for (let i = 0; i < keys.length; i++) {
     try {
-      return await withTimeout(extractWithOpenRouterKey(description, keys[i], i), 15000, `Timeout after 15s (OpenRouter Key ${i + 1})`);
+      const res = await withTimeout(extractWithOpenRouterKey(description, keys[i], i), 15000, `Timeout after 15s (OpenRouter Key ${i + 1})`);
+      badOpenRouterKeys.delete(keys[i]);
+      return res;
     } catch (err) {
       const msg = err instanceof Error ? err.message : String(err);
       errors.push(msg);
       console.warn(`[AI] OpenRouter key ${i + 1}/${keys.length} failed: ${msg}`);
+      badOpenRouterKeys.add(keys[i]);
     }
   }
   throw new Error(`All ${keys.length} OpenRouter key(s) failed:\n${errors.join('\n')}`);
