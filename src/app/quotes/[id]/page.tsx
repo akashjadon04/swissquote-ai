@@ -140,19 +140,8 @@ export default function QuoteDetailPage() {
   };
 
   const downloadPDF = async () => {
-    toast.success('Génération du PDF en cours...');
     try {
-      const response = await fetch(`/api/quotes/${id}/pdf`);
-      if (!response.ok) throw new Error('Erreur réseau');
-      const blob = await response.blob();
-      const url = window.URL.createObjectURL(blob);
-      const a = document.createElement('a');
-      a.href = url;
-      a.download = `Devis_${quote?.quote_number.replace(/\//g, '-')}.pdf`;
-      document.body.appendChild(a);
-      a.click();
-      window.URL.revokeObjectURL(url);
-      document.body.removeChild(a);
+      window.open(`/quotes/${id}/print`, '_blank');
     } catch (err) {
       toast.error('Erreur lors du téléchargement du PDF');
     }
