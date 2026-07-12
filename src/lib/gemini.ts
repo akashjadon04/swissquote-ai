@@ -120,6 +120,20 @@ function getGeminiKeys(): string[] {
   return Array.from(new Set(keys));
 }
 
+
+function withTimeout<T>(promise: Promise<T>, ms: number, errorMessage = "Timeout"): Promise<T> {
+  return new Promise((resolve, reject) => {
+    const timer = setTimeout(() => reject(new Error(errorMessage)), ms);
+    promise
+      .then(value => { clearTimeout(timer); resolve(value); })
+      .catch(err => { clearTimeout(timer); reject(err); });
+  });
+}
+
+// Circuit breakers to remember failing keys and push them to the back of the queue
+const badGeminiKeys = new Set<string>();
+const badOpenRouterKeys = new Set<string>();
+
 async function extractWithGeminiKey(description: string, apiKey: string, keyIndex: number): Promise<AIExtractionResult> {
   const modelName = process.env.GEMINI_MODEL || 'gemini-1.5-flash';
 
@@ -150,7 +164,7 @@ async function extractWithGemini(description: string): Promise<AIExtractionResul
   
   for (let i = 0; i < keys.length; i++) {
     try {
-      return await extractWithGeminiKey(description, keys[i], i);
+      return await withTimeout(extractWithGeminiKey(description, keys[i], i), 15000, `Timeout after 15s (Key ${i + 1})`);
     } catch (err) {
       const msg = err instanceof Error ? err.message : String(err);
       errors.push(`Key ${i + 1}: ${msg}`);
@@ -228,7 +242,7 @@ async function extractWithOpenRouter(description: string): Promise<AIExtractionR
   const errors: string[] = [];
   for (let i = 0; i < keys.length; i++) {
     try {
-      return await extractWithOpenRouterKey(description, keys[i], i);
+      return await withTimeout(extractWithOpenRouterKey(description, keys[i], i), 15000, `Timeout after 15s (OpenRouter Key ${i + 1})`);
     } catch (err) {
       const msg = err instanceof Error ? err.message : String(err);
       errors.push(msg);

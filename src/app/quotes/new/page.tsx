@@ -482,50 +482,14 @@ export default function NewQuotePage() {
                         </thead>
                         <tbody className="divide-y divide-border-strong">
                           {section.items.map((item, iIdx) => (
+                              <React.Fragment key={item.id}>
                             <tr key={item.id} className={`group hover:bg-surface-2 transition-colors ${item.isMissing ? 'bg-danger/5' : (item.is_estimate ? 'bg-orange-50/30 border-orange-200' : (item.reference ? 'bg-green-50/30 border-green-200' : ''))}`}>
                               <td className="col-ref p-4">
                                 <input type="text" className={`neo-input w-24 text-sm font-mono ${!item.reference ? 'border-warning border bg-warning/5' : ''}`} placeholder="Réf..." value={item.reference || ''} onChange={(e) => useQuoteStore.getState().updateItem(sIdx, iIdx, { reference: e.target.value })} />
                               </td>
                               <td className="col-desc p-4">
                                 <input type="text" className={`neo-input w-full font-medium ${!item.description ? 'border-danger border-2 bg-danger/5' : ''}`} placeholder="Description..." value={item.description || ''} onChange={(e) => useQuoteStore.getState().updateItem(sIdx, iIdx, { description: e.target.value })} />
-                                {item.isMissing && (
-                                  <div className="flex items-center gap-2 mt-1 flex-wrap">
-                                    <span className="text-xs text-danger font-semibold bg-danger/10 px-2 py-0.5 rounded-full border border-danger/20">{t('quoteWizard', 'articleNotFound')}</span>
-                                    <button className="text-xs text-accent font-semibold bg-accent/10 px-2 py-0.5 rounded-full border border-accent/20 hover:bg-accent/20 transition-colors" onClick={() => useQuoteStore.getState().updateItem(sIdx, iIdx, { isMissing: false })}>
-                                      {locale === 'en' ? 'Validate ✔' : 'Valider ✔'}
-                                    </button>
-                                  </div>
-                                )}
-                                {item.is_estimate && (
-                                  <div className="flex items-center gap-2 mt-1 flex-wrap">
-                                    <span className="text-xs text-orange-600 font-semibold bg-orange-100 px-2 py-0.5 rounded-full border border-orange-200">
-                                      {locale === 'en' ? 'AI Estimate - Please Verify' : 'Estimation IA - à vérifier'}
-                                    </span>
-                                    <button className="text-xs text-accent font-semibold bg-accent/10 px-2 py-0.5 rounded-full border border-accent/20 hover:bg-accent/20 transition-colors" onClick={() => useQuoteStore.getState().updateItem(sIdx, iIdx, { is_estimate: false })}>
-                                      {locale === 'en' ? 'Validate ✔' : 'Valider ✔'}
-                                    </button>
-                                  </div>
-                                )}
-                                  {(!item.quantity || item.quantity === 0) && (
-                                    <div className="flex flex-col gap-2 mt-2 p-3 bg-red-50 border border-red-100 rounded-xl">
-                                      <div className="flex items-center gap-1.5 text-xs font-semibold text-red-800">
-                                        <AlertCircle size={14} /> Information manquante requise
-                                      </div>
-                                      <div className="flex items-center gap-2">
-                                        <span className="text-sm text-red-700">Combien de <strong className="lowercase">{item.aiLabel?.split(' ')[0] || 'cet article'}</strong> ?</span>
-                                        <input 
-                                          type="number" 
-                                          className="neo-input bg-white w-20 text-sm py-1 border-red-200" 
-                                          placeholder="Qté..." 
-                                          min={1} 
-                                          step={0.1}
-                                          onChange={(e) => useQuoteStore.getState().updateItem(sIdx, iIdx, { quantity: parseFloat(e.target.value) || 0 })}
-                                        />
-                                        <span className="text-sm text-red-700 font-medium">{item.unit || 'pce'}</span>
-                                      </div>
-                                    </div>
-                                  )}
-                              </td>
+                                </td>
                               <td className="col-qty p-4">
                                 <input type="number" className={`neo-input w-20 ${item.quantity === 0 || !item.quantity ? 'border-danger border-2 bg-danger/5 text-danger font-bold' : ''}`} value={item.quantity || ''} placeholder="0" min={0} step={0.1}
                                   onChange={(e) => useQuoteStore.getState().updateItem(sIdx, iIdx, { quantity: parseFloat(e.target.value) || 0 })} />
@@ -540,7 +504,54 @@ export default function NewQuotePage() {
                                 {item.lineTotal ? formatAmount(item.lineTotal) : (item.unitPrice && item.quantity ? formatAmount(item.unitPrice * item.quantity) : '—')}
                               </td>
                             </tr>
-                          ))}
+                              {/* WARNINGS ROW */}
+                              {(item.isMissing || item.is_estimate || (!item.quantity || item.quantity === 0)) && (
+                                <tr>
+                                  <td colSpan={6} className="px-4 pb-4">
+                                    <div className="flex flex-col gap-2 p-3 bg-surface-2/30 rounded-xl border border-border/50">
+                                      {item.isMissing && (
+                                        <div className="flex items-center gap-2 flex-wrap">
+                                          <span className="text-xs text-danger font-semibold bg-danger/10 px-2 py-0.5 rounded-full border border-danger/20">{t('quoteWizard', 'articleNotFound')}</span>
+                                          <button className="text-xs text-accent font-semibold bg-accent/10 px-2 py-0.5 rounded-full border border-accent/20 hover:bg-accent/20 transition-colors" onClick={() => useQuoteStore.getState().updateItem(sIdx, iIdx, { isMissing: false })}>
+                                            {locale === 'en' ? 'Validate ✓' : 'Valider ✓'}
+                                          </button>
+                                        </div>
+                                      )}
+                                      {item.is_estimate && (
+                                        <div className="flex items-center gap-2 flex-wrap">
+                                          <span className="text-xs text-orange-600 font-semibold bg-orange-100 px-2 py-0.5 rounded-full border border-orange-200">
+                                            {locale === 'en' ? 'AI Estimate - Please Verify' : 'Estimation IA - A vérifier'}
+                                          </span>
+                                          <button className="text-xs text-accent font-semibold bg-accent/10 px-2 py-0.5 rounded-full border border-accent/20 hover:bg-accent/20 transition-colors" onClick={() => useQuoteStore.getState().updateItem(sIdx, iIdx, { is_estimate: false })}>
+                                            {locale === 'en' ? 'Validate ✓' : 'Valider ✓'}
+                                          </button>
+                                        </div>
+                                      )}
+                                      {(!item.quantity || item.quantity === 0) && (
+                                        <div className="flex items-center gap-4 flex-wrap">
+                                          <div className="flex items-center gap-1.5 text-xs font-semibold text-red-500">
+                                            <AlertCircle size={14} /> Information manquante requise:
+                                          </div>
+                                          <div className="flex items-center gap-2">
+                                            <span className="text-sm text-text-primary">Combien de <strong className="lowercase">{item.aiLabel?.split(' ')[0] || 'cet article'}</strong> ?</span>
+                                            <input 
+                                              type="number" 
+                                              className="neo-input w-24 text-sm py-1 border-red-500/50 focus:border-red-500" 
+                                              placeholder="Qté..." 
+                                              min={1} 
+                                              step={0.1}
+                                              onChange={(e) => useQuoteStore.getState().updateItem(sIdx, iIdx, { quantity: parseFloat(e.target.value) || 0 })}
+                                            />
+                                            <span className="text-sm text-text-muted font-medium">{item.unit || 'pce'}</span>
+                                          </div>
+                                        </div>
+                                      )}
+                                    </div>
+                                  </td>
+                                </tr>
+                              )}
+                              </React.Fragment>
+                            ))}
                         </tbody>
                       </table>
                     </div>
