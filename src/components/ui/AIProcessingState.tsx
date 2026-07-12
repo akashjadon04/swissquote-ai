@@ -29,9 +29,9 @@ export function AIProcessingState() {
   );
 
   return (
-    <div className="flex flex-col items-center justify-center min-h-[60vh] md:min-h-[70vh] mt-8 md:mt-16 gap-8 py-10 px-4 w-full max-w-5xl mx-auto">
+    <div className="fixed inset-0 z-50 flex flex-col items-center justify-center bg-background/95 backdrop-blur-md w-full h-full">
       {/* Center Typewriter */}
-      <div className="flex flex-col items-center justify-center h-32 md:h-48 w-full mt-4 md:mt-8 mb-4 md:mb-8">
+      <div className="flex flex-col items-center justify-center h-40 w-full mb-12">
         <div className="scale-[2.75] md:scale-[3.5]">
           <TypewriterAnimation />
         </div>
