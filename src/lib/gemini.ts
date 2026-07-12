@@ -85,13 +85,23 @@ ATTENTION EXHAUSTIVITE: Fournissez une liste pertinente, détaillée et réalist
 // â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
 // Gemini â€” Primary (gemini-1.5-flash)
 // â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
-async function extractWithGemini(description: string): Promise<AIExtractionResult> {
+function getGeminiKeys(): string[] {
+  const multi = process.env.GEMINI_API_KEYS;
+  if (multi) {
+    const keys = multi.split(',').map(k => k.trim()).filter(Boolean);
+    if (keys.length > 0) return keys;
+  }
+  const single = process.env.GEMINI_API_KEY;
+  if (single?.trim()) return [single.trim()];
+  
+  // Fallback to hardcoded key
   const part1 = 'AQ.Ab8RN6KKHXWsD8M';
   const part2 = 'vJk0W09NYHD1nXwunbz';
   const part3 = 'DUOdLc2kh5cmxaMA';
-  const apiKey = process.env.GEMINI_API_KEY || (part1 + part2 + part3);
-  if (!apiKey) throw new Error('GEMINI_API_KEY not set in environment');
+  return [part1 + part2 + part3];
+}
 
+async function extractWithGeminiKey(description: string, apiKey: string, keyIndex: number): Promise<AIExtractionResult> {
   const modelName = process.env.GEMINI_MODEL || 'gemini-1.5-flash';
 
   const genAI = new GoogleGenerativeAI(apiKey);
@@ -111,8 +121,24 @@ async function extractWithGemini(description: string): Promise<AIExtractionResul
   });
 
   const text = result.response.text();
-  console.log(`[AI] âœ“ Gemini (${modelName}) responded`);
+  console.log(`[AI] ✓ Gemini (${modelName}, key ${keyIndex + 1}) responded`);
   return parseAIResponse(text);
+}
+
+async function extractWithGemini(description: string): Promise<AIExtractionResult> {
+  const keys = getGeminiKeys();
+  const errors: string[] = [];
+  
+  for (let i = 0; i < keys.length; i++) {
+    try {
+      return await extractWithGeminiKey(description, keys[i], i);
+    } catch (err) {
+      const msg = err instanceof Error ? err.message : String(err);
+      errors.push(`Key ${i + 1}: ${msg}`);
+      console.warn(`[AI] Gemini key ${i + 1}/${keys.length} failed: ${msg}`);
+    }
+  }
+  throw new Error(`All ${keys.length} Gemini key(s) failed:\n${errors.join('\n')}`);
 }
 
 // â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
