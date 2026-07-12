@@ -216,9 +216,8 @@ async function extractWithOpenRouterKey(
   apiKey: string,
   keyIndex: number
 ): Promise<AIExtractionResult> {
-  // Use a highly capable, lightning-fast free model for JSON extraction
-  // Hardcoded to bypass any old Vercel env variables (e.g. openrouter/free)
-  const model = 'meta-llama/llama-3.3-70b-instruct:free';
+  // Use openrouter/free to automatically route to a non-rate-limited free model
+  const model = process.env.OPENROUTER_MODEL || 'openrouter/free';
 
   const response = await fetch('https://openrouter.ai/api/v1/chat/completions', {
     method: 'POST',
