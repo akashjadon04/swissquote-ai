@@ -5,7 +5,7 @@ import { motion, AnimatePresence } from 'framer-motion';
 import { PenTool, Bot, ClipboardCheck, DollarSign, FileText, AlertCircle, ArrowLeft, ArrowRight, Download, Loader2, Eye } from 'lucide-react';
 import { Sidebar, MobileBottomNav, TopBar } from '@/components/layout/Sidebar';
 import { useAppStore, useQuoteStore } from '@/store';
-import { AIProcessingState, Button, AnimatedSaveButton, QuotePDFPreview, QuoteHistoryLog, PremiumPDFTemplate } from '@/components/ui';
+import { AIProcessingState, Button, AnimatedSaveButton, QuotePDFPreview, QuoteHistoryLog, PremiumPDFTemplate, Stepper, Step } from '@/components/ui';
 import type { AIExtractionResult, MatchResult, CatalogueArticle, Quote } from '@/types/database.types';
 import { formatAmount, formatCHF } from '@/lib/financial';
 import { useTranslation } from '@/lib/i18n';
@@ -275,19 +275,13 @@ export default function NewQuotePage() {
         <TopBar breadcrumb={[t('sidebar', 'quotes'), t('dashboard', 'newQuote')]} />
         <div className="page-content">
           {/* Step Indicator */}
-          <div className="wizard-steps">
-            {STEPS.map((step, i) => (
-              <div
-                key={step.id}
-                className={`wizard-step ${i === currentStep ? 'active' : ''} ${i < currentStep ? 'completed' : ''}`}
-              >
-                <div className="wizard-step-icon">
-                  {i < currentStep ? '✓' : step.icon}
-                </div>
-                {!isMobile && <span className="wizard-step-label">{step.label}</span>}
-                {i < STEPS.length - 1 && <div className="wizard-step-connector" />}
-              </div>
-            ))}
+          <div className="mb-8">
+            <Stepper activeStep={currentStep + 1} hideFooter={true} hideContent={true}>
+              <Step><div/></Step>
+              <Step><div/></Step>
+              <Step><div/></Step>
+              <Step><div/></Step>
+            </Stepper>
           </div>
 
           <AnimatePresence mode="wait">

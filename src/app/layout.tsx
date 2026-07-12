@@ -81,7 +81,6 @@ export default function RootLayout({
           attribute="data-theme"
           defaultTheme="light"
         >
-          <DashboardMetricsTicker />
           <PageTransition>{children}</PageTransition>
           {/* Global overlays — available everywhere */}
           <FloatingActions />

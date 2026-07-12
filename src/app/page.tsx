@@ -9,7 +9,7 @@ import { formatCHF } from '@/lib/financial';
 import type { Quote } from '@/types/database.types';
 import { useTranslation } from '@/lib/i18n';
 import { FileText, Edit2, CheckCircle, DollarSign, Plus, LayoutGrid } from 'lucide-react';
-import { EmptyState, Button, GreetingWidget, ActivityChart } from '@/components/ui';
+import { EmptyState, Button, DashboardMetricsTicker, FlowingMenu, ActivityChart } from '@/components/ui';
 import dynamic from 'next/dynamic';
 
 const Player = dynamic(() => import('@lottiefiles/react-lottie-player').then(mod => mod.Player), { ssr: false });
@@ -24,6 +24,13 @@ export default function DashboardPage() {
   const [quotes, setQuotes] = useState<Quote[]>([]);
   const [stats, setStats] = useState({ total: 0, draft: 0, finalized: 0, revenue: 0 });
   const [loading, setLoading] = useState(true);
+
+  const menuItems = [
+    { link: '/quotes/new', text: 'Nouveau Devis', image: 'https://images.unsplash.com/photo-1541888086925-920eb1fd6f1c?q=80&w=2000&auto=format&fit=crop' },
+    { link: '/catalogue', text: 'Catalogue', image: 'https://images.unsplash.com/photo-1581094794329-c8112a89af12?q=80&w=2000&auto=format&fit=crop' },
+    { link: '/clients', text: 'Clients', image: 'https://images.unsplash.com/photo-1556761175-4b46a572b786?q=80&w=2000&auto=format&fit=crop' },
+    { link: '/quotes', text: 'Tous les Devis', image: 'https://images.unsplash.com/photo-1554224155-6726b3ff858f?q=80&w=2000&auto=format&fit=crop' }
+  ];
 
   useEffect(() => {
     const checkMobile = () => setIsMobile(window.innerWidth < 768);
@@ -66,8 +73,11 @@ export default function DashboardPage() {
       <Sidebar />
       <main className="app-main">
         <TopBar title={t('sidebar', 'dashboard')} />
+        <DashboardMetricsTicker />
         <div className="page-content">
-          <GreetingWidget />
+          <div style={{ height: '300px', position: 'relative', marginBottom: '2rem' }}>
+            <FlowingMenu items={menuItems} />
+          </div>
           
           {/* Stats Bar */}
           <div className="stats-bar">
