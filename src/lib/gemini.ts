@@ -96,15 +96,8 @@ function getGeminiKeys(): string[] {
   if (single?.trim()) {
     keys.push(single.trim());
   }
-  
-  // Fallback to hardcoded keys
-  const fallback1 = 'AQ.Ab8RN6KKHXWsD8M' + 'vJk0W09NYHD1nXwunbz' + 'DUOdLc2kh5cmxaMA';
-  const fallback2 = 'AQ.Ab8RN6Izg13' + 'b3trdR_XTW7dGJ' + 'AP8_agGIzjIx7f' + 'X8u8watxQCQ';
-  
-  if (!keys.includes(fallback1)) keys.push(fallback1);
-  if (!keys.includes(fallback2)) keys.push(fallback2);
 
-  return keys.length > 0 ? Array.from(new Set(keys)) : [fallback1, fallback2];
+  return Array.from(new Set(keys));
 }
 
 async function extractWithGeminiKey(description: string, apiKey: string, keyIndex: number): Promise<AIExtractionResult> {
