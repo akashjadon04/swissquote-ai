@@ -67,7 +67,8 @@ RÈGLE labour_complexity:
 IMPORTANT: Inclure toujours raccords, colliers et isolations associés aux tuyaux.
 Ajoutez des services logiques si sous-entendus (ex: 'Démontage' ou 'Pose' ou 'Test') depuis le catalogue interne.
 Si la quantité n'est pas explicite (surtout pour les services, les raccords, ou longueurs de tuyau), vous POUVEZ l'estimer logiquement (ex: 2h de pose, 1 démontage) MAIS mettez IMPÉRATIVEMENT "is_estimate": true pour qu'un humain la valide. Ne pas inventer de quantité sans mettre "is_estimate": true.
-Si une information vitale manque (ex: puissance en kW pour une chaudière, diamètre pour un tuyau), mettre needs_site_measurement à true.`;
+Si une information vitale manque (ex: puissance en kW pour une chaudière, diamètre pour un tuyau), mettre needs_site_measurement à true.
+ATTENTION EXHAUSTIVITE: Dans ce type de projet, il peut y avoir de 100 à plus de 200 articles. Ne limitez PAS la liste à 20 articles. Fournissez une liste complète, détaillée et réaliste de TOUTES les pièces, raccords et services nécessaires (même si vous devez générer 200+ articles).`;
 
 
 // ─────────────────────────────────────────────────────────────────────────────
