@@ -1,4 +1,4 @@
-﻿import { GoogleGenerativeAI } from '@google/generative-ai';
+import { GoogleGenerativeAI } from '@google/generative-ai';
 import type { AIExtractionResult } from '@/types/database.types';
 
 // â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•
@@ -70,7 +70,7 @@ Ajoutez des services logiques si sous-entendus (ex: 'Démontage' ou 'Pose' ou 'T
 Si la quantité n'est pas explicite (surtout pour les services, les raccords, ou longueurs de tuyau), vous POUVEZ l'estimer logiquement (ex: 2h de pose, 1 démontage) MAIS mettez IMPÉRATIVEMENT "is_estimate": true pour qu'un humain la valide. 
 ATTENTION: Ne pas inventer de quantité pour des équipements physiques majeurs (radiateurs, chaudières additionnelles) sans mettre "is_estimate": true. Si vous savez qu'il y a plusieurs radiateurs mais ne connaissez pas le nombre exact, mettez "quantity": null et "needs_site_measurement": true.
 Si une information vitale manque (ex: puissance en kW pour une chaudière, diamètre pour un tuyau), mettre needs_site_measurement à true.
-ATTENTION EXHAUSTIVITE: Dans ce type de projet, il peut y avoir de 100 à plus de 200 articles. Ne limitez PAS la liste à 20 articles. Fournissez une liste complète, détaillée et réaliste de TOUTES les pièces, raccords et services nécessaires (même si vous devez générer 200+ articles).`;
+ATTENTION EXHAUSTIVITE: Fournissez une liste pertinente, détaillée et réaliste des pièces et services principaux. Limitez-vous à un maximum de 30 articles pour garantir un temps de réponse rapide.`;
 
 
 // â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€

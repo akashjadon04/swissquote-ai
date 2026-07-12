@@ -151,7 +151,7 @@ export function Sidebar() {
 }
 
 function SidebarContent({ pathname, collapsed = false }: { pathname: string; collapsed?: boolean }) {
-  const { toggleSidebar, setCommandPaletteOpen } = useAppStore();
+  const { toggleSidebar, setCommandPaletteOpen, isMobile } = useAppStore();
   const { t } = useTranslation();
 
   const navItems = [
@@ -200,7 +200,13 @@ function SidebarContent({ pathname, collapsed = false }: { pathname: string; col
 
       {/* New Quote CTA */}
       <div className="sidebar-cta">
-        <Link href="/quotes/new" className="btn-new-quote clay-button">
+        <Link 
+          href="/quotes/new" 
+          className="btn-new-quote clay-button"
+          onClick={() => {
+            if (isMobile) toggleSidebar();
+          }}
+        >
           {Icons.plus}
           {!collapsed && <span>{t('dashboard', 'newQuote')}</span>}
         </Link>
@@ -229,6 +235,9 @@ function SidebarContent({ pathname, collapsed = false }: { pathname: string; col
             <Link
               key={item.href}
               href={item.href}
+              onClick={() => {
+                if (isMobile) toggleSidebar();
+              }}
               className={`sidebar-nav-item ${isActive ? 'active' : ''}`}
               title={collapsed ? item.label : undefined}
             >

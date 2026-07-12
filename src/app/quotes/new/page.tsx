@@ -5,7 +5,7 @@ import { motion, AnimatePresence } from 'framer-motion';
 import { PenTool, Bot, ClipboardCheck, DollarSign, FileText, AlertCircle, ArrowLeft, ArrowRight, Download, Loader2, Eye, Check } from 'lucide-react';
 import { Sidebar, MobileBottomNav, TopBar } from '@/components/layout/Sidebar';
 import { useAppStore, useQuoteStore } from '@/store';
-import { AIProcessingState, Button, AnimatedSaveButton, QuotePDFPreview, PremiumPDFTemplate } from '@/components/ui';
+import { AIProcessingState, Button, AnimatedSaveButton, PremiumPDFTemplate } from '@/components/ui';
 import type { AIExtractionResult, MatchResult, CatalogueArticle, Quote } from '@/types/database.types';
 import { formatAmount, formatCHF } from '@/lib/financial';
 import { useTranslation } from '@/lib/i18n';
@@ -86,6 +86,15 @@ export default function NewQuotePage() {
     resetQuote();
   }, [resetQuote]);
 
+  useEffect(() => {
+    const mainContainer = document.querySelector('.app-main');
+    if (mainContainer) {
+      mainContainer.scrollTo({ top: 0, behavior: 'smooth' });
+    } else {
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    }
+  }, [currentStep]);
+
   // Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬
   // Step 1: Submit Description to AI
   // Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬
@@ -133,15 +142,15 @@ export default function NewQuotePage() {
 
       // Labour rate by canton
       const LABOUR_RATES: Record<string, number> = {
-        'GenÃƒÂ¨ve': 120, 'Vaud': 120, 'Valais': 120, 'Fribourg': 120,
-        'NeuchÃƒÂ¢tel': 120, 'Jura': 120, 'Berne': 120, 'ZÃƒÂ¼rich': 120,
-        'BÃƒÂ¢le': 120, 'Lucerne': 120,
+        'Genève': 120, 'Vaud': 120, 'Valais': 120, 'Fribourg': 120,
+        'Neuchâtel': 120, 'Jura': 120, 'Berne': 120, 'Zürich': 120,
+        'Bâle': 120, 'Lucerne': 120,
       };
-      const canton = quote.canton || 'GenÃƒÂ¨ve';
+      const canton = quote.canton || 'Genève';
       const labourRate = LABOUR_RATES[canton] || 120;
       const interventionType = extraction.intervention_type;
       // Use server-calculated labour hours (based on actual items + complexity)
-      // NEVER use hardcoded hours Ã¢â‚¬â€ null quantities = 0 hours (user must fill in)
+      // NEVER use hardcoded hours — null quantities = 0 hours (user must fill in)
       const labourHours = typeof calculatedLabourHours === 'number' ? calculatedLabourHours : 0;
       const marginPct = 15;
       const vatRate = 0.081;
@@ -162,7 +171,7 @@ export default function NewQuotePage() {
               (m: { aiArticle: { label: string } }) => m.aiArticle.label === article.label
             );
 
-            // RULE: Never estimate. null quantity Ã¢â€ â€™ 0 so user is forced to fill it in.
+            // RULE: Never estimate. null quantity — 0 so user is forced to fill it in.
             const safeQty = article.quantity === null || article.quantity === undefined ? 0 : article.quantity;
 
             if (matched) {
@@ -190,7 +199,7 @@ export default function NewQuotePage() {
               };
             }
 
-            // No catalogue match Ã¢â€ â€™ flag as missing. No price, no reference.
+            // No catalogue match — flag as missing. No price, no reference.
             return {
               id: `item-${sIdx}-${aIdx}`,
               reference: null,
@@ -275,18 +284,19 @@ export default function NewQuotePage() {
         <TopBar breadcrumb={[t('sidebar', 'quotes'), t('dashboard', 'newQuote')]} />
         <div className="page-content">
             {/* Graphical Step Indicator */}
-            <div className="wizard-steps">
+            <div className="wizard-steps flex items-center justify-center">
               {STEPS.map((step, i) => (
-                <div
-                  key={step.id}
-                  className={`wizard-step ${i === currentStep ? 'active' : ''} ${i < currentStep ? 'completed' : ''}`}
-                >
-                  <div className="wizard-step-icon">
-                    {i < currentStep ? <Check size={18} /> : step.icon}
+                <React.Fragment key={step.id}>
+                  <div
+                    className={`wizard-step ${i === currentStep ? 'active' : ''} ${i < currentStep ? 'completed' : ''}`}
+                  >
+                    <div className="wizard-step-icon">
+                      {i < currentStep ? <Check size={18} /> : step.icon}
+                    </div>
+                    {!isMobile && <span className="wizard-step-label">{step.label}</span>}
                   </div>
-                  {!isMobile && <span className="wizard-step-label">{step.label}</span>}
-                  {i < STEPS.length - 1 && <div className="wizard-step-connector" />}
-                </div>
+                  {i < STEPS.length - 1 && <div className={`wizard-step-connector ${i < currentStep ? 'completed' : ''}`} />}
+                </React.Fragment>
               ))}
             </div>
 
@@ -304,7 +314,7 @@ export default function NewQuotePage() {
 
                 {processingError && (
                   <div className="error-banner clay-card">
-                    <span>Ã¢Å¡Â Ã¯Â¸Â </span>
+                    <span>⚠️</span>
                     <span>{processingError}</span>
                   </div>
                 )}
@@ -357,19 +367,19 @@ export default function NewQuotePage() {
                         >
                           <div className="flex items-center gap-2 text-warning font-bold">
                             <AlertCircle size={18} />
-                            {locale === 'en' ? 'AI needs more details' : 'L\'IA a besoin de plus de dÃƒÂ©tails'}
+                            {locale === 'en' ? 'AI needs more details' : 'L\'IA a besoin de plus de détails'}
                           </div>
                           <p className="text-sm text-text-primary/90">
                             {locale === 'en' 
                               ? 'Your description is missing some details (dimensions, quantities, client name). The quote might have missing items. Do you want to continue anyway?' 
-                              : 'Votre description manque de dÃƒÂ©tails (dimensions, quantitÃƒÂ©s, nom du client). Le devis risque d\'avoir des articles manquants. Voulez-vous continuer quand mÃƒÂªme ?'}
+                              : 'Votre description manque de détails (dimensions, quantités, nom du client). Le devis risque d\'avoir des articles manquants. Voulez-vous continuer quand même ?'}
                           </p>
                           <div className="flex gap-3 justify-end mt-2">
                             <button className="px-4 py-2 rounded-lg text-sm font-semibold hover:bg-surface-3 transition-colors" onClick={() => setShowLowQualityWarning(false)}>
                               {locale === 'en' ? 'Edit Prompt' : 'Modifier le prompt'}
                             </button>
                             <button className="px-4 py-2 rounded-lg text-sm font-bold bg-warning text-black shadow-lg hover:brightness-110 transition-all" onClick={() => handleSubmitDescription(true)}>
-                              {locale === 'en' ? 'Continue Anyway' : 'Continuer quand mÃƒÂªme'}
+                              {locale === 'en' ? 'Continue Anyway' : 'Continuer quand même'}
                             </button>
                           </div>
                         </div>
@@ -457,8 +467,8 @@ export default function NewQuotePage() {
                       <span>{section.sectionLabel}</span>
                     </div>
 
-                    {/* ─── DESKTOP: real table ─── */}
-                    <div className="neo-table-container mt-4 hidden md:block overflow-x-auto w-full">
+                    {/* ─── TABLE FOR ALL SCREENS ─── */}
+                    <div className="neo-table-container mt-4 overflow-x-auto w-full">
                       <table className="articles-table w-full text-left border-collapse">
                         <thead className="bg-surface-2/30">
                           <tr>
@@ -534,57 +544,7 @@ export default function NewQuotePage() {
                         </tbody>
                       </table>
                     </div>
-
-                    {/* ─── MOBILE: card-form layout ─── */}
-                    <div className="md:hidden flex flex-col gap-3 mt-3">
-                      {section.items.map((item, iIdx) => (
-                        <div key={item.id} className={`rounded-2xl border p-4 flex flex-col gap-3 shadow-sm ${item.isMissing ? 'border-danger/40 bg-danger/5' : (item.reference && !item.isMissing ? 'bg-green-50/30 border-green-200' : 'border-border bg-surface-1')}`}>
-                          {/* Row: Référence */}
-                          <div className="flex items-center justify-between gap-3">
-                            <span className="text-[11px] font-bold text-text-muted uppercase tracking-wider w-24 shrink-0">{t('catalogue', 'columns.reference')}</span>
-                            <input type="text" className={`neo-input flex-1 text-sm font-mono ${!item.reference ? 'border-warning border bg-warning/5' : ''}`} placeholder="Réf..." value={item.reference || ''} onChange={(e) => useQuoteStore.getState().updateItem(sIdx, iIdx, { reference: e.target.value })} />
-                          </div>
-                          {/* Row: Désignation */}
-                          <div className="flex flex-col gap-1">
-                            <span className="text-[11px] font-bold text-text-muted uppercase tracking-wider">{t('catalogue', 'columns.description')}</span>
-                            <input type="text" className={`neo-input w-full text-sm font-medium ${!item.description ? 'border-danger border-2 bg-danger/5' : ''}`} placeholder="Description..." value={item.description || ''} onChange={(e) => useQuoteStore.getState().updateItem(sIdx, iIdx, { description: e.target.value })} />
-                            {item.isMissing && (
-                              <div className="flex items-center gap-2 mt-1 flex-wrap">
-                                <span className="text-xs text-danger font-semibold bg-danger/10 px-2 py-0.5 rounded-full border border-danger/20">{t('quoteWizard', 'articleNotFound')}</span>
-                                <button className="text-xs text-accent font-semibold bg-accent/10 px-2 py-0.5 rounded-full border border-accent/20 hover:bg-accent/20 transition-colors" onClick={() => useQuoteStore.getState().updateItem(sIdx, iIdx, { isMissing: false })}>
-                                  {locale === 'en' ? 'Validate ✔' : 'Valider ✔'}
-                                </button>
-                              </div>
-                            )}
-                          </div>
-                          {/* Row: Qté + Unité */}
-                          <div className="flex items-center gap-4">
-                            <div className="flex items-center gap-2 flex-1">
-                              <span className="text-[11px] font-bold text-text-muted uppercase tracking-wider w-8 shrink-0">Qté</span>
-                              <input type="number" className={`neo-input flex-1 ${item.quantity === 0 || !item.quantity ? 'border-danger border-2 bg-danger/5 text-danger font-bold' : ''}`} value={item.quantity || ''} placeholder="0" min={0} step={0.1}
-                                onChange={(e) => useQuoteStore.getState().updateItem(sIdx, iIdx, { quantity: parseFloat(e.target.value) || 0 })} />
-                            </div>
-                            <div className="flex items-center gap-2 w-1/3">
-                              <span className="text-[11px] font-bold text-text-muted uppercase tracking-wider">Unité</span>
-                              <input type="text" className={`neo-input w-full text-sm ${!item.unit ? 'border-danger border-2 bg-danger/5' : ''}`} placeholder="Unité" value={item.unit || ''} onChange={(e) => useQuoteStore.getState().updateItem(sIdx, iIdx, { unit: e.target.value })} />
-                            </div>
-                          </div>
-                          {/* Row: Prix + Total */}
-                          <div className="flex items-center gap-4 pt-2 border-t border-border/50">
-                            <div className="flex items-center gap-2 flex-1">
-                              <span className="text-[11px] font-bold text-text-muted uppercase tracking-wider shrink-0">P.U. HT</span>
-                              <input type="number" className={`neo-input flex-1 ${!item.unitPrice ? 'border-danger border-2 bg-danger/5' : ''}`} placeholder="CHF" value={item.unitPrice || ''} onChange={(e) => useQuoteStore.getState().updateItem(sIdx, iIdx, { unitPrice: parseFloat(e.target.value) || 0 })} />
-                            </div>
-                            <div className="flex items-center gap-2">
-                              <span className="text-[11px] font-bold text-text-muted uppercase tracking-wider shrink-0">Total</span>
-                              <strong className="text-accent font-bold text-base">
-                                {item.lineTotal ? formatAmount(item.lineTotal) : (item.unitPrice && item.quantity ? formatAmount(item.unitPrice * item.quantity) : '—')}
-                              </strong>
-                            </div>
-                          </div>
-                        </div>
-                      ))}
-                    </div>
+                    {/* Mobile card layout removed entirely per user request (wants real tables on mobile) */}
                   </div>
                 ))}
  
@@ -629,7 +589,7 @@ export default function NewQuotePage() {
                 <div className="financial-grid grid grid-cols-1 lg:grid-cols-2 gap-8 items-start max-w-5xl mx-auto">
                   {/* Left: Adjustable parameters */}
                   <div className="financial-params bg-surface-2/40 backdrop-blur-xl border border-white/5 rounded-[2rem] p-8 shadow-[inset_0_1px_1px_rgba(255,255,255,0.05),_0_20px_40px_rgba(0,0,0,0.4)] flex flex-col gap-6">
-                    <h3 className="text-xl font-semibold mb-2">{t('quoteWizard', 'parameters') || 'ParamÃƒÂ¨tres'}</h3>
+                    <h3 className="text-xl font-semibold mb-2">{t('quoteWizard', 'parameters') || 'Paramètres'}</h3>
 
                     <div className="param-group flex flex-col gap-2">
                       <label className="text-sm font-medium text-text-muted">{t('quoteWizard', 'canton') || 'Canton'}</label>
@@ -638,9 +598,9 @@ export default function NewQuotePage() {
                         value={quote.canton}
                         onChange={(e) => {
                           const cantonRates: Record<string, number> = {
-                            'GenÃƒÂ¨ve': 120, 'Vaud': 120, 'Valais': 120,
-                            'Fribourg': 120, 'NeuchÃƒÂ¢tel': 120, 'Jura': 120,
-                            'Berne': 120, 'ZÃƒÂ¼rich': 120, 'BÃƒÂ¢le': 120, 'Lucerne': 120,
+                            'Genève': 120, 'Vaud': 120, 'Valais': 120,
+                            'Fribourg': 120, 'Neuchâtel': 120, 'Jura': 120,
+                            'Berne': 120, 'Zürich': 120, 'Bâle': 120, 'Lucerne': 120,
                           };
                           const newRate = cantonRates[e.target.value] || 120;
                           setQuote({
@@ -653,7 +613,7 @@ export default function NewQuotePage() {
                           useQuoteStore.getState().recalculateFinancials();
                         }}
                       >
-                        {Object.keys({ 'GenÃƒÂ¨ve': 120, 'Vaud': 120, 'Valais': 120, 'Fribourg': 120, 'NeuchÃƒÂ¢tel': 120, 'Jura': 120, 'Berne': 120, 'ZÃƒÂ¼rich': 120, 'BÃƒÂ¢le': 120, 'Lucerne': 120 }).map(c => (
+                        {Object.keys({ 'Genève': 120, 'Vaud': 120, 'Valais': 120, 'Fribourg': 120, 'Neuchâtel': 120, 'Jura': 120, 'Berne': 120, 'Zürich': 120, 'Bâle': 120, 'Lucerne': 120 }).map(c => (
                             <option key={c} value={c}>{c}</option>
                           ))}
                       </select>
@@ -700,7 +660,7 @@ export default function NewQuotePage() {
                     </div>
 
                     <div className="param-group flex flex-col gap-2">
-                      <label className="text-sm font-medium text-text-muted">{t('quoteWizard', 'materialsMarginPct') || 'Marge matÃƒÂ©riaux (%)'}</label>
+                      <label className="text-sm font-medium text-text-muted">{t('quoteWizard', 'materialsMarginPct') || 'Marge matériaux (%)'}</label>
                       <input
                         type="number"
                         className="clay-input"
@@ -720,7 +680,7 @@ export default function NewQuotePage() {
                     </div>
 
                     <div className="param-group flex flex-col gap-2">
-                      <label className="text-sm font-medium text-text-muted">{t('quoteWizard', 'travelFee') || 'Frais de dÃƒÂ©placement (CHF)'}</label>
+                      <label className="text-sm font-medium text-text-muted">{t('quoteWizard', 'travelFee') || 'Frais de déplacement (CHF)'}</label>
                       <input
                         type="number"
                         className="clay-input"
@@ -752,7 +712,7 @@ export default function NewQuotePage() {
                         <span>{formatCHF(quote.financials.materialsMargin)}</span>
                       </div>
                       <div className="summary-line">
-                        <span>{t('quoteWizard', 'labour')} ({quote.financials.labourHours}h Ãƒâ€” {formatAmount(quote.financials.labourRate)}/h)</span>
+                        <span>{t('quoteWizard', 'labour')} ({quote.financials.labourHours}h à {formatAmount(quote.financials.labourRate)}/h)</span>
                         <span>{formatCHF(quote.financials.labourTotal)}</span>
                       </div>
                       <div className="summary-line">
@@ -801,14 +761,6 @@ export default function NewQuotePage() {
                     {t('quoteWizard', 'backToArticles')}
                   </Button>
                   <div className="flex-1 flex justify-end items-center gap-4">
-                    <Button 
-                      variant="secondary" 
-                      onClick={() => setIsPdfPreviewOpen(true)} 
-                      iconLeft={<Eye size={16} />}
-                      className="print:hidden hidden md:flex"
-                    >
-                      {t('quoteWizard', 'previewPdf') || 'Aperçu PDF'}
-                    </Button>
                     <Button 
                       variant="primary" 
                       onClick={handleSilentDownload} 
@@ -859,11 +811,6 @@ export default function NewQuotePage() {
         </div>
       </main>
       <MobileBottomNav />
-      <QuotePDFPreview 
-        isOpen={isPdfPreviewOpen} 
-        onClose={() => setIsPdfPreviewOpen(false)} 
-        quote={quote} 
-      />
         <div 
           style={{ position: 'fixed', left: '-9999px', top: '-9999px', opacity: 0, pointerEvents: 'none' }}
           className="print:hidden"

@@ -54,8 +54,19 @@
   color: var(--color-text-muted);
 }
 
-.wizard-step-connector { width: 40px; height: 2px; background: var(--color-border); margin: 0 var(--space-2); }
-.wizard-step.completed + .wizard-step .wizard-step-connector, .wizard-step.completed ~ .wizard-step-connector { background: var(--color-success); }
+.wizard-step-connector {
+  flex: 1;
+  max-width: 80px;
+  height: 2px;
+  background: var(--color-border);
+  margin: 0 var(--space-4);
+  transition: background-color 500ms ease;
+}
+
+.wizard-step-connector.completed {
+  background: var(--color-success);
+}
+
 .wizard-step.active .wizard-step-label {
   color: var(--color-accent);
   font-weight: 600;
@@ -65,21 +76,8 @@
   color: var(--color-success);
 }
 
-.wizard-step-connector {
-  width: 40px;
-  height: 2px;
-  background: var(--color-border);
-  margin: 0 var(--space-2);
-  transition: background-color 500ms ease;
-}
-
-.wizard-step.completed + .wizard-step .wizard-step-connector,
-.wizard-step.completed ~ .wizard-step-connector {
-  background: var(--color-success);
-}
-
 @media (max-width: 640px) {
-  .wizard-step-connector { width: 20px; }
+  .wizard-step-connector { max-width: 30px; margin: 0 var(--space-2); }
   .wizard-step-icon { width: 32px; height: 32px; font-size: 12px; }
 }
 

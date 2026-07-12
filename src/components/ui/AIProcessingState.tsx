@@ -29,9 +29,9 @@ export function AIProcessingState() {
   );
 
   return (
-    <div className="flex flex-col items-center justify-center min-h-[50vh] gap-12 py-10 px-4 w-full max-w-5xl mx-auto">
+    <div className="flex flex-col items-center justify-center min-h-[60vh] md:min-h-[70vh] gap-16 py-10 px-4 w-full max-w-5xl mx-auto">
       {/* Center Typewriter */}
-      <div className="flex flex-col items-center justify-center scale-[2.75] md:scale-[3.5] mt-16 mb-12">
+      <div className="flex flex-col items-center justify-center scale-[2.75] md:scale-[3.5]">
         <TypewriterAnimation />
       </div>
 
@@ -40,7 +40,7 @@ export function AIProcessingState() {
         initial={{ opacity: 0, y: 10 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ delay: 0.5, duration: 1 }}
-        className="flex flex-col items-center justify-center relative group mt-8"
+        className="flex flex-col items-center justify-center relative group"
       >
         <div className="absolute inset-0 bg-accent/20 blur-xl rounded-full scale-150 opacity-50 group-hover:opacity-100 transition-opacity duration-700" style={{ background: 'var(--color-accent-muted)' }} />
         <div className="relative px-6 py-2 rounded-full border border-border/50 bg-surface/80 backdrop-blur-sm shadow-sm flex items-center gap-3">

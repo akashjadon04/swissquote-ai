@@ -9,8 +9,9 @@
 
 .app-layout {
   display: flex;
-  min-height: 100dvh;
+  height: 100dvh;
   background: var(--color-bg);
+  overflow: hidden;
 }
 
 .app-main {
@@ -18,6 +19,9 @@
   min-width: 0;
   display: flex;
   flex-direction: column;
+  overflow-y: auto;
+  overscroll-behavior-y: none;
+  -webkit-overflow-scrolling: touch;
 }
 
 .page-content {
@@ -415,8 +419,16 @@
     left: 0;
     width: 280px;
     height: 100dvh;
-    z-index: var(--z-modal);
+    z-index: 9999;
     box-shadow: 0 0 40px rgba(0, 0, 0, 0.2);
+  }
+  
+  .sidebar-overlay {
+    position: fixed;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.4);
+    backdrop-filter: blur(4px);
+    z-index: 9998;
   }
 }
 

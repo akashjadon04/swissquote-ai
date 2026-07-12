@@ -22,11 +22,15 @@ html {
   text-rendering: optimizeLegibility;
   scroll-behavior: smooth;
   hanging-punctuation: first last;
+  overscroll-behavior: none;
 }
 
 body {
   line-height: 1.6;
-  min-height: 100dvh;
+  height: 100dvh;
+  max-height: 100dvh;
+  overflow: hidden;
+  overscroll-behavior: none;
 }
 
 img,
