@@ -23,6 +23,8 @@ html {
   scroll-behavior: smooth;
   hanging-punctuation: first last;
   overscroll-behavior: none;
+  overflow-x: hidden;
+  max-width: 100vw;
 }
 
 body {
@@ -31,6 +33,8 @@ body {
   max-height: 100dvh;
   overflow: hidden;
   overscroll-behavior: none;
+  overflow-x: hidden;
+  max-width: 100vw;
 }
 
 img,

@@ -29,7 +29,7 @@ export function AIProcessingState() {
   );
 
   return (
-    <div className="flex flex-col items-center justify-center min-h-[60vh] md:min-h-[70vh] gap-16 py-10 px-4 w-full max-w-5xl mx-auto">
+    <div className="flex flex-col items-center justify-center flex-1 h-full min-h-full gap-16 py-10 px-4 w-full max-w-5xl mx-auto mt-20">
       {/* Center Typewriter */}
       <div className="flex flex-col items-center justify-center scale-[2.75] md:scale-[3.5]">
         <TypewriterAnimation />
@@ -43,7 +43,7 @@ export function AIProcessingState() {
         className="flex flex-col items-center justify-center relative group"
       >
         <div className="absolute inset-0 bg-accent/20 blur-xl rounded-full scale-150 opacity-50 group-hover:opacity-100 transition-opacity duration-700" style={{ background: 'var(--color-accent-muted)' }} />
-        <div className="relative px-6 py-2 rounded-full border border-border/50 bg-surface/80 backdrop-blur-sm shadow-sm flex items-center gap-3">
+        <div className="relative px-6 py-2 rounded-full border border-border/50 bg-surface/80 backdrop-blur-sm shadow-sm flex items-center gap-3 whitespace-nowrap">
           <motion.div
             animate={{ rotate: [0, 15, -15, 0] }}
             transition={{ duration: 2, repeat: Infinity, ease: "easeInOut" }}
