@@ -1,18 +1,18 @@
-'use client';
+﻿'use client';
 
 import React, { useState, useEffect, useCallback, useMemo, useRef } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { PenTool, Bot, ClipboardCheck, DollarSign, FileText, AlertCircle, ArrowLeft, ArrowRight, Download, Loader2, Eye } from 'lucide-react';
 import { Sidebar, MobileBottomNav, TopBar } from '@/components/layout/Sidebar';
 import { useAppStore, useQuoteStore } from '@/store';
-import { AIProcessingState, Button, AnimatedSaveButton, QuotePDFPreview, QuoteHistoryLog, PremiumPDFTemplate } from '@/components/ui';
+import { AIProcessingState, Button, AnimatedSaveButton, QuotePDFPreview, PremiumPDFTemplate } from '@/components/ui';
 import type { AIExtractionResult, MatchResult, CatalogueArticle, Quote } from '@/types/database.types';
 import { formatAmount, formatCHF } from '@/lib/financial';
 import { useTranslation } from '@/lib/i18n';
 
-// â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
+// Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬
 // Wizard Steps
-// â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
+// Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬
 
 export default function NewQuotePage() {
   const { setIsMobile, isMobile } = useAppStore();
@@ -64,7 +64,7 @@ export default function NewQuotePage() {
     score += Math.min(40, (len / 150) * 40);
     const numbersMatch = description.match(/\d+/g);
     if (numbersMatch) score += Math.min(20, numbersMatch.length * 5);
-    if (/(client|m\.|mme\.|rue|av\.|avenue|route|chemin|cp|ch-|genÃ¨ve|lausanne)/i.test(description)) score += 20;
+    if (/(client|m\.|mme\.|rue|av\.|avenue|route|chemin|cp|ch-|genÃƒÂ¨ve|lausanne)/i.test(description)) score += 20;
     if (/(tuyau|inox|cuivre|sertir|coude|manchon|vanne|robinet|chaufferie|vidange|fuite)/i.test(description)) score += 20;
     return Math.min(100, Math.round(score));
   }, [description]);
@@ -86,9 +86,9 @@ export default function NewQuotePage() {
     resetQuote();
   }, [resetQuote]);
 
-  // â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
+  // Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬
   // Step 1: Submit Description to AI
-  // â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
+  // Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬
 
   const handleSubmitDescription = useCallback(async (force = false) => {
     if (!description.trim() || description.trim().length < 10) return;
@@ -133,15 +133,15 @@ export default function NewQuotePage() {
 
       // Labour rate by canton
       const LABOUR_RATES: Record<string, number> = {
-        'GenÃ¨ve': 120, 'Vaud': 120, 'Valais': 120, 'Fribourg': 120,
-        'NeuchÃ¢tel': 120, 'Jura': 120, 'Berne': 120, 'ZÃ¼rich': 120,
-        'BÃ¢le': 120, 'Lucerne': 120,
+        'GenÃƒÂ¨ve': 120, 'Vaud': 120, 'Valais': 120, 'Fribourg': 120,
+        'NeuchÃƒÂ¢tel': 120, 'Jura': 120, 'Berne': 120, 'ZÃƒÂ¼rich': 120,
+        'BÃƒÂ¢le': 120, 'Lucerne': 120,
       };
-      const canton = quote.canton || 'GenÃ¨ve';
+      const canton = quote.canton || 'GenÃƒÂ¨ve';
       const labourRate = LABOUR_RATES[canton] || 120;
       const interventionType = extraction.intervention_type;
       // Use server-calculated labour hours (based on actual items + complexity)
-      // NEVER use hardcoded hours â€” null quantities = 0 hours (user must fill in)
+      // NEVER use hardcoded hours Ã¢â‚¬â€ null quantities = 0 hours (user must fill in)
       const labourHours = typeof calculatedLabourHours === 'number' ? calculatedLabourHours : 0;
       const marginPct = 15;
       const vatRate = 0.081;
@@ -162,7 +162,7 @@ export default function NewQuotePage() {
               (m: { aiArticle: { label: string } }) => m.aiArticle.label === article.label
             );
 
-            // RULE: Never estimate. null quantity â†’ 0 so user is forced to fill it in.
+            // RULE: Never estimate. null quantity Ã¢â€ â€™ 0 so user is forced to fill it in.
             const safeQty = article.quantity === null || article.quantity === undefined ? 0 : article.quantity;
 
             if (matched) {
@@ -182,7 +182,7 @@ export default function NewQuotePage() {
                 aiLabel: article.label,
                 aiConfidence: matched.matchConfidence,
                 isMissing: false,
-                is_estimate: !!(article as any).is_estimate,
+                is_estimate: !!article.is_estimate,
                 isManuallyAdded: false,
                 matchedTextStart: null,
                 matchedTextEnd: null,
@@ -190,7 +190,7 @@ export default function NewQuotePage() {
               };
             }
 
-            // No catalogue match â†’ flag as missing. No price, no reference.
+            // No catalogue match Ã¢â€ â€™ flag as missing. No price, no reference.
             return {
               id: `item-${sIdx}-${aIdx}`,
               reference: null,
@@ -205,7 +205,7 @@ export default function NewQuotePage() {
               aiLabel: article.label,
               aiConfidence: article.confidence,
               isMissing: true,
-              is_estimate: !!(article as any).is_estimate,
+              is_estimate: !!article.is_estimate,
               isManuallyAdded: false,
               matchedTextStart: null,
               matchedTextEnd: null,
@@ -311,7 +311,7 @@ export default function NewQuotePage() {
 
                 {processingError && (
                   <div className="error-banner clay-card">
-                    <span>âš ï¸</span>
+                    <span>Ã¢Å¡Â Ã¯Â¸Â</span>
                     <span>{processingError}</span>
                   </div>
                 )}
@@ -321,7 +321,7 @@ export default function NewQuotePage() {
                     className="clay-input description-textarea"
                     value={description}
                     onChange={(e) => setDescription(e.target.value)}
-                    placeholder="Ex: Coupure d'eau et vidange des installations. DÃ©montage, dÃ©pose et Ã©vacuation de la conduite existante depuis la chaufferie jusqu'au sous-sol..."
+                    placeholder="Ex: Coupure d'eau et vidange des installations. DÃƒÂ©montage, dÃƒÂ©pose et ÃƒÂ©vacuation de la conduite existante depuis la chaufferie jusqu'au sous-sol..."
                     rows={8}
                   />
                   <div className="description-footer">
@@ -346,7 +346,7 @@ export default function NewQuotePage() {
                     <div className="mt-4 flex flex-col gap-2">
                       <div className="flex justify-between items-center text-xs font-semibold uppercase tracking-wider">
                         <span className={promptScore >= 80 ? 'text-success' : 'text-warning'}>
-                          {locale === 'en' ? 'Prompt Quality' : 'QualitÃ© du prompt'}
+                          {locale === 'en' ? 'Prompt Quality' : 'QualitÃƒÂ© du prompt'}
                         </span>
                         <span className={promptScore >= 80 ? 'text-success' : 'text-warning'}>{promptScore}%</span>
                       </div>
@@ -370,19 +370,19 @@ export default function NewQuotePage() {
                         >
                           <div className="flex items-center gap-2 text-warning font-bold">
                             <AlertCircle size={18} />
-                            {locale === 'en' ? 'AI needs more details' : 'L\'IA a besoin de plus de dÃ©tails'}
+                            {locale === 'en' ? 'AI needs more details' : 'L\'IA a besoin de plus de dÃƒÂ©tails'}
                           </div>
                           <p className="text-sm text-text-primary/90">
                             {locale === 'en' 
                               ? 'Your description is missing some details (dimensions, quantities, client name). The quote might have missing items. Do you want to continue anyway?' 
-                              : 'Votre description manque de dÃ©tails (dimensions, quantitÃ©s, nom du client). Le devis risque d\'avoir des articles manquants. Voulez-vous continuer quand mÃªme ?'}
+                              : 'Votre description manque de dÃƒÂ©tails (dimensions, quantitÃƒÂ©s, nom du client). Le devis risque d\'avoir des articles manquants. Voulez-vous continuer quand mÃƒÂªme ?'}
                           </p>
                           <div className="flex gap-3 justify-end mt-2">
                             <button className="px-4 py-2 rounded-lg text-sm font-semibold hover:bg-surface-3 transition-colors" onClick={() => setShowLowQualityWarning(false)}>
                               {locale === 'en' ? 'Edit Prompt' : 'Modifier le prompt'}
                             </button>
                             <button className="px-4 py-2 rounded-lg text-sm font-bold bg-warning text-black shadow-lg hover:brightness-110 transition-all" onClick={() => handleSubmitDescription(true)}>
-                              {locale === 'en' ? 'Continue Anyway' : 'Continuer quand mÃªme'}
+                              {locale === 'en' ? 'Continue Anyway' : 'Continuer quand mÃƒÂªme'}
                             </button>
                           </div>
                         </motion.div>
@@ -395,9 +395,9 @@ export default function NewQuotePage() {
                   <h3>{t('quoteWizard', 'orChooseTemplate')}</h3>
                   <div className="template-grid">
                     {[
-                      { label: t('quoteWizard', 'templates.replacement.title'), text: "Client: Jean Dupont, 1000 Lausanne. Intervention prÃ©vue le 15 aoÃ»t. Coupure d'eau et vidange des installations. DÃ©montage, dÃ©pose et Ã©vacuation de la conduite existante depuis la chaufferie jusqu'au sous-sol au droit de la cave nÂ°1. Reprise sur la conduite d'eau chaude dans la chaufferie. Fourniture et pose de: 15m de Tuyau acier inox 1:4521 Optipress Ã˜ 54 mm, 25m de Tuyau acier inox 1:4521 Optipress Ã˜ 28 mm, 12 pces de Coude Ã  sertir 90Â° inox, 8 pces de Manchon coulissant Ã  sertir inox, 40 pces de Collier de fixation isophonique pour tube, et 30m d'Isolation PIR + finition PVC. Remise en pression, purge et contrÃ´le d'Ã©tanchÃ©itÃ©." },
-                      { label: t('quoteWizard', 'templates.installation.title'), text: "Client: Marie Curie, 1201 GenÃ¨ve. Installation salle de bain: Fourniture et pose de robinetterie neuve. 2 pces de Vanne Ã  bille, 5m de Tuyau acier inox 1:4521 Optipress Ã˜ 15 mm, 4 pces de Coude Ã  sertir 90Â° inox, 1 pce de Clapet anti-retour, et 10 pces de Raccords de raccordement. Y compris raccordements, joints, flexibles et mise en eau." },
-                      { label: t('quoteWizard', 'templates.urgent.title'), text: "Client: HÃ´pital Cantonal, 1700 Fribourg. DÃ©pannage urgent: Fuite sur colonne montante d'eau froide au 3Ã¨me Ã©tage. Remplacement de la section endommagÃ©e comprenant: 3m de Tuyau acier inox 1:4521 Optipress Ã˜ 35 mm, 2 pces de PiÃ¨ce de transition Ã  sertir inox filetÃ©, 3 pces de Manchon coulissant Ã  sertir inox, 5 pces de Collier de fixation isophonique pour tube, et 1 pce de Purgeur automatique. Remise en pression et contrÃ´le." },
+                      { label: t('quoteWizard', 'templates.replacement.title'), text: "Client: Jean Dupont, 1000 Lausanne. Intervention prÃƒÂ©vue le 15 aoÃƒÂ»t. Coupure d'eau et vidange des installations. DÃƒÂ©montage, dÃƒÂ©pose et ÃƒÂ©vacuation de la conduite existante depuis la chaufferie jusqu'au sous-sol au droit de la cave nÃ‚Â°1. Reprise sur la conduite d'eau chaude dans la chaufferie. Fourniture et pose de: 15m de Tuyau acier inox 1:4521 Optipress ÃƒËœ 54 mm, 25m de Tuyau acier inox 1:4521 Optipress ÃƒËœ 28 mm, 12 pces de Coude ÃƒÂ  sertir 90Ã‚Â° inox, 8 pces de Manchon coulissant ÃƒÂ  sertir inox, 40 pces de Collier de fixation isophonique pour tube, et 30m d'Isolation PIR + finition PVC. Remise en pression, purge et contrÃƒÂ´le d'ÃƒÂ©tanchÃƒÂ©itÃƒÂ©." },
+                      { label: t('quoteWizard', 'templates.installation.title'), text: "Client: Marie Curie, 1201 GenÃƒÂ¨ve. Installation salle de bain: Fourniture et pose de robinetterie neuve. 2 pces de Vanne ÃƒÂ  bille, 5m de Tuyau acier inox 1:4521 Optipress ÃƒËœ 15 mm, 4 pces de Coude ÃƒÂ  sertir 90Ã‚Â° inox, 1 pce de Clapet anti-retour, et 10 pces de Raccords de raccordement. Y compris raccordements, joints, flexibles et mise en eau." },
+                      { label: t('quoteWizard', 'templates.urgent.title'), text: "Client: HÃƒÂ´pital Cantonal, 1700 Fribourg. DÃƒÂ©pannage urgent: Fuite sur colonne montante d'eau froide au 3ÃƒÂ¨me ÃƒÂ©tage. Remplacement de la section endommagÃƒÂ©e comprenant: 3m de Tuyau acier inox 1:4521 Optipress ÃƒËœ 35 mm, 2 pces de PiÃƒÂ¨ce de transition ÃƒÂ  sertir inox filetÃƒÂ©, 3 pces de Manchon coulissant ÃƒÂ  sertir inox, 5 pces de Collier de fixation isophonique pour tube, et 1 pce de Purgeur automatique. Remise en pression et contrÃƒÂ´le." },
                     ].map((tpl) => (
                       <button
                         key={tpl.label}
@@ -440,7 +440,7 @@ export default function NewQuotePage() {
                   <div className="review-meta">
                     {extraction && (
                       <span className="provider-badge">
-                        {provider === 'gemini' ? 'âœ¨ Powered by Astra AI' : 'ðŸŒ OpenRouter'}
+                        {provider === 'gemini' ? 'Ã¢Å“Â¨ Powered by Astra AI' : 'Ã°Å¸Å’Â OpenRouter'}
                       </span>
                     )}
                     {extraction && (
@@ -464,7 +464,7 @@ export default function NewQuotePage() {
                 {/* Technical Summary */}
                 {extraction?.technical_summary && (
                   <div className="tech-summary bg-surface-2/40 backdrop-blur-xl border border-white/5 shadow-[inset_0_1px_1px_rgba(255,255,255,0.05),_0_20px_40px_rgba(0,0,0,0.4)] rounded-3xl p-6 mb-8 mt-6">
-                    <h4 className="flex items-center gap-2 mb-3 text-accent font-semibold"><FileText size={18} /> {t('quoteWizard', 'technicalSummary') || 'RÃ©sumÃ© technique'}</h4>
+                    <h4 className="flex items-center gap-2 mb-3 text-accent font-semibold"><FileText size={18} /> {t('quoteWizard', 'technicalSummary') || 'RÃƒÂ©sumÃƒÂ© technique'}</h4>
                     <p className="text-text-primary/90 leading-relaxed">{extraction.technical_summary}</p>
                   </div>
                 )}
@@ -477,7 +477,7 @@ export default function NewQuotePage() {
                       <span>{section.sectionLabel}</span>
                     </div>
 
-                    {/* â”€â”€ DESKTOP: real table â”€â”€ */}
+                    {/* Ã¢â€â‚¬Ã¢â€â‚¬ DESKTOP: real table Ã¢â€â‚¬Ã¢â€â‚¬ */}
                     <div className="neo-table-container mt-4 hidden md:block overflow-x-auto w-full">
                       <table className="articles-table w-full text-left border-collapse">
                         <thead className="bg-surface-2/30">
@@ -494,7 +494,7 @@ export default function NewQuotePage() {
                           {section.items.map((item, iIdx) => (
                             <tr key={item.id} className={`group hover:bg-surface-2 transition-colors ${item.isMissing ? 'bg-danger/5' : (item.is_estimate ? 'bg-orange-50/30 border-orange-200' : (item.reference ? 'bg-green-50/30 border-green-200' : ''))}`}>
                               <td className="col-ref p-4">
-                                <input type="text" className={`neo-input w-24 text-sm font-mono ${!item.reference ? 'border-warning border bg-warning/5' : ''}`} placeholder="RÃ©f..." value={item.reference || ''} onChange={(e) => useQuoteStore.getState().updateItem(sIdx, iIdx, { reference: e.target.value })} />
+                                <input type="text" className={`neo-input w-24 text-sm font-mono ${!item.reference ? 'border-warning border bg-warning/5' : ''}`} placeholder="RÃƒÂ©f..." value={item.reference || ''} onChange={(e) => useQuoteStore.getState().updateItem(sIdx, iIdx, { reference: e.target.value })} />
                               </td>
                               <td className="col-desc p-4">
                                 <input type="text" className={`neo-input w-full font-medium ${!item.description ? 'border-danger border-2 bg-danger/5' : ''}`} placeholder="Description..." value={item.description || ''} onChange={(e) => useQuoteStore.getState().updateItem(sIdx, iIdx, { description: e.target.value })} />
@@ -502,17 +502,17 @@ export default function NewQuotePage() {
                                   <div className="flex items-center gap-2 mt-1 flex-wrap">
                                     <span className="text-xs text-danger font-semibold bg-danger/10 px-2 py-0.5 rounded-full border border-danger/20">{t('quoteWizard', 'articleNotFound')}</span>
                                     <button className="text-xs text-accent font-semibold bg-accent/10 px-2 py-0.5 rounded-full border border-accent/20 hover:bg-accent/20 transition-colors" onClick={() => useQuoteStore.getState().updateItem(sIdx, iIdx, { isMissing: false })}>
-                                      {locale === 'en' ? 'Validate âœ“' : 'Valider âœ“'}
+                                      {locale === 'en' ? 'Validate Ã¢Å“â€œ' : 'Valider Ã¢Å“â€œ'}
                                     </button>
                                   </div>
                                 )}
                                 {item.is_estimate && (
                                   <div className="flex items-center gap-2 mt-1 flex-wrap">
                                     <span className="text-xs text-orange-600 font-semibold bg-orange-100 px-2 py-0.5 rounded-full border border-orange-200">
-                                      {locale === 'en' ? 'AI Estimate - Please Verify' : 'Estimation IA - Ã€ VÃ©rifier'}
+                                      {locale === 'en' ? 'AI Estimate - Please Verify' : 'Estimation IA - Ãƒâ‚¬ VÃƒÂ©rifier'}
                                     </span>
                                     <button className="text-xs text-accent font-semibold bg-accent/10 px-2 py-0.5 rounded-full border border-accent/20 hover:bg-accent/20 transition-colors" onClick={() => useQuoteStore.getState().updateItem(sIdx, iIdx, { is_estimate: false })}>
-                                      {locale === 'en' ? 'Validate âœ“' : 'Valider âœ“'}
+                                      {locale === 'en' ? 'Validate Ã¢Å“â€œ' : 'Valider Ã¢Å“â€œ'}
                                     </button>
                                   </div>
                                 )}
@@ -541,13 +541,13 @@ export default function NewQuotePage() {
                                   onChange={(e) => useQuoteStore.getState().updateItem(sIdx, iIdx, { quantity: parseFloat(e.target.value) || 0 })} />
                               </td>
                               <td className="col-unit p-4 text-sm">
-                                <input type="text" className={`neo-input w-20 text-sm ${!item.unit ? 'border-danger border-2 bg-danger/5' : ''}`} placeholder="UnitÃ©" value={item.unit || ''} onChange={(e) => useQuoteStore.getState().updateItem(sIdx, iIdx, { unit: e.target.value })} />
+                                <input type="text" className={`neo-input w-20 text-sm ${!item.unit ? 'border-danger border-2 bg-danger/5' : ''}`} placeholder="UnitÃƒÂ©" value={item.unit || ''} onChange={(e) => useQuoteStore.getState().updateItem(sIdx, iIdx, { unit: e.target.value })} />
                               </td>
                               <td className="col-price p-4">
                                 <input type="number" className={`neo-input w-24 ${!item.unitPrice ? 'border-danger border-2 bg-danger/5' : ''}`} placeholder="CHF" value={item.unitPrice || ''} onChange={(e) => useQuoteStore.getState().updateItem(sIdx, iIdx, { unitPrice: parseFloat(e.target.value) || 0 })} />
                               </td>
                               <td className="col-total p-4 font-bold text-accent">
-                                {item.lineTotal ? formatAmount(item.lineTotal) : (item.unitPrice && item.quantity ? formatAmount(item.unitPrice * item.quantity) : 'â€”')}
+                                {item.lineTotal ? formatAmount(item.lineTotal) : (item.unitPrice && item.quantity ? formatAmount(item.unitPrice * item.quantity) : 'Ã¢â‚¬â€')}
                               </td>
                             </tr>
                           ))}
@@ -555,16 +555,16 @@ export default function NewQuotePage() {
                       </table>
                     </div>
 
-                    {/* â”€â”€ MOBILE: card-form layout â”€â”€ */}
+                    {/* Ã¢â€â‚¬Ã¢â€â‚¬ MOBILE: card-form layout Ã¢â€â‚¬Ã¢â€â‚¬ */}
                     <div className="md:hidden flex flex-col gap-3 mt-3">
                       {section.items.map((item, iIdx) => (
                         <div key={item.id} className={`rounded-2xl border p-4 flex flex-col gap-3 shadow-sm ${item.isMissing ? 'border-danger/40 bg-danger/5' : (item.reference && !item.isMissing ? 'bg-green-50/30 border-green-200' : 'border-border bg-surface-1')}`}>
-                          {/* Row: RÃ©fÃ©rence */}
+                          {/* Row: RÃƒÂ©fÃƒÂ©rence */}
                           <div className="flex items-center justify-between gap-3">
                             <span className="text-[11px] font-bold text-text-muted uppercase tracking-wider w-24 shrink-0">{t('catalogue', 'columns.reference')}</span>
-                            <input type="text" className={`neo-input flex-1 text-sm font-mono ${!item.reference ? 'border-warning border bg-warning/5' : ''}`} placeholder="RÃ©f..." value={item.reference || ''} onChange={(e) => useQuoteStore.getState().updateItem(sIdx, iIdx, { reference: e.target.value })} />
+                            <input type="text" className={`neo-input flex-1 text-sm font-mono ${!item.reference ? 'border-warning border bg-warning/5' : ''}`} placeholder="RÃƒÂ©f..." value={item.reference || ''} onChange={(e) => useQuoteStore.getState().updateItem(sIdx, iIdx, { reference: e.target.value })} />
                           </div>
-                          {/* Row: DÃ©signation */}
+                          {/* Row: DÃƒÂ©signation */}
                           <div className="flex flex-col gap-1">
                             <span className="text-[11px] font-bold text-text-muted uppercase tracking-wider">{t('catalogue', 'columns.description')}</span>
                             <input type="text" className={`neo-input w-full text-sm font-medium ${!item.description ? 'border-danger border-2 bg-danger/5' : ''}`} placeholder="Description..." value={item.description || ''} onChange={(e) => useQuoteStore.getState().updateItem(sIdx, iIdx, { description: e.target.value })} />
@@ -572,21 +572,21 @@ export default function NewQuotePage() {
                               <div className="flex items-center gap-2 mt-1 flex-wrap">
                                 <span className="text-xs text-danger font-semibold bg-danger/10 px-2 py-0.5 rounded-full border border-danger/20">{t('quoteWizard', 'articleNotFound')}</span>
                                 <button className="text-xs text-accent font-semibold bg-accent/10 px-2 py-0.5 rounded-full border border-accent/20 hover:bg-accent/20 transition-colors" onClick={() => useQuoteStore.getState().updateItem(sIdx, iIdx, { isMissing: false })}>
-                                  {locale === 'en' ? 'Validate âœ“' : 'Valider âœ“'}
+                                  {locale === 'en' ? 'Validate Ã¢Å“â€œ' : 'Valider Ã¢Å“â€œ'}
                                 </button>
                               </div>
                             )}
                           </div>
-                          {/* Row: QtÃ© + UnitÃ© */}
+                          {/* Row: QtÃƒÂ© + UnitÃƒÂ© */}
                           <div className="flex items-center gap-4">
                             <div className="flex items-center gap-2 flex-1">
-                              <span className="text-[11px] font-bold text-text-muted uppercase tracking-wider w-8 shrink-0">QtÃ©</span>
+                              <span className="text-[11px] font-bold text-text-muted uppercase tracking-wider w-8 shrink-0">QtÃƒÂ©</span>
                               <input type="number" className={`neo-input flex-1 ${item.quantity === 0 || !item.quantity ? 'border-danger border-2 bg-danger/5 text-danger font-bold' : ''}`} value={item.quantity || ''} placeholder="0" min={0} step={0.1}
                                 onChange={(e) => useQuoteStore.getState().updateItem(sIdx, iIdx, { quantity: parseFloat(e.target.value) || 0 })} />
                             </div>
                             <div className="flex items-center gap-2 w-1/3">
-                              <span className="text-[11px] font-bold text-text-muted uppercase tracking-wider">UnitÃ©</span>
-                              <input type="text" className={`neo-input w-full text-sm ${!item.unit ? 'border-danger border-2 bg-danger/5' : ''}`} placeholder="UnitÃ©" value={item.unit || ''} onChange={(e) => useQuoteStore.getState().updateItem(sIdx, iIdx, { unit: e.target.value })} />
+                              <span className="text-[11px] font-bold text-text-muted uppercase tracking-wider">UnitÃƒÂ©</span>
+                              <input type="text" className={`neo-input w-full text-sm ${!item.unit ? 'border-danger border-2 bg-danger/5' : ''}`} placeholder="UnitÃƒÂ©" value={item.unit || ''} onChange={(e) => useQuoteStore.getState().updateItem(sIdx, iIdx, { unit: e.target.value })} />
                             </div>
                           </div>
                           {/* Row: Prix + Total */}
@@ -598,7 +598,7 @@ export default function NewQuotePage() {
                             <div className="flex items-center gap-2">
                               <span className="text-[11px] font-bold text-text-muted uppercase tracking-wider shrink-0">Total</span>
                               <strong className="text-accent font-bold text-base">
-                                {item.lineTotal ? formatAmount(item.lineTotal) : (item.unitPrice && item.quantity ? formatAmount(item.unitPrice * item.quantity) : 'â€”')}
+                                {item.lineTotal ? formatAmount(item.lineTotal) : (item.unitPrice && item.quantity ? formatAmount(item.unitPrice * item.quantity) : 'Ã¢â‚¬â€')}
                               </strong>
                             </div>
                           </div>
@@ -620,7 +620,7 @@ export default function NewQuotePage() {
                   <div className="flex flex-col items-end gap-2">
                     {hasUnresolvedItems && (
                       <span className="text-warning text-sm font-semibold bg-warning/10 px-3 py-1 rounded-full border border-warning/20">
-                        {locale === 'en' ? 'âš ï¸ Missing items will have 0 price' : 'âš ï¸ Les articles sans prix apparaÃ®tront vides'}
+                        {locale === 'en' ? 'Ã¢Å¡Â Ã¯Â¸Â Missing items will have 0 price' : 'Ã¢Å¡Â Ã¯Â¸Â Les articles sans prix apparaÃƒÂ®tront vides'}
                       </span>
                     )}
                     <Button
@@ -645,14 +645,14 @@ export default function NewQuotePage() {
                 className="wizard-panel"
               >
                 <div className="wizard-header text-center mb-10">
-                  <h2 className="text-3xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-accent to-accent-light mb-2">{t('quoteWizard', 'financialSummary') || 'RÃ©sumÃ© financier'}</h2>
-                  <p className="text-text-muted">{t('quoteWizard', 'financialSummaryDesc') || 'VÃ©rifiez et ajustez les paramÃ¨tres financiers du devis.'}</p>
+                  <h2 className="text-3xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-accent to-accent-light mb-2">{t('quoteWizard', 'financialSummary') || 'RÃƒÂ©sumÃƒÂ© financier'}</h2>
+                  <p className="text-text-muted">{t('quoteWizard', 'financialSummaryDesc') || 'VÃƒÂ©rifiez et ajustez les paramÃƒÂ¨tres financiers du devis.'}</p>
                 </div>
 
                 <div className="financial-grid grid grid-cols-1 lg:grid-cols-2 gap-8 items-start max-w-5xl mx-auto">
                   {/* Left: Adjustable parameters */}
                   <div className="financial-params bg-surface-2/40 backdrop-blur-xl border border-white/5 rounded-[2rem] p-8 shadow-[inset_0_1px_1px_rgba(255,255,255,0.05),_0_20px_40px_rgba(0,0,0,0.4)] flex flex-col gap-6">
-                    <h3 className="text-xl font-semibold mb-2">{t('quoteWizard', 'parameters') || 'ParamÃ¨tres'}</h3>
+                    <h3 className="text-xl font-semibold mb-2">{t('quoteWizard', 'parameters') || 'ParamÃƒÂ¨tres'}</h3>
 
                     <div className="param-group flex flex-col gap-2">
                       <label className="text-sm font-medium text-text-muted">{t('quoteWizard', 'canton') || 'Canton'}</label>
@@ -661,9 +661,9 @@ export default function NewQuotePage() {
                         value={quote.canton}
                         onChange={(e) => {
                           const cantonRates: Record<string, number> = {
-                            'GenÃ¨ve': 120, 'Vaud': 120, 'Valais': 120,
-                            'Fribourg': 120, 'NeuchÃ¢tel': 120, 'Jura': 120,
-                            'Berne': 120, 'ZÃ¼rich': 120, 'BÃ¢le': 120, 'Lucerne': 120,
+                            'GenÃƒÂ¨ve': 120, 'Vaud': 120, 'Valais': 120,
+                            'Fribourg': 120, 'NeuchÃƒÂ¢tel': 120, 'Jura': 120,
+                            'Berne': 120, 'ZÃƒÂ¼rich': 120, 'BÃƒÂ¢le': 120, 'Lucerne': 120,
                           };
                           const newRate = cantonRates[e.target.value] || 120;
                           setQuote({
@@ -676,7 +676,7 @@ export default function NewQuotePage() {
                           useQuoteStore.getState().recalculateFinancials();
                         }}
                       >
-                        {Object.keys({ 'GenÃ¨ve': 120, 'Vaud': 120, 'Valais': 120, 'Fribourg': 120, 'NeuchÃ¢tel': 120, 'Jura': 120, 'Berne': 120, 'ZÃ¼rich': 120, 'BÃ¢le': 120, 'Lucerne': 120 }).map(c => (
+                        {Object.keys({ 'GenÃƒÂ¨ve': 120, 'Vaud': 120, 'Valais': 120, 'Fribourg': 120, 'NeuchÃƒÂ¢tel': 120, 'Jura': 120, 'Berne': 120, 'ZÃƒÂ¼rich': 120, 'BÃƒÂ¢le': 120, 'Lucerne': 120 }).map(c => (
                             <option key={c} value={c}>{c}</option>
                           ))}
                       </select>
@@ -723,7 +723,7 @@ export default function NewQuotePage() {
                     </div>
 
                     <div className="param-group flex flex-col gap-2">
-                      <label className="text-sm font-medium text-text-muted">{t('quoteWizard', 'materialsMarginPct') || 'Marge matÃ©riaux (%)'}</label>
+                      <label className="text-sm font-medium text-text-muted">{t('quoteWizard', 'materialsMarginPct') || 'Marge matÃƒÂ©riaux (%)'}</label>
                       <input
                         type="number"
                         className="clay-input"
@@ -743,7 +743,7 @@ export default function NewQuotePage() {
                     </div>
 
                     <div className="param-group flex flex-col gap-2">
-                      <label className="text-sm font-medium text-text-muted">{t('quoteWizard', 'travelFee') || 'Frais de dÃ©placement (CHF)'}</label>
+                      <label className="text-sm font-medium text-text-muted">{t('quoteWizard', 'travelFee') || 'Frais de dÃƒÂ©placement (CHF)'}</label>
                       <input
                         type="number"
                         className="clay-input"
@@ -775,7 +775,7 @@ export default function NewQuotePage() {
                         <span>{formatCHF(quote.financials.materialsMargin)}</span>
                       </div>
                       <div className="summary-line">
-                        <span>{t('quoteWizard', 'labour')} ({quote.financials.labourHours}h Ã— {formatAmount(quote.financials.labourRate)}/h)</span>
+                        <span>{t('quoteWizard', 'labour')} ({quote.financials.labourHours}h Ãƒâ€” {formatAmount(quote.financials.labourRate)}/h)</span>
                         <span>{formatCHF(quote.financials.labourTotal)}</span>
                       </div>
                       <div className="summary-line">
@@ -830,7 +830,7 @@ export default function NewQuotePage() {
                       iconLeft={<Eye size={16} />}
                       className="print:hidden hidden md:flex"
                     >
-                      {t('quoteWizard', 'previewPdf') || 'AperÃ§u PDF'}
+                      {t('quoteWizard', 'previewPdf') || 'AperÃƒÂ§u PDF'}
                     </Button>
                     <Button 
                       variant="primary" 
@@ -839,7 +839,7 @@ export default function NewQuotePage() {
                       iconLeft={isSilentDownloading ? <Loader2 className="animate-spin" size={16}/> : <Download size={16} />}
                       className="print:hidden"
                     >
-                      {isSilentDownloading ? 'GÃ©nÃ©ration...' : t('quoteWizard', 'downloadPdf')}
+                      {isSilentDownloading ? 'GÃƒÂ©nÃƒÂ©ration...' : t('quoteWizard', 'downloadPdf')}
                     </Button>
                     <div className="flex items-center gap-3">
                       <span className="text-sm font-medium text-text-muted hidden md:inline">{t('quoteWizard', 'saveQuote')}</span>
@@ -896,5 +896,8 @@ export default function NewQuotePage() {
     </div>
   );
 }
+
+
+
 
 

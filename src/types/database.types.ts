@@ -1,33 +1,33 @@
-// ═══════════════════════════════════════════
-// AstraQuote (by Green AI Groupe) — Type Definitions
-// ═══════════════════════════════════════════
+﻿// â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•
+// AstraQuote (by Green AI Groupe) â€” Type Definitions
+// â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•
 
-// ─────────────────────────────────────────
+// â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
 // Enums & Constants
-// ─────────────────────────────────────────
+// â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
 
 export type QuoteStatus = 'draft' | 'review' | 'finalized' | 'missing_items' | 'sent' | 'accepted' | 'invoiced';
 
 export const QUOTE_STATUS_LABELS: Record<QuoteStatus, string> = {
   draft: 'Brouillon',
-  review: 'En révision',
-  finalized: 'Finalisé',
+  review: 'En rÃ©vision',
+  finalized: 'FinalisÃ©',
   missing_items: 'Manque articles',
-  sent: 'Envoyé',
-  accepted: 'Accepté',
-  invoiced: 'Facturé',
+  sent: 'EnvoyÃ©',
+  accepted: 'AcceptÃ©',
+  invoiced: 'FacturÃ©',
 };
 
 export const CANTONS: Record<string, number> = {
-  'Genève': 145,
+  'GenÃ¨ve': 145,
   'Vaud': 138,
   'Valais': 130,
   'Fribourg': 132,
-  'Neuchâtel': 135,
+  'NeuchÃ¢tel': 135,
   'Jura': 128,
   'Berne': 140,
-  'Zürich': 148,
-  'Bâle': 142,
+  'ZÃ¼rich': 148,
+  'BÃ¢le': 142,
   'Lucerne': 136,
 };
 
@@ -41,9 +41,9 @@ export const SUPPLIER_NAMES: Record<SupplierCode, string> = {
   GEB: 'Geberit',
 };
 
-// ─────────────────────────────────────────
+// â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
 // Database Models
-// ─────────────────────────────────────────
+// â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
 
 export interface Supplier {
   id: string;
@@ -241,9 +241,9 @@ export interface AuditLog {
   created_at: string;
 }
 
-// ─────────────────────────────────────────
+// â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
 // AI Extraction Types
-// ─────────────────────────────────────────
+// â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
 
 export interface AIArticle {
   label: string;
@@ -253,6 +253,7 @@ export interface AIArticle {
   unit: string | null;
   confidence: number;
   needs_site_measurement?: boolean;
+  is_estimate?: boolean;
   attributes?: {
     diameter_mm?: number | null;
     capacity_l?: number | null;
@@ -281,9 +282,9 @@ export interface AIExtractionResult {
   labour_complexity?: 'standard' | 'complexe' | 'tres_complexe';
 }
 
-// ─────────────────────────────────────────
+// â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
 // Catalogue Matching Types
-// ─────────────────────────────────────────
+// â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
 
 export interface MatchedArticle {
   aiArticle: AIArticle;
@@ -305,9 +306,9 @@ export interface MatchResult {
   matchRate: number;
 }
 
-// ─────────────────────────────────────────
+// â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
 // Financial Types
-// ─────────────────────────────────────────
+// â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
 
 export interface FinancialSummary {
   materialsSubtotal: number;
@@ -332,9 +333,9 @@ export interface QuoteConfig {
   canton: string;
 }
 
-// ─────────────────────────────────────────
+// â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
 // API Request/Response Types
-// ─────────────────────────────────────────
+// â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
 
 export interface AIExtractRequest {
   description: string;
@@ -386,3 +387,4 @@ export interface PaginatedResponse<T> {
   pageSize: number;
   totalPages: number;
 }
+
