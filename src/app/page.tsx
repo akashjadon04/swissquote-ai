@@ -73,10 +73,21 @@ export default function DashboardPage() {
       <Sidebar />
       <main className="app-main">
         <TopBar title={t('sidebar', 'dashboard')} />
-        <DashboardMetricsTicker />
         <div className="page-content">
-          <div style={{ height: '300px', position: 'relative', marginBottom: '2rem' }}>
-            <FlowingMenu items={menuItems} />
+          <div className="mb-8 p-6 clay-card rounded-2xl flex justify-between items-center bg-gradient-to-r from-surface-1 to-surface-2 shadow-sm border border-white/5">
+            <div>
+              <h1 className="text-3xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-text-primary to-text-secondary mb-1">
+                {t('dashboard', 'greeting') || 'Bonjour'}, Alec
+              </h1>
+              <p className="text-text-muted text-sm">
+                Voici un aperçu de vos devis et performances récentes.
+              </p>
+            </div>
+            <div className="hidden sm:block">
+              <div className="w-12 h-12 rounded-xl bg-accent/10 flex items-center justify-center text-accent ring-1 ring-accent/30 shadow-[inset_0_1px_3px_rgba(255,255,255,0.2)]">
+                <LayoutGrid size={24} />
+              </div>
+            </div>
           </div>
           
           {/* Stats Bar */}
@@ -86,8 +97,6 @@ export default function DashboardPage() {
             <StatCard label={"Pipeline (En cours)"} value={String(stats.total - stats.draft - stats.finalized)} icon={<Edit2 size={20} />} delay={0.2} />
             <StatCard label={t('dashboard', 'totalRevenue')} value={formatCHF(stats.revenue)} icon={<DollarSign size={20} />} delay={0.3} />
           </div>
-
-          <ActivityChart />
 
           {/* Quick Actions */}
           <div className="quick-actions">
