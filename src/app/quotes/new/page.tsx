@@ -5,7 +5,7 @@ import { motion, AnimatePresence } from 'framer-motion';
 import { PenTool, Bot, ClipboardCheck, DollarSign, FileText, AlertCircle, ArrowLeft, ArrowRight, Download, Loader2, Eye } from 'lucide-react';
 import { Sidebar, MobileBottomNav, TopBar } from '@/components/layout/Sidebar';
 import { useAppStore, useQuoteStore } from '@/store';
-import { AIProcessingState, Button, AnimatedSaveButton, QuotePDFPreview, QuoteHistoryLog, PremiumPDFTemplate, Stepper, Step } from '@/components/ui';
+import { AIProcessingState, Button, AnimatedSaveButton, QuotePDFPreview, QuoteHistoryLog, PremiumPDFTemplate } from '@/components/ui';
 import type { AIExtractionResult, MatchResult, CatalogueArticle, Quote } from '@/types/database.types';
 import { formatAmount, formatCHF } from '@/lib/financial';
 import { useTranslation } from '@/lib/i18n';
@@ -274,15 +274,25 @@ export default function NewQuotePage() {
       <main className="app-main">
         <TopBar breadcrumb={[t('sidebar', 'quotes'), t('dashboard', 'newQuote')]} />
         <div className="page-content">
-          {/* Step Indicator */}
-          <div className="mb-8">
-            <Stepper activeStep={currentStep + 1} hideFooter={true} hideContent={true}>
-              <Step><div/></Step>
-              <Step><div/></Step>
-              <Step><div/></Step>
-              <Step><div/></Step>
-            </Stepper>
-          </div>
+            {/* Step Indicator */}
+            <div className="mb-6 flex items-center justify-between">
+              <div className="flex items-center gap-2 text-sm font-medium text-text-muted">
+                <span className="bg-surface-2 text-text-primary px-3 py-1 rounded-full border shadow-sm">
+                  {t('quoteWizard', `steps.${STEPS[currentStep].id}`)}
+                </span>
+                <span className="opacity-60">
+                  {currentStep + 1} / {STEPS.length}
+                </span>
+              </div>
+              <div className="flex gap-1">
+                {STEPS.map((_, i) => (
+                  <div 
+                    key={i} 
+                    className={`h-1.5 rounded-full transition-all duration-500 ${i === currentStep ? 'w-6 bg-primary' : (i < currentStep ? 'w-2 bg-primary/40' : 'w-2 bg-border')}`}
+                  />
+                ))}
+              </div>
+            </div>
 
           <AnimatePresence mode="wait">
             {/* Step 0: Description Input */}

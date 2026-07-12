@@ -35,4 +35,4 @@ export { DashboardMetricsTicker } from './DashboardMetricsTicker';
 export { ActivityChart } from './ActivityChart';
 export { FloatingActions } from './FloatingActions';
 export { default as FlowingMenu } from './FlowingMenu';
-export { default as Stepper, Step } from './Stepper';
+

@@ -55,8 +55,8 @@ export const Button = forwardRef<HTMLButtonElement, ButtonProps>(
   ) => {
     const isDisabled = disabled || loading;
 
-    // Apply btn-12 classes provided by user
-    let btnClasses = `btn-12 ${className}`;
+    // Apply premium-btn classes provided by user
+    let btnClasses = `premium-btn ${className}`;
     if (variant === 'secondary') {
       btnClasses += ' secondary';
     }
