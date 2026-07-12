@@ -1,4 +1,4 @@
-﻿'use client';
+'use client';
 
 import React, { useState, useEffect, useCallback, useMemo, useRef } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
@@ -522,7 +522,7 @@ export default function NewQuotePage() {
                                         <AlertCircle size={14} /> Information manquante requise
                                       </div>
                                       <div className="flex items-center gap-2">
-                                        <span className="text-sm text-red-700">Combien de <strong className="lowercase">{item.label?.split(' ')[0] || item.category || 'cet article'}</strong> ?</span>
+                                        <span className="text-sm text-red-700">Combien de <strong className="lowercase">{item.aiLabel?.split(' ')[0] || item.category || 'cet article'}</strong> ?</span>
                                         <input 
                                           type="number" 
                                           className="neo-input bg-white w-20 text-sm py-1 border-red-200" 
