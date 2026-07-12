@@ -926,3 +926,29 @@ body {
     color: black !important;
   }
 }
+@media (max-width: 768px) {
+  /* Force tables to not break layout */
+  .catalogue-table-wrap, .qd-items-table-wrap, .articles-table-wrapper, .table-responsive {
+    width: 100vw;
+    max-width: 100vw;
+    margin-left: -1rem; /* Adjust for padding if needed */
+    padding-left: 1rem;
+    padding-right: 1rem;
+    box-sizing: border-box;
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+  }
+  
+  /* Make sure cells have minimum width so it actually scrolls */
+  td, th {
+    min-width: 120px; /* Base minimum width for columns */
+  }
+  
+  .col-qty, .col-unit {
+    min-width: 80px;
+  }
+  
+  .col-desc {
+    min-width: 250px;
+  }
+}
