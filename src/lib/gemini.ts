@@ -216,8 +216,12 @@ async function extractWithOpenRouterKey(
   apiKey: string,
   keyIndex: number
 ): Promise<AIExtractionResult> {
-  // Use openrouter/free to automatically route to a non-rate-limited free model
-  const model = process.env.OPENROUTER_MODEL || 'openrouter/free';
+  const models = [
+    'openrouter/free',
+    'google/gemma-4-31b-it:free',
+    'liquid/lfm-2.5-1.2b-instruct:free',
+    'nvidia/nemotron-3-nano-omni-30b-a3b-reasoning:free'
+  ];
 
   const response = await fetch('https://openrouter.ai/api/v1/chat/completions', {
     method: 'POST',
@@ -228,7 +232,7 @@ async function extractWithOpenRouterKey(
       'X-Title': 'AstraQuote (by Green AI Groupe)',
     },
     body: JSON.stringify({
-      model,
+      models,
       messages: [
         { role: 'system', content: SYSTEM_PROMPT },
         { role: 'user', content: description },
@@ -340,20 +344,21 @@ export async function extractFromDescription(description: string): Promise<Extra
   const startTime = Date.now();
 
   // 1. Gemini first (fastest, highest quality for French plumbing context)
+  // 1. OpenRouter first (faster, free model)
   try {
-    const extraction = await extractWithGemini(description);
-    return { extraction, provider: 'gemini', processingTimeMs: Date.now() - startTime };
-  } catch (geminiError) {
-    const geminiMsg = geminiError instanceof Error ? geminiError.message : String(geminiError);
-    console.warn(`[AI] Gemini failed â†’ cascading to OpenRouter. Reason: ${geminiMsg}`);
+    const extraction = await extractWithOpenRouter(description);
+    return { extraction, provider: 'openrouter', processingTimeMs: Date.now() - startTime };
+  } catch (openrouterError) {
+    const orMsg = openrouterError instanceof Error ? openrouterError.message : String(openrouterError);
+    console.warn(`[AI] OpenRouter failed, cascading to Gemini. Reason: ${orMsg}`);
 
-    // 2. OpenRouter fallback (rotates through all 3 keys)
+    // 2. Gemini fallback
     try {
-      const extraction = await extractWithOpenRouter(description);
-      return { extraction, provider: 'openrouter', processingTimeMs: Date.now() - startTime };
-    } catch (openrouterError) {
-      const orMsg = openrouterError instanceof Error ? openrouterError.message : String(openrouterError);
-      throw new Error(`All AI providers failed.\nGemini: ${geminiMsg}\nOpenRouter: ${orMsg}`);
+      const extraction = await extractWithGemini(description);
+      return { extraction, provider: 'gemini', processingTimeMs: Date.now() - startTime };
+    } catch (geminiError) {
+      const geminiMsg = geminiError instanceof Error ? geminiError.message : String(geminiError);
+      throw new Error(`All AI providers failed.\nOpenRouter: ${orMsg}\nGemini: ${geminiMsg}`);
     }
   }
 }
