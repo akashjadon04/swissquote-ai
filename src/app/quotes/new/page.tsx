@@ -275,33 +275,17 @@ export default function NewQuotePage() {
         <TopBar breadcrumb={[t('sidebar', 'quotes'), t('dashboard', 'newQuote')]} />
         <div className="page-content">
             {/* Graphical Step Indicator */}
-            <div className="wizard-steps relative flex justify-between items-center mb-8 px-4 md:px-12">
-              <div className="absolute top-5 left-10 right-10 md:left-20 md:right-20 h-[2px] bg-border z-0">
-                <div 
-                  className="h-full bg-success transition-all duration-500 ease-in-out" 
-                  style={{ width: `${(currentStep / (STEPS.length - 1)) * 100}%` }} 
-                />
-              </div>
-              
+            <div className="wizard-steps">
               {STEPS.map((step, i) => (
                 <div
                   key={step.id}
-                  className={`wizard-step relative z-10 flex flex-col items-center gap-2 ${
-                    i === currentStep ? 'active text-success' : 
-                    i < currentStep ? 'completed text-success' : 'text-text-muted opacity-60'
-                  }`}
+                  className={`wizard-step ${i === currentStep ? 'active' : ''} ${i < currentStep ? 'completed' : ''}`}
                 >
-                  <div className={`wizard-step-icon w-10 h-10 rounded-full flex items-center justify-center border-2 bg-surface-1 shadow-sm transition-all duration-300 ${
-                    i === currentStep ? 'border-success bg-success/10 text-success scale-110' : 
-                    i < currentStep ? 'border-success bg-success text-white' : 'border-border'
-                  }`}>
+                  <div className="wizard-step-icon">
                     {i < currentStep ? <Check size={18} /> : step.icon}
                   </div>
-                  {!isMobile && (
-                    <span className={`wizard-step-label text-sm font-semibold mt-1 ${i === currentStep ? 'text-success' : ''}`}>
-                      {step.label}
-                    </span>
-                  )}
+                  {!isMobile && <span className="wizard-step-label">{step.label}</span>}
+                  {i < STEPS.length - 1 && <div className="wizard-step-connector" />}
                 </div>
               ))}
             </div>
@@ -330,7 +314,7 @@ export default function NewQuotePage() {
                     className="clay-input description-textarea"
                     value={description}
                     onChange={(e) => setDescription(e.target.value)}
-                    placeholder="Ex: Coupure d'eau et vidange des installations. DÃƒÂ©montage, dÃƒÂ©pose et ÃƒÂ©vacuation de la conduite existante depuis la chaufferie jusqu'au sous-sol..."
+                    placeholder="Ex: Coupure d'eau et vidange des installations. Démontage, dépose et évacuation de la conduite existante depuis la chaufferie jusqu'au sous-sol..."
                     rows={8}
                   />
                   <div className="description-footer">

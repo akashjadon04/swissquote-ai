@@ -29,7 +29,7 @@ export default function AdminDashboardPage() {
             <div className="stat-card clay-card"><div className="stat-icon"><DollarSign size={20}/></div><div className="stat-info"><p>Chiffre d\x27Affaires (YTD)</p><h3>{formatCHF(fakeStats.revenue)}</h3></div></div>
           </div>
           <div className="recent-section mt-8">
-            <div className="section-header"><h2>Devis RAccents (Simulation)</h2></div>
+            <div className="section-header"><h2>Devis Récents (Simulation)</h2></div>
             <div className="quote-list">
               {fakeQuotes.map((quote) => (
                 <div key={quote.id} className="quote-card clay-card">

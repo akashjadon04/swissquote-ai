@@ -639,7 +639,7 @@ body {
 }
 
 /* From Uiverse.io by Nawsome */ 
-.typewriter {
+.typewriter { width: 120px; display: flex; flex-direction: column; align-items: center; margin: 0 auto;
   --blue: #5C86FF;
   --blue-dark: #275EFE;
   --key: #fff;
