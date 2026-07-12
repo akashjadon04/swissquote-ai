@@ -1,25 +1,23 @@
-import { NextRequest, NextResponse } from 'next/server';
-import { extractFromDescription } from '@/lib/gemini';
-import { matchArticles } from '@/lib/catalogue-matcher';
-import type { AIArticle, CatalogueArticle, SupplierCode } from '@/types/database.types';
-import { MOCK_CATALOGUE } from '@/lib/catalogueData';
+﻿import { NextRequest, NextResponse } from "next/server";
+import { extractFromDescription } from "@/lib/gemini";
+import { matchArticles } from "@/lib/catalogue-matcher";
+import { calculateLabourFromItems, complexityMultiplier } from "@/lib/financial";
+import type { AIArticle, CatalogueArticle, SupplierCode } from "@/types/database.types";
+import { MOCK_CATALOGUE } from "@/lib/catalogueData";
 
-// ═══════════════════════════════════════════
-// POST /api/ai/process — Unified AI + Match Endpoint
-// Does AI extraction + catalogue matching server-side in one call.
-// Eliminates 2→1 round trips from the client, saving 5-10s latency.
-// ═══════════════════════════════════════════
+// POST /api/ai/process — Unified AI + Catalogue Match + Labour Endpoint
+// Does AI extraction + catalogue matching + labour calc server-side in one call.
 
 export const maxDuration = 60;
 
-// Adapt catalogue data once at module load (base_price → unit_price, name → description)
+// Adapt catalogue data once at module load (base_price -> unit_price, name -> description)
 const CATALOGUE_ADAPTED: CatalogueArticle[] = (MOCK_CATALOGUE as any[]).map((a) => ({
   ...a,
-  description: a.description ?? a.name ?? '',
-  unit_price: typeof a.unit_price === 'number' ? a.unit_price : (a.base_price ?? 0),
-  supplier_id: a.supplier_id ?? a.supplier?.code ?? '',
-  created_at: a.created_at ?? '',
-  updated_at: a.updated_at ?? '',
+  description: a.description ?? a.name ?? "",
+  unit_price: typeof a.unit_price === "number" ? a.unit_price : (a.base_price ?? 0),
+  supplier_id: a.supplier_id ?? a.supplier?.code ?? "",
+  created_at: a.created_at ?? "",
+  updated_at: a.updated_at ?? "",
 }));
 
 // Simple in-memory rate limiter
@@ -41,16 +39,16 @@ function checkRateLimit(ip: string): boolean {
 
 export async function POST(request: NextRequest) {
   try {
-    const ip = request.headers.get('x-forwarded-for') || request.headers.get('x-real-ip') || 'unknown';
+    const ip = request.headers.get("x-forwarded-for") || request.headers.get("x-real-ip") || "unknown";
     if (!checkRateLimit(ip)) {
-      return NextResponse.json({ error: 'Trop de requêtes. Veuillez patienter.' }, { status: 429 });
+      return NextResponse.json({ error: "Trop de requêtes. Veuillez patienter." }, { status: 429 });
     }
 
     let body;
     try {
       body = await request.json();
     } catch {
-      return NextResponse.json({ error: 'Format JSON invalide' }, { status: 400 });
+      return NextResponse.json({ error: "Format JSON invalide" }, { status: 400 });
     }
 
     const { description, preferredSupplier } = body as {
@@ -58,37 +56,64 @@ export async function POST(request: NextRequest) {
       preferredSupplier?: SupplierCode;
     };
 
-    if (!description || typeof description !== 'string' || description.trim().length < 10) {
-      return NextResponse.json({ error: 'Description requise (min 10 caractères).' }, { status: 400 });
+    if (!description || typeof description !== "string" || description.trim().length < 10) {
+      return NextResponse.json({ error: "Description requise (min 10 caractères)." }, { status: 400 });
     }
     if (description.length > 10_000) {
-      return NextResponse.json({ error: 'Description trop longue (max 10 000 caractères).' }, { status: 400 });
+      return NextResponse.json({ error: "Description trop longue (max 10 000 caractères)." }, { status: 400 });
     }
 
     const startTime = Date.now();
 
-    // ── Step 1: AI Extraction ──
-    // The AI identifies what materials/work is needed using plumbing knowledge.
-    // It NEVER outputs references or prices — only semantic descriptions.
+    // Step 1: AI Extraction — identifies what materials/work is needed
     const aiResult = await extractFromDescription(description.trim());
 
-    // ── Step 2: Catalogue Matching (runs server-side, no extra round-trip) ──
-    // Only a matched catalogue reference gets a price. No match = flagged missing.
+    // Step 2: Catalogue Matching — only matched references get prices
     const allArticles: AIArticle[] = aiResult.extraction.sections.flatMap(s => s.articles);
     const matchResult = matchArticles(allArticles, CATALOGUE_ADAPTED, preferredSupplier);
+
+    // Step 3: Labour Calculation — based on matched items with real categories
+    // Items with null quantity contribute ZERO hours — user must enter them
+    const itemsForLabour = [
+      ...matchResult.matched.map(m => ({
+        category: m.catalogueArticle.category,
+        quantity: m.aiArticle.quantity,
+        unit: m.aiArticle.unit,
+        isMissing: false,
+      })),
+      ...matchResult.missing.map(m => ({
+        category: null,
+        quantity: m.aiArticle.quantity,
+        unit: m.aiArticle.unit,
+        isMissing: true,
+      })),
+    ];
+
+    const complexity = aiResult.extraction.labour_complexity;
+    const multiplier = complexityMultiplier(complexity);
+    const calculatedLabourHours = calculateLabourFromItems(itemsForLabour, multiplier);
+
+    // The real match rate from catalogue (NOT the AI's extraction confidence)
+    const realMatchRate = matchResult.matchRate;
 
     return NextResponse.json({
       extraction: aiResult.extraction,
       provider: aiResult.provider,
       matchResult,
+      // Labour — calculated from actual item quantities and categories
+      labourHours: calculatedLabourHours,
+      labourComplexity: complexity || "standard",
+      labourMultiplier: multiplier,
+      // Real match rate for honest UI display
+      realMatchRate,
       processingTimeMs: Date.now() - startTime,
     });
 
   } catch (error) {
-    const message = error instanceof Error ? error.message : 'Erreur interne';
-    console.error('[API /ai/process] ERROR:', message, error);
+    const message = error instanceof Error ? error.message : "Erreur interne";
+    console.error("[API /ai/process] ERROR:", message, error);
     return NextResponse.json(
-      { error: 'Le traitement par l\'IA a échoué. Veuillez réessayer.' },
+      { error: "Le traitement par l'IA a échoué. Veuillez réessayer." },
       { status: 502 }
     );
   }

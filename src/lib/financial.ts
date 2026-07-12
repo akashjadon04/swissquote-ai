@@ -134,14 +134,93 @@ export function recalculateAll(
 }
 
 // ─────────────────────────────────────────
+// Labour Time Table (hours per unit per category)
+// Based on Swiss plumbing professional standards (SIA/SICC)
+// ─────────────────────────────────────────
+
+/**
+ * Labour hours per unit for each catalogue category.
+ * Per metre for pipe/drainage, per piece for fittings/equipment.
+ */
+export const LABOUR_TIME_TABLE: Record<string, number> = {
+  // Pipes — per linear metre (incl. cutting, fitting, fixing)
+  tuyau_inox:        0.50,  // 30 min/m for press-fit inox
+  evacuation_pe:     0.45,  // 27 min/m for PE drainage
+  isolation:         0.20,  // 12 min/m for thermal insulation
+  // Fittings — per piece
+  coude_sertir:      0.25,  // 15 min per elbow (incl. press-fit)
+  manchon:           0.20,  // 12 min per coupling/tee
+  collier:           0.10,  // 6 min per bracket/clamp
+  transition:        0.30,  // 18 min per transition piece
+  // Valves — per piece
+  robinetterie:      0.75,  // 45 min per valve/mixer/tap
+  reducteur:         0.50,  // 30 min per pressure reducer
+  // Major equipment — per unit
+  chaudiere:         12.0,  // 12h per boiler (decommission + install + commission)
+  ballon_ecs:         4.0,  // 4h per hot water tank
+  circulateur:        2.0,  // 2h per circulator pump
+  radiateur:          2.5,  // 2.5h per radiator panel (incl. connections)
+  nourrice:           1.5,  // 1.5h per distribution manifold
+  // Geberit — per unit
+  geberit_duofix:     3.5,  // 3.5h per wall-hung toilet frame
+  geberit_evacuation: 1.0,  // 1h per drain/trap
+  // Sanitaire — per unit
+  appareil_sanitaire: 2.0,  // 2h per sanitary appliance
+  // Dismantling — per piece/metre
+  depose:             0.75, // 45 min per item removed
+  // Default fallback
+  autre:              0.30,
+};
+
+/**
+ * Calculate total labour hours from matched items.
+ *
+ * HARD RULE: items with quantity = null contribute ZERO hours.
+ * We NEVER invent a quantity — the user must enter it.
+ *
+ * @param items Array of items with category, quantity, and unit
+ * @param complexityMultiplier 1.0 = standard | 1.3 = occupied/narrow | 1.6 = very complex
+ */
+export function calculateLabourFromItems(
+  items: { category?: string | null; quantity: number | null; unit?: string | null; isMissing?: boolean }[],
+  complexityMultiplier: number = 1.0
+): number {
+  let totalHours = 0;
+
+  for (const item of items) {
+    // NEVER invent quantity — skip null quantities
+    if (item.quantity === null || item.quantity === undefined || item.quantity <= 0) continue;
+
+    const category = (item.category || 'autre').toLowerCase();
+    const hours = LABOUR_TIME_TABLE[category] ?? LABOUR_TIME_TABLE['autre'];
+    totalHours += hours * item.quantity;
+  }
+
+  // Apply complexity multiplier (round to 0.5h precision)
+  const adjusted = totalHours * complexityMultiplier;
+  return Math.round(adjusted * 2) / 2; // round to nearest 0.5h
+}
+
+/**
+ * Map complexity string from AI to numeric multiplier.
+ */
+export function complexityMultiplier(complexity?: string | null): number {
+  if (!complexity) return 1.0;
+  if (complexity === 'complexe') return 1.3;
+  if (complexity === 'tres_complexe') return 1.6;
+  return 1.0;
+}
+
+// ─────────────────────────────────────────
 // Default Config Values
 // ─────────────────────────────────────────
 
 export const DEFAULT_CONFIG: QuoteConfig = {
   labourRate: 145,   // CHF/h (Geneva)
-  labourHours: 8,    // Default for remplacement_canalisation
+  labourHours: 0,    // Calculated dynamically from items — never hardcoded
   marginPct: 15,     // 15% materials margin
   vatRate: 0.081,    // 8.1% Swiss VAT
   travelFee: 45,     // CHF
   canton: 'Genève',
 };
+

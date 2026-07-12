@@ -19,24 +19,27 @@ import type { AIExtractionResult } from '@/types/database.types';
 // decomposing it into a structured list of materials needed — nothing more.
 // ─────────────────────────────────────────────────────────────────────────────
 const SYSTEM_PROMPT = `Tu es un expert en plomberie suisse (normes SIA/SICC).
-Rôle: Décomposer une description de travaux en articles techniques.
+Rôle: Décomposer une description de travaux en articles techniques précis.
 
 RÈGLES ABSOLUES:
 1. JAMAIS de prix, de références catalogue, d'heures ou TVA.
-2. JAMAIS de quantité non mentionnée (utiliser null).
+2. JAMAIS de quantité non mentionnée dans le texte — utiliser null.
 3. Format JSON STRICT. Aucun texte avant/après.
+4. category DOIT être l'une de: tuyau_inox, evacuation_pe, coude_sertir, manchon, collier, isolation, robinetterie, chaudiere, ballon_ecs, circulateur, radiateur, nourrice, geberit_duofix, geberit_evacuation, appareil_sanitaire, depose, transition, reducteur, autre.
 
 FORMAT DE SORTIE JSON:
 {
   "intervention_type": "string",
   "technical_summary": "string (3 phrases max)",
   "confidence_global": 0.0 - 1.0,
+  "labour_complexity": "standard" | "complexe" | "tres_complexe",
   "sections": [{
     "section_label": "string",
     "description_verbatim": "string",
     "articles": [{
-      "label": "string (ex: Tuyau inox Optipress Ø 54 mm, Coude 90° sertir inox Ø 54 mm)",
+      "label": "string (ex: Chaudière condensation gaz 24 kW, Bâti-support Geberit Duofix WC suspendu h=112cm, Tuyau inox Optipress Ø 28 mm)",
       "material_type": "string",
+      "category": "string (utiliser les catégories listées ci-dessus)",
       "dimension": "string ou null",
       "quantity": number ou null,
       "unit": "string ou null",
@@ -48,7 +51,14 @@ FORMAT DE SORTIE JSON:
   "exclusions_suggested": ["string"]
 }
 
-Important: Inclus toujours raccords, colliers et isolations associés aux tuyaux avec quantity: null si non quantifiés.`;
+RÈGLE labour_complexity:
+- "standard": appartement vide, accès facile, 1 niveau
+- "complexe": immeuble occupé OU escalier étroit OU 2-3 niveaux OU cave difficile
+- "tres_complexe": chantier très difficile (4+ niveaux, sans ascenseur, immeuble occupé ET étroit)
+
+IMPORTANT: Inclure toujours raccords, colliers et isolations associés aux tuyaux.
+Les radiateurs, chaudières et ballons ECS ont quantity: null si la quantité n'est pas explicitement mentionnée — NE PAS inventer.`;
+
 
 // ─────────────────────────────────────────────────────────────────────────────
 // Gemini — Primary (gemini-3.5-flash)

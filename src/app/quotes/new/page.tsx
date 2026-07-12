@@ -122,7 +122,8 @@ export default function NewQuotePage() {
       }
 
       const data = await res.json();
-      const { extraction, provider, matchResult } = data;
+      const { extraction, provider, matchResult, labourHours: calculatedLabourHours, labourComplexity: _labourComplexity, realMatchRate } = data;
+
 
       setExtraction(extraction);
       setProvider(provider);
@@ -130,23 +131,18 @@ export default function NewQuotePage() {
 
       setProcessing(true, 2);
 
-      // Config defaults (matching Supabase config row values).
+      // Labour rate by canton
       const LABOUR_RATES: Record<string, number> = {
         'Genève': 145, 'Vaud': 138, 'Valais': 130, 'Fribourg': 132,
         'Neuchâtel': 135, 'Jura': 128, 'Berne': 140, 'Zürich': 148,
         'Bâle': 142, 'Lucerne': 136,
       };
-      const DEFAULT_HOURS_MAP: Record<string, number> = {
-        remplacement_canalisation: 8, installation_robinetterie: 3,
-        installation_sanitaire: 12, renovation_isolation: 4,
-        coupure_eau: 2, installation_nourrice: 5,
-        remplacement_chauffe_eau: 6, mise_en_pression: 1.5,
-        remplacement_colonne: 10, depannage_urgent: 2, autre: 4,
-      };
       const canton = quote.canton || 'Genève';
       const labourRate = LABOUR_RATES[canton] || 145;
       const interventionType = extraction.intervention_type;
-      const labourHours = DEFAULT_HOURS_MAP[interventionType] || 4;
+      // Use server-calculated labour hours (based on actual items + complexity)
+      // NEVER use hardcoded hours — null quantities = 0 hours (user must fill in)
+      const labourHours = typeof calculatedLabourHours === 'number' ? calculatedLabourHours : 0;
       const marginPct = 15;
       const vatRate = 0.081;
       const travelFee = 45;
@@ -239,7 +235,10 @@ export default function NewQuotePage() {
         aiProvider: provider,
         interventionType,
         technicalSummary: extraction.technical_summary,
-        aiConfidence: extraction.confidence_global,
+        // Use real catalogue match rate, not AI extraction confidence
+        // (a 95% confident AI extraction that fails to match still shows 95% otherwise)
+        aiConfidence: typeof realMatchRate === 'number' ? realMatchRate : extraction.confidence_global,
+
         sections,
         hasMissingItems: allItems.some((i: { isMissing: boolean }) => i.isMissing),
         exclusions: extraction.exclusions_suggested,

@@ -31,13 +31,14 @@ export const CANTONS: Record<string, number> = {
   'Lucerne': 136,
 };
 
-export const SUPPLIER_CODES = ['NSB', 'ST', 'GM'] as const;
+export const SUPPLIER_CODES = ['NSB', 'ST', 'GM', 'GEB'] as const;
 export type SupplierCode = typeof SUPPLIER_CODES[number];
 
 export const SUPPLIER_NAMES: Record<SupplierCode, string> = {
   NSB: 'Nussbaum',
   ST: 'Sanitas Troesch',
   GM: 'Getaz Miauton',
+  GEB: 'Geberit',
 };
 
 // ─────────────────────────────────────────
@@ -242,6 +243,9 @@ export interface AIArticle {
   quantity: number | null;
   unit: string | null;
   confidence: number;
+  needs_site_measurement?: boolean;
+  // Category resolved during matching (set by catalogue-matcher)
+  resolvedCategory?: string;
 }
 
 export interface AISection {
@@ -257,6 +261,8 @@ export interface AIExtractionResult {
   sections: AISection[];
   intervention_flags: string[];
   exclusions_suggested: string[];
+  // Labour complexity detected from description context
+  labour_complexity?: 'standard' | 'complexe' | 'tres_complexe';
 }
 
 // ─────────────────────────────────────────
