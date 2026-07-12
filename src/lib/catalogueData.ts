@@ -42536,4 +42536,48 @@ export const MOCK_CATALOGUE = [
     "unit": "forfait",
     "base_price": 60
   }
+  ,{
+    "id": "srv-gen-999",
+    "supplier": { "code": "SRV", "name": "Service Interne" },
+    "reference": "SRV-GEN-999",
+    "name": "Coupure d'eau et vidange",
+    "category": "depose",
+    "specification": "Forfait intervention",
+    "active": true,
+    "unit": "forfait",
+    "base_price": 120
+  },
+  {
+    "id": "srv-gen-1000",
+    "supplier": { "code": "SRV", "name": "Service Interne" },
+    "reference": "SRV-GEN-1000",
+    "name": "Démontage et dépose",
+    "category": "depose",
+    "specification": "Forfait de démontage et dépose",
+    "active": true,
+    "unit": "forfait",
+    "base_price": 80
+  },
+  {
+    "id": "srv-gen-1001",
+    "supplier": { "code": "SRV", "name": "Service Interne" },
+    "reference": "SRV-GEN-1001",
+    "name": "Mise en service et contrôle d'étanchéité",
+    "category": "service",
+    "specification": "Forfait mise en service",
+    "active": true,
+    "unit": "forfait",
+    "base_price": 150
+  },
+  {
+    "id": "srv-gen-1002",
+    "supplier": { "code": "SRV", "name": "Service Interne" },
+    "reference": "SRV-GEN-1002",
+    "name": "Travaux préparatoires",
+    "category": "depose",
+    "specification": "Forfait travaux",
+    "active": true,
+    "unit": "forfait",
+    "base_price": 100
+  }
 ];

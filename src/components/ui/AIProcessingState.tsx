@@ -31,7 +31,7 @@ export function AIProcessingState() {
   return (
     <div className="flex flex-col items-center justify-center min-h-[50vh] gap-12 py-10 px-4 w-full max-w-5xl mx-auto">
       {/* Center Typewriter */}
-      <div className="flex flex-col items-center justify-center scale-[1.75] md:scale-[2.5] mt-12 mb-8">
+      <div className="flex flex-col items-center justify-center scale-[2.25] md:scale-[3.0] mt-16 mb-12">
         <TypewriterAnimation />
       </div>
 

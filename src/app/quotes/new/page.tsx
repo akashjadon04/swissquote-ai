@@ -436,17 +436,17 @@ export default function NewQuotePage() {
                   <div className="review-meta">
                     {extraction && (
                       <span className="provider-badge">
-                        {provider === 'gemini' ? 'Ã¢Å“Â¨ Powered by Astra AI' : 'Ã°Å¸Å’Â  OpenRouter'}
+                        {provider === 'gemini' ? '✨ Powered by Astra AI' : '🌐 OpenRouter'}
                       </span>
                     )}
-                    {extraction && (
+                    {quote?.aiConfidence !== undefined && (
                       <span className="confidence-badge" style={{
-                        backgroundColor: extraction.confidence_global > 0.8 ? 'var(--color-success-light)' :
-                          extraction.confidence_global > 0.5 ? 'var(--color-warning-light)' : 'var(--color-danger-light)',
-                        color: extraction.confidence_global > 0.8 ? 'var(--color-success)' :
-                          extraction.confidence_global > 0.5 ? 'var(--color-warning)' : 'var(--color-danger)',
+                        backgroundColor: quote.aiConfidence > 0.8 ? 'var(--color-success-light)' :
+                          quote.aiConfidence > 0.5 ? 'var(--color-warning-light)' : 'var(--color-danger-light)',
+                        color: quote.aiConfidence > 0.8 ? 'var(--color-success)' :
+                          quote.aiConfidence > 0.5 ? 'var(--color-warning)' : 'var(--color-danger)',
                       }}>
-                        {locale === 'en' ? 'Confidence' : 'Confiance'}: {(extraction.confidence_global * 100).toFixed(0)}%
+                        {locale === 'en' ? 'Confidence' : 'Confiance'}: {(quote.aiConfidence * 100).toFixed(0)}%
                       </span>
                     )}
                     {matchResult && (
@@ -460,7 +460,7 @@ export default function NewQuotePage() {
                 {/* Technical Summary */}
                 {extraction?.technical_summary && (
                   <div className="tech-summary bg-surface-2/40 backdrop-blur-xl border border-white/5 shadow-[inset_0_1px_1px_rgba(255,255,255,0.05),_0_20px_40px_rgba(0,0,0,0.4)] rounded-3xl p-6 mb-8 mt-6">
-                    <h4 className="flex items-center gap-2 mb-3 text-accent font-semibold"><FileText size={18} /> {t('quoteWizard', 'technicalSummary') || 'RÃƒÂ©sumÃƒÂ© technique'}</h4>
+                    <h4 className="flex items-center gap-2 mb-3 text-accent font-semibold"><FileText size={18} /> {t('quoteWizard', 'technicalSummary') || 'Résumé technique'}</h4>
                     <p className="text-text-primary/90 leading-relaxed">{extraction.technical_summary}</p>
                   </div>
                 )}
@@ -473,7 +473,7 @@ export default function NewQuotePage() {
                       <span>{section.sectionLabel}</span>
                     </div>
 
-                    {/* Ã¢â€ â‚¬Ã¢â€ â‚¬ DESKTOP: real table Ã¢â€ â‚¬Ã¢â€ â‚¬ */}
+                    {/* ─── DESKTOP: real table ─── */}
                     <div className="neo-table-container mt-4 hidden md:block overflow-x-auto w-full">
                       <table className="articles-table w-full text-left border-collapse">
                         <thead className="bg-surface-2/30">
@@ -490,7 +490,7 @@ export default function NewQuotePage() {
                           {section.items.map((item, iIdx) => (
                             <tr key={item.id} className={`group hover:bg-surface-2 transition-colors ${item.isMissing ? 'bg-danger/5' : (item.is_estimate ? 'bg-orange-50/30 border-orange-200' : (item.reference ? 'bg-green-50/30 border-green-200' : ''))}`}>
                               <td className="col-ref p-4">
-                                <input type="text" className={`neo-input w-24 text-sm font-mono ${!item.reference ? 'border-warning border bg-warning/5' : ''}`} placeholder="RÃƒÂ©f..." value={item.reference || ''} onChange={(e) => useQuoteStore.getState().updateItem(sIdx, iIdx, { reference: e.target.value })} />
+                                <input type="text" className={`neo-input w-24 text-sm font-mono ${!item.reference ? 'border-warning border bg-warning/5' : ''}`} placeholder="Réf..." value={item.reference || ''} onChange={(e) => useQuoteStore.getState().updateItem(sIdx, iIdx, { reference: e.target.value })} />
                               </td>
                               <td className="col-desc p-4">
                                 <input type="text" className={`neo-input w-full font-medium ${!item.description ? 'border-danger border-2 bg-danger/5' : ''}`} placeholder="Description..." value={item.description || ''} onChange={(e) => useQuoteStore.getState().updateItem(sIdx, iIdx, { description: e.target.value })} />
@@ -498,17 +498,17 @@ export default function NewQuotePage() {
                                   <div className="flex items-center gap-2 mt-1 flex-wrap">
                                     <span className="text-xs text-danger font-semibold bg-danger/10 px-2 py-0.5 rounded-full border border-danger/20">{t('quoteWizard', 'articleNotFound')}</span>
                                     <button className="text-xs text-accent font-semibold bg-accent/10 px-2 py-0.5 rounded-full border border-accent/20 hover:bg-accent/20 transition-colors" onClick={() => useQuoteStore.getState().updateItem(sIdx, iIdx, { isMissing: false })}>
-                                      {locale === 'en' ? 'Validate Ã¢Å“â€œ' : 'Valider Ã¢Å“â€œ'}
+                                      {locale === 'en' ? 'Validate ✔' : 'Valider ✔'}
                                     </button>
                                   </div>
                                 )}
                                 {item.is_estimate && (
                                   <div className="flex items-center gap-2 mt-1 flex-wrap">
                                     <span className="text-xs text-orange-600 font-semibold bg-orange-100 px-2 py-0.5 rounded-full border border-orange-200">
-                                      {locale === 'en' ? 'AI Estimate - Please Verify' : 'Estimation IA - Ãƒâ‚¬ VÃƒÂ©rifier'}
+                                      {locale === 'en' ? 'AI Estimate - Please Verify' : 'Estimation IA - à vérifier'}
                                     </span>
                                     <button className="text-xs text-accent font-semibold bg-accent/10 px-2 py-0.5 rounded-full border border-accent/20 hover:bg-accent/20 transition-colors" onClick={() => useQuoteStore.getState().updateItem(sIdx, iIdx, { is_estimate: false })}>
-                                      {locale === 'en' ? 'Validate Ã¢Å“â€œ' : 'Valider Ã¢Å“â€œ'}
+                                      {locale === 'en' ? 'Validate ✔' : 'Valider ✔'}
                                     </button>
                                   </div>
                                 )}
@@ -522,7 +522,7 @@ export default function NewQuotePage() {
                                         <input 
                                           type="number" 
                                           className="neo-input bg-white w-20 text-sm py-1 border-red-200" 
-                                          placeholder="QtA..." 
+                                          placeholder="Qté..." 
                                           min={1} 
                                           step={0.1}
                                           onChange={(e) => useQuoteStore.getState().updateItem(sIdx, iIdx, { quantity: parseFloat(e.target.value) || 0 })}
@@ -537,13 +537,13 @@ export default function NewQuotePage() {
                                   onChange={(e) => useQuoteStore.getState().updateItem(sIdx, iIdx, { quantity: parseFloat(e.target.value) || 0 })} />
                               </td>
                               <td className="col-unit p-4 text-sm">
-                                <input type="text" className={`neo-input w-20 text-sm ${!item.unit ? 'border-danger border-2 bg-danger/5' : ''}`} placeholder="UnitÃƒÂ©" value={item.unit || ''} onChange={(e) => useQuoteStore.getState().updateItem(sIdx, iIdx, { unit: e.target.value })} />
+                                <input type="text" className={`neo-input w-20 text-sm ${!item.unit ? 'border-danger border-2 bg-danger/5' : ''}`} placeholder="Unité" value={item.unit || ''} onChange={(e) => useQuoteStore.getState().updateItem(sIdx, iIdx, { unit: e.target.value })} />
                               </td>
                               <td className="col-price p-4">
                                 <input type="number" className={`neo-input w-24 ${!item.unitPrice ? 'border-danger border-2 bg-danger/5' : ''}`} placeholder="CHF" value={item.unitPrice || ''} onChange={(e) => useQuoteStore.getState().updateItem(sIdx, iIdx, { unitPrice: parseFloat(e.target.value) || 0 })} />
                               </td>
                               <td className="col-total p-4 font-bold text-accent">
-                                {item.lineTotal ? formatAmount(item.lineTotal) : (item.unitPrice && item.quantity ? formatAmount(item.unitPrice * item.quantity) : 'Ã¢â‚¬â€ ')}
+                                {item.lineTotal ? formatAmount(item.lineTotal) : (item.unitPrice && item.quantity ? formatAmount(item.unitPrice * item.quantity) : '—')}
                               </td>
                             </tr>
                           ))}
@@ -551,16 +551,16 @@ export default function NewQuotePage() {
                       </table>
                     </div>
 
-                    {/* Ã¢â€ â‚¬Ã¢â€ â‚¬ MOBILE: card-form layout Ã¢â€ â‚¬Ã¢â€ â‚¬ */}
+                    {/* ─── MOBILE: card-form layout ─── */}
                     <div className="md:hidden flex flex-col gap-3 mt-3">
                       {section.items.map((item, iIdx) => (
                         <div key={item.id} className={`rounded-2xl border p-4 flex flex-col gap-3 shadow-sm ${item.isMissing ? 'border-danger/40 bg-danger/5' : (item.reference && !item.isMissing ? 'bg-green-50/30 border-green-200' : 'border-border bg-surface-1')}`}>
-                          {/* Row: RÃƒÂ©fÃƒÂ©rence */}
+                          {/* Row: Référence */}
                           <div className="flex items-center justify-between gap-3">
                             <span className="text-[11px] font-bold text-text-muted uppercase tracking-wider w-24 shrink-0">{t('catalogue', 'columns.reference')}</span>
-                            <input type="text" className={`neo-input flex-1 text-sm font-mono ${!item.reference ? 'border-warning border bg-warning/5' : ''}`} placeholder="RÃƒÂ©f..." value={item.reference || ''} onChange={(e) => useQuoteStore.getState().updateItem(sIdx, iIdx, { reference: e.target.value })} />
+                            <input type="text" className={`neo-input flex-1 text-sm font-mono ${!item.reference ? 'border-warning border bg-warning/5' : ''}`} placeholder="Réf..." value={item.reference || ''} onChange={(e) => useQuoteStore.getState().updateItem(sIdx, iIdx, { reference: e.target.value })} />
                           </div>
-                          {/* Row: DÃƒÂ©signation */}
+                          {/* Row: Désignation */}
                           <div className="flex flex-col gap-1">
                             <span className="text-[11px] font-bold text-text-muted uppercase tracking-wider">{t('catalogue', 'columns.description')}</span>
                             <input type="text" className={`neo-input w-full text-sm font-medium ${!item.description ? 'border-danger border-2 bg-danger/5' : ''}`} placeholder="Description..." value={item.description || ''} onChange={(e) => useQuoteStore.getState().updateItem(sIdx, iIdx, { description: e.target.value })} />
@@ -568,21 +568,21 @@ export default function NewQuotePage() {
                               <div className="flex items-center gap-2 mt-1 flex-wrap">
                                 <span className="text-xs text-danger font-semibold bg-danger/10 px-2 py-0.5 rounded-full border border-danger/20">{t('quoteWizard', 'articleNotFound')}</span>
                                 <button className="text-xs text-accent font-semibold bg-accent/10 px-2 py-0.5 rounded-full border border-accent/20 hover:bg-accent/20 transition-colors" onClick={() => useQuoteStore.getState().updateItem(sIdx, iIdx, { isMissing: false })}>
-                                  {locale === 'en' ? 'Validate Ã¢Å“â€œ' : 'Valider Ã¢Å“â€œ'}
+                                  {locale === 'en' ? 'Validate ✔' : 'Valider ✔'}
                                 </button>
                               </div>
                             )}
                           </div>
-                          {/* Row: QtÃƒÂ© + UnitÃƒÂ© */}
+                          {/* Row: Qté + Unité */}
                           <div className="flex items-center gap-4">
                             <div className="flex items-center gap-2 flex-1">
-                              <span className="text-[11px] font-bold text-text-muted uppercase tracking-wider w-8 shrink-0">QtÃƒÂ©</span>
+                              <span className="text-[11px] font-bold text-text-muted uppercase tracking-wider w-8 shrink-0">Qté</span>
                               <input type="number" className={`neo-input flex-1 ${item.quantity === 0 || !item.quantity ? 'border-danger border-2 bg-danger/5 text-danger font-bold' : ''}`} value={item.quantity || ''} placeholder="0" min={0} step={0.1}
                                 onChange={(e) => useQuoteStore.getState().updateItem(sIdx, iIdx, { quantity: parseFloat(e.target.value) || 0 })} />
                             </div>
                             <div className="flex items-center gap-2 w-1/3">
-                              <span className="text-[11px] font-bold text-text-muted uppercase tracking-wider">UnitÃƒÂ©</span>
-                              <input type="text" className={`neo-input w-full text-sm ${!item.unit ? 'border-danger border-2 bg-danger/5' : ''}`} placeholder="UnitÃƒÂ©" value={item.unit || ''} onChange={(e) => useQuoteStore.getState().updateItem(sIdx, iIdx, { unit: e.target.value })} />
+                              <span className="text-[11px] font-bold text-text-muted uppercase tracking-wider">Unité</span>
+                              <input type="text" className={`neo-input w-full text-sm ${!item.unit ? 'border-danger border-2 bg-danger/5' : ''}`} placeholder="Unité" value={item.unit || ''} onChange={(e) => useQuoteStore.getState().updateItem(sIdx, iIdx, { unit: e.target.value })} />
                             </div>
                           </div>
                           {/* Row: Prix + Total */}
@@ -594,7 +594,7 @@ export default function NewQuotePage() {
                             <div className="flex items-center gap-2">
                               <span className="text-[11px] font-bold text-text-muted uppercase tracking-wider shrink-0">Total</span>
                               <strong className="text-accent font-bold text-base">
-                                {item.lineTotal ? formatAmount(item.lineTotal) : (item.unitPrice && item.quantity ? formatAmount(item.unitPrice * item.quantity) : 'Ã¢â‚¬â€ ')}
+                                {item.lineTotal ? formatAmount(item.lineTotal) : (item.unitPrice && item.quantity ? formatAmount(item.unitPrice * item.quantity) : '—')}
                               </strong>
                             </div>
                           </div>
@@ -616,7 +616,7 @@ export default function NewQuotePage() {
                   <div className="flex flex-col items-end gap-2">
                     {hasUnresolvedItems && (
                       <span className="text-warning text-sm font-semibold bg-warning/10 px-3 py-1 rounded-full border border-warning/20">
-                        {locale === 'en' ? 'Ã¢Å¡Â Ã¯Â¸Â  Missing items will have 0 price' : 'Ã¢Å¡Â Ã¯Â¸Â  Les articles sans prix apparaÃƒÂ®tront vides'}
+                        {locale === 'en' ? '⚠ Missing items will have 0 price' : '⚠ Les articles sans prix apparaîtront vides'}
                       </span>
                     )}
                     <Button
@@ -638,8 +638,8 @@ export default function NewQuotePage() {
                   className="wizard-panel animate-in fade-in slide-in-from-right-4 duration-300"
                 >
                 <div className="wizard-header text-center mb-10">
-                  <h2 className="text-3xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-accent to-accent-light mb-2">{t('quoteWizard', 'financialSummary') || 'RÃƒÂ©sumÃƒÂ© financier'}</h2>
-                  <p className="text-text-muted">{t('quoteWizard', 'financialSummaryDesc') || 'VÃƒÂ©rifiez et ajustez les paramÃƒÂ¨tres financiers du devis.'}</p>
+                  <h2 className="text-3xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-accent to-accent-light mb-2">{t('quoteWizard', 'financialSummary') || 'Résumé financier'}</h2>
+                  <p className="text-text-muted">{t('quoteWizard', 'financialSummaryDesc') || 'Vérifiez et ajustez les paramètres financiers du devis.'}</p>
                 </div>
 
                 <div className="financial-grid grid grid-cols-1 lg:grid-cols-2 gap-8 items-start max-w-5xl mx-auto">
