@@ -635,3 +635,6 @@
   color: var(--color-text-muted);
   line-height: 1.8;
 }
+
+.wizard-footer { flex-wrap: wrap; gap: 1rem; }
+@media (max-width: 640px) { .wizard-footer > button { flex: 1; justify-content: center; } }

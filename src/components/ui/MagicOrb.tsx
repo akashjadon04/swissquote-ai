@@ -8,19 +8,17 @@ import { usePathname } from 'next/navigation';
 export const MagicOrb = () => {
   const [isHovered, setIsHovered] = useState(false);
   const [isVisible, setIsVisible] = useState(true);
-  const [message, setMessage] = useState('');
-  const pathname = usePathname();
+  const pathname = usePathname() || '';
+
+  // Contextual messaging based on route
+  const message = pathname.includes('/quotes/new')
+    ? "Besoin d'aide pour extraire votre devis ? Collez simplement votre texte !"
+    : pathname.includes('/quotes')
+    ? "Gérez tous vos devis ici. Cliquez sur 'Nouveau Devis' pour commencer."
+    : "AstraQuote AI est prêt à vous assister.";
 
   useEffect(() => {
-    // Contextual messaging based on route
-    if (pathname.includes('/quotes/new')) {
-      setMessage("Besoin d'aide pour extraire votre devis ? Collez simplement votre texte !");
-    } else if (pathname.includes('/quotes')) {
-      setMessage("Gérez tous vos devis ici. Cliquez sur 'Nouveau Devis' pour commencer.");
-    } else {
-      setMessage("AstraQuote AI est prêt à vous assister.");
-    }
-
+    setIsVisible(true);
     const timer = setTimeout(() => setIsVisible(false), 10000); // Hide after 10s
     return () => clearTimeout(timer);
   }, [pathname]);

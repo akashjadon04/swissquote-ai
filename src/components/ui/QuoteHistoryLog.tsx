@@ -16,7 +16,7 @@ export function QuoteHistoryLog({ quote }: QuoteHistoryLogProps) {
       title: 'Devis initié', 
       desc: 'Création du brouillon et saisie de la description.',
       icon: Clock, 
-      time: new Date(Date.now() - 1000 * 60 * 5).toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' }),
+      time: 'Il y a 5 min',
       color: 'text-text-muted',
       bg: 'bg-surface-2'
     },
@@ -25,7 +25,7 @@ export function QuoteHistoryLog({ quote }: QuoteHistoryLogProps) {
       title: 'Analyse IA', 
       desc: `Extraction sémantique via ${quote.aiProvider || 'Astra AI'} terminée avec succès.`,
       icon: Bot, 
-      time: new Date(Date.now() - 1000 * 60 * 4).toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' }),
+      time: 'Il y a 4 min',
       color: 'text-accent',
       bg: 'bg-accent/10 border-accent/20'
     },
@@ -34,7 +34,7 @@ export function QuoteHistoryLog({ quote }: QuoteHistoryLogProps) {
       title: 'Correspondance Catalogue', 
       desc: `Articles associés au fournisseur ${quote.preferredSupplier || 'NSB'}.`,
       icon: CheckCircle, 
-      time: new Date(Date.now() - 1000 * 60 * 2).toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' }),
+      time: 'Il y a 2 min',
       color: 'text-success',
       bg: 'bg-success/10 border-success/20'
     },

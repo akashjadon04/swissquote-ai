@@ -81,7 +81,7 @@ export default function RootLayout({
           attribute="data-theme"
           defaultTheme="light"
         >
-          <PageTransition>{children}</PageTransition>
+          {children}
           {/* Global overlays — available everywhere */}
           <FloatingActions />
           <MagicOrb />

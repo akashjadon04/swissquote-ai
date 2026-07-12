@@ -1,4 +1,4 @@
-﻿'use client';
+'use client';
 
 import React, { useState, useEffect, useCallback, useMemo, useRef } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
@@ -122,9 +122,7 @@ export default function NewQuotePage() {
       }
 
       const data = await res.json();
-      const { provider, labourHours: calculatedLabourHours, labourComplexity: _labourComplexity, realMatchRate } = data;
-      const matchResult = data.matchResult as MatchResult;
-      const extraction = data.extraction as AIExtractionResult;
+      const { extraction, provider, matchResult, labourHours: calculatedLabourHours, labourComplexity: _labourComplexity, realMatchRate } = data;
 
 
       setExtraction(extraction);
@@ -151,7 +149,7 @@ export default function NewQuotePage() {
 
       // Build sections with matched items
       const sections = extraction.sections.map(
-        (section, sIdx) => ({
+        (section: { section_label: string; description_verbatim: string; articles: Array<{ label: string; material_type: string; dimension: string | null; quantity: number | null; unit: string | null; confidence: number }> }, sIdx: number) => ({
           id: `section-${sIdx}`,
           sectionCode: String(25 + sIdx),
           sectionLabel: section.section_label,
@@ -184,7 +182,7 @@ export default function NewQuotePage() {
                 aiLabel: article.label,
                 aiConfidence: matched.matchConfidence,
                 isMissing: false,
-                is_estimate: !!article.is_estimate,
+                is_estimate: !!('is_estimate' in article && article.is_estimate),
                 isManuallyAdded: false,
                 matchedTextStart: null,
                 matchedTextEnd: null,
@@ -207,7 +205,7 @@ export default function NewQuotePage() {
               aiLabel: article.label,
               aiConfidence: article.confidence,
               isMissing: true,
-              is_estimate: !!article.is_estimate,
+              is_estimate: !!('is_estimate' in article && article.is_estimate),
               isManuallyAdded: false,
               matchedTextStart: null,
               matchedTextEnd: null,
@@ -296,15 +294,12 @@ export default function NewQuotePage() {
               </div>
             </div>
 
-          <AnimatePresence mode="wait">
+          <div className="wizard-content relative">
             {/* Step 0: Description Input */}
             {currentStep === 0 && (
-              <motion.div
+              <div
                 key="description"
-                initial={{ opacity: 0, x: -20 }}
-                animate={{ opacity: 1, x: 0 }}
-                exit={{ opacity: 0, x: 20 }}
-                className="wizard-panel"
+                className="wizard-panel animate-in fade-in slide-in-from-left-4 duration-300"
               >
                 <div className="wizard-header">
                   <h2>{t('quoteWizard', 'descriptionTitle')}</h2>
@@ -313,7 +308,7 @@ export default function NewQuotePage() {
 
                 {processingError && (
                   <div className="error-banner clay-card">
-                    <span>Ã¢Å¡Â Ã¯Â¸Â</span>
+                    <span>Ã¢Å¡Â Ã¯Â¸Â </span>
                     <span>{processingError}</span>
                   </div>
                 )}
@@ -353,22 +348,16 @@ export default function NewQuotePage() {
                         <span className={promptScore >= 80 ? 'text-success' : 'text-warning'}>{promptScore}%</span>
                       </div>
                       <div className="w-full bg-black/5 dark:bg-white/5 rounded-full h-4 p-[2px] shadow-[inset_0_2px_4px_rgba(0,0,0,0.1)] border border-border/50">
-                        <motion.div 
+                        <div 
                           className={`h-full rounded-full transition-all duration-300 ${promptScore >= 80 ? 'bg-gradient-to-r from-emerald-500 to-green-400 shadow-[0_0_12px_rgba(34,197,94,0.6)]' : promptScore >= 50 ? 'bg-gradient-to-r from-amber-500 to-yellow-400' : 'bg-gradient-to-r from-red-500 to-rose-400'}`}
-                          initial={{ width: 0 }}
-                          animate={{ width: `${promptScore}%` }}
-                          transition={{ duration: 0.3 }}
+                          style={{ width: `${promptScore}%` }}
                         />
                       </div>
                     </div>
 
-                    <AnimatePresence>
-                      {showLowQualityWarning && (
-                        <motion.div 
-                          initial={{ opacity: 0, y: 10 }}
-                          animate={{ opacity: 1, y: 0 }}
-                          exit={{ opacity: 0, y: -10 }}
-                          className="mt-4 p-4 rounded-xl border border-warning/30 bg-warning/10 flex flex-col gap-3 shadow-[inset_0_1px_0_rgba(255,255,255,0.1)] backdrop-blur-md"
+                    {showLowQualityWarning && (
+                        <div 
+                          className="mt-4 p-4 rounded-xl border border-warning/30 bg-warning/10 flex flex-col gap-3 shadow-[inset_0_1px_0_rgba(255,255,255,0.1)] backdrop-blur-md animate-in fade-in zoom-in-95 duration-200"
                         >
                           <div className="flex items-center gap-2 text-warning font-bold">
                             <AlertCircle size={18} />
@@ -387,9 +376,8 @@ export default function NewQuotePage() {
                               {locale === 'en' ? 'Continue Anyway' : 'Continuer quand mÃƒÂªme'}
                             </button>
                           </div>
-                        </motion.div>
+                        </div>
                       )}
-                    </AnimatePresence>
                   </div>
 
                 {/* Example Templates */}
@@ -412,37 +400,31 @@ export default function NewQuotePage() {
                     ))}
                   </div>
                 </div>
-              </motion.div>
+              </div>
             )}
 
             {/* Step 1: AI Processing Animation */}
             {currentStep === 1 && (
-              <motion.div
+              <div
                 key="processing"
-                initial={{ opacity: 0, scale: 0.95 }}
-                animate={{ opacity: 1, scale: 1 }}
-                exit={{ opacity: 0, scale: 0.95 }}
-                className="wizard-panel processing-panel flex items-center justify-center min-h-[400px]"
+                className="wizard-panel animate-in fade-in slide-in-from-right-4 duration-300"
               >
                 <AIProcessingState />
-              </motion.div>
+              </div>
             )}
 
             {/* Step 2: Review Articles */}
             {currentStep === 2 && (
-              <motion.div
+              <div
                 key="review"
-                initial={{ opacity: 0, x: -20 }}
-                animate={{ opacity: 1, x: 0 }}
-                exit={{ opacity: 0, x: 20 }}
-                className="wizard-panel"
+                className="wizard-panel animate-in fade-in slide-in-from-right-4 duration-300"
               >
                 <div className="wizard-header">
                   <h2>{t('quoteWizard', 'reviewTitle')}</h2>
                   <div className="review-meta">
                     {extraction && (
                       <span className="provider-badge">
-                        {provider === 'gemini' ? 'Ã¢Å“Â¨ Powered by Astra AI' : 'Ã°Å¸Å’Â OpenRouter'}
+                        {provider === 'gemini' ? 'Ã¢Å“Â¨ Powered by Astra AI' : 'Ã°Å¸Å’Â  OpenRouter'}
                       </span>
                     )}
                     {extraction && (
@@ -479,7 +461,7 @@ export default function NewQuotePage() {
                       <span>{section.sectionLabel}</span>
                     </div>
 
-                    {/* Ã¢â€â‚¬Ã¢â€â‚¬ DESKTOP: real table Ã¢â€â‚¬Ã¢â€â‚¬ */}
+                    {/* Ã¢â€ â‚¬Ã¢â€ â‚¬ DESKTOP: real table Ã¢â€ â‚¬Ã¢â€ â‚¬ */}
                     <div className="neo-table-container mt-4 hidden md:block overflow-x-auto w-full">
                       <table className="articles-table w-full text-left border-collapse">
                         <thead className="bg-surface-2/30">
@@ -549,7 +531,7 @@ export default function NewQuotePage() {
                                 <input type="number" className={`neo-input w-24 ${!item.unitPrice ? 'border-danger border-2 bg-danger/5' : ''}`} placeholder="CHF" value={item.unitPrice || ''} onChange={(e) => useQuoteStore.getState().updateItem(sIdx, iIdx, { unitPrice: parseFloat(e.target.value) || 0 })} />
                               </td>
                               <td className="col-total p-4 font-bold text-accent">
-                                {item.lineTotal ? formatAmount(item.lineTotal) : (item.unitPrice && item.quantity ? formatAmount(item.unitPrice * item.quantity) : 'Ã¢â‚¬â€')}
+                                {item.lineTotal ? formatAmount(item.lineTotal) : (item.unitPrice && item.quantity ? formatAmount(item.unitPrice * item.quantity) : 'Ã¢â‚¬â€ ')}
                               </td>
                             </tr>
                           ))}
@@ -557,7 +539,7 @@ export default function NewQuotePage() {
                       </table>
                     </div>
 
-                    {/* Ã¢â€â‚¬Ã¢â€â‚¬ MOBILE: card-form layout Ã¢â€â‚¬Ã¢â€â‚¬ */}
+                    {/* Ã¢â€ â‚¬Ã¢â€ â‚¬ MOBILE: card-form layout Ã¢â€ â‚¬Ã¢â€ â‚¬ */}
                     <div className="md:hidden flex flex-col gap-3 mt-3">
                       {section.items.map((item, iIdx) => (
                         <div key={item.id} className={`rounded-2xl border p-4 flex flex-col gap-3 shadow-sm ${item.isMissing ? 'border-danger/40 bg-danger/5' : (item.reference && !item.isMissing ? 'bg-green-50/30 border-green-200' : 'border-border bg-surface-1')}`}>
@@ -600,7 +582,7 @@ export default function NewQuotePage() {
                             <div className="flex items-center gap-2">
                               <span className="text-[11px] font-bold text-text-muted uppercase tracking-wider shrink-0">Total</span>
                               <strong className="text-accent font-bold text-base">
-                                {item.lineTotal ? formatAmount(item.lineTotal) : (item.unitPrice && item.quantity ? formatAmount(item.unitPrice * item.quantity) : 'Ã¢â‚¬â€')}
+                                {item.lineTotal ? formatAmount(item.lineTotal) : (item.unitPrice && item.quantity ? formatAmount(item.unitPrice * item.quantity) : 'Ã¢â‚¬â€ ')}
                               </strong>
                             </div>
                           </div>
@@ -622,7 +604,7 @@ export default function NewQuotePage() {
                   <div className="flex flex-col items-end gap-2">
                     {hasUnresolvedItems && (
                       <span className="text-warning text-sm font-semibold bg-warning/10 px-3 py-1 rounded-full border border-warning/20">
-                        {locale === 'en' ? 'Ã¢Å¡Â Ã¯Â¸Â Missing items will have 0 price' : 'Ã¢Å¡Â Ã¯Â¸Â Les articles sans prix apparaÃƒÂ®tront vides'}
+                        {locale === 'en' ? 'Ã¢Å¡Â Ã¯Â¸Â  Missing items will have 0 price' : 'Ã¢Å¡Â Ã¯Â¸Â  Les articles sans prix apparaÃƒÂ®tront vides'}
                       </span>
                     )}
                     <Button
@@ -634,18 +616,15 @@ export default function NewQuotePage() {
                     </Button>
                   </div>
                 </div>
-              </motion.div>
+              </div>
             )}
 
             {/* Step 3: Financial Summary */}
             {currentStep === 3 && (
-              <motion.div
-                key="financials"
-                initial={{ opacity: 0, x: -20 }}
-                animate={{ opacity: 1, x: 0 }}
-                exit={{ opacity: 0, x: 20 }}
-                className="wizard-panel"
-              >
+                <div
+                  key="financials"
+                  className="wizard-panel animate-in fade-in slide-in-from-right-4 duration-300"
+                >
                 <div className="wizard-header text-center mb-10">
                   <h2 className="text-3xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-accent to-accent-light mb-2">{t('quoteWizard', 'financialSummary') || 'RÃƒÂ©sumÃƒÂ© financier'}</h2>
                   <p className="text-text-muted">{t('quoteWizard', 'financialSummaryDesc') || 'VÃƒÂ©rifiez et ajustez les paramÃƒÂ¨tres financiers du devis.'}</p>
@@ -878,9 +857,9 @@ export default function NewQuotePage() {
                   </div>
                   </div>
                 </div>
-              </motion.div>
-            )}
-          </AnimatePresence>
+                </div>
+              )}
+          </div>
         </div>
       </main>
       <MobileBottomNav />
@@ -898,9 +877,6 @@ export default function NewQuotePage() {
     </div>
   );
 }
-
-
-
 
 
 
