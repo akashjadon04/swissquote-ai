@@ -1,4 +1,4 @@
-﻿export const SUPPLIERS = {
+export const SUPPLIERS = {
   NSB: { code: "NSB", name: "Nussbaum" },
   ST: { code: "ST", name: "Sanitas Troesch" },
   GM: { code: "GM", name: "Getaz Miauton" },
@@ -2864,7 +2864,7 @@ export const MOCK_CATALOGUE = [
     "active": true,
     "unit": "p",
     "base_price": 52.00
-  }
+  },
   {
       "id": "auto-10000",
       "supplier": {
