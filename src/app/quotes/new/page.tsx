@@ -278,7 +278,7 @@ export default function NewQuotePage() {
             <div className="wizard-steps relative flex justify-between items-center mb-8 px-4 md:px-12">
               <div className="absolute top-5 left-10 right-10 md:left-20 md:right-20 h-[2px] bg-border z-0">
                 <div 
-                  className="h-full bg-primary transition-all duration-500 ease-in-out" 
+                  className="h-full bg-success transition-all duration-500 ease-in-out" 
                   style={{ width: `${(currentStep / (STEPS.length - 1)) * 100}%` }} 
                 />
               </div>
@@ -287,18 +287,18 @@ export default function NewQuotePage() {
                 <div
                   key={step.id}
                   className={`wizard-step relative z-10 flex flex-col items-center gap-2 ${
-                    i === currentStep ? 'active text-primary' : 
-                    i < currentStep ? 'completed text-primary' : 'text-text-muted opacity-60'
+                    i === currentStep ? 'active text-success' : 
+                    i < currentStep ? 'completed text-success' : 'text-text-muted opacity-60'
                   }`}
                 >
                   <div className={`wizard-step-icon w-10 h-10 rounded-full flex items-center justify-center border-2 bg-surface-1 shadow-sm transition-all duration-300 ${
-                    i === currentStep ? 'border-primary bg-primary/10 scale-110' : 
-                    i < currentStep ? 'border-primary bg-primary text-white' : 'border-border'
+                    i === currentStep ? 'border-success bg-success/10 text-success scale-110' : 
+                    i < currentStep ? 'border-success bg-success text-white' : 'border-border'
                   }`}>
                     {i < currentStep ? <Check size={18} /> : step.icon}
                   </div>
                   {!isMobile && (
-                    <span className={`wizard-step-label text-sm font-semibold mt-1 ${i === currentStep ? 'text-primary' : ''}`}>
+                    <span className={`wizard-step-label text-sm font-semibold mt-1 ${i === currentStep ? 'text-success' : ''}`}>
                       {step.label}
                     </span>
                   )}
@@ -396,11 +396,11 @@ export default function NewQuotePage() {
                 <div className="template-section">
                   <h3>{t('quoteWizard', 'orChooseTemplate')}</h3>
                   <div className="template-grid">
-                    {[
-                      { label: t('quoteWizard', 'templates.replacement.title'), text: "Client: Jean Dupont, 1000 Lausanne. Intervention prÃƒÂ©vue le 15 aoÃƒÂ»t. Coupure d'eau et vidange des installations. DÃƒÂ©montage, dÃƒÂ©pose et ÃƒÂ©vacuation de la conduite existante depuis la chaufferie jusqu'au sous-sol au droit de la cave nÃ‚Â°1. Reprise sur la conduite d'eau chaude dans la chaufferie. Fourniture et pose de: 15m de Tuyau acier inox 1:4521 Optipress ÃƒËœ 54 mm, 25m de Tuyau acier inox 1:4521 Optipress ÃƒËœ 28 mm, 12 pces de Coude ÃƒÂ  sertir 90Ã‚Â° inox, 8 pces de Manchon coulissant ÃƒÂ  sertir inox, 40 pces de Collier de fixation isophonique pour tube, et 30m d'Isolation PIR + finition PVC. Remise en pression, purge et contrÃƒÂ´le d'ÃƒÂ©tanchÃƒÂ©itÃƒÂ©." },
-                      { label: t('quoteWizard', 'templates.installation.title'), text: "Client: Marie Curie, 1201 GenÃƒÂ¨ve. Installation salle de bain: Fourniture et pose de robinetterie neuve. 2 pces de Vanne ÃƒÂ  bille, 5m de Tuyau acier inox 1:4521 Optipress ÃƒËœ 15 mm, 4 pces de Coude ÃƒÂ  sertir 90Ã‚Â° inox, 1 pce de Clapet anti-retour, et 10 pces de Raccords de raccordement. Y compris raccordements, joints, flexibles et mise en eau." },
-                      { label: t('quoteWizard', 'templates.urgent.title'), text: "Client: HÃƒÂ´pital Cantonal, 1700 Fribourg. DÃƒÂ©pannage urgent: Fuite sur colonne montante d'eau froide au 3ÃƒÂ¨me ÃƒÂ©tage. Remplacement de la section endommagÃƒÂ©e comprenant: 3m de Tuyau acier inox 1:4521 Optipress ÃƒËœ 35 mm, 2 pces de PiÃƒÂ¨ce de transition ÃƒÂ  sertir inox filetÃƒÂ©, 3 pces de Manchon coulissant ÃƒÂ  sertir inox, 5 pces de Collier de fixation isophonique pour tube, et 1 pce de Purgeur automatique. Remise en pression et contrÃƒÂ´le." },
-                    ].map((tpl) => (
+                      {[
+                        { label: t('quoteWizard', 'templates.replacement.title'), text: "Client: Jean Dupont, 1000 Lausanne. Intervention prévue le 15 août. Coupure d'eau et vidange des installations. Démontage, dépose et évacuation de la conduite existante depuis la chaufferie jusqu'au sous-sol au droit de la cave n°1. Reprise sur la conduite d'eau chaude dans la chaufferie. Fourniture et pose de: 15m de Tuyau acier inox 1:4521 Optipress Ø 54 mm, 25m de Tuyau acier inox 1:4521 Optipress Ø 28 mm, 12 pces de Coude à sertir 90° inox, 8 pces de Manchon coulissant à sertir inox, 40 pces de Collier de fixation isophonique pour tube, et 30m d'Isolation PIR + finition PVC. Remise en pression, purge et contrôle de l'étanchéité." },
+                        { label: t('quoteWizard', 'templates.installation.title'), text: "Client: Marie Curie, 1201 Genève. Installation salle de bain: Fourniture et pose de robinetterie neuve. 2 pces de Vanne à bille, 5m de Tuyau acier inox 1:4521 Optipress Ø 15 mm, 4 pces de Coude à sertir 90° inox, 1 pce de Clapet anti-retour, et 10 pces de Raccords de raccordement. Y compris raccordements, joints, flexibles et mise en eau." },
+                        { label: t('quoteWizard', 'templates.urgent.title'), text: "Client: Hôpital Cantonal, 1700 Fribourg. Dépannage urgent: Fuite sur colonne montante d'eau froide au 3ème étage. Remplacement de la section endommagée comprenant: 3m de Tuyau acier inox 1:4521 Optipress Ø 35 mm, 2 pces de Pièce de transition à sertir inox fileté, 3 pces de Manchon coulissant à sertir inox, 5 pces de Collier de fixation isophonique pour tube, et 1 pce de Purgeur automatique. Remise en pression et contrôle." },
+                      ].map((tpl) => (
                       <button
                         key={tpl.label}
                         className="template-card clay-card clay-card--interactive"
