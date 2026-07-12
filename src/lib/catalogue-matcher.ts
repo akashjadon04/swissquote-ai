@@ -147,7 +147,9 @@ export function matchArticles(
     }
 
     // Build rich search query
-    const terms = [aiArticle.label, aiArticle.material_type, aiArticle.dimension].filter(Boolean).join(" ");
+    // AI prompt is instructed to provide a category.
+    const aiCategory = aiArticle.category || '';
+    const terms = [aiArticle.label, aiCategory, aiArticle.material_type, aiArticle.dimension].filter(Boolean).join(" ");
     
     // Exact match Geberit explicitly if requested
     let query = terms;

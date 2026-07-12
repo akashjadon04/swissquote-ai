@@ -29,10 +29,12 @@ export function AIProcessingState() {
   );
 
   return (
-    <div className="flex flex-col items-center justify-center min-h-[65vh] md:min-h-[75vh] mt-10 md:mt-16 gap-16 py-10 px-4 w-full max-w-5xl mx-auto">
+    <div className="flex flex-col items-center justify-center min-h-[50vh] md:min-h-[65vh] mt-4 md:mt-8 gap-8 py-10 px-4 w-full max-w-5xl mx-auto">
       {/* Center Typewriter */}
-      <div className="flex flex-col items-center justify-center scale-[2.75] md:scale-[3.5]">
-        <TypewriterAnimation />
+      <div className="flex flex-col items-center justify-center h-32 md:h-48 w-full mt-10 md:mt-16 mb-4 md:mb-8">
+        <div className="scale-[2.75] md:scale-[3.5]">
+          <TypewriterAnimation />
+        </div>
       </div>
 
       {/* Powered by Astra AI v1 Badge */}
