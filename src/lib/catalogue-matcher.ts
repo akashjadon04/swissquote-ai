@@ -29,14 +29,16 @@ export function normalizeDimension(dim: string | null | undefined): string {
   if (!dim) return "";
   let n = dim.toLowerCase()
     .replace(/\s+/g, " ")
-    .replace(/o|ø/gi, "")
-    .replace(/dn/gi, "")
-    .replace(/mm/gi, "")
-    .replace(/\s+/g, "")
     .trim();
-  const m = n.match(/(\d+(?:[.,]\d+)?)/);
-  if (m) n = m[1].replace(",", ".");
-  return n;
+  // Try to find explicit dimensions like "54 mm", "Ø 54", "DN 50", "2\""
+  const m = n.match(/(?:ø|dn)?\s*(\d+(?:[.,]\d+)?)\s*(?:mm|"|')/i) || n.match(/(?:ø|dn)\s*(\d+(?:[.,]\d+)?)/i);
+  if (m) {
+    return m[1].replace(",", ".");
+  }
+  // If the whole string is just a number
+  const justNum = n.match(/^(\d+(?:[.,]\d+)?)$/);
+  if (justNum) return justNum[1].replace(",", ".");
+  return "";
 }
 
 function extractDiameterMm(dim: string | null | undefined): number | null {

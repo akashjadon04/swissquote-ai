@@ -955,7 +955,7 @@ body {
   padding: 0.75rem 1rem;
   border-radius: 1rem;
   border: 1px solid rgba(0, 0, 0, 0.05);
-  background: var(--surface-2, #f5f5f5);
+  background: var(--color-surface-2, #f5f5f5);
   box-shadow: 
     inset 2px 2px 5px rgba(0, 0, 0, 0.04), 
     inset -2px -2px 5px rgba(255, 255, 255, 1);
@@ -963,22 +963,22 @@ body {
 }
 .clay-input:focus {
   outline: none;
-  background: var(--surface-1, #ffffff);
-  border-color: var(--primary-light, #a0aec0);
+  background: var(--color-surface, #ffffff);
+  border-color: var(--color-accent-muted, #a0aec0);
   box-shadow: 
     inset 1px 1px 3px rgba(0, 0, 0, 0.03), 
     inset -1px -1px 3px rgba(255, 255, 255, 0.8),
     0 0 0 3px rgba(var(--primary-rgb, 100, 150, 255), 0.2);
 }
-.dark .clay-input {
-  background: var(--surface-2, #2a2a2a);
+[data-theme='dark'] .clay-input {
+  background: var(--color-surface-2, #2a2a2a);
   border: 1px solid rgba(255, 255, 255, 0.05);
   box-shadow: 
     inset 2px 2px 5px rgba(0, 0, 0, 0.4), 
     inset -2px -2px 5px rgba(255, 255, 255, 0.02);
 }
-.dark .clay-input:focus {
-  background: var(--surface-1, #1e1e1e);
+[data-theme='dark'] .clay-input:focus {
+  background: var(--color-surface, #1e1e1e);
   box-shadow: 
     inset 1px 1px 3px rgba(0, 0, 0, 0.3), 
     inset -1px -1px 3px rgba(255, 255, 255, 0.02),
