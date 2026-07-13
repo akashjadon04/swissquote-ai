@@ -489,19 +489,21 @@ function QuoteDocument({ quote }: { quote: PDFQuote }) {
         </View>
 
         {/* Client + Building Info */}
-        <View style={styles.infoRow}>
+        <View style={styles.infoRow} wrap={false}>
           <View style={styles.infoBlock}>
             <Text style={styles.infoBlockTitle}>CLIENT</Text>
-            <Text style={styles.infoLine}>{quote.client_name || '—'}</Text>
-            {quote.client_address && <Text style={styles.infoLineMuted}>{quote.client_address}</Text>}
-            {(quote.client_postal || quote.client_city) && (
+            <Text style={styles.infoLine}>{quote.client_name || 'Client non spécifié'}</Text>
+            <Text style={styles.infoLineMuted}>
+              {quote.client_address || 'Adresse de facturation non spécifiée'}
+            </Text>
+            {quote.client_postal || quote.client_city ? (
               <Text style={styles.infoLineMuted}>{[quote.client_postal, quote.client_city].filter(Boolean).join(' ')}</Text>
-            )}
+            ) : null}
             {quote.client_contact && <Text style={styles.infoLineMuted}>{quote.client_contact}</Text>}
           </View>
           <View style={styles.infoBlock}>
             <Text style={styles.infoBlockTitle}>CHANTIER</Text>
-            <Text style={styles.infoLine}>{quote.building_address || '—'}</Text>
+            <Text style={styles.infoLine}>{quote.building_address || 'Genève, Suisse'}</Text>
             {quote.apartment_zone && <Text style={styles.infoLineMuted}>{quote.apartment_zone}</Text>}
             {quote.canton && <Text style={styles.infoLineMuted}>Canton: {quote.canton}</Text>}
           </View>
@@ -513,7 +515,7 @@ function QuoteDocument({ quote }: { quote: PDFQuote }) {
 
         {/* Subject */}
         {quote.subject_line && (
-          <View style={styles.subjectRow}>
+          <View style={styles.subjectRow} wrap={false}>
             <Text style={styles.subjectLabel}>Objet des travaux</Text>
             <Text style={styles.subjectText}>{quote.subject_line}</Text>
           </View>

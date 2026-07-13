@@ -144,7 +144,7 @@ export const PremiumPDFTemplate = React.forwardRef<HTMLDivElement, PremiumPDFTem
         </div>
 
         {/* CLIENT & PROJECT INFO GRID */}
-        <div style={{ display: 'flex', gap: '20px', marginBottom: '10mm' }}>
+        <div style={{ display: 'flex', gap: '20px', marginBottom: '10mm', pageBreakInside: 'avoid', breakInside: 'avoid' }}>
           
           {/* Client Details */}
           <div style={{ flex: 1, background: '#ffffff', borderRadius: '12px', padding: '20px', border: '1px solid #E2E8F0', position: 'relative' }}>
@@ -319,7 +319,7 @@ export const PremiumPDFTemplate = React.forwardRef<HTMLDivElement, PremiumPDFTem
         </div>
 
         {/* FOOTER & SIGNATURE BLOCK */}
-        <div style={{ marginTop: '10mm', paddingTop: '10mm', borderTop: '2px solid #F1F5F9', position: 'relative' }}>
+        <div style={{ marginTop: '10mm', paddingTop: '10mm', borderTop: '2px solid #F1F5F9', position: 'relative', pageBreakInside: 'avoid', breakInside: 'avoid' }}>
           
           <div style={{ display: 'flex', justifyContent: 'space-between', gap: '30px' }}>
             {/* Legal Terms */}
