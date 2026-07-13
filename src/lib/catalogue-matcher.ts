@@ -148,9 +148,10 @@ export function matchArticles(
   // Init or update Fuse
   if (!globalFuse || catalogue.length !== lastCatalogueLength) {
     const options = {
-      keys: ['description', 'specification', 'category', 'supplier_id', 'reference'],
+      // 'name' is the primary content field in the catalogue (description was empty for all 16,796 items)
+      keys: ['name', 'description', 'specification', 'category', 'supplier_id', 'reference'],
       includeScore: true,
-      threshold: 0.6, // Default fuzzy match (balanced)
+      threshold: 0.55, // Slightly more permissive for cross-language (French AI labels vs German catalogue)
       ignoreLocation: true,
       useExtendedSearch: false
     };

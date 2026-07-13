@@ -8,13 +8,15 @@ import { MOCK_CATALOGUE } from "@/lib/catalogueData";
 // POST /api/ai/process — Unified AI + Catalogue Match + Labour Endpoint
 // Does AI extraction + catalogue matching + labour calc server-side in one call.
 
+// NOTE: Node.js runtime (not edge) so the 9MB catalogue module is loaded and
+// CACHED once per warm Lambda instance rather than re-parsed on every cold start.
 export const maxDuration = 60;
-export const runtime = 'edge';
 
 // Adapt catalogue data once at module load (base_price -> unit_price, name -> description)
+// CRITICAL: use || not ?? because description is empty string "", not null/undefined
 const CATALOGUE_ADAPTED: CatalogueArticle[] = (MOCK_CATALOGUE as any[]).map((a) => ({
   ...a,
-  description: a.description ?? a.name ?? "",
+  description: a.description || a.name || "",  // FIX: || falls back on empty string
   unit_price: typeof a.unit_price === "number" ? a.unit_price : (a.base_price ?? 0),
   supplier_id: a.supplier_id ?? a.supplier?.code ?? "",
   created_at: a.created_at ?? "",
