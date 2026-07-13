@@ -132,7 +132,7 @@ async function extractWithGeminiKey(
   keyIndex: number,
   logDebug: (msg: string) => void
 ): Promise<AIExtractionResult> {
-  const modelName = process.env.GEMINI_MODEL || 'gemini-2.5-flash';
+  const modelName = process.env.GEMINI_MODEL || 'gemini-3.5-flash';
 
   const genAI = new GoogleGenerativeAI(apiKey);
   const model = genAI.getGenerativeModel({
@@ -221,43 +221,59 @@ async function extractWithNvidiaNimKey(
   keyIndex: number,
   logDebug: (msg: string) => void
 ): Promise<AIExtractionResult> {
-  const model = 'meta/llama-3.3-70b-instruct';
-  const start = Date.now();
-  logDebug(`[Nvidia] Key ${keyIndex + 1}: Calling model ${model}...`);
-  
-  const response = await fetch('https://integrate.api.nvidia.com/v1/chat/completions', {
-    method: 'POST',
-    headers: {
-      'Content-Type': 'application/json',
-      'Authorization': `Bearer ${apiKey}`,
-    },
-    body: JSON.stringify({
-      model,
-      messages: [
-        { role: 'system', content: SYSTEM_PROMPT },
-        { role: 'user', content: description },
-      ],
-      temperature: 0.1,
-      max_tokens: 8192
-    }),
-  });
+  const models = [
+    'meta/llama-3.3-70b-instruct',
+    'meta/llama-3.2-3b-instruct'
+  ];
 
-  if (!response.ok) {
-    const errText = await response.text().catch(() => response.statusText);
-    throw new Error(`HTTP ${response.status}: ${errText}`);
+  let lastError = null;
+
+  for (const model of models) {
+    const start = Date.now();
+    logDebug(`[Nvidia] Key ${keyIndex + 1}: Calling model ${model}...`);
+    try {
+      const response = await fetch('https://integrate.api.nvidia.com/v1/chat/completions', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+          'Authorization': `Bearer ${apiKey}`,
+        },
+        body: JSON.stringify({
+          model,
+          messages: [
+            { role: 'system', content: SYSTEM_PROMPT },
+            { role: 'user', content: description },
+          ],
+          temperature: 0.1,
+          max_tokens: 8192
+        }),
+      });
+
+      if (!response.ok) {
+        const errText = await response.text().catch(() => response.statusText);
+        throw new Error(`HTTP ${response.status}: ${errText}`);
+      }
+
+      const data = await response.json();
+      if (data.error) {
+        throw new Error(data.error.message || JSON.stringify(data.error));
+      }
+
+      const text = data.choices?.[0]?.message?.content;
+      if (!text) throw new Error(`Empty content`);
+
+      const duration = Date.now() - start;
+      logDebug(`[Nvidia] Key ${keyIndex + 1}: Success on model ${model} in ${duration}ms`);
+      return parseAIResponse(text);
+    } catch (e) {
+      lastError = e;
+      const msg = e instanceof Error ? e.message : String(e);
+      logDebug(`[Nvidia] Key ${keyIndex + 1}: Model ${model} failed in ${Date.now() - start}ms: ${msg}`);
+      continue;
+    }
   }
 
-  const data = await response.json();
-  if (data.error) {
-    throw new Error(data.error.message || JSON.stringify(data.error));
-  }
-
-  const text = data.choices?.[0]?.message?.content;
-  if (!text) throw new Error(`Empty content`);
-
-  const duration = Date.now() - start;
-  logDebug(`[Nvidia] Key ${keyIndex + 1}: Success in ${duration}ms`);
-  return parseAIResponse(text);
+  throw new Error(`Nvidia NIM key ${keyIndex + 1} all models failed. Last error: ${lastError instanceof Error ? lastError.message : String(lastError)}`);
 }
 
 async function extractWithNvidiaNim(description: string, logDebug: (msg: string) => void): Promise<AIExtractionResult> {
@@ -327,7 +343,7 @@ async function extractWithOpenRouterKey(
 ): Promise<AIExtractionResult> {
   const models = [
     'meta-llama/llama-3.3-70b-instruct:free',
-    'meta-llama/llama-3-8b-instruct:free'
+    'meta-llama/llama-3.2-3b-instruct:free'
   ];
 
   let lastError = null;
