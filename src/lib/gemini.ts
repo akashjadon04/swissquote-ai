@@ -40,40 +40,20 @@ ${CATALOGUE_SUMMARY}
 
 FORMAT DE SORTIE JSON:
 {
-  "intervention_type": "string",
-  "technical_summary": "string (3 phrases max)",
-  "confidence_global": 0.0 - 1.0,
-  "labour_complexity": "standard" | "complexe" | "tres_complexe",
   "sections": [{
     "section_label": "string",
     "description_verbatim": "string",
     "articles": [{
       "label": "string (ex: Chaudière condensation gaz 24 kW, Bâti-support Geberit Duofix WC suspendu h=112cm, Tuyau inox Optipress Ø 28 mm)",
-      "material_type": "string",
       "category": "string (utiliser les catégories listées ci-dessus)",
-      "dimension": "string ou null",
       "quantity": number ou null,
       "unit": "string ou null (doit être pce, m, h, ou forfait)",
-      "confidence": 0.0 - 1.0,
       "needs_site_measurement": boolean,
-      "is_estimate": boolean,
-      "attributes": {
-        "diameter_mm": "number ou null (ex: extraire 28 de 'Ø 28')",
-        "capacity_l": "number ou null (ex: extraire 200 de '200 L')",
-        "power_kw": "number ou null (ex: extraire 24 de '24 kW')",
-        "material": "string ou null",
-        "dn": "number ou null"
-      }
+      "is_estimate": boolean
     }]
   }],
-  "intervention_flags": ["string"],
   "exclusions_suggested": ["string"]
 }
-
-RÈGLE labour_complexity:
-- "standard": appartement vide, accès facile, 1 niveau
-- "complexe": immeuble occupé OU escalier étroit OU 2-3 niveaux OU cave difficile
-- "tres_complexe": chantier très difficile (4+ niveaux, sans ascenseur, immeuble occupé ET étroit)
 
 IMPORTANT: Inclure toujours raccords, colliers et isolations associés aux tuyaux.
 Ajoutez des services logiques si sous-entendus (ex: 'Démontage' ou 'Pose' ou 'Test') depuis le catalogue interne.
@@ -311,9 +291,8 @@ async function extractWithOpenRouterKey(
   keyIndex: number
 ): Promise<AIExtractionResult> {
   const models = [
-    'nvidia/nemotron-3-nano-omni-30b-a3b-reasoning:free',
-    'google/gemma-4-31b-it:free',
-    'openrouter/free'
+    'meta-llama/llama-3.3-70b-instruct:free',
+    'google/gemma-2-9b-it:free'
   ];
 
   let lastError = null;
@@ -386,9 +365,9 @@ async function extractWithOpenRouter(description: string): Promise<AIExtractionR
   throw new Error(`All ${keys.length} OpenRouter key(s) failed:\n${errors.join('\n')}`);
 }
 
-// â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
-// Response Parser â€” normalises + validates AI JSON output
-// â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
+// -------------------------------------------------------------------------
+// Response Parser — normalises + validates AI JSON output
+// -------------------------------------------------------------------------
 function parseAIResponse(text: string): AIExtractionResult {
   let cleaned = text.trim();
   // Strip markdown code fences if model adds them despite instructions
@@ -403,33 +382,17 @@ function parseAIResponse(text: string): AIExtractionResult {
     throw new Error(`AI returned non-JSON response: ${cleaned.slice(0, 200)}`);
   }
 
-  if (!parsed.intervention_type || !Array.isArray(parsed.sections)) {
-    throw new Error('AI response missing required fields (intervention_type, sections)');
+  if (!Array.isArray(parsed.sections)) {
+    throw new Error('AI response missing required fields (sections)');
   }
-
-  // Normalise
-  if (typeof parsed.confidence_global !== 'number') parsed.confidence_global = 0.5;
-  if (!Array.isArray(parsed.intervention_flags)) parsed.intervention_flags = [];
-  if (!Array.isArray(parsed.exclusions_suggested)) parsed.exclusions_suggested = [];
 
   for (const section of parsed.sections) {
     if (!Array.isArray(section.articles)) section.articles = [];
     for (const article of section.articles) {
-      if (typeof article.confidence !== 'number') article.confidence = 0.5;
-      // Enforce: quantity MUST be null if not a number â€” no defaults
+      // Enforce: quantity MUST be null if not a number - no defaults
       if (article.quantity !== null && typeof article.quantity !== 'number') {
         article.quantity = null;
       }
-      
-      // Normalize attributes
-      if (!article.attributes) {
-        article.attributes = {};
-      }
-      const attrs = article.attributes;
-      if (attrs.diameter_mm !== undefined && typeof attrs.diameter_mm !== 'number') attrs.diameter_mm = null;
-      if (attrs.capacity_l !== undefined && typeof attrs.capacity_l !== 'number') attrs.capacity_l = null;
-      if (attrs.power_kw !== undefined && typeof attrs.power_kw !== 'number') attrs.power_kw = null;
-      if (attrs.dn !== undefined && typeof attrs.dn !== 'number') attrs.dn = null;
     }
   }
 

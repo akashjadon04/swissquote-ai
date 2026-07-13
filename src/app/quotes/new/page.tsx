@@ -159,7 +159,7 @@ export default function NewQuotePage() {
       };
       const canton = quote.canton || 'Genève';
       const labourRate = LABOUR_RATES[canton] || 120;
-      const interventionType = extraction.intervention_type;
+      const interventionType = "Installation/Rénovation";
       // Use server-calculated labour hours (based on actual items + complexity)
       // NEVER use hardcoded hours — null quantities = 0 hours (user must fill in)
       const labourHours = typeof calculatedLabourHours === 'number' ? calculatedLabourHours : 0;
@@ -256,14 +256,14 @@ export default function NewQuotePage() {
         aiExtraction: extraction,
         aiProvider: provider,
         interventionType,
-        technicalSummary: extraction.technical_summary,
+        technicalSummary: null,
         // Use real catalogue match rate, not AI extraction confidence
         // (a 95% confident AI extraction that fails to match still shows 95% otherwise)
-        aiConfidence: typeof realMatchRate === 'number' ? realMatchRate : extraction.confidence_global,
+        aiConfidence: typeof realMatchRate === 'number' ? realMatchRate : 0.8,
 
         sections,
         hasMissingItems: allItems.some((i: { isMissing: boolean }) => i.isMissing),
-        exclusions: extraction.exclusions_suggested,
+        exclusions: [],
         financials: {
           materialsSubtotal: Number(materialsSubtotal.toFixed(2)),
           materialsMarginPct: marginPct,
@@ -462,13 +462,7 @@ export default function NewQuotePage() {
                   </div>
                 </div>
 
-                {/* Technical Summary */}
-                {extraction?.technical_summary && (
-                  <div className="tech-summary bg-surface-2/40 backdrop-blur-xl border border-white/5 shadow-[inset_0_1px_1px_rgba(255,255,255,0.05),_0_20px_40px_rgba(0,0,0,0.4)] rounded-3xl p-6 mb-8 mt-6">
-                    <h4 className="flex items-center gap-2 mb-3 text-accent font-semibold"><FileText size={18} /> {t('quoteWizard', 'technicalSummary') || 'Résumé technique'}</h4>
-                    <p className="text-text-primary/90 leading-relaxed">{extraction.technical_summary}</p>
-                  </div>
-                )}
+                {/* Technical Summary Disabled for simplified AI */}
 
                 {/* Articles Table */}
                 {quote.sections.map((section, sIdx) => (

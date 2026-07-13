@@ -67,13 +67,12 @@ function extractLitres(text: string | null | undefined): number | null {
 }
 
 function attrScore(aiArticle: AIArticle, catArticle: CatalogueArticle): { score: number; hardBlock: boolean } {
-  const aiAttrs = aiArticle.attributes || {};
   const catAttrs = catArticle.attributes || {};
-  const aiText = [aiArticle.label, aiArticle.dimension, aiArticle.material_type].filter(Boolean).join(" ");
+  const aiText = aiArticle.label;
   const catSpec = catArticle.specification;
 
   // power_kw
-  const aiKw = aiAttrs.power_kw ?? extractKw(aiText);
+  const aiKw = extractKw(aiText);
   const catKw = catAttrs.power_kw ?? extractKw(catSpec) ?? extractKw(catArticle.description);
   if (aiKw !== null && catKw !== null) {
     if (Math.abs(aiKw - catKw) <= 2) return { score: 1.0, hardBlock: false };
@@ -84,7 +83,7 @@ function attrScore(aiArticle: AIArticle, catArticle: CatalogueArticle): { score:
   }
 
   // capacity_l
-  const aiL = aiAttrs.capacity_l ?? extractLitres(aiText);
+  const aiL = extractLitres(aiText);
   const catL = catAttrs.capacity_l ?? extractLitres(catSpec) ?? extractLitres(catArticle.description);
   if (aiL !== null && catL !== null) {
     if (Math.abs(aiL - catL) <= 20) return { score: 1.0, hardBlock: false };
@@ -95,7 +94,7 @@ function attrScore(aiArticle: AIArticle, catArticle: CatalogueArticle): { score:
   }
 
   // diameter_mm
-  const aiD = aiAttrs.diameter_mm ?? extractDiameterMm(aiArticle.dimension) ?? extractDiameterMm(aiText);
+  const aiD = extractDiameterMm(aiText);
   const catD = catAttrs.diameter_mm ?? extractDiameterMm(catSpec) ?? extractDiameterMm(catArticle.description);
   if (aiD !== null && catD !== null) {
     if (Math.abs(aiD - catD) < 2) return { score: 1.0, hardBlock: false };
@@ -149,7 +148,7 @@ export function matchArticles(
     // Build rich search query
     // AI prompt is instructed to provide a category.
     const aiCategory = aiArticle.category || '';
-    const terms = [aiArticle.label, aiCategory, aiArticle.material_type, aiArticle.dimension].filter(Boolean).join(" ");
+    const terms = [aiArticle.label, aiCategory].filter(Boolean).join(" ");
     
     // Exact match Geberit explicitly if requested
     let query = terms;

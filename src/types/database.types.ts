@@ -248,20 +248,10 @@ export interface AuditLog {
 export interface AIArticle {
   label: string;
   category?: string;
-  material_type: string;
-  dimension: string | null;
   quantity: number | null;
   unit: string | null;
-  confidence: number;
   needs_site_measurement?: boolean;
   is_estimate?: boolean;
-  attributes?: {
-    diameter_mm?: number | null;
-    capacity_l?: number | null;
-    power_kw?: number | null;
-    material?: string | null;
-    dn?: number | null;
-  };
   // Category resolved during matching (set by catalogue-matcher)
   resolvedCategory?: string;
 }
@@ -273,14 +263,7 @@ export interface AISection {
 }
 
 export interface AIExtractionResult {
-  intervention_type: string;
-  technical_summary: string;
-  confidence_global: number;
   sections: AISection[];
-  intervention_flags: string[];
-  exclusions_suggested: string[];
-  // Labour complexity detected from description context
-  labour_complexity?: 'standard' | 'complexe' | 'tres_complexe';
 }
 
 // â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
