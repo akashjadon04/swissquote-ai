@@ -57,8 +57,8 @@ export async function POST(request: NextRequest) {
       preferredSupplier?: SupplierCode;
     };
 
-    if (!description || typeof description !== "string" || description.trim().length < 10) {
-      return NextResponse.json({ error: "Le traitement par l'IA a échoué. Veuillez réessayer." }, { status: 400 });
+    if (!description || typeof description !== "string" || description.trim().length === 0) {
+      return NextResponse.json({ error: "Description vide." }, { status: 400 });
     }
     if (description.length > 10_000) {
       return NextResponse.json({ error: "Le traitement par l'IA a échoué. Veuillez réessayer." }, { status: 400 });
@@ -67,7 +67,13 @@ export async function POST(request: NextRequest) {
     const startTime = Date.now();
 
     // Step 1: AI Extraction — identifies what materials/work is needed
-    const aiResult = await extractFromDescription(description.trim());
+    let aiResult;
+    try {
+      aiResult = await extractFromDescription(description.trim());
+    } catch (error: any) {
+      console.error("[API] AI Extraction failed:", error);
+      return NextResponse.json({ error: error.message || "Erreur interne de l'IA" }, { status: 500 });
+    }
 
     // Step 2: Catalogue Matching — only matched references get prices
     const allArticles: AIArticle[] = aiResult.extraction.sections.flatMap(s => s.articles);
