@@ -2,8 +2,24 @@ import { GoogleGenerativeAI } from '@google/generative-ai';
 import type { AIExtractionResult } from '@/types/database.types';
 import { MOCK_CATALOGUE } from '@/lib/catalogueData';
 
-// Generate a compact catalogue summary for the AI prompt
-const CATALOGUE_SUMMARY = MOCK_CATALOGUE.map(item => `- [${item.category}] ${item.name} ${(item.attributes as any)?.diameter_mm ? (item.attributes as any).diameter_mm + 'mm' : ''} ${(item.attributes as any)?.power_kw ? (item.attributes as any).power_kw + 'kW' : ''} ${(item.attributes as any)?.capacity_l ? (item.attributes as any).capacity_l + 'L' : ''}`).join('\n');
+// Generate a compact catalogue summary for the AI prompt (max 2 items per category to keep token count extremely small for sub-second responses)
+const categoryCounts: Record<string, number> = {};
+const COMPACT_CATALOGUE_ITEMS = MOCK_CATALOGUE.filter(item => {
+  const cat = item.category;
+  if (!cat) return false;
+  if (!categoryCounts[cat]) {
+    categoryCounts[cat] = 0;
+  }
+  if (categoryCounts[cat] < 2) {
+    categoryCounts[cat]++;
+    return true;
+  }
+  return false;
+});
+
+const CATALOGUE_SUMMARY = COMPACT_CATALOGUE_ITEMS.map(item => 
+  `- [${item.category}] ${item.name} ${(item.attributes as any)?.diameter_mm ? (item.attributes as any).diameter_mm + 'mm' : ''} ${(item.attributes as any)?.power_kw ? (item.attributes as any).power_kw + 'kW' : ''} ${(item.attributes as any)?.capacity_l ? (item.attributes as any).capacity_l + 'L' : ''}`
+).join('\n');
 
 // =========================================================================
 // AstraQuote (by Green AI Groupe) - Extraction Engine
@@ -146,8 +162,8 @@ async function extractWithGemini(description: string): Promise<AIExtractionResul
   
   for (let i = 0; i < keys.length; i++) {
     try {
-      // Strict 10s timeout to quickly failover to NVIDIA NIM if Gemini is overloaded/503
-      const res = await withTimeout(extractWithGeminiKey(description, keys[i], i), 10000, `Timeout after 10s (Key ${i + 1})`);
+      // Relaxed 30s timeout so Gemini has plenty of time to succeed (typically takes 12-25s on free tier)
+      const res = await withTimeout(extractWithGeminiKey(description, keys[i], i), 30000, `Timeout after 30s (Key ${i + 1})`);
       badGeminiKeys.delete(keys[i]);
       return res;
     } catch (err) {
@@ -238,8 +254,8 @@ async function extractWithNvidiaNim(description: string): Promise<AIExtractionRe
   const errors: string[] = [];
   for (let i = 0; i < keys.length; i++) {
     try {
-      // Increased timeout to 120s since Vercel limit is bypassed by keep-alive stream
-      const res = await withTimeout(extractWithNvidiaNimKey(description, keys[i], i), 120000, `Timeout after 120s (Nvidia Key ${i + 1})`);
+      // Reduced timeout to 15s so we don't hang if Nvidia NIM is dead/overloaded
+      const res = await withTimeout(extractWithNvidiaNimKey(description, keys[i], i), 15000, `Timeout after 15s (Nvidia Key ${i + 1})`);
       badNvidiaKeys.delete(keys[i]);
       return res;
     } catch (err) {
@@ -292,7 +308,7 @@ async function extractWithOpenRouterKey(
 ): Promise<AIExtractionResult> {
   const models = [
     'meta-llama/llama-3.3-70b-instruct:free',
-    'google/gemma-2-9b-it:free'
+    'meta-llama/llama-3-8b-instruct:free'
   ];
 
   let lastError = null;
@@ -351,8 +367,8 @@ async function extractWithOpenRouter(description: string): Promise<AIExtractionR
   const errors: string[] = [];
   for (let i = 0; i < keys.length; i++) {
     try {
-      // Increased timeout to 120s since Vercel limit is bypassed by keep-alive stream
-      const res = await withTimeout(extractWithOpenRouterKey(description, keys[i], i), 120000, `Timeout after 120s (OpenRouter Key ${i + 1})`);
+      // Reduced timeout to 15s so we don't hang if OpenRouter is dead/overloaded
+      const res = await withTimeout(extractWithOpenRouterKey(description, keys[i], i), 15000, `Timeout after 15s (OpenRouter Key ${i + 1})`);
       badOpenRouterKeys.delete(keys[i]);
       return res;
     } catch (err) {
