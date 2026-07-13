@@ -1,4 +1,3 @@
-import Fuse from 'fuse.js';
 import type { AIArticle, CatalogueArticle, MatchedArticle, MissingArticle, MatchResult, SupplierCode } from "@/types/database.types";
 
 const CATEGORY_ALIASES: Record<string, string[]> = {
@@ -133,9 +132,35 @@ function attrScore(aiArticle: AIArticle, catArticle: CatalogueArticle): { score:
   return { score: 0.5, hardBlock: false };
 }
 
-// Global fuse instance for performance across requests
-let globalFuse: Fuse<CatalogueArticle> | null = null;
-let lastCatalogueLength = 0;
+function customSearch(query: string, catalogue: CatalogueArticle[]) {
+  const queryWords = query.toLowerCase()
+    .normalize("NFD").replace(/[\u0300-\u036f]/g, "")
+    .split(/[\s,.'"\(\)\-\/]+/)
+    .filter(w => w.length > 1);
+
+  if (queryWords.length === 0) return [];
+
+  const results: { item: CatalogueArticle; score: number }[] = [];
+  for (let i = 0; i < catalogue.length; i++) {
+    const item = catalogue[i];
+    const desc = (item.description || "").toLowerCase().normalize("NFD").replace(/[\u0300-\u036f]/g, "");
+    const spec = (item.specification || "").toLowerCase().normalize("NFD").replace(/[\u0300-\u036f]/g, "");
+    const ref = (item.reference || "").toLowerCase();
+
+    let matchCount = 0;
+    for (let j = 0; j < queryWords.length; j++) {
+      const word = queryWords[j];
+      if (desc.includes(word) || spec.includes(word) || ref.includes(word)) {
+        matchCount++;
+      }
+    }
+
+    if (matchCount > 0) {
+      results.push({ item, score: matchCount / queryWords.length });
+    }
+  }
+  return results.sort((a, b) => b.score - a.score);
+}
 
 export function matchArticles(
   aiArticles: AIArticle[],
@@ -145,21 +170,7 @@ export function matchArticles(
   const matched: MatchedArticle[] = [];
   const missing: MissingArticle[] = [];
 
-  // Init or update Fuse
-  if (!globalFuse || catalogue.length !== lastCatalogueLength) {
-    const options = {
-      // 'name' is the primary content field in the catalogue (description was empty for all 16,796 items)
-      keys: ['name', 'description', 'specification', 'category', 'supplier_id', 'reference'],
-      includeScore: true,
-      threshold: 0.55, // Slightly more permissive for cross-language (French AI labels vs German catalogue)
-      ignoreLocation: true,
-      useExtendedSearch: false
-    };
-    globalFuse = new Fuse(catalogue.filter(a => a.active), options);
-    lastCatalogueLength = catalogue.length;
-  }
-
-  const fuse = globalFuse;
+  const activeCatalogue = catalogue.filter(a => a.active);
 
   for (const aiArticle of aiArticles) {
     if (aiArticle.needs_site_measurement) {
@@ -172,20 +183,17 @@ export function matchArticles(
     }
 
     // Build rich search query
-    // AI prompt is instructed to provide a category.
     const aiCategory = aiArticle.category || '';
-    const terms = [aiArticle.label, aiCategory].filter(Boolean).join(" ");
+    let query = [aiArticle.label, aiCategory].filter(Boolean).join(" ");
     
-    // Exact match Geberit explicitly if requested
-    let query = terms;
     if (aiArticle.label.toLowerCase().includes("bâti-support") || aiArticle.label.toLowerCase().includes("geberit")) {
         query += " geberit duofix";
     }
 
-    const fuseResults = fuse.search(query);
+    const searchResults = customSearch(query, activeCatalogue);
 
     // Apply attribute hard filters and re-rank
-    const scoredCandidates = fuseResults
+    const scoredCandidates = searchResults
       .map(result => {
         const article = result.item;
         
@@ -196,11 +204,8 @@ export function matchArticles(
         const attr = attrScore(aiArticle, article);
         if (attr.hardBlock) return { article, score: -1 };
 
-        // Inverse fuse score (lower is better in Fuse, so 1 - score is similarity)
-        const similarity = 1 - (result.score ?? 1);
-        
         // Final blended score
-        const finalScore = (similarity * 0.6) + (attr.score * 0.4) + supplierBoost;
+        const finalScore = (result.score * 0.6) + (attr.score * 0.4) + supplierBoost;
         return { article, score: finalScore };
       })
       .filter(c => c.score >= 0.40) // Threshold for a good match
@@ -218,7 +223,7 @@ export function matchArticles(
       missing.push({
         aiArticle,
         reason: `Aucune correspondance trouvée avec les bons attributs pour "${aiArticle.label}".`,
-        suggestions: fuseResults.slice(0, 3).map(r => r.item), // Top 3 raw semantic matches
+        suggestions: searchResults.slice(0, 3).map(r => r.item), // Top 3 raw semantic matches
       });
     }
   }
