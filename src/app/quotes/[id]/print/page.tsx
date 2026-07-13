@@ -214,6 +214,10 @@ export default function PrintQuotePage({ params }: { params: { id: string } }) {
             margin: 0;
             padding: 0;
           }
+          tr {
+            page-break-inside: avoid !important;
+            break-inside: avoid !important;
+          }
           /* Hide everything outside the print component */
           body > *:not(main) {
             display: none !important;

@@ -546,17 +546,11 @@ function FinancialTab({ quote, onUpdate }: { quote: FullQuote; onUpdate: () => v
           </div>
           <div className="qd-param-row">
             <span className="qd-param-label">Taux horaire</span>
-            {editing
-              ? <input type="number" className="config-input" style={{ maxWidth: 90, textAlign: 'right' }} value={values.labour_rate} onChange={e => setValues(v => ({ ...v, labour_rate: parseFloat(e.target.value) || 145 }))} />
-              : <span className="qd-param-value">{formatAmount(quote.labour_rate ?? 145)} CHF/h</span>
-            }
+            <span className="qd-param-value">{formatAmount(quote.labour_rate ?? 145)} CHF/h</span>
           </div>
           <div className="qd-param-row">
             <span className="qd-param-label">Marge matériaux</span>
-            {editing
-              ? <input type="number" className="config-input" style={{ maxWidth: 90, textAlign: 'right' }} value={values.materials_margin_pct} onChange={e => setValues(v => ({ ...v, materials_margin_pct: parseFloat(e.target.value) || 15 }))} />
-              : <span className="qd-param-value">{quote.materials_margin_pct ?? 15}%</span>
-            }
+            <span className="qd-param-value">{quote.materials_margin_pct ?? 15}%</span>
           </div>
           <div className="qd-param-row">
             <span className="qd-param-label">Frais déplacement</span>

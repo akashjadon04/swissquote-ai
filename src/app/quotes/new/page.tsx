@@ -69,7 +69,8 @@ export default function NewQuotePage() {
         filename:     `Devis_${quote.id || 'Nouveau'}.pdf`,
         image:        { type: 'jpeg' as const, quality: 0.98 },
         html2canvas:  { scale: 2, useCORS: true, logging: false },
-        jsPDF:        { unit: 'mm' as const, format: 'a4' as const, orientation: 'portrait' as const }
+        jsPDF:        { unit: 'mm' as const, format: 'a4' as const, orientation: 'portrait' as const },
+        pagebreak:    { mode: ['avoid-all', 'css', 'legacy'] }
       };
       await html2pdf().set(opt).from(element).save();
     } catch (error) {
@@ -729,18 +730,9 @@ export default function NewQuotePage() {
                       <label className="text-sm font-medium text-text-muted">{t('quoteWizard', 'labourRate') || 'Taux horaire (CHF/h)'}</label>
                       <input
                         type="number"
-                        className="clay-input"
+                        className="clay-input opacity-70 cursor-not-allowed"
                         value={quote.financials.labourRate}
-                        min={0}
-                        onChange={(e) => {
-                          setQuote({
-                            financials: {
-                              ...quote.financials,
-                              labourRate: parseFloat(e.target.value) || 0,
-                            },
-                          });
-                          useQuoteStore.getState().recalculateFinancials();
-                        }}
+                        disabled
                       />
                     </div>
 
@@ -748,19 +740,9 @@ export default function NewQuotePage() {
                       <label className="text-sm font-medium text-text-muted">{t('quoteWizard', 'materialsMarginPct') || 'Marge matériaux (%)'}</label>
                       <input
                         type="number"
-                        className="clay-input"
+                        className="clay-input opacity-70 cursor-not-allowed"
                         value={quote.financials.materialsMarginPct}
-                        min={0}
-                        max={100}
-                        onChange={(e) => {
-                          setQuote({
-                            financials: {
-                              ...quote.financials,
-                              materialsMarginPct: parseFloat(e.target.value) || 0,
-                            },
-                          });
-                          useQuoteStore.getState().recalculateFinancials();
-                        }}
+                        disabled
                       />
                     </div>
 

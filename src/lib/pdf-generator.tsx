@@ -230,12 +230,12 @@ const styles = StyleSheet.create({
   },
 
   // Column widths
-  colRef:   { width: 80 },
+  colRef:   { width: 70 },
   colDesc:  { flex: 1 },
-  colQty:   { width: 35, textAlign: 'right' },
-  colUnit:  { width: 30, textAlign: 'center' },
-  colPrice: { width: 55, textAlign: 'right' },
-  colTotal: { width: 60, textAlign: 'right' },
+  colQty:   { width: 30, textAlign: 'right' },
+  colUnit:  { width: 25, textAlign: 'center' },
+  colPrice: { width: 65, textAlign: 'right' },
+  colTotal: { width: 85, textAlign: 'right' },
 
   // ── Financial Summary ────────────────
   financialSection: {
@@ -521,7 +521,7 @@ function QuoteDocument({ quote }: { quote: PDFQuote }) {
 
         {/* Sections */}
         {(quote.sections || []).sort((a, b) => a.sort_order - b.sort_order).map((section) => (
-          <View key={section.id} wrap={false}>
+          <View key={section.id}>
             {/* Section Header */}
             <View style={styles.sectionHeader}>
               {section.section_code && <Text style={styles.sectionCode}>{section.section_code}</Text>}
@@ -549,6 +549,7 @@ function QuoteDocument({ quote }: { quote: PDFQuote }) {
               {section.items.sort((a, b) => a.sort_order - b.sort_order).map((item, idx) => (
                 <View
                   key={item.id}
+                  wrap={false}
                   style={[
                     styles.tableRow,
                     idx % 2 === 1 ? styles.tableRowAlt : {},
@@ -596,7 +597,7 @@ function QuoteDocument({ quote }: { quote: PDFQuote }) {
         )}
 
         {/* Financial Summary */}
-        <View style={styles.financialSection}>
+        <View style={styles.financialSection} wrap={false}>
           <View style={[styles.financialRow, styles.financialRowAlt]}>
             <Text style={styles.financialLabel}>Matériaux HT</Text>
             <Text style={styles.financialValue}>{formatCHFPDF(quote.materials_subtotal)}</Text>
@@ -642,7 +643,7 @@ function QuoteDocument({ quote }: { quote: PDFQuote }) {
 
         {/* Exclusions */}
         {quote.exclusions && quote.exclusions.length > 0 && (
-          <View style={styles.exclusionsSection}>
+          <View style={styles.exclusionsSection} wrap={false}>
             <Text style={styles.exclusionsTitle}>Non compris dans ce devis:</Text>
             {quote.exclusions.map((exc, i) => (
               <Text key={i} style={styles.exclusionItem}>• {exc}</Text>
@@ -651,7 +652,7 @@ function QuoteDocument({ quote }: { quote: PDFQuote }) {
         )}
 
         {/* Signature blocks */}
-        <View style={styles.signatureSection}>
+        <View style={styles.signatureSection} wrap={false}>
           <View style={styles.signatureBox}>
             <Text style={styles.signatureTitle}>POUR ACCORD CLIENT</Text>
             <Text style={styles.signatureRole}>Date et signature: ________________________</Text>

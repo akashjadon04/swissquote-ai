@@ -154,11 +154,11 @@ export const PremiumPDFTemplate = React.forwardRef<HTMLDivElement, PremiumPDFTem
               Informations Client
             </div>
             <div style={{ marginTop: '10px' }}>
-              <p style={{ margin: '0 0 10px 0', fontSize: '16px', fontWeight: 800, color: '#0F172A' }}>{quote.clientName}</p>
+              <p style={{ margin: '0 0 10px 0', fontSize: '16px', fontWeight: 800, color: '#0F172A' }}>{quote.clientName || 'Client non spécifié'}</p>
               <div style={{ display: 'flex', alignItems: 'flex-start', gap: '8px', color: '#64748b', fontSize: '12px', lineHeight: '1.5' }}>
                 <MapPin size={14} style={{ marginTop: '2px', flexShrink: 0 }} />
                 <span>
-                  {quote.clientAddress}
+                  {quote.clientAddress || 'Adresse de facturation non spécifiée'}
                   {(quote.clientPostal || quote.clientCity) && <br />}
                   {quote.clientPostal} {quote.clientCity}
                 </span>
@@ -173,11 +173,11 @@ export const PremiumPDFTemplate = React.forwardRef<HTMLDivElement, PremiumPDFTem
             </div>
             <div style={{ marginTop: '10px' }}>
               <p style={{ margin: '0 0 10px 0', fontSize: '14px', fontWeight: 700, color: '#0F172A', lineHeight: '1.4' }}>
-                {quote.subjectLine}
+                {quote.subjectLine || 'Projet d\'installation sanitaire'}
               </p>
               <div style={{ display: 'flex', flexWrap: 'wrap', gap: '12px', color: '#64748b', fontSize: '12px' }}>
                 <span style={{ display: 'flex', alignItems: 'center', gap: '4px' }}>
-                  <Building2 size={12} /> {quote.buildingAddress}
+                  <Building2 size={12} /> {quote.buildingAddress || 'Genève, Suisse'}
                 </span>
                 {quote.apartmentZone && (
                   <span style={{ display: 'flex', alignItems: 'center', gap: '4px' }}>
@@ -210,11 +210,11 @@ export const PremiumPDFTemplate = React.forwardRef<HTMLDivElement, PremiumPDFTem
               <table style={{ width: '100%', borderCollapse: 'collapse', tableLayout: 'fixed' }}>
                 <thead>
                   <tr style={{ background: '#ffffff', borderBottom: '1px solid #E2E8F0' }}>
-                    <th style={{ padding: '10px 15px', textAlign: 'left', fontSize: '10px', color: '#64748b', fontWeight: 700, textTransform: 'uppercase', width: '15%' }}>{t('catalogue', 'columns.reference')}</th>
-                    <th style={{ padding: '10px 15px', textAlign: 'left', fontSize: '10px', color: '#64748b', fontWeight: 700, textTransform: 'uppercase', width: '40%' }}>{t('catalogue', 'columns.description')}</th>
-                    <th style={{ padding: '10px 15px', textAlign: 'center', fontSize: '10px', color: '#64748b', fontWeight: 700, textTransform: 'uppercase', width: '15%' }}>{t('catalogue', 'columns.quantity')}</th>
-                    <th style={{ padding: '10px 15px', textAlign: 'right', fontSize: '10px', color: '#64748b', fontWeight: 700, textTransform: 'uppercase', width: '15%' }}>PU HT</th>
-                    <th style={{ padding: '10px 15px', textAlign: 'right', fontSize: '10px', color: '#64748b', fontWeight: 700, textTransform: 'uppercase', width: '15%' }}>{t('catalogue', 'columns.total')}</th>
+                    <th style={{ padding: '10px 8px', textAlign: 'left', fontSize: '10px', color: '#64748b', fontWeight: 700, textTransform: 'uppercase', width: '12%' }}>{t('catalogue', 'columns.reference')}</th>
+                    <th style={{ padding: '10px 8px', textAlign: 'left', fontSize: '10px', color: '#64748b', fontWeight: 700, textTransform: 'uppercase', width: '43%' }}>{t('catalogue', 'columns.description')}</th>
+                    <th style={{ padding: '10px 8px', textAlign: 'center', fontSize: '10px', color: '#64748b', fontWeight: 700, textTransform: 'uppercase', width: '13%' }}>{t('catalogue', 'columns.quantity')}</th>
+                    <th style={{ padding: '10px 8px', textAlign: 'right', fontSize: '10px', color: '#64748b', fontWeight: 700, textTransform: 'uppercase', width: '15%' }}>PU HT</th>
+                    <th style={{ padding: '10px 8px', textAlign: 'right', fontSize: '10px', color: '#64748b', fontWeight: 700, textTransform: 'uppercase', width: '17%' }}>{t('catalogue', 'columns.total')}</th>
                   </tr>
                 </thead>
                 <tbody>
@@ -222,12 +222,14 @@ export const PremiumPDFTemplate = React.forwardRef<HTMLDivElement, PremiumPDFTem
                     <tr key={item.id} style={{ 
                       backgroundColor: iIdx % 2 === 0 ? '#FAFAFA' : '#FFFFFF',
                       borderBottom: iIdx === section.items.length - 1 ? 'none' : '1px solid #F1F5F9',
-                      transition: 'background-color 0.2s'
+                      transition: 'background-color 0.2s',
+                      pageBreakInside: 'avoid',
+                      breakInside: 'avoid'
                     }}>
-                      <td style={{ padding: '12px 15px', fontSize: '11px', color: '#64748b', fontFamily: 'monospace', verticalAlign: 'top' }}>
+                      <td style={{ padding: '10px 8px', fontSize: '11px', color: '#64748b', fontFamily: 'monospace', verticalAlign: 'top' }}>
                         {item.reference || '—'}
                       </td>
-                      <td style={{ padding: '12px 15px', verticalAlign: 'top' }}>
+                      <td style={{ padding: '10px 8px', verticalAlign: 'top' }}>
                         <div style={{ fontSize: '12px', fontWeight: 600, color: '#0F172A', marginBottom: '4px', lineHeight: '1.4' }}>
                           {item.description}
                         </div>
@@ -237,15 +239,15 @@ export const PremiumPDFTemplate = React.forwardRef<HTMLDivElement, PremiumPDFTem
                           </div>
                         )}
                       </td>
-                      <td style={{ padding: '12px 15px', fontSize: '12px', color: '#0F172A', textAlign: 'center', verticalAlign: 'top' }}>
+                      <td style={{ padding: '10px 8px', fontSize: '12px', color: '#0F172A', textAlign: 'center', verticalAlign: 'top' }}>
                         <span style={{ background: '#F1F5F9', padding: '2px 6px', borderRadius: '4px', fontWeight: 600 }}>
                           {item.quantity} {item.unit}
                         </span>
                       </td>
-                      <td style={{ padding: '12px 15px', fontSize: '12px', color: '#475569', textAlign: 'right', verticalAlign: 'top' }}>
+                      <td style={{ padding: '10px 8px', fontSize: '12px', color: '#475569', textAlign: 'right', verticalAlign: 'top' }}>
                         {formatCHF(item.unitPrice || 0)}
                       </td>
-                      <td style={{ padding: '12px 15px', fontSize: '12px', color: '#0F172A', fontWeight: 700, textAlign: 'right', verticalAlign: 'top' }}>
+                      <td style={{ padding: '10px 8px', fontSize: '12px', color: '#0F172A', fontWeight: 700, textAlign: 'right', verticalAlign: 'top' }}>
                         {formatCHF(item.lineTotal || 0)}
                       </td>
                     </tr>
@@ -258,7 +260,7 @@ export const PremiumPDFTemplate = React.forwardRef<HTMLDivElement, PremiumPDFTem
 
         {/* FINANCIAL SUMMARY TOTALS */}
         <div style={{ display: 'flex', justifyContent: 'flex-end', marginTop: '10mm', marginBottom: '20mm' }}>
-          <div style={{ width: '100mm', background: '#F8FAFC', borderRadius: '12px', border: '1px solid #E2E8F0', padding: '24px', boxShadow: '0 10px 15px -3px rgba(0,0,0,0.05)' }}>
+          <div style={{ width: '100mm', background: '#F8FAFC', borderRadius: '12px', border: '1px solid #E2E8F0', padding: '24px', boxShadow: '0 10px 15px -3px rgba(0,0,0,0.05)', pageBreakInside: 'avoid', breakInside: 'avoid' }}>
             
             <div style={{ display: 'flex', justifyContent: 'space-between', marginBottom: '8px', fontSize: '13px', color: '#475569' }}>
               <span>Matière & Fournitures HT</span>
