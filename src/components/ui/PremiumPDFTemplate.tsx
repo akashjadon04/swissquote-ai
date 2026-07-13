@@ -17,12 +17,10 @@ export const PremiumPDFTemplate = React.forwardRef<HTMLDivElement, PremiumPDFTem
       ref={ref} 
       style={{
         width: '210mm',
-        minHeight: '297mm',
         backgroundColor: '#ffffff',
         position: 'relative',
         fontFamily: '"Inter", system-ui, -apple-system, sans-serif',
         color: '#1a1a2e',
-        overflow: 'hidden',
         boxSizing: 'border-box'
       }}
     >
@@ -38,10 +36,10 @@ export const PremiumPDFTemplate = React.forwardRef<HTMLDivElement, PremiumPDFTem
         top: 0,
         left: 0,
         bottom: 0,
-        width: '20mm',
+        width: '15mm',
         background: 'linear-gradient(180deg, #1A365D 0%, #2563EB 50%, #3B82F6 100%)',
         zIndex: 1,
-        boxShadow: 'inset -5px 0 15px rgba(0,0,0,0.1)'
+        boxShadow: 'inset -3px 0 10px rgba(0,0,0,0.1)'
       }} />
 
       {/* 2. Abstract Geometric Grid Top Right */}
@@ -76,10 +74,10 @@ export const PremiumPDFTemplate = React.forwardRef<HTMLDivElement, PremiumPDFTem
         FOREGROUND CONTENT CONTAINER
         =========================================
       */}
-      <div style={{ padding: '25mm 20mm 25mm 35mm', position: 'relative', zIndex: 10, display: 'flex', flexDirection: 'column', minHeight: '297mm' }}>
+      <div style={{ padding: '15mm 15mm 15mm 25mm', position: 'relative', zIndex: 10, display: 'flex', flexDirection: 'column' }}>
         
         {/* HEADER SECTION */}
-        <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'flex-start', marginBottom: '25mm' }}>
+        <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'flex-start', marginBottom: '10mm' }}>
           
           {/* Company Branding */}
           <div style={{ maxWidth: '50%' }}>
@@ -146,7 +144,7 @@ export const PremiumPDFTemplate = React.forwardRef<HTMLDivElement, PremiumPDFTem
         </div>
 
         {/* CLIENT & PROJECT INFO GRID */}
-        <div style={{ display: 'flex', gap: '20px', marginBottom: '20mm' }}>
+        <div style={{ display: 'flex', gap: '20px', marginBottom: '10mm' }}>
           
           {/* Client Details */}
           <div style={{ flex: 1, background: '#ffffff', borderRadius: '12px', padding: '20px', border: '1px solid #E2E8F0', position: 'relative' }}>
@@ -197,7 +195,7 @@ export const PremiumPDFTemplate = React.forwardRef<HTMLDivElement, PremiumPDFTem
           </h3>
 
           {quote.sections.map((section, sIdx) => (
-            <div key={section.id} style={{ marginBottom: '25px', borderRadius: '8px', overflow: 'hidden', border: '1px solid #E2E8F0', boxShadow: '0 4px 6px -1px rgba(0,0,0,0.05)' }}>
+            <div key={section.id} style={{ marginBottom: '15px', borderRadius: '8px', overflow: 'hidden', border: '1px solid #E2E8F0', boxShadow: '0 4px 6px -1px rgba(0,0,0,0.05)' }}>
               
               {/* Section Header */}
               <div style={{ background: '#F1F5F9', padding: '12px 15px', borderBottom: '2px solid #CBD5E1', display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
@@ -259,7 +257,7 @@ export const PremiumPDFTemplate = React.forwardRef<HTMLDivElement, PremiumPDFTem
         </div>
 
         {/* FINANCIAL SUMMARY TOTALS */}
-        <div style={{ display: 'flex', justifyContent: 'flex-end', marginTop: '10mm', marginBottom: '20mm' }}>
+        <div style={{ display: 'flex', justifyContent: 'flex-end', marginTop: '5mm', marginBottom: '5mm' }}>
           <div style={{ width: '100mm', background: '#F8FAFC', borderRadius: '12px', border: '1px solid #E2E8F0', padding: '24px', boxShadow: '0 10px 15px -3px rgba(0,0,0,0.05)', pageBreakInside: 'avoid', breakInside: 'avoid' }}>
             
             <div style={{ display: 'flex', justifyContent: 'space-between', marginBottom: '8px', fontSize: '13px', color: '#475569' }}>
@@ -321,7 +319,7 @@ export const PremiumPDFTemplate = React.forwardRef<HTMLDivElement, PremiumPDFTem
         </div>
 
         {/* FOOTER & SIGNATURE BLOCK */}
-        <div style={{ marginTop: 'auto', paddingTop: '10mm', borderTop: '2px solid #F1F5F9', position: 'relative' }}>
+        <div style={{ marginTop: '10mm', paddingTop: '10mm', borderTop: '2px solid #F1F5F9', position: 'relative' }}>
           
           <div style={{ display: 'flex', justifyContent: 'space-between', gap: '30px' }}>
             {/* Legal Terms */}

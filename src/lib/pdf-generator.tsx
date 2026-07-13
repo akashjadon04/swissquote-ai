@@ -37,17 +37,17 @@ const styles = StyleSheet.create({
     fontSize: 9,
     color: COLORS.text,
     backgroundColor: '#FFFFFF',
-    paddingTop: 40,
-    paddingBottom: 60,
-    paddingHorizontal: 40,
+    paddingTop: 30,
+    paddingBottom: 40,
+    paddingHorizontal: 30,
   },
 
   // ── Header ──────────────────────────
   header: {
     flexDirection: 'row',
     justifyContent: 'space-between',
-    marginBottom: 24,
-    paddingBottom: 16,
+    marginBottom: 12,
+    paddingBottom: 12,
     borderBottomWidth: 2,
     borderBottomColor: COLORS.accent,
   },
@@ -89,7 +89,7 @@ const styles = StyleSheet.create({
   infoRow: {
     flexDirection: 'row',
     gap: 16,
-    marginBottom: 20,
+    marginBottom: 10,
   },
   infoBlock: {
     flex: 1,
@@ -120,7 +120,7 @@ const styles = StyleSheet.create({
 
   // ── Subject Line ─────────────────────
   subjectRow: {
-    marginBottom: 16,
+    marginBottom: 8,
     padding: 8,
     backgroundColor: '#EFF4FF',
     borderRadius: 4,
