@@ -138,6 +138,10 @@ export default function NewQuotePage() {
       }
 
       const data = await res.json();
+      if (data.error) {
+        throw new Error(data.error);
+      }
+
       const { extraction, provider, matchResult, labourHours: calculatedLabourHours, labourComplexity: _labourComplexity, realMatchRate } = data;
 
 

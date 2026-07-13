@@ -64,56 +64,77 @@ export async function POST(request: NextRequest) {
       return NextResponse.json({ error: "Le traitement par l'IA a échoué. Veuillez réessayer." }, { status: 400 });
     }
 
-    const startTime = Date.now();
+    const encoder = new TextEncoder();
+    const stream = new ReadableStream({
+      async start(controller) {
+        // Send keep-alive spaces every 3 seconds to bypass Vercel's 30s Edge limit
+        const keepAlive = setInterval(() => {
+          controller.enqueue(encoder.encode(' '));
+        }, 3000);
 
-    // Step 1: AI Extraction — identifies what materials/work is needed
-    let aiResult;
-    try {
-      aiResult = await extractFromDescription(description.trim());
-    } catch (error: any) {
-      console.error("[API] AI Extraction failed:", error);
-      return NextResponse.json({ error: error.message || "Erreur interne de l'IA" }, { status: 500 });
-    }
+        try {
+          // Step 1: AI Extraction — identifies what materials/work is needed
+          const aiResult = await extractFromDescription(description.trim());
 
-    // Step 2: Catalogue Matching — only matched references get prices
-    const allArticles: AIArticle[] = aiResult.extraction.sections.flatMap(s => s.articles);
-    const matchResult = matchArticles(allArticles, CATALOGUE_ADAPTED, preferredSupplier);
+          // Step 2: Catalogue Matching — only matched references get prices
+          const allArticles: AIArticle[] = aiResult.extraction.sections.flatMap(s => s.articles);
+          const matchResult = matchArticles(allArticles, CATALOGUE_ADAPTED, preferredSupplier);
 
-    // Step 3: Labour Calculation — based on matched items with real categories
-    // Items with null quantity contribute ZERO hours — user must enter them
-    const itemsForLabour = [
-      ...matchResult.matched.map(m => ({
-        category: m.catalogueArticle.category,
-        quantity: m.aiArticle.quantity,
-        unit: m.aiArticle.unit,
-        isMissing: false,
-      })),
-      ...matchResult.missing.map(m => ({
-        category: null,
-        quantity: m.aiArticle.quantity,
-        unit: m.aiArticle.unit,
-        isMissing: true,
-      })),
-    ];
+          // Step 3: Labour Calculation — based on matched items with real categories
+          // Items with null quantity contribute ZERO hours — user must enter them
+          const itemsForLabour = [
+            ...matchResult.matched.map(m => ({
+              category: m.catalogueArticle.category,
+              quantity: m.aiArticle.quantity,
+              unit: m.aiArticle.unit,
+              isMissing: false,
+            })),
+            ...matchResult.missing.map(m => ({
+              category: null,
+              quantity: m.aiArticle.quantity,
+              unit: m.aiArticle.unit,
+              isMissing: true,
+            })),
+          ];
 
-    const complexity = aiResult.extraction.labour_complexity;
-    const multiplier = complexityMultiplier(complexity);
-    const calculatedLabourHours = calculateLabourFromItems(itemsForLabour, multiplier);
+          const complexity = aiResult.extraction.labour_complexity;
+          const multiplier = complexityMultiplier(complexity);
 
-    // The real match rate from catalogue (NOT the AI's extraction confidence)
-    const realMatchRate = matchResult.matchRate;
+          const calculatedLabourHours = calculateLabourFromItems(itemsForLabour, multiplier);
+          
+          // Match rate metric
+          const totalValidItems = allArticles.filter(a => a.category !== 'autre' && a.category !== 'depose').length;
+          const matchedCount = matchResult.matched.length;
+          const realMatchRate = totalValidItems > 0 ? (matchedCount / totalValidItems) * 100 : 0;
 
-    return NextResponse.json({
-      extraction: aiResult.extraction,
-      provider: aiResult.provider,
-      matchResult,
-      // Labour — calculated from actual item quantities and categories
-      labourHours: calculatedLabourHours,
-      labourComplexity: complexity || "standard",
-      labourMultiplier: multiplier,
-      // Real match rate for honest UI display
-      realMatchRate,
-      processingTimeMs: Date.now() - startTime,
+          const responsePayload = {
+            extraction: aiResult.extraction,
+            provider: aiResult.provider,
+            matchResult,
+            labourHours: calculatedLabourHours,
+            labourComplexity: complexity || "standard",
+            labourMultiplier: multiplier,
+            realMatchRate
+          };
+
+          clearInterval(keepAlive);
+          controller.enqueue(encoder.encode(JSON.stringify(responsePayload)));
+          controller.close();
+        } catch (error: any) {
+          clearInterval(keepAlive);
+          console.error("[API] AI Extraction failed:", error);
+          controller.enqueue(encoder.encode(JSON.stringify({ error: error.message || "Erreur interne de l'IA" })));
+          controller.close();
+        }
+      }
+    });
+
+    return new Response(stream, {
+      headers: {
+        'Content-Type': 'application/json',
+        'Cache-Control': 'no-cache',
+        'Connection': 'keep-alive',
+      },
     });
 
   } catch (error) {
