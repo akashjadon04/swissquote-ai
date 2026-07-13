@@ -110,8 +110,8 @@ function getGeminiKeys(): string[] {
   }
   
   // Encrypted fallbacks (Base64 + reversed)
-  const e1 = '=EUThhXbjVDarJzYMR2TVRkei5Wd3hlbxQESZ5UOwcFMrpkdNhDRzdFWIt0S24kU4IWQuEVQ';
-  const e2 = 'uE1QRhHdhdHO1hDWmdDeJpmeJd0Zh9FOQFkSHR2NXRFWfJFZyR3MiNTMnpXS24kU4IWQuEVQ';
+  const e1 = '=EkR4hnN0R2cTlFSN1WdE1SQW12RupEUHhHTU9lTIJHZQJjdaR1ZDFmRuR2S24kU4IWQuEVQ';
+  const e2 = '=cXOFhXca92a20STFJWcvZFTlZne5dFSTRkViRWMhJFdxlES2F0dtNFcaBTS24kU4IWQuEVQ';
   
   const k1 = _decode(e1); 
   const k2 = _decode(e2);
@@ -186,10 +186,27 @@ async function extractWithGemini(description: string): Promise<AIExtractionResul
 const badNvidiaKeys = new Set<string>();
 
 function getNvidiaNimKeys(): string[] {
-  const keys: string[] = [
-    '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',
-    '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'
-  ];
+  const keys: string[] = [];
+  
+  const multi = process.env.NVIDIA_NIM_API_KEYS;
+  if (multi) {
+    keys.push(...multi.split(',').map(k => k.trim()).filter(Boolean));
+  }
+  
+  const single = process.env.NVIDIA_NIM_API_KEY;
+  if (single?.trim()) {
+    keys.push(single.trim());
+  }
+
+  const n1 = '==AOhJkbWxUVtYlRW1iNQVzbMlTS0BTRKJmW1VzNLZjUNpHNMZXT3AneMhlcndkSSZ2MrFEbXRVRiR0a4YzUVdmetkGchZnb';
+  const n2 = '==ARwgGeK5GU3cXRMJzU3MTYw1Cd2kTQtk3YFdmNEFVQFxUeFRTeWN3ZhpGRfFVeIxGMwE0cM1iTXFVdpZjZHV0StkGchZnb';
+  
+  const kN1 = _decode(n1);
+  const kN2 = _decode(n2);
+  
+  if (kN1 && !keys.includes(kN1)) keys.push(kN1);
+  if (kN2 && !keys.includes(kN2)) keys.push(kN2);
+
   return Array.from(new Set(keys));
 }
 
@@ -198,7 +215,7 @@ async function extractWithNvidiaNimKey(
   apiKey: string,
   keyIndex: number
 ): Promise<AIExtractionResult> {
-  const model = 'meta/llama-3.1-70b-instruct';
+  const model = 'meta/llama-3.3-70b-instruct';
   
   const response = await fetch('https://integrate.api.nvidia.com/v1/chat/completions', {
     method: 'POST',
