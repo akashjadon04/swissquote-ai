@@ -174,8 +174,8 @@ async function extractWithGemini(description: string, logDebug: (msg: string) =>
       logDebug(`[Gemini] Key ${i + 1}/${keys.length}: Starting attempt`);
       const res = await withTimeout(
         extractWithGeminiKey(description, keys[i], i, logDebug),
-        2500,
-        `Timeout after 2.5s`
+        6000,
+        `Timeout after 6s`
       );
       badGeminiKeys.delete(keys[i]);
       return res;
@@ -291,8 +291,8 @@ async function extractWithNvidiaNim(description: string, logDebug: (msg: string)
       logDebug(`[Nvidia] Key ${i + 1}/${keys.length}: Starting attempt`);
       const res = await withTimeout(
         extractWithNvidiaNimKey(description, keys[i], i, logDebug),
-        2000,
-        `Timeout after 2s`
+        4000,
+        `Timeout after 4s`
       );
       badNvidiaKeys.delete(keys[i]);
       return res;
@@ -414,8 +414,8 @@ async function extractWithOpenRouter(description: string, logDebug: (msg: string
       logDebug(`[OpenRouter] Key ${i + 1}/${keys.length}: Starting attempt`);
       const res = await withTimeout(
         extractWithOpenRouterKey(description, keys[i], i, logDebug),
-        2000,
-        `Timeout after 2s`
+        4000,
+        `Timeout after 4s`
       );
       badOpenRouterKeys.delete(keys[i]);
       return res;
@@ -529,8 +529,8 @@ async function extractWithGroq(description: string, logDebug: (msg: string) => v
       logDebug(`[Groq] Key ${i + 1}/${keys.length}: Starting attempt`);
       const res = await withTimeout(
         extractWithGroqKey(description, keys[i], i, logDebug),
-        1500,
-        `Timeout after 1.5s`
+        5000,
+        `Timeout after 5s`
       );
       badGroqKeys.delete(keys[i]);
       return res;
