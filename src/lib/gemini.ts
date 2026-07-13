@@ -133,7 +133,10 @@ async function extractWithGeminiKey(
   keyIndex: number,
   logDebug: (msg: string) => void
 ): Promise<AIExtractionResult> {
-  const modelName = process.env.GEMINI_MODEL || 'gemini-3.5-flash';
+  let modelName = process.env.GEMINI_MODEL || 'gemini-3.1-flash-lite';
+  if (modelName === 'gemini-3.5-flash' || modelName === 'gemini-1.5-flash' || modelName === 'gemini-2.0-flash') {
+    modelName = 'gemini-3.1-flash-lite'; // Force fallback to stable gemini-3.1-flash-lite to bypass 503/404/429 errors
+  }
 
   const genAI = new GoogleGenerativeAI(apiKey);
   const model = genAI.getGenerativeModel({
@@ -171,8 +174,8 @@ async function extractWithGemini(description: string, logDebug: (msg: string) =>
       logDebug(`[Gemini] Key ${i + 1}/${keys.length}: Starting attempt`);
       const res = await withTimeout(
         extractWithGeminiKey(description, keys[i], i, logDebug),
-        8000,
-        `Timeout after 8s`
+        12000,
+        `Timeout after 12s`
       );
       badGeminiKeys.delete(keys[i]);
       return res;
@@ -288,8 +291,8 @@ async function extractWithNvidiaNim(description: string, logDebug: (msg: string)
       logDebug(`[Nvidia] Key ${i + 1}/${keys.length}: Starting attempt`);
       const res = await withTimeout(
         extractWithNvidiaNimKey(description, keys[i], i, logDebug),
-        6000,
-        `Timeout after 6s`
+        10000,
+        `Timeout after 10s`
       );
       badNvidiaKeys.delete(keys[i]);
       return res;
@@ -411,8 +414,8 @@ async function extractWithOpenRouter(description: string, logDebug: (msg: string
       logDebug(`[OpenRouter] Key ${i + 1}/${keys.length}: Starting attempt`);
       const res = await withTimeout(
         extractWithOpenRouterKey(description, keys[i], i, logDebug),
-        8000,
-        `Timeout after 8s`
+        12000,
+        `Timeout after 12s`
       );
       badOpenRouterKeys.delete(keys[i]);
       return res;
@@ -459,9 +462,9 @@ async function extractWithGroqKey(
   logDebug: (msg: string) => void
 ): Promise<AIExtractionResult> {
   const model = 'llama-3.3-70b-versatile'; // Primary model
-  const backupModel = 'openai/gpt-oss-20b';  // Recommended July 2026 fast model
-  const backupModel2 = 'qwen/qwen3.6-27b';  // Recommended July 2026 high-performance Qwen model
-  const fallbackModel = 'llama-3.1-8b-instant'; // Legacy fallback
+  const backupModel = 'llama-3.1-8b-instant';
+  const backupModel2 = 'mixtral-8x7b-32768';
+  const fallbackModel = 'gemma2-9b-it';
 
   const modelErrors: string[] = [];
   const models = [model, backupModel, backupModel2, fallbackModel];
@@ -526,8 +529,8 @@ async function extractWithGroq(description: string, logDebug: (msg: string) => v
       logDebug(`[Groq] Key ${i + 1}/${keys.length}: Starting attempt`);
       const res = await withTimeout(
         extractWithGroqKey(description, keys[i], i, logDebug),
-        4000,
-        `Timeout after 4s`
+        8000,
+        `Timeout after 8s`
       );
       badGroqKeys.delete(keys[i]);
       return res;

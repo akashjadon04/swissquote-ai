@@ -107,7 +107,24 @@ export function Sidebar() {
   const { sidebarOpen, toggleSidebar, isMobile } = useAppStore();
   const [mounted, setMounted] = useState(false);
 
-  useEffect(() => { Promise.resolve().then(() => setMounted(true)); }, []);
+  useEffect(() => {
+    Promise.resolve().then(() => setMounted(true));
+    
+    // Auto-collapse sidebar on smaller desktop/tablet screens (e.g. < 1200px)
+    const handleResize = () => {
+      const width = window.innerWidth;
+      if (width < 1200 && width >= 768) {
+        useAppStore.getState().setSidebarOpen(false);
+      } else if (width >= 1200) {
+        useAppStore.getState().setSidebarOpen(true);
+      }
+    };
+    
+    handleResize();
+    window.addEventListener('resize', handleResize);
+    return () => window.removeEventListener('resize', handleResize);
+  }, []);
+
   if (!mounted) return null;
 
   // Mobile: overlay sidebar

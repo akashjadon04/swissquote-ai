@@ -76,6 +76,10 @@
   color: var(--color-success);
 }
 
+@media (max-width: 850px) {
+  .wizard-step-label { display: none; }
+}
+
 @media (max-width: 640px) {
   .wizard-step-connector { max-width: 30px; margin: 0 var(--space-2); }
   .wizard-step-icon { width: 32px; height: 32px; font-size: 12px; }
