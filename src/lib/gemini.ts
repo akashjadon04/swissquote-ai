@@ -174,8 +174,8 @@ async function extractWithGemini(description: string, logDebug: (msg: string) =>
       logDebug(`[Gemini] Key ${i + 1}/${keys.length}: Starting attempt`);
       const res = await withTimeout(
         extractWithGeminiKey(description, keys[i], i, logDebug),
-        12000,
-        `Timeout after 12s`
+        2500,
+        `Timeout after 2.5s`
       );
       badGeminiKeys.delete(keys[i]);
       return res;
@@ -291,8 +291,8 @@ async function extractWithNvidiaNim(description: string, logDebug: (msg: string)
       logDebug(`[Nvidia] Key ${i + 1}/${keys.length}: Starting attempt`);
       const res = await withTimeout(
         extractWithNvidiaNimKey(description, keys[i], i, logDebug),
-        10000,
-        `Timeout after 10s`
+        2000,
+        `Timeout after 2s`
       );
       badNvidiaKeys.delete(keys[i]);
       return res;
@@ -414,8 +414,8 @@ async function extractWithOpenRouter(description: string, logDebug: (msg: string
       logDebug(`[OpenRouter] Key ${i + 1}/${keys.length}: Starting attempt`);
       const res = await withTimeout(
         extractWithOpenRouterKey(description, keys[i], i, logDebug),
-        12000,
-        `Timeout after 12s`
+        2000,
+        `Timeout after 2s`
       );
       badOpenRouterKeys.delete(keys[i]);
       return res;
@@ -529,8 +529,8 @@ async function extractWithGroq(description: string, logDebug: (msg: string) => v
       logDebug(`[Groq] Key ${i + 1}/${keys.length}: Starting attempt`);
       const res = await withTimeout(
         extractWithGroqKey(description, keys[i], i, logDebug),
-        8000,
-        `Timeout after 8s`
+        1500,
+        `Timeout after 1.5s`
       );
       badGroqKeys.delete(keys[i]);
       return res;
@@ -617,7 +617,7 @@ export async function extractFromDescription(
 
   logDebug("Starting extraction cascade...");
 
-  // 1. Groq first (Lightning fast, Primary)
+  // 1. Groq first (Primary, lightning fast)
   try {
     const extraction = await extractWithGroq(description, logDebug);
     logDebug(`Total cascade processing completed via Groq in ${Date.now() - startTime}ms`);

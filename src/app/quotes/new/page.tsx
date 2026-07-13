@@ -185,7 +185,7 @@ export default function NewQuotePage() {
             try {
               const data = JSON.parse(line);
               if (data.type === 'log') {
-                console.warn(data.message);
+                console.log("[Astra AI Log]", data.message);
               } else if (data.type === 'result') {
                 finalData = data;
                 finalResultReceived = true;
