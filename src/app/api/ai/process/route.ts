@@ -9,6 +9,7 @@ import { MOCK_CATALOGUE } from "@/lib/catalogueData";
 // Does AI extraction + catalogue matching + labour calc server-side in one call.
 
 export const maxDuration = 60;
+export const runtime = 'edge';
 
 // Adapt catalogue data once at module load (base_price -> unit_price, name -> description)
 const CATALOGUE_ADAPTED: CatalogueArticle[] = (MOCK_CATALOGUE as any[]).map((a) => ({
