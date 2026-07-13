@@ -1,6 +1,6 @@
 'use client';
 
-import React, { useState, useEffect, useCallback, useMemo, useRef } from 'react';
+import React, { useState, useEffect, useCallback, useMemo, useRef, startTransition } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { PenTool, Bot, ClipboardCheck, DollarSign, FileText, AlertCircle, ArrowLeft, ArrowRight, Download, Loader2, Eye, Check } from 'lucide-react';
 import { Sidebar, MobileBottomNav, TopBar } from '@/components/layout/Sidebar';
@@ -213,143 +213,140 @@ export default function NewQuotePage() {
 
       console.warn("=== CASCADE D'EXTRACTION COMPLETED ===");
 
+      // ⚡ IMMEDIATELY dismiss the typewriter and show the review panel.
+      // All heavy computation happens inside startTransition (non-blocking).
       setExtraction(extraction);
       setProvider(provider);
       setMatchResult(matchResult);
+      setProcessing(false);
+      setCurrentStep(2);
 
-      setProcessing(true, 2);
+      // 🔄 Heavy computation: build sections + financials non-blocking
+      startTransition(() => {
+        // Labour rate by canton (Geneva standard 145 CHF/h)
+        const LABOUR_RATES: Record<string, number> = {
+          'Genève': 145, 'Vaud': 120, 'Valais': 120, 'Fribourg': 120,
+          'Neuchâtel': 120, 'Jura': 120, 'Berne': 120, 'Zürich': 120,
+          'Bâle': 120, 'Lucerne': 120,
+        };
+        const canton = quote.canton || 'Genève';
+        const labourRate = LABOUR_RATES[canton] || 120;
+        const interventionType = "Installation/Rénovation";
+        const labourHours = typeof calculatedLabourHours === 'number' ? calculatedLabourHours : 0;
+        const marginPct = 15;
+        const vatRate = 0.081;
+        const travelFee = 45;
 
-      // Labour rate by canton (Geneva standard 145 CHF/h)
-      const LABOUR_RATES: Record<string, number> = {
-        'Genève': 145, 'Vaud': 120, 'Valais': 120, 'Fribourg': 120,
-        'Neuchâtel': 120, 'Jura': 120, 'Berne': 120, 'Zürich': 120,
-        'Bâle': 120, 'Lucerne': 120,
-      };
-      const canton = quote.canton || 'Genève';
-      const labourRate = LABOUR_RATES[canton] || 120;
-      const interventionType = "Installation/Rénovation";
-      // Use server-calculated labour hours (based on actual items + complexity)
-      // NEVER use hardcoded hours — null quantities = 0 hours (user must fill in)
-      const labourHours = typeof calculatedLabourHours === 'number' ? calculatedLabourHours : 0;
-      const marginPct = 15;
-      const vatRate = 0.081;
-      const travelFee = 45;
+        // ⚡ O(1) Map lookups instead of O(n²) find() inside map()
+        const matchedByLabel = new Map<string, any>();
+        for (const m of matchResult.matched) {
+          matchedByLabel.set(m.aiArticle.label, m);
+        }
 
-      // Build sections with matched items
-      const sections = extraction.sections.map(
-        (section: { section_label: string; description_verbatim: string; articles: Array<{ label: string; material_type: string; dimension: string | null; quantity: number | null; unit: string | null; confidence: number }> }, sIdx: number) => ({
-          id: `section-${sIdx}`,
-          sectionCode: String(25 + sIdx),
-          sectionLabel: section.section_label,
-          description: section.description_verbatim,
-          items: section.articles.map((article, aIdx: number) => {
-            const matched = matchResult.matched.find(
-              (m: { aiArticle: { label: string } }) => m.aiArticle.label === article.label
-            );
-            const missing = matchResult.missing.find(
-              (m: { aiArticle: { label: string } }) => m.aiArticle.label === article.label
-            );
+        // Build sections with matched items
+        const sections = extraction.sections.map(
+          (section: { section_label: string; description_verbatim: string; articles: Array<{ label: string; material_type: string; dimension: string | null; quantity: number | null; unit: string | null; confidence: number }> }, sIdx: number) => ({
+            id: `section-${sIdx}`,
+            sectionCode: String(25 + sIdx),
+            sectionLabel: section.section_label,
+            description: section.description_verbatim,
+            items: section.articles.map((article, aIdx: number) => {
+              // ⚡ O(1) lookup instead of O(n) find()
+              const matched = matchedByLabel.get(article.label);
 
-            // RULE: Ensure quantity is at least 1 if not defined or set to 0 initially
-            const safeQty = (article.quantity === null || article.quantity === undefined || article.quantity === 0) ? 1 : article.quantity;
+              // RULE: Ensure quantity is at least 1 if not defined or set to 0 initially
+              const safeQty = (article.quantity === null || article.quantity === undefined || article.quantity === 0) ? 1 : article.quantity;
 
-            if (matched) {
-              const cat = matched.catalogueArticle as CatalogueArticle;
-              const unitPrice = cat.unit_price; // Only catalogue prices. Never AI-estimated.
+              if (matched) {
+                const cat = matched.catalogueArticle as CatalogueArticle;
+                const unitPrice = cat.unit_price; // Only catalogue prices. Never AI-estimated.
+                return {
+                  id: `item-${sIdx}-${aIdx}`,
+                  reference: cat.reference,
+                  description: cat.description,
+                  specification: cat.specification ?? null,
+                  quantity: safeQty,
+                  unit: cat.unit,
+                  unitPrice,
+                  lineTotal: safeQty > 0 && unitPrice ? unitPrice * safeQty : null,
+                  supplierCode: matched.supplierCode,
+                  supplierName: null,
+                  aiLabel: article.label,
+                  aiConfidence: matched.matchConfidence,
+                  isMissing: false,
+                  is_estimate: false,
+                  isManuallyAdded: false,
+                  matchedTextStart: null,
+                  matchedTextEnd: null,
+                  sortOrder: aIdx,
+                };
+              }
+
+              // No catalogue match — DO NOT invent prices or references (per client instructions)
+              const category = ((article as any).category || 'autre').toLowerCase();
+              const fallbackUnit = article.unit || (['tuyau_inox', 'evacuation_pe', 'isolation'].includes(category) ? 'm' : 'pce');
+
               return {
                 id: `item-${sIdx}-${aIdx}`,
-                reference: cat.reference,
-                description: cat.description,
-                specification: cat.specification ?? null,
+                reference: "", // Empty reference
+                description: article.label,
+                specification: article.dimension ?? null,
                 quantity: safeQty,
-                unit: cat.unit,
-                unitPrice,
-                lineTotal: safeQty > 0 && unitPrice ? unitPrice * safeQty : null,
-                supplierCode: matched.supplierCode,
-                supplierName: null,
+                unit: fallbackUnit,
+                unitPrice: null, // Empty price
+                lineTotal: null, // Empty line total
+                supplierCode: 'SRV',
+                supplierName: 'AstraQuote',
                 aiLabel: article.label,
-                aiConfidence: matched.matchConfidence,
-                isMissing: false,
+                aiConfidence: article.confidence || 0.8,
+                isMissing: true, // Mark as missing for manual review!
                 is_estimate: false,
                 isManuallyAdded: false,
                 matchedTextStart: null,
                 matchedTextEnd: null,
                 sortOrder: aIdx,
               };
-            }
+            }),
+            sortOrder: sIdx,
+          })
+        );
 
-            // No catalogue match — DO NOT invent prices or references (per client instructions)
-            const category = ((article as any).category || 'autre').toLowerCase();
-            const fallbackUnit = article.unit || (['tuyau_inox', 'evacuation_pe', 'isolation'].includes(category) ? 'm' : 'pce');
+        // Financials: only from matched items that have a real catalogue price
+        const allItems = sections.flatMap((s: { items: Array<{ isMissing: boolean; lineTotal: number | null }> }) => s.items);
+        const materialsSubtotal = allItems
+          .filter((i: { isMissing: boolean; lineTotal: number | null }) => !i.isMissing && i.lineTotal)
+          .reduce((sum: number, i: { lineTotal: number | null }) => sum + (i.lineTotal || 0), 0);
+        const materialsMargin = materialsSubtotal * (marginPct / 100);
+        const labourTotal = labourHours * labourRate;
+        const subtotal = materialsSubtotal + materialsMargin + labourTotal + travelFee;
+        const vatAmount = subtotal * vatRate;
+        const total = subtotal + vatAmount;
 
-            return {
-              id: `item-${sIdx}-${aIdx}`,
-              reference: "", // Empty reference
-              description: article.label,
-              specification: article.dimension ?? null,
-              quantity: safeQty,
-              unit: fallbackUnit,
-              unitPrice: null, // Empty price
-              lineTotal: null, // Empty line total
-              supplierCode: 'SRV',
-              supplierName: 'AstraQuote',
-              aiLabel: article.label,
-              aiConfidence: article.confidence || 0.8,
-              isMissing: true, // Mark as missing for manual review!
-              is_estimate: false,
-              isManuallyAdded: false,
-              matchedTextStart: null,
-              matchedTextEnd: null,
-              sortOrder: aIdx,
-            };
-          }),
-          sortOrder: sIdx,
-        })
-      );
-
-      setProcessing(true, 3);
-
-      // Financials: only from matched items that have a real catalogue price
-      const allItems = sections.flatMap((s: { items: Array<{ isMissing: boolean; lineTotal: number | null }> }) => s.items);
-      const materialsSubtotal = allItems
-        .filter((i: { isMissing: boolean; lineTotal: number | null }) => !i.isMissing && i.lineTotal)
-        .reduce((sum: number, i: { lineTotal: number | null }) => sum + (i.lineTotal || 0), 0);
-      const materialsMargin = materialsSubtotal * (marginPct / 100);
-      const labourTotal = labourHours * labourRate;
-      const subtotal = materialsSubtotal + materialsMargin + labourTotal + travelFee;
-      const vatAmount = subtotal * vatRate;
-      const total = subtotal + vatAmount;
-
-      setQuote({
-        originalDescription: description,
-        aiExtraction: extraction,
-        aiProvider: provider,
-        interventionType,
-        technicalSummary: null,
-        // Use real catalogue match rate, not AI extraction confidence
-        // (a 95% confident AI extraction that fails to match still shows 95% otherwise)
-        aiConfidence: typeof realMatchRate === 'number' ? realMatchRate : 0.8,
-
-        sections,
-        hasMissingItems: allItems.some((i: { isMissing: boolean }) => i.isMissing),
-        exclusions: [],
-        financials: {
-          materialsSubtotal: Number(materialsSubtotal.toFixed(2)),
-          materialsMarginPct: marginPct,
-          materialsMargin: Number(materialsMargin.toFixed(2)),
-          labourHours,
-          labourRate,
-          labourTotal: Number(labourTotal.toFixed(2)),
-          travelFee,
-          subtotalExclVat: Number(subtotal.toFixed(2)),
-          vatRate,
-          vatAmount: Number(vatAmount.toFixed(2)),
-          totalInclVat: Number(total.toFixed(2)),
-        },
-      });
-
-      setProcessing(false);
-      setCurrentStep(2);
+        setQuote({
+          originalDescription: description,
+          aiExtraction: extraction,
+          aiProvider: provider,
+          interventionType,
+          technicalSummary: null,
+          aiConfidence: typeof realMatchRate === 'number' ? realMatchRate : 0.8,
+          sections,
+          hasMissingItems: allItems.some((i: { isMissing: boolean }) => i.isMissing),
+          exclusions: [],
+          financials: {
+            materialsSubtotal: Number(materialsSubtotal.toFixed(2)),
+            materialsMarginPct: marginPct,
+            materialsMargin: Number(materialsMargin.toFixed(2)),
+            labourHours,
+            labourRate,
+            labourTotal: Number(labourTotal.toFixed(2)),
+            travelFee,
+            subtotalExclVat: Number(subtotal.toFixed(2)),
+            vatRate,
+            vatAmount: Number(vatAmount.toFixed(2)),
+            totalInclVat: Number(total.toFixed(2)),
+          },
+        });
+      }); // end startTransition
     } catch (error) {
       const message = error instanceof Error ? error.message : 'Erreur inconnue';
       setProcessingError(message);
