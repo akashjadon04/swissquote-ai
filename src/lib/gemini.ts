@@ -230,8 +230,7 @@ async function extractWithNvidiaNimKey(
         { role: 'user', content: description },
       ],
       temperature: 0.1,
-      max_tokens: 8192,
-      response_format: { type: 'json_object' },
+      max_tokens: 8192
     }),
   });
 
@@ -337,7 +336,6 @@ async function extractWithOpenRouterKey(
           ],
           temperature: 0.1,
           max_tokens: 8192,
-          response_format: { type: 'json_object' },
         }),
       });
 
@@ -450,21 +448,21 @@ export interface ExtractionResponse {
 export async function extractFromDescription(description: string): Promise<ExtractionResponse> {
   const startTime = Date.now();
 
-  // 1. Nvidia NIM first (fastest for massive custom prompts, no 30s timeout risk)
+  // 1. Gemini first (highest quality, and keep-alive stream fixes Vercel 30s limit)
   try {
-    const extraction = await extractWithNvidiaNim(description);
-    return { extraction, provider: 'nvidia', processingTimeMs: Date.now() - startTime };
-  } catch (nvidiaError) {
-    const nvidiaMsg = nvidiaError instanceof Error ? nvidiaError.message : String(nvidiaError);
-    console.warn(`[AI] Nvidia NIM failed, cascading to Gemini. Reason: ${nvidiaMsg}`);
+    const extraction = await extractWithGemini(description);
+    return { extraction, provider: 'gemini', processingTimeMs: Date.now() - startTime };
+  } catch (geminiError) {
+    const geminiMsg = geminiError instanceof Error ? geminiError.message : String(geminiError);
+    console.warn(`[AI] Gemini failed, cascading to Nvidia NIM. Reason: ${geminiMsg}`);
 
-    // 2. Gemini fallback
+    // 2. Nvidia NIM fallback
     try {
-      const extraction = await extractWithGemini(description);
-      return { extraction, provider: 'gemini', processingTimeMs: Date.now() - startTime };
-    } catch (geminiError) {
-      const geminiMsg = geminiError instanceof Error ? geminiError.message : String(geminiError);
-      console.warn(`[AI] Gemini failed, cascading to OpenRouter. Reason: ${geminiMsg}`);
+      const extraction = await extractWithNvidiaNim(description);
+      return { extraction, provider: 'nvidia', processingTimeMs: Date.now() - startTime };
+    } catch (nvidiaError) {
+      const nvidiaMsg = nvidiaError instanceof Error ? nvidiaError.message : String(nvidiaError);
+      console.warn(`[AI] Nvidia NIM failed, cascading to OpenRouter. Reason: ${nvidiaMsg}`);
 
       // 3. OpenRouter fallback
       try {
@@ -472,7 +470,7 @@ export async function extractFromDescription(description: string): Promise<Extra
         return { extraction, provider: 'openrouter', processingTimeMs: Date.now() - startTime };
       } catch (openrouterError) {
         const orMsg = openrouterError instanceof Error ? openrouterError.message : String(openrouterError);
-        throw new Error(`All AI providers failed.\nNvidia: ${nvidiaMsg}\nGemini: ${geminiMsg}\nOpenRouter: ${orMsg}`);
+        throw new Error(`All AI providers failed.\nGemini: ${geminiMsg}\nNvidia: ${nvidiaMsg}\nOpenRouter: ${orMsg}`);
       }
     }
   }

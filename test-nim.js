@@ -1,6 +1,6 @@
-const apiKey = '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';
+const apiKey = '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';
 async function test() {
-  console.log('Fetching NIM JSON...');
+  console.log('Fetching NIM 3.1 JSON...');
   const start = Date.now();
   const res = await fetch('https://integrate.api.nvidia.com/v1/chat/completions', {
     method: 'POST',
