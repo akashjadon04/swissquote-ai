@@ -396,10 +396,11 @@ async function extractWithGroqKey(
   keyIndex: number
 ): Promise<AIExtractionResult> {
   const model = 'llama-3.3-70b-versatile'; // Standard Llama 3.3 70B identifier on Groq (or llama3-70b-8192)
+  const backupModel = 'llama-3.1-70b-versatile';
   const fallbackModel = 'llama3-70b-8192';
 
-  let lastError = null;
-  const models = [model, fallbackModel];
+  const modelErrors: string[] = [];
+  const models = [model, backupModel, fallbackModel];
 
   for (const m of models) {
     try {
@@ -436,13 +437,14 @@ async function extractWithGroqKey(
       console.log(`[AI] ✓ Groq (${m}, key ${keyIndex + 1}) responded`);
       return parseAIResponse(text);
     } catch (e) {
-      lastError = e;
+      const msg = e instanceof Error ? e.message : String(e);
+      modelErrors.push(`${m}: ${msg}`);
       console.warn(`[AI] Groq model ${m} failed, trying next...`);
       continue;
     }
   }
 
-  throw new Error(`Groq key ${keyIndex + 1} all models failed. Last error: ${lastError instanceof Error ? lastError.message : String(lastError)}`);
+  throw new Error(`Groq key ${keyIndex + 1} all models failed. Details: [${modelErrors.join(' | ')}]`);
 }
 
 async function extractWithGroq(description: string): Promise<AIExtractionResult> {
