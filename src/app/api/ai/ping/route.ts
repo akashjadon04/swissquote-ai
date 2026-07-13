@@ -10,24 +10,35 @@ export async function GET() {
   ];
 
   try {
-    // Fire off ping requests in parallel
-    const pings = keys.map((apiKey) => 
-      fetch('https://integrate.api.nvidia.com/v1/chat/completions', {
+    // Fire off ping requests in parallel with a strict 2-second abort timeout
+    const pings = keys.map((apiKey) => {
+      const controller = new AbortController();
+      const timeout = setTimeout(() => controller.abort(), 2000);
+
+      return fetch('https://integrate.api.nvidia.com/v1/chat/completions', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
           'Authorization': `Bearer ${apiKey}`,
         },
         body: JSON.stringify({
-          model: 'meta/llama-3.1-70b-instruct',
+          model: 'meta/llama-3.3-70b-instruct', // active model
           messages: [{ role: 'user', content: '1' }],
           max_tokens: 1,
         }),
-      }).catch(e => console.warn('[NIM Ping] Network error:', e))
-    );
+        signal: controller.signal,
+      })
+      .then((res) => {
+        clearTimeout(timeout);
+        return res;
+      })
+      .catch(e => {
+        clearTimeout(timeout);
+        console.warn('[NIM Ping] Error/Timeout:', e.message);
+      });
+    });
 
     // We wait for them to initiate and return headers, but we don't strictly need to wait for full generation
-    // since the server is already woken up by the HTTP request arriving.
     await Promise.allSettled(pings);
     
     return NextResponse.json({ ok: true });
