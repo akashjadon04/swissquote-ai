@@ -67,14 +67,26 @@ export async function POST(request: NextRequest) {
     const encoder = new TextEncoder();
     const stream = new ReadableStream({
       async start(controller) {
-        // Send keep-alive spaces every 3 seconds to bypass Vercel's Edge limit
+        const onLog = (formattedMsg: string) => {
+          try {
+            controller.enqueue(encoder.encode(JSON.stringify({ type: 'log', message: formattedMsg }) + '\n'));
+          } catch (e) {
+            // Ignore if stream is closed
+          }
+        };
+
+        // Send keep-alive newlines every 3 seconds to bypass Vercel's Edge timeout limit
         const keepAlive = setInterval(() => {
-          controller.enqueue(encoder.encode(' '));
+          try {
+            controller.enqueue(encoder.encode('\n'));
+          } catch (e) {
+            clearInterval(keepAlive);
+          }
         }, 3000);
 
         try {
           // Step 1: AI Extraction identifies what materials/work is needed
-          const aiResult = await extractFromDescription(description.trim());
+          const aiResult = await extractFromDescription(description.trim(), onLog);
 
           // Step 2: Catalogue Matching only matched references get prices
           const allArticles: AIArticle[] = aiResult.extraction.sections.flatMap(s => s.articles);
@@ -105,6 +117,7 @@ export async function POST(request: NextRequest) {
           const realMatchRate = totalValidItems > 0 ? (matchedCount / totalValidItems) : 0;
 
           const responsePayload = {
+            type: 'result',
             extraction: aiResult.extraction,
             provider: aiResult.provider,
             matchResult,
@@ -116,12 +129,14 @@ export async function POST(request: NextRequest) {
           };
 
           clearInterval(keepAlive);
-          controller.enqueue(encoder.encode(JSON.stringify(responsePayload)));
+          controller.enqueue(encoder.encode(JSON.stringify(responsePayload) + '\n'));
           controller.close();
         } catch (error: any) {
           clearInterval(keepAlive);
           console.error("[API] AI Extraction failed:", error);
-          controller.enqueue(encoder.encode(JSON.stringify({ error: error.message || "Erreur interne de l'IA" })));
+          try {
+            controller.enqueue(encoder.encode(JSON.stringify({ error: error.message || "Erreur interne de l'IA" }) + '\n'));
+          } catch (e) {}
           controller.close();
         }
       }

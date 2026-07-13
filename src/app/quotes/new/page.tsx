@@ -159,20 +159,59 @@ export default function NewQuotePage() {
         throw new Error(errObj.error || `Erreur serveur (${res.status})`);
       }
 
-      const data = await res.json();
-      if (data.error) {
-        throw new Error(data.error);
+      const reader = res.body?.getReader();
+      if (!reader) {
+        throw new Error("Le navigateur ne supporte pas la lecture en continu de flux.");
       }
 
-      const { extraction, provider, matchResult, labourHours: calculatedLabourHours, labourComplexity: _labourComplexity, realMatchRate, debugLogs } = data;
+      const decoder = new TextDecoder();
+      let buffer = "";
+      let finalResultReceived = false;
+      let finalData: any = null;
 
-      console.group("=== AI EXTRACTION CASCADE DEBUG TRACE ===");
-      if (Array.isArray(debugLogs)) {
-        debugLogs.forEach(log => console.warn(log));
-      } else {
-        console.warn("No debug logs returned from server.");
+      console.warn("=== DEBUT DE LA CASCADE D'EXTRACTION IA ===");
+
+      try {
+        while (true) {
+          const { value, done } = await reader.read();
+          if (done) break;
+          
+          buffer += decoder.decode(value, { stream: true });
+          const lines = buffer.split('\n');
+          buffer = lines.pop() || "";
+
+          for (const line of lines) {
+            if (!line.trim()) continue;
+            try {
+              const data = JSON.parse(line);
+              if (data.type === 'log') {
+                console.warn(data.message);
+              } else if (data.type === 'result') {
+                finalData = data;
+                finalResultReceived = true;
+              } else if (data.error) {
+                throw new Error(data.error);
+              }
+            } catch (err: any) {
+              if (err.message && (err.message.includes("Unexpected token") || err.message.includes("is not valid JSON"))) {
+                // Heartbeat or malformed partial line, safe to ignore
+              } else {
+                throw err;
+              }
+            }
+          }
+        }
+      } finally {
+        reader.releaseLock();
       }
-      console.groupEnd();
+
+      if (!finalResultReceived || !finalData) {
+        throw new Error("La connexion s'est interrompue avant la fin de l'analyse.");
+      }
+
+      const { extraction, provider, matchResult, labourHours: calculatedLabourHours, realMatchRate } = finalData;
+
+      console.warn("=== CASCADE D'EXTRACTION COMPLETED ===");
 
       setExtraction(extraction);
       setProvider(provider);

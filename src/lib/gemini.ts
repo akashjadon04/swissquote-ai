@@ -574,7 +574,10 @@ export interface ExtractionResponse {
   debugLogs: string[];
 }
 
-export async function extractFromDescription(description: string): Promise<ExtractionResponse> {
+export async function extractFromDescription(
+  description: string,
+  onLog?: (msg: string) => void
+): Promise<ExtractionResponse> {
   const startTime = Date.now();
   const debugLogs: string[] = [];
 
@@ -583,6 +586,13 @@ export async function extractFromDescription(description: string): Promise<Extra
     const formatted = `[${time}] ${msg}`;
     console.log(formatted);
     debugLogs.push(formatted);
+    if (onLog) {
+      try {
+        onLog(formatted);
+      } catch (err) {
+        // Safe catch if stream is closed
+      }
+    }
   };
 
   logDebug("Starting extraction cascade...");
