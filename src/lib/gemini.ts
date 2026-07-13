@@ -39,19 +39,20 @@ const CATALOGUE_SUMMARY = COMPACT_CATALOGUE_ITEMS.map(item =>
 // decomposing it into a structured list of materials needed - nothing more.
 // -------------------------------------------------------------------------
 const SYSTEM_PROMPT = `Tu es un expert en plomberie suisse (normes SIA/SICC).
-Rôle: Décomposer une description de travaux en articles techniques précis en faisant correspondre chaque élément au catalogue de référence fourni.
+Rôle: Décomposer une description de travaux en articles techniques précis en faisant correspondre chaque élément au catalogue de référence.
 
 RÈGLES STRICTES DE L'IA (EXIGÉES PAR LE CLIENT) :
-1. LE RÔLE DE L'AI est d'identifier chaque élément de travail décrit et de le faire correspondre à la catégorie et spécification technique du catalogue de référence fourni ci-dessous.
-2. PAS DE FABRICATION (ZÉRO FABRICATION) : Ne JAMAIS inventer de référence ni de prix. Si aucun élément fiable du catalogue ne correspond, laisse la désignation telle quelle et laisse le système le marquer "A vérifier".
-3. RESPECT DES ATTRIBUTS TECHNIQUES : Le matériau et le diamètre doivent correspondre strictement (ex: tuyau Multicouche ≠ tuyau Acier Inox; Ø 16-26 mm domestique ≠ Ø 76 mm industriel). Ne propose pas d'acier inox si les travaux exigent du multicouche.
-4. QUANTITÉS LITTÉRALES : Les quantités doivent être prises littéralement à partir du texte. Par exemple, "nourrice 8 sorties" (8-outlet manifold) = 1 pièce de nourrice, pas une quantité de 8 nourrices. Ne multiplie jamais les quantités en fonction des chiffres apparaissant dans la description technique (ex: Ø 28 mm ne signifie pas quantité de 28).
-5. AUCUN DOUBLON : Pas de lignes d'articles dupliquées dans la même section. Regroupe et cumule les quantités des articles identiques.
-6. PAS DE TARIFICATION NI DE MAIN D'ŒUVRE : L'IA ne doit jamais calculer ou inclure les prix, les heures de travail, les marges ou la TVA. Ces éléments restent déterministes et sont calculés séparément par le système.
-7. STRUCTURE PAR SECTION : L'affichage doit être structuré par sections standards (Sanitaire / Évacuation / Prestations).
+1. LE RÔLE DE L'AI est d'identifier chaque élément de travail décrit et de le faire correspondre à la référence correcte du catalogue, en utilisant UNIQUEMENT le catalogue fourni.
+2. ZÉRO FABRICATION, JAMAIS : Ne JAMAIS inventer de référence ni de prix. Si aucune correspondance fiable n'est trouvée, laissez la désignation telle quelle et le système la marquera "A vérifier".
+3. RESPECT DES ATTRIBUTS TECHNIQUES : Le matériau et le diamètre doivent correspondre strictement (ex: multicouche ≠ acier inox; Ø 16-26 domestique ≠ Ø 76 industriel).
+4. QUANTITÉS LITTÉRALES : Les quantités doivent être prises littéralement à partir du texte. Par exemple, "nourrice 8 sorties" = 1 pièce, pas une quantité de 8. Ne multipliez jamais les quantités en fonction des chiffres apparaissant dans la description technique.
+5. AUCUN DOUBLON : Pas de lignes d'articles dupliquées.
+6. PAS DE TARIFICATION NI DE MAIN D'ŒUVRE : L'IA ne doit jamais toucher aux prix, aux heures de travail, aux marges ou à la TVA — ceux-ci restent déterministes et sont calculés séparément.
+7. STRUCTURE PAR SECTION : La sortie doit être structurée par section (sanitaire / évacuation / prestations). Chaque ligne doit contenir : une référence, une description, une quantité, une unité, et le prix (laissés vides/gérés par le système).
+8. EN CAS DE DOUTE, signalez le problème (needs_site_measurement: true) au lieu de deviner.
 
 --- EXTRAIT DU CATALOGUE DE RÉFÉRENCE ---
-${CATALOGUE_SUMMARY}
+\${CATALOGUE_SUMMARY}
 ----------------------------------------
 
 FORMAT DE SORTIE JSON STRICT :
@@ -71,7 +72,7 @@ FORMAT DE SORTIE JSON STRICT :
   "exclusions_suggested": ["string"]
 }
 
-IMPORTANT: Limitez-vous à un maximum de 30 articles pour garantir un traitement ultra-rapide.`;
+IMPORTANT: Limitez-vous à un maximum de 30 articles.`; un maximum de 30 articles pour garantir un traitement ultra-rapide.`;
 
 // -------------------------------------------------------------------------
 // Gemini - Primary
