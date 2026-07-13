@@ -5,23 +5,23 @@ import { MOCK_CATALOGUE } from '@/lib/catalogueData';
 // Generate a compact catalogue summary for the AI prompt
 const CATALOGUE_SUMMARY = MOCK_CATALOGUE.map(item => `- [${item.category}] ${item.name} ${(item.attributes as any)?.diameter_mm ? (item.attributes as any).diameter_mm + 'mm' : ''} ${(item.attributes as any)?.power_kw ? (item.attributes as any).power_kw + 'kW' : ''} ${(item.attributes as any)?.capacity_l ? (item.attributes as any).capacity_l + 'L' : ''}`).join('\n');
 
-// â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•
-// AstraQuote (by Green AI Groupe) â€” Extraction Engine
-// Cascade: Gemini 3.5-flash (primary) â†’ OpenRouter/free (key 1 â†’ 2 â†’ 3)
+// =========================================================================
+// AstraQuote (by Green AI Groupe) - Extraction Engine
+// Cascade: Gemini 3.5-flash (primary) -> OpenRouter/free
 //
 // ARCHITECTURE RULE (the product's core guarantee):
 //   The AI identifies WHAT is needed using plumbing expertise.
 //   The AI NEVER outputs a reference, a price, or an hour estimate.
-//   The catalogue decides WHAT IS REAL â€” only a matched reference gets a price.
-//   No match â†’ no price â†’ flagged for manual review.
-// â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•
+//   The catalogue decides WHAT IS REAL - only a matched reference gets a price.
+//   No match -> no price -> flagged for manual review.
+// =========================================================================
 
-// â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
+// -------------------------------------------------------------------------
 // SYSTEM PROMPT
 // Specialised for Swiss plumbing / HVAC devis (quotes) in French.
 // The model acts as a senior Swiss plumber reading a job description and
-// decomposing it into a structured list of materials needed â€” nothing more.
-// â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
+// decomposing it into a structured list of materials needed - nothing more.
+// -------------------------------------------------------------------------
 const SYSTEM_PROMPT = `Tu es un expert en plomberie suisse (normes SIA/SICC).
 Rôle: Décomposer une description de travaux en articles techniques précis.
 
@@ -32,6 +32,7 @@ RÈGLES ABSOLUES (CRITIQUE POUR LA VÉRIFICATION DU MODÈLE) :
 4. Format JSON STRICT. Aucun texte avant/après.
 5. category DOIT être l'une de: tuyau_inox, evacuation_pe, coude_sertir, manchon, collier, isolation, robinetterie, chaudiere, ballon_ecs, circulateur, radiateur, nourrice, geberit_duofix, geberit_evacuation, appareil_sanitaire, depose, transition, reducteur, autre.
 6. CATALOGUE OBLIGATOIRE: Tu DOIS prioriser les matériaux listés dans le CATALOGUE DISPONIBLE ci-dessous. Adapte les noms et dimensions pour qu'ils correspondent exactement à ce qui existe dans ce catalogue. Si un article demandé n'existe pas du tout dans ce catalogue, ajoute-le quand même, mais essaie toujours de trouver l'équivalent dans le catalogue d'abord.
+7. ROBUSTESSE: Même si la description est très courte, vague ou incomplète, analysez-la de votre mieux. Extrayez ce qui est présent. Ne refusez jamais de traiter une demande. Mettez "needs_site_measurement": true si des détails manquent.
 
 --- CATALOGUE DISPONIBLE ---
 ${CATALOGUE_SUMMARY}
@@ -81,9 +82,9 @@ ATTENTION: Ne pas inventer de quantité pour des équipements physiques majeurs 
 Si une information vitale manque (ex: puissance en kW pour une chaudière, diamètre pour un tuyau), mettre needs_site_measurement à true.
 ATTENTION EXHAUSTIVITE: Fournissez une liste pertinente, détaillée et réaliste des pièces et services principaux. Limitez-vous à un maximum de 30 articles pour garantir un temps de réponse rapide.`;
 
-// ─────────────────────────────────────────────────────────────────────────────
-// Gemini â€” Primary (gemini-1.5-flash)
-// â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
+// -------------------------------------------------------------------------
+// Gemini - Primary
+// -------------------------------------------------------------------------
 function getGeminiKeys(): string[] {
   const keys: string[] = [];
   
@@ -158,10 +159,10 @@ async function extractWithGemini(description: string): Promise<AIExtractionResul
   throw new Error(`All ${keys.length} Gemini key(s) failed:\n${errors.join('\n')}`);
 }
 
-// â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
-// OpenRouter â€” Fallback (openrouter/free)
+// -------------------------------------------------------------------------
+// OpenRouter - Fallback
 // Reads comma-separated keys from OPENROUTER_API_KEYS, tries each in order
-// â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
+// -------------------------------------------------------------------------
 function getOpenRouterKeys(): string[] {
   const keys: string[] = [];
   
