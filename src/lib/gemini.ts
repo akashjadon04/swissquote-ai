@@ -217,47 +217,58 @@ async function extractWithOpenRouterKey(
   keyIndex: number
 ): Promise<AIExtractionResult> {
   const models = [
-    'openrouter/free',
+    'nvidia/nemotron-3-nano-omni-30b-a3b-reasoning:free',
     'google/gemma-4-31b-it:free',
-    'liquid/lfm-2.5-1.2b-instruct:free',
-    'nvidia/nemotron-3-nano-omni-30b-a3b-reasoning:free'
+    'openrouter/free'
   ];
 
-  const response = await fetch('https://openrouter.ai/api/v1/chat/completions', {
-    method: 'POST',
-    headers: {
-      'Content-Type': 'application/json',
-      'Authorization': `Bearer ${apiKey}`,
-      'HTTP-Referer': 'https://AstraQuote-ai.vercel.app',
-      'X-Title': 'AstraQuote (by Green AI Groupe)',
-    },
-    body: JSON.stringify({
-      models,
-      messages: [
-        { role: 'system', content: SYSTEM_PROMPT },
-        { role: 'user', content: description },
-      ],
-      temperature: 0.1,
-      max_tokens: 8192,
-      response_format: { type: 'json_object' },
-    }),
-  });
+  let lastError = null;
 
-  if (!response.ok) {
-    const errText = await response.text().catch(() => response.statusText);
-    throw new Error(`OpenRouter key ${keyIndex + 1} HTTP ${response.status}: ${errText}`);
+  for (const model of models) {
+    try {
+      const response = await fetch('https://openrouter.ai/api/v1/chat/completions', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+          'Authorization': `Bearer ${apiKey}`,
+          'HTTP-Referer': 'https://AstraQuote-ai.vercel.app',
+          'X-Title': 'AstraQuote (by Green AI Groupe)',
+        },
+        body: JSON.stringify({
+          model,
+          messages: [
+            { role: 'system', content: SYSTEM_PROMPT },
+            { role: 'user', content: description },
+          ],
+          temperature: 0.1,
+          max_tokens: 8192,
+          response_format: { type: 'json_object' },
+        }),
+      });
+
+      if (!response.ok) {
+        const errText = await response.text().catch(() => response.statusText);
+        throw new Error(`HTTP ${response.status}: ${errText}`);
+      }
+
+      const data = await response.json();
+      if (data.error) {
+        throw new Error(data.error.message || JSON.stringify(data.error));
+      }
+
+      const text = data.choices?.[0]?.message?.content;
+      if (!text) throw new Error(`Empty content`);
+
+      console.log(`[AI] ✓ OpenRouter (${model}, key ${keyIndex + 1}) responded`);
+      return parseAIResponse(text);
+    } catch (e) {
+      lastError = e;
+      console.warn(`[AI] OpenRouter model ${model} failed, trying next...`);
+      continue;
+    }
   }
 
-  const data = await response.json();
-  if (data.error) {
-    throw new Error(`OpenRouter key ${keyIndex + 1} API error: ${data.error.message || JSON.stringify(data.error)}`);
-  }
-
-  const text = data.choices?.[0]?.message?.content;
-  if (!text) throw new Error(`OpenRouter key ${keyIndex + 1} returned empty content`);
-
-  console.log(`[AI] ✓ OpenRouter (${models[0]} fallback array, key ${keyIndex + 1}) responded`);
-  return parseAIResponse(text);
+  throw new Error(`OpenRouter key ${keyIndex + 1} all models failed. Last error: ${lastError instanceof Error ? lastError.message : String(lastError)}`);
 }
 
 async function extractWithOpenRouter(description: string): Promise<AIExtractionResult> {
