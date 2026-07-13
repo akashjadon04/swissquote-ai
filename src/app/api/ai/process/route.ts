@@ -100,7 +100,7 @@ export async function POST(request: NextRequest) {
           const multiplier = complexityMultiplier(complexity);
           const calculatedLabourHours = calculateLabourFromItems(itemsForLabour, multiplier);
           
-           const totalValidItems = allArticles.length;
+          const totalValidItems = allArticles.length;
           const matchedCount = matchResult.matched.length;
           const realMatchRate = totalValidItems > 0 ? (matchedCount / totalValidItems) : 0;
 
@@ -111,7 +111,8 @@ export async function POST(request: NextRequest) {
             labourHours: calculatedLabourHours,
             labourComplexity: complexity,
             labourMultiplier: multiplier,
-            realMatchRate
+            realMatchRate,
+            debugLogs: aiResult.debugLogs
           };
 
           clearInterval(keepAlive);

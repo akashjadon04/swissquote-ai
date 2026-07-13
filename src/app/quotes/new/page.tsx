@@ -164,8 +164,15 @@ export default function NewQuotePage() {
         throw new Error(data.error);
       }
 
-      const { extraction, provider, matchResult, labourHours: calculatedLabourHours, labourComplexity: _labourComplexity, realMatchRate } = data;
+      const { extraction, provider, matchResult, labourHours: calculatedLabourHours, labourComplexity: _labourComplexity, realMatchRate, debugLogs } = data;
 
+      console.group("=== AI EXTRACTION CASCADE DEBUG TRACE ===");
+      if (Array.isArray(debugLogs)) {
+        debugLogs.forEach(log => console.warn(log));
+      } else {
+        console.warn("No debug logs returned from server.");
+      }
+      console.groupEnd();
 
       setExtraction(extraction);
       setProvider(provider);

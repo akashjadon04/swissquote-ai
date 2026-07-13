@@ -126,45 +126,59 @@ function withTimeout<T>(promise: Promise<T>, ms: number, errorMessage = "Timeout
 const badGeminiKeys = new Set<string>();
 const badOpenRouterKeys = new Set<string>();
 
-async function extractWithGeminiKey(description: string, apiKey: string, keyIndex: number): Promise<AIExtractionResult> {
+async function extractWithGeminiKey(
+  description: string,
+  apiKey: string,
+  keyIndex: number,
+  logDebug: (msg: string) => void
+): Promise<AIExtractionResult> {
   const modelName = process.env.GEMINI_MODEL || 'gemini-2.5-flash';
 
   const genAI = new GoogleGenerativeAI(apiKey);
   const model = genAI.getGenerativeModel({
     model: modelName,
     generationConfig: {
-      temperature: 0.1,       // Low temp -> deterministic, factual
+      temperature: 0.1,
       topP: 0.95,
       maxOutputTokens: 8192,
       responseMimeType: 'application/json',
     },
   });
 
+  const start = Date.now();
+  logDebug(`[Gemini] Key ${keyIndex + 1}: Calling model ${modelName}...`);
+  
   const result = await model.generateContent({
     contents: [{ role: 'user', parts: [{ text: description }] }],
     systemInstruction: { role: 'system', parts: [{ text: SYSTEM_PROMPT }] },
   });
 
   const text = result.response.text();
-  console.log(`[AI] ✓ Gemini (${modelName}, key ${keyIndex + 1}) responded`);
+  const duration = Date.now() - start;
+  logDebug(`[Gemini] Key ${keyIndex + 1}: Success in ${duration}ms`);
   return parseAIResponse(text);
 }
 
-async function extractWithGemini(description: string): Promise<AIExtractionResult> {
+async function extractWithGemini(description: string, logDebug: (msg: string) => void): Promise<AIExtractionResult> {
   const allKeys = getGeminiKeys();
   const keys = [...allKeys].sort((a, b) => (badGeminiKeys.has(a) ? 1 : 0) - (badGeminiKeys.has(b) ? 1 : 0));
   const errors: string[] = [];
   
   for (let i = 0; i < keys.length; i++) {
+    const keyStart = Date.now();
     try {
-      // Bounded 8s timeout for faster fallback cascading
-      const res = await withTimeout(extractWithGeminiKey(description, keys[i], i), 8000, `Timeout after 8s (Key ${i + 1})`);
+      logDebug(`[Gemini] Key ${i + 1}/${keys.length}: Starting attempt`);
+      const res = await withTimeout(
+        extractWithGeminiKey(description, keys[i], i, logDebug),
+        8000,
+        `Timeout after 8s`
+      );
       badGeminiKeys.delete(keys[i]);
       return res;
     } catch (err) {
       const msg = err instanceof Error ? err.message : String(err);
-      errors.push(`Key ${i + 1}: ${msg}`);
-      console.warn(`[AI] Gemini key ${i + 1}/${keys.length} failed: ${msg}`);
+      errors.push(msg);
+      logDebug(`[Gemini] Key ${i + 1}/${keys.length} failed in ${Date.now() - keyStart}ms: ${msg}`);
       badGeminiKeys.add(keys[i]);
     }
   }
@@ -204,9 +218,12 @@ function getNvidiaNimKeys(): string[] {
 async function extractWithNvidiaNimKey(
   description: string,
   apiKey: string,
-  keyIndex: number
+  keyIndex: number,
+  logDebug: (msg: string) => void
 ): Promise<AIExtractionResult> {
   const model = 'meta/llama-3.3-70b-instruct';
+  const start = Date.now();
+  logDebug(`[Nvidia] Key ${keyIndex + 1}: Calling model ${model}...`);
   
   const response = await fetch('https://integrate.api.nvidia.com/v1/chat/completions', {
     method: 'POST',
@@ -238,25 +255,31 @@ async function extractWithNvidiaNimKey(
   const text = data.choices?.[0]?.message?.content;
   if (!text) throw new Error(`Empty content`);
 
-  console.log(`[AI] ✓ Nvidia NIM (${model}, key ${keyIndex + 1}) responded`);
+  const duration = Date.now() - start;
+  logDebug(`[Nvidia] Key ${keyIndex + 1}: Success in ${duration}ms`);
   return parseAIResponse(text);
 }
 
-async function extractWithNvidiaNim(description: string): Promise<AIExtractionResult> {
+async function extractWithNvidiaNim(description: string, logDebug: (msg: string) => void): Promise<AIExtractionResult> {
   const allKeys = getNvidiaNimKeys();
   const keys = [...allKeys].sort((a, b) => (badNvidiaKeys.has(a) ? 1 : 0) - (badNvidiaKeys.has(b) ? 1 : 0));
 
   const errors: string[] = [];
   for (let i = 0; i < keys.length; i++) {
+    const keyStart = Date.now();
     try {
-      // Reduced timeout to 6s so we don't hang if Nvidia NIM is dead/overloaded
-      const res = await withTimeout(extractWithNvidiaNimKey(description, keys[i], i), 6000, `Timeout after 6s (Nvidia Key ${i + 1})`);
+      logDebug(`[Nvidia] Key ${i + 1}/${keys.length}: Starting attempt`);
+      const res = await withTimeout(
+        extractWithNvidiaNimKey(description, keys[i], i, logDebug),
+        6000,
+        `Timeout after 6s`
+      );
       badNvidiaKeys.delete(keys[i]);
       return res;
     } catch (err) {
       const msg = err instanceof Error ? err.message : String(err);
       errors.push(msg);
-      console.warn(`[AI] Nvidia NIM key ${i + 1}/${keys.length} failed: ${msg}`);
+      logDebug(`[Nvidia] Key ${i + 1}/${keys.length} failed in ${Date.now() - keyStart}ms: ${msg}`);
       badNvidiaKeys.add(keys[i]);
     }
   }
@@ -299,7 +322,8 @@ function getOpenRouterKeys(): string[] {
 async function extractWithOpenRouterKey(
   description: string,
   apiKey: string,
-  keyIndex: number
+  keyIndex: number,
+  logDebug: (msg: string) => void
 ): Promise<AIExtractionResult> {
   const models = [
     'meta-llama/llama-3.3-70b-instruct:free',
@@ -309,6 +333,8 @@ async function extractWithOpenRouterKey(
   let lastError = null;
 
   for (const model of models) {
+    const start = Date.now();
+    logDebug(`[OpenRouter] Key ${keyIndex + 1}: Calling model ${model}...`);
     try {
       const response = await fetch('https://openrouter.ai/api/v1/chat/completions', {
         method: 'POST',
@@ -342,11 +368,13 @@ async function extractWithOpenRouterKey(
       const text = data.choices?.[0]?.message?.content;
       if (!text) throw new Error(`Empty content`);
 
-      console.log(`[AI] ✓ OpenRouter (${model}, key ${keyIndex + 1}) responded`);
+      const duration = Date.now() - start;
+      logDebug(`[OpenRouter] Key ${keyIndex + 1}: Success on model ${model} in ${duration}ms`);
       return parseAIResponse(text);
     } catch (e) {
       lastError = e;
-      console.warn(`[AI] OpenRouter model ${model} failed, trying next...`);
+      const msg = e instanceof Error ? e.message : String(e);
+      logDebug(`[OpenRouter] Key ${keyIndex + 1}: Model ${model} failed in ${Date.now() - start}ms: ${msg}`);
       continue;
     }
   }
@@ -354,27 +382,33 @@ async function extractWithOpenRouterKey(
   throw new Error(`OpenRouter key ${keyIndex + 1} all models failed. Last error: ${lastError instanceof Error ? lastError.message : String(lastError)}`);
 }
 
-async function extractWithOpenRouter(description: string): Promise<AIExtractionResult> {
+async function extractWithOpenRouter(description: string, logDebug: (msg: string) => void): Promise<AIExtractionResult> {
   const allKeys = getOpenRouterKeys();
   if (allKeys.length === 0) throw new Error('No OpenRouter API keys configured (OPENROUTER_API_KEYS)');
   const keys = [...allKeys].sort((a, b) => (badOpenRouterKeys.has(a) ? 1 : 0) - (badOpenRouterKeys.has(b) ? 1 : 0));
 
   const errors: string[] = [];
   for (let i = 0; i < keys.length; i++) {
+    const keyStart = Date.now();
     try {
-      // Reduced timeout to 8s so we don't hang if OpenRouter is dead/overloaded
-      const res = await withTimeout(extractWithOpenRouterKey(description, keys[i], i), 8000, `Timeout after 8s (OpenRouter Key ${i + 1})`);
+      logDebug(`[OpenRouter] Key ${i + 1}/${keys.length}: Starting attempt`);
+      const res = await withTimeout(
+        extractWithOpenRouterKey(description, keys[i], i, logDebug),
+        8000,
+        `Timeout after 8s`
+      );
       badOpenRouterKeys.delete(keys[i]);
       return res;
     } catch (err) {
       const msg = err instanceof Error ? err.message : String(err);
       errors.push(msg);
-      console.warn(`[AI] OpenRouter key ${i + 1}/${keys.length} failed: ${msg}`);
+      logDebug(`[OpenRouter] Key ${i + 1}/${keys.length} failed in ${Date.now() - keyStart}ms: ${msg}`);
       badOpenRouterKeys.add(keys[i]);
     }
   }
   throw new Error(`All ${keys.length} OpenRouter key(s) failed:\n${errors.join('\n')}`);
 }
+
 
 // -------------------------------------------------------------------------
 // Groq - Primary Endpoint
@@ -404,7 +438,8 @@ function getGroqKeys(): string[] {
 async function extractWithGroqKey(
   description: string,
   apiKey: string,
-  keyIndex: number
+  keyIndex: number,
+  logDebug: (msg: string) => void
 ): Promise<AIExtractionResult> {
   const model = 'llama-3.3-70b-versatile'; // Primary model
   const backupModel = 'openai/gpt-oss-20b';  // Recommended July 2026 fast model
@@ -415,6 +450,8 @@ async function extractWithGroqKey(
   const models = [model, backupModel, backupModel2, fallbackModel];
 
   for (const m of models) {
+    const start = Date.now();
+    logDebug(`[Groq] Key ${keyIndex + 1}: Calling model ${m}...`);
     try {
       const response = await fetch('https://api.groq.com/openai/v1/chat/completions', {
         method: 'POST',
@@ -446,12 +483,13 @@ async function extractWithGroqKey(
       const text = data.choices?.[0]?.message?.content;
       if (!text) throw new Error(`Empty content`);
 
-      console.log(`[AI] ✓ Groq (${m}, key ${keyIndex + 1}) responded`);
+      const duration = Date.now() - start;
+      logDebug(`[Groq] Key ${keyIndex + 1}: Success on model ${m} in ${duration}ms`);
       return parseAIResponse(text);
     } catch (e) {
       const msg = e instanceof Error ? e.message : String(e);
       modelErrors.push(`${m}: ${msg}`);
-      console.warn(`[AI] Groq model ${m} failed, trying next...`);
+      logDebug(`[Groq] Key ${keyIndex + 1}: Model ${m} failed in ${Date.now() - start}ms: ${msg}`);
       continue;
     }
   }
@@ -459,22 +497,27 @@ async function extractWithGroqKey(
   throw new Error(`Groq key ${keyIndex + 1} all models failed. Details: [${modelErrors.join(' | ')}]`);
 }
 
-async function extractWithGroq(description: string): Promise<AIExtractionResult> {
+async function extractWithGroq(description: string, logDebug: (msg: string) => void): Promise<AIExtractionResult> {
   const allKeys = getGroqKeys();
   if (allKeys.length === 0) throw new Error('No Groq API keys configured');
   const keys = [...allKeys].sort((a, b) => (badGroqKeys.has(a) ? 1 : 0) - (badGroqKeys.has(b) ? 1 : 0));
   
   const errors: string[] = [];
   for (let i = 0; i < keys.length; i++) {
+    const keyStart = Date.now();
     try {
-      // Bounded 4s timeout, Groq is usually < 1s
-      const res = await withTimeout(extractWithGroqKey(description, keys[i], i), 4000, `Timeout after 4s (Groq Key ${i + 1})`);
+      logDebug(`[Groq] Key ${i + 1}/${keys.length}: Starting attempt`);
+      const res = await withTimeout(
+        extractWithGroqKey(description, keys[i], i, logDebug),
+        4000,
+        `Timeout after 4s`
+      );
       badGroqKeys.delete(keys[i]);
       return res;
     } catch (err) {
       const msg = err instanceof Error ? err.message : String(err);
       errors.push(msg);
-      console.warn(`[AI] Groq key ${i + 1}/${keys.length} failed: ${msg}`);
+      logDebug(`[Groq] Key ${i + 1}/${keys.length} failed in ${Date.now() - keyStart}ms: ${msg}`);
       badGroqKeys.add(keys[i]);
     }
   }
@@ -521,48 +564,64 @@ function parseAIResponse(text: string): AIExtractionResult {
   return parsed as AIExtractionResult;
 }
 
-// â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
-// Main Export â€” Cascade: Gemini â†’ OpenRouter (all 3 keys)
-// â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
+// ─────────────────────────────────────────────────────────────────────────
+// Main Export — Cascade: Gemini → OpenRouter (all 3 keys)
+// ─────────────────────────────────────────────────────────────────────────
 export interface ExtractionResponse {
   extraction: AIExtractionResult;
   provider: 'groq' | 'gemini' | 'openrouter' | 'nvidia';
   processingTimeMs: number;
+  debugLogs: string[];
 }
 
 export async function extractFromDescription(description: string): Promise<ExtractionResponse> {
   const startTime = Date.now();
+  const debugLogs: string[] = [];
+
+  const logDebug = (msg: string) => {
+    const time = new Date().toISOString().slice(11, 19);
+    const formatted = `[${time}] ${msg}`;
+    console.log(formatted);
+    debugLogs.push(formatted);
+  };
+
+  logDebug("Starting extraction cascade...");
 
   // 1. Groq first (Lightning fast, Primary)
   try {
-    const extraction = await extractWithGroq(description);
-    return { extraction, provider: 'groq', processingTimeMs: Date.now() - startTime };
+    const extraction = await extractWithGroq(description, logDebug);
+    logDebug(`Total cascade processing completed via Groq in ${Date.now() - startTime}ms`);
+    return { extraction, provider: 'groq', processingTimeMs: Date.now() - startTime, debugLogs };
   } catch (groqError) {
     const groqMsg = groqError instanceof Error ? groqError.message : String(groqError);
-    console.warn(`[AI] Groq failed, cascading to Gemini. Reason: ${groqMsg}`);
+    logDebug(`Groq fully failed: ${groqMsg}. Cascading to Gemini...`);
 
     // 2. Gemini fallback
     try {
-      const extraction = await extractWithGemini(description);
-      return { extraction, provider: 'gemini', processingTimeMs: Date.now() - startTime };
+      const extraction = await extractWithGemini(description, logDebug);
+      logDebug(`Total cascade processing completed via Gemini in ${Date.now() - startTime}ms`);
+      return { extraction, provider: 'gemini', processingTimeMs: Date.now() - startTime, debugLogs };
     } catch (geminiError) {
       const geminiMsg = geminiError instanceof Error ? geminiError.message : String(geminiError);
-      console.warn(`[AI] Gemini failed, cascading to Nvidia NIM. Reason: ${geminiMsg}`);
+      logDebug(`Gemini fully failed: ${geminiMsg}. Cascading to Nvidia NIM...`);
 
       // 3. Nvidia NIM fallback
       try {
-        const extraction = await extractWithNvidiaNim(description);
-        return { extraction, provider: 'nvidia', processingTimeMs: Date.now() - startTime };
+        const extraction = await extractWithNvidiaNim(description, logDebug);
+        logDebug(`Total cascade processing completed via Nvidia NIM in ${Date.now() - startTime}ms`);
+        return { extraction, provider: 'nvidia', processingTimeMs: Date.now() - startTime, debugLogs };
       } catch (nvidiaError) {
         const nvidiaMsg = nvidiaError instanceof Error ? nvidiaError.message : String(nvidiaError);
-        console.warn(`[AI] Nvidia NIM failed, cascading to OpenRouter. Reason: ${nvidiaMsg}`);
+        logDebug(`Nvidia NIM fully failed: ${nvidiaMsg}. Cascading to OpenRouter...`);
 
         // 4. OpenRouter fallback
         try {
-          const extraction = await extractWithOpenRouter(description);
-          return { extraction, provider: 'openrouter', processingTimeMs: Date.now() - startTime };
+          const extraction = await extractWithOpenRouter(description, logDebug);
+          logDebug(`Total cascade processing completed via OpenRouter in ${Date.now() - startTime}ms`);
+          return { extraction, provider: 'openrouter', processingTimeMs: Date.now() - startTime, debugLogs };
         } catch (openrouterError) {
           const orMsg = openrouterError instanceof Error ? openrouterError.message : String(openrouterError);
+          logDebug(`All providers failed: ${orMsg}`);
           throw new Error(`All AI providers failed.\nGroq: ${groqMsg}\nGemini: ${geminiMsg}\nNvidia: ${nvidiaMsg}\nOpenRouter: ${orMsg}`);
         }
       }
