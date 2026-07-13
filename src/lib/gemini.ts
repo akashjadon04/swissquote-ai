@@ -136,7 +136,7 @@ const badGeminiKeys = new Set<string>();
 const badOpenRouterKeys = new Set<string>();
 
 async function extractWithGeminiKey(description: string, apiKey: string, keyIndex: number): Promise<AIExtractionResult> {
-  const modelName = process.env.GEMINI_MODEL || 'gemini-1.5-flash';
+  const modelName = process.env.GEMINI_MODEL || 'gemini-3.5-flash';
 
   const genAI = new GoogleGenerativeAI(apiKey);
   const model = genAI.getGenerativeModel({
