@@ -406,10 +406,10 @@ async function extractWithGroqKey(
   apiKey: string,
   keyIndex: number
 ): Promise<AIExtractionResult> {
-  const model = 'llama-3.3-70b-versatile'; // Standard fast 70B model with high rate limits
-  const backupModel = 'llama-3.1-8b-instant';
-  const backupModel2 = 'llama-3.1-70b-versatile';
-  const fallbackModel = 'llama3-70b-8192';
+  const model = 'llama-3.3-70b-versatile'; // Primary model
+  const backupModel = 'openai/gpt-oss-20b';  // Recommended July 2026 fast model
+  const backupModel2 = 'qwen/qwen3.6-27b';  // Recommended July 2026 high-performance Qwen model
+  const fallbackModel = 'llama-3.1-8b-instant'; // Legacy fallback
 
   const modelErrors: string[] = [];
   const models = [model, backupModel, backupModel2, fallbackModel];
