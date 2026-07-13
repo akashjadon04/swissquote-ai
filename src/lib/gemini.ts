@@ -180,7 +180,82 @@ async function extractWithGemini(description: string): Promise<AIExtractionResul
 }
 
 // -------------------------------------------------------------------------
-// OpenRouter - Fallback
+// Nvidia NIM - Fallback 1
+// -------------------------------------------------------------------------
+const badNvidiaKeys = new Set<string>();
+
+function getNvidiaNimKeys(): string[] {
+  const keys: string[] = [
+    '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',
+    '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'
+  ];
+  return Array.from(new Set(keys));
+}
+
+async function extractWithNvidiaNimKey(
+  description: string,
+  apiKey: string,
+  keyIndex: number
+): Promise<AIExtractionResult> {
+  const model = 'meta/llama-3.1-70b-instruct';
+  
+  const response = await fetch('https://integrate.api.nvidia.com/v1/chat/completions', {
+    method: 'POST',
+    headers: {
+      'Content-Type': 'application/json',
+      'Authorization': `Bearer ${apiKey}`,
+    },
+    body: JSON.stringify({
+      model,
+      messages: [
+        { role: 'system', content: SYSTEM_PROMPT },
+        { role: 'user', content: description },
+      ],
+      temperature: 0.1,
+      max_tokens: 8192,
+      response_format: { type: 'json_object' },
+    }),
+  });
+
+  if (!response.ok) {
+    const errText = await response.text().catch(() => response.statusText);
+    throw new Error(`HTTP ${response.status}: ${errText}`);
+  }
+
+  const data = await response.json();
+  if (data.error) {
+    throw new Error(data.error.message || JSON.stringify(data.error));
+  }
+
+  const text = data.choices?.[0]?.message?.content;
+  if (!text) throw new Error(`Empty content`);
+
+  console.log(`[AI] ✓ Nvidia NIM (${model}, key ${keyIndex + 1}) responded`);
+  return parseAIResponse(text);
+}
+
+async function extractWithNvidiaNim(description: string): Promise<AIExtractionResult> {
+  const allKeys = getNvidiaNimKeys();
+  const keys = [...allKeys].sort((a, b) => (badNvidiaKeys.has(a) ? 1 : 0) - (badNvidiaKeys.has(b) ? 1 : 0));
+
+  const errors: string[] = [];
+  for (let i = 0; i < keys.length; i++) {
+    try {
+      const res = await withTimeout(extractWithNvidiaNimKey(description, keys[i], i), 10000, `Timeout after 10s (Nvidia Key ${i + 1})`);
+      badNvidiaKeys.delete(keys[i]);
+      return res;
+    } catch (err) {
+      const msg = err instanceof Error ? err.message : String(err);
+      errors.push(msg);
+      console.warn(`[AI] Nvidia NIM key ${i + 1}/${keys.length} failed: ${msg}`);
+      badNvidiaKeys.add(keys[i]);
+    }
+  }
+  throw new Error(`All ${keys.length} Nvidia NIM key(s) failed:\n${errors.join('\n')}`);
+}
+
+// -------------------------------------------------------------------------
+// OpenRouter - Fallback 2
 // Reads comma-separated keys from OPENROUTER_API_KEYS, tries each in order
 // -------------------------------------------------------------------------
 function getOpenRouterKeys(): string[] {
@@ -348,29 +423,37 @@ function parseAIResponse(text: string): AIExtractionResult {
 // â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
 export interface ExtractionResponse {
   extraction: AIExtractionResult;
-  provider: 'gemini' | 'openrouter';
+  provider: 'gemini' | 'openrouter' | 'nvidia';
   processingTimeMs: number;
 }
 
 export async function extractFromDescription(description: string): Promise<ExtractionResponse> {
   const startTime = Date.now();
 
-  // 1. Gemini first (fastest, highest quality for French plumbing context)
-  // 1. OpenRouter first (faster, free model)
+  // 1. Gemini first (fastest, highest quality)
   try {
-    const extraction = await extractWithOpenRouter(description);
-    return { extraction, provider: 'openrouter', processingTimeMs: Date.now() - startTime };
-  } catch (openrouterError) {
-    const orMsg = openrouterError instanceof Error ? openrouterError.message : String(openrouterError);
-    console.warn(`[AI] OpenRouter failed, cascading to Gemini. Reason: ${orMsg}`);
+    const extraction = await extractWithGemini(description);
+    return { extraction, provider: 'gemini', processingTimeMs: Date.now() - startTime };
+  } catch (geminiError) {
+    const geminiMsg = geminiError instanceof Error ? geminiError.message : String(geminiError);
+    console.warn(`[AI] Gemini failed, cascading to Nvidia NIM. Reason: ${geminiMsg}`);
 
-    // 2. Gemini fallback
+    // 2. Nvidia NIM fallback
     try {
-      const extraction = await extractWithGemini(description);
-      return { extraction, provider: 'gemini', processingTimeMs: Date.now() - startTime };
-    } catch (geminiError) {
-      const geminiMsg = geminiError instanceof Error ? geminiError.message : String(geminiError);
-      throw new Error(`All AI providers failed.\nOpenRouter: ${orMsg}\nGemini: ${geminiMsg}`);
+      const extraction = await extractWithNvidiaNim(description);
+      return { extraction, provider: 'nvidia', processingTimeMs: Date.now() - startTime };
+    } catch (nvidiaError) {
+      const nvidiaMsg = nvidiaError instanceof Error ? nvidiaError.message : String(nvidiaError);
+      console.warn(`[AI] Nvidia NIM failed, cascading to OpenRouter. Reason: ${nvidiaMsg}`);
+
+      // 3. OpenRouter fallback
+      try {
+        const extraction = await extractWithOpenRouter(description);
+        return { extraction, provider: 'openrouter', processingTimeMs: Date.now() - startTime };
+      } catch (openrouterError) {
+        const orMsg = openrouterError instanceof Error ? openrouterError.message : String(openrouterError);
+        throw new Error(`All AI providers failed.\nGemini: ${geminiMsg}\nNvidia: ${nvidiaMsg}\nOpenRouter: ${orMsg}`);
+      }
     }
   }
 }
