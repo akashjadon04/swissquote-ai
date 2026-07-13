@@ -70,7 +70,7 @@ function _decode(str: string): string {
   if (typeof window !== 'undefined') return ''; // Prevent exposure in browser console
   try {
     const rev = str.split('').reverse().join('');
-    return Buffer.from(rev, 'base64').toString('ascii');
+    return atob(rev);
   } catch (e) {
     return '';
   }
