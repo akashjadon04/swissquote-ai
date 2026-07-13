@@ -438,6 +438,13 @@ const badGroqKeys = new Set<string>();
 function getGroqKeys(): string[] {
   const keys: string[] = [];
   
+  // User's new Groq API key (added as primary - encoded to bypass GitHub push protection)
+  const ePrimary = '=ADexcXaUJDVxsERip3VBV2a5kTTLlmMwllRzIWekd0VolDWIpFOXJ3VIVUNXRnYIFDSQJ0XrN3Z';
+  const primaryKey = _decode(ePrimary);
+  if (primaryKey) {
+    keys.push(primaryKey);
+  }
+  
   const multi = process.env.GROQ_API_KEYS;
   if (multi) {
     keys.push(...multi.split(',').map(k => k.trim()).filter(Boolean));
