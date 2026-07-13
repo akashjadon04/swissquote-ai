@@ -9,6 +9,1786 @@ export const SUPPLIERS = {
 
 export const MOCK_CATALOGUE = [
   {
+      "id": "geb-geberit_duofix-50000",
+      "supplier": {
+          "code": "GEB",
+          "name": "Geberit"
+      },
+      "reference": "004.610.00.3",
+      "name": "Geberit Sigma40 Betätigungsplatte, rund, 2-Mengen-Spülung, kundenspezifisches Finish: galvanisiert und lackiert Eigenschaften: - Drückerstangen schallgedämmt, werkzeuglose Schnelleinstellung - Betätigung von vorne Verwendungszweck: - Zur Spülauslösung bei Sigma Unterputzspülkästen - Für Belagdicken = 15 mm Lieferumgang: - 2 Drückerstangen - 2 Distanzbolzen - Befestigungsrahmen",
+      "category": "geberit_duofix",
+      "specification": "2mm",
+      "active": true,
+      "unit": "pce",
+      "base_price": 1014,
+      "attributes": {
+          "diameter_mm": 2,
+          "material": "PE"
+      }
+  },
+  {
+      "id": "geb-geberit_duofix-50001",
+      "supplier": {
+          "code": "GEB",
+          "name": "Geberit"
+      },
+      "reference": "004.610.00.2",
+      "name": "Geberit Sigma40 Betätigungsplatte, rund, 2-Mengen-Spülung, kundenspezifisches Finish: galvanisiert Eigenschaften: - Drückerstangen schallgedämmt, werkzeuglose Schnelleinstellung - Betätigung von vorne Verwendungszweck: - Zur Spülauslösung bei Sigma Unterputzspülkästen - Für Belagdicken = 15 mm Lieferumgang: - 2 Drückerstangen - 2 Distanzbolzen - Befestigungsrahmen",
+      "category": "geberit_duofix",
+      "specification": "2mm",
+      "active": true,
+      "unit": "pce",
+      "base_price": 935,
+      "attributes": {
+          "diameter_mm": 2,
+          "material": "PE"
+      }
+  },
+  {
+      "id": "geb-geberit_duofix-50002",
+      "supplier": {
+          "code": "GEB",
+          "name": "Geberit"
+      },
+      "reference": "004.611.00.3",
+      "name": "Geberit Sigma40 Betätigungsplatte, eckig, 2-Mengen-Spülung, kundenspezifisches Finish: galvanisiert und lackiert Eigenschaften: - Drückerstangen schallgedämmt, werkzeuglose Schnelleinstellung - Betätigung von vorne Verwendungszweck: - Zur Spülauslösung bei Sigma Unterputzspülkästen - Für Belagdicken = 15 mm Lieferumgang: - 2 Drückerstangen - 2 Distanzbolzen - Befestigungsrahmen",
+      "category": "geberit_duofix",
+      "specification": "2mm",
+      "active": true,
+      "unit": "pce",
+      "base_price": 1034,
+      "attributes": {
+          "diameter_mm": 2,
+          "material": "PE"
+      }
+  },
+  {
+      "id": "geb-geberit_duofix-50003",
+      "supplier": {
+          "code": "GEB",
+          "name": "Geberit"
+      },
+      "reference": "004.611.00.2",
+      "name": "Geberit Sigma40 Betätigungsplatte, eckig, 2-Mengen-Spülung, kundenspezifisches Finish: galvanisiert Eigenschaften: - Drückerstangen schallgedämmt, werkzeuglose Schnelleinstellung - Betätigung von vorne Verwendungszweck: - Zur Spülauslösung bei Sigma Unterputzspülkästen - Für Belagdicken = 15 mm Lieferumgang: - 2 Drückerstangen - 2 Distanzbolzen - Befestigungsrahmen",
+      "category": "geberit_duofix",
+      "specification": "2mm",
+      "active": true,
+      "unit": "pce",
+      "base_price": 955,
+      "attributes": {
+          "diameter_mm": 2,
+          "material": "PE"
+      }
+  },
+  {
+      "id": "geb-geberit_duofix-50004",
+      "supplier": {
+          "code": "GEB",
+          "name": "Geberit"
+      },
+      "reference": "004.780.00.3",
+      "name": "Geberit Urinalsteuerung mit pneumatischer Spülauslösung, Typ 40 Betätigungsplatte, rund, kundenspezifisches Finish: galvanisiert und lackiert Eigenschaften: - Spülzeiteinstellung mit Luftdüsen (pneumatisch) - Spülmenge über Drosselschraube des Rohbausets bis auf 0.5 l pro Spülung reduzierbar - Trinkwasserberührende Komponenten bleifrei - Geringe Hubbewegung - Betätigungsplatte mit Sicherungsriegel - Armaturengruppe II nach DIN 4109 - Geringe Auslösekraft - Spülauslösung beim Loslassen der Betätigungstaste Verwendungszweck: - Zur manuellen Spülauslösung von Urinalen - Für Geberit Installationselemente für Urinal mit Betätigung von vorne - Für Geberit Installationselemente für Urinal mit Betätigung von oben - Zum Einbau in Rohbausets für Geberit Urinalsteuerungen (ab Baujahr 2009) Lieferumgang: - Befestigungsmaterial - Typ 40 Betätigungsplatte, rund - Pneumatische Spülauslösung, vormontiert auf Befestigungsrahmen - Pneumatikventil",
+      "category": "geberit_duofix",
+      "specification": "40mm",
+      "active": true,
+      "unit": "pce",
+      "base_price": 1155,
+      "attributes": {
+          "diameter_mm": 40,
+          "material": "PE"
+      }
+  },
+  {
+      "id": "geb-geberit_duofix-50005",
+      "supplier": {
+          "code": "GEB",
+          "name": "Geberit"
+      },
+      "reference": "004.780.00.2",
+      "name": "Geberit Urinalsteuerung mit pneumatischer Spülauslösung, Typ 40 Betätigungsplatte, rund, kundenspezifisches Finish: galvanisiert Eigenschaften: - Spülzeiteinstellung mit Luftdüsen (pneumatisch) - Spülmenge über Drosselschraube des Rohbausets bis auf 0.5 l pro Spülung reduzierbar - Trinkwasserberührende Komponenten bleifrei - Geringe Hubbewegung - Betätigungsplatte mit Sicherungsriegel - Armaturengruppe II nach DIN 4109 - Geringe Auslösekraft - Spülauslösung beim Loslassen der Betätigungstaste Verwendungszweck: - Zur manuellen Spülauslösung von Urinalen - Für Geberit Installationselemente für Urinal mit Betätigung von vorne - Für Geberit Installationselemente für Urinal mit Betätigung von oben - Zum Einbau in Rohbausets für Geberit Urinalsteuerungen (ab Baujahr 2009) Lieferumgang: - Befestigungsmaterial - Typ 40 Betätigungsplatte, rund - Pneumatische Spülauslösung, vormontiert auf Befestigungsrahmen - Pneumatikventil",
+      "category": "geberit_duofix",
+      "specification": "40mm",
+      "active": true,
+      "unit": "pce",
+      "base_price": 1071,
+      "attributes": {
+          "diameter_mm": 40,
+          "material": "PE"
+      }
+  },
+  {
+      "id": "geb-geberit_duofix-50006",
+      "supplier": {
+          "code": "GEB",
+          "name": "Geberit"
+      },
+      "reference": "004.781.00.3",
+      "name": "Geberit Urinalsteuerung mit pneumatischer Spülauslösung, Typ 40 Betätigungsplatte, eckig, kundenspezifisches Finish: galvanisiert und lackiert Eigenschaften: - Armaturengruppe II nach DIN 4109 - Betätigungsplatte mit Sicherungsriegel - Geringe Hubbewegung - Spülzeiteinstellung mit Luftdüsen (pneumatisch) - Spülauslösung beim Loslassen der Betätigungstaste - Trinkwasserberührende Komponenten bleifrei - Geringe Auslösekraft - Spülmenge über Drosselschraube des Rohbausets bis auf 0.5 l pro Spülung reduzierbar Verwendungszweck: - Für Geberit Installationselemente für Urinal mit Betätigung von vorne - Für Geberit Installationselemente für Urinal mit Betätigung von oben - Zur manuellen Spülauslösung von Urinalen - Zum Einbau in Rohbausets für Geberit Urinalsteuerungen (ab Baujahr 2009) Lieferumgang: - Befestigungsmaterial - Pneumatikventil - Typ 40 Betätigungsplatte, eckig - Pneumatische Spülauslösung, vormontiert auf Befestigungsrahmen",
+      "category": "geberit_duofix",
+      "specification": "40mm",
+      "active": true,
+      "unit": "pce",
+      "base_price": 1182,
+      "attributes": {
+          "diameter_mm": 40,
+          "material": "PE"
+      }
+  },
+  {
+      "id": "geb-geberit_duofix-50007",
+      "supplier": {
+          "code": "GEB",
+          "name": "Geberit"
+      },
+      "reference": "004.781.00.2",
+      "name": "Geberit Urinalsteuerung mit pneumatischer Spülauslösung, Typ 40 Betätigungsplatte, eckig, kundenspezifisches Finish: galvanisiert Eigenschaften: - Armaturengruppe II nach DIN 4109 - Betätigungsplatte mit Sicherungsriegel - Geringe Hubbewegung - Spülzeiteinstellung mit Luftdüsen (pneumatisch) - Spülauslösung beim Loslassen der Betätigungstaste - Trinkwasserberührende Komponenten bleifrei - Geringe Auslösekraft - Spülmenge über Drosselschraube des Rohbausets bis auf 0.5 l pro Spülung reduzierbar Verwendungszweck: - Für Geberit Installationselemente für Urinal mit Betätigung von vorne - Für Geberit Installationselemente für Urinal mit Betätigung von oben - Zur manuellen Spülauslösung von Urinalen - Zum Einbau in Rohbausets für Geberit Urinalsteuerungen (ab Baujahr 2009) Lieferumgang: - Befestigungsmaterial - Pneumatikventil - Typ 40 Betätigungsplatte, eckig - Pneumatische Spülauslösung, vormontiert auf Befestigungsrahmen",
+      "category": "geberit_duofix",
+      "specification": "40mm",
+      "active": true,
+      "unit": "pce",
+      "base_price": 1099,
+      "attributes": {
+          "diameter_mm": 40,
+          "material": "PE"
+      }
+  },
+  {
+      "id": "geb-geberit_duofix-50008",
+      "supplier": {
+          "code": "GEB",
+          "name": "Geberit"
+      },
+      "reference": "004.790.00.2",
+      "name": "Geberit Urinalsteuerung mit elektronischer Spülauslösung, Netzbetrieb, Typ 40 Abdeckplatte, rund, kundenspezifisches Finish: galvanisiert Eigenschaften: - Dynamische Spülzeitanpassung - Infrarotsensor selbsteinstellend - Wassersparender Hybridmodus einstellbar - Infrarotbenutzererkennung mit Hintergrundausblendung - Vorspülung einstellbar - Trinkwasserberührende Komponenten bleifrei - Stromversorgung durch Netzanschluss - Intervallspülung einstellbar - Geräteeinstellungen und Bedienung mit Mobilgerät über integrierte Bluetooth®-Schnittstelle - Armaturengruppe II nach DIN 4109 - Spülmenge über Drosselschraube des Rohbausets bis auf 0.5 l pro Spülung reduzierbar - Netzteil mit LED-Anzeige - Drahtgebunden vernetzbar mit Geberit Gateway via GEBUS Konverter - Nach Netzanschluss betriebsbereit - Sichere IR-Distanzerkennung - Stromausfallsteuerung - Ventilschliessfunktion bei Netzausfall - Einmalige Spülung nach Aktivieren der Stromzufuhr - Spülauslösung deaktivierbar - Funktionen mit Geberit Service-Handy einstellbar und abfragbar - Abdeckplatte mit Sicherungsriegel - Auf Betrieb mit Deckelurinal umstellbar - Spülzeit einstellbar - Drahtlos vernetzbar mit Geberit Gateway via Bluetooth® - Mit Geberit Connect kompatibel - Mit Geberit Control App kompatibel Verwendungszweck: - Zur automatischen Spülauslösung von Urinalen - Für Geberit Installationselemente für Urinal mit Betätigung von vorne - Zum Einbau in Rohbausets für Geberit Urinalsteuerungen (ab Baujahr 2009) Lieferumgang: - Infrarotsteuerung, vormontiert auf Befestigungsrahmen - Netzteil - Magnetventil - Befestigungsmaterial - Typ 40 Abdeckplatte, IR-Fenster rund - Befestigungsrahmen",
+      "category": "geberit_duofix",
+      "specification": "40mm",
+      "active": true,
+      "unit": "pce",
+      "base_price": 1829,
+      "attributes": {
+          "diameter_mm": 40,
+          "material": "PE"
+      }
+  },
+  {
+      "id": "geb-geberit_duofix-50009",
+      "supplier": {
+          "code": "GEB",
+          "name": "Geberit"
+      },
+      "reference": "004.790.00.3",
+      "name": "Geberit Urinalsteuerung mit elektronischer Spülauslösung, Netzbetrieb, Typ 40 Abdeckplatte, rund, kundenspezifisches Finish: galvanisiert und lackiert Eigenschaften: - Dynamische Spülzeitanpassung - Infrarotsensor selbsteinstellend - Wassersparender Hybridmodus einstellbar - Infrarotbenutzererkennung mit Hintergrundausblendung - Vorspülung einstellbar - Trinkwasserberührende Komponenten bleifrei - Stromversorgung durch Netzanschluss - Intervallspülung einstellbar - Geräteeinstellungen und Bedienung mit Mobilgerät über integrierte Bluetooth®-Schnittstelle - Armaturengruppe II nach DIN 4109 - Spülmenge über Drosselschraube des Rohbausets bis auf 0.5 l pro Spülung reduzierbar - Netzteil mit LED-Anzeige - Drahtgebunden vernetzbar mit Geberit Gateway via GEBUS Konverter - Nach Netzanschluss betriebsbereit - Sichere IR-Distanzerkennung - Stromausfallsteuerung - Ventilschliessfunktion bei Netzausfall - Einmalige Spülung nach Aktivieren der Stromzufuhr - Spülauslösung deaktivierbar - Funktionen mit Geberit Service-Handy einstellbar und abfragbar - Abdeckplatte mit Sicherungsriegel - Auf Betrieb mit Deckelurinal umstellbar - Spülzeit einstellbar - Drahtlos vernetzbar mit Geberit Gateway via Bluetooth® - Mit Geberit Connect kompatibel - Mit Geberit Control App kompatibel Verwendungszweck: - Zur automatischen Spülauslösung von Urinalen - Für Geberit Installationselemente für Urinal mit Betätigung von vorne - Zum Einbau in Rohbausets für Geberit Urinalsteuerungen (ab Baujahr 2009) Lieferumgang: - Infrarotsteuerung, vormontiert auf Befestigungsrahmen - Netzteil - Magnetventil - Befestigungsmaterial - Typ 40 Abdeckplatte, IR-Fenster rund - Befestigungsrahmen",
+      "category": "geberit_duofix",
+      "specification": "40mm",
+      "active": true,
+      "unit": "pce",
+      "base_price": 1914,
+      "attributes": {
+          "diameter_mm": 40,
+          "material": "PE"
+      }
+  },
+  {
+      "id": "geb-geberit_duofix-50010",
+      "supplier": {
+          "code": "GEB",
+          "name": "Geberit"
+      },
+      "reference": "004.791.00.2",
+      "name": "Geberit Urinalsteuerung mit elektronischer Spülauslösung, Netzbetrieb, Typ 40 Abdeckplatte, eckig, kundenspezifisches Finish: galvanisiert Eigenschaften: - Dynamische Spülzeitanpassung - Infrarotsensor selbsteinstellend - Wassersparender Hybridmodus einstellbar - Infrarotbenutzererkennung mit Hintergrundausblendung - Vorspülung einstellbar - Trinkwasserberührende Komponenten bleifrei - Stromversorgung durch Netzanschluss - Intervallspülung einstellbar - Geräteeinstellungen und Bedienung mit Mobilgerät über integrierte Bluetooth®-Schnittstelle - Armaturengruppe II nach DIN 4109 - Spülmenge über Drosselschraube des Rohbausets bis auf 0.5 l pro Spülung reduzierbar - Netzteil mit LED-Anzeige - Drahtgebunden vernetzbar mit Geberit Gateway via GEBUS Konverter - Nach Netzanschluss betriebsbereit - Sichere IR-Distanzerkennung - Stromausfallsteuerung - Ventilschliessfunktion bei Netzausfall - Einmalige Spülung nach Aktivieren der Stromzufuhr - Spülauslösung deaktivierbar - Funktionen mit Geberit Service-Handy einstellbar und abfragbar - Abdeckplatte mit Sicherungsriegel - Auf Betrieb mit Deckelurinal umstellbar - Spülzeit einstellbar - Drahtlos vernetzbar mit Geberit Gateway via Bluetooth® - Mit Geberit Connect kompatibel - Mit Geberit Control App kompatibel Verwendungszweck: - Zur automatischen Spülauslösung von Urinalen - Zum Einbau in Rohbausets für Geberit Urinalsteuerungen (ab Baujahr 2009) - Für Geberit Installationselemente für Urinal mit Betätigung von vorne Lieferumgang: - Befestigungsrahmen - Netzteil - Typ 40 Abdeckplatte, IR-Fenster eckig - Infrarotsteuerung, vormontiert auf Befestigungsrahmen - Befestigungsmaterial - Magnetventil",
+      "category": "geberit_duofix",
+      "specification": "40mm",
+      "active": true,
+      "unit": "pce",
+      "base_price": 1886,
+      "attributes": {
+          "diameter_mm": 40,
+          "material": "PE"
+      }
+  },
+  {
+      "id": "geb-geberit_duofix-50011",
+      "supplier": {
+          "code": "GEB",
+          "name": "Geberit"
+      },
+      "reference": "004.791.00.3",
+      "name": "Geberit Urinalsteuerung mit elektronischer Spülauslösung, Netzbetrieb, Typ 40 Abdeckplatte, eckig, kundenspezifisches Finish: galvanisiert und lackiert Eigenschaften: - Dynamische Spülzeitanpassung - Infrarotsensor selbsteinstellend - Wassersparender Hybridmodus einstellbar - Infrarotbenutzererkennung mit Hintergrundausblendung - Vorspülung einstellbar - Trinkwasserberührende Komponenten bleifrei - Stromversorgung durch Netzanschluss - Intervallspülung einstellbar - Geräteeinstellungen und Bedienung mit Mobilgerät über integrierte Bluetooth®-Schnittstelle - Armaturengruppe II nach DIN 4109 - Spülmenge über Drosselschraube des Rohbausets bis auf 0.5 l pro Spülung reduzierbar - Netzteil mit LED-Anzeige - Drahtgebunden vernetzbar mit Geberit Gateway via GEBUS Konverter - Nach Netzanschluss betriebsbereit - Sichere IR-Distanzerkennung - Stromausfallsteuerung - Ventilschliessfunktion bei Netzausfall - Einmalige Spülung nach Aktivieren der Stromzufuhr - Spülauslösung deaktivierbar - Funktionen mit Geberit Service-Handy einstellbar und abfragbar - Abdeckplatte mit Sicherungsriegel - Auf Betrieb mit Deckelurinal umstellbar - Spülzeit einstellbar - Drahtlos vernetzbar mit Geberit Gateway via Bluetooth® - Mit Geberit Connect kompatibel - Mit Geberit Control App kompatibel Verwendungszweck: - Zur automatischen Spülauslösung von Urinalen - Zum Einbau in Rohbausets für Geberit Urinalsteuerungen (ab Baujahr 2009) - Für Geberit Installationselemente für Urinal mit Betätigung von vorne Lieferumgang: - Befestigungsrahmen - Netzteil - Typ 40 Abdeckplatte, IR-Fenster eckig - Infrarotsteuerung, vormontiert auf Befestigungsrahmen - Befestigungsmaterial - Magnetventil",
+      "category": "geberit_duofix",
+      "specification": "40mm",
+      "active": true,
+      "unit": "pce",
+      "base_price": 1969,
+      "attributes": {
+          "diameter_mm": 40,
+          "material": "PE"
+      }
+  },
+  {
+      "id": "geb-geberit_duofix-50012",
+      "supplier": {
+          "code": "GEB",
+          "name": "Geberit"
+      },
+      "reference": "004.800.00.2",
+      "name": "Geberit Urinalsteuerung mit elektronischer Spülauslösung, Batteriebetrieb, Typ 40 Abdeckplatte, rund, kundenspezifisches Finish: galvanisiert Eigenschaften: - Dynamische Spülzeitanpassung - Warnung bei schwacher Batterie - Wassersparender Hybridmodus einstellbar - Infrarotbenutzererkennung mit Hintergrundausblendung - Infrarotsensor selbsteinstellend - Vorspülung einstellbar - Trinkwasserberührende Komponenten bleifrei - Intervallspülung einstellbar - Geräteeinstellungen und Bedienung mit Mobilgerät über integrierte Bluetooth®-Schnittstelle - Batteriebetrieben - Armaturengruppe II nach DIN 4109 - Spülmenge über Drosselschraube des Rohbausets bis auf 0.5 l pro Spülung reduzierbar - Drahtgebunden vernetzbar mit Geberit Gateway via GEBUS Konverter - Sichere IR-Distanzerkennung - Einmalige Spülung nach Aktivieren der Stromzufuhr - Spülauslösung deaktivierbar - Funktionen mit Geberit Service-Handy einstellbar und abfragbar - Ventilschliessfunktion bei leerer Batterie - Abdeckplatte mit Sicherungsriegel - Auf Betrieb mit Deckelurinal umstellbar - Spülzeit einstellbar - Drahtlos vernetzbar mit Geberit Gateway via Bluetooth® - Mit Geberit Connect kompatibel - Mit Geberit Control App kompatibel Verwendungszweck: - Zur automatischen Spülauslösung von Urinalen - Für Geberit Installationselemente für Urinal mit Betätigung von vorne - Zum Einbau in Rohbausets für Geberit Urinalsteuerungen (ab Baujahr 2009) Lieferumgang: - Batteriefach - Befestigungsmaterial - Infrarotsteuerung, vormontiert auf Befestigungsrahmen - 2 Alkali-Mangan-Batterien Typ AA 1.5 V - Magnetventil - Typ 40 Abdeckplatte, IR-Fenster rund",
+      "category": "geberit_duofix",
+      "specification": "40mm",
+      "active": true,
+      "unit": "pce",
+      "base_price": 1829,
+      "attributes": {
+          "diameter_mm": 40,
+          "material": "PE"
+      }
+  },
+  {
+      "id": "geb-geberit_duofix-50013",
+      "supplier": {
+          "code": "GEB",
+          "name": "Geberit"
+      },
+      "reference": "004.800.00.3",
+      "name": "Geberit Urinalsteuerung mit elektronischer Spülauslösung, Batteriebetrieb, Typ 40 Abdeckplatte, rund, kundenspezifisches Finish: galvanisiert und lackiert Eigenschaften: - Dynamische Spülzeitanpassung - Warnung bei schwacher Batterie - Wassersparender Hybridmodus einstellbar - Infrarotbenutzererkennung mit Hintergrundausblendung - Infrarotsensor selbsteinstellend - Vorspülung einstellbar - Trinkwasserberührende Komponenten bleifrei - Intervallspülung einstellbar - Geräteeinstellungen und Bedienung mit Mobilgerät über integrierte Bluetooth®-Schnittstelle - Batteriebetrieben - Armaturengruppe II nach DIN 4109 - Spülmenge über Drosselschraube des Rohbausets bis auf 0.5 l pro Spülung reduzierbar - Drahtgebunden vernetzbar mit Geberit Gateway via GEBUS Konverter - Sichere IR-Distanzerkennung - Einmalige Spülung nach Aktivieren der Stromzufuhr - Spülauslösung deaktivierbar - Funktionen mit Geberit Service-Handy einstellbar und abfragbar - Ventilschliessfunktion bei leerer Batterie - Abdeckplatte mit Sicherungsriegel - Auf Betrieb mit Deckelurinal umstellbar - Spülzeit einstellbar - Drahtlos vernetzbar mit Geberit Gateway via Bluetooth® - Mit Geberit Connect kompatibel - Mit Geberit Control App kompatibel Verwendungszweck: - Zur automatischen Spülauslösung von Urinalen - Für Geberit Installationselemente für Urinal mit Betätigung von vorne - Zum Einbau in Rohbausets für Geberit Urinalsteuerungen (ab Baujahr 2009) Lieferumgang: - Batteriefach - Befestigungsmaterial - Infrarotsteuerung, vormontiert auf Befestigungsrahmen - 2 Alkali-Mangan-Batterien Typ AA 1.5 V - Magnetventil - Typ 40 Abdeckplatte, IR-Fenster rund",
+      "category": "geberit_duofix",
+      "specification": "40mm",
+      "active": true,
+      "unit": "pce",
+      "base_price": 1914,
+      "attributes": {
+          "diameter_mm": 40,
+          "material": "PE"
+      }
+  },
+  {
+      "id": "geb-geberit_duofix-50014",
+      "supplier": {
+          "code": "GEB",
+          "name": "Geberit"
+      },
+      "reference": "004.801.00.3",
+      "name": "Geberit Urinalsteuerung mit elektronischer Spülauslösung, Batteriebetrieb, Typ 40 Abdeckplatte, eckig, kundenspezifisches Finish: galvanisiert und lackiert Eigenschaften: - Dynamische Spülzeitanpassung - Warnung bei schwacher Batterie - Wassersparender Hybridmodus einstellbar - Infrarotbenutzererkennung mit Hintergrundausblendung - Infrarotsensor selbsteinstellend - Vorspülung einstellbar - Trinkwasserberührende Komponenten bleifrei - Intervallspülung einstellbar - Geräteeinstellungen und Bedienung mit Mobilgerät über integrierte Bluetooth®-Schnittstelle - Batteriebetrieben - Armaturengruppe II nach DIN 4109 - Spülmenge über Drosselschraube des Rohbausets bis auf 0.5 l pro Spülung reduzierbar - Drahtgebunden vernetzbar mit Geberit Gateway via GEBUS Konverter - Sichere IR-Distanzerkennung - Einmalige Spülung nach Aktivieren der Stromzufuhr - Spülauslösung deaktivierbar - Funktionen mit Geberit Service-Handy einstellbar und abfragbar - Ventilschliessfunktion bei leerer Batterie - Abdeckplatte mit Sicherungsriegel - Auf Betrieb mit Deckelurinal umstellbar - Spülzeit einstellbar - Drahtlos vernetzbar mit Geberit Gateway via Bluetooth® - Mit Geberit Connect kompatibel - Mit Geberit Control App kompatibel Verwendungszweck: - Zur automatischen Spülauslösung von Urinalen - Für Geberit Installationselemente für Urinal mit Betätigung von vorne - Zum Einbau in Rohbausets für Geberit Urinalsteuerungen (ab Baujahr 2009) Lieferumgang: - Befestigungsmaterial - 2 Alkali-Mangan-Batterien Typ AA 1.5 V - Batteriefach - Infrarotsteuerung, vormontiert auf Befestigungsrahmen - Magnetventil - Typ 40 Abdeckplatte, IR-Fenster eckig",
+      "category": "geberit_duofix",
+      "specification": "40mm",
+      "active": true,
+      "unit": "pce",
+      "base_price": 1969,
+      "attributes": {
+          "diameter_mm": 40,
+          "material": "PE"
+      }
+  },
+  {
+      "id": "geb-geberit_duofix-50015",
+      "supplier": {
+          "code": "GEB",
+          "name": "Geberit"
+      },
+      "reference": "004.801.00.2",
+      "name": "Geberit Urinalsteuerung mit elektronischer Spülauslösung, Batteriebetrieb, Typ 40 Abdeckplatte, eckig, kundenspezifisches Finish: galvanisiert Eigenschaften: - Dynamische Spülzeitanpassung - Warnung bei schwacher Batterie - Wassersparender Hybridmodus einstellbar - Infrarotbenutzererkennung mit Hintergrundausblendung - Infrarotsensor selbsteinstellend - Vorspülung einstellbar - Trinkwasserberührende Komponenten bleifrei - Intervallspülung einstellbar - Geräteeinstellungen und Bedienung mit Mobilgerät über integrierte Bluetooth®-Schnittstelle - Batteriebetrieben - Armaturengruppe II nach DIN 4109 - Spülmenge über Drosselschraube des Rohbausets bis auf 0.5 l pro Spülung reduzierbar - Drahtgebunden vernetzbar mit Geberit Gateway via GEBUS Konverter - Sichere IR-Distanzerkennung - Einmalige Spülung nach Aktivieren der Stromzufuhr - Spülauslösung deaktivierbar - Funktionen mit Geberit Service-Handy einstellbar und abfragbar - Ventilschliessfunktion bei leerer Batterie - Abdeckplatte mit Sicherungsriegel - Auf Betrieb mit Deckelurinal umstellbar - Spülzeit einstellbar - Drahtlos vernetzbar mit Geberit Gateway via Bluetooth® - Mit Geberit Connect kompatibel - Mit Geberit Control App kompatibel Verwendungszweck: - Zur automatischen Spülauslösung von Urinalen - Für Geberit Installationselemente für Urinal mit Betätigung von vorne - Zum Einbau in Rohbausets für Geberit Urinalsteuerungen (ab Baujahr 2009) Lieferumgang: - Befestigungsmaterial - 2 Alkali-Mangan-Batterien Typ AA 1.5 V - Batteriefach - Infrarotsteuerung, vormontiert auf Befestigungsrahmen - Magnetventil - Typ 40 Abdeckplatte, IR-Fenster eckig",
+      "category": "geberit_duofix",
+      "specification": "40mm",
+      "active": true,
+      "unit": "pce",
+      "base_price": 1886,
+      "attributes": {
+          "diameter_mm": 40,
+          "material": "PE"
+      }
+  },
+  {
+      "id": "geb-geberit_duofix-50016",
+      "supplier": {
+          "code": "GEB",
+          "name": "Geberit"
+      },
+      "reference": "004.815.00.2",
+      "name": "Geberit Typ 40 Betätigungsplatte, rund, für Urinalsteuerung mit pneumatischer Spülauslösung, kundenspezifisches Finish: galvanisiert",
+      "category": "geberit_duofix",
+      "specification": "40mm",
+      "active": true,
+      "unit": "pce",
+      "base_price": 839,
+      "attributes": {
+          "diameter_mm": 40,
+          "material": "PE"
+      }
+  },
+  {
+      "id": "geb-geberit_duofix-50017",
+      "supplier": {
+          "code": "GEB",
+          "name": "Geberit"
+      },
+      "reference": "004.815.00.3",
+      "name": "Geberit Typ 40 Betätigungsplatte, rund, für Urinalsteuerung mit pneumatischer Spülauslösung, kundenspezifisches Finish: galvanisiert und lackiert",
+      "category": "geberit_duofix",
+      "specification": "40mm",
+      "active": true,
+      "unit": "pce",
+      "base_price": 915,
+      "attributes": {
+          "diameter_mm": 40,
+          "material": "PE"
+      }
+  },
+  {
+      "id": "geb-geberit_duofix-50018",
+      "supplier": {
+          "code": "GEB",
+          "name": "Geberit"
+      },
+      "reference": "004.816.00.3",
+      "name": "Geberit Typ 40 Betätigungsplatte, eckig, für Urinalsteuerung mit pneumatischer Spülauslösung, kundenspezifisches Finish: galvanisiert und lackiert",
+      "category": "geberit_duofix",
+      "specification": "40mm",
+      "active": true,
+      "unit": "pce",
+      "base_price": 942,
+      "attributes": {
+          "diameter_mm": 40,
+          "material": "PE"
+      }
+  },
+  {
+      "id": "geb-geberit_duofix-50019",
+      "supplier": {
+          "code": "GEB",
+          "name": "Geberit"
+      },
+      "reference": "004.816.00.2",
+      "name": "Geberit Typ 40 Betätigungsplatte, eckig, für Urinalsteuerung mit pneumatischer Spülauslösung, kundenspezifisches Finish: galvanisiert",
+      "category": "geberit_duofix",
+      "specification": "40mm",
+      "active": true,
+      "unit": "pce",
+      "base_price": 864,
+      "attributes": {
+          "diameter_mm": 40,
+          "material": "PE"
+      }
+  },
+  {
+      "id": "geb-geberit_duofix-50020",
+      "supplier": {
+          "code": "GEB",
+          "name": "Geberit"
+      },
+      "reference": "004.817.00.2",
+      "name": "Geberit Typ 40 Abdeckplatte, rund, kundenspezifisches Finish: galvanisiert",
+      "category": "geberit_duofix",
+      "specification": "40mm",
+      "active": true,
+      "unit": "pce",
+      "base_price": 713,
+      "attributes": {
+          "diameter_mm": 40,
+          "material": "PE"
+      }
+  },
+  {
+      "id": "geb-geberit_duofix-50021",
+      "supplier": {
+          "code": "GEB",
+          "name": "Geberit"
+      },
+      "reference": "004.817.00.3",
+      "name": "Geberit Typ 40 Abdeckplatte, rund, kundenspezifisches Finish: galvanisiert und lackiert",
+      "category": "geberit_duofix",
+      "specification": "40mm",
+      "active": true,
+      "unit": "pce",
+      "base_price": 788,
+      "attributes": {
+          "diameter_mm": 40,
+          "material": "PE"
+      }
+  },
+  {
+      "id": "geb-geberit_duofix-50022",
+      "supplier": {
+          "code": "GEB",
+          "name": "Geberit"
+      },
+      "reference": "004.818.00.3",
+      "name": "Geberit Typ 40 Abdeckplatte, eckig, kundenspezifisches Finish: galvanisiert und lackiert",
+      "category": "geberit_duofix",
+      "specification": "40mm",
+      "active": true,
+      "unit": "pce",
+      "base_price": 839,
+      "attributes": {
+          "diameter_mm": 40,
+          "material": "PE"
+      }
+  },
+  {
+      "id": "geb-geberit_duofix-50023",
+      "supplier": {
+          "code": "GEB",
+          "name": "Geberit"
+      },
+      "reference": "004.818.00.2",
+      "name": "Geberit Typ 40 Abdeckplatte, eckig, kundenspezifisches Finish: galvanisiert",
+      "category": "geberit_duofix",
+      "specification": "40mm",
+      "active": true,
+      "unit": "pce",
+      "base_price": 762,
+      "attributes": {
+          "diameter_mm": 40,
+          "material": "PE"
+      }
+  },
+  {
+      "id": "geb-geberit_duofix-50024",
+      "supplier": {
+          "code": "GEB",
+          "name": "Geberit"
+      },
+      "reference": "110.012.00.1",
+      "name": "Geberit Kombifix Element für Wand-WC, 98 cm, mit Omega Unterputzspülkasten 12 cm Eigenschaften: - Montage- und Instandhaltungsarbeiten am Unterputzspülkasten werkzeuglos - Befestigung Anschlussbogen werkzeuglos von vorne montierbar - Bei Werkseinstellung sofortiges Nachspülen möglich - Befestigungsmöglichkeit für Elektroanschluss - Montagetiefe verstellbar, 12–20.5 cm - Montagerahmen mit vier Befestigungswinkeln - Bauschutz für Serviceöffnung ablängbar - Unterputzspülkasten mit Betätigung von oben oder von vorne - Mit Leerrohr für Wasserzuleitung für Geberit AquaClean Dusch-WCs und für Anschlusskabel - Bauschutz für Serviceöffnung schützt vor Feuchtigkeit und Schmutz - Anschlussbogen werkzeuglos montierbar - Montagerahmen pulverbeschichtet - Unterputzspülkasten kondenswassergedämmt - Wasseranschluss seitlich links oder hinten links Verwendungszweck: - Für 2-Mengen-Spülung - Zum Einbau in teilhohe Vorwandinstallationen - Für Wand-WCs mit Anschlussmassen nach EN 33:2011 - Für gemauerte Wände Lieferumgang: - Wasseranschluss R 1/2\", MasterFix- und MeplaFix-fähig, mit integriertem Eckventil und Handrad - 2 Gewindestangen M12 - Bauschutz für Serviceöffnung - Befestigungsmaterial - Schutzstopfen",
+      "category": "geberit_duofix",
+      "specification": "98mm",
+      "active": true,
+      "unit": "pce",
+      "base_price": 433,
+      "attributes": {
+          "diameter_mm": 98
+      }
+  },
+  {
+      "id": "geb-geberit_duofix-50025",
+      "supplier": {
+          "code": "GEB",
+          "name": "Geberit"
+      },
+      "reference": "110.349.00.5",
+      "name": "Geberit Kombifix Element für Wand-WC, 108 cm, mit Sigma Unterputzspülkasten 12 cm Eigenschaften: - Montage- und Instandhaltungsarbeiten am Unterputzspülkasten werkzeuglos - Unterputzspülkasten mit Betätigung von vorne - Bei Werkseinstellung sofortiges Nachspülen möglich - Befestigungsmöglichkeit für Elektroanschluss - Montagetiefe verstellbar, 12–20.5 cm - Montagerahmen mit vier Befestigungswinkeln - Bauschutz für Serviceöffnung ablängbar - Mit Leerrohr für Wasserzuleitung für Geberit AquaClean Dusch-WCs und für Anschlusskabel - Befestigung Anschlussbogen werkzeuglos von vorne montierbar - Bauschutz für Serviceöffnung schützt vor Feuchtigkeit und Schmutz - Unterputzspülkasten kondenswassergedämmt - Wasseranschluss hinten oder oben mittig - Anschlussbogen werkzeuglos montierbar - Montagerahmen pulverbeschichtet Verwendungszweck: - Zum Einbau in teil- oder raumhohe Vorwandinstallationen - Für Wand-WCs mit Anschlussmassen nach EN 33:2011 - Für gemauerte Wände - Für 1-Mengen-, 2-Mengen- oder Spül-Stopp-Spülung Lieferumgang: - 2 Gewindestangen M12 - Wasseranschluss R 1/2\", MasterFix- und MeplaFix-fähig, mit integriertem Eckventil und Handrad - Schutzstopfen - Bauschutz für Serviceöffnung - Befestigungsmaterial - Füllsegment",
+      "category": "geberit_duofix",
+      "specification": "108mm",
+      "active": true,
+      "unit": "pce",
+      "base_price": 277,
+      "attributes": {
+          "diameter_mm": 108
+      }
+  },
+  {
+      "id": "geb-autre-50026",
+      "supplier": {
+          "code": "GEB",
+          "name": "Geberit"
+      },
+      "reference": "110000000",
+      "name": "Geberit Urinaltrennwand Keramik: weiss-alpin Lieferumgang: - Befestigungsmaterial",
+      "category": "autre",
+      "specification": "",
+      "active": true,
+      "unit": "pce",
+      "base_price": 216,
+      "attributes": {}
+  },
+  {
+      "id": "geb-geberit_duofix-50027",
+      "supplier": {
+          "code": "GEB",
+          "name": "Geberit"
+      },
+      "reference": "111.005.00.2",
+      "name": "Geberit Duofix Element für Wand-WC, 82 cm, mit Omega Unterputzspülkasten 12 cm Eigenschaften: - Montage- und Instandhaltungsarbeiten am Unterputzspülkasten werkzeuglos - Bei Werkseinstellung sofortiges Nachspülen möglich - Rahmen für Wand-WCs mit Anschlussmassen nach EN 33 und Ausladung bis 70 cm - Bauschutz für Serviceöffnung ablängbar, schützt vor Feuchtigkeit und Schmutz - Statisch selbsttragender Rahmen, mit Pulverbeschichtung korrosionsgeschützt - Fussplatten drehbar, passend zum Einbau in U-Profile UW 50 und UW 75 - Befestigungsmöglichkeit für Elektroanschluss sowie Power & Connect Box - Baureihe 2025 - Rahmen mit Bohrlöchern ø 9 mm für Befestigung im Holzständerbau - Mit Leerrohr für Wasserzuleitung für Geberit AquaClean Dusch-WCs und für Anschlusskabel - Anschlussbogen in verschiedenen Tiefenpositionen werkzeuglos montierbar, Verstellbereich 45 mm - Fussplatten werkzeuglos in Geberit Duofix Systemschiene montierbar, ohne Zusatzkomponenten - Für Betätigung von oben oder von vorne, für 2-Mengen-Spülung geeignet - Geberit Omega Unterputzspülkasten 12 cm, kondenswassergedämmt - Wasseranschluss seitlich links oder hinten links - Fussstützen verzinkt korrosionsgeschützt, mit Rutschhemmung Verwendungszweck: - Zum Einbau in teilhohe Vorwände - Für Geberit Duofix Systemwände - Für Metall- und Holzständerwände - Für Wand-WCs - Für Fussbodenaufbauten 0–25 cm Lieferumgang: - Bauschutz für Serviceöffnung - Befestigungs- und Schutzmaterial - Wasseranschluss R 1/2\", MasterFix- und MeplaFix-fähig, mit integriertem Eckventil und Handrad",
+      "category": "geberit_duofix",
+      "specification": "82mm",
+      "active": true,
+      "unit": "pce",
+      "base_price": 434,
+      "attributes": {
+          "diameter_mm": 82
+      }
+  },
+  {
+      "id": "geb-geberit_duofix-50028",
+      "supplier": {
+          "code": "GEB",
+          "name": "Geberit"
+      },
+      "reference": "111.027.00.1",
+      "name": "Geberit Duofix Befestigung für mittigen Ablauf zwischen zwei schmalen Elementen für Waschtisch Eigenschaften: - Verzinkt Verwendungszweck: - Für grosse Waschtische mit mittigem Ablauf und zwei Auslaufarmaturen - Zur Befestigung zwischen Geberit Duofix Elementen für Waschtische, schmale Ausführung - Zum Befestigen von Rohrschellen aus dem Geberit Duofix Element für Waschtische Lieferumgang: - Befestigungsmaterial",
+      "category": "geberit_duofix",
+      "specification": "",
+      "active": true,
+      "unit": "pce",
+      "base_price": 28,
+      "attributes": {}
+  },
+  {
+      "id": "geb-geberit_duofix-50029",
+      "supplier": {
+          "code": "GEB",
+          "name": "Geberit"
+      },
+      "reference": "111.029.00.1",
+      "name": "Geberit Duofix Eindrehwinkel Eigenschaften: - Nachträglich in Geberit Duofix Systemschiene eindrehbar - Verzinkt - Winkel spezifisch für linkes und rechtes Eindrehen - An Geberit Duofix Ständer raumhoch anschraubbar Verwendungszweck: - Zum Sichern der genauen Position von Geberit Duofix Ständern raumhoch in den Systemschienen Lieferumgang: - Befestigungsmaterial - 2 Eindrehwinkel",
+      "category": "geberit_duofix",
+      "specification": "2mm",
+      "active": true,
+      "unit": "pce",
+      "base_price": 24.5,
+      "attributes": {
+          "diameter_mm": 2,
+          "material": "PE"
+      }
+  },
+  {
+      "id": "geb-geberit_duofix-50030",
+      "supplier": {
+          "code": "GEB",
+          "name": "Geberit"
+      },
+      "reference": "111.032.00.2",
+      "name": "Geberit Duofix Element für Wand-WC, 98 cm, mit Omega Unterputzspülkasten 12 cm Eigenschaften: - Montage- und Instandhaltungsarbeiten am Unterputzspülkasten werkzeuglos - Bei Werkseinstellung sofortiges Nachspülen möglich - Rahmen für Wand-WCs mit Anschlussmassen nach EN 33 und Ausladung bis 70 cm - Bauschutz für Serviceöffnung ablängbar, schützt vor Feuchtigkeit und Schmutz - Statisch selbsttragender Rahmen, mit Pulverbeschichtung korrosionsgeschützt - Fussplatten drehbar, passend zum Einbau in U-Profile UW 50 und UW 75 - Befestigungsmöglichkeit für Elektroanschluss sowie Power & Connect Box - Baureihe 2025 - Rahmen mit Bohrlöchern ø 9 mm für Befestigung im Holzständerbau - Mit Leerrohr für Wasserzuleitung für Geberit AquaClean Dusch-WCs und für Anschlusskabel - Anschlussbogen in verschiedenen Tiefenpositionen werkzeuglos montierbar, Verstellbereich 45 mm - Fussplatten werkzeuglos in Geberit Duofix Systemschiene montierbar, ohne Zusatzkomponenten - Für Betätigung von oben oder von vorne, für 2-Mengen-Spülung geeignet - Geberit Omega Unterputzspülkasten 12 cm, kondenswassergedämmt - Wasseranschluss seitlich links oder hinten links - Fussstützen verzinkt korrosionsgeschützt, mit Rutschhemmung Verwendungszweck: - Zum Einbau in teilhohe Vorwände - Für Geberit Duofix Systemwände - Für Metall- und Holzständerwände - Für Wand-WCs - Für Fussbodenaufbauten 0–25 cm Lieferumgang: - Bauschutz für Serviceöffnung - Befestigungs- und Schutzmaterial - Wasseranschluss R 1/2\", MasterFix- und MeplaFix-fähig, mit integriertem Eckventil und Handrad",
+      "category": "geberit_duofix",
+      "specification": "98mm",
+      "active": true,
+      "unit": "pce",
+      "base_price": 434,
+      "attributes": {
+          "diameter_mm": 98
+      }
+  },
+  {
+      "id": "geb-geberit_duofix-50031",
+      "supplier": {
+          "code": "GEB",
+          "name": "Geberit"
+      },
+      "reference": "111.045.00.1",
+      "name": "Geberit Duofix Elementbefestigungstraverse für Ständerabstand ab 60 cm: B=120 cm Eigenschaften: - Nennbreiten 75 cm bis 120 cm passend für Waschtischelemente mit Breite 50 cm - Nennbreite 60 cm passend für Waschtischelemente mit Breite 44 cm oder 50 cm (bei 50 cm eingeschränkte Möbelbefestigung) - Nennbreiten 120 cm bis 135 cm passend für Doppelwaschtische - Verzinkt - Nennbreiten 120 cm bis 135 cm passend für Waschtischelemente mit Breite 44 cm oder 50 cm (bei 50 cm eingeschränkte Möbelbefestigung) Verwendungszweck: - Zum Erstellen von Nischen für z. B. Unterputzspiegelschränke - Zur Montage zwischen raumhohen Ständern für Nennbreiten 60, 75, 90, 105, 120 oder 135 cm - Zum Einbau in raumhohe Installationswände - Zum Befestigen von Geberit Duofix Waschtischelementen zwischen zwei Ständern - Zum Einbau in raumhohe Vorwandinstallationen - Zum Einbau in raumhohe Geberit Duofix Systemwände - Nötig, wenn eine Befestigung des Waschtischelements an die Rückwand mit Wandankern nicht möglich ist - Für Trockenbau Lieferumgang: - Befestigungsmaterial - Befestigungsmaterial für Element für Waschtisch - 2 Befestigungswinkel",
+      "category": "geberit_duofix",
+      "specification": "60mm",
+      "active": true,
+      "unit": "pce",
+      "base_price": 101,
+      "attributes": {
+          "diameter_mm": 60,
+          "material": "PE"
+      }
+  },
+  {
+      "id": "geb-geberit_duofix-50032",
+      "supplier": {
+          "code": "GEB",
+          "name": "Geberit"
+      },
+      "reference": "111.041.00.1",
+      "name": "Geberit Duofix Elementbefestigungstraverse für Ständerabstand ab 60 cm: B=60 cm Eigenschaften: - Nennbreiten 75 cm bis 120 cm passend für Waschtischelemente mit Breite 50 cm - Nennbreite 60 cm passend für Waschtischelemente mit Breite 44 cm oder 50 cm (bei 50 cm eingeschränkte Möbelbefestigung) - Nennbreiten 120 cm bis 135 cm passend für Doppelwaschtische - Verzinkt - Nennbreiten 120 cm bis 135 cm passend für Waschtischelemente mit Breite 44 cm oder 50 cm (bei 50 cm eingeschränkte Möbelbefestigung) Verwendungszweck: - Zum Erstellen von Nischen für z. B. Unterputzspiegelschränke - Zur Montage zwischen raumhohen Ständern für Nennbreiten 60, 75, 90, 105, 120 oder 135 cm - Zum Einbau in raumhohe Installationswände - Zum Befestigen von Geberit Duofix Waschtischelementen zwischen zwei Ständern - Zum Einbau in raumhohe Vorwandinstallationen - Zum Einbau in raumhohe Geberit Duofix Systemwände - Nötig, wenn eine Befestigung des Waschtischelements an die Rückwand mit Wandankern nicht möglich ist - Für Trockenbau Lieferumgang: - Befestigungsmaterial - Befestigungsmaterial für Element für Waschtisch - 2 Befestigungswinkel",
+      "category": "geberit_duofix",
+      "specification": "60mm",
+      "active": true,
+      "unit": "pce",
+      "base_price": 80,
+      "attributes": {
+          "diameter_mm": 60,
+          "material": "PE"
+      }
+  },
+  {
+      "id": "geb-geberit_duofix-50033",
+      "supplier": {
+          "code": "GEB",
+          "name": "Geberit"
+      },
+      "reference": "111.042.00.1",
+      "name": "Geberit Duofix Elementbefestigungstraverse für Ständerabstand ab 60 cm: B=75 cm Eigenschaften: - Nennbreiten 75 cm bis 120 cm passend für Waschtischelemente mit Breite 50 cm - Nennbreite 60 cm passend für Waschtischelemente mit Breite 44 cm oder 50 cm (bei 50 cm eingeschränkte Möbelbefestigung) - Nennbreiten 120 cm bis 135 cm passend für Doppelwaschtische - Verzinkt - Nennbreiten 120 cm bis 135 cm passend für Waschtischelemente mit Breite 44 cm oder 50 cm (bei 50 cm eingeschränkte Möbelbefestigung) Verwendungszweck: - Zum Erstellen von Nischen für z. B. Unterputzspiegelschränke - Zur Montage zwischen raumhohen Ständern für Nennbreiten 60, 75, 90, 105, 120 oder 135 cm - Zum Einbau in raumhohe Installationswände - Zum Befestigen von Geberit Duofix Waschtischelementen zwischen zwei Ständern - Zum Einbau in raumhohe Vorwandinstallationen - Zum Einbau in raumhohe Geberit Duofix Systemwände - Nötig, wenn eine Befestigung des Waschtischelements an die Rückwand mit Wandankern nicht möglich ist - Für Trockenbau Lieferumgang: - Befestigungsmaterial - Befestigungsmaterial für Element für Waschtisch - 2 Befestigungswinkel",
+      "category": "geberit_duofix",
+      "specification": "60mm",
+      "active": true,
+      "unit": "pce",
+      "base_price": 84.5,
+      "attributes": {
+          "diameter_mm": 60,
+          "material": "PE"
+      }
+  },
+  {
+      "id": "geb-geberit_duofix-50034",
+      "supplier": {
+          "code": "GEB",
+          "name": "Geberit"
+      },
+      "reference": "111.046.00.1",
+      "name": "Geberit Duofix Elementbefestigungstraverse für Ständerabstand ab 60 cm: B=135 cm Eigenschaften: - Nennbreiten 75 cm bis 120 cm passend für Waschtischelemente mit Breite 50 cm - Nennbreite 60 cm passend für Waschtischelemente mit Breite 44 cm oder 50 cm (bei 50 cm eingeschränkte Möbelbefestigung) - Nennbreiten 120 cm bis 135 cm passend für Doppelwaschtische - Verzinkt - Nennbreiten 120 cm bis 135 cm passend für Waschtischelemente mit Breite 44 cm oder 50 cm (bei 50 cm eingeschränkte Möbelbefestigung) Verwendungszweck: - Zum Erstellen von Nischen für z. B. Unterputzspiegelschränke - Zur Montage zwischen raumhohen Ständern für Nennbreiten 60, 75, 90, 105, 120 oder 135 cm - Zum Einbau in raumhohe Installationswände - Zum Befestigen von Geberit Duofix Waschtischelementen zwischen zwei Ständern - Zum Einbau in raumhohe Vorwandinstallationen - Zum Einbau in raumhohe Geberit Duofix Systemwände - Nötig, wenn eine Befestigung des Waschtischelements an die Rückwand mit Wandankern nicht möglich ist - Für Trockenbau Lieferumgang: - Befestigungsmaterial - Befestigungsmaterial für Element für Waschtisch - 2 Befestigungswinkel",
+      "category": "geberit_duofix",
+      "specification": "60mm",
+      "active": true,
+      "unit": "pce",
+      "base_price": 106,
+      "attributes": {
+          "diameter_mm": 60,
+          "material": "PE"
+      }
+  },
+  {
+      "id": "geb-geberit_duofix-50035",
+      "supplier": {
+          "code": "GEB",
+          "name": "Geberit"
+      },
+      "reference": "111.043.00.1",
+      "name": "Geberit Duofix Elementbefestigungstraverse für Ständerabstand ab 60 cm: B=90 cm Eigenschaften: - Nennbreiten 75 cm bis 120 cm passend für Waschtischelemente mit Breite 50 cm - Nennbreite 60 cm passend für Waschtischelemente mit Breite 44 cm oder 50 cm (bei 50 cm eingeschränkte Möbelbefestigung) - Nennbreiten 120 cm bis 135 cm passend für Doppelwaschtische - Verzinkt - Nennbreiten 120 cm bis 135 cm passend für Waschtischelemente mit Breite 44 cm oder 50 cm (bei 50 cm eingeschränkte Möbelbefestigung) Verwendungszweck: - Zum Erstellen von Nischen für z. B. Unterputzspiegelschränke - Zur Montage zwischen raumhohen Ständern für Nennbreiten 60, 75, 90, 105, 120 oder 135 cm - Zum Einbau in raumhohe Installationswände - Zum Befestigen von Geberit Duofix Waschtischelementen zwischen zwei Ständern - Zum Einbau in raumhohe Vorwandinstallationen - Zum Einbau in raumhohe Geberit Duofix Systemwände - Nötig, wenn eine Befestigung des Waschtischelements an die Rückwand mit Wandankern nicht möglich ist - Für Trockenbau Lieferumgang: - Befestigungsmaterial - Befestigungsmaterial für Element für Waschtisch - 2 Befestigungswinkel",
+      "category": "geberit_duofix",
+      "specification": "60mm",
+      "active": true,
+      "unit": "pce",
+      "base_price": 89.5,
+      "attributes": {
+          "diameter_mm": 60,
+          "material": "PE"
+      }
+  },
+  {
+      "id": "geb-geberit_duofix-50036",
+      "supplier": {
+          "code": "GEB",
+          "name": "Geberit"
+      },
+      "reference": "111.044.00.1",
+      "name": "Geberit Duofix Elementbefestigungstraverse für Ständerabstand ab 60 cm: B=105 cm Eigenschaften: - Nennbreiten 75 cm bis 120 cm passend für Waschtischelemente mit Breite 50 cm - Nennbreite 60 cm passend für Waschtischelemente mit Breite 44 cm oder 50 cm (bei 50 cm eingeschränkte Möbelbefestigung) - Nennbreiten 120 cm bis 135 cm passend für Doppelwaschtische - Verzinkt - Nennbreiten 120 cm bis 135 cm passend für Waschtischelemente mit Breite 44 cm oder 50 cm (bei 50 cm eingeschränkte Möbelbefestigung) Verwendungszweck: - Zum Erstellen von Nischen für z. B. Unterputzspiegelschränke - Zur Montage zwischen raumhohen Ständern für Nennbreiten 60, 75, 90, 105, 120 oder 135 cm - Zum Einbau in raumhohe Installationswände - Zum Befestigen von Geberit Duofix Waschtischelementen zwischen zwei Ständern - Zum Einbau in raumhohe Vorwandinstallationen - Zum Einbau in raumhohe Geberit Duofix Systemwände - Nötig, wenn eine Befestigung des Waschtischelements an die Rückwand mit Wandankern nicht möglich ist - Für Trockenbau Lieferumgang: - Befestigungsmaterial - Befestigungsmaterial für Element für Waschtisch - 2 Befestigungswinkel",
+      "category": "geberit_duofix",
+      "specification": "60mm",
+      "active": true,
+      "unit": "pce",
+      "base_price": 95.5,
+      "attributes": {
+          "diameter_mm": 60,
+          "material": "PE"
+      }
+  },
+  {
+      "id": "geb-geberit_duofix-50037",
+      "supplier": {
+          "code": "GEB",
+          "name": "Geberit"
+      },
+      "reference": "111.055.00.1",
+      "name": "Geberit Duofix Montageplatte für Waschtisch mit Unterschrank und einer Auslaufarmatur exzentrisch: B=90 cm/105 cm/120 cm Eigenschaften: - Formaldehydabgabe Klasse A nach EN 1084, bzw. Klasse E 1 entsprechend nach EN 13936 - Montageplatte aus Furnierholz, wasserfest verleimt - Montageplatte passend auf Elementbreite und -position zuschneidbar - In zwei kleinere Montageplatten teilbar - Baustoffklasse B2 nach DIN 4102-1, bzw. Klasse D-s2, d0 nach EN 13501-3 - Auf Geberit Duofix Elementbefestigungstraversen für Ständerabstand ab 60 cm abgestimmte Breite (90–105 cm) - Auf Geberit ONE Waschtische mit Unterschränken abgestimmte Breite Verwendungszweck: - Zum Einbau in teil- oder raumhohe Vorwandinstallationen - Zum Befestigen von Waschtischen mit Unterschrank - Für Trockenbau - Zur Verwendung bei einer exzentrischen Auslaufarmatur - Zur Befestigung zwischen Geberit Duofix Elementen für Waschtisch und Ständern - Zum Einbau in teil- oder raumhohe Geberit Duofix Systemwände - Zum Einbau in raumhohe Installationswände Lieferumgang: - Befestigungsmaterial - 4 Befestigungswinkel - Montageplatte",
+      "category": "geberit_duofix",
+      "specification": "90mm",
+      "active": true,
+      "unit": "pce",
+      "base_price": 81,
+      "attributes": {
+          "diameter_mm": 90
+      }
+  },
+  {
+      "id": "geb-geberit_duofix-50038",
+      "supplier": {
+          "code": "GEB",
+          "name": "Geberit"
+      },
+      "reference": "111.056.00.1",
+      "name": "Geberit Duofix Montageplatte für Waschtisch mit Unterschrank und zwei Auslaufarmaturen: B=120 cm/135 cm Eigenschaften: - Formaldehydabgabe Klasse A nach EN 1084, bzw. Klasse E 1 entsprechend nach EN 13936 - Montageplatte aus Furnierholz, wasserfest verleimt - Montageplatte passend auf Elementbreite und -position zuschneidbar - Baustoffklasse B2 nach DIN 4102-1, bzw. Klasse D-s2, d0 nach EN 13501-3 - Auf Geberit Duofix Elementbefestigungstraversen für Ständerabstand ab 60 cm abgestimmte Breite (120–135 cm) - In drei kleinere Montageplatten teilbar - Auf Geberit ONE Waschtische mit Unterschränken abgestimmte Breite Verwendungszweck: - Zum Befestigen von Waschtischen mit Unterschrank - Zum Einbau in teil- oder raumhohe Geberit Duofix Systemwände - Zum Einbau in teilhohe Vorwandinstallationen - Für Trockenbau - Zum Einbau in raumhohe Installationswände - Zur Verwendung bei 2 Auslaufarmaturen - Zur Befestigung zwischen 2 Geberit Duofix Elementen für Waschtisch und Ständern Lieferumgang: - 6 Befestigungswinkel - Montageplatte - Befestigungsmaterial",
+      "category": "geberit_duofix",
+      "specification": "120mm",
+      "active": true,
+      "unit": "pce",
+      "base_price": 105,
+      "attributes": {
+          "diameter_mm": 120
+      }
+  },
+  {
+      "id": "geb-geberit_duofix-50039",
+      "supplier": {
+          "code": "GEB",
+          "name": "Geberit"
+      },
+      "reference": "111.058.00.2",
+      "name": "Geberit Duofix Element für Wand-WC, 120 cm, mit Sigma Unterputzspülkasten 12 cm, mit HS30 Hygienespülung, mit zwei Wasseranschlüssen Eigenschaften: - Mit Auszugsblech für seitliche Befestigung über dem Element an Metall- oder Holzprofilen oder an Geberit Duofix Systemständern - Mit Geberit Control App kompatibel - Protokolliert über 5000 Spülvorgänge - Geräteeinstellungen und Bedienung mit Mobilgerät über integrierte Bluetooth®-Schnittstelle - Fussplatten drehbar, passend zum Einbau in U-Profile UW 50 und UW 75 - Funktionsstatistiken via Geberit Control App abrufbar - Baureihe 2025 - Für Betätigung von vorne, für 1-Mengen-, 2-Mengen- und Spül-Stopp-Spülung geeignet - Mit Leerrohr für Wasserzuleitung für Geberit AquaClean Dusch-WCs und für Anschlusskabel - Nutzungserkennung - Stromversorgung durch externes Netzteil oder durch Buskonverter mit integriertem Netzteil - Montage- und Instandhaltungsarbeiten am Unterputzspülkasten werkzeuglos - Aussengewinde MF 1/2\" MasterFix- und MeplaFix-fähig - Mit Überlaufschutzsensor - Spülprogramme wählbar (Zeit oder Intervall) - Drahtgebunden vernetzbar mit Geberit Gateway via GEBUS Konverter - Rahmen für Wand-WCs mit Anschlussmassen nach EN 33 und Ausladung bis 70 cm - Anschluss an Geberit Bus über Konverter - Magnetventil stromlos geschlossen - Anschlussbogen in verschiedenen Tiefenpositionen werkzeuglos montierbar, Verstellbereich 45 mm - Schnittstelle Digital I/O (zentrale Spülauslösung, potentialfreie Störungsanzeige, Ansteuerung externes Magnetventil) - Bei Werkseinstellung sofortiges Nachspülen möglich - Befestigungsmöglichkeit für Elektroanschluss - Bauschutz für Serviceöffnung ablängbar, schützt vor Feuchtigkeit und Schmutz - Ein Anschluss für Kaltwasser R 1/2\", MF-fähig, mit blauer Schutzkappe, oben - Störfestigkeit für Industriebetriebe nach EN 61000-6-2 - Fussplatten werkzeuglos in Geberit Duofix Systemschiene montierbar, ohne Zusatzkomponenten - Alternative Befestigungsposition für Wandanker - Fussstützen verzinkt korrosionsgeschützt, mit Rutschhemmung - Geberit Sigma Unterputzspülkasten 12 cm, kondenswassergedämmt - Statisch selbsttragender Rahmen, mit Pulverbeschichtung korrosionsgeschützt Verwendungszweck: - Zum Einbau in raumhohe Trennwände - Für Wand-WCs - Für Geberit Duofix Systemwände - Für Fussbodenaufbauten 0–25 cm - Zum Verhindern von Stagnation in Trinkwasserleitungen - Zum Einbau in teil- oder raumhohe Vorwände - Zum Einbau in Reihenleitungssysteme - Für Metall- und Holzständerwände - Zum Anschliessen an Geberit Bus via Konverter - Zum Vorbeugen gegen Verkeimung Lieferumgang: - Anschlussbogen 90° aus PE-HD, ø 90 mm - Übergangsmuffe aus PE-HD, ø 90 / 110 mm - Magnetventileinheit mit Sicherungsstift und Durchflussbegrenzer - Anschlussset für WC, ø 90 mm - Bauschutz für Serviceöffnung - Befestigungs- und Schutzmaterial - Steuereinheit",
+      "category": "geberit_duofix",
+      "specification": "120mm",
+      "active": true,
+      "unit": "pce",
+      "base_price": 1219,
+      "attributes": {
+          "diameter_mm": 120,
+          "material": "PE"
+      }
+  },
+  {
+      "id": "geb-geberit_duofix-50040",
+      "supplier": {
+          "code": "GEB",
+          "name": "Geberit"
+      },
+      "reference": "111.057.00.2",
+      "name": "Geberit Duofix Element für Wand-WC, 120 cm, mit Sigma Unterputzspülkasten 12 cm, mit HS30 Hygienespülung, mit einem Wasseranschluss Eigenschaften: - Mit Auszugsblech für seitliche Befestigung über dem Element an Metall- oder Holzprofilen oder an Geberit Duofix Systemständern - Mit Geberit Control App kompatibel - Protokolliert über 5000 Spülvorgänge - Geräteeinstellungen und Bedienung mit Mobilgerät über integrierte Bluetooth®-Schnittstelle - Fussplatten drehbar, passend zum Einbau in U-Profile UW 50 und UW 75 - Funktionsstatistiken via Geberit Control App abrufbar - Baureihe 2025 - Für Betätigung von vorne, für 1-Mengen-, 2-Mengen- und Spül-Stopp-Spülung geeignet - Mit Leerrohr für Wasserzuleitung für Geberit AquaClean Dusch-WCs und für Anschlusskabel - Nutzungserkennung - Stromversorgung durch externes Netzteil oder durch Buskonverter mit integriertem Netzteil - Montage- und Instandhaltungsarbeiten am Unterputzspülkasten werkzeuglos - Aussengewinde MF 1/2\" MasterFix- und MeplaFix-fähig - Mit Überlaufschutzsensor - Spülprogramme wählbar (Zeit oder Intervall) - Drahtgebunden vernetzbar mit Geberit Gateway via GEBUS Konverter - Rahmen für Wand-WCs mit Anschlussmassen nach EN 33 und Ausladung bis 70 cm - Anschluss an Geberit Bus über Konverter - Magnetventil stromlos geschlossen - Anschlussbogen in verschiedenen Tiefenpositionen werkzeuglos montierbar, Verstellbereich 45 mm - Schnittstelle Digital I/O (zentrale Spülauslösung, potentialfreie Störungsanzeige, Ansteuerung externes Magnetventil) - Bei Werkseinstellung sofortiges Nachspülen möglich - Befestigungsmöglichkeit für Elektroanschluss - Bauschutz für Serviceöffnung ablängbar, schützt vor Feuchtigkeit und Schmutz - Ein Anschluss für Kaltwasser R 1/2\", MF-fähig, mit blauer Schutzkappe, oben - Störfestigkeit für Industriebetriebe nach EN 61000-6-2 - Fussplatten werkzeuglos in Geberit Duofix Systemschiene montierbar, ohne Zusatzkomponenten - Alternative Befestigungsposition für Wandanker - Fussstützen verzinkt korrosionsgeschützt, mit Rutschhemmung - Geberit Sigma Unterputzspülkasten 12 cm, kondenswassergedämmt - Statisch selbsttragender Rahmen, mit Pulverbeschichtung korrosionsgeschützt Verwendungszweck: - Zum Einbau in raumhohe Trennwände - Für Wand-WCs - Für Geberit Duofix Systemwände - Für Fussbodenaufbauten 0–25 cm - Zum Verhindern von Stagnation in Trinkwasserleitungen - Zum Einbau in teil- oder raumhohe Vorwände - Zum Einbau in Reihenleitungssysteme - Für Metall- und Holzständerwände - Zum Anschliessen an Geberit Bus via Konverter - Zum Vorbeugen gegen Verkeimung Lieferumgang: - Anschlussbogen 90° aus PE-HD, ø 90 mm - Übergangsmuffe aus PE-HD, ø 90 / 110 mm - Magnetventileinheit mit Sicherungsstift und Durchflussbegrenzer - Anschlussset für WC, ø 90 mm - Bauschutz für Serviceöffnung - Befestigungs- und Schutzmaterial - Steuereinheit",
+      "category": "geberit_duofix",
+      "specification": "120mm",
+      "active": true,
+      "unit": "pce",
+      "base_price": 1032,
+      "attributes": {
+          "diameter_mm": 120,
+          "material": "PE"
+      }
+  },
+  {
+      "id": "geb-geberit_duofix-50041",
+      "supplier": {
+          "code": "GEB",
+          "name": "Geberit"
+      },
+      "reference": "111.059.00.1",
+      "name": "Geberit Duofix Traverse für Kopfbrause und Kopfdüse, variable Position Eigenschaften: - Traverse verzinkt - Traverse in der Breite anpassbar - Wasseranschluss horizontal, stufenlos verstellbar - Tiefenverstellbar Verwendungszweck: - Zum Einbau in raumhohe Geberit Duofix Systemwände - Für Trockenbau - Für Kopfbrause und Kopfdüse - Zum Einbau in raumhohe Installationswände Lieferumgang: - Befestigungsmaterial - Anschlusswinkel Rp 1/2\" / R 1/2\", MF-fähig - Dämmhülse - Schalldämmunterlage",
+      "category": "geberit_duofix",
+      "specification": "1mm",
+      "active": true,
+      "unit": "pce",
+      "base_price": 69,
+      "attributes": {
+          "diameter_mm": 1
+      }
+  },
+  {
+      "id": "geb-geberit_duofix-50042",
+      "supplier": {
+          "code": "GEB",
+          "name": "Geberit"
+      },
+      "reference": "111.062.00.2",
+      "name": "Geberit Duofix Element für Wand-WC, 112 cm, mit Omega Unterputzspülkasten 12 cm Eigenschaften: - Montage- und Instandhaltungsarbeiten am Unterputzspülkasten werkzeuglos - Bei Werkseinstellung sofortiges Nachspülen möglich - Rahmen für Wand-WCs mit Anschlussmassen nach EN 33 und Ausladung bis 70 cm - Bauschutz für Serviceöffnung ablängbar, schützt vor Feuchtigkeit und Schmutz - Statisch selbsttragender Rahmen, mit Pulverbeschichtung korrosionsgeschützt - Fussplatten drehbar, passend zum Einbau in U-Profile UW 50 und UW 75 - Befestigungsmöglichkeit für Elektroanschluss sowie Power & Connect Box - Baureihe 2025 - Mit Leerrohr für Wasserzuleitung für Geberit AquaClean Dusch-WCs und für Anschlusskabel - Für Betätigung von vorne, für 2-Mengen-Spülung geeignet - Fussstützen verzinkt korrosionsgeschützt, mit Rutschhemmung - Alternative Befestigungsposition für Wandanker - Anschlussbogen in verschiedenen Tiefenpositionen werkzeuglos montierbar, Verstellbereich 45 mm - Fussplatten werkzeuglos in Geberit Duofix Systemschiene montierbar, ohne Zusatzkomponenten - Mit Auszugsblech für seitliche Befestigung über dem Element an Metall- oder Holzprofilen oder an Geberit Duofix Systemständern - Geberit Omega Unterputzspülkasten 12 cm, kondenswassergedämmt - Wasseranschluss seitlich links oder hinten links Verwendungszweck: - Zum Einbau in teil- oder raumhohe Vorwände - Für Wand-WCs - Für Metall- und Holzständerwände - Zum Einbau in raumhohe Trennwände - Für Geberit Duofix Systemwände - Für Fussbodenaufbauten 0–25 cm Lieferumgang: - Befestigungs- und Schutzmaterial - Wasseranschluss R 1/2\", MasterFix- und MeplaFix-fähig, mit integriertem Eckventil und Handrad - Bauschutz für Serviceöffnung",
+      "category": "geberit_duofix",
+      "specification": "112mm",
+      "active": true,
+      "unit": "pce",
+      "base_price": 434,
+      "attributes": {
+          "diameter_mm": 112
+      }
+  },
+  {
+      "id": "geb-geberit_duofix-50043",
+      "supplier": {
+          "code": "GEB",
+          "name": "Geberit"
+      },
+      "reference": "111.064.00.1",
+      "name": "Geberit Duofix Set Fussbefestigung an Rückwand (2 St.) Eigenschaften: - Verzinkt - Tiefenverstellbar Verwendungszweck: - Zur alternativen Fussbefestigung der Geberit Duofix Elemente an Rückwand Lieferumgang: - Set à 2 Stück",
+      "category": "geberit_duofix",
+      "specification": "2mm",
+      "active": true,
+      "unit": "pce",
+      "base_price": 58,
+      "attributes": {
+          "diameter_mm": 2
+      }
+  },
+  {
+      "id": "geb-geberit_duofix-50044",
+      "supplier": {
+          "code": "GEB",
+          "name": "Geberit"
+      },
+      "reference": "111.069.00.2",
+      "name": "Geberit Duofix Element für Waschtisch, 112-130 cm, Geberit ONE Wandarmatur mit Unterputzfunktionsbox Eigenschaften: - Befestigungsabstand Waschtisch 5–38 cm - Wasseranschluss an Unterputzgehäuse, unten - Absperreinheiten in Unterputzgehäuse integriert - Verbindungsrohre zwischen Unterputzgehäuse und Befestigung für Wandarmatur vormontiert - Statisch selbsttragender Rahmen, mit Pulverbeschichtung korrosionsgeschützt - Fussplatten drehbar, passend zum Einbau in U-Profile UW 50 und UW 75 - Befestigung für Wandarmatur vormontiert - Baureihe 2025 - Fussstützen verzinkt korrosionsgeschützt, mit Rutschhemmung - Befestigung für Anschlussbogen höhenverstellbar und schallgedämmt - Unterputzgehäuse für Geberit ONE Waschtischarmatur, vormontiert - Wasseranschluss MasterFix- und MeplaFix-fähig - Alternative Befestigungsposition für Wandanker - Fussplatten werkzeuglos in Geberit Duofix Systemschiene montierbar, ohne Zusatzkomponenten - Mit Auszugsblech für seitliche Befestigung über dem Element an Metall- oder Holzprofilen oder an Geberit Duofix Systemständern Verwendungszweck: - Für Geberit Duofix Systemwände - Für Metall- und Holzständerwände - Zur Montage von Waschtischen - Zum Einbau in raumhohe Trennwände - Für Geberit ONE Waschtischarmaturen, Wandmontage, für Unterputzfunktionsbox - Für Fussbodenaufbauten 0–25 cm - Zum Einbau in teil- oder raumhohe Vorwände Lieferumgang: - Dichtung ø 44 / 32 mm - Befestigungsmaterial - Anschlussbogen aus PE-HD, ø 50 mm - Bauschutz mit Deckel, für Unterputzgehäuse - Bauschutz für Befestigung für Wandarmatur",
+      "category": "geberit_duofix",
+      "specification": "112mm",
+      "active": true,
+      "unit": "pce",
+      "base_price": 437,
+      "attributes": {
+          "diameter_mm": 112,
+          "material": "PE"
+      }
+  },
+  {
+      "id": "geb-geberit_duofix-50045",
+      "supplier": {
+          "code": "GEB",
+          "name": "Geberit"
+      },
+      "reference": "111.076.00.2",
+      "name": "Geberit Duofix Element für Wand-WC, 120 cm, mit Sigma Unterputzspülkasten 12 cm, mit HS50 Hygienespülung, mit zwei Wasseranschlüssen Eigenschaften: - Montage- und Instandhaltungsarbeiten am Unterputzspülkasten werkzeuglos - Rahmen für Wand-WCs mit Anschlussmassen nach EN 33 und Ausladung bis 70 cm - Schnittstelle Digital I/O (zentrale Spülauslösung, potentialfreie Störungsanzeige, Ansteuerung externes Magnetventil) - Bei Werkseinstellung sofortiges Nachspülen möglich - Befestigungsmöglichkeit für Elektroanschluss - Bauschutz für Serviceöffnung ablängbar, schützt vor Feuchtigkeit und Schmutz - Statisch selbsttragender Rahmen, mit Pulverbeschichtung korrosionsgeschützt - Protokolliert über 5000 Spülvorgänge - Geräteeinstellungen und Bedienung mit Mobilgerät über integrierte Bluetooth®-Schnittstelle - Fussplatten drehbar, passend zum Einbau in U-Profile UW 50 und UW 75 - Funktionsstatistiken via Geberit Control App abrufbar - Baureihe 2025 - Mit Leerrohr für Wasserzuleitung für Geberit AquaClean Dusch-WCs und für Anschlusskabel - Mit Geberit Control App kompatibel - Mit Geberit Connect kompatibel - Geberit Sigma Unterputzspülkasten 12 cm, kondenswassergedämmt - Fussstützen verzinkt korrosionsgeschützt, mit Rutschhemmung - Drahtgebunden vernetzbar mit Geberit Gateway via Geberit Bus - Alternative Befestigungsposition für Wandanker - Anschlussbogen in verschiedenen Tiefenpositionen werkzeuglos montierbar, Verstellbereich 45 mm - Fussplatten werkzeuglos in Geberit Duofix Systemschiene montierbar, ohne Zusatzkomponenten - Für Betätigung von vorne, für 1-Mengen-, 2-Mengen- und Spül-Stopp-Spülung geeignet - Mit Auszugsblech für seitliche Befestigung über dem Element an Metall- oder Holzprofilen oder an Geberit Duofix Systemständern - Nutzungserkennung - Stromversorgung durch externes Netzteil oder durch Buskonverter mit integriertem Netzteil - Aussengewinde MF 1/2\" MasterFix- und MeplaFix-fähig - Mit Überlaufschutzsensor - Spülprogramme wählbar (Zeit oder Intervall) - Magnetventil stromlos geschlossen - Ein Anschluss für Kaltwasser R 1/2\", MF-fähig, mit blauer Schutzkappe, oben - Externer Temperatursensor anschliessbar - Interner Volumenstromsensor anschliessbar - Störfestigkeit für Industriebetriebe nach EN 61000-6-2 - Anschluss an Geberit Bus direkt oder über Konverter Verwendungszweck: - Zum Anschliessen an Geberit Bus - Für Metall- und Holzständerwände - Für Fussbodenaufbauten 0–25 cm - Zum Einbau in Reihenleitungssysteme - Zum Einbau in teil- oder raumhohe Vorwände - Zum Verhindern von Stagnation in Trinkwasserleitungen - Für Wand-WCs - Zum Vorbeugen gegen Verkeimung - Zum Einbau in raumhohe Trennwände - Für Geberit Duofix Systemwände Lieferumgang: - Befestigungs- und Schutzmaterial - Anschlussbogen 90° aus PE-HD, ø 90 mm - Steuereinheit - Magnetventileinheit mit Sicherungsstift und Durchflussbegrenzer - Bauschutz für Serviceöffnung - Übergangsmuffe aus PE-HD, ø 90 / 110 mm - Anschlussset für WC, ø 90 mm",
+      "category": "geberit_duofix",
+      "specification": "120mm",
+      "active": true,
+      "unit": "pce",
+      "base_price": 1554,
+      "attributes": {
+          "diameter_mm": 120,
+          "material": "PE"
+      }
+  },
+  {
+      "id": "geb-geberit_duofix-50046",
+      "supplier": {
+          "code": "GEB",
+          "name": "Geberit"
+      },
+      "reference": "111.075.00.2",
+      "name": "Geberit Duofix Element für Wand-WC, 120 cm, mit Sigma Unterputzspülkasten 12 cm, mit HS50 Hygienespülung, mit einem Wasseranschluss Eigenschaften: - Montage- und Instandhaltungsarbeiten am Unterputzspülkasten werkzeuglos - Rahmen für Wand-WCs mit Anschlussmassen nach EN 33 und Ausladung bis 70 cm - Schnittstelle Digital I/O (zentrale Spülauslösung, potentialfreie Störungsanzeige, Ansteuerung externes Magnetventil) - Bei Werkseinstellung sofortiges Nachspülen möglich - Befestigungsmöglichkeit für Elektroanschluss - Bauschutz für Serviceöffnung ablängbar, schützt vor Feuchtigkeit und Schmutz - Statisch selbsttragender Rahmen, mit Pulverbeschichtung korrosionsgeschützt - Protokolliert über 5000 Spülvorgänge - Geräteeinstellungen und Bedienung mit Mobilgerät über integrierte Bluetooth®-Schnittstelle - Fussplatten drehbar, passend zum Einbau in U-Profile UW 50 und UW 75 - Funktionsstatistiken via Geberit Control App abrufbar - Baureihe 2025 - Mit Leerrohr für Wasserzuleitung für Geberit AquaClean Dusch-WCs und für Anschlusskabel - Mit Geberit Control App kompatibel - Mit Geberit Connect kompatibel - Geberit Sigma Unterputzspülkasten 12 cm, kondenswassergedämmt - Fussstützen verzinkt korrosionsgeschützt, mit Rutschhemmung - Drahtgebunden vernetzbar mit Geberit Gateway via Geberit Bus - Alternative Befestigungsposition für Wandanker - Anschlussbogen in verschiedenen Tiefenpositionen werkzeuglos montierbar, Verstellbereich 45 mm - Fussplatten werkzeuglos in Geberit Duofix Systemschiene montierbar, ohne Zusatzkomponenten - Für Betätigung von vorne, für 1-Mengen-, 2-Mengen- und Spül-Stopp-Spülung geeignet - Mit Auszugsblech für seitliche Befestigung über dem Element an Metall- oder Holzprofilen oder an Geberit Duofix Systemständern - Nutzungserkennung - Stromversorgung durch externes Netzteil oder durch Buskonverter mit integriertem Netzteil - Aussengewinde MF 1/2\" MasterFix- und MeplaFix-fähig - Mit Überlaufschutzsensor - Spülprogramme wählbar (Zeit oder Intervall) - Magnetventil stromlos geschlossen - Ein Anschluss für Kaltwasser R 1/2\", MF-fähig, mit blauer Schutzkappe, oben - Externer Temperatursensor anschliessbar - Interner Volumenstromsensor anschliessbar - Störfestigkeit für Industriebetriebe nach EN 61000-6-2 - Anschluss an Geberit Bus direkt oder über Konverter Verwendungszweck: - Zum Anschliessen an Geberit Bus - Für Metall- und Holzständerwände - Für Fussbodenaufbauten 0–25 cm - Zum Einbau in Reihenleitungssysteme - Zum Einbau in teil- oder raumhohe Vorwände - Zum Verhindern von Stagnation in Trinkwasserleitungen - Für Wand-WCs - Zum Vorbeugen gegen Verkeimung - Zum Einbau in raumhohe Trennwände - Für Geberit Duofix Systemwände Lieferumgang: - Befestigungs- und Schutzmaterial - Anschlussbogen 90° aus PE-HD, ø 90 mm - Steuereinheit - Magnetventileinheit mit Sicherungsstift und Durchflussbegrenzer - Bauschutz für Serviceöffnung - Übergangsmuffe aus PE-HD, ø 90 / 110 mm - Anschlussset für WC, ø 90 mm",
+      "category": "geberit_duofix",
+      "specification": "120mm",
+      "active": true,
+      "unit": "pce",
+      "base_price": 1390,
+      "attributes": {
+          "diameter_mm": 120,
+          "material": "PE"
+      }
+  },
+  {
+      "id": "geb-geberit_duofix-50047",
+      "supplier": {
+          "code": "GEB",
+          "name": "Geberit"
+      },
+      "reference": "111.161.00.1",
+      "name": "Geberit Duofix Set Halter für SilentPanel Eigenschaften: - Werkzeuglos montierbar an Geberit Duofix Systemschienen Verwendungszweck: - Zum Befestigen von Geberit SilentPanel in Geberit Duofix Systemwänden Lieferumgang: - Geberit Duofix Adapter für Geberit GIS Halter für SilentPanel - Geberit GIS Halter für SilentPanel",
+      "category": "geberit_duofix",
+      "specification": "",
+      "active": true,
+      "unit": "pce",
+      "base_price": 1.65,
+      "attributes": {}
+  },
+  {
+      "id": "geb-geberit_duofix-50048",
+      "supplier": {
+          "code": "GEB",
+          "name": "Geberit"
+      },
+      "reference": "111.162.00.1",
+      "name": "Geberit Duofix Verlängerungsgurt für SilentPanel Eigenschaften: - Verlängerungsgurt stufenlos einstellbar - Abstand zwischen Geberit GIS Halter und Schnapphaken von Geberit SilentPanel einstellbar, 11–130 cm Verwendungszweck: - Zum Befestigen von Geberit SilentPanel mit vertikalem Abstand zum Geberit GIS Halter",
+      "category": "geberit_duofix",
+      "specification": "11mm",
+      "active": true,
+      "unit": "pce",
+      "base_price": 6.95,
+      "attributes": {
+          "diameter_mm": 11
+      }
+  },
+  {
+      "id": "geb-geberit_duofix-50049",
+      "supplier": {
+          "code": "GEB",
+          "name": "Geberit"
+      },
+      "reference": "111.203.00.2",
+      "name": "Geberit Duofix Element für Wand-WC, 112 cm, Zweistück-WC Eigenschaften: - Mit Auszugsblech für seitliche Befestigung über dem Element an Metall- oder Holzprofilen oder an Geberit Duofix Systemständern - Fussstützen verzinkt korrosionsgeschützt, mit Rutschhemmung - Baureihe 2025 - Fussplatten werkzeuglos in Geberit Duofix Systemschiene montierbar, ohne Zusatzkomponenten - Abdichtscheibe selbstklebend, vliesbeschichtet - Fussplatten drehbar, passend zum Einbau in U-Profile UW 50 und UW 75 - Traverse für Anschlusswinkel höhenverstellbar - Rahmen für Wand-WCs mit Anschlussmassen nach EN 33 und Ausladung bis 70 cm - Statisch selbsttragender Rahmen, mit Pulverbeschichtung korrosionsgeschützt - Alternative Befestigungsposition für Wandanker - Anschlussbogen in verschiedenen Tiefenpositionen werkzeuglos montierbar, Verstellbereich 45 mm - Befestigungsmöglichkeit für Elektroanschluss sowie Power & Connect Box Verwendungszweck: - Für Wand-WCs - Für Geberit Duofix Systemwände - Zum Einbau in teil- oder raumhohe Vorwände - Für Metall- und Holzständerwände - Zur Montage von Zweistück-WCs - Zum Einbau in raumhohe Trennwände - Für Fussbodenaufbauten 0–25 cm Lieferumgang: - Anschlusswinkel Rp 1/2\" / R 1/2\", MF-fähig - Schalldämmunterlage - Abdichtscheibe - Befestigungs- und Schutzmaterial - Dämmhülse",
+      "category": "geberit_duofix",
+      "specification": "112mm",
+      "active": true,
+      "unit": "pce",
+      "base_price": 297,
+      "attributes": {
+          "diameter_mm": 112
+      }
+  },
+  {
+      "id": "nsb-robinetterie-50050",
+      "supplier": {
+          "code": "NSB",
+          "name": "Nussbaum"
+      },
+      "reference": "23300.21",
+      "name": "Stellantriebs-Einheit Easy-Matic, Netzspannung: 230 V, Nennspannung: 24 V, Netzfrequenz: 50 Hz, Schutzart: IP54, Stromversorgung: Netzbetrieb, für den automatischen Antrieb von Geradsitz-, Schrägsitz-, KRV-, Batterie- und Unterputz-Ventilen mit Easy-Top-Oberteilen, Anschlussmöglichkeiten für Temperatur- / Druck- / Strömungskontrollschalter und Wasserfühler sowie Modbus-Anbindung und digitaler Schnittstelle, visuelle, akustische sowie externe Alarm-Meldung, bestehend aus Controller, Actuator",
+      "category": "robinetterie",
+      "specification": "230mm",
+      "active": true,
+      "unit": "pce",
+      "base_price": 1243,
+      "attributes": {
+          "diameter_mm": 230,
+          "material": "PE"
+      }
+  },
+  {
+      "id": "nsb-robinetterie-50051",
+      "supplier": {
+          "code": "NSB",
+          "name": "Nussbaum"
+      },
+      "reference": "23300.22",
+      "name": "Stellantriebs-Einheit Easy-Matic, Netzspannung: 230 V, Nennspannung: 24 V, Netzfrequenz: 50 Hz, Schutzart: IP54, Stromversorgung: Netzbetrieb, für den automatischen Antrieb von Geradsitz-, Schrägsitz-, KRV-, Batterie- und Unterputz-Ventilen mit Easy-Top-Oberteilen, Anschlussmöglichkeiten für Temperatur- / Druck- / Strömungskontrollschalter und Wasserfühler sowie Modbus-Anbindung und digitaler Schnittstelle, visuelle, akustische sowie externe Alarm-Meldung, bestehend aus Controller, Actuator",
+      "category": "robinetterie",
+      "specification": "230mm",
+      "active": true,
+      "unit": "pce",
+      "base_price": 1382,
+      "attributes": {
+          "diameter_mm": 230,
+          "material": "PE"
+      }
+  },
+  {
+      "id": "nsb-robinetterie-50052",
+      "supplier": {
+          "code": "NSB",
+          "name": "Nussbaum"
+      },
+      "reference": "23300.23",
+      "name": "Stellantriebs-Einheit Easy-Matic, Netzspannung: 230 V, Nennspannung: 24 V, Netzfrequenz: 50 Hz, Schutzart: IP54, Stromversorgung: Netzbetrieb, für den automatischen Antrieb von Geradsitz-, Schrägsitz-, KRV-, Batterie- und Unterputz-Ventilen mit Easy-Top-Oberteilen, Anschlussmöglichkeiten für Temperatur- / Druck- / Strömungskontrollschalter und Wasserfühler sowie Modbus-Anbindung und digitaler Schnittstelle, visuelle, akustische sowie externe Alarm-Meldung, bestehend aus Controller, Actuator",
+      "category": "robinetterie",
+      "specification": "230mm",
+      "active": true,
+      "unit": "pce",
+      "base_price": 1964,
+      "attributes": {
+          "diameter_mm": 230,
+          "material": "PE"
+      }
+  },
+  {
+      "id": "nsb-robinetterie-50053",
+      "supplier": {
+          "code": "NSB",
+          "name": "Nussbaum"
+      },
+      "reference": "23310.21",
+      "name": "Actuator, zu Stellantriebs-Einheit Easy-Matic, Betriebsdruck max.: 16 bar, Nenndruck: PN 16, Betriebstemperatur max.: 90 °C, Nennspannung: 24 V, Schutzart: IP54, Stromversorgung: Netzbetrieb, Kabellänge: 5 m, für den automatischen Antrieb von Geradsitz-, Schrägsitz-, KRV-, Batterie- und Unterputz-Ventilen mit Easy-Top-Oberteilen",
+      "category": "robinetterie",
+      "specification": "16mm",
+      "active": true,
+      "unit": "pce",
+      "base_price": 677,
+      "attributes": {
+          "diameter_mm": 16,
+          "material": "PE"
+      }
+  },
+  {
+      "id": "nsb-robinetterie-50054",
+      "supplier": {
+          "code": "NSB",
+          "name": "Nussbaum"
+      },
+      "reference": "23310.22",
+      "name": "Actuator, zu Stellantriebs-Einheit Easy-Matic, Betriebsdruck max.: 16 bar, Nenndruck: PN 16, Betriebstemperatur max.: 90 °C, Nennspannung: 24 V, Schutzart: IP54, Stromversorgung: Netzbetrieb, Kabellänge: 5 m, für den automatischen Antrieb von Geradsitz-, Schrägsitz-, KRV-, Batterie- und Unterputz-Ventilen mit Easy-Top-Oberteilen",
+      "category": "robinetterie",
+      "specification": "16mm",
+      "active": true,
+      "unit": "pce",
+      "base_price": 826,
+      "attributes": {
+          "diameter_mm": 16,
+          "material": "PE"
+      }
+  },
+  {
+      "id": "nsb-robinetterie-50055",
+      "supplier": {
+          "code": "NSB",
+          "name": "Nussbaum"
+      },
+      "reference": "23310.23",
+      "name": "Actuator, zu Stellantriebs-Einheit Easy-Matic, Betriebsdruck max.: 16 bar, Nenndruck: PN 16, Betriebstemperatur max.: 90 °C, Nennspannung: 24 V, Schutzart: IP54, Stromversorgung: Netzbetrieb, Kabellänge: 5 m, für den automatischen Antrieb von Geradsitz-, Schrägsitz-, KRV-, Batterie- und Unterputz-Ventilen mit Easy-Top-Oberteilen",
+      "category": "robinetterie",
+      "specification": "16mm",
+      "active": true,
+      "unit": "pce",
+      "base_price": 1418,
+      "attributes": {
+          "diameter_mm": 16,
+          "material": "PE"
+      }
+  },
+  {
+      "id": "nsb-collier-50056",
+      "supplier": {
+          "code": "NSB",
+          "name": "Nussbaum"
+      },
+      "reference": "56000.41",
+      "name": "Therm-Control-Regelset komplett DN 25, Grundausstattung, Betriebsdruck max.: 6 bar, Nenndruck: PN 6, Betriebstemperatur max.: 60 °C, intelligente Heizungs- und Kühlungsregelung, mit Kontakt potentialfrei (Changeover) zur automatischen Umschaltung heizen/kühlen, für Fussbodenheizung, für Betonkernaktivierung, bestehend aus Therm-Control-Heizkreisverteiler, Therm-Control-Halterung, Therm-Control-Basis-Regeleinheit, Therm-Control-Stellantrieb, Therm-Control-Temperaturmessstelle, Therm-Control-Rücklauf-Temperaturfühler, Therm-Control-Anlege-Temperaturfühler, Therm-Control-Flachbandkabel",
+      "category": "collier",
+      "specification": "25mm",
+      "active": true,
+      "unit": "pce",
+      "base_price": 967,
+      "attributes": {
+          "diameter_mm": 25,
+          "material": "PE"
+      }
+  },
+  {
+      "id": "nsb-collier-50057",
+      "supplier": {
+          "code": "NSB",
+          "name": "Nussbaum"
+      },
+      "reference": "56000.42",
+      "name": "Therm-Control-Regelset komplett DN 25, Grundausstattung, Betriebsdruck max.: 6 bar, Nenndruck: PN 6, Betriebstemperatur max.: 60 °C, intelligente Heizungs- und Kühlungsregelung, mit Kontakt potentialfrei (Changeover) zur automatischen Umschaltung heizen/kühlen, für Fussbodenheizung, für Betonkernaktivierung, bestehend aus Therm-Control-Heizkreisverteiler, Therm-Control-Halterung, Therm-Control-Basis-Regeleinheit, Therm-Control-Stellantrieb, Therm-Control-Temperaturmessstelle, Therm-Control-Rücklauf-Temperaturfühler, Therm-Control-Anlege-Temperaturfühler, Therm-Control-Flachbandkabel",
+      "category": "collier",
+      "specification": "25mm",
+      "active": true,
+      "unit": "pce",
+      "base_price": 1124,
+      "attributes": {
+          "diameter_mm": 25,
+          "material": "PE"
+      }
+  },
+  {
+      "id": "nsb-collier-50058",
+      "supplier": {
+          "code": "NSB",
+          "name": "Nussbaum"
+      },
+      "reference": "56000.43",
+      "name": "Therm-Control-Regelset komplett DN 25, Grundausstattung, Betriebsdruck max.: 6 bar, Nenndruck: PN 6, Betriebstemperatur max.: 60 °C, intelligente Heizungs- und Kühlungsregelung, mit Kontakt potentialfrei (Changeover) zur automatischen Umschaltung heizen/kühlen, für Fussbodenheizung, für Betonkernaktivierung, bestehend aus Therm-Control-Heizkreisverteiler, Therm-Control-Halterung, Therm-Control-Basis-Regeleinheit, Therm-Control-Stellantrieb, Therm-Control-Temperaturmessstelle, Therm-Control-Rücklauf-Temperaturfühler, Therm-Control-Anlege-Temperaturfühler, Therm-Control-Flachbandkabel",
+      "category": "collier",
+      "specification": "25mm",
+      "active": true,
+      "unit": "pce",
+      "base_price": 1283,
+      "attributes": {
+          "diameter_mm": 25,
+          "material": "PE"
+      }
+  },
+  {
+      "id": "nsb-collier-50059",
+      "supplier": {
+          "code": "NSB",
+          "name": "Nussbaum"
+      },
+      "reference": "56000.44",
+      "name": "Therm-Control-Regelset komplett DN 25, Grundausstattung, Betriebsdruck max.: 6 bar, Nenndruck: PN 6, Betriebstemperatur max.: 60 °C, intelligente Heizungs- und Kühlungsregelung, mit Kontakt potentialfrei (Changeover) zur automatischen Umschaltung heizen/kühlen, für Fussbodenheizung, für Betonkernaktivierung, bestehend aus Therm-Control-Heizkreisverteiler, Therm-Control-Halterung, Therm-Control-Basis-Regeleinheit, Therm-Control-Stellantrieb, Therm-Control-Temperaturmessstelle, Therm-Control-Rücklauf-Temperaturfühler, Therm-Control-Anlege-Temperaturfühler, Therm-Control-Flachbandkabel",
+      "category": "collier",
+      "specification": "25mm",
+      "active": true,
+      "unit": "pce",
+      "base_price": 1438,
+      "attributes": {
+          "diameter_mm": 25,
+          "material": "PE"
+      }
+  },
+  {
+      "id": "nsb-collier-50060",
+      "supplier": {
+          "code": "NSB",
+          "name": "Nussbaum"
+      },
+      "reference": "56000.45",
+      "name": "Therm-Control-Regelset komplett DN 25, Grundausstattung, Betriebsdruck max.: 6 bar, Nenndruck: PN 6, Betriebstemperatur max.: 60 °C, intelligente Heizungs- und Kühlungsregelung, mit Kontakt potentialfrei (Changeover) zur automatischen Umschaltung heizen/kühlen, für Fussbodenheizung, für Betonkernaktivierung, bestehend aus Therm-Control-Heizkreisverteiler, Therm-Control-Halterung, Therm-Control-Basis-Regeleinheit, Therm-Control-Stellantrieb, Therm-Control-Temperaturmessstelle, Therm-Control-Rücklauf-Temperaturfühler, Therm-Control-Anlege-Temperaturfühler, Therm-Control-Flachbandkabel",
+      "category": "collier",
+      "specification": "25mm",
+      "active": true,
+      "unit": "pce",
+      "base_price": 1597,
+      "attributes": {
+          "diameter_mm": 25,
+          "material": "PE"
+      }
+  },
+  {
+      "id": "nsb-collier-50061",
+      "supplier": {
+          "code": "NSB",
+          "name": "Nussbaum"
+      },
+      "reference": "56000.46",
+      "name": "Therm-Control-Regelset komplett DN 25, Grundausstattung, Betriebsdruck max.: 6 bar, Nenndruck: PN 6, Betriebstemperatur max.: 60 °C, intelligente Heizungs- und Kühlungsregelung, mit Kontakt potentialfrei (Changeover) zur automatischen Umschaltung heizen/kühlen, für Fussbodenheizung, für Betonkernaktivierung, bestehend aus Therm-Control-Heizkreisverteiler, Therm-Control-Halterung, Therm-Control-Basis-Regeleinheit, Therm-Control-Stellantrieb, Therm-Control-Temperaturmessstelle, Therm-Control-Rücklauf-Temperaturfühler, Therm-Control-Anlege-Temperaturfühler, Therm-Control-Flachbandkabel",
+      "category": "collier",
+      "specification": "25mm",
+      "active": true,
+      "unit": "pce",
+      "base_price": 1753,
+      "attributes": {
+          "diameter_mm": 25,
+          "material": "PE"
+      }
+  },
+  {
+      "id": "nsb-collier-50062",
+      "supplier": {
+          "code": "NSB",
+          "name": "Nussbaum"
+      },
+      "reference": "56000.47",
+      "name": "Therm-Control-Regelset komplett DN 25, Grundausstattung, Betriebsdruck max.: 6 bar, Nenndruck: PN 6, Betriebstemperatur max.: 60 °C, intelligente Heizungs- und Kühlungsregelung, mit Kontakt potentialfrei (Changeover) zur automatischen Umschaltung heizen/kühlen, für Fussbodenheizung, für Betonkernaktivierung, bestehend aus Therm-Control-Heizkreisverteiler, Therm-Control-Halterung, Therm-Control-Basis-Regeleinheit, Therm-Control-Stellantrieb, Therm-Control-Temperaturmessstelle, Therm-Control-Rücklauf-Temperaturfühler, Therm-Control-Anlege-Temperaturfühler, Therm-Control-Flachbandkabel",
+      "category": "collier",
+      "specification": "25mm",
+      "active": true,
+      "unit": "pce",
+      "base_price": 1911,
+      "attributes": {
+          "diameter_mm": 25,
+          "material": "PE"
+      }
+  },
+  {
+      "id": "nsb-collier-50063",
+      "supplier": {
+          "code": "NSB",
+          "name": "Nussbaum"
+      },
+      "reference": "56000.48",
+      "name": "Therm-Control-Regelset komplett DN 25, Grundausstattung, Betriebsdruck max.: 6 bar, Nenndruck: PN 6, Betriebstemperatur max.: 60 °C, intelligente Heizungs- und Kühlungsregelung, mit Kontakt potentialfrei (Changeover) zur automatischen Umschaltung heizen/kühlen, für Fussbodenheizung, für Betonkernaktivierung, bestehend aus Therm-Control-Heizkreisverteiler, Therm-Control-Halterung, Therm-Control-Basis-Regeleinheit, Therm-Control-Stellantrieb, Therm-Control-Temperaturmessstelle, Therm-Control-Rücklauf-Temperaturfühler, Therm-Control-Anlege-Temperaturfühler, Therm-Control-Flachbandkabel",
+      "category": "collier",
+      "specification": "25mm",
+      "active": true,
+      "unit": "pce",
+      "base_price": 2071,
+      "attributes": {
+          "diameter_mm": 25,
+          "material": "PE"
+      }
+  },
+  {
+      "id": "nsb-collier-50064",
+      "supplier": {
+          "code": "NSB",
+          "name": "Nussbaum"
+      },
+      "reference": "56000.49",
+      "name": "Therm-Control-Regelset komplett DN 25, Grundausstattung, Betriebsdruck max.: 6 bar, Nenndruck: PN 6, Betriebstemperatur max.: 60 °C, intelligente Heizungs- und Kühlungsregelung, mit Kontakt potentialfrei (Changeover) zur automatischen Umschaltung heizen/kühlen, für Fussbodenheizung, für Betonkernaktivierung, bestehend aus Therm-Control-Heizkreisverteiler, Therm-Control-Halterung, Therm-Control-Basis-Regeleinheit, Therm-Control-Stellantrieb, Therm-Control-Temperaturmessstelle, Therm-Control-Rücklauf-Temperaturfühler, Therm-Control-Anlege-Temperaturfühler, Therm-Control-Flachbandkabel",
+      "category": "collier",
+      "specification": "25mm",
+      "active": true,
+      "unit": "pce",
+      "base_price": 2230,
+      "attributes": {
+          "diameter_mm": 25,
+          "material": "PE"
+      }
+  },
+  {
+      "id": "nsb-collier-50065",
+      "supplier": {
+          "code": "NSB",
+          "name": "Nussbaum"
+      },
+      "reference": "56000.50",
+      "name": "Therm-Control-Regelset komplett DN 25, Grundausstattung, Betriebsdruck max.: 6 bar, Nenndruck: PN 6, Betriebstemperatur max.: 60 °C, intelligente Heizungs- und Kühlungsregelung, mit Kontakt potentialfrei (Changeover) zur automatischen Umschaltung heizen/kühlen, für Fussbodenheizung, für Betonkernaktivierung, bestehend aus Therm-Control-Heizkreisverteiler, Therm-Control-Halterung, Therm-Control-Basis-Regeleinheit, Therm-Control-Stellantrieb, Therm-Control-Temperaturmessstelle, Therm-Control-Rücklauf-Temperaturfühler, Therm-Control-Anlege-Temperaturfühler, Therm-Control-Flachbandkabel",
+      "category": "collier",
+      "specification": "25mm",
+      "active": true,
+      "unit": "pce",
+      "base_price": 2391,
+      "attributes": {
+          "diameter_mm": 25,
+          "material": "PE"
+      }
+  },
+  {
+      "id": "nsb-collier-50066",
+      "supplier": {
+          "code": "NSB",
+          "name": "Nussbaum"
+      },
+      "reference": "56000.51",
+      "name": "Therm-Control-Regelset komplett DN 25, Grundausstattung, Betriebsdruck max.: 6 bar, Nenndruck: PN 6, Betriebstemperatur max.: 60 °C, intelligente Heizungs- und Kühlungsregelung, mit Kontakt potentialfrei (Changeover) zur automatischen Umschaltung heizen/kühlen, für Fussbodenheizung, für Betonkernaktivierung, bestehend aus Therm-Control-Heizkreisverteiler, Therm-Control-Halterung, Therm-Control-Basis-Regeleinheit, Therm-Control-Stellantrieb, Therm-Control-Temperaturmessstelle, Therm-Control-Rücklauf-Temperaturfühler, Therm-Control-Anlege-Temperaturfühler, Therm-Control-Flachbandkabel",
+      "category": "collier",
+      "specification": "25mm",
+      "active": true,
+      "unit": "pce",
+      "base_price": 2553,
+      "attributes": {
+          "diameter_mm": 25,
+          "material": "PE"
+      }
+  },
+  {
+      "id": "nsb-autre-50067",
+      "supplier": {
+          "code": "NSB",
+          "name": "Nussbaum"
+      },
+      "reference": "56001.21",
+      "name": "Therm-Control-Regelset DN 25, ohne Heizkreisverteiler, Betriebsdruck max.: 6 bar, Nenndruck: PN 6, Betriebstemperatur max.: 60 °C, für die Nachrüstung an bestehende Heizkreisverteiler, intelligente Heizungs- und Kühlungsregelung, mit Kontakt potentialfrei (Changeover) zur automatischen Umschaltung heizen/kühlen, für Fussbodenheizung, für Betonkernaktivierung, bestehend aus Therm-Control-Basis-Regeleinheit, Therm-Control-Stellantrieb, Therm-Control-Temperaturmessstelle, Therm-Control-Rücklauf-Temperaturfühler, Therm-Control-Anlege-Temperaturfühler, Therm-Control-Flachbandkabel",
+      "category": "autre",
+      "specification": "25mm",
+      "active": true,
+      "unit": "pce",
+      "base_price": 775,
+      "attributes": {
+          "diameter_mm": 25,
+          "material": "PE"
+      }
+  },
+  {
+      "id": "nsb-autre-50068",
+      "supplier": {
+          "code": "NSB",
+          "name": "Nussbaum"
+      },
+      "reference": "56001.22",
+      "name": "Therm-Control-Regelset DN 25, ohne Heizkreisverteiler, Betriebsdruck max.: 6 bar, Nenndruck: PN 6, Betriebstemperatur max.: 60 °C, für die Nachrüstung an bestehende Heizkreisverteiler, intelligente Heizungs- und Kühlungsregelung, mit Kontakt potentialfrei (Changeover) zur automatischen Umschaltung heizen/kühlen, für Fussbodenheizung, für Betonkernaktivierung, bestehend aus Therm-Control-Basis-Regeleinheit, Therm-Control-Stellantrieb, Therm-Control-Temperaturmessstelle, Therm-Control-Rücklauf-Temperaturfühler, Therm-Control-Anlege-Temperaturfühler, Therm-Control-Flachbandkabel",
+      "category": "autre",
+      "specification": "25mm",
+      "active": true,
+      "unit": "pce",
+      "base_price": 900,
+      "attributes": {
+          "diameter_mm": 25,
+          "material": "PE"
+      }
+  },
+  {
+      "id": "nsb-autre-50069",
+      "supplier": {
+          "code": "NSB",
+          "name": "Nussbaum"
+      },
+      "reference": "56001.23",
+      "name": "Therm-Control-Regelset DN 25, ohne Heizkreisverteiler, Betriebsdruck max.: 6 bar, Nenndruck: PN 6, Betriebstemperatur max.: 60 °C, für die Nachrüstung an bestehende Heizkreisverteiler, intelligente Heizungs- und Kühlungsregelung, mit Kontakt potentialfrei (Changeover) zur automatischen Umschaltung heizen/kühlen, für Fussbodenheizung, für Betonkernaktivierung, bestehend aus Therm-Control-Basis-Regeleinheit, Therm-Control-Stellantrieb, Therm-Control-Temperaturmessstelle, Therm-Control-Rücklauf-Temperaturfühler, Therm-Control-Anlege-Temperaturfühler, Therm-Control-Flachbandkabel",
+      "category": "autre",
+      "specification": "25mm",
+      "active": true,
+      "unit": "pce",
+      "base_price": 1023,
+      "attributes": {
+          "diameter_mm": 25,
+          "material": "PE"
+      }
+  },
+  {
+      "id": "nsb-autre-50070",
+      "supplier": {
+          "code": "NSB",
+          "name": "Nussbaum"
+      },
+      "reference": "56001.24",
+      "name": "Therm-Control-Regelset DN 25, ohne Heizkreisverteiler, Betriebsdruck max.: 6 bar, Nenndruck: PN 6, Betriebstemperatur max.: 60 °C, für die Nachrüstung an bestehende Heizkreisverteiler, intelligente Heizungs- und Kühlungsregelung, mit Kontakt potentialfrei (Changeover) zur automatischen Umschaltung heizen/kühlen, für Fussbodenheizung, für Betonkernaktivierung, bestehend aus Therm-Control-Basis-Regeleinheit, Therm-Control-Stellantrieb, Therm-Control-Temperaturmessstelle, Therm-Control-Rücklauf-Temperaturfühler, Therm-Control-Anlege-Temperaturfühler, Therm-Control-Flachbandkabel",
+      "category": "autre",
+      "specification": "25mm",
+      "active": true,
+      "unit": "pce",
+      "base_price": 1145,
+      "attributes": {
+          "diameter_mm": 25,
+          "material": "PE"
+      }
+  },
+  {
+      "id": "nsb-autre-50071",
+      "supplier": {
+          "code": "NSB",
+          "name": "Nussbaum"
+      },
+      "reference": "56001.25",
+      "name": "Therm-Control-Regelset DN 25, ohne Heizkreisverteiler, Betriebsdruck max.: 6 bar, Nenndruck: PN 6, Betriebstemperatur max.: 60 °C, für die Nachrüstung an bestehende Heizkreisverteiler, intelligente Heizungs- und Kühlungsregelung, mit Kontakt potentialfrei (Changeover) zur automatischen Umschaltung heizen/kühlen, für Fussbodenheizung, für Betonkernaktivierung, bestehend aus Therm-Control-Basis-Regeleinheit, Therm-Control-Stellantrieb, Therm-Control-Temperaturmessstelle, Therm-Control-Rücklauf-Temperaturfühler, Therm-Control-Anlege-Temperaturfühler, Therm-Control-Flachbandkabel",
+      "category": "autre",
+      "specification": "25mm",
+      "active": true,
+      "unit": "pce",
+      "base_price": 1269,
+      "attributes": {
+          "diameter_mm": 25,
+          "material": "PE"
+      }
+  },
+  {
+      "id": "nsb-autre-50072",
+      "supplier": {
+          "code": "NSB",
+          "name": "Nussbaum"
+      },
+      "reference": "56001.26",
+      "name": "Therm-Control-Regelset DN 25, ohne Heizkreisverteiler, Betriebsdruck max.: 6 bar, Nenndruck: PN 6, Betriebstemperatur max.: 60 °C, für die Nachrüstung an bestehende Heizkreisverteiler, intelligente Heizungs- und Kühlungsregelung, mit Kontakt potentialfrei (Changeover) zur automatischen Umschaltung heizen/kühlen, für Fussbodenheizung, für Betonkernaktivierung, bestehend aus Therm-Control-Basis-Regeleinheit, Therm-Control-Stellantrieb, Therm-Control-Temperaturmessstelle, Therm-Control-Rücklauf-Temperaturfühler, Therm-Control-Anlege-Temperaturfühler, Therm-Control-Flachbandkabel",
+      "category": "autre",
+      "specification": "25mm",
+      "active": true,
+      "unit": "pce",
+      "base_price": 1393,
+      "attributes": {
+          "diameter_mm": 25,
+          "material": "PE"
+      }
+  },
+  {
+      "id": "nsb-autre-50073",
+      "supplier": {
+          "code": "NSB",
+          "name": "Nussbaum"
+      },
+      "reference": "56001.27",
+      "name": "Therm-Control-Regelset DN 25, ohne Heizkreisverteiler, Betriebsdruck max.: 6 bar, Nenndruck: PN 6, Betriebstemperatur max.: 60 °C, für die Nachrüstung an bestehende Heizkreisverteiler, intelligente Heizungs- und Kühlungsregelung, mit Kontakt potentialfrei (Changeover) zur automatischen Umschaltung heizen/kühlen, für Fussbodenheizung, für Betonkernaktivierung, bestehend aus Therm-Control-Basis-Regeleinheit, Therm-Control-Stellantrieb, Therm-Control-Temperaturmessstelle, Therm-Control-Rücklauf-Temperaturfühler, Therm-Control-Anlege-Temperaturfühler, Therm-Control-Flachbandkabel",
+      "category": "autre",
+      "specification": "25mm",
+      "active": true,
+      "unit": "pce",
+      "base_price": 1516,
+      "attributes": {
+          "diameter_mm": 25,
+          "material": "PE"
+      }
+  },
+  {
+      "id": "nsb-autre-50074",
+      "supplier": {
+          "code": "NSB",
+          "name": "Nussbaum"
+      },
+      "reference": "56001.28",
+      "name": "Therm-Control-Regelset DN 25, ohne Heizkreisverteiler, Betriebsdruck max.: 6 bar, Nenndruck: PN 6, Betriebstemperatur max.: 60 °C, für die Nachrüstung an bestehende Heizkreisverteiler, intelligente Heizungs- und Kühlungsregelung, mit Kontakt potentialfrei (Changeover) zur automatischen Umschaltung heizen/kühlen, für Fussbodenheizung, für Betonkernaktivierung, bestehend aus Therm-Control-Basis-Regeleinheit, Therm-Control-Stellantrieb, Therm-Control-Temperaturmessstelle, Therm-Control-Rücklauf-Temperaturfühler, Therm-Control-Anlege-Temperaturfühler, Therm-Control-Flachbandkabel",
+      "category": "autre",
+      "specification": "25mm",
+      "active": true,
+      "unit": "pce",
+      "base_price": 1639,
+      "attributes": {
+          "diameter_mm": 25,
+          "material": "PE"
+      }
+  },
+  {
+      "id": "nsb-autre-50075",
+      "supplier": {
+          "code": "NSB",
+          "name": "Nussbaum"
+      },
+      "reference": "56001.29",
+      "name": "Therm-Control-Regelset DN 25, ohne Heizkreisverteiler, Betriebsdruck max.: 6 bar, Nenndruck: PN 6, Betriebstemperatur max.: 60 °C, für die Nachrüstung an bestehende Heizkreisverteiler, intelligente Heizungs- und Kühlungsregelung, mit Kontakt potentialfrei (Changeover) zur automatischen Umschaltung heizen/kühlen, für Fussbodenheizung, für Betonkernaktivierung, bestehend aus Therm-Control-Basis-Regeleinheit, Therm-Control-Stellantrieb, Therm-Control-Temperaturmessstelle, Therm-Control-Rücklauf-Temperaturfühler, Therm-Control-Anlege-Temperaturfühler, Therm-Control-Flachbandkabel",
+      "category": "autre",
+      "specification": "25mm",
+      "active": true,
+      "unit": "pce",
+      "base_price": 1763,
+      "attributes": {
+          "diameter_mm": 25,
+          "material": "PE"
+      }
+  },
+  {
+      "id": "nsb-autre-50076",
+      "supplier": {
+          "code": "NSB",
+          "name": "Nussbaum"
+      },
+      "reference": "56001.30",
+      "name": "Therm-Control-Regelset DN 25, ohne Heizkreisverteiler, Betriebsdruck max.: 6 bar, Nenndruck: PN 6, Betriebstemperatur max.: 60 °C, für die Nachrüstung an bestehende Heizkreisverteiler, intelligente Heizungs- und Kühlungsregelung, mit Kontakt potentialfrei (Changeover) zur automatischen Umschaltung heizen/kühlen, für Fussbodenheizung, für Betonkernaktivierung, bestehend aus Therm-Control-Basis-Regeleinheit, Therm-Control-Stellantrieb, Therm-Control-Temperaturmessstelle, Therm-Control-Rücklauf-Temperaturfühler, Therm-Control-Anlege-Temperaturfühler, Therm-Control-Flachbandkabel",
+      "category": "autre",
+      "specification": "25mm",
+      "active": true,
+      "unit": "pce",
+      "base_price": 1888,
+      "attributes": {
+          "diameter_mm": 25,
+          "material": "PE"
+      }
+  },
+  {
+      "id": "nsb-autre-50077",
+      "supplier": {
+          "code": "NSB",
+          "name": "Nussbaum"
+      },
+      "reference": "56001.31",
+      "name": "Therm-Control-Regelset DN 25, ohne Heizkreisverteiler, Betriebsdruck max.: 6 bar, Nenndruck: PN 6, Betriebstemperatur max.: 60 °C, für die Nachrüstung an bestehende Heizkreisverteiler, intelligente Heizungs- und Kühlungsregelung, mit Kontakt potentialfrei (Changeover) zur automatischen Umschaltung heizen/kühlen, für Fussbodenheizung, für Betonkernaktivierung, bestehend aus Therm-Control-Basis-Regeleinheit, Therm-Control-Stellantrieb, Therm-Control-Temperaturmessstelle, Therm-Control-Rücklauf-Temperaturfühler, Therm-Control-Anlege-Temperaturfühler, Therm-Control-Flachbandkabel",
+      "category": "autre",
+      "specification": "25mm",
+      "active": true,
+      "unit": "pce",
+      "base_price": 2009,
+      "attributes": {
+          "diameter_mm": 25,
+          "material": "PE"
+      }
+  },
+  {
+      "id": "nsb-collier-50078",
+      "supplier": {
+          "code": "NSB",
+          "name": "Nussbaum"
+      },
+      "reference": "56002.21",
+      "name": "Therm-Control-Rohbauset DN 25, Grundausstattung, Betriebstemperatur max.: 60 °C, intelligente Heizungs- und Kühlungsregelung, für Fussbodenheizung, für Betonkernaktivierung, bestehend aus Therm-Control-Heizkreisverteiler, inkl. Therm-Control-Halterung, Therm-Control-Temperaturmessstelle",
+      "category": "collier",
+      "specification": "25mm",
+      "active": true,
+      "unit": "pce",
+      "base_price": 218,
+      "attributes": {
+          "diameter_mm": 25,
+          "material": "PE"
+      }
+  },
+  {
+      "id": "nsb-collier-50079",
+      "supplier": {
+          "code": "NSB",
+          "name": "Nussbaum"
+      },
+      "reference": "56002.22",
+      "name": "Therm-Control-Rohbauset DN 25, Grundausstattung, Betriebstemperatur max.: 60 °C, intelligente Heizungs- und Kühlungsregelung, für Fussbodenheizung, für Betonkernaktivierung, bestehend aus Therm-Control-Heizkreisverteiler, inkl. Therm-Control-Halterung, Therm-Control-Temperaturmessstelle",
+      "category": "collier",
+      "specification": "25mm",
+      "active": true,
+      "unit": "pce",
+      "base_price": 279,
+      "attributes": {
+          "diameter_mm": 25,
+          "material": "PE"
+      }
+  },
+  {
+      "id": "nsb-collier-50080",
+      "supplier": {
+          "code": "NSB",
+          "name": "Nussbaum"
+      },
+      "reference": "56002.23",
+      "name": "Therm-Control-Rohbauset DN 25, Grundausstattung, Betriebstemperatur max.: 60 °C, intelligente Heizungs- und Kühlungsregelung, für Fussbodenheizung, für Betonkernaktivierung, bestehend aus Therm-Control-Heizkreisverteiler, inkl. Therm-Control-Halterung, Therm-Control-Temperaturmessstelle",
+      "category": "collier",
+      "specification": "25mm",
+      "active": true,
+      "unit": "pce",
+      "base_price": 342,
+      "attributes": {
+          "diameter_mm": 25,
+          "material": "PE"
+      }
+  },
+  {
+      "id": "nsb-collier-50081",
+      "supplier": {
+          "code": "NSB",
+          "name": "Nussbaum"
+      },
+      "reference": "56002.24",
+      "name": "Therm-Control-Rohbauset DN 25, Grundausstattung, Betriebstemperatur max.: 60 °C, intelligente Heizungs- und Kühlungsregelung, für Fussbodenheizung, für Betonkernaktivierung, bestehend aus Therm-Control-Heizkreisverteiler, inkl. Therm-Control-Halterung, Therm-Control-Temperaturmessstelle",
+      "category": "collier",
+      "specification": "25mm",
+      "active": true,
+      "unit": "pce",
+      "base_price": 399,
+      "attributes": {
+          "diameter_mm": 25,
+          "material": "PE"
+      }
+  },
+  {
+      "id": "nsb-collier-50082",
+      "supplier": {
+          "code": "NSB",
+          "name": "Nussbaum"
+      },
+      "reference": "56002.25",
+      "name": "Therm-Control-Rohbauset DN 25, Grundausstattung, Betriebstemperatur max.: 60 °C, intelligente Heizungs- und Kühlungsregelung, für Fussbodenheizung, für Betonkernaktivierung, bestehend aus Therm-Control-Heizkreisverteiler, inkl. Therm-Control-Halterung, Therm-Control-Temperaturmessstelle",
+      "category": "collier",
+      "specification": "25mm",
+      "active": true,
+      "unit": "pce",
+      "base_price": 461,
+      "attributes": {
+          "diameter_mm": 25,
+          "material": "PE"
+      }
+  },
+  {
+      "id": "nsb-collier-50083",
+      "supplier": {
+          "code": "NSB",
+          "name": "Nussbaum"
+      },
+      "reference": "56002.26",
+      "name": "Therm-Control-Rohbauset DN 25, Grundausstattung, Betriebstemperatur max.: 60 °C, intelligente Heizungs- und Kühlungsregelung, für Fussbodenheizung, für Betonkernaktivierung, bestehend aus Therm-Control-Heizkreisverteiler, inkl. Therm-Control-Halterung, Therm-Control-Temperaturmessstelle",
+      "category": "collier",
+      "specification": "25mm",
+      "active": true,
+      "unit": "pce",
+      "base_price": 521,
+      "attributes": {
+          "diameter_mm": 25,
+          "material": "PE"
+      }
+  },
+  {
+      "id": "nsb-collier-50084",
+      "supplier": {
+          "code": "NSB",
+          "name": "Nussbaum"
+      },
+      "reference": "56002.27",
+      "name": "Therm-Control-Rohbauset DN 25, Grundausstattung, Betriebstemperatur max.: 60 °C, intelligente Heizungs- und Kühlungsregelung, für Fussbodenheizung, für Betonkernaktivierung, bestehend aus Therm-Control-Heizkreisverteiler, inkl. Therm-Control-Halterung, Therm-Control-Temperaturmessstelle",
+      "category": "collier",
+      "specification": "25mm",
+      "active": true,
+      "unit": "pce",
+      "base_price": 582,
+      "attributes": {
+          "diameter_mm": 25,
+          "material": "PE"
+      }
+  },
+  {
+      "id": "nsb-collier-50085",
+      "supplier": {
+          "code": "NSB",
+          "name": "Nussbaum"
+      },
+      "reference": "56002.28",
+      "name": "Therm-Control-Rohbauset DN 25, Grundausstattung, Betriebstemperatur max.: 60 °C, intelligente Heizungs- und Kühlungsregelung, für Fussbodenheizung, für Betonkernaktivierung, bestehend aus Therm-Control-Heizkreisverteiler, inkl. Therm-Control-Halterung, Therm-Control-Temperaturmessstelle",
+      "category": "collier",
+      "specification": "25mm",
+      "active": true,
+      "unit": "pce",
+      "base_price": 643,
+      "attributes": {
+          "diameter_mm": 25,
+          "material": "PE"
+      }
+  },
+  {
+      "id": "nsb-collier-50086",
+      "supplier": {
+          "code": "NSB",
+          "name": "Nussbaum"
+      },
+      "reference": "56002.29",
+      "name": "Therm-Control-Rohbauset DN 25, Grundausstattung, Betriebstemperatur max.: 60 °C, intelligente Heizungs- und Kühlungsregelung, für Fussbodenheizung, für Betonkernaktivierung, bestehend aus Therm-Control-Heizkreisverteiler, inkl. Therm-Control-Halterung, Therm-Control-Temperaturmessstelle",
+      "category": "collier",
+      "specification": "25mm",
+      "active": true,
+      "unit": "pce",
+      "base_price": 705,
+      "attributes": {
+          "diameter_mm": 25,
+          "material": "PE"
+      }
+  },
+  {
+      "id": "nsb-collier-50087",
+      "supplier": {
+          "code": "NSB",
+          "name": "Nussbaum"
+      },
+      "reference": "56002.30",
+      "name": "Therm-Control-Rohbauset DN 25, Grundausstattung, Betriebstemperatur max.: 60 °C, intelligente Heizungs- und Kühlungsregelung, für Fussbodenheizung, für Betonkernaktivierung, bestehend aus Therm-Control-Heizkreisverteiler, inkl. Therm-Control-Halterung, Therm-Control-Temperaturmessstelle",
+      "category": "collier",
+      "specification": "25mm",
+      "active": true,
+      "unit": "pce",
+      "base_price": 769,
+      "attributes": {
+          "diameter_mm": 25,
+          "material": "PE"
+      }
+  },
+  {
+      "id": "nsb-collier-50088",
+      "supplier": {
+          "code": "NSB",
+          "name": "Nussbaum"
+      },
+      "reference": "56002.31",
+      "name": "Therm-Control-Rohbauset DN 25, Grundausstattung, Betriebstemperatur max.: 60 °C, intelligente Heizungs- und Kühlungsregelung, für Fussbodenheizung, für Betonkernaktivierung, bestehend aus Therm-Control-Heizkreisverteiler, inkl. Therm-Control-Halterung, Therm-Control-Temperaturmessstelle",
+      "category": "collier",
+      "specification": "25mm",
+      "active": true,
+      "unit": "pce",
+      "base_price": 834,
+      "attributes": {
+          "diameter_mm": 25,
+          "material": "PE"
+      }
+  },
+  {
+      "id": "nsb-autre-50089",
+      "supplier": {
+          "code": "NSB",
+          "name": "Nussbaum"
+      },
+      "reference": "56004.21",
+      "name": "Therm-Control-Set für die Fertigmontage, mit Kontakt potentialfrei (Changeover) zur automatischen Umschaltung heizen/kühlen, Betriebstemperatur max.: 60 °C, intelligente Heizungs- und Kühlungsregelung, für Fussbodenheizung, für Betonkernaktivierung, bestehend aus Therm-Control-Basis-Regeleinheit, Therm-Control-Stellantrieb, Therm-Control-Rücklauf-Temperaturfühler, Therm-Control-Anlege-Temperaturfühler, Therm-Control-Flachbandkabel",
+      "category": "autre",
+      "specification": "60mm",
+      "active": true,
+      "unit": "pce",
+      "base_price": 749,
+      "attributes": {
+          "diameter_mm": 60,
+          "material": "PE"
+      }
+  },
+  {
+      "id": "nsb-autre-50090",
+      "supplier": {
+          "code": "NSB",
+          "name": "Nussbaum"
+      },
+      "reference": "56004.22",
+      "name": "Therm-Control-Set für die Fertigmontage, mit Kontakt potentialfrei (Changeover) zur automatischen Umschaltung heizen/kühlen, Betriebstemperatur max.: 60 °C, intelligente Heizungs- und Kühlungsregelung, für Fussbodenheizung, für Betonkernaktivierung, bestehend aus Therm-Control-Basis-Regeleinheit, Therm-Control-Stellantrieb, Therm-Control-Rücklauf-Temperaturfühler, Therm-Control-Anlege-Temperaturfühler, Therm-Control-Flachbandkabel",
+      "category": "autre",
+      "specification": "60mm",
+      "active": true,
+      "unit": "pce",
+      "base_price": 845,
+      "attributes": {
+          "diameter_mm": 60,
+          "material": "PE"
+      }
+  },
+  {
+      "id": "nsb-autre-50091",
+      "supplier": {
+          "code": "NSB",
+          "name": "Nussbaum"
+      },
+      "reference": "56004.23",
+      "name": "Therm-Control-Set für die Fertigmontage, mit Kontakt potentialfrei (Changeover) zur automatischen Umschaltung heizen/kühlen, Betriebstemperatur max.: 60 °C, intelligente Heizungs- und Kühlungsregelung, für Fussbodenheizung, für Betonkernaktivierung, bestehend aus Therm-Control-Basis-Regeleinheit, Therm-Control-Stellantrieb, Therm-Control-Rücklauf-Temperaturfühler, Therm-Control-Anlege-Temperaturfühler, Therm-Control-Flachbandkabel",
+      "category": "autre",
+      "specification": "60mm",
+      "active": true,
+      "unit": "pce",
+      "base_price": 941,
+      "attributes": {
+          "diameter_mm": 60,
+          "material": "PE"
+      }
+  },
+  {
+      "id": "nsb-autre-50092",
+      "supplier": {
+          "code": "NSB",
+          "name": "Nussbaum"
+      },
+      "reference": "56004.24",
+      "name": "Therm-Control-Set für die Fertigmontage, mit Kontakt potentialfrei (Changeover) zur automatischen Umschaltung heizen/kühlen, Betriebstemperatur max.: 60 °C, intelligente Heizungs- und Kühlungsregelung, für Fussbodenheizung, für Betonkernaktivierung, bestehend aus Therm-Control-Basis-Regeleinheit, Therm-Control-Stellantrieb, Therm-Control-Rücklauf-Temperaturfühler, Therm-Control-Anlege-Temperaturfühler, Therm-Control-Flachbandkabel",
+      "category": "autre",
+      "specification": "60mm",
+      "active": true,
+      "unit": "pce",
+      "base_price": 1039,
+      "attributes": {
+          "diameter_mm": 60,
+          "material": "PE"
+      }
+  },
+  {
+      "id": "nsb-autre-50093",
+      "supplier": {
+          "code": "NSB",
+          "name": "Nussbaum"
+      },
+      "reference": "56004.25",
+      "name": "Therm-Control-Set für die Fertigmontage, mit Kontakt potentialfrei (Changeover) zur automatischen Umschaltung heizen/kühlen, Betriebstemperatur max.: 60 °C, intelligente Heizungs- und Kühlungsregelung, für Fussbodenheizung, für Betonkernaktivierung, bestehend aus Therm-Control-Basis-Regeleinheit, Therm-Control-Stellantrieb, Therm-Control-Rücklauf-Temperaturfühler, Therm-Control-Anlege-Temperaturfühler, Therm-Control-Flachbandkabel",
+      "category": "autre",
+      "specification": "60mm",
+      "active": true,
+      "unit": "pce",
+      "base_price": 1136,
+      "attributes": {
+          "diameter_mm": 60,
+          "material": "PE"
+      }
+  },
+  {
+      "id": "nsb-autre-50094",
+      "supplier": {
+          "code": "NSB",
+          "name": "Nussbaum"
+      },
+      "reference": "56004.26",
+      "name": "Therm-Control-Set für die Fertigmontage, mit Kontakt potentialfrei (Changeover) zur automatischen Umschaltung heizen/kühlen, Betriebstemperatur max.: 60 °C, intelligente Heizungs- und Kühlungsregelung, für Fussbodenheizung, für Betonkernaktivierung, bestehend aus Therm-Control-Basis-Regeleinheit, Therm-Control-Stellantrieb, Therm-Control-Rücklauf-Temperaturfühler, Therm-Control-Anlege-Temperaturfühler, Therm-Control-Flachbandkabel",
+      "category": "autre",
+      "specification": "60mm",
+      "active": true,
+      "unit": "pce",
+      "base_price": 1232,
+      "attributes": {
+          "diameter_mm": 60,
+          "material": "PE"
+      }
+  },
+  {
+      "id": "nsb-autre-50095",
+      "supplier": {
+          "code": "NSB",
+          "name": "Nussbaum"
+      },
+      "reference": "56004.27",
+      "name": "Therm-Control-Set für die Fertigmontage, mit Kontakt potentialfrei (Changeover) zur automatischen Umschaltung heizen/kühlen, Betriebstemperatur max.: 60 °C, intelligente Heizungs- und Kühlungsregelung, für Fussbodenheizung, für Betonkernaktivierung, bestehend aus Therm-Control-Basis-Regeleinheit, Therm-Control-Stellantrieb, Therm-Control-Rücklauf-Temperaturfühler, Therm-Control-Anlege-Temperaturfühler, Therm-Control-Flachbandkabel",
+      "category": "autre",
+      "specification": "60mm",
+      "active": true,
+      "unit": "pce",
+      "base_price": 1329,
+      "attributes": {
+          "diameter_mm": 60,
+          "material": "PE"
+      }
+  },
+  {
+      "id": "nsb-autre-50096",
+      "supplier": {
+          "code": "NSB",
+          "name": "Nussbaum"
+      },
+      "reference": "56004.28",
+      "name": "Therm-Control-Set für die Fertigmontage, mit Kontakt potentialfrei (Changeover) zur automatischen Umschaltung heizen/kühlen, Betriebstemperatur max.: 60 °C, intelligente Heizungs- und Kühlungsregelung, für Fussbodenheizung, für Betonkernaktivierung, bestehend aus Therm-Control-Basis-Regeleinheit, Therm-Control-Stellantrieb, Therm-Control-Rücklauf-Temperaturfühler, Therm-Control-Anlege-Temperaturfühler, Therm-Control-Flachbandkabel",
+      "category": "autre",
+      "specification": "60mm",
+      "active": true,
+      "unit": "pce",
+      "base_price": 1428,
+      "attributes": {
+          "diameter_mm": 60,
+          "material": "PE"
+      }
+  },
+  {
+      "id": "nsb-autre-50097",
+      "supplier": {
+          "code": "NSB",
+          "name": "Nussbaum"
+      },
+      "reference": "56004.29",
+      "name": "Therm-Control-Set für die Fertigmontage, mit Kontakt potentialfrei (Changeover) zur automatischen Umschaltung heizen/kühlen, Betriebstemperatur max.: 60 °C, intelligente Heizungs- und Kühlungsregelung, für Fussbodenheizung, für Betonkernaktivierung, bestehend aus Therm-Control-Basis-Regeleinheit, Therm-Control-Stellantrieb, Therm-Control-Rücklauf-Temperaturfühler, Therm-Control-Anlege-Temperaturfühler, Therm-Control-Flachbandkabel",
+      "category": "autre",
+      "specification": "60mm",
+      "active": true,
+      "unit": "pce",
+      "base_price": 1525,
+      "attributes": {
+          "diameter_mm": 60,
+          "material": "PE"
+      }
+  },
+  {
+      "id": "nsb-autre-50098",
+      "supplier": {
+          "code": "NSB",
+          "name": "Nussbaum"
+      },
+      "reference": "56004.30",
+      "name": "Therm-Control-Set für die Fertigmontage, mit Kontakt potentialfrei (Changeover) zur automatischen Umschaltung heizen/kühlen, Betriebstemperatur max.: 60 °C, intelligente Heizungs- und Kühlungsregelung, für Fussbodenheizung, für Betonkernaktivierung, bestehend aus Therm-Control-Basis-Regeleinheit, Therm-Control-Stellantrieb, Therm-Control-Rücklauf-Temperaturfühler, Therm-Control-Anlege-Temperaturfühler, Therm-Control-Flachbandkabel",
+      "category": "autre",
+      "specification": "60mm",
+      "active": true,
+      "unit": "pce",
+      "base_price": 1621,
+      "attributes": {
+          "diameter_mm": 60,
+          "material": "PE"
+      }
+  },
+  {
+      "id": "nsb-autre-50099",
+      "supplier": {
+          "code": "NSB",
+          "name": "Nussbaum"
+      },
+      "reference": "56004.31",
+      "name": "Therm-Control-Set für die Fertigmontage, mit Kontakt potentialfrei (Changeover) zur automatischen Umschaltung heizen/kühlen, Betriebstemperatur max.: 60 °C, intelligente Heizungs- und Kühlungsregelung, für Fussbodenheizung, für Betonkernaktivierung, bestehend aus Therm-Control-Basis-Regeleinheit, Therm-Control-Stellantrieb, Therm-Control-Rücklauf-Temperaturfühler, Therm-Control-Anlege-Temperaturfühler, Therm-Control-Flachbandkabel",
+      "category": "autre",
+      "specification": "60mm",
+      "active": true,
+      "unit": "pce",
+      "base_price": 1719,
+      "attributes": {
+          "diameter_mm": 60,
+          "material": "PE"
+      }
+  },
+  {
     "id": "hvl-tuyau_inox-1",
     "supplier": {
       "code": "HVL",
