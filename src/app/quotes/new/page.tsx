@@ -510,7 +510,10 @@ export default function NewQuotePage() {
                   <div className="review-meta">
                     {extraction && (
                       <span className="provider-badge">
-                        {provider === 'gemini' ? '✨ Powered by Astra AI' : '🌐 OpenRouter'}
+                        {provider === 'gemini' ? '✨ Astra AI (Gemini)' :
+                         provider === 'groq' ? '⚡ Astra AI (Groq)' :
+                         provider === 'nvidia' ? '💚 Astra AI (Nvidia)' :
+                         '🌐 OpenRouter'}
                       </span>
                     )}
                     {typeof quote?.aiConfidence === 'number' && (
