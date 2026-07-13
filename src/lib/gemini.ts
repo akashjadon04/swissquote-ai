@@ -146,8 +146,8 @@ async function extractWithGemini(description: string): Promise<AIExtractionResul
   
   for (let i = 0; i < keys.length; i++) {
     try {
-      // Increased timeout to 120s since Vercel limit is bypassed by keep-alive stream
-      const res = await withTimeout(extractWithGeminiKey(description, keys[i], i), 120000, `Timeout after 120s (Key ${i + 1})`);
+      // Strict 10s timeout to quickly failover to NVIDIA NIM if Gemini is overloaded/503
+      const res = await withTimeout(extractWithGeminiKey(description, keys[i], i), 10000, `Timeout after 10s (Key ${i + 1})`);
       badGeminiKeys.delete(keys[i]);
       return res;
     } catch (err) {
