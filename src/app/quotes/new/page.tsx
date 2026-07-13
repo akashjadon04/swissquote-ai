@@ -126,8 +126,15 @@ export default function NewQuotePage() {
       });
 
       if (!res.ok) {
-        const err = await res.json().catch(() => ({ error: 'Erreur serveur' }));
-        throw new Error(err.error || `Erreur serveur (${res.status})`);
+        const rawText = await res.text().catch(() => 'Unable to read response text');
+        let errObj;
+        try {
+          errObj = JSON.parse(rawText);
+        } catch {
+          // It's not JSON (likely Vercel 504 HTML timeout or 502 Bad Gateway)
+          throw new Error(`Raw API Error (${res.status}):\n${rawText.slice(0, 500)}...`);
+        }
+        throw new Error(errObj.error || `Erreur serveur (${res.status})`);
       }
 
       const data = await res.json();
