@@ -395,12 +395,13 @@ async function extractWithGroqKey(
   apiKey: string,
   keyIndex: number
 ): Promise<AIExtractionResult> {
-  const model = 'llama-3.3-70b-versatile'; // Standard Llama 3.3 70B identifier on Groq (or llama3-70b-8192)
-  const backupModel = 'llama-3.1-70b-versatile';
+  const model = 'llama-3.1-8b-instant'; // Blazing fast 8B model with extremely high TPM limits
+  const backupModel = 'llama-3.3-70b-versatile';
+  const backupModel2 = 'llama-3.1-70b-versatile';
   const fallbackModel = 'llama3-70b-8192';
 
   const modelErrors: string[] = [];
-  const models = [model, backupModel, fallbackModel];
+  const models = [model, backupModel, backupModel2, fallbackModel];
 
   for (const m of models) {
     try {
@@ -496,6 +497,12 @@ function parseAIResponse(text: string): AIExtractionResult {
       // Enforce: quantity MUST be null if not a number - no defaults
       if (article.quantity !== null && typeof article.quantity !== 'number') {
         article.quantity = null;
+      }
+      // Normalize category (lowercase, strip accents, replace spaces/hyphens with underscore)
+      if (typeof article.category === 'string') {
+        article.category = article.category.toLowerCase().trim()
+          .normalize("NFD").replace(/[\u0300-\u036f]/g, "") // strip accents (e.g. dépose -> depose)
+          .replace(/[-\s]/g, '_'); // normalize spaces/hyphens to underscore
       }
     }
   }
