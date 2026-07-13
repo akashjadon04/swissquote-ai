@@ -31,7 +31,7 @@ const jetbrainsMono = JetBrains_Mono({
   display: 'swap',
 });
 
-import { DashboardMetricsTicker, FloatingActions } from '@/components/ui';
+import { DashboardMetricsTicker, FloatingActions, NimKeepAlive } from '@/components/ui';
 
 export const metadata: Metadata = {
   title: {
@@ -83,6 +83,7 @@ export default function RootLayout({
         >
           {children}
           {/* Global overlays — available everywhere */}
+          <NimKeepAlive />
           <FloatingActions />
           <MagicOrb />
           <CommandPalette />

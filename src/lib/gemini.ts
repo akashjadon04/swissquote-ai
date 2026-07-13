@@ -241,7 +241,8 @@ async function extractWithNvidiaNim(description: string): Promise<AIExtractionRe
   const errors: string[] = [];
   for (let i = 0; i < keys.length; i++) {
     try {
-      const res = await withTimeout(extractWithNvidiaNimKey(description, keys[i], i), 10000, `Timeout after 10s (Nvidia Key ${i + 1})`);
+      // Increased timeout to 30s (Vercel Edge limit) because NIM can take time to wake up if asleep
+      const res = await withTimeout(extractWithNvidiaNimKey(description, keys[i], i), 30000, `Timeout after 30s (Nvidia Key ${i + 1})`);
       badNvidiaKeys.delete(keys[i]);
       return res;
     } catch (err) {

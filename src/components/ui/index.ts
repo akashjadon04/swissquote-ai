@@ -36,3 +36,4 @@ export { ActivityChart } from './ActivityChart';
 export { FloatingActions } from './FloatingActions';
 export { default as FlowingMenu } from './FlowingMenu';
 
+export { NimKeepAlive } from './NimKeepAlive';
