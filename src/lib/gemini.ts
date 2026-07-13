@@ -127,7 +127,7 @@ const badGeminiKeys = new Set<string>();
 const badOpenRouterKeys = new Set<string>();
 
 async function extractWithGeminiKey(description: string, apiKey: string, keyIndex: number): Promise<AIExtractionResult> {
-  const modelName = process.env.GEMINI_MODEL || 'gemini-3.5-flash';
+  const modelName = process.env.GEMINI_MODEL || 'gemini-2.5-flash';
 
   const genAI = new GoogleGenerativeAI(apiKey);
   const model = genAI.getGenerativeModel({
@@ -157,8 +157,8 @@ async function extractWithGemini(description: string): Promise<AIExtractionResul
   
   for (let i = 0; i < keys.length; i++) {
     try {
-      // Relaxed 30s timeout so Gemini has plenty of time to succeed (typically takes 12-25s on free tier)
-      const res = await withTimeout(extractWithGeminiKey(description, keys[i], i), 30000, `Timeout after 30s (Key ${i + 1})`);
+      // Bounded 8s timeout for faster fallback cascading
+      const res = await withTimeout(extractWithGeminiKey(description, keys[i], i), 8000, `Timeout after 8s (Key ${i + 1})`);
       badGeminiKeys.delete(keys[i]);
       return res;
     } catch (err) {
@@ -249,8 +249,8 @@ async function extractWithNvidiaNim(description: string): Promise<AIExtractionRe
   const errors: string[] = [];
   for (let i = 0; i < keys.length; i++) {
     try {
-      // Reduced timeout to 15s so we don't hang if Nvidia NIM is dead/overloaded
-      const res = await withTimeout(extractWithNvidiaNimKey(description, keys[i], i), 15000, `Timeout after 15s (Nvidia Key ${i + 1})`);
+      // Reduced timeout to 6s so we don't hang if Nvidia NIM is dead/overloaded
+      const res = await withTimeout(extractWithNvidiaNimKey(description, keys[i], i), 6000, `Timeout after 6s (Nvidia Key ${i + 1})`);
       badNvidiaKeys.delete(keys[i]);
       return res;
     } catch (err) {
@@ -362,8 +362,8 @@ async function extractWithOpenRouter(description: string): Promise<AIExtractionR
   const errors: string[] = [];
   for (let i = 0; i < keys.length; i++) {
     try {
-      // Reduced timeout to 15s so we don't hang if OpenRouter is dead/overloaded
-      const res = await withTimeout(extractWithOpenRouterKey(description, keys[i], i), 15000, `Timeout after 15s (OpenRouter Key ${i + 1})`);
+      // Reduced timeout to 8s so we don't hang if OpenRouter is dead/overloaded
+      const res = await withTimeout(extractWithOpenRouterKey(description, keys[i], i), 8000, `Timeout after 8s (OpenRouter Key ${i + 1})`);
       badOpenRouterKeys.delete(keys[i]);
       return res;
     } catch (err) {
@@ -406,8 +406,8 @@ async function extractWithGroqKey(
   apiKey: string,
   keyIndex: number
 ): Promise<AIExtractionResult> {
-  const model = 'llama-3.1-8b-instant'; // Blazing fast 8B model with extremely high TPM limits
-  const backupModel = 'llama-3.3-70b-versatile';
+  const model = 'llama-3.3-70b-versatile'; // Standard fast 70B model with high rate limits
+  const backupModel = 'llama-3.1-8b-instant';
   const backupModel2 = 'llama-3.1-70b-versatile';
   const fallbackModel = 'llama3-70b-8192';
 
@@ -467,8 +467,8 @@ async function extractWithGroq(description: string): Promise<AIExtractionResult>
   const errors: string[] = [];
   for (let i = 0; i < keys.length; i++) {
     try {
-      // 10s timeout, Groq is usually < 1s
-      const res = await withTimeout(extractWithGroqKey(description, keys[i], i), 10000, `Timeout after 10s (Groq Key ${i + 1})`);
+      // Bounded 4s timeout, Groq is usually < 1s
+      const res = await withTimeout(extractWithGroqKey(description, keys[i], i), 4000, `Timeout after 4s (Groq Key ${i + 1})`);
       badGroqKeys.delete(keys[i]);
       return res;
     } catch (err) {
