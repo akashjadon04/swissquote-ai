@@ -173,9 +173,9 @@ export default function NewQuotePage() {
 
       setProcessing(true, 2);
 
-      // Labour rate by canton
+      // Labour rate by canton (Geneva standard 145 CHF/h)
       const LABOUR_RATES: Record<string, number> = {
-        'Genève': 120, 'Vaud': 120, 'Valais': 120, 'Fribourg': 120,
+        'Genève': 145, 'Vaud': 120, 'Valais': 120, 'Fribourg': 120,
         'Neuchâtel': 120, 'Jura': 120, 'Berne': 120, 'Zürich': 120,
         'Bâle': 120, 'Lucerne': 120,
       };
@@ -232,26 +232,24 @@ export default function NewQuotePage() {
               };
             }
 
-            // No catalogue match — assign fallback standard price and reference
+            // No catalogue match — DO NOT invent prices or references (per client instructions)
             const category = ((article as any).category || 'autre').toLowerCase();
-            const fallbackPrice = DEFAULT_CATEGORY_PRICES[category] ?? 45.00;
-            const fallbackRef = `STD-${category.toUpperCase().slice(0, 3)}-${aIdx + 1}`;
             const fallbackUnit = article.unit || (['tuyau_inox', 'evacuation_pe', 'isolation'].includes(category) ? 'm' : 'pce');
 
             return {
               id: `item-${sIdx}-${aIdx}`,
-              reference: fallbackRef,
+              reference: "", // Empty reference
               description: article.label,
               specification: article.dimension ?? null,
               quantity: safeQty,
               unit: fallbackUnit,
-              unitPrice: fallbackPrice,
-              lineTotal: safeQty > 0 ? fallbackPrice * safeQty : null,
+              unitPrice: null, // Empty price
+              lineTotal: null, // Empty line total
               supplierCode: 'SRV',
-              supplierName: 'Standard',
+              supplierName: 'AstraQuote',
               aiLabel: article.label,
               aiConfidence: article.confidence || 0.8,
-              isMissing: false, // Set to false to prevent showing errors in the UI
+              isMissing: true, // Mark as missing for manual review!
               is_estimate: false,
               isManuallyAdded: false,
               matchedTextStart: null,
@@ -639,7 +637,7 @@ export default function NewQuotePage() {
                         value={quote.canton}
                         onChange={(e) => {
                           const cantonRates: Record<string, number> = {
-                            'Genève': 120, 'Vaud': 120, 'Valais': 120,
+                            'Genève': 145, 'Vaud': 120, 'Valais': 120,
                             'Fribourg': 120, 'Neuchâtel': 120, 'Jura': 120,
                             'Berne': 120, 'Zürich': 120, 'Bâle': 120, 'Lucerne': 120,
                           };
@@ -654,7 +652,7 @@ export default function NewQuotePage() {
                           useQuoteStore.getState().recalculateFinancials();
                         }}
                       >
-                        {Object.keys({ 'Genève': 120, 'Vaud': 120, 'Valais': 120, 'Fribourg': 120, 'Neuchâtel': 120, 'Jura': 120, 'Berne': 120, 'Zürich': 120, 'Bâle': 120, 'Lucerne': 120 }).map(c => (
+                        {Object.keys({ 'Genève': 145, 'Vaud': 120, 'Valais': 120, 'Fribourg': 120, 'Neuchâtel': 120, 'Jura': 120, 'Berne': 120, 'Zürich': 120, 'Bâle': 120, 'Lucerne': 120 }).map(c => (
                             <option key={c} value={c}>{c}</option>
                           ))}
                       </select>

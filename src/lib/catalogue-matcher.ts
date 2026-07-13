@@ -71,7 +71,7 @@ function attrScore(aiArticle: AIArticle, catArticle: CatalogueArticle): { score:
   const aiText = aiArticle.label;
   const catSpec = catArticle.specification;
 
-  // power_kw
+  // 1. power_kw check
   const aiKw = extractKw(aiText);
   const catKw = catAttrs.power_kw ?? extractKw(catSpec) ?? extractKw(catArticle.description);
   if (aiKw !== null && catKw !== null) {
@@ -79,10 +79,10 @@ function attrScore(aiArticle: AIArticle, catArticle: CatalogueArticle): { score:
     if (Math.abs(aiKw - catKw) <= 5) return { score: 0.5, hardBlock: false };
     return { score: 0, hardBlock: true };
   } else if (aiKw !== null && catKw === null) {
-    return { score: 0, hardBlock: true }; // AI wants kW, catalogue item doesn't have it
+    return { score: 0, hardBlock: true };
   }
 
-  // capacity_l
+  // 2. capacity_l check
   const aiL = extractLitres(aiText);
   const catL = catAttrs.capacity_l ?? extractLitres(catSpec) ?? extractLitres(catArticle.description);
   if (aiL !== null && catL !== null) {
@@ -93,16 +93,41 @@ function attrScore(aiArticle: AIArticle, catArticle: CatalogueArticle): { score:
     return { score: 0, hardBlock: true };
   }
 
-  // diameter_mm
+  // 3. diameter_mm check - STRICTOR TOLERANCE (plumbing standards)
   const aiD = extractDiameterMm(aiText);
   const catD = catAttrs.diameter_mm ?? extractDiameterMm(catSpec) ?? extractDiameterMm(catArticle.description);
   if (aiD !== null && catD !== null) {
-    if (Math.abs(aiD - catD) < 2) return { score: 1.0, hardBlock: false };
-    if (Math.abs(aiD - catD) < 5) return { score: 0.3, hardBlock: false };
+    // If difference is small (e.g. 15mm vs 16mm, which is standard for multicouche vs copper), allow.
+    // Otherwise if they are distinct sizes (16 vs 20, 20 vs 26, 28 vs 76 etc.), hard block!
+    if (Math.abs(aiD - catD) <= 1.5) {
+      return { score: 1.0, hardBlock: false };
+    }
     return { score: 0, hardBlock: true };
   } else if (aiD !== null && catD === null) {
-    // A bit more lenient with diameters, sometimes catalogs just say "1/2" instead of mm
-    return { score: 0, hardBlock: false }; 
+    // If the AI explicitly requires a diameter but the catalog article has none, it's a mismatch
+    return { score: 0, hardBlock: true };
+  }
+
+  // 4. Material Match - STRICT MATERIAL CHECKS
+  const aiTextLower = aiText.toLowerCase();
+  const catTextLower = (catArticle.description || "").toLowerCase();
+
+  const getNormalizedMaterial = (text: string) => {
+    if (text.includes("multicouche") || text.includes("multi")) return "multicouche";
+    if (text.includes("inox") || text.includes("acier in") || text.includes("edelstahl")) return "inox";
+    if (text.includes("cuivre") || text.includes("copper") || text.includes("kupfer")) return "cuivre";
+    if (text.includes("pe-hd") || text.includes("pe") || text.includes("polyethylene") || text.includes("evacuation")) return "pe";
+    if (text.includes("bronze") || text.includes("rotguss") || text.includes("laiton") || text.includes("messing")) return "bronze";
+    if (text.includes("acier") || text.includes("steel") || text.includes("stahl")) return "acier";
+    return null;
+  };
+
+  const aiMatNorm = getNormalizedMaterial(aiTextLower);
+  const catMatNorm = catAttrs.material ? getNormalizedMaterial(catAttrs.material.toLowerCase()) : getNormalizedMaterial(catTextLower);
+
+  if (aiMatNorm && catMatNorm && aiMatNorm !== catMatNorm) {
+    // Hard block if materials are different (e.g., steel pipe vs multilayer pipe)
+    return { score: 0, hardBlock: true };
   }
 
   return { score: 0.5, hardBlock: false };
