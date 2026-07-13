@@ -166,7 +166,8 @@ async function extractWithGemini(description: string): Promise<AIExtractionResul
   
   for (let i = 0; i < keys.length; i++) {
     try {
-      const res = await withTimeout(extractWithGeminiKey(description, keys[i], i), 25000, `Timeout after 25s (Key ${i + 1})`);
+      // Increased timeout to 120s since Vercel limit is bypassed by keep-alive stream
+      const res = await withTimeout(extractWithGeminiKey(description, keys[i], i), 120000, `Timeout after 120s (Key ${i + 1})`);
       badGeminiKeys.delete(keys[i]);
       return res;
     } catch (err) {
@@ -241,8 +242,8 @@ async function extractWithNvidiaNim(description: string): Promise<AIExtractionRe
   const errors: string[] = [];
   for (let i = 0; i < keys.length; i++) {
     try {
-      // Increased timeout to 30s (Vercel Edge limit) because NIM can take time to wake up if asleep
-      const res = await withTimeout(extractWithNvidiaNimKey(description, keys[i], i), 30000, `Timeout after 30s (Nvidia Key ${i + 1})`);
+      // Increased timeout to 120s since Vercel limit is bypassed by keep-alive stream
+      const res = await withTimeout(extractWithNvidiaNimKey(description, keys[i], i), 120000, `Timeout after 120s (Nvidia Key ${i + 1})`);
       badNvidiaKeys.delete(keys[i]);
       return res;
     } catch (err) {
@@ -356,7 +357,8 @@ async function extractWithOpenRouter(description: string): Promise<AIExtractionR
   const errors: string[] = [];
   for (let i = 0; i < keys.length; i++) {
     try {
-      const res = await withTimeout(extractWithOpenRouterKey(description, keys[i], i), 15000, `Timeout after 15s (OpenRouter Key ${i + 1})`);
+      // Increased timeout to 120s since Vercel limit is bypassed by keep-alive stream
+      const res = await withTimeout(extractWithOpenRouterKey(description, keys[i], i), 120000, `Timeout after 120s (OpenRouter Key ${i + 1})`);
       badOpenRouterKeys.delete(keys[i]);
       return res;
     } catch (err) {
