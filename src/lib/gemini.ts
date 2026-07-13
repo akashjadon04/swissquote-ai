@@ -72,7 +72,7 @@ FORMAT DE SORTIE JSON STRICT :
   "exclusions_suggested": ["string"]
 }
 
-IMPORTANT: Limitez-vous à un maximum de 30 articles.`; un maximum de 30 articles pour garantir un traitement ultra-rapide.`;
+IMPORTANT: Limitez-vous à un maximum de 30 articles.`;
 
 // -------------------------------------------------------------------------
 // Gemini - Primary
