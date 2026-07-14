@@ -100,7 +100,67 @@ function isAccessory(desc: string): boolean {
   return STARTING_ACCESSORY_KEYWORDS.some(kw => clean.startsWith(kw));
 }
 
-function attrScore(aiArticle: AIArticle, catArticle: CatalogueArticle): { score: number; hardBlock: boolean } {
+// Synonym Map for French plumbing and HVAC terms
+const SYNONYMS: Record<string, string[]> = {
+  vasque: ["lavabo", "lave-mains", "lave mains", "cuvette", "bac"],
+  lavabo: ["vasque", "lave-mains", "lave mains", "bac"],
+  wc: ["toilette", "cuvette", "water-closet", "water closet", "bâti-support", "duofix"],
+  toilette: ["wc", "cuvette", "water-closet", "water closet"],
+  boiler: ["chauffe-eau", "chauffe eau", "cumulus", "ballon", "ecs"],
+  "chauffe-eau": ["boiler", "cumulus", "ballon", "ecs"],
+  "colonne": ["mitigeur", "melangeur", "mélangeur", "thermostatique", "douchette", "douche"],
+  mitigeur: ["melangeur", "mélangeur", "robinet", "vanne"],
+  evacuation: ["siphon", "bonde", "silent", "pe", "écoulement", "ecoulement", "vidage"],
+  siphon: ["evacuation", "bonde", "vidage"],
+  tube: ["tuyau", "conduite", "canalisation"],
+  tuyau: ["tube", "conduite", "canalisation"],
+  raccord: ["manchon", "coude", "te", "tee", "sertir", "presser"],
+  manchon: ["raccord", "manchon", "union", "transition"],
+  coude: ["raccord", "sertir", "presser"],
+  plaque: ["poussoir", "commande", "declenchement", "déclenchement"],
+  commande: ["plaque", "poussoir", "declenchement", "déclenchement"],
+  abattant: ["siege", "lunette", "couvercle"],
+  bâti: ["duofix", "bati-support", "bâti-support", "support", "cadre", "chassis"],
+  "bâti-support": ["duofix", "bati-support", "support", "cadre", "chassis"],
+  duofix: ["bati-support", "bâti-support", "support", "cadre", "chassis"]
+};
+
+export interface JobContext {
+  isOutdoor: boolean;
+  isBathroom: boolean;
+  isHeating: boolean;
+  isWaterHeater: boolean;
+  isResidential: boolean;
+  isIndustrial: boolean;
+}
+
+export function detectJobContext(text: string): JobContext {
+  const normalized = text.toLowerCase()
+    .normalize("NFD").replace(/[\u0300-\u036f]/g, "");
+
+  const isOutdoor = /\b(jardin|exterieur|arrosage|piscine|garden|outdoor)\b/i.test(normalized);
+  const isBathroom = /\b(salle de bain|bain|lavabo|vasque|wc|toilette|douche|baignoire|bidet|sanitaire|lavabos|douches)\b/i.test(normalized);
+  const isHeating = /\b(pompe a chaleur|chaudiere|chauffage|radiateur|pac|nourrice|collecteur|circulateur|pompe de circulation|chaufferie|vannes d'arret|vannes de zone)\b/i.test(normalized);
+  const isWaterHeater = /\b(boiler|chauffe-eau|ecs|cumulus|ballon d'eau chaude|ballon ecs)\b/i.test(normalized);
+
+  const isIndustrial = /\b(industriel|collectif|commercial|immeuble|grand|puissance|tertiaire|300\s*kw|300kw|dn\s*(?:50|65|80|100|125|150))\b/i.test(normalized);
+  const isResidential = !isIndustrial && (
+    /\b(residentiel|domestique|appartement|maison|villa|logement|individuel|unifamiliale)\b/i.test(normalized) ||
+    isBathroom ||
+    !/\b(industriel|commercial|collectif)\b/i.test(normalized)
+  );
+
+  return {
+    isOutdoor,
+    isBathroom,
+    isHeating,
+    isWaterHeater,
+    isResidential,
+    isIndustrial: !isResidential
+  };
+}
+
+function attrScore(aiArticle: AIArticle, catArticle: CatalogueArticle, jobContext: JobContext): { score: number; hardBlock: boolean } {
   const catAttrs = catArticle.attributes || {};
   const aiText = aiArticle.label;
   const catSpec = catArticle.specification;
@@ -223,13 +283,13 @@ function attrScore(aiArticle: AIArticle, catArticle: CatalogueArticle): { score:
   const isOutdoorInCatalog = hasWord(fullCatText, outdoorKeywords);
   const isOutdoorRequested = hasWord(fullAiText, outdoorKeywords);
 
-  if (isOutdoorInCatalog && !isOutdoorRequested) {
+  if (isOutdoorInCatalog && !isOutdoorRequested && !jobContext.isOutdoor) {
     return { score: 0, hardBlock: true };
   }
 
   const indoorOnlyKeywords = ['duofix', 'bati-support', 'bâti-support', 'bati support', 'encastre', 'encastré', 'suspendu', 'cuvette suspendue'];
   const isIndoorOnlyInCatalog = hasWord(fullCatText, indoorOnlyKeywords) || catCat === 'geberit_duofix';
-  if (isOutdoorRequested && isIndoorOnlyInCatalog && !isOutdoorInCatalog) {
+  if ((isOutdoorRequested || jobContext.isOutdoor) && isIndoorOnlyInCatalog && !isOutdoorInCatalog) {
     return { score: 0, hardBlock: true };
   }
 
@@ -262,18 +322,35 @@ function attrScore(aiArticle: AIArticle, catArticle: CatalogueArticle): { score:
     return { score: 0, hardBlock: true };
   }
 
-  // 7.6 Residential vs Industrial Scale Filter
-  const isResidentialRequested = hasWord(fullAiText, ['residentiel', 'résidentiel', 'maison', 'appartement', 'villa', 'logement', 'domestique', 'individuel']);
-  const isIndustrialRequested = hasWord(fullAiText, ['industriel', 'commercial', 'collectif', 'immeuble', 'grand', 'puissance', 'tertiaire']);
+  // Job-Specific Exclusions (Heating vs Bathroom)
+  if (jobContext.isHeating && !jobContext.isBathroom) {
+    if (catCat === 'geberit_duofix' || catCat === 'appareil_sanitaire') {
+      const isSanitaryExplicitlyRequested = hasWord(fullAiText, ['wc', 'lavabo', 'vasque', 'douche', 'baignoire', 'toilette', 'duofix', 'bati-support']);
+      if (!isSanitaryExplicitlyRequested) {
+        return { score: 0, hardBlock: true };
+      }
+    }
+  }
 
+  if (jobContext.isBathroom && !jobContext.isHeating && !jobContext.isWaterHeater) {
+    if (catCat === 'chaudiere' || catCat === 'circulateur') {
+      const isHeatingExplicitlyRequested = hasWord(fullAiText, ['chaudiere', 'chaudière', 'pompe a chaleur', 'pompe à chaleur', 'circulateur', 'pompe de circulation']);
+      if (!isHeatingExplicitlyRequested) {
+        return { score: 0, hardBlock: true };
+      }
+    }
+  }
+
+  // 7.6 Residential vs Industrial Scale Filter using Job Context
   const isCatalogIndustrial = hasWord(fullCatText, ['industriel', 'commercial', 'collectif', 'immeuble', 'tertiaire', 'puissance élevée', 'grande puissance', 'bride']) || 
                              (fullCatText.includes('kw') && (extractKw(fullCatText) || 0) > 50) ||
-                             (fullCatText.includes('dn') && (extractDiameterMm(fullCatText) || 0) >= 50 && hasWord(fullCatText, ['disconnecteur', 'vanne', 'filtre', 'compteur']));
+                             (fullCatText.includes('dn') && (extractDiameterMm(fullCatText) || 0) >= 50 && hasWord(fullCatText, ['disconnecteur', 'vanne', 'filtre', 'compteur'])) ||
+                             (catPrice > 1500 && hasWord(fullCatText, ['chaudiere', 'chaudière', 'boiler', 'fitting', 'raccord', 'liaison']));
 
-  if (isResidentialRequested && isCatalogIndustrial) {
+  if (jobContext.isResidential && isCatalogIndustrial) {
     return { score: 0, hardBlock: true };
   }
-  if (catPrice > 2000 && isCatalogIndustrial && !isIndustrialRequested) {
+  if (catPrice > 2000 && isCatalogIndustrial && !jobContext.isIndustrial) {
     return { score: 0, hardBlock: true };
   }
 
@@ -358,27 +435,50 @@ function customSearch(query: string, catalogue: CatalogueArticle[]) {
     let matchCount = 0;
     let keyNounMatched = false;
 
-    // Word matches (exact or fuzzy typo match)
+    // Word matches (exact or fuzzy typo match or synonym match)
     for (let j = 0; j < queryWords.length; j++) {
       const word = queryWords[j];
+      let wordMatched = false;
+
+      // 1. Exact/Substring match
       if (fullText.includes(word)) {
+        wordMatched = true;
+      } 
+      // 2. Direct synonym match
+      else {
+        const syns = SYNONYMS[word];
+        if (syns && syns.some(syn => fullText.includes(syn))) {
+          wordMatched = true;
+        }
+      }
+
+      // 3. Fuzzy match fallback
+      if (!wordMatched && word.length >= 4) {
+        const catWords = fullText.split(/[\s,.'"\(\)\-\/]+/);
+        for (const catWord of catWords) {
+          if (catWord.length >= 4 && Math.abs(catWord.length - word.length) <= 1 && levenshtein(word, catWord) <= 1) {
+            wordMatched = true;
+            break;
+          }
+          
+          // Fuzzy synonym match
+          const syns = SYNONYMS[word];
+          if (syns) {
+            for (const syn of syns) {
+              if (catWord.length >= 4 && Math.abs(catWord.length - syn.length) <= 1 && levenshtein(syn, catWord) <= 1) {
+                wordMatched = true;
+                break;
+              }
+            }
+          }
+          if (wordMatched) break;
+        }
+      }
+
+      if (wordMatched) {
         matchCount++;
         if (KEY_NOUNS.has(word)) {
           keyNounMatched = true;
-        }
-      } else {
-        // Levenshtein fuzzy match for words of length >= 4
-        if (word.length >= 4) {
-          const catWords = fullText.split(/[\s,.'"\(\)\-\/]+/);
-          for (const catWord of catWords) {
-            if (catWord.length >= 4 && Math.abs(catWord.length - word.length) <= 1 && levenshtein(word, catWord) <= 1) {
-              matchCount++;
-              if (KEY_NOUNS.has(word) || KEY_NOUNS.has(catWord)) {
-                keyNounMatched = true;
-              }
-              break;
-            }
-          }
         }
       }
     }
@@ -414,12 +514,17 @@ function customSearch(query: string, catalogue: CatalogueArticle[]) {
 export function matchArticles(
   aiArticles: AIArticle[],
   catalogue: CatalogueArticle[],
-  preferredSupplier?: SupplierCode
+  preferredSupplier?: SupplierCode,
+  fullDescriptionText?: string
 ): MatchResult {
   const rawMatched: MatchedArticle[] = [];
   const rawMissing: MissingArticle[] = [];
 
   const activeCatalogue = catalogue.filter(a => a.active);
+
+  // Detect job context from fullDescriptionText or aiArticles
+  const jobText = (fullDescriptionText || "") + " " + aiArticles.map(a => a.label).join(" ");
+  const jobContext = detectJobContext(jobText);
 
   for (const aiArticle of aiArticles) {
     if (aiArticle.needs_site_measurement) {
@@ -450,7 +555,7 @@ export function matchArticles(
         const supplierBoost = preferredSupplier && article.supplier?.code === preferredSupplier ? 0.15 : 0;
         
         // Attribute check
-        const attr = attrScore(aiArticle, article);
+        const attr = attrScore(aiArticle, article, jobContext);
         if (attr.hardBlock) return { article, score: -1 };
 
         // Final blended score

@@ -92,7 +92,7 @@ export async function POST(request: NextRequest) {
 
           // Step 2: Catalogue Matching only matched references get prices
           const allArticles: AIArticle[] = aiResult.extraction.sections.flatMap(s => s.articles);
-          const matchResult = matchArticles(allArticles, CATALOGUE_ADAPTED, preferredSupplier);
+          const matchResult = matchArticles(allArticles, CATALOGUE_ADAPTED, preferredSupplier, description);
 
           // Step 3: Labour Calculation based on matched items with real categories
           const itemsForLabour = [
