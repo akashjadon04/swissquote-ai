@@ -255,7 +255,7 @@ export default function NewQuotePage() {
 
       // 🔄 Heavy computation: build sections + financials non-blocking
       startTransition(() => {
-        const canton = quote.canton || 'Genève';
+        const canton = useQuoteStore.getState().quote.canton || 'Genève';
         const labourRate = CANTONS[canton] || 120;
         const interventionType = "Installation/Rénovation";
         const labourHours = typeof calculatedLabourHours === 'number' ? calculatedLabourHours : 0;

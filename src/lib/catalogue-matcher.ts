@@ -76,6 +76,8 @@ function attrScore(aiArticle: AIArticle, catArticle: CatalogueArticle): { score:
   const catAttrs = catArticle.attributes || {};
   const aiText = aiArticle.label;
   const catSpec = catArticle.specification;
+  const catCat = catArticle.category;
+  const catPrice = catArticle.unit_price ?? (catArticle as any).base_price ?? 0;
 
   // 1. power_kw check
   const aiKw = extractKw(aiText);
@@ -160,7 +162,6 @@ function attrScore(aiArticle: AIArticle, catArticle: CatalogueArticle): { score:
   };
 
   const aiCat = aiArticle.category;
-  const catCat = catArticle.category;
   if (aiCat && catCat) {
     const allowed = CATEGORY_COMPATIBILITY[aiCat];
     if (allowed && !allowed.includes(catCat) && catCat !== 'autre' && aiCat !== 'autre') {
@@ -197,7 +198,7 @@ function attrScore(aiArticle: AIArticle, catArticle: CatalogueArticle): { score:
     return { score: 0, hardBlock: true };
   }
 
-  // 7. Outdoor / Garden check
+  // 7. Outdoor / Garden check (Bidirectional)
   const outdoorKeywords = ['jardin', 'exterieur', 'extérieur', 'garden', 'outdoor', 'arrosage', 'arroser', 'piscine'];
   const isOutdoorInCatalog = hasWord(fullCatText, outdoorKeywords);
   const isOutdoorRequested = hasWord(fullAiText, outdoorKeywords);
@@ -206,12 +207,60 @@ function attrScore(aiArticle: AIArticle, catArticle: CatalogueArticle): { score:
     return { score: 0, hardBlock: true };
   }
 
+  const indoorOnlyKeywords = ['duofix', 'bati-support', 'bâti-support', 'bati support', 'encastre', 'encastré', 'suspendu', 'cuvette suspendue'];
+  const isIndoorOnlyInCatalog = hasWord(fullCatText, indoorOnlyKeywords) || catCat === 'geberit_duofix';
+  if (isOutdoorRequested && isIndoorOnlyInCatalog && !isOutdoorInCatalog) {
+    return { score: 0, hardBlock: true };
+  }
+
+  // 7.5 Product-type Coherence / Mutual Exclusion
+  const isWcRequested = hasWord(fullAiText, ['wc', 'toilette', 'cuvette']);
+  const isDuofixRequested = hasWord(fullAiText, ['duofix', 'bati-support', 'bâti-support', 'cadre', 'chassis', 'support']);
+  const isShowerColumnRequested = hasWord(fullAiText, ['colonne de douche', 'colonne douche']);
+  const isMixerRequested = hasWord(fullAiText, ['mitigeur', 'melangeur', 'mélangeur']);
+  const isHeatPumpRequested = hasWord(fullAiText, ['pompe a chaleur', 'pompe à chaleur', 'pac']);
+  const isBoilerRequested = hasWord(fullAiText, ['chaudiere', 'chaudière']);
+
+  const isCatalogDuofix = hasWord(fullCatText, ['duofix', 'bati-support', 'bâti-support', 'cadre', 'chassis', 'support']) || catCat === 'geberit_duofix';
+  const isCatalogShowerColumn = hasWord(fullCatText, ['colonne de douche', 'colonne douche']);
+  const isCatalogWc = hasWord(fullCatText, ['wc', 'toilette', 'cuvette']) && !isCatalogDuofix;
+  const isCatalogMixer = hasWord(fullCatText, ['mitigeur', 'melangeur', 'mélangeur']);
+  const isCatalogHeatPump = hasWord(fullCatText, ['pompe a chaleur', 'pompe à chaleur', 'pac']);
+  const isCatalogBoiler = hasWord(fullCatText, ['chaudiere', 'chaudière']) && !isCatalogHeatPump;
+
+  if (isShowerColumnRequested && isCatalogDuofix) {
+    return { score: 0, hardBlock: true };
+  }
+  if (isWcRequested && !isDuofixRequested && isCatalogDuofix && !isCatalogWc) {
+    return { score: 0, hardBlock: true };
+  }
+  if (isMixerRequested && (isCatalogDuofix || isCatalogBoiler || isCatalogHeatPump)) {
+    return { score: 0, hardBlock: true };
+  }
+  if (isHeatPumpRequested && isCatalogBoiler && !isCatalogHeatPump) {
+    return { score: 0, hardBlock: true };
+  }
+
+  // 7.6 Residential vs Industrial Scale Filter
+  const isResidentialRequested = hasWord(fullAiText, ['residentiel', 'résidentiel', 'maison', 'appartement', 'villa', 'logement', 'domestique', 'individuel']);
+  const isIndustrialRequested = hasWord(fullAiText, ['industriel', 'commercial', 'collectif', 'immeuble', 'grand', 'puissance', 'tertiaire']);
+
+  const isCatalogIndustrial = hasWord(fullCatText, ['industriel', 'commercial', 'collectif', 'immeuble', 'tertiaire', 'puissance élevée', 'grande puissance', 'bride']) || 
+                             (fullCatText.includes('kw') && (extractKw(fullCatText) || 0) > 50) ||
+                             (fullCatText.includes('dn') && (extractDiameterMm(fullCatText) || 0) >= 50 && hasWord(fullCatText, ['disconnecteur', 'vanne', 'filtre', 'compteur']));
+
+  if (isResidentialRequested && isCatalogIndustrial) {
+    return { score: 0, hardBlock: true };
+  }
+  if (catPrice > 2000 && isCatalogIndustrial && !isIndustrialRequested) {
+    return { score: 0, hardBlock: true };
+  }
+
   // 8. Luxury / High-End / Shower Toilets check
   const luxuryKeywords = ['aquaclean', 'mera', 'comfort', 'sela', 'tuma', 'sensowash', 'wc-aufsatz', 'wc complet geberit aquaclean'];
   const isLuxuryInCatalog = hasWord(fullCatText, luxuryKeywords);
   const isLuxuryRequested = hasWord(fullAiText, luxuryKeywords);
 
-  const catPrice = catArticle.unit_price ?? (catArticle as any).base_price ?? 0;
   const isExpensive = catPrice > 1500 && (catCat === 'geberit_duofix' || catCat === 'appareil_sanitaire' || catCat === 'robinetterie');
 
   if ((isLuxuryInCatalog || isExpensive) && !isLuxuryRequested) {
@@ -248,12 +297,21 @@ function attrScore(aiArticle: AIArticle, catArticle: CatalogueArticle): { score:
 }
 
 function customSearch(query: string, catalogue: CatalogueArticle[]) {
-  const queryWords = query.toLowerCase()
+  const STOP_WORDS = new Set(['de', 'du', 'des', 'le', 'la', 'les', 'un', 'une', 'pour', 'avec', 'sans', 'sur', 'en', 'et', 'ou', 'a', 'au', 'd', 'l', 's', 'c', 'qu', 'ce', 'ces']);
+  
+  const rawWords = query.toLowerCase()
     .normalize("NFD").replace(/[\u0300-\u036f]/g, "")
     .split(/[\s,.'"\(\)\-\/]+/)
     .filter(w => w.length > 1);
 
+  const queryWords = rawWords.filter(w => !STOP_WORDS.has(w));
   if (queryWords.length === 0) return [];
+
+  // Generate bigrams
+  const queryBigrams: string[] = [];
+  for (let i = 0; i < rawWords.length - 1; i++) {
+    queryBigrams.push(`${rawWords[i]} ${rawWords[i+1]}`);
+  }
 
   const results: { item: CatalogueArticle; score: number }[] = [];
   for (let i = 0; i < catalogue.length; i++) {
@@ -261,17 +319,28 @@ function customSearch(query: string, catalogue: CatalogueArticle[]) {
     const desc = (item.description || "").toLowerCase().normalize("NFD").replace(/[\u0300-\u036f]/g, "");
     const spec = (item.specification || "").toLowerCase().normalize("NFD").replace(/[\u0300-\u036f]/g, "");
     const ref = (item.reference || "").toLowerCase();
+    const fullText = `${desc} ${spec} ${ref}`;
 
-    let matchCount = 0;
+    let matchScore = 0;
+    // Word matches
     for (let j = 0; j < queryWords.length; j++) {
       const word = queryWords[j];
-      if (desc.includes(word) || spec.includes(word) || ref.includes(word)) {
-        matchCount++;
+      if (fullText.includes(word)) {
+        matchScore += 1.0;
       }
     }
 
-    if (matchCount > 0) {
-      results.push({ item, score: matchCount / queryWords.length });
+    // Bigram matches (heavy boost)
+    for (let j = 0; j < queryBigrams.length; j++) {
+      const bigram = queryBigrams[j];
+      if (fullText.includes(bigram)) {
+        matchScore += 3.0; // 3x weight for phrase matching
+      }
+    }
+
+    const maxPossibleScore = queryWords.length + (queryBigrams.length * 3.0);
+    if (matchScore > 0 && maxPossibleScore > 0) {
+      results.push({ item, score: matchScore / maxPossibleScore });
     }
   }
   return results.sort((a, b) => b.score - a.score);
