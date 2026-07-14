@@ -228,7 +228,8 @@ function attrScore(aiArticle: AIArticle, catArticle: CatalogueArticle): { score:
   const isCatalogHeatPump = hasWord(fullCatText, ['pompe a chaleur', 'pompe à chaleur', 'pac']);
   const isCatalogBoiler = hasWord(fullCatText, ['chaudiere', 'chaudière']) && !isCatalogHeatPump;
 
-  if (isShowerColumnRequested && isCatalogDuofix) {
+  const isShowerRequested = hasWord(fullAiText, ['douche']);
+  if (isShowerRequested && !isDuofixRequested && isCatalogDuofix) {
     return { score: 0, hardBlock: true };
   }
   if (isWcRequested && !isDuofixRequested && isCatalogDuofix && !isCatalogWc) {
