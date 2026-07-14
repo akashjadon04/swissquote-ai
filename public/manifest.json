@@ -1,6 +1,6 @@
 {
-  "name": "SwissQuote AI",
-  "short_name": "SwissQuote",
+  "name": "AstraQuote",
+  "short_name": "AstraQuote",
   "description": "Plateforme IA de création de devis pour les entreprises de plomberie suisses",
   "start_url": "/",
   "display": "standalone",

@@ -7,6 +7,7 @@ import { Sidebar, MobileBottomNav, TopBar } from '@/components/layout/Sidebar';
 import { useAppStore, useQuoteStore } from '@/store';
 import { AIProcessingState, Button, AnimatedSaveButton, PremiumPDFTemplate } from '@/components/ui';
 import type { AIExtractionResult, MatchResult, CatalogueArticle, Quote } from '@/types/database.types';
+import { CANTONS } from '@/types/database.types';
 import { formatAmount, formatCHF } from '@/lib/financial';
 import { useTranslation } from '@/lib/i18n';
 
@@ -224,14 +225,8 @@ export default function NewQuotePage() {
 
       // 🔄 Heavy computation: build sections + financials non-blocking
       startTransition(() => {
-        // Labour rate by canton (Geneva standard 145 CHF/h)
-        const LABOUR_RATES: Record<string, number> = {
-          'Genève': 145, 'Vaud': 120, 'Valais': 120, 'Fribourg': 120,
-          'Neuchâtel': 120, 'Jura': 120, 'Berne': 120, 'Zürich': 120,
-          'Bâle': 120, 'Lucerne': 120,
-        };
         const canton = quote.canton || 'Genève';
-        const labourRate = LABOUR_RATES[canton] || 120;
+        const labourRate = CANTONS[canton] || 120;
         const interventionType = "Installation/Rénovation";
         const labourHours = typeof calculatedLabourHours === 'number' ? calculatedLabourHours : 0;
         const marginPct = 15;
@@ -683,14 +678,10 @@ export default function NewQuotePage() {
                         className="clay-input"
                         value={quote.canton}
                         onChange={(e) => {
-                          const cantonRates: Record<string, number> = {
-                            'Genève': 145, 'Vaud': 120, 'Valais': 120,
-                            'Fribourg': 120, 'Neuchâtel': 120, 'Jura': 120,
-                            'Berne': 120, 'Zürich': 120, 'Bâle': 120, 'Lucerne': 120,
-                          };
-                          const newRate = cantonRates[e.target.value] || 120;
+                          const newCanton = e.target.value;
+                          const newRate = CANTONS[newCanton] || 120;
                           setQuote({
-                            canton: e.target.value,
+                            canton: newCanton,
                             financials: {
                               ...quote.financials,
                               labourRate: newRate,
@@ -699,7 +690,7 @@ export default function NewQuotePage() {
                           useQuoteStore.getState().recalculateFinancials();
                         }}
                       >
-                        {Object.keys({ 'Genève': 145, 'Vaud': 120, 'Valais': 120, 'Fribourg': 120, 'Neuchâtel': 120, 'Jura': 120, 'Berne': 120, 'Zürich': 120, 'Bâle': 120, 'Lucerne': 120 }).map(c => (
+                        {Object.keys(CANTONS).map(c => (
                             <option key={c} value={c}>{c}</option>
                           ))}
                       </select>

@@ -19,15 +19,15 @@ export const QUOTE_STATUS_LABELS: Record<QuoteStatus, string> = {
 };
 
 export const CANTONS: Record<string, number> = {
-  'GenÃ¨ve': 145,
+  'Genève': 145,
   'Vaud': 138,
   'Valais': 130,
   'Fribourg': 132,
-  'NeuchÃ¢tel': 135,
+  'Neuchâtel': 135,
   'Jura': 128,
   'Berne': 140,
-  'ZÃ¼rich': 148,
-  'BÃ¢le': 142,
+  'Zürich': 148,
+  'Bâle': 142,
   'Lucerne': 136,
 };
 

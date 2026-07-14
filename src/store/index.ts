@@ -1,4 +1,4 @@
-﻿import { create } from 'zustand';
+import { create } from 'zustand';
 import { devtools } from 'zustand/middleware';
 import { calculateLabourFromItems } from '@/lib/financial';
 
@@ -185,7 +185,7 @@ const DEFAULT_QUOTE: QuoteData = {
   aiConfidence: null,
   sections: [],
   financials: { ...DEFAULT_FINANCIALS },
-  canton: 'GenÃ¨ve',
+  canton: 'Genève',
   preferredSupplier: 'NSB',
   companyName: 'AstraQuote (by Green AI Groupe)',
   companyAddress: '',

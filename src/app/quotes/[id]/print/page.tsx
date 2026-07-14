@@ -154,8 +154,12 @@ export default function PrintQuotePage({ params }: { params: { id: string } }) {
                         {item.specification && <div className="text-xs text-gray-500 mt-1">{item.specification}</div>}
                       </td>
                       <td className="py-3 text-right align-top">{item.quantity} {item.unit}</td>
-                      <td className="py-3 text-right align-top text-gray-600">{item.unit_price ? formatCHF(item.unit_price) : '-'}</td>
-                      <td className="py-3 text-right align-top font-medium">{item.line_total ? formatCHF(item.line_total) : '-'}</td>
+                      <td className="py-3 text-right align-top text-gray-600 font-medium italic">
+                        {item.unit_price ? formatCHF(item.unit_price) : 'Sur demande'}
+                      </td>
+                      <td className="py-3 text-right align-top font-medium italic">
+                        {item.line_total ? formatCHF(item.line_total) : '—'}
+                      </td>
                     </tr>
                   ))}
                 </tbody>

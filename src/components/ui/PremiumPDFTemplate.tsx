@@ -9,7 +9,8 @@ interface PremiumPDFTemplateProps {
 }
 
 export const PremiumPDFTemplate = React.forwardRef<HTMLDivElement, PremiumPDFTemplateProps>(({ quote }, ref) => {
-  const { t } = useTranslation();
+  const { t, locale } = useTranslation();
+  const onRequestText = locale === 'en' ? 'On request' : 'Sur demande';
   const currentDate = new Date().toLocaleDateString('fr-CH', { year: 'numeric', month: 'long', day: 'numeric' });
 
   return (
@@ -95,7 +96,7 @@ export const PremiumPDFTemplate = React.forwardRef<HTMLDivElement, PremiumPDFTem
                 fontSize: '24px',
                 boxShadow: '0 4px 15px rgba(37, 99, 235, 0.3)'
               }}>
-                SQ
+                AQ
               </div>
               <h1 style={{ margin: 0, fontSize: '32px', fontWeight: 900, color: '#0F172A', letterSpacing: '-1px' }}>
                 AstraQuote <span style={{ color: '#3B82F6' }}>AI</span>
@@ -242,11 +243,11 @@ export const PremiumPDFTemplate = React.forwardRef<HTMLDivElement, PremiumPDFTem
                           {item.quantity} {item.unit}
                         </span>
                       </td>
-                      <td style={{ padding: '10px 8px', fontSize: '12px', color: '#475569', textAlign: 'right', verticalAlign: 'top' }}>
-                        {formatCHF(item.unitPrice || 0)}
+                      <td style={{ padding: '10px 8px', fontSize: '12px', color: '#475569', textAlign: 'right', verticalAlign: 'top', fontStyle: (item.isMissing || (item as any).is_missing) ? 'italic' : 'normal' }}>
+                        {(item.isMissing || (item as any).is_missing) ? onRequestText : formatCHF(item.unitPrice || 0)}
                       </td>
-                      <td style={{ padding: '10px 8px', fontSize: '12px', color: '#0F172A', fontWeight: 700, textAlign: 'right', verticalAlign: 'top' }}>
-                        {formatCHF(item.lineTotal || 0)}
+                      <td style={{ padding: '10px 8px', fontSize: '12px', color: '#0F172A', fontWeight: 700, textAlign: 'right', verticalAlign: 'top', fontStyle: (item.isMissing || (item as any).is_missing) ? 'italic' : 'normal' }}>
+                        {(item.isMissing || (item as any).is_missing) ? '—' : formatCHF(item.lineTotal || 0)}
                       </td>
                     </tr>
                   ))}

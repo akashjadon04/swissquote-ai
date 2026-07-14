@@ -1,6 +1,6 @@
 import { test, expect } from '@playwright/test';
 
-test.describe('SwissQuote AI E2E Tests', () => {
+test.describe('AstraQuote E2E Tests', () => {
   // Use a longer timeout for the whole test file in case of cold starts
   test.setTimeout(60000);
 

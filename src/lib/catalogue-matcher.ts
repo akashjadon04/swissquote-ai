@@ -129,6 +129,14 @@ function attrScore(aiArticle: AIArticle, catArticle: CatalogueArticle): { score:
     return { score: 0, hardBlock: true };
   }
 
+  // 5. Category Match - STRICTOR CATEGORY CHECKS
+  const aiCat = aiArticle.category;
+  const catCat = catArticle.category;
+  if (aiCat && catCat && aiCat !== "autre" && catCat !== "autre" && aiCat !== catCat) {
+    // If the categories are explicitly different, block it!
+    return { score: 0, hardBlock: true };
+  }
+
   return { score: 0.5, hardBlock: false };
 }
 
