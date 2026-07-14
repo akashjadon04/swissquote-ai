@@ -1,25 +1,5 @@
 import { GoogleGenerativeAI } from '@google/generative-ai';
 import type { AIExtractionResult } from '@/types/database.types';
-import { MOCK_CATALOGUE } from '@/lib/catalogueData';
-
-// Generate a compact catalogue summary for the AI prompt (max 2 items per category to keep token count extremely small for sub-second responses)
-const categoryCounts: Record<string, number> = {};
-const COMPACT_CATALOGUE_ITEMS = MOCK_CATALOGUE.filter(item => {
-  const cat = item.category;
-  if (!cat) return false;
-  if (!categoryCounts[cat]) {
-    categoryCounts[cat] = 0;
-  }
-  if (categoryCounts[cat] < 2) {
-    categoryCounts[cat]++;
-    return true;
-  }
-  return false;
-});
-
-const CATALOGUE_SUMMARY = COMPACT_CATALOGUE_ITEMS.map(item => 
-  `- [${item.category}] ${item.name} ${(item.attributes as any)?.diameter_mm ? (item.attributes as any).diameter_mm + 'mm' : ''} ${(item.attributes as any)?.power_kw ? (item.attributes as any).power_kw + 'kW' : ''} ${(item.attributes as any)?.capacity_l ? (item.attributes as any).capacity_l + 'L' : ''}`
-).join('\n');
 
 // =========================================================================
 // AstraQuote (by Green AI Groupe) - Extraction Engine
@@ -39,32 +19,45 @@ const CATALOGUE_SUMMARY = COMPACT_CATALOGUE_ITEMS.map(item =>
 // decomposing it into a structured list of materials needed - nothing more.
 // -------------------------------------------------------------------------
 const SYSTEM_PROMPT = `Tu es un expert en plomberie suisse (normes SIA/SICC).
-Rôle: Décomposer une description de travaux en articles techniques précis en faisant correspondre chaque élément au catalogue de référence.
+Rôle: Analyser une description de travaux de plomberie/sanitaire et en extraire tous les articles matériels et prestations requis sous forme de liste structurée.
 
-RÈGLES STRICTES DE L'IA (EXIGÉES PAR LE CLIENT) :
-1. LE RÔLE DE L'AI est d'identifier chaque élément de travail décrit et de le faire correspondre à la référence correcte du catalogue, en utilisant UNIQUEMENT le catalogue fourni.
-2. ZÉRO FABRICATION, JAMAIS : Ne JAMAIS inventer de référence ni de prix. Si aucune correspondance fiable n'est trouvée, laissez la désignation telle quelle et le système la marquera "A vérifier".
-3. RESPECT DES ATTRIBUTS TECHNIQUES : Le matériau et le diamètre doivent correspondre strictement (ex: multicouche ≠ acier inox; Ø 16-26 domestique ≠ Ø 76 industriel).
-4. QUANTITÉS LITTÉRALES : Les quantités doivent être prises littéralement à partir du texte. Par exemple, "nourrice 8 sorties" = 1 pièce, pas une quantité de 8. Ne multipliez jamais les quantités en fonction des chiffres apparaissant dans la description technique.
-5. AUCUN DOUBLON : Pas de lignes d'articles dupliquées.
-6. PAS DE TARIFICATION NI DE MAIN D'ŒUVRE : L'IA ne doit jamais toucher aux prix, aux heures de travail, aux marges ou à la TVA — ceux-ci restent déterministes et sont calculés séparément.
-7. STRUCTURE PAR SECTION : La sortie doit être structurée par section (sanitaire / évacuation / prestations). Chaque ligne doit contenir : une référence, une description, une quantité, une unité, et le prix (laissés vides/gérés par le système).
-8. EN CAS DE DOUTE, signalez le problème (needs_site_measurement: true) au lieu de deviner.
-
---- EXTRAIT DU CATALOGUE DE RÉFÉRENCE ---
-\${CATALOGUE_SUMMARY}
-----------------------------------------
+RÈGLES STRICTES DE L'IA :
+1. EXTRACTION LITTÉRALE : Identifie chaque équipement, matériau ou service mentionné dans le texte de l'utilisateur. Utilise des termes descriptifs clairs basés sur le texte de l'utilisateur (ex: "Tuyau multicouche Ø 20 mm", "Bâtir support WC", "Lavabo meuble", "Vanne d'arrêt").
+2. AUCUNE ESTIMATION DE PRIX NI RÉFÉRENCE : Ne génère jamais de prix, de numéro de référence d'article, de code de fournisseur ou de taux horaire. Laisse le système local s'en charger.
+3. QUANTITÉS PRÉCISES ET LITTÉRALES : Extrais les quantités exactes mentionnées dans le texte. Si non spécifié, utilise 1. Ne multiplie jamais les quantités par des chiffres techniques.
+4. CLASSIFICATION DES CATÉGORIES : Associe chaque article extrait à l'une des catégories suivantes uniquement :
+   - tuyau_inox (tubes/tuyaux en acier inoxydable)
+   - evacuation_pe (tuyaux d'évacuation PE)
+   - coude_sertir (coudes, tés, raccords à sertir/presser)
+   - manchon (manchons, raccords d'union, pièces de transition)
+   - collier (colliers de fixation, colliers de serrage)
+   - isolation (isolation thermique pour tuyaux)
+   - robinetterie (mitigeurs, colonnes de douche, robinets, vannes, soupapes)
+   - chaudiere (chaudières, pompes à chaleur)
+   - ballon_ecs (ballons d'eau chaude, préparateurs)
+   - circulateur (pompes de circulation, circulateurs)
+   - radiateur (radiateurs, corps de chauffe)
+   - nourrice (nourrices de distribution, collecteurs)
+   - geberit_duofix (bâtis-supports pour WC/lavabo suspendus)
+   - geberit_evacuation (systèmes d'évacuation Geberit Silent/Pluvia)
+   - appareil_sanitaire (cuvettes WC, lavabos, meubles sous-lavabo, baignoires, receveurs de douche)
+   - depose (démontage ou dépose d'anciens équipements)
+   - transition (raccords de transition)
+   - reducteur (réducteurs de pression, manchons de réduction)
+   - autre (tout autre article ne rentrant pas dans les catégories ci-dessus)
+5. AUCUN DOUBLON : Fusionne les articles identiques de la même section en additionnant leurs quantités.
+6. PRESTATIONS DE MAIN D'ŒUVRE : Si le texte mentionne du temps de travail (ex: "2 jours pour 1 monteur", "10 heures de travail"), crée un article de catégorie "autre" avec l'unité "h" (heures) ou "forfait" en reprenant la description littérale du travail.
 
 FORMAT DE SORTIE JSON STRICT :
 {
   "sections": [{
-    "section_label": "string (ex: Sanitaire, Évacuation, ou Prestations)",
-    "description_verbatim": "string",
+    "section_label": "Sanitaire ou Évacuation ou Prestations",
+    "description_verbatim": "description de la section",
     "articles": [{
-      "label": "string (Désignation claire décrivant le matériau, diamètre et type, ex: Tuyau inox Optipress Ø 28 mm)",
-      "category": "string (doit être l'une de: tuyau_inox, evacuation_pe, coude_sertir, manchon, collier, isolation, robinetterie, chaudiere, ballon_ecs, circulateur, radiateur, nourrice, geberit_duofix, geberit_evacuation, appareil_sanitaire, depose, transition, reducteur, autre)",
+      "label": "Désignation descriptive de l'article (ex: Lavabo meuble Geberit, Tuyau inox Ø 28 mm)",
+      "category": "l'une des catégories listées ci-dessus",
       "quantity": number,
-      "unit": "string (doit être pce, m, h, ou forfait)",
+      "unit": "pce ou m ou h ou forfait",
       "needs_site_measurement": false,
       "is_estimate": false
     }]
@@ -142,7 +135,7 @@ async function extractWithGeminiKey(
   const model = genAI.getGenerativeModel({
     model: modelName,
     generationConfig: {
-      temperature: 0.1,
+      temperature: 0,
       topP: 0.95,
       maxOutputTokens: 8192,
       responseMimeType: 'application/json',
@@ -248,7 +241,7 @@ async function extractWithNvidiaNimKey(
             { role: 'system', content: SYSTEM_PROMPT },
             { role: 'user', content: description },
           ],
-          temperature: 0.1,
+          temperature: 0,
           max_tokens: 8192
         }),
       });
@@ -370,7 +363,7 @@ async function extractWithOpenRouterKey(
             { role: 'system', content: SYSTEM_PROMPT },
             { role: 'user', content: description },
           ],
-          temperature: 0.1,
+          temperature: 0,
           max_tokens: 8192,
         }),
       });
@@ -492,7 +485,7 @@ async function extractWithGroqKey(
             { role: 'system', content: SYSTEM_PROMPT },
             { role: 'user', content: description },
           ],
-          temperature: 0.1,
+          temperature: 0,
           response_format: { type: "json_object" }, // Groq supports JSON mode
         }),
       });
