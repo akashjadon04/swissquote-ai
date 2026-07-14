@@ -37,6 +37,36 @@ const DEFAULT_CATEGORY_PRICES: Record<string, number> = {
 // Wizard Steps
 // Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬
 
+function getCorrectSectionName(articleLabel: string, category: string | null, unit: string | null): 'Sanitaire' | 'Évacuation' | 'Services' {
+  const labelLower = articleLabel.toLowerCase().normalize("NFD").replace(/[\u0300-\u036f]/g, "");
+  const catLower = (category || '').toLowerCase();
+  
+  // 1. Services / Labor checks
+  const serviceKeywords = [
+    'depose', 'demontage', 'evacuation de l\'ancien', 'evacuation de l ancien',
+    'pose de', 'fourniture et pose', 'raccordement', 'main d\'oeuvre', 'main-d\'oeuvre', 'main-doeuvre', 'deplacement',
+    'percage', 'coupe', 'mise en service', 'mise en eau', 'installation', 'heures', 'travail', 'nettoyage',
+    'forfait de', 'forfait de pose'
+  ];
+  
+  const isService = serviceKeywords.some(kw => labelLower.includes(kw)) || unit === 'h' || unit === 'forfait';
+  if (isService) {
+    return 'Services';
+  }
+
+  // 2. Drainage / Évacuation checks
+  const drainageKeywords = [
+    'evacuation', 'drainage', 'chute', 'pe', 'pe-hd', 'silent', 'siphon', 'bonde', 'geopress', 'pe hd'
+  ];
+  const isDrainage = drainageKeywords.some(kw => labelLower.includes(kw)) || catLower === 'geberit_evacuation' || catLower === 'evacuation_pe';
+  if (isDrainage) {
+    return 'Évacuation';
+  }
+
+  // 3. Default to Sanitaire for all physical products (since they are plumbing/sanitary items)
+  return 'Sanitaire';
+}
+
 export default function NewQuotePage() {
   const { setIsMobile, isMobile } = useAppStore();
   const { quote, setQuote, resetQuote, wizardStep, setWizardStep, isProcessing, setProcessing, setProcessingError, processingError } = useQuoteStore();
@@ -240,72 +270,120 @@ export default function NewQuotePage() {
         }
 
         // Build sections with matched items
-        const sections = extraction.sections.map(
-          (section: { section_label: string; description_verbatim: string; articles: Array<{ label: string; material_type: string; dimension: string | null; quantity: number | null; unit: string | null; confidence: number }> }, sIdx: number) => ({
-            id: `section-${sIdx}`,
-            sectionCode: String(25 + sIdx),
-            sectionLabel: section.section_label,
-            description: section.description_verbatim,
-            items: section.articles.map((article, aIdx: number) => {
-              // ⚡ O(1) lookup instead of O(n) find()
-              const matched = matchedByLabel.get(article.label);
+        const sanitaireItems: any[] = [];
+        const drainageItems: any[] = [];
+        const servicesItems: any[] = [];
 
-              // RULE: Ensure quantity is at least 1 if not defined or set to 0 initially
-              const safeQty = (article.quantity === null || article.quantity === undefined || article.quantity === 0) ? 1 : article.quantity;
-
-              if (matched) {
-                const cat = matched.catalogueArticle as CatalogueArticle;
-                const unitPrice = cat.unit_price; // Only catalogue prices. Never AI-estimated.
-                return {
-                  id: `item-${sIdx}-${aIdx}`,
-                  reference: cat.reference,
-                  description: cat.description,
-                  specification: cat.specification ?? null,
-                  quantity: safeQty,
-                  unit: cat.unit,
-                  unitPrice,
-                  lineTotal: safeQty > 0 && unitPrice ? unitPrice * safeQty : null,
-                  supplierCode: matched.supplierCode,
-                  supplierName: null,
-                  aiLabel: article.label,
-                  aiConfidence: matched.matchConfidence,
-                  isMissing: false,
-                  is_estimate: false,
-                  isManuallyAdded: false,
-                  matchedTextStart: null,
-                  matchedTextEnd: null,
-                  sortOrder: aIdx,
-                };
-              }
-
-              // No catalogue match — DO NOT invent prices or references (per client instructions)
-              const category = ((article as any).category || 'autre').toLowerCase();
-              const fallbackUnit = article.unit || (['tuyau_inox', 'evacuation_pe', 'isolation'].includes(category) ? 'm' : 'pce');
-
-              return {
-                id: `item-${sIdx}-${aIdx}`,
-                reference: "", // Empty reference
-                description: article.label,
-                specification: article.dimension ?? null,
-                quantity: safeQty,
-                unit: fallbackUnit,
-                unitPrice: null, // Empty price
-                lineTotal: null, // Empty line total
-                supplierCode: 'SRV',
-                supplierName: 'AstraQuote',
-                aiLabel: article.label,
-                aiConfidence: article.confidence || 0.8,
-                isMissing: true, // Mark as missing for manual review!
-                is_estimate: false,
-                isManuallyAdded: false,
-                matchedTextStart: null,
-                matchedTextEnd: null,
-                sortOrder: aIdx,
-              };
-            }),
-            sortOrder: sIdx,
-          })
+        // Flatten all articles from all extraction sections
+        const allArticles = extraction.sections.flatMap((s: any) =>
+          s.articles.map((a: any) => ({ ...a, sectionDescription: s.description_verbatim }))
         );
+
+        allArticles.forEach((article: any, idx: number) => {
+          const matched = matchedByLabel.get(article.label);
+          const safeQty = (article.quantity === null || article.quantity === undefined || article.quantity === 0) ? 1 : article.quantity;
+          
+          let itemObj;
+          if (matched) {
+            const cat = matched.catalogueArticle as CatalogueArticle;
+            const unitPrice = cat.unit_price;
+            itemObj = {
+              id: `item-${idx}`,
+              reference: cat.reference,
+              description: cat.description,
+              specification: cat.specification ?? null,
+              quantity: safeQty,
+              unit: cat.unit,
+              unitPrice,
+              lineTotal: safeQty > 0 && unitPrice ? unitPrice * safeQty : null,
+              supplierCode: matched.supplierCode,
+              supplierName: null,
+              aiLabel: article.label,
+              aiConfidence: matched.matchConfidence,
+              isMissing: false,
+              is_estimate: false,
+              isManuallyAdded: false,
+              matchedTextStart: null,
+              matchedTextEnd: null,
+              sortOrder: idx,
+            };
+          } else {
+            const category = ((article as any).category || 'autre').toLowerCase();
+            const fallbackUnit = article.unit || (['tuyau_inox', 'evacuation_pe', 'isolation'].includes(category) ? 'm' : 'pce');
+            itemObj = {
+              id: `item-${idx}`,
+              reference: "",
+              description: article.label,
+              specification: article.dimension ?? null,
+              quantity: safeQty,
+              unit: fallbackUnit,
+              unitPrice: null,
+              lineTotal: null,
+              supplierCode: 'SRV',
+              supplierName: 'AstraQuote',
+              aiLabel: article.label,
+              aiConfidence: article.confidence || 0.8,
+              isMissing: true,
+              is_estimate: false,
+              isManuallyAdded: false,
+              matchedTextStart: null,
+              matchedTextEnd: null,
+              sortOrder: idx,
+            };
+          }
+
+          const category = matched ? matched.catalogueArticle.category : (article.category || 'autre');
+          const unit = matched ? matched.catalogueArticle.unit : article.unit;
+          const sectionName = getCorrectSectionName(article.label, category, unit);
+
+          if (sectionName === 'Services') {
+            servicesItems.push(itemObj);
+          } else if (sectionName === 'Évacuation') {
+            drainageItems.push(itemObj);
+          } else {
+            sanitaireItems.push(itemObj);
+          }
+        });
+
+        // Build non-empty sections list
+        const sections: any[] = [];
+        let sectionIdx = 0;
+        
+        if (sanitaireItems.length > 0) {
+          sections.push({
+            id: `section-${sectionIdx}`,
+            sectionCode: String(25 + sectionIdx),
+            sectionLabel: 'Sanitaire',
+            description: 'Travaux de plomberie et installation sanitaire',
+            items: sanitaireItems.map((item, idx) => ({ ...item, id: `item-${sectionIdx}-${idx}`, sortOrder: idx })),
+            sortOrder: sectionIdx,
+          });
+          sectionIdx++;
+        }
+        
+        if (drainageItems.length > 0) {
+          sections.push({
+            id: `section-${sectionIdx}`,
+            sectionCode: String(25 + sectionIdx),
+            sectionLabel: 'Évacuation',
+            description: 'Collecteurs, canalisations et évacuation des eaux usées',
+            items: drainageItems.map((item, idx) => ({ ...item, id: `item-${sectionIdx}-${idx}`, sortOrder: idx })),
+            sortOrder: sectionIdx,
+          });
+          sectionIdx++;
+        }
+        
+        if (servicesItems.length > 0) {
+          sections.push({
+            id: `section-${sectionIdx}`,
+            sectionCode: String(25 + sectionIdx),
+            sectionLabel: 'Services',
+            description: 'Main-d\'œuvre, pose, raccordements et prestations de service',
+            items: servicesItems.map((item, idx) => ({ ...item, id: `item-${sectionIdx}-${idx}`, sortOrder: idx })),
+            sortOrder: sectionIdx,
+          });
+          sectionIdx++;
+        }
 
         // Financials: only from matched items that have a real catalogue price
         const allItems = sections.flatMap((s: { items: Array<{ isMissing: boolean; lineTotal: number | null }> }) => s.items);

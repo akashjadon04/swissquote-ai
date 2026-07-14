@@ -224,3 +224,70 @@ export const DEFAULT_CONFIG: QuoteConfig = {
   canton: 'Genève',
 };
 
+/**
+ * Parse labor duration and installers from description.
+ * Standard workday: 8 hours.
+ * Returns calculated hours or null if not found.
+ */
+export function parseLabourFromDescription(description: string): number | null {
+  const text = description.toLowerCase().normalize("NFD").replace(/[\u0300-\u036f]/g, "");
+  
+  const numberMap: Record<string, number> = {
+    'un': 1, 'une': 1, 'deux': 2, 'trois': 3, 'quatre': 4, 'cinq': 5,
+    'six': 6, 'sept': 7, 'huit': 8, 'neuf': 9, 'dix': 10,
+    '1': 1, '2': 2, '3': 3, '4': 4, '5': 5, '6': 6, '7': 7, '8': 8, '9': 9, '10': 10
+  };
+
+  const getNumber = (word: string): number | null => {
+    const clean = word.replace(',', '.');
+    return numberMap[clean] ?? (parseFloat(clean) || null);
+  };
+
+  // Find "X jours/jour/j" - supporting decimal digits like 1.5 or 0,5
+  const dayRegex = /(?:(\d+(?:[.,]\d+)?|un|une|deux|trois|quatre|cinq|six|sept|huit|neuf|dix)\s*(?:jours?|j(?:\s|$|\.)))/gi;
+  // Find "Y monteurs/installateurs/ouvriers/personnes/techniciens" - supporting decimals if any
+  const workerRegex = /(?:(\d+(?:[.,]\d+)?|un|une|deux|trois|quatre|cinq|six|sept|huit|neuf|dix)\s*(?:monteurs?|installateurs?|ouvriers?|techniciens?|personnes?|hommes?|poseurs?))/gi;
+
+  let days: number | null = null;
+  let workers = 1;
+
+  let dayMatch;
+  dayRegex.lastIndex = 0;
+  while ((dayMatch = dayRegex.exec(text)) !== null) {
+    const val = getNumber(dayMatch[1]);
+    if (val !== null) {
+      days = val;
+      break;
+    }
+  }
+
+  let workerMatch;
+  workerRegex.lastIndex = 0;
+  while ((workerMatch = workerRegex.exec(text)) !== null) {
+    const val = getNumber(workerMatch[1]);
+    if (val !== null) {
+      workers = val;
+      break;
+    }
+  }
+
+  if (days !== null) {
+    return days * 8 * workers;
+  }
+
+  // Fallback to searching for "X heures" or "X h"
+  const hourRegex = /(?:(\d+(?:[.,]\d+)?|un|une|deux|trois|quatre|cinq|six|sept|huit|neuf|dix)\s*(?:heures?|h(?:\s|$|\.)))/gi;
+  let hours: number | null = null;
+  let hourMatch;
+  hourRegex.lastIndex = 0;
+  while ((hourMatch = hourRegex.exec(text)) !== null) {
+    const val = getNumber(hourMatch[1]);
+    if (val !== null) {
+      hours = val;
+      break;
+    }
+  }
+
+  return hours;
+}
+

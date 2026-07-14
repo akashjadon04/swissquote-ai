@@ -65,6 +65,13 @@ function extractLitres(text: string | null | undefined): number | null {
   return m ? parseFloat(m[1].replace(",", ".")) : null;
 }
 
+function hasWord(text: string, words: string[]): boolean {
+  const normalized = text.toLowerCase()
+    .normalize("NFD").replace(/[\u0300-\u036f]/g, "")
+    .split(/[\s,.'"\(\)\-\/]+/);
+  return words.some(w => normalized.includes(w));
+}
+
 function attrScore(aiArticle: AIArticle, catArticle: CatalogueArticle): { score: number; hardBlock: boolean } {
   const catAttrs = catArticle.attributes || {};
   const aiText = aiArticle.label;
@@ -129,15 +136,115 @@ function attrScore(aiArticle: AIArticle, catArticle: CatalogueArticle): { score:
     return { score: 0, hardBlock: true };
   }
 
-  // 5. Category Match - STRICTOR CATEGORY CHECKS
+  // 5. Category Match - STRICTOR CATEGORY CHECKS WITH COMPATIBILITY MAP
+  const CATEGORY_COMPATIBILITY: Record<string, string[]> = {
+    tuyau_inox: ['tuyau_inox'],
+    evacuation_pe: ['evacuation_pe', 'geberit_evacuation', 'autre'],
+    coude_sertir: ['coude_sertir', 'manchon', 'autre'],
+    manchon: ['manchon', 'coude_sertir', 'autre'],
+    collier: ['collier', 'autre'],
+    isolation: ['isolation', 'autre'],
+    robinetterie: ['robinetterie', 'autre'],
+    geberit_duofix: ['geberit_duofix', 'autre', 'robinetterie'],
+    geberit_evacuation: ['geberit_evacuation', 'evacuation_pe', 'autre'],
+    appareil_sanitaire: ['appareil_sanitaire', 'geberit_duofix', 'robinetterie', 'autre'],
+    transition: ['manchon', 'coude_sertir', 'robinetterie', 'autre'],
+    reducteur: ['robinetterie', 'autre'],
+    nourrice: ['robinetterie', 'autre'],
+    chaudiere: ['autre', 'robinetterie'],
+    ballon_ecs: ['autre', 'robinetterie'],
+    circulateur: ['autre', 'robinetterie'],
+    radiateur: ['autre', 'robinetterie'],
+    depose: ['autre'],
+    autre: ['autre', 'tuyau_inox', 'evacuation_pe', 'coude_sertir', 'manchon', 'collier', 'isolation', 'robinetterie', 'geberit_duofix', 'geberit_evacuation'],
+  };
+
   const aiCat = aiArticle.category;
   const catCat = catArticle.category;
-  if (aiCat && catCat && aiCat !== "autre" && catCat !== "autre" && aiCat !== catCat) {
-    // If the categories are explicitly different, block it!
+  if (aiCat && catCat) {
+    const allowed = CATEGORY_COMPATIBILITY[aiCat];
+    if (allowed && !allowed.includes(catCat) && catCat !== 'autre' && aiCat !== 'autre') {
+      return { score: 0, hardBlock: true };
+    }
+  }
+
+  const catDesc = (catArticle.description || "").toLowerCase();
+  const catName = ((catArticle as any).name || "").toLowerCase();
+  const fullCatText = catDesc + " " + catName;
+  const fullAiText = aiText.toLowerCase();
+
+  // 6. Spare Parts / Accessories check
+  const accessoryKeywords = [
+    'poignee', 'poignée', 'levier', 'bouton', 'rosace', 'insert',
+    'stabilisation', 'fixation', 'raccordement', 'finition', 'facade', 'façade',
+    'transformation', 'amortisseur', 'cache', 'rechange', 'cartouche', 'flexible',
+    'plaque de commande', 'plaque de declenchement', 'plaque de déclenchement', 'plaque de design',
+    'boite de construction', 'boîte de construction', 'element de finition', 'élément de finition',
+    'couvercle', 'vidage', 'siphon', 'receveur', 'paroi', 'traverse', 'montage',
+    'plaque', 'boitier', 'boîtier', 'raccord', 'kit', 'set', 'mamelon', 'stabilisateur',
+    'barre', 'tringle', 'tige', 'joint', 'vis', 'écrou', 'ecrou', 'rondelle', 'colle',
+    'manchon', 'coude', 'rallonge', 'caniveau', 'caniveaux', 'ecoulement', 'écoulement',
+    'garniture', 'flexible', 'panneau', 'adaptateur', 'pied', 'pieds', 'patin', 'patins',
+    'stylo', 'trappe', 'porte', 'boite', 'boîte', 'support', 'butee', 'butée',
+    'axe', 'axes', 'soupape', 'membrane', 'pile', 'cable', 'câble', 'transformateur',
+    'alimentation', 'tube', 'tuyau', 'flexible'
+  ];
+
+  const isAccessoryInCatalog = hasWord(fullCatText, accessoryKeywords);
+  const isAccessoryRequested = hasWord(fullAiText, accessoryKeywords);
+
+  if (isAccessoryInCatalog && !isAccessoryRequested) {
     return { score: 0, hardBlock: true };
   }
 
-  return { score: 0.5, hardBlock: false };
+  // 7. Outdoor / Garden check
+  const outdoorKeywords = ['jardin', 'exterieur', 'extérieur', 'garden', 'outdoor', 'arrosage', 'arroser', 'piscine'];
+  const isOutdoorInCatalog = hasWord(fullCatText, outdoorKeywords);
+  const isOutdoorRequested = hasWord(fullAiText, outdoorKeywords);
+
+  if (isOutdoorInCatalog && !isOutdoorRequested) {
+    return { score: 0, hardBlock: true };
+  }
+
+  // 8. Luxury / High-End / Shower Toilets check
+  const luxuryKeywords = ['aquaclean', 'mera', 'comfort', 'sela', 'tuma', 'sensowash', 'wc-aufsatz', 'wc complet geberit aquaclean'];
+  const isLuxuryInCatalog = hasWord(fullCatText, luxuryKeywords);
+  const isLuxuryRequested = hasWord(fullAiText, luxuryKeywords);
+
+  const catPrice = catArticle.unit_price ?? (catArticle as any).base_price ?? 0;
+  const isExpensive = catPrice > 1500 && (catCat === 'geberit_duofix' || catCat === 'appareil_sanitaire' || catCat === 'robinetterie');
+
+  if ((isLuxuryInCatalog || isExpensive) && !isLuxuryRequested) {
+    return { score: 0, hardBlock: true };
+  }
+
+  // 9. Product Group Match Boost (e.g. both are WCs, mixers, pipes, siphons)
+  const productGroups = [
+    ['wc', 'toilette', 'cuvette', 'water-closet'],
+    ['mitigeur', 'robinet', 'melangeur', 'mélangeur', 'valv', 'soupape'],
+    ['tuyau', 'tube', 'conduit', 'canalisation'],
+    ['siphon', 'vidage', 'evacuation', 'écoulement', 'ecoulement'],
+    ['lavabo', 'vasque', 'lave-mains', 'lave mains']
+  ];
+
+  let hasProductGroupMatch = false;
+  for (const group of productGroups) {
+    const aiHas = group.some(word => fullAiText.includes(word));
+    const catHas = group.some(word => fullCatText.includes(word));
+    if (aiHas && catHas) {
+      hasProductGroupMatch = true;
+      break;
+    }
+  }
+
+  // 10. Exact Phrase Match Boost
+  const queryNorm = fullAiText.normalize("NFD").replace(/[\u0300-\u036f]/g, "").trim();
+  const catNorm = fullCatText.normalize("NFD").replace(/[\u0300-\u036f]/g, "").trim();
+  if (catNorm.includes(queryNorm)) {
+    return { score: 1.0, hardBlock: false };
+  }
+
+  return { score: hasProductGroupMatch ? 0.65 : 0.5, hardBlock: false };
 }
 
 function customSearch(query: string, catalogue: CatalogueArticle[]) {
@@ -175,14 +282,14 @@ export function matchArticles(
   catalogue: CatalogueArticle[],
   preferredSupplier?: SupplierCode
 ): MatchResult {
-  const matched: MatchedArticle[] = [];
-  const missing: MissingArticle[] = [];
+  const rawMatched: MatchedArticle[] = [];
+  const rawMissing: MissingArticle[] = [];
 
   const activeCatalogue = catalogue.filter(a => a.active);
 
   for (const aiArticle of aiArticles) {
     if (aiArticle.needs_site_measurement) {
-      missing.push({
+      rawMissing.push({
         aiArticle,
         reason: `Information manquante, mesure sur site requise pour "${aiArticle.label}"`,
         suggestions: []
@@ -216,19 +323,19 @@ export function matchArticles(
         const finalScore = (result.score * 0.6) + (attr.score * 0.4) + supplierBoost;
         return { article, score: finalScore };
       })
-      .filter(c => c.score >= 0.40) // Threshold for a good match
+      .filter(c => c.score >= 0.55) // Threshold for a good match
       .sort((a, b) => b.score - a.score);
 
     if (scoredCandidates.length > 0) {
       const topMatch = scoredCandidates[0];
-      matched.push({
+      rawMatched.push({
         aiArticle,
         catalogueArticle: topMatch.article,
         matchConfidence: Math.min(topMatch.score, 0.99), // Cap at 99%
         supplierCode: (topMatch.article.supplier?.code as SupplierCode) || 'GZ',
       });
     } else {
-      missing.push({
+      rawMissing.push({
         aiArticle,
         reason: `Aucune correspondance trouvée avec les bons attributs pour "${aiArticle.label}".`,
         suggestions: searchResults.slice(0, 3).map(r => r.item), // Top 3 raw semantic matches
@@ -236,7 +343,52 @@ export function matchArticles(
     }
   }
 
-  const totalArticles = aiArticles.length;
+  // --- DUPLICATE MERGING LOGIC ---
+  const matched: MatchedArticle[] = [];
+  const seenRefs = new Map<string, MatchedArticle>();
+
+  for (const m of rawMatched) {
+    const ref = m.catalogueArticle.reference;
+    if (seenRefs.has(ref)) {
+      const existing = seenRefs.get(ref)!;
+      if (existing.aiArticle.quantity !== null && m.aiArticle.quantity !== null) {
+        existing.aiArticle.quantity += m.aiArticle.quantity;
+      } else if (m.aiArticle.quantity !== null) {
+        existing.aiArticle.quantity = m.aiArticle.quantity;
+      }
+    } else {
+      const cloned = {
+        ...m,
+        aiArticle: { ...m.aiArticle }
+      };
+      seenRefs.set(ref, cloned);
+      matched.push(cloned);
+    }
+  }
+
+  const missing: MissingArticle[] = [];
+  const seenMissingLabels = new Map<string, MissingArticle>();
+
+  for (const m of rawMissing) {
+    const label = m.aiArticle.label.toLowerCase().trim();
+    if (seenMissingLabels.has(label)) {
+      const existing = seenMissingLabels.get(label)!;
+      if (existing.aiArticle.quantity !== null && m.aiArticle.quantity !== null) {
+        existing.aiArticle.quantity += m.aiArticle.quantity;
+      } else if (m.aiArticle.quantity !== null) {
+        existing.aiArticle.quantity = m.aiArticle.quantity;
+      }
+    } else {
+      const cloned = {
+        ...m,
+        aiArticle: { ...m.aiArticle }
+      };
+      seenMissingLabels.set(label, cloned);
+      missing.push(cloned);
+    }
+  }
+
+  const totalArticles = matched.length + missing.length;
   const matchRate = totalArticles > 0 ? matched.length / totalArticles : 0;
   return { matched, missing, totalArticles, matchRate };
 }

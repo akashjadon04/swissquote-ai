@@ -1,7 +1,7 @@
 import { NextRequest, NextResponse } from "next/server";
 import { extractFromDescription } from "@/lib/gemini";
 import { matchArticles } from "@/lib/catalogue-matcher";
-import { calculateLabourFromItems, complexityMultiplier } from "@/lib/financial";
+import { calculateLabourFromItems, complexityMultiplier, parseLabourFromDescription } from "@/lib/financial";
 import type { AIArticle, CatalogueArticle, SupplierCode } from "@/types/database.types";
 import { MOCK_CATALOGUE } from "@/lib/catalogueData";
 
@@ -112,7 +112,8 @@ export async function POST(request: NextRequest) {
 
           const complexity = "standard"; // Default since AI is simplified
           const multiplier = complexityMultiplier(complexity);
-          const calculatedLabourHours = calculateLabourFromItems(itemsForLabour, multiplier);
+          const explicitLabour = parseLabourFromDescription(description.trim());
+          const calculatedLabourHours = explicitLabour !== null ? explicitLabour : calculateLabourFromItems(itemsForLabour, multiplier);
           
           const totalValidItems = allArticles.length;
           const matchedCount = matchResult.matched.length;
