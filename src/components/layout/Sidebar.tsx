@@ -286,9 +286,9 @@ function SidebarContent({ pathname, collapsed = false }: { pathname: string; col
         <LanguageToggle />
         {!collapsed && (
           <div className="sidebar-user">
-            <div className="user-avatar">AL</div>
+            <div className="user-avatar">AD</div>
             <div className="user-info">
-              <span className="user-name">Alec Landenberg</span>
+              <span className="user-name">Arnaud Dimec</span>
               <span className="user-role">Technicien</span>
             </div>
           </div>

@@ -35,7 +35,7 @@ export function GreetingWidget() {
           <Icon size={40} />
         </div>
         <div>
-          <h1 className="text-3xl font-black text-text-primary capitalize-first">{greeting}, Alec !</h1>
+          <h1 className="text-3xl font-black text-text-primary capitalize-first">{greeting}, Arnaud !</h1>
           <p className="text-text-muted font-medium mt-1 capitalize-first text-lg">{dateStr}</p>
         </div>
       </div>

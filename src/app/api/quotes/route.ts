@@ -153,7 +153,7 @@ export async function POST(request: NextRequest) {
         company_address: companyInfo?.address
           ? `${companyInfo.address}, ${companyInfo.postal} ${companyInfo.city}`
           : null,
-        technician_name: body.technicianName || 'Alec Landenberg',
+        technician_name: body.technicianName || 'Arnaud Dimec',
       })
       .select()
       .single();
