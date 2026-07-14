@@ -72,6 +72,34 @@ function hasWord(text: string, words: string[]): boolean {
   return words.some(w => normalized.includes(w));
 }
 
+function normalizeText(text: string): string {
+  return text.toLowerCase()
+    .normalize("NFD").replace(/[\u0300-\u036f]/g, "") // remove accents
+    .replace(/(\d+)\s*[xX]\s*(\d+)/g, '$1 x $2') // separate dimensions like 60x40 -> 60 x 40
+    .replace(/(\d+)([a-zA-Z]+)/g, '$1 $2') // separate 60cm -> 60 cm
+    .replace(/([a-zA-Z]+)(\d+)/g, '$1 $2'); // separate DN40 -> DN 40
+}
+
+const STARTING_ACCESSORY_KEYWORDS = [
+  'plaque', 'bouton', 'vis', 'joint', 'kit', 'set', 'axe', 'tige', 'poignee', 'poignée', 
+  'tiroir', 'façade', 'facade', 'porte-serviettes', 'porte serviette', 'siphon', 'reglette', 'réglette', 
+  'miroir', 'garniture', 'pied', 'pieds', 'patin', 'patins', 'support', 'traverse', 'raccordement', 
+  'raccord', 'manchon', 'coude', 'rallonge', 'cache', 'couvercle', 'boite', 'boîte', 'boitier', 'boîtier', 
+  'flexible', 'mamelon', 'adaptateur', 'soupape', 'membrane', 'pile', 'cable', 'câble', 'transformateur', 
+  'alimentation', 'aérateur', 'aerateur', 'mousseur', 'régulateur', 'regulateur', 'bloc', 'valve', 
+  'electrovanne', 'électrovanne', 'cartouche', 'corps', 'stabilisateur', 'stabilisation', 'abattant',
+  'equerre', 'équerre', 'vis de cache', 'regulateur jet'
+];
+
+function isAccessory(desc: string): boolean {
+  const clean = desc.toLowerCase()
+    .normalize("NFD").replace(/[\u0300-\u036f]/g, "")
+    .replace(/^geberit\s+/, "")
+    .trim();
+  
+  return STARTING_ACCESSORY_KEYWORDS.some(kw => clean.startsWith(kw));
+}
+
 function attrScore(aiArticle: AIArticle, catArticle: CatalogueArticle): { score: number; hardBlock: boolean } {
   const catAttrs = catArticle.attributes || {};
   const aiText = aiArticle.label;
@@ -146,10 +174,10 @@ function attrScore(aiArticle: AIArticle, catArticle: CatalogueArticle): { score:
     manchon: ['manchon', 'coude_sertir', 'autre'],
     collier: ['collier', 'autre'],
     isolation: ['isolation', 'autre'],
-    robinetterie: ['robinetterie', 'autre'],
-    geberit_duofix: ['geberit_duofix', 'autre', 'robinetterie'],
-    geberit_evacuation: ['geberit_evacuation', 'evacuation_pe', 'autre'],
-    appareil_sanitaire: ['appareil_sanitaire', 'geberit_duofix', 'robinetterie', 'autre'],
+    robinetterie: ['robinetterie', 'autre', 'geberit_evacuation', 'geberit_duofix'],
+    geberit_duofix: ['geberit_duofix', 'autre', 'robinetterie', 'geberit_evacuation', 'appareil_sanitaire'],
+    geberit_evacuation: ['geberit_evacuation', 'evacuation_pe', 'autre', 'geberit_duofix', 'appareil_sanitaire'],
+    appareil_sanitaire: ['appareil_sanitaire', 'geberit_duofix', 'robinetterie', 'autre', 'geberit_evacuation'],
     transition: ['manchon', 'coude_sertir', 'robinetterie', 'autre'],
     reducteur: ['robinetterie', 'autre'],
     nourrice: ['robinetterie', 'autre'],
@@ -158,7 +186,7 @@ function attrScore(aiArticle: AIArticle, catArticle: CatalogueArticle): { score:
     circulateur: ['autre', 'robinetterie'],
     radiateur: ['autre', 'robinetterie'],
     depose: ['autre'],
-    autre: ['autre', 'tuyau_inox', 'evacuation_pe', 'coude_sertir', 'manchon', 'collier', 'isolation', 'robinetterie', 'geberit_duofix', 'geberit_evacuation'],
+    autre: ['autre', 'tuyau_inox', 'evacuation_pe', 'coude_sertir', 'manchon', 'collier', 'isolation', 'robinetterie', 'geberit_duofix', 'geberit_evacuation', 'appareil_sanitaire'],
   };
 
   const aiCat = aiArticle.category;
@@ -174,27 +202,19 @@ function attrScore(aiArticle: AIArticle, catArticle: CatalogueArticle): { score:
   const fullCatText = catDesc + " " + catName;
   const fullAiText = aiText.toLowerCase();
 
-  // 6. Spare Parts / Accessories check
-  const accessoryKeywords = [
-    'poignee', 'poignée', 'levier', 'bouton', 'rosace', 'insert',
-    'stabilisation', 'fixation', 'raccordement', 'finition', 'facade', 'façade',
-    'transformation', 'amortisseur', 'cache', 'rechange', 'cartouche', 'flexible',
-    'plaque de commande', 'plaque de declenchement', 'plaque de déclenchement', 'plaque de design',
-    'boite de construction', 'boîte de construction', 'element de finition', 'élément de finition',
-    'couvercle', 'vidage', 'siphon', 'receveur', 'paroi', 'traverse', 'montage',
-    'plaque', 'boitier', 'boîtier', 'raccord', 'kit', 'set', 'mamelon', 'stabilisateur',
-    'barre', 'tringle', 'tige', 'joint', 'vis', 'écrou', 'ecrou', 'rondelle', 'colle',
-    'manchon', 'coude', 'rallonge', 'caniveau', 'caniveaux', 'ecoulement', 'écoulement',
-    'garniture', 'flexible', 'panneau', 'adaptateur', 'pied', 'pieds', 'patin', 'patins',
-    'stylo', 'trappe', 'porte', 'boite', 'boîte', 'support', 'butee', 'butée',
-    'axe', 'axes', 'soupape', 'membrane', 'pile', 'cable', 'câble', 'transformateur',
-    'alimentation', 'tube', 'tuyau', 'flexible'
-  ];
-
-  const isAccessoryInCatalog = hasWord(fullCatText, accessoryKeywords);
-  const isAccessoryRequested = hasWord(fullAiText, accessoryKeywords);
+  // 6. Spare Parts / Accessories check using starting keywords (avoids false blocking primary items)
+  const isAccessoryInCatalog = isAccessory(catDesc) || isAccessory(catName);
+  const isAccessoryRequested = hasWord(fullAiText, STARTING_ACCESSORY_KEYWORDS);
 
   if (isAccessoryInCatalog && !isAccessoryRequested) {
+    return { score: 0, hardBlock: true };
+  }
+
+  // 6.5 Bambini children line block
+  const isBambiniInCatalog = hasWord(fullCatText, ['bambini']);
+  const isBambiniRequested = hasWord(fullAiText, ['bambini', 'enfant', 'enfants', 'child', 'children']);
+
+  if (isBambiniInCatalog && !isBambiniRequested) {
     return { score: 0, hardBlock: true };
   }
 
@@ -320,28 +340,32 @@ function levenshtein(a: string, b: string): number {
 function customSearch(query: string, catalogue: CatalogueArticle[]) {
   const STOP_WORDS = new Set(['de', 'du', 'des', 'le', 'la', 'les', 'un', 'une', 'pour', 'avec', 'sans', 'sur', 'en', 'et', 'ou', 'a', 'au', 'd', 'l', 's', 'c', 'qu', 'ce', 'ces']);
   
-  const rawWords = query.toLowerCase()
-    .normalize("NFD").replace(/[\u0300-\u036f]/g, "")
-    .split(/[\s,.'"\(\)\-\/]+/)
-    .filter(w => w.length > 1);
-
+  const normQuery = normalizeText(query);
+  const rawWords = normQuery.split(/[\s,.'"\(\)\-\/]+/).filter(w => w.length > 1);
   const queryWords = rawWords.filter(w => !STOP_WORDS.has(w));
   if (queryWords.length === 0) return [];
+
+  const KEY_NOUNS = new Set(['multicouche', 'duofix', 'bati-support', 'bâti-support', 'cuvette', 'mitigeur', 'lavabo', 'boiler', 'douche', 'siphon', 'wc', 'toilette', 'vasque', 'chauffe-eau']);
 
   const results: { item: CatalogueArticle; score: number }[] = [];
   for (let i = 0; i < catalogue.length; i++) {
     const item = catalogue[i];
-    const desc = (item.description || "").toLowerCase().normalize("NFD").replace(/[\u0300-\u036f]/g, "");
-    const spec = (item.specification || "").toLowerCase().normalize("NFD").replace(/[\u0300-\u036f]/g, "");
+    const desc = normalizeText(item.description || "");
+    const spec = normalizeText(item.specification || "");
     const ref = (item.reference || "").toLowerCase();
     const fullText = `${desc} ${spec} ${ref}`;
 
     let matchCount = 0;
+    let keyNounMatched = false;
+
     // Word matches (exact or fuzzy typo match)
     for (let j = 0; j < queryWords.length; j++) {
       const word = queryWords[j];
       if (fullText.includes(word)) {
         matchCount++;
+        if (KEY_NOUNS.has(word)) {
+          keyNounMatched = true;
+        }
       } else {
         // Levenshtein fuzzy match for words of length >= 4
         if (word.length >= 4) {
@@ -349,6 +373,9 @@ function customSearch(query: string, catalogue: CatalogueArticle[]) {
           for (const catWord of catWords) {
             if (catWord.length >= 4 && Math.abs(catWord.length - word.length) <= 1 && levenshtein(word, catWord) <= 1) {
               matchCount++;
+              if (KEY_NOUNS.has(word) || KEY_NOUNS.has(catWord)) {
+                keyNounMatched = true;
+              }
               break;
             }
           }
@@ -368,6 +395,11 @@ function customSearch(query: string, catalogue: CatalogueArticle[]) {
     }
     if (queryWords.length > 1) {
       score += (bigramMatches / (queryWords.length - 1)) * 0.15;
+    }
+
+    // Key noun boost
+    if (keyNounMatched) {
+      score += 0.15;
     }
 
     score = Math.min(score, 1.0);
