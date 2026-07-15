@@ -671,9 +671,12 @@ export default function NewQuotePage() {
                               <td className="col-ref p-4">
                                 <input type="text" className={`neo-input w-24 text-sm font-mono ${!item.reference ? 'border-warning border bg-warning/5' : ''}`} placeholder="Réf..." value={item.reference || ''} onChange={(e) => useQuoteStore.getState().updateItem(sIdx, iIdx, { reference: e.target.value })} />
                               </td>
-                              <td className="col-desc p-4">
+                               <td className="col-desc p-4">
                                 <input type="text" className={`neo-input w-full font-medium ${!item.description ? 'border-danger border-2 bg-danger/5' : ''}`} placeholder="Description..." value={item.description || ''} onChange={(e) => useQuoteStore.getState().updateItem(sIdx, iIdx, { description: e.target.value })} />
-                                </td>
+                                {item.isMissing && (
+                                  <span className="missing-label text-xs text-danger font-semibold bg-danger/20 px-2 py-0.5 rounded-full border border-danger/30 w-fit mt-1 block">Manquant</span>
+                                )}
+                              </td>
                               <td className="col-qty p-4">
                                 <input type="number" className={`neo-input w-20 ${item.quantity === 0 || !item.quantity ? 'border-danger border-2 bg-danger/5 text-danger font-bold' : ''}`} value={item.quantity || ''} placeholder="0" min={0} step={0.1}
                                   onChange={(e) => useQuoteStore.getState().updateItem(sIdx, iIdx, { quantity: parseFloat(e.target.value) || 0 })} />

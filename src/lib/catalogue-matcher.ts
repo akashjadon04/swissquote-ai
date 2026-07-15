@@ -68,7 +68,7 @@ function extractLitres(text: string | null | undefined): number | null {
 function hasWord(text: string, words: string[]): boolean {
   const normalized = text.toLowerCase()
     .normalize("NFD").replace(/[\u0300-\u036f]/g, "")
-    .split(/[\s,.'"\(\)\-\/]+/);
+    .split(/[^a-z0-9]+/);
   return words.some(w => normalized.includes(w));
 }
 
@@ -91,10 +91,10 @@ const STARTING_ACCESSORY_KEYWORDS = [
   'equerre', 'équerre', 'vis de cache', 'regulateur jet', 'barre', 'ecoulement', 'écoulement', 'bride',
   'grille', 'capuchon', 'crochet', 'sangle', 'anneau', 'rosace', 'enjoliveur', 'bague', 'ecrou', 'écrou',
   'indicateur', 'ensemble', 'rohbauset', 'convertisseur', 'passerelle', 'volant', 'excentrique', 'broche',
-  'étrier', 'partie', 'poussoir', 'mécanisme', 'module', 'trappe', 'habillage', 'ouverture', 'unité',
+  'étrier', 'partie', 'poussoir', 'mécanisme', 'trappe', 'habillage', 'ouverture', 'unité',
   'unite', 'clip', 'capot', 'logement', 'verrou', 'protection', 'languette', 'presseur', 'disque',
   'recouvrement', 'actionneur', 'batterie', 'interbloc', 'insert', 'tête', 'pièce', 'bol', 'boulon',
-  'rail', 'douille', 'piece', 'rabot', 'outil', 'lame', 'machine', 'levier', 'materiel', 'matériel', 'racloir', 'appareil'
+  'rail', 'douille', 'piece', 'rabot', 'outil', 'lame', 'machine', 'levier', 'materiel', 'matériel', 'racloir', 'appareil', 'cadre', 'scie', 'etagere', 'étagère', 'coupe-tube', 'cle', 'clé', 'gabarit', 'cisaille', 'ebavureur', 'ébavureur'
 ];
 
 function isAccessory(desc: string): boolean {
@@ -246,10 +246,10 @@ function attrScore(aiArticle: AIArticle, catArticle: CatalogueArticle, jobContex
     manchon: ['manchon', 'coude_sertir', 'autre'],
     collier: ['collier', 'autre'],
     isolation: ['isolation', 'autre'],
-    robinetterie: ['robinetterie', 'autre', 'geberit_evacuation', 'geberit_duofix'],
-    geberit_duofix: ['geberit_duofix', 'autre', 'robinetterie', 'geberit_evacuation', 'appareil_sanitaire'],
-    geberit_evacuation: ['geberit_evacuation', 'evacuation_pe', 'autre', 'geberit_duofix', 'appareil_sanitaire'],
-    appareil_sanitaire: ['appareil_sanitaire', 'geberit_duofix', 'robinetterie', 'autre', 'geberit_evacuation'],
+    robinetterie: ['robinetterie', 'autre'],
+    geberit_duofix: ['geberit_duofix', 'autre'],
+    geberit_evacuation: ['geberit_evacuation', 'evacuation_pe', 'autre'],
+    appareil_sanitaire: ['appareil_sanitaire', 'autre', 'geberit_evacuation', 'geberit_duofix'],
     transition: ['manchon', 'coude_sertir', 'robinetterie', 'autre'],
     reducteur: ['robinetterie', 'autre'],
     nourrice: ['robinetterie', 'autre'],
@@ -272,14 +272,69 @@ function attrScore(aiArticle: AIArticle, catArticle: CatalogueArticle, jobContex
   const catDesc = (catArticle.description || "").toLowerCase();
   const catName = ((catArticle as any).name || "").toLowerCase();
   const fullCatText = catDesc + " " + catName;
-  const fullAiText = aiText.toLowerCase();
+  const fullAiText = aiText.toLowerCase().normalize("NFD").replace(/[\u0300-\u036f]/g, "");
 
   // 6. Spare Parts / Accessories check using starting keywords (avoids false blocking primary items)
   const isAccessoryInCatalog = isAccessory(catDesc) || isAccessory(catName);
-  const isAccessoryRequested = hasWord(fullAiText, STARTING_ACCESSORY_KEYWORDS);
+  const isAccessoryRequested = hasWord(fullAiText, STARTING_ACCESSORY_KEYWORDS) && 
+                              !fullAiText.includes('bati-support') && 
+                              !fullAiText.includes('bati support') && 
+                              !fullAiText.includes('duofix') && 
+                              !fullAiText.includes('cadre');
 
   if (isAccessoryInCatalog && !isAccessoryRequested) {
     return { score: 0, hardBlock: true };
+  }
+
+  // Strict accessory word exclusion to prevent spare parts/attachments matching primary queries
+  const accessoryWords = [
+    'paneel', 'panel', 'etagere', 'étagère', 'synchronisation', 'commande', 
+    'fixation', 'cable', 'câble', 'rallonge', 'kit', 'set', 'joint', 
+    'poignee', 'poignée', 'tiroir', 'abattant', 'lunette', 'couvercle', 
+    'grille', 'capot', 'cache', 'vis', 'bouton', 'axe', 'tige', 
+    'pied', 'pieds', 'patin', 'patins', 'traverse', 'support', 
+    'mecanisme', 'mécanisme', 'module', 'trappe', 'habillage', 'clip', 
+    'logement', 'verrou', 'protection', 'languette', 'presseur', 'disque', 
+    'recouvrement', 'actionneur', 'batterie', 'interbloc', 'insert', 
+    'tête', 'tete', 'piece', 'pièce', 'bol', 'boulon', 'rail', 'douille', 
+    'outil', 'lame', 'machine', 'levier', 'materiel', 'matériel', 
+    'racloir', 'cadre', 'scie', 'accessoire', 'accessoires', 'porte', 'portes', 'einschub', 'drueckerplatte', 'druckerplatte', 'befestigung', 'befestigungssatz', 'zubehor', 'zubehör', 'kabel', 'netzteil', 'netzgerat', 'netzgeraet', 'trafo', 'transformator', 'bouchon', 'bouchons', 'capuchon', 'capuchons'
+  ];
+
+  for (const word of accessoryWords) {
+    const cleanWord = word.normalize("NFD").replace(/[\u0300-\u036f]/g, "");
+    if (hasWord(fullCatText, [cleanWord]) && !hasWord(fullAiText, [cleanWord])) {
+      if (cleanWord === 'support' && (fullAiText.includes('support') || fullAiText.includes('bati-support'))) {
+        continue;
+      }
+      return { score: 0, hardBlock: true };
+    }
+  }
+
+  // Linguistic head-noun check to prevent washbasins matching faucet queries
+  const isFaucetsRequested = hasWord(fullAiText, ['mitigeur', 'robinet', 'melangeur', 'mélangeur']);
+  if (isFaucetsRequested) {
+    const idxLavabo = fullCatText.indexOf('lavabo');
+    const idxVasque = fullCatText.indexOf('vasque');
+    const idxLaveMains = fullCatText.indexOf('lave-mains');
+    const idxMinBasin = Math.min(
+      idxLavabo === -1 ? Infinity : idxLavabo,
+      idxVasque === -1 ? Infinity : idxVasque,
+      idxLaveMains === -1 ? Infinity : idxLaveMains
+    );
+
+    const idxMitigeur = fullCatText.indexOf('mitigeur');
+    const idxRobinet = fullCatText.indexOf('robinet');
+    const idxRobinetterie = fullCatText.indexOf('robinetterie');
+    const idxMinFaucet = Math.min(
+      idxMitigeur === -1 ? Infinity : idxMitigeur,
+      idxRobinet === -1 ? Infinity : idxRobinet,
+      idxRobinetterie === -1 ? Infinity : idxRobinetterie
+    );
+
+    if (idxMinBasin < idxMinFaucet) {
+      return { score: 0, hardBlock: true };
+    }
   }
 
   // 6.5 Bambini children line block
@@ -327,10 +382,18 @@ function attrScore(aiArticle: AIArticle, catArticle: CatalogueArticle, jobContex
   const isCatalogPipe = hasWord(fullCatText, ['tube', 'tuyau', 'conduit', 'canalisation']) && !isCatalogSiphon;
 
   const isShowerRequested = hasWord(fullAiText, ['douche']);
+
+  const isLavaboInCatalog = hasWord(fullCatText, ['lavabo', 'vasque', 'lave-mains', 'lave mains', 'waschtisch']);
+  if (isShowerRequested && isMixerRequested && isLavaboInCatalog) {
+    return { score: 0, hardBlock: true };
+  }
+
   if (isShowerRequested && !isDuofixRequested && isCatalogDuofix) {
     return { score: 0, hardBlock: true };
   }
-  if (isWcRequested && !isDuofixRequested && isCatalogDuofix && !isCatalogWc) {
+
+  const isCatalogWcDuofixElement = catCat === 'geberit_duofix' && hasWord(fullCatText, ['wc', 'toilette', 'cuvette']);
+  if (isWcRequested && !isDuofixRequested && isCatalogDuofix && !isCatalogWc && !isCatalogWcDuofixElement) {
     return { score: 0, hardBlock: true };
   }
   if (isMixerRequested && (isCatalogDuofix || isCatalogBoiler || isCatalogHeatPump)) {
@@ -377,6 +440,16 @@ function attrScore(aiArticle: AIArticle, catArticle: CatalogueArticle, jobContex
   const isMeubleRequested = hasWord(fullAiText, ['meuble']);
   const isCatalogMeuble = hasWord(fullCatText, ['meuble']);
   if (isMeubleRequested && !isCatalogMeuble) {
+    return { score: 0, hardBlock: true };
+  }
+
+  // Lave-mains (guest washbasin) check
+  const isLaveMainsRequested = fullAiText.includes('lave-mains') || fullAiText.includes('lave mains');
+  const isCatalogLaveMains = fullCatText.includes('lave-mains') || fullCatText.includes('lave mains') || fullCatText.includes('handwaschbecken');
+  if (isLaveMainsRequested && !isCatalogLaveMains) {
+    return { score: 0, hardBlock: true };
+  }
+  if (!isLaveMainsRequested && isCatalogLaveMains) {
     return { score: 0, hardBlock: true };
   }
 
@@ -803,7 +876,14 @@ export function matchArticles(
         return { article, score: finalScore };
       })
       .filter(c => c.score >= 0.60) // Threshold for a good match
-      .sort((a, b) => b.score - a.score);
+      .sort((a, b) => {
+        if (Math.abs(b.score - a.score) < 0.0001) {
+          const priceA = a.article.unit_price ?? (a.article as any).base_price ?? 0;
+          const priceB = b.article.unit_price ?? (b.article as any).base_price ?? 0;
+          return priceA - priceB;
+        }
+        return b.score - a.score;
+      });
 
     if (scoredCandidates.length > 0) {
       const topMatch = scoredCandidates[0];

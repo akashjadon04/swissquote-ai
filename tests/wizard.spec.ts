@@ -3,52 +3,55 @@ import { test, expect } from '@playwright/test';
 test.describe('Quote Generation Wizard Scenarios', () => {
   // Common mock setup for AI and matching endpoints
   test.beforeEach(async ({ page }) => {
-    await page.route('**/api/ai/extract', async (route) => {
-      await new Promise(r => setTimeout(r, 100)); // short delay
-      await route.fulfill({
-        status: 200,
-        contentType: 'application/json',
-        body: JSON.stringify({
-          provider: 'Mock',
-          extraction: {
-            intervention_type: 'remplacement_chauffe_eau',
-            sections: [
-              {
-                section_label: 'Chauffe-eau',
-                description_verbatim: 'Remplacement chauffe eau 200L',
-                articles: [
-                  { label: 'Chauffe-eau 200L', quantity: 1, unit: 'pce', confidence: 0.9, material_type: 'appliance', dimension: null }
-                ]
-              }
-            ]
-          }
-        })
-      });
-    });
-
+    // Mock config
     await page.route('**/api/config', async (route) => {
       await route.fulfill({
         status: 200,
         contentType: 'application/json',
         body: JSON.stringify({
           config: {
-            labour_rates: { "GenA\"ve": 145 }
+            labour_rates: { "Genève": 145 }
           }
         })
       });
     });
-  });
 
-  test('Scenario 1: Complete standard plumbing quote successfully', async ({ page }) => {
-    await page.route('**/api/catalogue/match', async (route) => {
+    // Default mock for unified /api/ai/process (Scenario 1 fallback)
+    await page.route('**/api/ai/process', async (route) => {
       await route.fulfill({
         status: 200,
-        contentType: 'application/json',
+        contentType: 'text/event-stream; charset=utf-8',
         body: JSON.stringify({
-          result: {
+          type: 'result',
+          provider: 'Mock',
+          extraction: {
+            intervention_type: 'remplacement_chauffe_eau',
+            sections: [
+              {
+                id: 'sec-1',
+                sectionCode: 'SAN',
+                sectionLabel: 'Sanitaire',
+                items: [
+                  {
+                    id: 'item-1',
+                    aiLabel: 'Chauffe-eau 200L',
+                    description: 'Chauffe-eau A(c)lectrique 200L mural',
+                    quantity: 1,
+                    unit: 'pce',
+                    unitPrice: 850,
+                    lineTotal: 850,
+                    reference: 'CE-200-NSB',
+                    supplierCode: 'NSB',
+                    isMissing: false
+                  }
+                ]
+              }
+            ]
+          },
+          matchResult: {
             matched: [
               {
-                aiArticle: { label: 'Chauffe-eau 200L' },
+                aiArticle: { label: 'Chauffe-eau 200L', quantity: 1, unit: 'pce' },
                 matchConfidence: 0.95,
                 supplierCode: 'NSB',
                 catalogueArticle: {
@@ -59,12 +62,17 @@ test.describe('Quote Generation Wizard Scenarios', () => {
                 }
               }
             ],
-            missing: []
-          }
-        })
+            missing: [],
+            totalArticles: 1
+          },
+          labourHours: 4,
+          realMatchRate: 1
+        }) + '\n'
       });
     });
+  });
 
+  test('Scenario 1: Complete standard plumbing quote successfully', async ({ page }) => {
     await page.goto('/quotes/new');
     
     // Step 1: Description
@@ -74,7 +82,8 @@ test.describe('Quote Generation Wizard Scenarios', () => {
 
     // Step 2: Processing (should be quick because of mock)
     // Wait for the review step to be visible
-    await expect(page.locator('text=Chauffe-eau A(c)lectrique 200L')).toBeVisible();
+    const descInput = page.locator('input[placeholder="Description..."]').first();
+    await expect(descInput).toHaveValue(/Chauffe-eau A\(c\)lectrique 200L/);
 
     // Step 3: Review
     await page.getByText('Continuer vers financier').click();
@@ -94,21 +103,46 @@ test.describe('Quote Generation Wizard Scenarios', () => {
   });
 
   test('Scenario 2: Quote with missing items shows warning', async ({ page }) => {
-    // Override match to return a missing item
-    await page.route('**/api/catalogue/match', async (route) => {
+    // Override /api/ai/process to return missing items
+    await page.route('**/api/ai/process', async (route) => {
       await route.fulfill({
         status: 200,
-        contentType: 'application/json',
+        contentType: 'text/event-stream; charset=utf-8',
         body: JSON.stringify({
-          result: {
+          type: 'result',
+          provider: 'Mock',
+          extraction: {
+            intervention_type: 'remplacement_chauffe_eau',
+            sections: [
+              {
+                id: 'sec-1',
+                sectionCode: 'SAN',
+                sectionLabel: 'Sanitaire',
+                items: [
+                  {
+                    id: 'item-1',
+                    aiLabel: 'Chauffe-eau 200L',
+                    description: 'Chauffe-eau 200L',
+                    quantity: 1,
+                    unit: 'pce',
+                    isMissing: true
+                  }
+                ]
+              }
+            ]
+          },
+          matchResult: {
             matched: [],
             missing: [
               {
-                aiArticle: { label: 'Chauffe-eau 200L' }
+                aiArticle: { label: 'Chauffe-eau 200L', quantity: 1, unit: 'pce' }
               }
-            ]
-          }
-        })
+            ],
+            totalArticles: 1
+          },
+          labourHours: 4,
+          realMatchRate: 0
+        }) + '\n'
       });
     });
 
@@ -122,7 +156,8 @@ test.describe('Quote Generation Wizard Scenarios', () => {
     // Step 2 & 3: Review
     // Wait for the missing item warning label
     await expect(page.locator('.missing-label')).toBeVisible();
-    await expect(page.locator('text=Chauffe-eau 200L')).toBeVisible();
+    const descInput = page.locator('input[placeholder="Description..."]').first();
+    await expect(descInput).toHaveValue(/Chauffe-eau 200L/);
 
     await page.getByText('Continuer vers financier').click();
 
@@ -131,15 +166,42 @@ test.describe('Quote Generation Wizard Scenarios', () => {
   });
 
   test('Scenario 3: Modify quantities and prices in step 3 affects total', async ({ page }) => {
-    await page.route('**/api/catalogue/match', async (route) => {
+    // Override /api/ai/process to return 100 CHF price item
+    await page.route('**/api/ai/process', async (route) => {
       await route.fulfill({
         status: 200,
-        contentType: 'application/json',
+        contentType: 'text/event-stream; charset=utf-8',
         body: JSON.stringify({
-          result: {
+          type: 'result',
+          provider: 'Mock',
+          extraction: {
+            intervention_type: 'remplacement_chauffe_eau',
+            sections: [
+              {
+                id: 'sec-1',
+                sectionCode: 'SAN',
+                sectionLabel: 'Sanitaire',
+                items: [
+                  {
+                    id: 'item-1',
+                    aiLabel: 'Chauffe-eau 200L',
+                    description: 'Chauffe-eau A(c)lectrique',
+                    quantity: 1,
+                    unit: 'pce',
+                    unitPrice: 100,
+                    lineTotal: 100,
+                    reference: 'CE-200-NSB',
+                    supplierCode: 'NSB',
+                    isMissing: false
+                  }
+                ]
+              }
+            ]
+          },
+          matchResult: {
             matched: [
               {
-                aiArticle: { label: 'Chauffe-eau 200L' },
+                aiArticle: { label: 'Chauffe-eau 200L', quantity: 1, unit: 'pce' },
                 matchConfidence: 0.95,
                 supplierCode: 'NSB',
                 catalogueArticle: {
@@ -150,9 +212,12 @@ test.describe('Quote Generation Wizard Scenarios', () => {
                 }
               }
             ],
-            missing: []
-          }
-        })
+            missing: [],
+            totalArticles: 1
+          },
+          labourHours: 4,
+          realMatchRate: 1
+        }) + '\n'
       });
     });
 
@@ -161,7 +226,8 @@ test.describe('Quote Generation Wizard Scenarios', () => {
     await textarea.fill('Remplacement dun chauffe-eau de 200 litres suite a une fuite.');
     await page.locator('.btn-12').click();
 
-    await expect(page.locator('text=Chauffe-eau A(c)lectrique')).toBeVisible();
+    const descInput = page.locator('input[placeholder="Description..."]').first();
+    await expect(descInput).toHaveValue(/Chauffe-eau A\(c\)lectrique/);
 
     const row = page.locator('.item-row').first();
     const qtyInput = page.locator('input[type="number"]').first();
@@ -174,15 +240,42 @@ test.describe('Quote Generation Wizard Scenarios', () => {
   });
 
   test('Scenario 4: Modify margins and labour hours in financials updates final cost', async ({ page }) => {
-    await page.route('**/api/catalogue/match', async (route) => {
+    // Override /api/ai/process to return 100 CHF price item
+    await page.route('**/api/ai/process', async (route) => {
       await route.fulfill({
         status: 200,
-        contentType: 'application/json',
+        contentType: 'text/event-stream; charset=utf-8',
         body: JSON.stringify({
-          result: {
+          type: 'result',
+          provider: 'Mock',
+          extraction: {
+            intervention_type: 'remplacement_chauffe_eau',
+            sections: [
+              {
+                id: 'sec-1',
+                sectionCode: 'SAN',
+                sectionLabel: 'Sanitaire',
+                items: [
+                  {
+                    id: 'item-1',
+                    aiLabel: 'Chauffe-eau 200L',
+                    description: 'Chauffe-eau A(c)lectrique',
+                    quantity: 1,
+                    unit: 'pce',
+                    unitPrice: 100,
+                    lineTotal: 100,
+                    reference: 'CE-200-NSB',
+                    supplierCode: 'NSB',
+                    isMissing: false
+                  }
+                ]
+              }
+            ]
+          },
+          matchResult: {
             matched: [
               {
-                aiArticle: { label: 'Chauffe-eau 200L' },
+                aiArticle: { label: 'Chauffe-eau 200L', quantity: 1, unit: 'pce' },
                 matchConfidence: 0.95,
                 supplierCode: 'NSB',
                 catalogueArticle: {
@@ -193,9 +286,12 @@ test.describe('Quote Generation Wizard Scenarios', () => {
                 }
               }
             ],
-            missing: []
-          }
-        })
+            missing: [],
+            totalArticles: 1
+          },
+          labourHours: 4,
+          realMatchRate: 1
+        }) + '\n'
       });
     });
 
@@ -204,7 +300,8 @@ test.describe('Quote Generation Wizard Scenarios', () => {
     await textarea.fill('Remplacement dun chauffe-eau de 200 litres suite a une fuite.');
     await page.locator('.btn-12').click();
 
-    await expect(page.locator('text=Chauffe-eau A(c)lectrique')).toBeVisible();
+    const descInput = page.locator('input[placeholder="Description..."]').first();
+    await expect(descInput).toHaveValue(/Chauffe-eau A\(c\)lectrique/);
     await page.getByText('Continuer vers financier').click();
 
     // Step 4: Financials
@@ -257,16 +354,42 @@ test.describe('Quote Generation Wizard Scenarios', () => {
   });
 
   test('Scenario 7: Navigating back from step 3 (Review) to step 1 (Description) retains data', async ({ page }) => {
-    await page.route('**/api/catalogue/match', async (route) => {
+    // Override /api/ai/process to return missing items
+    await page.route('**/api/ai/process', async (route) => {
       await route.fulfill({
         status: 200,
-        contentType: 'application/json',
+        contentType: 'text/event-stream; charset=utf-8',
         body: JSON.stringify({
-          result: {
+          type: 'result',
+          provider: 'Mock',
+          extraction: {
+            intervention_type: 'remplacement_chauffe_eau',
+            sections: [
+              {
+                id: 'sec-1',
+                sectionCode: 'SAN',
+                sectionLabel: 'Sanitaire',
+                items: [
+                  {
+                    id: 'item-1',
+                    aiLabel: 'Tuyau 12mm',
+                    description: 'Tuyau 12mm',
+                    quantity: 1,
+                    unit: 'm',
+                    isMissing: true
+                  }
+                ]
+              }
+            ]
+          },
+          matchResult: {
             matched: [],
-            missing: [{ aiArticle: { label: 'Tuyau 12mm' } }]
-          }
-        })
+            missing: [{ aiArticle: { label: 'Tuyau 12mm', quantity: 1, unit: 'm' } }],
+            totalArticles: 1
+          },
+          labourHours: 4,
+          realMatchRate: 0
+        }) + '\n'
       });
     });
 
