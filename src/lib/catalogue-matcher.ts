@@ -88,7 +88,13 @@ const STARTING_ACCESSORY_KEYWORDS = [
   'flexible', 'mamelon', 'adaptateur', 'soupape', 'membrane', 'pile', 'cable', 'câble', 'transformateur', 
   'alimentation', 'aérateur', 'aerateur', 'mousseur', 'régulateur', 'regulateur', 'bloc', 'valve', 
   'electrovanne', 'électrovanne', 'cartouche', 'corps', 'stabilisateur', 'stabilisation', 'abattant',
-  'equerre', 'équerre', 'vis de cache', 'regulateur jet'
+  'equerre', 'équerre', 'vis de cache', 'regulateur jet', 'barre', 'ecoulement', 'écoulement', 'bride',
+  'grille', 'capuchon', 'crochet', 'sangle', 'anneau', 'rosace', 'enjoliveur', 'bague', 'ecrou', 'écrou',
+  'indicateur', 'ensemble', 'rohbauset', 'convertisseur', 'passerelle', 'volant', 'excentrique', 'broche',
+  'étrier', 'partie', 'poussoir', 'mécanisme', 'module', 'trappe', 'habillage', 'ouverture', 'unité',
+  'unite', 'clip', 'capot', 'logement', 'verrou', 'protection', 'languette', 'presseur', 'disque',
+  'recouvrement', 'actionneur', 'batterie', 'interbloc', 'insert', 'tête', 'pièce', 'bol', 'boulon',
+  'rail', 'douille', 'piece', 'rabot', 'outil', 'lame', 'machine'
 ];
 
 function isAccessory(desc: string): boolean {
@@ -108,7 +114,6 @@ const SYNONYMS: Record<string, string[]> = {
   toilette: ["wc", "cuvette", "water-closet", "water closet"],
   boiler: ["chauffe-eau", "chauffe eau", "cumulus", "ballon", "ecs"],
   "chauffe-eau": ["boiler", "cumulus", "ballon", "ecs"],
-  "colonne": ["mitigeur", "melangeur", "mélangeur", "thermostatique", "douchette", "douche"],
   mitigeur: ["melangeur", "mélangeur", "robinet", "vanne"],
   evacuation: ["siphon", "bonde", "silent", "pe", "écoulement", "ecoulement", "vidage"],
   siphon: ["evacuation", "bonde", "vidage"],
@@ -167,13 +172,15 @@ function attrScore(aiArticle: AIArticle, catArticle: CatalogueArticle, jobContex
   const catCat = catArticle.category;
   const catPrice = catArticle.unit_price ?? (catArticle as any).base_price ?? 0;
 
+  let matchedAttributeScore: number | null = null;
+
   // 1. power_kw check
   const aiKw = extractKw(aiText);
   const catKw = catAttrs.power_kw ?? extractKw(catSpec) ?? extractKw(catArticle.description);
   if (aiKw !== null && catKw !== null) {
-    if (Math.abs(aiKw - catKw) <= 2) return { score: 1.0, hardBlock: false };
-    if (Math.abs(aiKw - catKw) <= 5) return { score: 0.5, hardBlock: false };
-    return { score: 0, hardBlock: true };
+    if (Math.abs(aiKw - catKw) <= 2) matchedAttributeScore = 1.0;
+    else if (Math.abs(aiKw - catKw) <= 5) matchedAttributeScore = 0.5;
+    else return { score: 0, hardBlock: true };
   } else if (aiKw !== null && catKw === null) {
     return { score: 0, hardBlock: true };
   }
@@ -182,23 +189,27 @@ function attrScore(aiArticle: AIArticle, catArticle: CatalogueArticle, jobContex
   const aiL = extractLitres(aiText);
   const catL = catAttrs.capacity_l ?? extractLitres(catSpec) ?? extractLitres(catArticle.description);
   if (aiL !== null && catL !== null) {
-    if (Math.abs(aiL - catL) <= 20) return { score: 1.0, hardBlock: false };
-    if (Math.abs(aiL - catL) <= 50) return { score: 0.5, hardBlock: false };
-    return { score: 0, hardBlock: true };
+    if (Math.abs(aiL - catL) <= 20) matchedAttributeScore = 1.0;
+    else if (Math.abs(aiL - catL) <= 50) matchedAttributeScore = 0.5;
+    else return { score: 0, hardBlock: true };
   } else if (aiL !== null && catL === null) {
     return { score: 0, hardBlock: true };
   }
 
   // 3. diameter_mm check - STRICTOR TOLERANCE (plumbing standards)
   const aiD = extractDiameterMm(aiText);
-  const catD = catAttrs.diameter_mm ?? extractDiameterMm(catSpec) ?? extractDiameterMm(catArticle.description);
+  let catD = catAttrs.diameter_mm ?? extractDiameterMm(catSpec) ?? extractDiameterMm(catArticle.description) ?? null;
+  if (catD === 1 || (catD !== null && catD < 3)) {
+    catD = extractDiameterMm(catArticle.description) ?? extractDiameterMm(catSpec) ?? catAttrs.diameter_mm ?? null;
+  }
   if (aiD !== null && catD !== null) {
     // If difference is small (e.g. 15mm vs 16mm, which is standard for multicouche vs copper), allow.
     // Otherwise if they are distinct sizes (16 vs 20, 20 vs 26, 28 vs 76 etc.), hard block!
     if (Math.abs(aiD - catD) <= 1.5) {
-      return { score: 1.0, hardBlock: false };
+      matchedAttributeScore = 1.0;
+    } else {
+      return { score: 0, hardBlock: true };
     }
-    return { score: 0, hardBlock: true };
   } else if (aiD !== null && catD === null) {
     // If the AI explicitly requires a diameter but the catalog article has none, it's a mismatch
     return { score: 0, hardBlock: true };
@@ -228,8 +239,8 @@ function attrScore(aiArticle: AIArticle, catArticle: CatalogueArticle, jobContex
 
   // 5. Category Match - STRICTOR CATEGORY CHECKS WITH COMPATIBILITY MAP
   const CATEGORY_COMPATIBILITY: Record<string, string[]> = {
-    tuyau_inox: ['tuyau_inox'],
-    evacuation_pe: ['evacuation_pe', 'geberit_evacuation', 'autre'],
+    tuyau_inox: ['tuyau_inox', 'evacuation_pe', 'autre'],
+    evacuation_pe: ['evacuation_pe', 'geberit_evacuation', 'tuyau_inox', 'autre'],
     coude_sertir: ['coude_sertir', 'manchon', 'autre'],
     manchon: ['manchon', 'coude_sertir', 'autre'],
     collier: ['collier', 'autre'],
@@ -304,9 +315,15 @@ function attrScore(aiArticle: AIArticle, catArticle: CatalogueArticle, jobContex
   const isCatalogDuofix = hasWord(fullCatText, ['duofix', 'bati-support', 'bâti-support', 'cadre', 'chassis', 'support']) || catCat === 'geberit_duofix';
   const isCatalogShowerColumn = hasWord(fullCatText, ['colonne de douche', 'colonne douche']);
   const isCatalogWc = hasWord(fullCatText, ['wc', 'toilette', 'cuvette']) && !isCatalogDuofix;
-  const isCatalogMixer = hasWord(fullCatText, ['mitigeur', 'melangeur', 'mélangeur']);
+  const isCatalogMixer = hasWord(fullCatText, ['mitigeur', 'melangeur', 'mélangeur']) && !isCatalogShowerColumn;
   const isCatalogHeatPump = hasWord(fullCatText, ['pompe a chaleur', 'pompe à chaleur', 'pac']);
   const isCatalogBoiler = hasWord(fullCatText, ['chaudiere', 'chaudière']) && !isCatalogHeatPump;
+
+  const isPipeRequested = hasWord(fullAiText, ['tube', 'tuyau', 'conduit', 'canalisation']);
+  const isSiphonRequested = hasWord(fullAiText, ['siphon', 'bonde', 'vidage']);
+  
+  const isCatalogSiphon = hasWord(fullCatText, ['siphon', 'bonde', 'vidage']) || catCat === 'geberit_evacuation';
+  const isCatalogPipe = hasWord(fullCatText, ['tube', 'tuyau', 'conduit', 'canalisation']) && !isCatalogSiphon;
 
   const isShowerRequested = hasWord(fullAiText, ['douche']);
   if (isShowerRequested && !isDuofixRequested && isCatalogDuofix) {
@@ -316,6 +333,18 @@ function attrScore(aiArticle: AIArticle, catArticle: CatalogueArticle, jobContex
     return { score: 0, hardBlock: true };
   }
   if (isMixerRequested && (isCatalogDuofix || isCatalogBoiler || isCatalogHeatPump)) {
+    return { score: 0, hardBlock: true };
+  }
+  if (isShowerColumnRequested && isCatalogMixer && !isCatalogShowerColumn) {
+    return { score: 0, hardBlock: true };
+  }
+  if (isMixerRequested && !isShowerColumnRequested && isCatalogShowerColumn) {
+    return { score: 0, hardBlock: true };
+  }
+  if (isPipeRequested && isCatalogSiphon) {
+    return { score: 0, hardBlock: true };
+  }
+  if (isSiphonRequested && isCatalogPipe) {
     return { score: 0, hardBlock: true };
   }
   if (isHeatPumpRequested && isCatalogBoiler && !isCatalogHeatPump) {
@@ -393,11 +422,13 @@ function attrScore(aiArticle: AIArticle, catArticle: CatalogueArticle, jobContex
   // 10. Exact Phrase Match Boost
   const queryNorm = fullAiText.normalize("NFD").replace(/[\u0300-\u036f]/g, "").trim();
   const catNorm = fullCatText.normalize("NFD").replace(/[\u0300-\u036f]/g, "").trim();
+  
+  let baseScore = matchedAttributeScore ?? (hasProductGroupMatch ? 0.65 : 0.5);
   if (catNorm.includes(queryNorm)) {
-    return { score: 1.0, hardBlock: false };
+    baseScore = 1.0;
   }
-
-  return { score: hasProductGroupMatch ? 0.65 : 0.5, hardBlock: false };
+  
+  return { score: baseScore, hardBlock: false };
 }
 
 function levenshtein(a: string, b: string): number {
@@ -519,7 +550,7 @@ const PRODUCT_TYPE_GROUPS: { name: string; triggerKeywords: string[]; compatible
   {
     name: 'drainage_pipe',
     triggerKeywords: ['evacuation', 'tuyau evacuation', 'tube pe', 'drainage', 'chute'],
-    compatibleCategories: ['evacuation_pe', 'geberit_evacuation', 'autre'],
+    compatibleCategories: ['evacuation_pe', 'geberit_evacuation', 'tuyau_inox', 'autre'],
   },
   {
     name: 'press_pipe',
@@ -549,16 +580,18 @@ const PRODUCT_TYPE_GROUPS: { name: string; triggerKeywords: string[]; compatible
  * or null if no specific type is detected (fall back to unrestricted search).
  */
 function detectProductTypeGroup(queryNorm: string): string[] | null {
+  let bestMatch: { cats: string[]; length: number } | null = null;
   for (const group of PRODUCT_TYPE_GROUPS) {
     for (const kw of group.triggerKeywords) {
-      // Normalize the keyword the same way as the query (strip accents, lowercase)
       const kwNorm = kw.toLowerCase().normalize("NFD").replace(/[\u0300-\u036f]/g, "");
       if (queryNorm.includes(kwNorm)) {
-        return group.compatibleCategories;
+        if (!bestMatch || kwNorm.length > bestMatch.length) {
+          bestMatch = { cats: group.compatibleCategories, length: kwNorm.length };
+        }
       }
     }
   }
-  return null;
+  return bestMatch ? bestMatch.cats : null;
 }
 
 function customSearch(query: string, catalogue: CatalogueArticle[], allowedCategories?: string[]) {
@@ -687,17 +720,18 @@ export function matchArticles(
   const jobContext = detectJobContext(jobText);
 
   for (const aiArticle of aiArticles) {
-    if (aiArticle.needs_site_measurement) {
+    if (aiArticle.category === 'depose') {
       rawMissing.push({
         aiArticle,
-        reason: `Information manquante, mesure sur site requise pour "${aiArticle.label}"`,
+        reason: `Prestation de dépose/main d'œuvre, pas d'article physique correspondant dans le catalogue`,
         suggestions: []
       });
       continue;
     }
+    // We proceed to match even if needs_site_measurement is true, so that suggestions appear.
 
     // Build rich search query
-    const aiCategory = aiArticle.category || '';
+    const aiCategory = (aiArticle.category || '').replace(/_/g, ' ');
     let query = [aiArticle.label, aiCategory].filter(Boolean).join(" ");
     
     if (aiArticle.label.toLowerCase().includes("bâti-support") || aiArticle.label.toLowerCase().includes("geberit")) {
@@ -710,6 +744,9 @@ export function matchArticles(
     const scoredCandidates = searchResults
       .map(result => {
         const article = result.item;
+        
+        // Exclude low-quality semantic matches
+        if (result.score < 0.45) return { article, score: -1 };
         
         // If preferred supplier, boost slightly
         const supplierBoost = preferredSupplier && article.supplier?.code === preferredSupplier ? 0.15 : 0;
