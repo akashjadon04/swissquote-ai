@@ -302,7 +302,9 @@ export default function NewQuotePage() {
 
         allArticles.forEach((article: any, idx: number) => {
           const matched = matchedByLabel.get(article.label);
-          const safeQty = (article.quantity === null || article.quantity === undefined || article.quantity === 0) ? 1 : article.quantity;
+          const safeQty = (article.quantity !== null && article.quantity !== undefined && article.quantity > 0)
+            ? article.quantity
+            : null;
           
           let itemObj;
           if (matched) {
@@ -316,7 +318,7 @@ export default function NewQuotePage() {
               quantity: safeQty,
               unit: cat.unit,
               unitPrice,
-              lineTotal: safeQty > 0 && unitPrice ? unitPrice * safeQty : null,
+              lineTotal: safeQty && unitPrice ? Number((unitPrice * safeQty).toFixed(2)) : null,
               supplierCode: matched.supplierCode,
               supplierName: null,
               aiLabel: article.label,
@@ -677,10 +679,10 @@ export default function NewQuotePage() {
                                   <span className="missing-label text-xs text-danger font-semibold bg-danger/20 px-2 py-0.5 rounded-full border border-danger/30 w-fit mt-1 block">Manquant</span>
                                 )}
                               </td>
-                              <td className="col-qty p-4">
-                                <input type="number" className={`neo-input w-20 ${item.quantity === 0 || !item.quantity ? 'border-danger border-2 bg-danger/5 text-danger font-bold' : ''}`} value={item.quantity || ''} placeholder="0" min={0} step={0.1}
-                                  onChange={(e) => useQuoteStore.getState().updateItem(sIdx, iIdx, { quantity: parseFloat(e.target.value) || 0 })} />
-                              </td>
+                                <td className="col-qty p-4">
+                                  <input type="number" className={`neo-input w-20 ${item.quantity === null || item.quantity === undefined ? 'border-danger border-2 bg-danger/5 text-danger font-bold' : ''}`} value={item.quantity ?? ''} placeholder="à préciser" min={0} step={0.1}
+                                    onChange={(e) => useQuoteStore.getState().updateItem(sIdx, iIdx, { quantity: e.target.value !== '' ? parseFloat(e.target.value) : null })} />
+                                </td>
                               <td className="col-unit p-4 text-sm">
                                 <input type="text" className={`neo-input w-20 text-sm ${!item.unit ? 'border-danger border-2 bg-danger/5' : ''}`} placeholder="Unité" value={item.unit || ''} onChange={(e) => useQuoteStore.getState().updateItem(sIdx, iIdx, { unit: e.target.value })} />
                               </td>

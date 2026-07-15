@@ -13,7 +13,7 @@ export interface QuoteItem {
   reference: string | null;
   description: string;
   specification: string | null;
-  quantity: number;
+  quantity: number | null;
   unit: string;
   unitPrice: number | null;
   lineTotal: number | null;

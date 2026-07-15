@@ -829,7 +829,11 @@ export function matchArticles(
   const rawMatched: MatchedArticle[] = [];
   const rawMissing: MissingArticle[] = [];
 
-  const activeCatalogue = catalogue.filter(a => a.active);
+  const activeCatalogue = catalogue.filter(a => {
+    if (!a.active) return false;
+    const price = a.unit_price ?? (a as any).base_price ?? 0;
+    return price > 0;
+  });
 
   // Detect job context from fullDescriptionText or aiArticles
   const jobText = (fullDescriptionText || "") + " " + aiArticles.map(a => a.label).join(" ");

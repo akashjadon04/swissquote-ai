@@ -240,7 +240,6 @@ const styles = StyleSheet.create({
   // ── Financial Summary ────────────────
   financialSection: {
     marginTop: 12,
-    marginLeft: 'auto',
     width: 280,
   },
   financialRow: {
@@ -449,7 +448,7 @@ interface PDFQuote {
       id: string;
       reference: string | null;
       description: string;
-      quantity: number;
+      quantity: number | null;
       unit: string;
       unit_price: number | null;
       line_total: number | null;
@@ -568,7 +567,9 @@ function QuoteDocument({ quote }: { quote: PDFQuote }) {
                     <Text style={styles.cell}>{item.description}</Text>
                   </View>
                   <View style={styles.colQty}>
-                    <Text style={[styles.cellMono, { textAlign: 'right' }]}>{item.quantity}</Text>
+                    <Text style={[styles.cellMono, { textAlign: 'right' }]}>
+                      {item.quantity !== null && item.quantity !== undefined ? String(item.quantity) : 'à préciser'}
+                    </Text>
                   </View>
                   <View style={styles.colUnit}>
                     <Text style={[styles.cellMuted, { textAlign: 'center' }]}>{item.unit}</Text>
@@ -580,7 +581,7 @@ function QuoteDocument({ quote }: { quote: PDFQuote }) {
                   </View>
                   <View style={styles.colTotal}>
                     <Text style={[styles.cellMono, { textAlign: 'right', fontFamily: 'Courier-Bold' }]}>
-                      {item.line_total ? formatAmountPDF(item.line_total) : '—'}
+                      {item.line_total && item.quantity ? formatAmountPDF(item.line_total) : '—'}
                     </Text>
                   </View>
                 </View>
@@ -599,47 +600,49 @@ function QuoteDocument({ quote }: { quote: PDFQuote }) {
         )}
 
         {/* Financial Summary */}
-        <View style={styles.financialSection} wrap={false}>
-          <View style={[styles.financialRow, styles.financialRowAlt]}>
-            <Text style={styles.financialLabel}>Matériaux HT</Text>
-            <Text style={styles.financialValue}>{formatCHFPDF(quote.materials_subtotal)}</Text>
-          </View>
-          <View style={styles.financialRow}>
-            <Text style={[styles.financialLabel, styles.financialMuted]}>
-              Marge matériaux ({quote.materials_margin_pct ?? 15}%)
-            </Text>
-            <Text style={[styles.financialValue, styles.financialMuted]}>
-              {formatCHFPDF(quote.materials_margin)}
-            </Text>
-          </View>
-          <View style={[styles.financialRow, styles.financialRowAlt]}>
-            <Text style={styles.financialLabel}>
-              Main-d&apos;œuvre ({quote.labour_hours ?? 0}h × CHF {formatAmountPDF(quote.labour_rate)}/h)
-            </Text>
-            <Text style={styles.financialValue}>{formatCHFPDF(quote.labour_total)}</Text>
-          </View>
-          <View style={styles.financialRow}>
-            <Text style={styles.financialLabel}>Frais de déplacement</Text>
-            <Text style={styles.financialValue}>{formatCHFPDF(quote.travel_fee)}</Text>
-          </View>
-          <View style={styles.financialDivider} />
-          <View style={[styles.financialRow, styles.financialRowAlt]}>
-            <Text style={[styles.financialLabel, styles.financialSubtotal]}>Sous-total HT</Text>
-            <Text style={[styles.financialValue, styles.financialSubtotal]}>
-              {formatCHFPDF(quote.subtotal_excl_vat)}
-            </Text>
-          </View>
-          <View style={styles.financialRow}>
-            <Text style={[styles.financialLabel, styles.financialMuted]}>
-              TVA ({((quote.vat_rate ?? 0.081) * 100).toFixed(1)}%)
-            </Text>
-            <Text style={[styles.financialValue, styles.financialMuted]}>
-              {formatCHFPDF(quote.vat_amount)}
-            </Text>
-          </View>
-          <View style={styles.financialTotal}>
-            <Text style={styles.financialTotalLabel}>TOTAL TTC</Text>
-            <Text style={styles.financialTotalValue}>{formatCHFPDF(quote.total_incl_vat)}</Text>
+        <View style={{ flexDirection: 'row', justifyContent: 'flex-end', marginTop: 16 }} wrap={false}>
+          <View style={styles.financialSection}>
+            <View style={[styles.financialRow, styles.financialRowAlt]}>
+              <Text style={styles.financialLabel}>Matière &amp; Fournitures HT</Text>
+              <Text style={styles.financialValue}>{formatCHFPDF(quote.materials_subtotal)}</Text>
+            </View>
+            <View style={styles.financialRow}>
+              <Text style={[styles.financialLabel, styles.financialMuted]}>
+                Frais divers et marge ({quote.materials_margin_pct ?? 15}%)
+              </Text>
+              <Text style={[styles.financialValue, styles.financialMuted]}>
+                {formatCHFPDF(quote.materials_margin)}
+              </Text>
+            </View>
+            <View style={[styles.financialRow, styles.financialRowAlt]}>
+              <Text style={styles.financialLabel}>
+                Main-d&apos;œuvre ({quote.labour_hours ?? 0}h × CHF {formatAmountPDF(quote.labour_rate)}/h)
+              </Text>
+              <Text style={styles.financialValue}>{formatCHFPDF(quote.labour_total)}</Text>
+            </View>
+            <View style={styles.financialRow}>
+              <Text style={styles.financialLabel}>Frais de déplacement</Text>
+              <Text style={styles.financialValue}>{formatCHFPDF(quote.travel_fee)}</Text>
+            </View>
+            <View style={styles.financialDivider} />
+            <View style={[styles.financialRow, styles.financialRowAlt]}>
+              <Text style={[styles.financialLabel, styles.financialSubtotal]}>Total Net HT</Text>
+              <Text style={[styles.financialValue, styles.financialSubtotal]}>
+                {formatCHFPDF(quote.subtotal_excl_vat)}
+              </Text>
+            </View>
+            <View style={styles.financialRow}>
+              <Text style={[styles.financialLabel, styles.financialMuted]}>
+                TVA ({((quote.vat_rate ?? 0.081) * 100).toFixed(1)}%)
+              </Text>
+              <Text style={[styles.financialValue, styles.financialMuted]}>
+                {formatCHFPDF(quote.vat_amount)}
+              </Text>
+            </View>
+            <View style={styles.financialTotal}>
+              <Text style={styles.financialTotalLabel}>TOTAL TTC</Text>
+              <Text style={styles.financialTotalValue}>{formatCHFPDF(quote.total_incl_vat)}</Text>
+            </View>
           </View>
         </View>
 

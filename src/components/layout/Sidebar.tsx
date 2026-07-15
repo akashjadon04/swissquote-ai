@@ -5,6 +5,7 @@ import Link from 'next/link';
 import { usePathname } from 'next/navigation';
 import { motion, AnimatePresence } from 'framer-motion';
 import { useAppStore } from '@/store';
+import { useQuoteStore } from '@/store';
 import { useTranslation } from '@/lib/i18n';
 import { LanguageToggle } from '@/components/ui';
 import { useTheme } from 'next-themes';
@@ -221,6 +222,7 @@ function SidebarContent({ pathname, collapsed = false }: { pathname: string; col
           href="/quotes/new" 
           className="btn-new-quote clay-button"
           onClick={() => {
+            useQuoteStore.getState().resetQuote();
             if (isMobile) toggleSidebar();
           }}
         >
