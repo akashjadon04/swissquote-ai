@@ -115,7 +115,7 @@ INSERT INTO sq_configurations (key, value, description) VALUES
   ('labour_rates', '{
     "Genève": 145,
     "Vaud": 138,
-    "Valais": 132,
+    "Valais": 125,
     "Fribourg": 130,
     "Neuchâtel": 133,
     "Jura": 128,

@@ -291,3 +291,42 @@ export function parseLabourFromDescription(description: string): number | null {
   return hours;
 }
 
+/**
+ * Detect Swiss canton from text (job description or address).
+ * Returns the matching canton name or null if not detected.
+ */
+export function detectCantonFromText(text: string): string | null {
+  const norm = text.toLowerCase()
+    .normalize("NFD").replace(/[\u0300-\u036f]/g, "") // strip accents
+    .replace(/[^a-z0-9\s]/g, ' '); // remove punctuation
+  
+  // Word-boundary helper to avoid false positive matching like "sion" matching inside "commission"
+  const hasWord = (word: string) => {
+    const regex = new RegExp(`\\b${word}\\b`, 'i');
+    return regex.test(norm);
+  };
+
+  const mapping: Record<string, string[]> = {
+    'Genève': ['geneve', 'geneva', 'ge'],
+    'Vaud': ['vaud', 'lausanne', 'montreux', 'vevey', 'yverdon', 'nyon', 'morges', 'vd'],
+    'Valais': ['valais', 'sion', 'martigny', 'sierre', 'brig', 'visp', 'monthey', 'vs'],
+    'Fribourg': ['fribourg', 'bulle', 'fr'],
+    'Neuchâtel': ['neuchatel', 'chaux de fonds', 'locle', 'ne'],
+    'Jura': ['jura', 'delemont', 'porrentruy', 'ju'],
+    'Berne': ['berne', 'bern', 'bienne', 'thun', 'be'],
+    'Zürich': ['zurich', 'winterthur', 'zh'],
+    'Bâle': ['bale', 'basel', 'bs', 'bl'],
+    'Lucerne': ['lucerne', 'luzern', 'lu'],
+  };
+
+  for (const [canton, keywords] of Object.entries(mapping)) {
+    for (const kw of keywords) {
+      if (hasWord(kw)) {
+        return canton;
+      }
+    }
+  }
+
+  return null;
+}
+

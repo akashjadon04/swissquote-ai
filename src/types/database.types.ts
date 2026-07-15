@@ -21,7 +21,7 @@ export const QUOTE_STATUS_LABELS: Record<QuoteStatus, string> = {
 export const CANTONS: Record<string, number> = {
   'Genève': 145,
   'Vaud': 138,
-  'Valais': 130,
+  'Valais': 125,
   'Fribourg': 132,
   'Neuchâtel': 135,
   'Jura': 128,

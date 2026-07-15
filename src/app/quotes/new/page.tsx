@@ -8,7 +8,7 @@ import { useAppStore, useQuoteStore } from '@/store';
 import { AIProcessingState, Button, AnimatedSaveButton, PremiumPDFTemplate } from '@/components/ui';
 import type { AIExtractionResult, MatchResult, CatalogueArticle, Quote } from '@/types/database.types';
 import { CANTONS } from '@/types/database.types';
-import { formatAmount, formatCHF } from '@/lib/financial';
+import { formatAmount, formatCHF, detectCantonFromText } from '@/lib/financial';
 import { useTranslation } from '@/lib/i18n';
 
 // Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬
@@ -37,7 +37,7 @@ const DEFAULT_CATEGORY_PRICES: Record<string, number> = {
 // Wizard Steps
 // Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬
 
-function getCorrectSectionName(articleLabel: string, category: string | null, unit: string | null): 'Sanitaire' | 'Évacuation' | 'Services' {
+function getCorrectSectionName(articleLabel: string, category: string | null, unit: string | null): 'Sanitaire' | 'Évacuation' | 'Chauffage' | 'Services' {
   const labelLower = articleLabel.toLowerCase().normalize("NFD").replace(/[\u0300-\u036f]/g, "");
   const catLower = (category || '').toLowerCase();
   
@@ -58,17 +58,32 @@ function getCorrectSectionName(articleLabel: string, category: string | null, un
     return 'Services';
   }
 
-
-  // 2. Drainage / Évacuation checks
-  const drainageKeywords = [
-    'evacuation', 'drainage', 'chute', 'pe', 'pe-hd', 'silent', 'siphon', 'bonde', 'geopress', 'pe hd'
+  // 2. Chauffage / Heating checks
+  const heatingKeywords = [
+    'chaudiere', 'chauffage', 'radiateur', 'pac', 'nourrice', 'collecteur',
+    'circulateur', 'pompe de circulation', 'chaufferie', 'ballon ecs', 'chauffe-eau',
+    'boiler', 'pompe a chaleur', 'pompe à chaleur'
   ];
-  const isDrainage = drainageKeywords.some(kw => labelLower.includes(kw)) || catLower === 'geberit_evacuation' || catLower === 'evacuation_pe';
+  const heatingCategories = ['chaudiere', 'ballon_ecs', 'circulateur', 'radiateur', 'nourrice'];
+  
+  const isHeating = heatingKeywords.some(kw => labelLower.includes(kw)) || heatingCategories.includes(catLower);
+  if (isHeating) {
+    return 'Chauffage';
+  }
+
+  // 3. Drainage / Évacuation checks (use word boundaries regex for 'pe' to avoid substring matches)
+  const drainageKeywords = [
+    'evacuation', 'drainage', 'chute', 'silent', 'siphon', 'bonde', 'geopress'
+  ];
+  const isDrainage = drainageKeywords.some(kw => labelLower.includes(kw)) || 
+                     catLower === 'geberit_evacuation' || 
+                     catLower === 'evacuation_pe' ||
+                     /\b(pe|pe-hd|pe hd)\b/i.test(labelLower);
   if (isDrainage) {
     return 'Évacuation';
   }
 
-  // 3. Default to Sanitaire for all physical products (since they are plumbing/sanitary items)
+  // 4. Default to Sanitaire for all physical products (since they are plumbing/sanitary items)
   return 'Sanitaire';
 }
 
@@ -260,8 +275,8 @@ export default function NewQuotePage() {
 
       // 🔄 Heavy computation: build sections + financials non-blocking
       startTransition(() => {
-        const canton = useQuoteStore.getState().quote.canton || 'Genève';
-        const labourRate = CANTONS[canton] || 120;
+        const detectedCanton = detectCantonFromText(description) || useQuoteStore.getState().quote.canton || 'Genève';
+        const labourRate = CANTONS[detectedCanton] || 120;
         const interventionType = "Installation/Rénovation";
         const labourHours = typeof calculatedLabourHours === 'number' ? calculatedLabourHours : 0;
         const marginPct = 15;
@@ -277,6 +292,7 @@ export default function NewQuotePage() {
         // Build sections with matched items
         const sanitaireItems: any[] = [];
         const drainageItems: any[] = [];
+        const chauffageItems: any[] = [];
         const servicesItems: any[] = [];
 
         // Flatten all articles from all extraction sections
@@ -345,6 +361,8 @@ export default function NewQuotePage() {
             servicesItems.push(itemObj);
           } else if (sectionName === 'Évacuation') {
             drainageItems.push(itemObj);
+          } else if (sectionName === 'Chauffage') {
+            chauffageItems.push(itemObj);
           } else {
             sanitaireItems.push(itemObj);
           }
@@ -377,6 +395,18 @@ export default function NewQuotePage() {
           });
           sectionIdx++;
         }
+
+        if (chauffageItems.length > 0) {
+          sections.push({
+            id: `section-${sectionIdx}`,
+            sectionCode: String(25 + sectionIdx),
+            sectionLabel: 'Chauffage',
+            description: 'Systèmes de chauffage, production de chaleur et radiateurs',
+            items: chauffageItems.map((item, idx) => ({ ...item, id: `item-${sectionIdx}-${idx}`, sortOrder: idx })),
+            sortOrder: sectionIdx,
+          });
+          sectionIdx++;
+        }
         
         if (servicesItems.length > 0) {
           sections.push({
@@ -402,6 +432,7 @@ export default function NewQuotePage() {
         const total = subtotal + vatAmount;
 
         setQuote({
+          canton: detectedCanton,
           originalDescription: description,
           aiExtraction: extraction,
           aiProvider: provider,

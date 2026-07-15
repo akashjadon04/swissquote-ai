@@ -103,7 +103,7 @@ export async function POST(request: NextRequest) {
               isMissing: false,
             })),
             ...matchResult.missing.map(m => ({
-              category: null,
+              category: m.aiArticle.category,
               quantity: m.aiArticle.quantity,
               unit: m.aiArticle.unit,
               isMissing: true,
