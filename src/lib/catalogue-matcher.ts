@@ -94,13 +94,14 @@ const STARTING_ACCESSORY_KEYWORDS = [
   'étrier', 'partie', 'poussoir', 'mécanisme', 'module', 'trappe', 'habillage', 'ouverture', 'unité',
   'unite', 'clip', 'capot', 'logement', 'verrou', 'protection', 'languette', 'presseur', 'disque',
   'recouvrement', 'actionneur', 'batterie', 'interbloc', 'insert', 'tête', 'pièce', 'bol', 'boulon',
-  'rail', 'douille', 'piece', 'rabot', 'outil', 'lame', 'machine'
+  'rail', 'douille', 'piece', 'rabot', 'outil', 'lame', 'machine', 'levier', 'materiel', 'matériel', 'racloir', 'appareil'
 ];
 
 function isAccessory(desc: string): boolean {
   const clean = desc.toLowerCase()
     .normalize("NFD").replace(/[\u0300-\u036f]/g, "")
     .replace(/^geberit\s+/, "")
+    .replace(/^duofix\s+/, "")
     .trim();
   
   return STARTING_ACCESSORY_KEYWORDS.some(kw => clean.startsWith(kw));
@@ -351,6 +352,34 @@ function attrScore(aiArticle: AIArticle, catArticle: CatalogueArticle, jobContex
     return { score: 0, hardBlock: true };
   }
 
+  const isBathRequested = hasWord(fullAiText, ['baignoire', 'bain']);
+  const isBasinRequested = hasWord(fullAiText, ['lavabo', 'vasque', 'evier', 'lave-mains', 'lave mains']);
+
+  const isCatalogShower = hasWord(fullCatText, ['douche', 'brause']);
+  const isCatalogBath = hasWord(fullCatText, ['baignoire', 'bain', 'wanne']);
+  const isCatalogBasin = hasWord(fullCatText, ['lavabo', 'vasque', 'evier', 'lave-mains', 'lave mains', 'waschtisch', 'handwaschbecken']);
+
+  if ((isShowerRequested || isBathRequested) && isCatalogBasin && !isCatalogShower && !isCatalogBath) {
+    return { score: 0, hardBlock: true };
+  }
+  if (isBasinRequested && (isCatalogShower || isCatalogBath) && !isCatalogBasin) {
+    return { score: 0, hardBlock: true };
+  }
+
+  // Receveur (shower tray) check
+  const isReceveurRequested = hasWord(fullAiText, ['receveur']);
+  const isCatalogReceveur = hasWord(fullCatText, ['receveur']);
+  if (isReceveurRequested && !isCatalogReceveur) {
+    return { score: 0, hardBlock: true };
+  }
+
+  // Meuble (furniture/cabinet) check
+  const isMeubleRequested = hasWord(fullAiText, ['meuble']);
+  const isCatalogMeuble = hasWord(fullCatText, ['meuble']);
+  if (isMeubleRequested && !isCatalogMeuble) {
+    return { score: 0, hardBlock: true };
+  }
+
   // Job-Specific Exclusions (Heating vs Bathroom)
   if (jobContext.isHeating && !jobContext.isBathroom) {
     if (catCat === 'geberit_duofix' || catCat === 'appareil_sanitaire') {
@@ -580,11 +609,25 @@ const PRODUCT_TYPE_GROUPS: { name: string; triggerKeywords: string[]; compatible
  * or null if no specific type is detected (fall back to unrestricted search).
  */
 function detectProductTypeGroup(queryNorm: string): string[] | null {
+  const stopWords = ['pour', 'de', 'du', 'des', 'avec', 'sans', 'sur', 'dans', 'en', 'le', 'la', 'les', 'un', 'une', 'et', 'ou', 'a', 'au'];
+  let cleanQuery = queryNorm.toLowerCase()
+    .normalize("NFD").replace(/[\u0300-\u036f]/g, "");
+  
+  for (const sw of stopWords) {
+    const regex = new RegExp(`\\b${sw}\\b`, 'g');
+    cleanQuery = cleanQuery.replace(regex, ' ');
+  }
+  cleanQuery = cleanQuery.replace(/\s+/g, ' ').trim();
+
   let bestMatch: { cats: string[]; length: number } | null = null;
   for (const group of PRODUCT_TYPE_GROUPS) {
     for (const kw of group.triggerKeywords) {
-      const kwNorm = kw.toLowerCase().normalize("NFD").replace(/[\u0300-\u036f]/g, "");
-      if (queryNorm.includes(kwNorm)) {
+      const kwNorm = kw.toLowerCase().normalize("NFD").replace(/[\u0300-\u036f]/g, "")
+        .split(/\s+/)
+        .filter(w => !stopWords.includes(w))
+        .join(" ");
+      
+      if (cleanQuery.includes(kwNorm) && kwNorm.length > 0) {
         if (!bestMatch || kwNorm.length > bestMatch.length) {
           bestMatch = { cats: group.compatibleCategories, length: kwNorm.length };
         }
@@ -759,7 +802,7 @@ export function matchArticles(
         const finalScore = (result.score * 0.6) + (attr.score * 0.4) + supplierBoost;
         return { article, score: finalScore };
       })
-      .filter(c => c.score >= 0.55) // Threshold for a good match
+      .filter(c => c.score >= 0.60) // Threshold for a good match
       .sort((a, b) => b.score - a.score);
 
     if (scoredCandidates.length > 0) {
