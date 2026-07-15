@@ -359,7 +359,13 @@ function attrScore(aiArticle: AIArticle, catArticle: CatalogueArticle, jobContex
   const isLuxuryInCatalog = hasWord(fullCatText, luxuryKeywords);
   const isLuxuryRequested = hasWord(fullAiText, luxuryKeywords);
 
-  const isExpensive = catPrice > 1500 && (catCat === 'geberit_duofix' || catCat === 'appareil_sanitaire' || catCat === 'robinetterie');
+  // Block expensive luxury items across ALL sanitary categories unless explicitly requested
+  const isExpensive = catPrice > 1500 && (
+    catCat === 'geberit_duofix' || 
+    catCat === 'appareil_sanitaire' || 
+    catCat === 'robinetterie' ||
+    catCat === 'autre'
+  );
 
   if ((isLuxuryInCatalog || isExpensive) && !isLuxuryRequested) {
     return { score: 0, hardBlock: true };
@@ -414,7 +420,148 @@ function levenshtein(a: string, b: string): number {
   return tmp[a.length][b.length];
 }
 
-function customSearch(query: string, catalogue: CatalogueArticle[]) {
+// ─────────────────────────────────────────────────────────────────────────────
+// PRODUCT TYPE GROUPS — each query is classified into one of these groups.
+// The search then ONLY considers catalogue items from compatible groups.
+// This is the core fix that prevents category cross-contamination.
+// ─────────────────────────────────────────────────────────────────────────────
+const PRODUCT_TYPE_GROUPS: { name: string; triggerKeywords: string[]; compatibleCategories: string[] }[] = [
+  {
+    name: 'wc_frame',
+    triggerKeywords: ['duofix', 'bati-support', 'bâti-support', 'bati support', 'chassis wc', 'support wc', 'cadre wc'],
+    compatibleCategories: ['geberit_duofix', 'autre'],
+  },
+  {
+    name: 'toilet_bowl',
+    triggerKeywords: ['cuvette', 'cuvette wc', 'cuvette suspendue', 'wc suspendu'],
+    compatibleCategories: ['appareil_sanitaire', 'geberit_duofix', 'autre'],
+  },
+  {
+    name: 'toilet_seat',
+    triggerKeywords: ['abattant', 'siege wc', 'lunette wc'],
+    compatibleCategories: ['appareil_sanitaire', 'geberit_duofix', 'autre'],
+  },
+  {
+    name: 'flush_plate',
+    triggerKeywords: ['plaque de commande', 'plaque commande', 'poussoir wc', 'declencheur wc'],
+    compatibleCategories: ['geberit_duofix', 'appareil_sanitaire', 'autre'],
+  },
+  {
+    name: 'washbasin',
+    triggerKeywords: ['lavabo', 'vasque', 'lave-mains', 'lave mains'],
+    compatibleCategories: ['appareil_sanitaire', 'geberit_duofix', 'autre'],
+  },
+  {
+    name: 'vanity_unit',
+    triggerKeywords: ['meuble sous-lavabo', 'meuble sous lavabo', 'meuble vasque', 'sous-vasque', 'meuble lavabo'],
+    compatibleCategories: ['appareil_sanitaire', 'autre'],
+  },
+  {
+    name: 'shower_column',
+    triggerKeywords: ['colonne de douche', 'colonne douche', 'barre de douche', 'set de douche'],
+    compatibleCategories: ['robinetterie', 'autre'],
+  },
+  {
+    name: 'shower_tray',
+    triggerKeywords: ['receveur de douche', 'receveur douche', 'bac a douche', 'bac douche'],
+    compatibleCategories: ['appareil_sanitaire', 'autre'],
+  },
+  {
+    name: 'bathtub',
+    triggerKeywords: ['baignoire'],
+    compatibleCategories: ['appareil_sanitaire', 'autre'],
+  },
+  {
+    name: 'basin_mixer',
+    triggerKeywords: ['mitigeur lavabo', 'mitigeur de lavabo', 'robinet lavabo', 'mitigeur monocommande lavabo'],
+    compatibleCategories: ['robinetterie', 'autre'],
+  },
+  {
+    name: 'kitchen_mixer',
+    triggerKeywords: ['mitigeur evier', 'robinet cuisine', 'mitigeur cuisine'],
+    compatibleCategories: ['robinetterie', 'autre'],
+  },
+  {
+    name: 'thermostatic_valve',
+    triggerKeywords: ['thermostatique', 'mitigeur thermostatique', 'robinet thermostatique'],
+    compatibleCategories: ['robinetterie', 'autre'],
+  },
+  {
+    name: 'ball_valve',
+    triggerKeywords: ['vanne a bille', 'robinet a bille', 'vanne d arret', 'arret d eau'],
+    compatibleCategories: ['robinetterie', 'autre'],
+  },
+  {
+    name: 'water_heater',
+    triggerKeywords: ['boiler', 'chauffe-eau', 'chauffe eau', 'cumulus', 'ballon ecs', 'ballon eau chaude'],
+    compatibleCategories: ['ballon_ecs', 'autre', 'robinetterie'],
+  },
+  {
+    name: 'heat_pump',
+    triggerKeywords: ['pompe a chaleur', 'pompe chaleur', 'pac air', 'pac eau'],
+    compatibleCategories: ['chaudiere', 'autre'],
+  },
+  {
+    name: 'boiler',
+    triggerKeywords: ['chaudiere', 'chaudiere condensation', 'generateur chaleur'],
+    compatibleCategories: ['chaudiere', 'autre'],
+  },
+  {
+    name: 'radiator',
+    triggerKeywords: ['radiateur', 'panneau chauffant', 'corps de chauffe'],
+    compatibleCategories: ['radiateur', 'autre'],
+  },
+  {
+    name: 'drain_trap',
+    triggerKeywords: ['siphon', 'bonde', 'vidage', 'ecoulement lavabo', 'ecoulement douche'],
+    compatibleCategories: ['geberit_evacuation', 'evacuation_pe', 'autre'],
+  },
+  {
+    name: 'drainage_pipe',
+    triggerKeywords: ['evacuation', 'tuyau evacuation', 'tube pe', 'drainage', 'chute'],
+    compatibleCategories: ['evacuation_pe', 'geberit_evacuation', 'autre'],
+  },
+  {
+    name: 'press_pipe',
+    triggerKeywords: ['tuyau inox', 'tube inox', 'optipress', 'tuyau multicouche', 'tube multicouche', 'raccordement eau'],
+    compatibleCategories: ['tuyau_inox', 'manchon', 'coude_sertir', 'autre'],
+  },
+  {
+    name: 'fitting',
+    triggerKeywords: ['coude', 'te sertir', 'manchon', 'raccord sertir', 'pressfitting'],
+    compatibleCategories: ['coude_sertir', 'manchon', 'tuyau_inox', 'autre'],
+  },
+  {
+    name: 'insulation',
+    triggerKeywords: ['isolation', 'coquille isolante', 'isolant tuyau'],
+    compatibleCategories: ['isolation', 'autre'],
+  },
+  {
+    name: 'clamp',
+    triggerKeywords: ['collier de fixation', 'collier isophonique', 'bride'],
+    compatibleCategories: ['collier', 'autre'],
+  },
+];
+
+/**
+ * Detect the product type group for a given query.
+ * Returns the compatible catalogue categories for that product type,
+ * or null if no specific type is detected (fall back to unrestricted search).
+ */
+function detectProductTypeGroup(queryNorm: string): string[] | null {
+  for (const group of PRODUCT_TYPE_GROUPS) {
+    for (const kw of group.triggerKeywords) {
+      // Normalize the keyword the same way as the query (strip accents, lowercase)
+      const kwNorm = kw.toLowerCase().normalize("NFD").replace(/[\u0300-\u036f]/g, "");
+      if (queryNorm.includes(kwNorm)) {
+        return group.compatibleCategories;
+      }
+    }
+  }
+  return null;
+}
+
+function customSearch(query: string, catalogue: CatalogueArticle[], allowedCategories?: string[]) {
   const STOP_WORDS = new Set(['de', 'du', 'des', 'le', 'la', 'les', 'un', 'une', 'pour', 'avec', 'sans', 'sur', 'en', 'et', 'ou', 'a', 'au', 'd', 'l', 's', 'c', 'qu', 'ce', 'ces']);
   
   const normQuery = normalizeText(query);
@@ -422,11 +569,27 @@ function customSearch(query: string, catalogue: CatalogueArticle[]) {
   const queryWords = rawWords.filter(w => !STOP_WORDS.has(w));
   if (queryWords.length === 0) return [];
 
-  const KEY_NOUNS = new Set(['multicouche', 'duofix', 'bati-support', 'bâti-support', 'cuvette', 'mitigeur', 'lavabo', 'boiler', 'douche', 'siphon', 'wc', 'toilette', 'vasque', 'chauffe-eau']);
+  // ── Product type pre-filter ──────────────────────────────────────────────
+  // Detect which product type this query belongs to, then restrict the
+  // candidate pool to only items of compatible categories.
+  // This prevents a shower column search from matching a Duofix frame
+  // just because both descriptions share the word "douche".
+  const detectedCategories = allowedCategories ?? detectProductTypeGroup(normQuery);
+
+  const KEY_NOUNS = new Set(['multicouche', 'duofix', 'bati-support', 'cuvette', 'mitigeur', 'lavabo', 'boiler', 'douche', 'siphon', 'wc', 'toilette', 'vasque', 'chauffe-eau', 'colonne', 'receveur', 'baignoire']);
 
   const results: { item: CatalogueArticle; score: number }[] = [];
   for (let i = 0; i < catalogue.length; i++) {
     const item = catalogue[i];
+
+    // ── Category pre-filter (the key fix) ──────────────────────────────────
+    if (detectedCategories && detectedCategories.length > 0) {
+      const itemCat = (item.category || 'autre').toLowerCase();
+      if (!detectedCategories.includes(itemCat)) {
+        continue; // Skip items from incompatible product categories entirely
+      }
+    }
+
     const desc = normalizeText(item.description || "");
     const spec = normalizeText(item.specification || "");
     const ref = (item.reference || "").toLowerCase();
@@ -435,7 +598,6 @@ function customSearch(query: string, catalogue: CatalogueArticle[]) {
     let matchCount = 0;
     let keyNounMatched = false;
 
-    // Word matches (exact or fuzzy typo match or synonym match)
     for (let j = 0; j < queryWords.length; j++) {
       const word = queryWords[j];
       let wordMatched = false;
@@ -452,20 +614,18 @@ function customSearch(query: string, catalogue: CatalogueArticle[]) {
         }
       }
 
-      // 3. Fuzzy match fallback
-      if (!wordMatched && word.length >= 4) {
+      // 3. Fuzzy match fallback (only for longer words to avoid false positives)
+      if (!wordMatched && word.length >= 5) {
         const catWords = fullText.split(/[\s,.'"\(\)\-\/]+/);
         for (const catWord of catWords) {
-          if (catWord.length >= 4 && Math.abs(catWord.length - word.length) <= 1 && levenshtein(word, catWord) <= 1) {
+          if (catWord.length >= 5 && Math.abs(catWord.length - word.length) <= 1 && levenshtein(word, catWord) <= 1) {
             wordMatched = true;
             break;
           }
-          
-          // Fuzzy synonym match
           const syns = SYNONYMS[word];
           if (syns) {
             for (const syn of syns) {
-              if (catWord.length >= 4 && Math.abs(catWord.length - syn.length) <= 1 && levenshtein(syn, catWord) <= 1) {
+              if (catWord.length >= 5 && Math.abs(catWord.length - syn.length) <= 1 && levenshtein(syn, catWord) <= 1) {
                 wordMatched = true;
                 break;
               }
@@ -485,7 +645,7 @@ function customSearch(query: string, catalogue: CatalogueArticle[]) {
 
     let score = matchCount / queryWords.length;
 
-    // Bigram boost if words match in order
+    // Bigram boost — consecutive matching words
     let bigramMatches = 0;
     for (let j = 0; j < queryWords.length - 1; j++) {
       const bigram = `${queryWords[j]} ${queryWords[j+1]}`;
@@ -494,12 +654,12 @@ function customSearch(query: string, catalogue: CatalogueArticle[]) {
       }
     }
     if (queryWords.length > 1) {
-      score += (bigramMatches / (queryWords.length - 1)) * 0.15;
+      score += (bigramMatches / (queryWords.length - 1)) * 0.2;
     }
 
-    // Key noun boost
+    // Key noun boost — matching the product noun is critical
     if (keyNounMatched) {
-      score += 0.15;
+      score += 0.2;
     }
 
     score = Math.min(score, 1.0);

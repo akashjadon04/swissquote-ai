@@ -41,18 +41,23 @@ function getCorrectSectionName(articleLabel: string, category: string | null, un
   const labelLower = articleLabel.toLowerCase().normalize("NFD").replace(/[\u0300-\u036f]/g, "");
   const catLower = (category || '').toLowerCase();
   
-  // 1. Services / Labor checks
-  const serviceKeywords = [
-    'depose', 'demontage', 'evacuation de l\'ancien', 'evacuation de l ancien',
-    'pose de', 'fourniture et pose', 'raccordement', 'main d\'oeuvre', 'main-d\'oeuvre', 'main-doeuvre', 'deplacement',
-    'percage', 'coupe', 'mise en service', 'mise en eau', 'installation', 'heures', 'travail', 'nettoyage',
-    'forfait de', 'forfait de pose'
+  // 1. Services / Labor: ONLY if unit is h/forfait, or the line is explicitly a labour/service line
+  //    Physical products (even if they include words like "raccordement") go to Sanitaire.
+  const isLabourUnit = unit === 'h' || unit === 'forfait';
+  const labourPhrases = [
+    'main d\'oeuvre', 'main-d\'oeuvre', 'main-doeuvre', 'maind\'oeuvre',
+    'depose de l\'ancien', 'depose de l ancien', 'evacuation de l\'ancien',
+    'mise en service', 'mise en eau', 'percage', 'coupe', 'nettoyage',
+    'deplacement', 'forfait de pose', 'heures de travail', 'travail prevu',
+    'journee de travail', 'demi-journee'
   ];
-  
-  const isService = serviceKeywords.some(kw => labelLower.includes(kw)) || unit === 'h' || unit === 'forfait';
-  if (isService) {
+  const isLabourPhrase = labourPhrases.some(kw => labelLower.includes(kw));
+  const isServiceCategory = catLower === 'depose';
+
+  if (isLabourUnit || isLabourPhrase || isServiceCategory) {
     return 'Services';
   }
+
 
   // 2. Drainage / Évacuation checks
   const drainageKeywords = [
