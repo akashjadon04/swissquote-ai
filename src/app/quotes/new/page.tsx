@@ -145,7 +145,7 @@ export default function NewQuotePage() {
 
   const hasUnresolvedItems = useMemo(() => {
     return quote.sections.some(section => 
-      section.items.some(item => item.isMissing || item.quantity === 0)
+      section.items.some(item => item.isMissing || item.quantity === 0 || item.quantity === null)
     );
   }, [quote.sections]);
 

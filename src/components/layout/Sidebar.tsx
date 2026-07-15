@@ -218,17 +218,16 @@ function SidebarContent({ pathname, collapsed = false }: { pathname: string; col
 
       {/* New Quote CTA */}
       <div className="sidebar-cta">
-        <Link 
-          href="/quotes/new" 
+        <button
           className="btn-new-quote clay-button"
           onClick={() => {
-            useQuoteStore.getState().resetQuote();
             if (isMobile) toggleSidebar();
+            window.location.href = '/quotes/new';
           }}
         >
           {Icons.plus}
           {!collapsed && <span>{t('dashboard', 'newQuote')}</span>}
-        </Link>
+        </button>
       </div>
 
       {/* Search shortcut */}

@@ -239,15 +239,15 @@ export const PremiumPDFTemplate = React.forwardRef<HTMLDivElement, PremiumPDFTem
                         )}
                       </td>
                       <td style={{ padding: '10px 8px', fontSize: '12px', color: '#0F172A', textAlign: 'center', verticalAlign: 'top' }}>
-                        <span style={{ background: '#F1F5F9', padding: '2px 6px', borderRadius: '4px', fontWeight: 600 }}>
-                          {item.quantity} {item.unit}
+                        <span style={{ background: '#F1F5F9', padding: '2px 6px', borderRadius: '4px', fontWeight: 600, color: item.quantity === null ? '#DC2626' : '#0F172A', fontStyle: item.quantity === null ? 'italic' : 'normal' }}>
+                          {item.quantity !== null && item.quantity !== undefined ? `${item.quantity} ${item.unit}` : 'à préciser'}
                         </span>
                       </td>
                       <td style={{ padding: '10px 8px', fontSize: '12px', color: '#475569', textAlign: 'right', verticalAlign: 'top', fontStyle: (item.isMissing || (item as any).is_missing) ? 'italic' : 'normal' }}>
                         {(item.isMissing || (item as any).is_missing) ? onRequestText : formatCHF(item.unitPrice || 0)}
                       </td>
                       <td style={{ padding: '10px 8px', fontSize: '12px', color: '#0F172A', fontWeight: 700, textAlign: 'right', verticalAlign: 'top', fontStyle: (item.isMissing || (item as any).is_missing) ? 'italic' : 'normal' }}>
-                        {(item.isMissing || (item as any).is_missing) ? '—' : formatCHF(item.lineTotal || 0)}
+                        {(item.isMissing || (item as any).is_missing || item.lineTotal === null) ? '—' : formatCHF(item.lineTotal)}
                       </td>
                     </tr>
                   ))}
@@ -258,7 +258,7 @@ export const PremiumPDFTemplate = React.forwardRef<HTMLDivElement, PremiumPDFTem
         </div>
 
         {/* FINANCIAL SUMMARY TOTALS */}
-        <div style={{ display: 'flex', justifyContent: 'flex-end', marginTop: '5mm', marginBottom: '5mm' }}>
+        <div style={{ display: 'flex', justifyContent: 'flex-end', marginTop: '5mm', marginBottom: '5mm', pageBreakInside: 'avoid', breakInside: 'avoid' }}>
           <div style={{ width: '100mm', background: '#F8FAFC', borderRadius: '12px', border: '1px solid #E2E8F0', padding: '24px', boxShadow: '0 10px 15px -3px rgba(0,0,0,0.05)', pageBreakInside: 'avoid', breakInside: 'avoid' }}>
             
             <div style={{ display: 'flex', justifyContent: 'space-between', marginBottom: '8px', fontSize: '13px', color: '#475569' }}>
