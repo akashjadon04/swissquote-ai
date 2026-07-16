@@ -453,6 +453,24 @@ function attrScore(aiArticle: AIArticle, catArticle: CatalogueArticle, jobContex
     return { score: 0, hardBlock: true };
   }
 
+  // ─── Variant Qualifier Hard Block ─────────────────────────────────────────
+  // "double" and "triple" are product-variant discriminators: a double-basin
+  // vanity unit is a completely different (and more expensive) product from a
+  // single-basin one. If the plumber explicitly requests one of these qualifiers
+  // and the catalogue item does NOT carry the same qualifier, we hard-block the
+  // match. The item surfaces as MISSING so the user sees it and can handle it —
+  // it is NEVER silently substituted with a different variant.
+  const VARIANT_QUALIFIERS_REQUIRED = ['double', 'triple'];
+  for (const qual of VARIANT_QUALIFIERS_REQUIRED) {
+    if (hasWord(fullAiText, [qual]) && !hasWord(fullCatText, [qual])) {
+      return { score: 0, hardBlock: true };
+    }
+  }
+  // If "simple" (single) is explicitly requested, do not match a "double" item.
+  if (hasWord(fullAiText, ['simple']) && hasWord(fullCatText, ['double'])) {
+    return { score: 0, hardBlock: true };
+  }
+
   // Job-Specific Exclusions (Heating vs Bathroom)
   if (jobContext.isHeating && !jobContext.isBathroom) {
     if (catCat === 'geberit_duofix' || catCat === 'appareil_sanitaire') {
