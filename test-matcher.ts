@@ -61,11 +61,11 @@ async function runTests() {
 
     try {
       const result = await extractFromDescription(prompt.text);
-      console.log("Raw Metadata from LLM:", JSON.stringify(result.metadata, null, 2));
-      if (result.metadata) {
-        report += `**Extracted Client:** ${result.metadata.clientName || 'N/A'}\n`;
-        report += `**Extracted Address:** ${result.metadata.clientAddress || 'N/A'}\n`;
-        report += `**Extracted Project:** ${result.metadata.projectDescription || 'N/A'}\n\n`;
+      console.log("Raw Metadata from LLM:", JSON.stringify(result.extraction?.metadata, null, 2));
+      if (result.extraction?.metadata) {
+        report += `**Extracted Client:** ${result.extraction.metadata.clientName || 'N/A'}\n`;
+        report += `**Extracted Address:** ${result.extraction.metadata.clientAddress || 'N/A'}\n`;
+        report += `**Extracted Project:** ${result.extraction.metadata.projectDescription || 'N/A'}\n\n`;
       }
       
       let articles: any[] = [];
