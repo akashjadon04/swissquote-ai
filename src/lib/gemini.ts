@@ -45,9 +45,10 @@ RÈGLES STRICTES DE L'IA :
    - transition (raccords de transition)
    - reducteur (réducteurs de pression, manchons de réduction)
    - autre (tout autre article ne rentrant pas dans les catégories ci-dessus)
-5. AUCUN DOUBLON : Fusionne les articles identiques de la même section en additionnant leurs quantités.
-6. PRESTATIONS DE MAIN D'ŒUVRE : Si le texte mentionne du temps de travail (ex: "2 jours pour 1 monteur", "10 heures de travail"), crée un article de catégorie "autre" avec l'unité "h" (heures) ou "forfait" en reprenant la description littérale du travail.
-7. CONTEXTE D'INSTALLATION : Conserve toujours le contexte d'installation dans le label de l'article :
+5. MÉTADONNÉES DU CLIENT : Identifie et extrais le nom du client, l'adresse du chantier et la description générale du projet. S'ils sont absents, mets null.
+6. AUCUN DOUBLON : Fusionne les articles identiques de la même section en additionnant leurs quantités.
+7. PRESTATIONS DE MAIN D'ŒUVRE : Si le texte mentionne du temps de travail (ex: "2 jours pour 1 monteur", "10 heures de travail"), crée un article de catégorie "autre" avec l'unité "h" (heures) ou "forfait" en reprenant la description littérale du travail.
+8. CONTEXTE D'INSTALLATION : Conserve toujours le contexte d'installation dans le label de l'article :
    - Intérieur/Extérieur : Si le texte mentionne "jardin", "extérieur", "piscine", inclus ce contexte (ex: "Douche de jardin extérieure", pas juste "Douche").
    - Résidentiel/Industriel : Pour les équipements de chauffage, précise "résidentiel" ou "domestique" si le contexte est une maison/appartement (ex: "Pompe à chaleur résidentielle", pas juste "Pompe à chaleur").
    - Ne supprime jamais les qualificatifs de contexte du texte de l'utilisateur.
@@ -55,6 +56,11 @@ RÈGLES STRICTES DE L'IA :
 
 FORMAT DE SORTIE JSON STRICT :
 {
+  "metadata": {
+    "clientName": "Nom du client (ex: M. Berthoud) ou null",
+    "clientAddress": "Adresse (ex: Chemin de la Gradelle 42, 1224 Chêne-Bougeries) ou null",
+    "projectDescription": "Brève description du projet (ex: Rénovation 2 salles d'eau) ou null"
+  },
   "sections": [{
     "section_label": "Sanitaire ou Évacuation ou Prestations",
     "description_verbatim": "description de la section",

@@ -263,6 +263,11 @@ export interface AISection {
 }
 
 export interface AIExtractionResult {
+  metadata?: {
+    clientName?: string | null;
+    clientAddress?: string | null;
+    projectDescription?: string | null;
+  };
   sections: AISection[];
 }
 

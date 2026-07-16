@@ -53,13 +53,21 @@ async function runTests() {
 
   let report = "# QA Test Report: Extraction and Matching\n\n";
 
-  for (const prompt of prompts) {
+  const testPrompts = prompts.slice(0, 1);
+  for (const prompt of testPrompts) {
     console.log("Running Prompt " + prompt.id + ": " + prompt.name + "...");
     report += "## Prompt " + prompt.id + ": " + prompt.name + "\n\n";
     report += "**Input:** " + prompt.text + "\n\n";
 
     try {
       const result = await extractFromDescription(prompt.text);
+      console.log("Raw Metadata from LLM:", JSON.stringify(result.metadata, null, 2));
+      if (result.metadata) {
+        report += `**Extracted Client:** ${result.metadata.clientName || 'N/A'}\n`;
+        report += `**Extracted Address:** ${result.metadata.clientAddress || 'N/A'}\n`;
+        report += `**Extracted Project:** ${result.metadata.projectDescription || 'N/A'}\n\n`;
+      }
+      
       let articles: any[] = [];
       if (result.extraction?.sections) {
         articles = result.extraction.sections.flatMap(s => s.articles);

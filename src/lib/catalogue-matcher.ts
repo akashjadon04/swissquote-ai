@@ -53,6 +53,26 @@ function extractDiameterMm(dim: string | null | undefined): number | null {
   return isNaN(v) ? null : v;
 }
 
+function extractWidthCm(text: string | null | undefined): number | null {
+  if (!text) return null;
+  // Look for patterns like "80 cm", "80cm", "B=80cm", "B=120 cm", "120x90", "120 x 90", "largeur 80"
+  // For standard Swiss sanitary ware, common widths are 40, 45, 50, 55, 60, 65, 70, 80, 90, 100, 120, 130
+  
+  const matches = [
+    ...text.matchAll(/(?:B=|largeur\s*)?(\d{2,3})(?:\s*cm|\s*[xX]\s*\d{2,3})/gi),
+    ...text.matchAll(/(?:\b|B=|largeur\s*)(\d{2,3})\s*cm\b/gi)
+  ];
+  
+  for (const m of matches) {
+    const val = parseInt(m[1], 10);
+    // Sanity check - widths of basins/furniture usually between 30 and 200
+    if (val >= 30 && val <= 200) {
+      return val;
+    }
+  }
+  return null;
+}
+
 function extractKw(text: string | null | undefined): number | null {
   if (!text) return null;
   const m = text.toLowerCase().match(/(\d+(?:[.,]\d+)?)\s*k[ww]/);
@@ -175,6 +195,11 @@ function attrScore(aiArticle: AIArticle, catArticle: CatalogueArticle, jobContex
 
   let matchedAttributeScore: number | null = null;
 
+  const catDesc = (catArticle.description || "").toLowerCase();
+  const catName = ((catArticle as any).name || "").toLowerCase();
+  const fullCatText = catDesc + " " + catName;
+  const fullAiText = aiText.toLowerCase().normalize("NFD").replace(/[\u0300-\u036f]/g, "");
+
   // 1. power_kw check
   const aiKw = extractKw(aiText);
   const catKw = catAttrs.power_kw ?? extractKw(catSpec) ?? extractKw(catArticle.description);
@@ -214,6 +239,21 @@ function attrScore(aiArticle: AIArticle, catArticle: CatalogueArticle, jobContex
   } else if (aiD !== null && catD === null) {
     // If the AI explicitly requires a diameter but the catalog article has none, it's a mismatch
     return { score: 0, hardBlock: true };
+  }
+  
+  // 3.5 Width check for Sanitary fixtures
+  if (catCat === 'appareil_sanitaire' || hasWord(fullAiText, ['lavabo', 'vasque', 'meuble', 'armoire', 'miroir', 'receveur', 'douche'])) {
+    const aiW = extractWidthCm(aiText);
+    const catW = extractWidthCm(fullCatText);
+    
+    if (aiW !== null && catW !== null) {
+      // If sizes differ by more than 5cm, it's a mismatch (e.g. 80cm != 60cm)
+      if (Math.abs(aiW - catW) > 5) {
+        return { score: 0, hardBlock: true };
+      } else {
+        matchedAttributeScore = 1.0;
+      }
+    }
   }
 
   // 4. Material Match - STRICT MATERIAL CHECKS
@@ -268,11 +308,6 @@ function attrScore(aiArticle: AIArticle, catArticle: CatalogueArticle, jobContex
       return { score: 0, hardBlock: true };
     }
   }
-
-  const catDesc = (catArticle.description || "").toLowerCase();
-  const catName = ((catArticle as any).name || "").toLowerCase();
-  const fullCatText = catDesc + " " + catName;
-  const fullAiText = aiText.toLowerCase().normalize("NFD").replace(/[\u0300-\u036f]/g, "");
 
   // 6. Spare Parts / Accessories check using starting keywords (avoids false blocking primary items)
   const isAccessoryInCatalog = isAccessory(catDesc) || isAccessory(catName);
