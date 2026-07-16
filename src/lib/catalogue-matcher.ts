@@ -453,22 +453,26 @@ function attrScore(aiArticle: AIArticle, catArticle: CatalogueArticle, jobContex
     return { score: 0, hardBlock: true };
   }
 
-  // ─── Variant Qualifier Hard Block ─────────────────────────────────────────
-  // "double" and "triple" are product-variant discriminators: a double-basin
-  // vanity unit is a completely different (and more expensive) product from a
-  // single-basin one. If the plumber explicitly requests one of these qualifiers
-  // and the catalogue item does NOT carry the same qualifier, we hard-block the
-  // match. The item surfaces as MISSING so the user sees it and can handle it —
-  // it is NEVER silently substituted with a different variant.
-  const VARIANT_QUALIFIERS_REQUIRED = ['double', 'triple'];
-  for (const qual of VARIANT_QUALIFIERS_REQUIRED) {
-    if (hasWord(fullAiText, [qual]) && !hasWord(fullCatText, [qual])) {
+  // ─── Variant Qualifier Hard Block (sanitary fixture context only) ─────────
+  // "double vasque" / "meuble double" are product-variant discriminators:
+  // a double-basin fixture is a completely different (more expensive) product.
+  // IMPORTANT: "double" also appears in general plumbing fitting names
+  // (raccord double, mamelon double, coude double, clapet double…) — those
+  // must NOT be blocked. The guard therefore only fires when "double"/"triple"
+  // co-occurs with a sanitary fixture word in the AI label.
+  const SANITARY_FIXTURE_WORDS = ['vasque', 'lavabo', 'meuble', 'bac', 'evier', 'plan', 'baignoire'];
+  const aiHasSanitaryCtx = SANITARY_FIXTURE_WORDS.some(w => fullAiText.includes(w));
+  if (aiHasSanitaryCtx) {
+    if (hasWord(fullAiText, ['double']) && !hasWord(fullCatText, ['double'])) {
       return { score: 0, hardBlock: true };
     }
-  }
-  // If "simple" (single) is explicitly requested, do not match a "double" item.
-  if (hasWord(fullAiText, ['simple']) && hasWord(fullCatText, ['double'])) {
-    return { score: 0, hardBlock: true };
+    if (hasWord(fullAiText, ['triple']) && !hasWord(fullCatText, ['triple'])) {
+      return { score: 0, hardBlock: true };
+    }
+    // "simple" explicitly requested → must not be matched to a "double" item
+    if (hasWord(fullAiText, ['simple']) && hasWord(fullCatText, ['double'])) {
+      return { score: 0, hardBlock: true };
+    }
   }
 
   // Job-Specific Exclusions (Heating vs Bathroom)
